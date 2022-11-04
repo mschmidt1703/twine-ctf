@@ -3,9 +3,11 @@
 ## Git-Commands
 
 ### Add files
-`git add
+```sh
+git add
 git commit -m "Test"
-git push`
+git push
+```
 
 ## CTF-Challenges Ideas
 
