@@ -1,0 +1,21 @@
+.twine-background-login {
+	background-color:  white;
+	width: 500px;
+}
+
+.login-contianer{
+	background-color:  #808080;	
+    text-align: -webkit-center;
+	height: 500px;
+	padding-top: 4em;
+}
+
+#ui-bar {
+display: none;
+}
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
