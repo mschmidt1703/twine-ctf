@@ -20,63 +20,78 @@ setup.test = function() {
 }
 */
 
-setup.onLoad = function() {
-  	console.log("test");
-    alert("Test");
-  
-  	t = {};
-  	var t[u] = document.getElementById("user").value;
-    var t[p] = document.getElementById("password").value;
-	
-  	alert(t[u]);
-  	alert(t[p]);
-  
-  (async () =>
-{
-    await new Promise((e => window.addEventListener("load", e))), document.querySelector("form").addEventListener("login", (e =>
-    {
-        e.preventDefault();
-        const r = {
-                u: "input[name=username]",
-                p: "input[name=password]"
-            },
-            t = {};
-        for (const e in r) t[e] = btoa(document.querySelector(r[e]).value).replace(/=/g, "");
-        return "YWRtaW4" !== t.u ? alert("Incorrect Username") : "cGljb0NURns1M3J2M3JfNTNydjNyXzUzcnYzcl81M3J2M3JfNTNydjNyfQ" !== t.p ? alert("Incorrect Password") : void alert(`Correct Password! Your flag is ${atob(t.p)}.`)
-    }))
-})();
+ /*onclick="setup.onLoad()"*/
+
+function eventOnClickHandler(event) {
+	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+
+  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
   
 }
 
-</script><tw-passagedata pid="1" name="Unbenannter Abschnitt" tags="" position="800,350" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
+
+}
+
+/*   alert("sdfdsf")
+   alert(document.getElementById("ssss"));*/
+
+
+/*
+window.onload = function(){
+   alert("sdfdsf");
+   alert(document.getElementById("ssss"));
+};
+
+
+document.addEventListener("DOMContentLoaded", function(event){
+	alert("sdfdsf");
+    alert(document.getElementById("ssss"));
+
+});
+
+document.onreadystatechange = function () {
+     alert("sdfdsf");
+
+  if (document.readyState == "complete") {
+    alert("sdfdsf");
+  }
+}*/</script><tw-passagedata pid="1" name="Unbenannter Abschnitt" tags="" position="800,350" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;!--TODO Link--&gt;
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;C:/Users/Marc/Documents/Twine/Geschichten/css/main.css&quot;&gt; 
 
+
+&lt;script&gt; setup.start(); &lt;/script&gt;
 
 
 &lt;html&gt;
 &lt;h1 style=&quot;padding:20px&quot;&gt;Your forgot your password for your pc, maybe it is possible to find it, somewhere else.  &lt;/h1&gt;
 &lt;a&gt;&lt;/a&gt;
 &lt;div class=&quot;container is-fluid login-contianer&quot;&gt;
-   &lt;form class=&quot;box twine-background-login&quot;&gt;
+   &lt;form method=&quot;POST&quot; class=&quot;box twine-background-login&quot;&gt;
       &lt;div class=&quot;field&quot;&gt;
         &lt;label class=&quot;label&quot;&gt;Username&lt;/label&gt;
         &lt;div class=&quot;control&quot;&gt;
-          &lt;input class=&quot;input&quot; id=&quot;user&quot; type=&quot;plain&quot; placeholder=&quot;...&quot;&gt;
+          &lt;input class=&quot;input&quot; id=&quot;user&quot; for&quot;username&quot; type=&quot;text&quot; placeholder=&quot;...&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;field&quot;&gt;
         &lt;label class=&quot;label&quot;&gt;Password&lt;/label&gt;
         &lt;div class=&quot;control&quot;&gt;
-          &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;...&quot;&gt;
+          &lt;input class=&quot;input&quot; id=&quot;password&quot; for&quot;password&quot; type=&quot;password&quot; placeholder=&quot;...&quot;&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;button id=&quot;login&quot; onclick=&quot;setup.onLoad()&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
+      &lt;button id=&quot;ssss&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
     &lt;/form&gt;
   &lt;/div&gt;
 
-&lt;/html&gt;</tw-passagedata></tw-storydata>
+&lt;/html&gt;
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
