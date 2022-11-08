@@ -1,0 +1,23 @@
+Webseite (Start)
+
+Elemente:
+-Spielblock
+-- Spiel fortsetzen
+-- Neues Spiel starten/Spiel neustarten
+-- Fortschrittsleiste
+
+- Achievements
+-- CTFs Übersicht und Wiederholen
+-- Erinnerungen/Zwischensequenzen erneut ansehen
+
+- Einstellungen
+-- Lautstärkeregelung
+
+- Spielstand laden
+
+Design:
+- Leichte Animation
+-- Rotierendes 3D-Element
+- Dark
+- Akzentfarbe
+
