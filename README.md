@@ -1,5 +1,7 @@
 # Twine CTF
 
+![](/lara/Title.png)
+
 ## Git-Commands
 
 ### Add files
