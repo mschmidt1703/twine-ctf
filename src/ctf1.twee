@@ -1,0 +1,32 @@
+:: CTF 1 {"position":"800,25","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<!--TODO Link-->
+
+<link rel="stylesheet" href="css/main.css"> 
+
+
+<script> setup.start(); </script>
+
+
+<html>
+<h1 style="padding:20px">Your forgot your password for your pc, maybe it is possible to find it, somewhere else.  </h1>
+<a></a>
+<div class="container is-fluid login-contianer">
+   <form method="POST" class="box twine-background-login">
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          <input class="input" id="user" for"username" type="text" placeholder="...">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" id="password" for"password" type="password" placeholder="...">
+        </div>
+      </div>
+      <button id="ssss" class="button is-primary">Sign in</button>
+    </form>
+  </div>
+
+</html>
