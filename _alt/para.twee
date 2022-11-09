@@ -1,0 +1,18 @@
+:: StoryTitle
+twine-ctf1
+
+
+:: StoryData
+{
+	"ifid": "55D933FB-9F67-4361-8DD2-B8FF2ED575F4",
+	"format": "Harlowe",
+	"format-version": "3.3.3",
+	"start": "Unbenannter Abschnitt",
+	"zoom": 1
+}
+
+
+:: Unbenannter Abschnitt {"position":"800,350","size":"100,100"}
+<a href="twine-ctf.html" class="btn btn-primary">next page</a>
+
+

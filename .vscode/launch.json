@@ -1,0 +1,23 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+            
+            {
+                "preLaunchTask": "Build Twine Story",
+                "type": "msedge",
+                "request": "launch",
+                "name": "Start Twine Story",
+                "file": "${workspaceFolder}/out/story.html"
+            },
+            {
+                "preLaunchTask": "Build Twine Story in debug mode",
+                "type": "msedge",
+                "request": "launch",
+                "name": "Debug Twine Story",
+                "file": "${workspaceFolder}/out/story-d.html"
+            }
+        ]
+    }

@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build Twine Story",
+                "type": "shell",
+                "command":"tweego",
+                "args": [
+                    "-o",
+                    "./out/story.html",
+                    "./src"
+                ],
+                "group": "build",
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": true,
+                    "panel": "new"
+                }
+            },
+            {
+                "label": "Build Twine Story in debug mode",
+                "type": "shell",
+                "command":"tweego",
+                "args": [
+                    "-t",
+                    "-o",
+                    "./out/story-d.html",
+                    "./src"
+                ],
+                "group": "build",
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": true,
+                    "panel": "new"
+                }
+            }
+        ]
+    }
