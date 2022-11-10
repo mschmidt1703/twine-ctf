@@ -95,12 +95,6 @@ Hello World
 
 [[CTF 4->CTF 4]]
 
-:: CTF 2 {"position":"800,175","size":"100,100"}
-crf2
-
-
-:: CTF 3 {"position":"800,325","size":"100,100"}
-ctf3
 
 :: CTF 4 {"position":"800,425","size":"100,100"}
 ctf4
