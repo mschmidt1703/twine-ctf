@@ -1,2 +1,89 @@
-:: CTF 4 {"position":"800,475","size":"100,100"}
-ctf4
+:: CTF 4 {"position":"1000,425","size":"100,100"}
+<style>
+
+
+tw-story {
+ background: linear-gradient(#330033, #000000);
+ margin: 0;
+ padding: 50px;
+ white-space: normal;
+ width: 100%
+}
+
+.giant {
+ font-size:5.5em;
+}
+
+tw-passage {
+ width: 80%;
+ max-width: 1000px;
+ margin:auto;
+ padding:20px;
+ border: solid #000 0.05em;
+ border-radius: 0.2em;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:0.9rem; color:#000;
+ text-align:left;
+ background-color:#a6a6a6;
+ box-shadow: #000 0.5em 0.5em 0;
+ line-height:20px; 
+
+}
+
+.webbrowser {
+  width: 300px;
+  min-width: fit-content;
+  border: 2px solid black;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin: 20px;
+  margin:auto;
+  background: white;
+  margin: auto;
+}
+
+#tab {
+    background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
+    padding: 0px;
+    width: 702px;
+    margin: 0px;
+    border: 1px solid #333;
+    border-radius: 8px 4px 0 0;
+}
+
+#url {
+	
+}
+
+.example-controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    width: 694px;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+
+</style>
+
+
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+
+In this challenge yout can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should start  pop up.
+
+
+<div class="webbrowser"> 
+	<div id="tab">
+		<div class="example-controls">
+            <span class="url">URL</span>
+            <input id="input1" class="urlbar" type="text" value="">
+            <input class="urlbutton" type="Submit" value="Go" onclick="updateFrame(1); return false;">
+            <iframe src="https://google.de" title="Google"></iframe>
+		</div>
+    </div>
+
+</div>
