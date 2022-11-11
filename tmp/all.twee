@@ -1,0 +1,185 @@
+:: StoryTitle
+twine-ctf
+
+
+:: StoryData
+{
+	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
+	"format": "Harlowe",
+	"format-version": "3.3.3",
+	"start": "MainPage",
+	"zoom": 1
+}
+
+
+:: Story JavaScript [script]
+window.setup = window.setup || {};
+
+
+/*onclick="setup.test()"
+
+setup.test = function() {
+	console.log("Hello World");
+  	alert("Test");
+}
+*/
+
+ /*onclick="setup.onLoad()"*/
+
+function eventOnClickHandler(event) {
+	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+
+  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  
+}
+
+
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
+
+}
+
+/*   alert("sdfdsf")
+   alert(document.getElementById("ssss"));*/
+
+
+/*
+window.onload = function(){
+   alert("sdfdsf");
+   alert(document.getElementById("ssss"));
+};
+
+
+document.addEventListener("DOMContentLoaded", function(event){
+	alert("sdfdsf");
+    alert(document.getElementById("ssss"));
+
+});
+
+document.onreadystatechange = function () {
+     alert("sdfdsf");
+
+  if (document.readyState == "complete") {
+    alert("sdfdsf");
+  }
+}*/
+
+
+:: CTF 1 {"position":"800,25","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<!--TODO Link-->
+
+<link rel="stylesheet" href="css/main.css"> 
+
+
+<script> setup.start(); </script>
+
+
+<html>
+<h1 style="padding:20px">Your forgot your password for your pc, maybe it is possible to find it, somewhere else.  </h1>
+<a></a>
+<div class="container is-fluid login-contianer">
+   <form method="POST" class="box twine-background-login">
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          <input class="input" id="user" for"username" type="text" placeholder="...">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" id="password" for"password" type="password" placeholder="...">
+        </div>
+      </div>
+      <button id="ssss" class="button is-primary">Sign in</button>
+    </form>
+  </div>
+
+</html>
+
+
+:: CTF 2 {"position":"800,175","size":"100,100"}
+crf2
+
+
+:: CTF 3 {"position":"800,325","size":"100,100"}
+ctf3
+
+
+:: MainPage {"position":"175,100","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<style>
+#first    {color: red;}
+</style>
+
+Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
+...
+Olea schreib mal was schönes
+[[Start Story->Story]]
+
+Hello World
+
+<!--Comment Text
+<button id="first" class="button is-rounded">Rounded</button>
+<button class="button is-primary is-rounded">Rounded</button>
+<button class="button is-link is-rounded">Rounded</button>
+<button class="button is-info is-rounded">Rounded</button>
+<button class="button is-success is-rounded">Rounded</button>
+<button class="button is-danger is-rounded">Rounded</button>
+-->
+
+Overview of all challanges with explanations:
+[[CTF 1->CTF 1]]
+[[CTF 2->CTF 2]]
+[[CTF 3->CTF 3]]
+[[CTF 4->CTF 4]]
+[[CTF 5->CTF 5]]
+[[CTF 6->CTF 6]]
+[[CTF 7->CTF 7]]
+[[CTF 8->CTF 8]]
+[[CTF 9->CTF 9]]
+
+So soll das, CSS ist der King!
+[[<button class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
+
+
+:: CTF 4 {"position":"800,475","size":"100,100"}
+ctf4
+
+
+:: Story {"position":"175,350","size":"100,100"}
+Hier beginnt die Story!
+
+Main Start
+
+
+:: Story1 {"position":"150,500","size":"100,100"}
+
+
+:: Story2 {"position":"300,550","size":"100,100"}
+[[CTF 3->CTF 3]]
+
+
+:: CTF 5 {"position":"1125,425","size":"100,100"}
+ctf5
+
+
+:: CTF 6 {"position":"1250,425","size":"100,100"}
+ctf6
+
+
+:: CTF 7 {"position":"1375,425","size":"100,100"}
+ctf7
+
+
+:: CTF 8 {"position":"950,625","size":"100,100"}
+ctf8
+
+
+:: CTF 9 {"position":"1100,625","size":"100,100"}
+ctf9
+
+

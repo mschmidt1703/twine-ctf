@@ -1,0 +1,52 @@
+:: Story JavaScript [script]
+window.setup = window.setup || {};
+
+
+/*onclick="setup.test()"
+
+setup.test = function() {
+	console.log("Hello World");
+  	alert("Test");
+}
+*/
+
+ /*onclick="setup.onLoad()"*/
+
+function eventOnClickHandler(event) {
+	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+
+  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  
+}
+
+
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
+
+}
+
+/*   alert("sdfdsf")
+   alert(document.getElementById("ssss"));*/
+
+
+/*
+window.onload = function(){
+   alert("sdfdsf");
+   alert(document.getElementById("ssss"));
+};
+
+
+document.addEventListener("DOMContentLoaded", function(event){
+	alert("sdfdsf");
+    alert(document.getElementById("ssss"));
+
+});
+
+document.onreadystatechange = function () {
+     alert("sdfdsf");
+
+  if (document.readyState == "complete") {
+    alert("sdfdsf");
+  }
+}*/
