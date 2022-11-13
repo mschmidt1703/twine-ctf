@@ -1,6 +1,11 @@
 :: CTF 4 {"position":"1000,425","size":"100,100"}
 <style>
 
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
 
 tw-story {
  background: linear-gradient(#330033, #000000);
@@ -10,24 +15,19 @@ tw-story {
  width: 100%
 }
 
-.giant {
- font-size:5.5em;
-}
 
 tw-passage {
- width: 80%;
- max-width: 1000px;
+ width: 70em;
+ height: 50em;
  margin:auto;
- padding:20px;
+ padding: 20px;
  border: solid #000 0.05em;
  border-radius: 0.2em;
  font-family: Arial, Helvetica, sans-serif;
- font-size:0.9rem; color:#000;
- text-align:left;
+ font-size:1.2rem; color:#000;
+ text-align: left;
  background-color:#a6a6a6;
  box-shadow: #000 0.5em 0.5em 0;
- line-height:20px; 
-
 }
 
 .webbrowser {
@@ -38,52 +38,84 @@ tw-passage {
   padding-right: 0px;
   padding-bottom: 0px;
   padding-left: 0px;
-  margin: 20px;
   margin:auto;
   background: white;
-  margin: auto;
 }
 
 #tab {
     background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
     padding: 0px;
-    width: 702px;
+    width: 55em;
+    height: 21em;
     margin: 0px;
     border: 1px solid #333;
-    border-radius: 8px 4px 0 0;
 }
 
-#url {
-	
+.url {
+	padding: 0.1em;
+    align-self: center;
 }
 
-.example-controls {
+.controls {
     margin: 0 auto;
     background-color: #f4f4f4;
     border: 1px solid #f0f0f0;
-    width: 694px;
     padding: 2px 3px;
     border: 1px solid #999;
     border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
 
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
 </style>
+
+<script> setup.ctf4(); </script>
 
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
-Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+[more...]<more1|
 
-In this challenge yout can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should start  pop up.
+{
+|workarea>[]
+(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+<tw-consecutive-br></tw-consecutive-br>
+[more...]<more2|]
 
+(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
+<tw-consecutive-br></tw-consecutive-br>
+[more...]<more3|]
+
+(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
+}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
 	<div id="tab">
-		<div class="example-controls">
-            <span class="url">URL</span>
-            <input id="input1" class="urlbar" type="text" value="">
-            <input class="urlbutton" type="Submit" value="Go" onclick="updateFrame(1); return false;">
-            <iframe src="https://google.de" title="Google"></iframe>
-		</div>
+		<div class="controls">
+            <span class="url label">URL:</span>
+            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" value="Surf">
+           </div>
+            <iframe src="static/ctf4/s.html" title="Google"></iframe>
     </div>
 
 </div>

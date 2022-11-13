@@ -1,16 +1,12 @@
 :: Story JavaScript [script]
 window.setup = window.setup || {};
 
+/* # CTF 1 Start */
 
-/*onclick="setup.test()"
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 
-setup.test = function() {
-	console.log("Hello World");
-  	alert("Test");
 }
-*/
-
- /*onclick="setup.onLoad()"*/
 
 function eventOnClickHandler(event) {
 	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
@@ -20,33 +16,35 @@ function eventOnClickHandler(event) {
   
 }
 
+/* # CTF 1 End */
 
-setup.start = function() {
-	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 
+
+/* # CTF 4 Start */
+setup.ctf4 = function() {
+  	   document.getElementById("surfbutton").addEventListener("click", updateFrame());
 }
 
-/*   alert("sdfdsf")
-   alert(document.getElementById("ssss"));*/
 
+function updateFrame() {
+  var urlbar = document.getElementById('input'); 
+  var url = urlbar.value;
+  
+  // Make sure that the URL points to the frame of the current level
+  //var frameLink = document.createElement('a');
+  //frameLink.href = url;
 
-/*
-window.onload = function(){
-   alert("sdfdsf");
-   alert(document.getElementById("ssss"));
+  if (!url.startsWith('https://twine.ctf/ctf4.html')) {
+       alert("Sorry, I can't navigate the frame to that URL.");
+       return;
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf4.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf4/s.html" + arg; 
+    frame.contentWindow.postMessage(url, "*");
+  }
+
 };
 
 
-document.addEventListener("DOMContentLoaded", function(event){
-	alert("sdfdsf");
-    alert(document.getElementById("ssss"));
-
-});
-
-document.onreadystatechange = function () {
-     alert("sdfdsf");
-
-  if (document.readyState == "complete") {
-    alert("sdfdsf");
-  }
-}*/
+/* # CTF 4 End */

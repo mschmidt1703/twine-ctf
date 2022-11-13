@@ -9,18 +9,14 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="10" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+<tw-storydata name="twine-ctf" startnode="4" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
+/* # CTF 1 Start */
 
-/*onclick="setup.test()"
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 
-setup.test = function() {
-	console.log("Hello World");
-  	alert("Test");
 }
-*/
-
- /*onclick="setup.onLoad()"*/
 
 function eventOnClickHandler(event) {
 	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
@@ -30,36 +26,39 @@ function eventOnClickHandler(event) {
   
 }
 
+/* # CTF 1 End */
 
-setup.start = function() {
-	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 
+
+/* # CTF 4 Start */
+setup.ctf4 = function() {
+  	   document.getElementById("surfbutton").addEventListener("click", updateFrame());
 }
 
-/*   alert("sdfdsf")
-   alert(document.getElementById("ssss"));*/
 
+function updateFrame() {
+  var urlbar = document.getElementById('input'); 
+  var url = urlbar.value;
+  
+  // Make sure that the URL points to the frame of the current level
+  //var frameLink = document.createElement('a');
+  //frameLink.href = url;
 
-/*
-window.onload = function(){
-   alert("sdfdsf");
-   alert(document.getElementById("ssss"));
+  if (!url.startsWith('https://twine.ctf/ctf4.html')) {
+       alert("Sorry, I can't navigate the frame to that URL.");
+       return;
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf4.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf4/s.html" + arg; 
+    frame.contentWindow.postMessage(url, "*");
+  }
+
 };
 
 
-document.addEventListener("DOMContentLoaded", function(event){
-	alert("sdfdsf");
-    alert(document.getElementById("ssss"));
-
-});
-
-document.onreadystatechange = function () {
-     alert("sdfdsf");
-
-  if (document.readyState == "complete") {
-    alert("sdfdsf");
-  }
-}*/</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+/* # CTF 4 End */
+</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;!--TODO Link--&gt;
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt; 
@@ -89,7 +88,7 @@ document.onreadystatechange = function () {
     &lt;/form&gt;
   &lt;/div&gt;
 
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 2" tags="" position="800,175" size="100,100">crf2</tw-passagedata><tw-passagedata pid="3" name="CTF 3" tags="" position="800,325" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="4" name="CTF 4" tags="" position="800,475" size="100,100">ctf4</tw-passagedata><tw-passagedata pid="5" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="6" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="7" name="CTF 7" tags="" position="1375,425" size="100,100">ctf7</tw-passagedata><tw-passagedata pid="8" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="9" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="10" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 2" tags="" position="800,175" size="100,100">crf2</tw-passagedata><tw-passagedata pid="3" name="CTF 3" tags="" position="800,325" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="4" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
 #first    {color: red;}
@@ -123,9 +122,131 @@ Overview of all challanges with explanations:
 [[CTF 9-&gt;CTF 9]]
 
 So soll das, CSS ist der King!
-[[&lt;button class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge 1&lt;/button&gt; -&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="11" name="Story" tags="" position="175,350" size="100,100">Hier beginnt die Story!
+[[&lt;button class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge 1&lt;/button&gt; -&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1000,425" size="100,100">&lt;style&gt;
 
-Main Start</tw-passagedata><tw-passagedata pid="12" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="Story2" tags="" position="350,575" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata></tw-storydata>
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background: linear-gradient(#330033, #000000);
+ margin: 0;
+ padding: 50px;
+ white-space: normal;
+ width: 100%
+}
+
+
+tw-passage {
+ width: 70em;
+ height: 50em;
+ margin:auto;
+ padding: 20px;
+ border: solid #000 0.05em;
+ border-radius: 0.2em;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; color:#000;
+ text-align: left;
+ background-color:#a6a6a6;
+ box-shadow: #000 0.5em 0.5em 0;
+}
+
+.webbrowser {
+  width: 300px;
+  min-width: fit-content;
+  border: 2px solid black;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin:auto;
+  background: white;
+}
+
+#tab {
+    background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
+    padding: 0px;
+    width: 55em;
+    height: 21em;
+    margin: 0px;
+    border: 1px solid #333;
+}
+
+.url {
+	padding: 0.1em;
+    align-self: center;
+}
+
+.controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
+
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
+&lt;/style&gt;
+
+&lt;script&gt; setup.ctf4(); &lt;/script&gt;
+
+
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+[more...]&lt;more1|
+
+{
+|workarea&gt;[]
+(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+[more...]&lt;more2|]
+
+(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+[more...]&lt;more3|]
+
+(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
+}
+
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;div class=&quot;webbrowser&quot;&gt; 
+	&lt;div id=&quot;tab&quot;&gt;
+		&lt;div class=&quot;controls&quot;&gt;
+            &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
+            &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot;&gt;
+            &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; value=&quot;Surf&quot;&gt;
+           &lt;/div&gt;
+            &lt;iframe src=&quot;static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+</tw-passagedata><tw-passagedata pid="6" name="Story" tags="" position="175,350" size="100,100">Hier beginnt die Story!
+
+Main Start</tw-passagedata><tw-passagedata pid="7" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="Story2" tags="" position="300,550" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata><tw-passagedata pid="9" name="CTF 5" tags="" position="1375,325" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="10" name="CTF 6" tags="" position="1525,325" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="11" name="CTF 7" tags="" position="1675,325" size="100,100">ctf7</tw-passagedata><tw-passagedata pid="12" name="CTF 8" tags="" position="575,650" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="13" name="CTF 9" tags="" position="575,800" size="100,100">ctf9</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
