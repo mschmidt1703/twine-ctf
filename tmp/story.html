@@ -31,22 +31,30 @@ function eventOnClickHandler(event) {
 
 
 /* # CTF 4 Start */
-setup.ctf4 = function() {
-  	   document.getElementById("surfbutton").addEventListener("click", updateFrame());
-}
 
+var result = 0;
 
-function updateFrame() {
-  var urlbar = document.getElementById('input'); 
-  var url = urlbar.value;
-  
+setup.ctf4_giveResult = function () {
+    return result;
+};
+
+setup.ctf4_updateFrame = function (frameNum, url) {
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
   // Make sure that the URL points to the frame of the current level
-  //var frameLink = document.createElement('a');
-  //frameLink.href = url;
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
 
-  if (!url.startsWith('https://twine.ctf/ctf4.html')) {
-       alert("Sorry, I can't navigate the frame to that URL.");
-       return;
+  if (!url.startsWith('https://twine.ctf/ctf4.html') || !url.endsWith) {
+       alert("Sorry, I can't open this URL in a frame.");
+    	urlbar.value = "https://twine.ctf/ctf4.html";
+        var frame = document.querySelector('iframe');
+        frame.src = "static/ctf4/s.html"; 
+   		frame.contentWindow.postMessage(url, "*");
+       return
   } else {
     var arg = url.replace("https://twine.ctf/ctf4.html", "");
     var frame = document.querySelector('iframe');
@@ -56,8 +64,37 @@ function updateFrame() {
 
 };
 
+window.addEventListener("message", function(event) {
+  if (event.data == "js_inserted") {
+    levelSucceed();
+    return;
+  }
 
-/* # CTF 4 End */</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+  updateURI(event.data);
+}, false);
+
+
+function updateURI(value) {
+  var urlbar = document.getElementById('input');
+  urlbar.value = "https://twine.ctf/ctf4.html";
+}
+
+function levelSucceed() {
+	alert("Yes success");
+    Harlowe.variable('$result',1);
+}
+
+
+/* # CTF 4 End */
+
+
+
+
+
+/* Marko API */
+// Harlowe Macro Framework, by Chapel; version 1.0.2
+;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;!--TODO Link--&gt;
 
 &lt;style&gt;
@@ -195,8 +232,9 @@ iframe {
 }
 &lt;/style&gt;
 
-&lt;script&gt; setup.ctf4(); &lt;/script&gt;
-
+(set: $a to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
+I (link-reveal: &quot;solution&quot;)[(show: ?solution1)] 
+|solution1)[$a]
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -216,6 +254,7 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 }
 
 
+
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt; 
@@ -223,12 +262,14 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 		&lt;div class=&quot;controls&quot;&gt;
             &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
             &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot;&gt;
-            &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; value=&quot;Surf&quot;&gt;
+            &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Surf&quot;&gt;
            &lt;/div&gt;
             &lt;iframe src=&quot;static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="6" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="7" name="CTF 7" tags="" position="1375,425" size="100,100">(replace: ?Sidebar)[Go Back]
+&lt;/div&gt;
+
+Click here to check if you have completed the challenge (click: &quot;here&quot;)[(print: $result)]</tw-passagedata><tw-passagedata pid="5" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="6" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="7" name="CTF 7" tags="" position="1375,425" size="100,100">(replace: ?Sidebar)[Go Back]
 
 &lt;h1&gt; What is my name?&lt;/h1&gt;
 
@@ -257,7 +298,7 @@ Enter memory trigger: ---
 
 
 
-&lt;link rel=&quot;stylesheet&quot; href=out/css/ctf7/style.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="8" name="First Shelf" tags="" position="350,450" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="9" name="Second Shelf" tags="" position="475,450" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="10" name="Third Shelf" tags="" position="600,450" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="11" name="Fourth Shelf" tags="" position="725,450" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="12" name="Fifth Shelf" tags="" position="850,450" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="13" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="14" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="15" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="8" name="First Shelf" tags="" position="350,450" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="9" name="Second Shelf" tags="" position="475,450" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="10" name="Third Shelf" tags="" position="600,450" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="11" name="Fourth Shelf" tags="" position="725,450" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="12" name="Fifth Shelf" tags="" position="850,450" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="13" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="14" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="15" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
 #first    {color: red;}

@@ -85,8 +85,9 @@ iframe {
 }
 </style>
 
-<script> setup.ctf4(); </script>
-
+(set: $a to "<#script> alert(\"XSS\");</script>")
+I (link-reveal: "solution")[(show: ?solution1)] 
+|solution1)[$a]
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -106,6 +107,7 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 }
 
 
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
@@ -113,9 +115,11 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 		<div class="controls">
             <span class="url label">URL:</span>
             <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
-            <input id="surfbutton" class="button is-success urlbutton" type="Submit" value="Surf">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
            </div>
             <iframe src="static/ctf4/s.html" title="Google"></iframe>
     </div>
 
 </div>
+
+Click here to check if you have completed the challenge (click: "here")[(print: $result)]

@@ -1,0 +1,7 @@
+<script> alert("XSS");</script>
+
+<a href="google.de > hier</a>
+
+<iframe src="javascript:alert(0)"></iframe>
+
+<script> setup.ctf4_giveResult() </script>

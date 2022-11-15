@@ -1,30 +1,54 @@
 <html>
-<head> 
+<head> </head>
 
 <script>
 parent.postMessage(window.location.toString(), "*");
 
-/* Override window.alert */
+/* safe old alert */
 var originalAlert = window.alert;
-window.alert = function(s) {
-  parent.postMessage("success", "*");
-  originalAlert("sdfd")
-  console.log("sdfd")
+
+/* Override alert with parent.postMessage for ctf*/
+msg = function(s) {
+  parent.postMessage("js_inserted", "*");
   setTimeout(function() { 
-    originalAlert("Congratulations, you executed an alert:\n\n" 
-      + s + "\n\nYou can now advance to the next level.");
+    originalAlert("Congratulations challenge succeed");
   }, 50);
 }
 
-
-function test(){
-	console.log("test");
-	alert("test");
+function search() {
+  	var div = document.getElementById('container'); 
+	div.style.display = "none";	
+	
+	var input = document.getElementById('query').value;
+	
+	/*var message = "Sorry, no results were found for <b>" + input + "</b>"
+	message += " <a href='?'>Try again</a>"
+		
+	var textbox = document.createElement('textbox');
+	var div_r = document.getElementById('result'); 
+	textbox.innerHTML = message;  
+	
+	document.getElementById('result').appendChild(textbox);	*/
+	
+	
+	
+	
+	//Alternative
+	var message = "Sorry, no results were found for <b>" + input + "</b>"
+	message += " <a href='?'>Try again</a>"
+	
+	var textbox = document.createElement('textbox');
+	var div_r = document.getElementById('result'); 
+	textbox.innerHTML = message;  
+	
+	document.getElementById('result').appendChild(textbox);	
+		
+	if (input == "\<script\> alert(\"XSS\");\</script\>"){
+		msg("success");
+	} 
 }
+
 </script>
-
-</head>
-
 
 <style>
 
@@ -80,18 +104,17 @@ function test(){
 #ctf4 div {
   margin-top: 14px;
 }
+
 </style>
 
-
-
-
 <body id="ctf4">
+<div><div id="result">
+<div id="container">
     <img src="../../img/ctf4/www.png">
       <div>
-		
-		  <input id="query" name="query" placeholder="Enter search here..." onfocus="this.value=''">
-		  <input id="button" type="submit" value="Search" onclick="test()">
-
+		<input id="query" name="query" placeholder="Enter query here..." onfocus="this.value=''">
+		<input id="button" type="submit" value="Search" onclick="search()">
     </div>
+</div>
 </body>
 </html>
