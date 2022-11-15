@@ -1,16 +1,5 @@
 :: CTF 7 {"position":"1375,425","size":"100,100"}
 
-:: StoryData
-{
-	"ifid": "0966176F-DDD7-47DB-AF05-D3CBB41238F9",
-	"format": "Harlowe",
-	"format-version": "3.3.3",
-	"start": "Unbenannter Abschnitt",
-	"zoom": 1
-}
-
-
-:: Unbenannter Abschnitt {"position":"600,250","size":"100,100"}
 (replace: ?Sidebar)[Go Back]
 
 <h1> What is my name?</h1>
@@ -40,7 +29,7 @@ Enter memory trigger: ---
 
 
 
-<link rel="stylesheet" href=C:\Users\obakd\Documents\FH Wedel\IT-Sicherheit Projekt\twine-ctf\out\CSS\ctf7></link>
+<link rel="stylesheet" href=css/ctf7/styles.css></link>
 
 
 :: First Shelf {"position":"350,450","size":"100,100"}
