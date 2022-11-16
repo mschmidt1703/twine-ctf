@@ -31,7 +31,7 @@ br {
 
 
 <html>
-<h1 style="padding:20px">Your forgot your password for your pc, maybe it is possible to find it, somewhere else.  </h1>
+<h1 style="padding:20px">Your forgot your password, maybe it is possible to find it, somewhere else.  </h1>
 <a></a>
 <div class="container is-fluid login-contianer">
    <form method="POST" class="box twine-background-login">
