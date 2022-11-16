@@ -1,6 +1,5 @@
 :: CTF 7 {"position":"1375,425","size":"100,100"}
 
-(replace: ?Sidebar)[Go Back]
 
 <h1> What is my name?</h1>
 
@@ -50,5 +49,4 @@ This search has lead me nowhere sofar..
 
 :: Fifth Shelf {"position":"850,450","size":"100,100"}
 yup.. I did all of that for nothing :(
-
 
