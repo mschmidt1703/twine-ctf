@@ -1,0 +1,391 @@
+:: StoryTitle
+twine-ctf
+
+
+:: StoryData
+{
+	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
+	"format": "Harlowe",
+	"format-version": "3.3.3",
+	"start": "MainPage",
+	"zoom": 1
+}
+
+
+:: Story JavaScript [script]
+window.setup = window.setup || {};
+
+/* # CTF 1 Start */
+
+setup.start = function() {
+	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
+
+}
+
+function eventOnClickHandler(event) {
+	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+
+  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  
+}
+
+/* # CTF 1 End */
+
+
+
+/* # CTF 4 Start */
+setup.ctf4 = function() {
+  	   document.getElementById("surfbutton").addEventListener("click", updateFrame());
+}
+
+
+function updateFrame() {
+  var urlbar = document.getElementById('input'); 
+  var url = urlbar.value;
+  
+  // Make sure that the URL points to the frame of the current level
+  //var frameLink = document.createElement('a');
+  //frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf4.html')) {
+       alert("Sorry, I can't navigate the frame to that URL.");
+       return;
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf4.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf4/s.html" + arg; 
+    frame.contentWindow.postMessage(url, "*");
+  }
+
+};
+
+
+/* # CTF 4 End */
+
+
+:: CTF 1 {"position":"800,25","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<!--TODO Link-->
+
+<style>
+.twine-background-login {
+	background-color:  white;
+	width: 500px;
+}
+
+.login-contianer{
+	background-color:  #808080;	
+    text-align: -webkit-center;
+	height: 500px;
+	padding-top: 4em;
+}
+
+#ui-bar {
+display: none;
+}
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+</style>
+
+
+<script> setup.start(); </script>
+
+
+<html>
+<h1 style="padding:20px">Your forgot your password for your pc, maybe it is possible to find it, somewhere else.  </h1>
+<a></a>
+<div class="container is-fluid login-contianer">
+   <form method="POST" class="box twine-background-login">
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control">
+          <input class="input" id="user" for"username" type="text" placeholder="...">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" id="password" for"password" type="password" placeholder="...">
+        </div>
+      </div>
+      <button id="ssss" class="button is-primary">Sign in</button>
+    </form>
+  </div>
+
+</html>
+
+
+:: CTF 2 {"position":"800,175","size":"100,100"}
+<h3>Do I live alone? </h3>
+
+Great! Now you know your name, but nothing else. 
+
+After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on..
+
+<img src= "./img/ctf2/ctf2.jpg"></img>
+
+Maybe taking a closer look at it is not a bad idea. 
+
+
+
+Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
+
+
+:: CTF 3 {"position":"800,325","size":"100,100"}
+ctf3
+
+
+:: CTF 4 {"position":"1000,425","size":"100,100"}
+<style>
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background: linear-gradient(#330033, #000000);
+ margin: 0;
+ padding: 50px;
+ white-space: normal;
+ width: 100%
+}
+
+
+tw-passage {
+ width: 70em;
+ height: 50em;
+ margin:auto;
+ padding: 20px;
+ border: solid #000 0.05em;
+ border-radius: 0.2em;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; color:#000;
+ text-align: left;
+ background-color:#a6a6a6;
+ box-shadow: #000 0.5em 0.5em 0;
+}
+
+.webbrowser {
+  width: 300px;
+  min-width: fit-content;
+  border: 2px solid black;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin:auto;
+  background: white;
+}
+
+#tab {
+    background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
+    padding: 0px;
+    width: 55em;
+    height: 21em;
+    margin: 0px;
+    border: 1px solid #333;
+}
+
+.url {
+	padding: 0.1em;
+    align-self: center;
+}
+
+.controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
+
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
+</style>
+
+<script> setup.ctf4(); </script>
+
+
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+[more...]<more1|
+
+{
+|workarea>[]
+(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+<tw-consecutive-br></tw-consecutive-br>
+[more...]<more2|]
+
+(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
+<tw-consecutive-br></tw-consecutive-br>
+[more...]<more3|]
+
+(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
+}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<div class="webbrowser"> 
+	<div id="tab">
+		<div class="controls">
+            <span class="url label">URL:</span>
+            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" value="Surf">
+           </div>
+            <iframe src="static/ctf4/s.html" title="Google"></iframe>
+    </div>
+
+</div>
+
+
+:: CTF 5 {"position":"1125,425","size":"100,100"}
+ctf5
+
+
+:: CTF 6 {"position":"1250,425","size":"100,100"}
+ctf6
+
+
+:: CTF 7 {"position":"1375,425","size":"100,100"}
+(replace: ?Sidebar)[Go Back]
+
+<h1> What is my name?</h1>
+
+<body>
+<img src= "https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg">
+(enchant: ?Passage, (text-color: white) + (background: black))
+Although you're not  quite sure, but it seems like this place you woke up in is your appartment. Great! There is no better place where you can find  personal information in than your own home. So, you start with the biggest question on your mind. who even are you?
+
+In the back of the living room, you spot a book self filled with books and personal documents. It seems like a good place to start your search in. So you go through the shelfs one by one looking for clues on your name: 
+
+[[First Shelf]] 
+
+[[Second Shelf]]
+
+[[Third Shelf]]
+
+[[Fourth Shelf]]
+
+[[Fifth Shelf]]
+
+<!--My first name ist: John -->
+
+Although this seems like an obvious place for finding out your name, It is not as easy as you expected..
+Hint: Further ''inspection'' may be required...
+did you find out your name: 
+Enter Flag here: ---
+</body>
+
+
+
+<link rel="stylesheet" href=css/ctf7/styles.css></link>
+
+
+:: First Shelf {"position":"350,450","size":"100,100"}
+Nothing really usefull here
+
+
+:: Second Shelf {"position":"475,450","size":"100,100"}
+No usefull information here..
+
+
+:: Third Shelf {"position":"600,450","size":"100,100"}
+Nothing here either..
+
+
+:: Fourth Shelf {"position":"725,450","size":"100,100"}
+This search has lead me nowhere sofar..
+
+
+:: Fifth Shelf {"position":"850,450","size":"100,100"}
+yup.. I did all of that for nothing :(
+
+
+:: CTF 8 {"position":"950,625","size":"100,100"}
+ctf8
+
+
+:: CTF 9 {"position":"1100,625","size":"100,100"}
+On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
+
+
+:: MainPage {"position":"175,100","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<style>
+#first    {color: red;}
+</style>
+
+Hello, Welcome to our CTF Challenge Game. Here you will get the chance to learn how to solve some fun CTF-Challanges.   
+Capture the Flag (CTF) is a cybersecurity competition that will help you improve your cyber security skills. 
+
+<h1>January 2005</h1>
+<p> You just woke up in a dark confined space. After some struggle you manage to figure out a way out of your litte prison. You push so hard on the walls surrounding you until they break.  It was a closet you were locked up in. You feel and look like crap. And the worst part ist, you absolutly don't have  the slightest idea on who you are and what lead you here.
+So, you start your journey to discover the dark secrets of your past. </p>
+
+complete the levels to find out the keys that will help you recover your memory. The challagnes difficulty will progress along the story line. But no worries. You will have plenty of hints to guide you alog the way.
+Are you ready for this adventure?
+[[Let's Go!->Story]]
+Good luck!
+
+<!--Comment Text
+<button id="first" class="button is-rounded">Rounded</button>
+<button class="button is-primary is-rounded">Rounded</button>
+<button class="button is-link is-rounded">Rounded</button>
+<button class="button is-info is-rounded">Rounded</button>
+<button class="button is-success is-rounded">Rounded</button>
+<button class="button is-danger is-rounded">Rounded</button>
+-->
+
+Wanna skip the story? No worries ;) Here you can find our challange overview:
+[[CTF 1->CTF 1]]
+[[CTF 2->CTF 2]]
+[[CTF 3->CTF 3]]
+[[CTF 4->CTF 4]]
+[[CTF 5->CTF 5]]
+[[CTF 6->CTF 6]]
+[[CTF 7->CTF 7]]
+[[CTF 8->CTF 8]]
+[[CTF 9->CTF 9]]
+
+[[<button class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
+
+
+:: Story {"position":"175,350","size":"100,100"}
+Hier beginnt die Story!
+
+Main Start
+
+
+:: Story1 {"position":"150,500","size":"100,100"}
+
+
+:: Story2 {"position":"350,575","size":"100,100"}
+[[CTF 3->CTF 3]]
+
+

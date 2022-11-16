@@ -19,12 +19,17 @@ twine-ctf
 #first    {color: red;}
 </style>
 
-Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
-...
-Olea schreib mal was schönes
-[[Start Story->Story]]
+Hello, Welcome to our CTF Challenge Game. Here you will get the chance to learn how to solve some fun CTF-Challanges.   
+Capture the Flag (CTF) is a cybersecurity competition that will help you improve your cyber security skills. 
 
-Hello World
+<h1>January 2005</h1>
+<p> You just woke up in a dark confined space. After some struggle you manage to figure out a way out of your litte prison. You push so hard on the walls surrounding you until they break.  It was a closet you were locked up in. You feel and look like crap. And the worst part ist, you absolutly don't have  the slightest idea on who you are and what lead you here.
+So, you start your journey to discover the dark secrets of your past. </p>
+
+complete the levels to find out the keys that will help you recover your memory. The challagnes difficulty will progress along the story line. But no worries. You will have plenty of hints to guide you alog the way.
+Are you ready for this adventure?
+[[Let's Go!->Story]]
+Good luck!
 
 <!--Comment Text
 <button id="first" class="button is-rounded">Rounded</button>
@@ -35,7 +40,7 @@ Hello World
 <button class="button is-danger is-rounded">Rounded</button>
 -->
 
-Overview of all challanges with explanations:
+Wanna skip the story? No worries ;) Here you can find our challange overview:
 [[CTF 1->CTF 1]]
 [[CTF 2->CTF 2]]
 [[CTF 3->CTF 3]]
@@ -46,9 +51,7 @@ Overview of all challanges with explanations:
 [[CTF 8->CTF 8]]
 [[CTF 9->CTF 9]]
 
-So soll das, CSS ist der King!
 [[<button class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
-
 
 
 :: Story {"position":"175,350","size":"100,100"}
