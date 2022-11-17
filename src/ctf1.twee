@@ -3,16 +3,26 @@
 <!--TODO Link-->
 
 <style>
+
+tw-story {
+ /*background-image: url('img/4all/background_landscape.svg') !important; */
+ background-image: url('img/ctf1/pc_rahmen.png');
+ background-size: 120%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .twine-background-login {
+	position: inherit;
 	background-color:  white;
 	width: 500px;
 }
 
 .login-contianer{
-	background-color:  #808080;	
     text-align: -webkit-center;
 	height: 500px;
-	padding-top: 4em;
 }
 
 #ui-bar {
@@ -31,20 +41,20 @@ br {
 
 
 <html>
-<h1 style="padding:20px">Your forgot your password, maybe it is possible to find it, somewhere else.  </h1>
+<h1 style="margin-button:100px">Your forgot your password, maybe it is possible to find it, somewhere else.  </h1>
 <a></a>
-<div class="container is-fluid login-contianer">
+<div class="container is-fluidno login-contianer">
    <form method="POST" class="box twine-background-login">
       <div class="field">
         <label class="label">Username</label>
         <div class="control">
-          <input class="input" id="user" for"username" type="text" placeholder="...">
+          <input class="input" id="user" type="text" placeholder="some name">
         </div>
       </div>
       <div class="field">
         <label class="label">Password</label>
         <div class="control">
-          <input class="input" id="password" for"password" type="password" placeholder="...">
+          <input class="input" id="password" type="password" placeholder="some password">
         </div>
       </div>
       <button id="ssss" class="button is-primary">Sign in</button>
