@@ -12,6 +12,24 @@ twine-ctf
 }
 
 
+:: Story Stylesheet [stylesheet]
+/*Button redo undo*/
+tw-icon{
+     color: #ad00d8;
+}
+
+
+/**/
+tw-story {
+ background-image: url('img/4all/background_landscape.svg');
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 :: Story JavaScript [script]
 window.setup = window.setup || {};
 
@@ -85,7 +103,8 @@ function updateURI(value) {
 
 function levelSucceed() {
 	alert("Yes success");
-    Harlowe.variable('$result',1);
+    Harlowe.variable('$ctf4_result',1); 
+  	Harlowe.goto("CT4_end")
 }
 
 
@@ -108,9 +127,8 @@ function levelSucceed() {
 <style>
 
 tw-story {
- /*background-image: url('img/4all/background_landscape.svg') !important; */
- background-image: url('img/ctf1/pc_rahmen.png');
- background-size: 120%;
+ background-image: url('img/ctf1/pc_rahmen1.png');
+ background-size: 110%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -137,15 +155,20 @@ br {
 	visibility: hidden;
 	display: none;
 }
+
+.headline {
+    margin-top: -7rem;
+    margin-bottom: 7rem;
+}
+
 </style>
 
 
 <script> setup.start(); </script>
 
 
-<html>
-<h1 style="margin-button:100px">Your forgot your password, maybe it is possible to find it, somewhere else.  </h1>
-<a></a>
+<div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
+
 <div class="container is-fluidno login-contianer">
    <form method="POST" class="box twine-background-login">
       <div class="field">
@@ -164,8 +187,6 @@ br {
     </form>
   </div>
 
-</html>
-
 
 :: CTF 10 {"position":"1100,725","size":"100,100"}
 ctf10
@@ -179,7 +200,7 @@ crf2
 ctf3
 
 
-:: CTF 4 {"position":"1000,425","size":"100,100"}
+:: CTF 4 {"position":"1300,100","size":"100,100"}
 <style>
 
 br {
@@ -189,7 +210,13 @@ br {
 }
 
 tw-story {
- background: linear-gradient(#330033, #000000);
+ background-image: url('img/ctf4/pc_rahmen1.png');
+  background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  
  margin: 0;
  padding: 50px;
  white-space: normal;
@@ -266,9 +293,8 @@ iframe {
 }
 </style>
 
-(set: $a to "<#script> alert(\"XSS\");</script>")
-I (link-reveal: "solution")[(show: ?solution1)] 
-|solution1)[$a]
+
+
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -303,7 +329,12 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 
 </div>
 
-Click here to check if you have completed the challenge (click: "here")[(print: $result)]
+(Set: _solution to "<#script> alert(\"XSS\");</script>")
+
+(if: $debug is true)[solution is: (click: "solution")[_solution]]\
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+Click here to check if you have completed the challenge (click: "Click here")[(print: $ctf4_result)]
 
 
 :: CTF 5 {"position":"1125,425","size":"100,100"}
@@ -387,6 +418,11 @@ Olea schreib mal was schönes
 
 Hello World
 
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+<!--(Set: $debug to false)-->
+
+
 <!--Comment Text
 <button id="first" class="button is-rounded">Rounded</button>
 <button class="button is-primary is-rounded">Rounded</button>
@@ -423,5 +459,9 @@ Main Start
 
 :: Story2 {"position":"350,575","size":"100,100"}
 [[CTF 3->CTF 3]]
+
+
+:: CT4_end {"position":"1600,100","size":"100,100"}
+You made it!
 
 

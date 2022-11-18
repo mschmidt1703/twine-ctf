@@ -5,9 +5,8 @@
 <style>
 
 tw-story {
- /*background-image: url('img/4all/background_landscape.svg') !important; */
- background-image: url('img/ctf1/pc_rahmen.png');
- background-size: 120%;
+ background-image: url('img/ctf1/pc_rahmen1.png');
+ background-size: 110%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -34,15 +33,20 @@ br {
 	visibility: hidden;
 	display: none;
 }
+
+.headline {
+    margin-top: -7rem;
+    margin-bottom: 7rem;
+}
+
 </style>
 
 
 <script> setup.start(); </script>
 
 
-<html>
-<h1 style="margin-button:100px">Your forgot your password, maybe it is possible to find it, somewhere else.  </h1>
-<a></a>
+<div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
+
 <div class="container is-fluidno login-contianer">
    <form method="POST" class="box twine-background-login">
       <div class="field">
@@ -60,5 +64,3 @@ br {
       <button id="ssss" class="button is-primary">Sign in</button>
     </form>
   </div>
-
-</html>

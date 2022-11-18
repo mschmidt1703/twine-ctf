@@ -71,7 +71,8 @@ function updateURI(value) {
 
 function levelSucceed() {
 	alert("Yes success");
-    Harlowe.variable('$result',1);
+    Harlowe.variable('$ctf4_result',1); 
+  	Harlowe.goto("CT4_end")
 }
 
 

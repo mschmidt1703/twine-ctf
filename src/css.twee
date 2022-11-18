@@ -1,0 +1,16 @@
+:: Story Stylesheet [stylesheet]
+/*Button redo undo*/
+tw-icon{
+     color: #ad00d8;
+}
+
+
+/**/
+tw-story {
+ background-image: url('img/4all/background_landscape.svg');
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}

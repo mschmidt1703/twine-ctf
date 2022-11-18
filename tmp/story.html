@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="16" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="17" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* # CTF 1 Start */
 
@@ -81,7 +81,8 @@ function updateURI(value) {
 
 function levelSucceed() {
 	alert("Yes success");
-    Harlowe.variable('$result',1);
+    Harlowe.variable('$ctf4_result',1); 
+  	Harlowe.goto("CT4_end")
 }
 
 
@@ -100,9 +101,8 @@ function levelSucceed() {
 &lt;style&gt;
 
 tw-story {
- /*background-image: url(&#39;img/4all/background_landscape.svg&#39;) !important; */
- background-image: url(&#39;img/ctf1/pc_rahmen.png&#39;);
- background-size: 120%;
+ background-image: url(&#39;img/ctf1/pc_rahmen1.png&#39;);
+ background-size: 110%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -129,15 +129,20 @@ br {
 	visibility: hidden;
 	display: none;
 }
+
+.headline {
+    margin-top: -7rem;
+    margin-bottom: 7rem;
+}
+
 &lt;/style&gt;
 
 
 &lt;script&gt; setup.start(); &lt;/script&gt;
 
 
-&lt;html&gt;
-&lt;h1 style=&quot;margin-button:100px&quot;&gt;Your forgot your password, maybe it is possible to find it, somewhere else.  &lt;/h1&gt;
-&lt;a&gt;&lt;/a&gt;
+&lt;div class=&quot;headline&quot;&gt;Your forgot your password, maybe it is possible to find it, somewhere else. &lt;/div&gt;
+
 &lt;div class=&quot;container is-fluidno login-contianer&quot;&gt;
    &lt;form method=&quot;POST&quot; class=&quot;box twine-background-login&quot;&gt;
       &lt;div class=&quot;field&quot;&gt;
@@ -154,9 +159,7 @@ br {
       &lt;/div&gt;
       &lt;button id=&quot;ssss&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
     &lt;/form&gt;
-  &lt;/div&gt;
-
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,175" size="100,100">crf2</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,325" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1000,425" size="100,100">&lt;style&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,175" size="100,100">crf2</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,325" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1300,100" size="100,100">&lt;style&gt;
 
 br {
 	max-height: 0px;
@@ -165,7 +168,13 @@ br {
 }
 
 tw-story {
- background: linear-gradient(#330033, #000000);
+ background-image: url(&#39;img/ctf4/pc_rahmen1.png&#39;);
+  background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  
  margin: 0;
  padding: 50px;
  white-space: normal;
@@ -242,9 +251,8 @@ iframe {
 }
 &lt;/style&gt;
 
-(set: $a to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
-I (link-reveal: &quot;solution&quot;)[(show: ?solution1)] 
-|solution1)[$a]
+
+
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -279,7 +287,12 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 
 &lt;/div&gt;
 
-Click here to check if you have completed the challenge (click: &quot;here&quot;)[(print: $result)]</tw-passagedata><tw-passagedata pid="6" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="7" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="8" name="CTF 7" tags="" position="1375,425" size="100,100">&lt;h1&gt; What is my name?&lt;/h1&gt;
+(Set: _solution to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
+
+(if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]\
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+Click here to check if you have completed the challenge (click: &quot;Click here&quot;)[(print: $ctf4_result)]</tw-passagedata><tw-passagedata pid="6" name="CT4_end" tags="" position="1600,100" size="100,100">You made it!</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="8" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="9" name="CTF 7" tags="" position="1375,425" size="100,100">&lt;h1&gt; What is my name?&lt;/h1&gt;
 
 &lt;body&gt;
 &lt;img src= &quot;https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg&quot;&gt;
@@ -306,7 +319,7 @@ Enter memory trigger: ---
 
 
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="9" name="First Shelf" tags="" position="350,450" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="10" name="Second Shelf" tags="" position="475,450" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="11" name="Third Shelf" tags="" position="600,450" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="12" name="Fourth Shelf" tags="" position="725,450" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="13" name="Fifth Shelf" tags="" position="850,450" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="14" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="15" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="16" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="10" name="First Shelf" tags="" position="350,450" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="11" name="Second Shelf" tags="" position="475,450" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="12" name="Third Shelf" tags="" position="600,450" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="13" name="Fourth Shelf" tags="" position="725,450" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="14" name="Fifth Shelf" tags="" position="850,450" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="15" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="16" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="17" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
 #first    {color: red;}
@@ -318,6 +331,11 @@ Olea schreib mal was schönes
 [[Start Story-&gt;Story]]
 
 Hello World
+
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+&lt;!--(Set: $debug to false)--&gt;
+
 
 &lt;!--Comment Text
 &lt;button id=&quot;first&quot; class=&quot;button is-rounded&quot;&gt;Rounded&lt;/button&gt;
@@ -341,9 +359,9 @@ Overview of all challanges with explanations:
 [[CTF 10-&gt;CTF 10]]
 
 So soll das, CSS ist der King!
-[[&lt;button class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge 1&lt;/button&gt; -&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="17" name="Story" tags="" position="175,350" size="100,100">Hier beginnt die Story!
+[[&lt;button class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge 1&lt;/button&gt; -&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="18" name="Story" tags="" position="175,350" size="100,100">Hier beginnt die Story!
 
-Main Start</tw-passagedata><tw-passagedata pid="18" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="Story2" tags="" position="350,575" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata></tw-storydata>
+Main Start</tw-passagedata><tw-passagedata pid="19" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="Story2" tags="" position="350,575" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

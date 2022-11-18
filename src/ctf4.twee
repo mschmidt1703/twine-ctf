@@ -1,4 +1,4 @@
-:: CTF 4 {"position":"1000,425","size":"100,100"}
+:: CTF 4 {"position":"1300,100","size":"100,100"}
 <style>
 
 br {
@@ -8,7 +8,13 @@ br {
 }
 
 tw-story {
- background: linear-gradient(#330033, #000000);
+ background-image: url('img/ctf4/pc_rahmen1.png');
+  background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  
  margin: 0;
  padding: 50px;
  white-space: normal;
@@ -85,9 +91,8 @@ iframe {
 }
 </style>
 
-(set: $a to "<#script> alert(\"XSS\");</script>")
-I (link-reveal: "solution")[(show: ?solution1)] 
-|solution1)[$a]
+
+
 
 Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -122,4 +127,12 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 
 </div>
 
-Click here to check if you have completed the challenge (click: "here")[(print: $result)]
+(Set: _solution to "<#script> alert(\"XSS\");</script>")
+
+(if: $debug is true)[solution is: (click: "solution")[_solution]]\
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+Click here to check if you have completed the challenge (click: "Click here")[(print: $ctf4_result)]
+
+:: CT4_end {"position":"1600,100","size":"100,100"}
+You made it!

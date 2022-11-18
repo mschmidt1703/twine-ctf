@@ -26,6 +26,11 @@ Olea schreib mal was schönes
 
 Hello World
 
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+<!--(Set: $debug to false)-->
+
+
 <!--Comment Text
 <button id="first" class="button is-rounded">Rounded</button>
 <button class="button is-primary is-rounded">Rounded</button>
