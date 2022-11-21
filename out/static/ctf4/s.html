@@ -8,11 +8,8 @@ parent.postMessage(window.location.toString(), "*");
 var originalAlert = window.alert;
 
 /* Override alert with parent.postMessage for ctf*/
-msg = function(s) {
+window.alert = function(s) {
   parent.postMessage("js_inserted", "*");
-  setTimeout(function() { 
-    originalAlert("Congratulations challenge succeed");
-  }, 50);
 }
 
 function search() {
@@ -29,9 +26,7 @@ function search() {
 	textbox.innerHTML = message;  
 	
 	document.getElementById('result').appendChild(textbox);	*/
-	
-	
-	
+
 	
 	//Alternative
 	var message = "Sorry, no results were found for <b>" + input + "</b>"
@@ -43,9 +38,22 @@ function search() {
 	
 	document.getElementById('result').appendChild(textbox);	
 		
-	if (input == "\<script\> alert(\"XSS\");\</script\>"){
+	/*if (input == "\<script\> alert(\"XSS\");\</script\>"){
 		msg("success");
-	} 
+	} */
+	
+	console.log(input)
+
+	if ( (input.startsWith("\<script\>")) && (input.endsWith("\</script\>")) ) {
+		innerScript = input.replaceAll('\<script\>',"").replaceAll('\</script\>',"")
+		var myScript = document.createElement('script');
+		myScript.textContent = innerScript;
+		document.head.appendChild(myScript);
+	}
+	
+
+	
+	
 }
 
 </script>

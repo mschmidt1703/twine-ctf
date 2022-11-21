@@ -94,9 +94,8 @@ function updateURI(value) {
 }
 
 function levelSucceed() {
-	alert("Yes success");
-    Harlowe.variable('$ctf4_result',1); 
-  	Harlowe.goto("CT4_end")
+	alert("XSS Success");
+  	Harlowe.goto("CT4_end");
 }
 
 
@@ -109,7 +108,7 @@ function levelSucceed() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
-// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="1025,75" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;!--TODO Link--&gt;
 
 &lt;style&gt;
@@ -173,7 +172,7 @@ br {
       &lt;/div&gt;
       &lt;button id=&quot;ssss&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
     &lt;/form&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,175" size="100,100">crf2</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,325" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1300,100" size="100,100">&lt;style&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,150" size="100,100">crf2</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,275" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1375,100" size="100,100">&lt;style&gt;
 
 br {
 	max-height: 0px;
@@ -183,51 +182,41 @@ br {
 
 tw-story {
  background-image: url(&#39;img/ctf4/pc_rahmen1.png&#39;);
-  background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
   
  margin: 0;
- padding: 50px;
+ padding: 1rem;
  white-space: normal;
  width: 100%
 }
 
 
 tw-passage {
- width: 70em;
- height: 50em;
+ width: 83rem;
+ height: 60rem;
  margin:auto;
- padding: 20px;
- border: solid #000 0.05em;
- border-radius: 0.2em;
+ padding: 1.5rem;
  font-family: Arial, Helvetica, sans-serif;
  font-size:1.2rem; color:#000;
  text-align: left;
- background-color:#a6a6a6;
- box-shadow: #000 0.5em 0.5em 0;
 }
 
 .webbrowser {
-  width: 300px;
+  max-width: 1rem;
   min-width: fit-content;
   border: 2px solid black;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin:auto;
+  margin: auto;
   background: white;
+  margin-top: -4.5rem;
 }
 
 #tab {
     background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
-    padding: 0px;
-    width: 55em;
-    height: 21em;
     margin: 0px;
+    width: 55rem;
+    height: 30rem;
     border: 1px solid #333;
 }
 
@@ -266,27 +255,26 @@ iframe {
 &lt;/style&gt;
 
 
+(set: _info to &quot;Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
 
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window.
 
-[more...]&lt;more1|
+For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf) &quot;)
 
-{
-|workarea&gt;[]
-(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+&lt;!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]--&gt;
+
+(if: $ctfs contains &quot;ctf4&quot;)[]
+(else:)[(alert: _info)]
+
+(link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
+
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-[more...]&lt;more2|]
-
-(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-[more...]&lt;more3|]
-
-(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
-}
-
-
-
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt; 
@@ -300,13 +288,22 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
     &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+(link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;Hint 1&quot;)]
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+(link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;Hint 2&quot;)]
 
 (Set: _solution to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
 
-(if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]\
+(if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
+
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-Click here to check if you have completed the challenge (click: &quot;Click here&quot;)[(print: $ctf4_result)]</tw-passagedata><tw-passagedata pid="6" name="CT4_end" tags="" position="1600,100" size="100,100">You made it!</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="8" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="9" name="CTF 7" tags="" position="1375,425" size="100,100">&lt;h1&gt; What is my name?&lt;/h1&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="6" name="CT4_end" tags="" position="1500,100" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
+
+You made it!
+
+[[Main Page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="1125,425" size="100,100">ctf5</tw-passagedata><tw-passagedata pid="8" name="CTF 6" tags="" position="1250,425" size="100,100">ctf6</tw-passagedata><tw-passagedata pid="9" name="CTF 7" tags="" position="1375,425" size="100,100">&lt;h1&gt; What is my name?&lt;/h1&gt;
 
 &lt;body&gt;
 &lt;img src= &quot;https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg&quot;&gt;
@@ -333,7 +330,7 @@ Enter memory trigger: ---
 
 
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="10" name="First Shelf" tags="" position="350,450" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="11" name="Second Shelf" tags="" position="475,450" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="12" name="Third Shelf" tags="" position="600,450" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="13" name="Fourth Shelf" tags="" position="725,450" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="14" name="Fifth Shelf" tags="" position="850,450" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="15" name="CTF 8" tags="" position="950,625" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="16" name="CTF 9" tags="" position="1100,625" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="17" name="MainPage" tags="" position="175,100" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="10" name="First Shelf" tags="" position="1275,600" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="11" name="Second Shelf" tags="" position="1400,600" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="12" name="Third Shelf" tags="" position="1525,600" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="13" name="Fourth Shelf" tags="" position="1650,600" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="14" name="Fifth Shelf" tags="" position="1775,600" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="15" name="CTF 8" tags="" position="950,550" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="16" name="CTF 9" tags="" position="950,675" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="17" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
 #first    {color: red;}
@@ -343,12 +340,17 @@ Hello, Welcome to our litte CTF Challenge Game. In this game you will learn some
 ...
 Olea schreib mal was schönes
 [[Start Story-&gt;Story]]
+[[CTFs-&gt;CTFs]]
 
 Hello World
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
 &lt;!--(Set: $debug to false)--&gt;
+
+&lt;!-- :: init [startup] --&gt;
+&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
+(set: $ctfs to (a:)) 
 
 
 &lt;!--Comment Text
@@ -375,7 +377,22 @@ Overview of all challanges with explanations:
 So soll das, CSS ist der King!
 [[&lt;button class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge 1&lt;/button&gt; -&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="18" name="Story" tags="" position="175,350" size="100,100">Hier beginnt die Story!
 
-Main Start</tw-passagedata><tw-passagedata pid="19" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="Story2" tags="" position="350,575" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata></tw-storydata>
+Main Start</tw-passagedata><tw-passagedata pid="19" name="Story1" tags="" position="150,500" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="Story2" tags="" position="350,575" size="100,100">[[CTF 3-&gt;CTF 3]]</tw-passagedata><tw-passagedata pid="21" name="CTFs" tags="" position="325,275" size="100,100">List with all CTFs and its status
+
+&lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
+(set: $ctfs to it + (a:&quot;ctf2&quot;))
+(set: $ctfs to it + (a:&quot;ctf3&quot;))--&gt;
+
+
+
+(if: $ctfs&#39;s length is 0)[\
+    no ctf finished 
+](else:)[\
+    &lt;!-- we iterate over the array and print each item --&gt;\
+    (for: each _item, ...$ctfs)[\
+        _item (unless: $ctfs&#39;s last is _item)[, ]\
+    ].
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

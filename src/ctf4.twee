@@ -1,4 +1,4 @@
-:: CTF 4 {"position":"1300,100","size":"100,100"}
+:: CTF 4 {"position":"1375,100","size":"100,100"}
 <style>
 
 br {
@@ -9,51 +9,41 @@ br {
 
 tw-story {
  background-image: url('img/ctf4/pc_rahmen1.png');
-  background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
   
  margin: 0;
- padding: 50px;
+ padding: 1rem;
  white-space: normal;
  width: 100%
 }
 
 
 tw-passage {
- width: 70em;
- height: 50em;
+ width: 83rem;
+ height: 60rem;
  margin:auto;
- padding: 20px;
- border: solid #000 0.05em;
- border-radius: 0.2em;
+ padding: 1.5rem;
  font-family: Arial, Helvetica, sans-serif;
  font-size:1.2rem; color:#000;
  text-align: left;
- background-color:#a6a6a6;
- box-shadow: #000 0.5em 0.5em 0;
 }
 
 .webbrowser {
-  width: 300px;
+  max-width: 1rem;
   min-width: fit-content;
   border: 2px solid black;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin:auto;
+  margin: auto;
   background: white;
+  margin-top: -4.5rem;
 }
 
 #tab {
     background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
-    padding: 0px;
-    width: 55em;
-    height: 21em;
     margin: 0px;
+    width: 55rem;
+    height: 30rem;
     border: 1px solid #333;
 }
 
@@ -92,27 +82,26 @@ iframe {
 </style>
 
 
+(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
 
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window.
 
-[more...]<more1|
+For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf) ")
 
-{
-|workarea>[]
-(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf4")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+
 <tw-consecutive-br></tw-consecutive-br>
-[more...]<more2|]
-
-(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
 <tw-consecutive-br></tw-consecutive-br>
-[more...]<more3|]
-
-(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
-}
-
-
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
@@ -126,13 +115,23 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
     </div>
 
 </div>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Hint 1")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "Hint 2")]
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 
-(if: $debug is true)[solution is: (click: "solution")[_solution]]\
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-Click here to check if you have completed the challenge (click: "Click here")[(print: $ctf4_result)]
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
 
-:: CT4_end {"position":"1600,100","size":"100,100"}
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+
+:: CT4_end {"position":"1500,100","size":"100,100"}
+(set: $ctfs to it + (a: "ctf4"))
+
 You made it!
+
+[[Main Page->MainPage]]

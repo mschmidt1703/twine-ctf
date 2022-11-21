@@ -1,6 +1,4 @@
 :: CTF 7 {"position":"1375,425","size":"100,100"}
-
-
 <h1> What is my name?</h1>
 
 <body>
@@ -31,22 +29,21 @@ Enter memory trigger: ---
 <link rel="stylesheet" href=css/ctf7/styles.css></link>
 
 
-:: First Shelf {"position":"350,450","size":"100,100"}
+:: First Shelf {"position":"1275,600","size":"100,100"}
 Nothing really usefull here
 
 
-:: Second Shelf {"position":"475,450","size":"100,100"}
+:: Second Shelf {"position":"1400,600","size":"100,100"}
 No usefull information here..
 
 
-:: Third Shelf {"position":"600,450","size":"100,100"}
+:: Third Shelf {"position":"1525,600","size":"100,100"}
 Nothing here either..
 
 
-:: Fourth Shelf {"position":"725,450","size":"100,100"}
+:: Fourth Shelf {"position":"1650,600","size":"100,100"}
 This search has lead me nowhere sofar..
 
 
-:: Fifth Shelf {"position":"850,450","size":"100,100"}
+:: Fifth Shelf {"position":"1775,600","size":"100,100"}
 yup.. I did all of that for nothing :(
-

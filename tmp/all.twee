@@ -337,6 +337,10 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
 Click here to check if you have completed the challenge (click: "Click here")[(print: $ctf4_result)]
 
 
+:: CT4_end {"position":"1600,100","size":"100,100"}
+You made it!
+
+
 :: CTF 5 {"position":"1125,425","size":"100,100"}
 ctf5
 
@@ -459,9 +463,5 @@ Main Start
 
 :: Story2 {"position":"350,575","size":"100,100"}
 [[CTF 3->CTF 3]]
-
-
-:: CT4_end {"position":"1600,100","size":"100,100"}
-You made it!
 
 
