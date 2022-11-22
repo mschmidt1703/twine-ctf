@@ -9,7 +9,7 @@ var originalAlert = window.alert;
 
 /* Override alert with parent.postMessage for ctf*/
 window.alert = function(s) {
-  parent.postMessage("js_inserted", "*");
+  parent.postMessage("js_inserted_ctf4", "*");
 }
 
 function search() {
@@ -18,17 +18,7 @@ function search() {
 	
 	var input = document.getElementById('query').value;
 	
-	/*var message = "Sorry, no results were found for <b>" + input + "</b>"
-	message += " <a href='?'>Try again</a>"
-		
-	var textbox = document.createElement('textbox');
-	var div_r = document.getElementById('result'); 
-	textbox.innerHTML = message;  
-	
-	document.getElementById('result').appendChild(textbox);	*/
-
-	
-	//Alternative
+	// will not be executed because of browser security
 	var message = "Sorry, no results were found for <b>" + input + "</b>"
 	message += " <a href='?'>Try again</a>"
 	
@@ -37,13 +27,8 @@ function search() {
 	textbox.innerHTML = message;  
 	
 	document.getElementById('result').appendChild(textbox);	
-		
-	/*if (input == "\<script\> alert(\"XSS\");\</script\>"){
-		msg("success");
-	} */
 	
-	console.log(input)
-
+	// but that will
 	if ( (input.startsWith("\<script\>")) && (input.endsWith("\</script\>")) ) {
 		innerScript = input.replaceAll('\<script\>',"").replaceAll('\</script\>',"")
 		var myScript = document.createElement('script');

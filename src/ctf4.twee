@@ -1,4 +1,4 @@
-:: CTF 4 {"position":"1375,100","size":"100,100"}
+:: CTF 4 {"position":"1375,0","size":"100,100"}
 <style>
 
 br {
@@ -8,7 +8,7 @@ br {
 }
 
 tw-story {
- background-image: url('img/ctf4/pc_rahmen1.png');
+ background-image: url('img/4all/pc_rahmen.png');
  background-size: 110%;
  background-position-x: -6.5rem;
  background-repeat: no-repeat;
@@ -89,7 +89,9 @@ Vulnerabilities that enable these attacks are widespread and occur wherever a we
 
 In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window.
 
-For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf) ")
+For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
+It is not necessary to look into the the code.
+")
 
 <!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
@@ -129,9 +131,11 @@ For this CTF please imagine there is vulnerable Webseite on the Webserver (https
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CT4_end {"position":"1500,100","size":"100,100"}
+:: CTF4_end {"position":"1500,0","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
 
 You made it!
+
+Story
 
 [[Main Page->MainPage]]

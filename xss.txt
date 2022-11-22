@@ -1,7 +1,14 @@
+
+ctf4
 <script> alert("XSS");</script>
+#<iframe src='sdfsdgds' onerror=alert(1) />
+
+ctf5
+<img src='#' onerror=alert(1) />
+
+
+
+
 
 <a href="google.de > hier</a>
-
-<iframe src="javascript:alert(0)"></iframe>
-
 <script> setup.ctf4_giveResult() </script>
