@@ -1,2 +1,47 @@
 :: CTF 9 {"position":"950,675","size":"100,100"}
-ctf9
+On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
+<html>
+<head>
+<style>
+div {
+  border: 2px solid gray;
+  padding: 100px;
+}
+</style>
+</head>
+
+<body>
+<div>
+<code>
+public class ctf9 {<br>
+    static char [] theSecret;<br>
+    public static void encryptSecret(){<br>
+        theSecret = new char [14]; <br>
+        theSecret [3] = 'n'; <br>
+        theSecret [4] = 'o'; <br>
+        theSecret [0] = 'B'; <br>
+        theSecret [7] = 'l'; <br>
+        theSecret [2] = 'u'; <br>
+        theSecret [8] = 'l'; <br>
+        theSecret [10] = 'd'; <br>
+        theSecret [12] = 'e'; <br>
+        theSecret [13] = 'r'; <br>
+        theSecret [11] = 'H'; <br>
+        theSecret [1] = 'r'; <br>
+        theSecret [9] = 'e'; <br>
+        theSecret [5] = 'K'; <br>
+        theSecret [6] = 'i'; <br>
+    }<br>
+     public static String conclusion(){<br>
+        String conc = "This case is unsolvable. Give up!";<br>
+        return  conc;<br>
+    }<br>
+    public static void main(String[] args) {<br>
+      System.out.println(conclusion());<br>
+    }<br>
+}
+</code>
+</div>
+</body>
+</html>
+Hint: kommt noch

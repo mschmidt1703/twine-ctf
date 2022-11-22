@@ -172,7 +172,22 @@ br {
       &lt;/div&gt;
       &lt;button id=&quot;ssss&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
     &lt;/form&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,150" size="100,100">crf2</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,275" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1375,100" size="100,100">&lt;style&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1100,725" size="100,100">ctf10</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="800,150" size="100,100">&lt;h3&gt;Do I live alone? &lt;/h3&gt;
+
+Great! Now you know your name, but nothing else. 
+
+After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can&#39;t put your finger on..
+&lt;style&gt;  
+img {  
+max-width: 100%;  
+height: auto;  
+}  
+&lt;/style&gt;  
+&lt;img src= &quot;./img/ctf2/ctf2.jpg&quot;&gt;&lt;/img&gt;
+
+Maybe taking a closer look at it is not a bad idea. 
+
+Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,275" size="100,100">ctf3</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="1375,100" size="100,100">&lt;style&gt;
 
 br {
 	max-height: 0px;
@@ -330,7 +345,52 @@ Enter memory trigger: ---
 
 
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="10" name="First Shelf" tags="" position="1275,600" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="11" name="Second Shelf" tags="" position="1400,600" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="12" name="Third Shelf" tags="" position="1525,600" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="13" name="Fourth Shelf" tags="" position="1650,600" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="14" name="Fifth Shelf" tags="" position="1775,600" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="15" name="CTF 8" tags="" position="950,550" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="16" name="CTF 9" tags="" position="950,675" size="100,100">ctf9</tw-passagedata><tw-passagedata pid="17" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="10" name="First Shelf" tags="" position="1275,600" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="11" name="Second Shelf" tags="" position="1400,600" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="12" name="Third Shelf" tags="" position="1525,600" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="13" name="Fourth Shelf" tags="" position="1650,600" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="14" name="Fifth Shelf" tags="" position="1775,600" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="15" name="CTF 8" tags="" position="950,550" size="100,100">ctf8</tw-passagedata><tw-passagedata pid="16" name="CTF 9" tags="" position="950,675" size="100,100">On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+div {
+  border: 2px solid gray;
+  padding: 100px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;
+&lt;code&gt;
+public class ctf9 {&lt;br&gt;
+    static char [] theSecret;&lt;br&gt;
+    public static void encryptSecret(){&lt;br&gt;
+        theSecret = new char [14]; &lt;br&gt;
+        theSecret [3] = &#39;n&#39;; &lt;br&gt;
+        theSecret [4] = &#39;o&#39;; &lt;br&gt;
+        theSecret [0] = &#39;B&#39;; &lt;br&gt;
+        theSecret [7] = &#39;l&#39;; &lt;br&gt;
+        theSecret [2] = &#39;u&#39;; &lt;br&gt;
+        theSecret [8] = &#39;l&#39;; &lt;br&gt;
+        theSecret [10] = &#39;d&#39;; &lt;br&gt;
+        theSecret [12] = &#39;e&#39;; &lt;br&gt;
+        theSecret [13] = &#39;r&#39;; &lt;br&gt;
+        theSecret [11] = &#39;H&#39;; &lt;br&gt;
+        theSecret [1] = &#39;r&#39;; &lt;br&gt;
+        theSecret [9] = &#39;e&#39;; &lt;br&gt;
+        theSecret [5] = &#39;K&#39;; &lt;br&gt;
+        theSecret [6] = &#39;i&#39;; &lt;br&gt;
+    }&lt;br&gt;
+     public static String conclusion(){&lt;br&gt;
+        String conc = &quot;This case is unsolvable. Give up!&quot;;&lt;br&gt;
+        return  conc;&lt;br&gt;
+    }&lt;br&gt;
+    public static void main(String[] args) {&lt;br&gt;
+      System.out.println(conclusion());&lt;br&gt;
+    }&lt;br&gt;
+}
+&lt;/code&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+Hint: kommt noch</tw-passagedata><tw-passagedata pid="17" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
 #first    {color: red;}
