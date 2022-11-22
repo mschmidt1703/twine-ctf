@@ -4,152 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     
-    <!-- Add portrait mode -->
-    <!-- Rework wires in Ai -->
-    <!-- Add portrait mode of wires -->
-    <!-- Add responsitivity -->
-    <style>
-        * {
-            color: #999999;
-            font-size: 20px;
-            font-weight: 400;
-            box-sizing: border-box;
-            font-family: 'Monteserat', Arial, sans-serif;
-        }
-        
-        body {
-          background-image: url(/src/background/wires_landscape.svg), url(/src/background/background_landscape.svg);
-          background-repeat: no-repeat, no-repeat;
-          background-size: contain, cover;
-          background-attachment: local, fixed;
-        }
-
-        .header{
-          display: flex;
-          justify-content: left;
-        }
-
-        header {
-          width: 350px;
-          margin-left: 115px;
-          margin-top: 70px;
-        }
-
-        nav {
-          width: 650px;
-          margin-left: 220px;
-          margin-top: 70px;
-        }
-
-        .menu {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .ctfs-image,
-        .achievements-image,
-        .tutorial-image,
-        .settings-image{
-          width: 100px;
-        }
-
-        section,
-        aside,
-        footer {
-            text-align: center;
-            border-radius: 7px;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
- 
-        aside {
-            width: 25%;
-            float: left;
-            min-height: 517px;
-        }
- 
-        section {
-            float: left;
-            width: calc(75% - 75px);
-            margin: 0 25px 25px 25px;
-        }
- 
-        section article,
-        section footer {
-            width: 100%;
-            border-radius: 7px;
-            border: 1px solid #e5e5e5;
-            box-shadow: none;
-            margin: 25px 0px 0px 0px;
-            padding: 50px;
-        }
- 
-        footer {
-            width: 96.5%;
-            margin: 25px 25px 0px 25px;
-            clear: both;
-        }
-
-        @media only screen and (max-width: 800px) {
-          body {
-            background-image: url(/src/background/background_portrait.svg);
-            background-size: cover;
-            background-repeat: initial;
-            background-attachment: fixed;
-          }
-        }
-    </style>
+    <title>Memory Loss: Find Your Way Back</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 <main>
-  <div class="header">
-    <header class="inheader"> 
-      <div class= “header-image”>
-        <img src= "src/header/logo.svg">
-      </div>
-    </header>
- 
-    <nav>
-      <div class= "menu" class="inheader">
-        <div class= "ctfs-image">
-          <img src= "src/menu/ctfs.svg">
-        </div>
-        <div class= "achievements-image">
-          <img src= "src/menu/achievements.svg">
-        </div>
-        <div class= "tutorial-image">
-          <img src= "src/menu/tutorial.svg">
-        </div>
-        <div class= "settings-image">
-          <img src= "src/menu/settings.svg">
-        </div>
-      </div>
-    </nav>
-  </div>
 
-  <section>
-    section 
-    <article>section article</article> 
-    <footer>section footer</footer> 
-    <article>section article</article> 
-    <footer>section footer</footer> 
-    <article>section article</article>
-    <footer>section footer</footer> 
-    <article>section article</article> 
-    <footer>section footer</footer> 
-    <article>section article</article> 
-    <footer>section footer</footer>
+  <header>
+    <div class="logo">
+      <img src="src/header/logo.svg" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">CTFs</a>
+        </li>
+        <li>
+          <a href="#">Achievements</a>
+        </li>
+        <li>
+          <a href="#">Tutorial</a>
+        </li>
+        <li>
+          <a href="#">Settings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="sec1">
+    <div class="usb-stick">
+      <img src="src/svg/usb_stick.svg" alt="usb-stick">
+    </div>
+    <div class="preview">
+      <div class="preview_bg">
+        <img src="src/svg/preview_bg.svg" alt="preview">
+        <div class="rectangle">
+          <div class="outer">
+            <div class="start">
+            </div>
+            <div class="startButton">
+              <a href="#">Start</a> <!-- TODO: Start/Continue -->
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> 
   </section>
- 
-  <aside>
-    aside 
-  </aside>
- 
+
+  <section class="sec2">
+    <h1>Requirements</h1>
+    <h2>Tools</h2>
+  </section>
+
   <footer>
-    footer 
+    <h1>Information about Developer</h1>
   </footer>
+  
 </main>   
 </body>
 </html>

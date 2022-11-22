@@ -1,0 +1,20 @@
+.ctfs-image {
+          float: left;
+          width: 50%;
+          display: block;
+          text-align: center;
+        }
+
+        .achievements-image {
+          display: block;
+          text-align: center;
+        }
+
+        .tutorial-image {
+          width: 205px;
+          display: block;
+        }
+
+        .settings-image{
+          padding: 20px; 
+        }
