@@ -1,0 +1,122 @@
+<html>
+<head> </head>
+
+<script>
+parent.postMessage(window.location.toString(), "*");
+
+/* safe old alert */
+var originalAlert = window.alert;
+
+/* Override alert with parent.postMessage for ctf*/
+window.alert = function(s) {
+  parent.postMessage("js_inserted_ctf4", "*");
+}
+
+function search() {
+  	var div = document.getElementById('container'); 
+	div.style.display = "none";	
+	
+	var input = document.getElementById('query').value;
+	
+	// will not be executed because of browser security
+	var message = "Sorry, no results were found for <b>" + input + "</b>"
+	message += " <a href='?'>Try again</a>"
+	
+	var textbox = document.createElement('textbox');
+	var div_r = document.getElementById('result'); 
+	textbox.innerHTML = message;  
+	
+	document.getElementById('result').appendChild(textbox);	
+	
+	// but that will
+	if ((input.startsWith("\<script\>")) && (input.endsWith("\</script\>"))) {
+		innerScript = input.replaceAll('\<script\>',"").replaceAll('\</script\>',"")
+		var myScript = document.createElement('script');
+		myScript.textContent = innerScript;
+		document.head.appendChild(myScript);
+	}
+	
+	//and that not in HTML Compatibility Guidelines’ of the XHTML 1 specification, maybe remove it
+	if ((input.startsWith("\<script ")) && (input.endsWith("/\>")))  {
+		innerScript = input.replaceAll('\<script',"").replaceAll('/\>',"")
+		var myScript = document.createElement('script');
+		console.log(innerScript)
+		myScript.textContent = innerScript;
+		document.head.appendChild(myScript);
+	}
+	
+
+	
+	
+}
+
+</script>
+
+<style>
+
+#ctf4 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#ctf4 form {
+  margin-top: -16px;
+}
+
+#ctf4 #query {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-color: #C0C0C0 #D9D9D9 #D9D9D9;
+  border-radius: 1px 1px 1px 1px;
+  border-right: 1px solid #D9D9D9;
+  border-style: solid;
+  border-width: 1px;
+  font: 14px Verdana, Arial, sans-serif;
+  padding: 4px;
+}
+
+#ctf4 #button {
+  margin: 16px 8px;
+  background-color: #F5F5F5;
+  background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #444444 !important;
+  font-size: 11px;
+  -moz-user-select: none;
+  border-radius: 2px 2px 2px 2px;
+  cursor: default !important;
+  display: inline-block;
+  font-weight: bold;
+  height: 29px;
+  line-height: 29px;
+  min-width: 54px;
+  padding: 0 8px;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+#ctf4 img {
+  margin: 8px 0 8px 0;
+}
+
+#ctf4 div {
+  margin-top: 14px;
+}
+
+</style>
+
+<body id="ctf4">
+<div><div id="result">
+<div id="container">
+    <img src="../../img/ctf4/www.png">
+      <div>
+		<input id="query" name="query" placeholder="Enter query here..." onfocus="this.value=''">
+		<input id="button" type="submit" value="Search" onclick="search()">
+    </div>
+</div>
+</body>
+</html>
