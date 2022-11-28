@@ -1,2 +1,4 @@
 :: CTF 8 {"position":"950,550","size":"100,100"}
-ctf8
+<a href="/out/static/ctf8/important_note.txt" download="note">
+  <img src="/out/static/ctf8/important_note.txt" alt="note">
+</a>

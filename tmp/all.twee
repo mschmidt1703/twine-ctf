@@ -52,13 +52,29 @@ function eventOnClickHandler(event) {
 
 
 
+/* Global Start */
+
+window.addEventListener("message", function(event) {
+  if (event.data == "js_inserted_ctf4") {
+    ctf4_updateURI(event.data);
+    ctf4_levelSucceed();
+    return;
+  }
+  
+  if (event.data == "js_inserted_ctf5") {
+    ctf5_updateURI(event.data);
+    ctf5_levelSucceed();
+    return;
+  }
+
+
+}, false);
+
+/* Global End */
+
+
 /* # CTF 4 Start */
 
-var result = 0;
-
-setup.ctf4_giveResult = function () {
-    return result;
-};
 
 setup.ctf4_updateFrame = function (frameNum, url) {
   if (!url) {
@@ -86,31 +102,64 @@ setup.ctf4_updateFrame = function (frameNum, url) {
 
 };
 
-window.addEventListener("message", function(event) {
-  if (event.data == "js_inserted") {
-    levelSucceed();
-    return;
-  }
 
-  updateURI(event.data);
-}, false);
-
-
-function updateURI(value) {
+function ctf4_updateURI(value) {
   var urlbar = document.getElementById('input');
   urlbar.value = "https://twine.ctf/ctf4.html";
 }
 
-function levelSucceed() {
-	alert("Yes success");
-    Harlowe.variable('$ctf4_result',1); 
-  	Harlowe.goto("CT4_end")
+function ctf4_levelSucceed() {
+	alert("XSS Success");
+  	Harlowe.goto("CTF4_end");
 }
 
 
 /* # CTF 4 End */
 
 
+
+/* # CTF 5 Start */
+
+
+setup.ctf5_updateFrame = function (frameNum, url) { 
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
+  // Make sure that the URL points to the frame of the current level
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf5.html') || !url.endsWith) {
+       alert("Sorry, I can't open this URL in a frame.");
+    	urlbar.value = "https://twine.ctf/ctf5.html";
+        var frame = document.querySelector('iframe');
+        frame.src = "static/ctf5/s.html"; 
+   		frame.contentWindow.postMessage(url, "*");
+       return
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf5.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf5/t.html" + arg; 
+    frame.contentWindow.postMessage(url, "*");
+  }
+
+};
+
+
+
+function ctf5_updateURI(value) {
+  var urlbar = document.getElementById('input');
+  urlbar.value = "https://twine.ctf/ctf5.html";
+}
+
+function ctf5_levelSucceed() {
+  	Harlowe.goto("CTF5_end");
+}
+
+
+/* # CTF 5 End */
 
 
 
@@ -120,7 +169,7 @@ function levelSucceed() {
 // end Harlowe Macro Framework
 
 
-:: CTF 1 {"position":"800,25","size":"100,100"}
+:: CTF 1 {"position":"1025,75","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <!--TODO Link-->
 
@@ -192,15 +241,45 @@ br {
 ctf10
 
 
-:: CTF 2 {"position":"800,175","size":"100,100"}
-crf2
+:: CTF 2 {"position":"800,150","size":"100,100"}
+<h3>Do I live alone? </h3>
+
+Great! Now you know your name, but nothing else. 
+
+After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on..
+<style>  
+img {  
+max-width: 100%;  
+height: auto;  
+}  
+</style>  
+<img src= "./img/ctf2/ctf2.jpg"></img>
+
+Maybe taking a closer look at it is not a bad idea. 
+
+Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
 
-:: CTF 3 {"position":"800,325","size":"100,100"}
-ctf3
+:: CTF 3 {"position":"800,275","size":"100,100"}
+html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>first Challenge</title>
+</head>
+<body>
+<h1>Capture the Flag</h1>
+<p>Capture the Flag (CTF) in computer security is an exercise in which "flags" are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.</p>
+<br>
+<p> Source: Wikipedia </p>
+<!--flag{12_234_ghuzt5r}-->
+</body>
+</html>
 
 
-:: CTF 4 {"position":"1300,100","size":"100,100"}
+:: CTF 4 {"position":"1375,0","size":"100,100"}
 <style>
 
 br {
@@ -210,52 +289,42 @@ br {
 }
 
 tw-story {
- background-image: url('img/ctf4/pc_rahmen1.png');
-  background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+ background-image: url('img/4all/pc_rahmen.png');
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
   
  margin: 0;
- padding: 50px;
+ padding: 1rem;
  white-space: normal;
  width: 100%
 }
 
 
 tw-passage {
- width: 70em;
- height: 50em;
+ width: 83rem;
+ height: 60rem;
  margin:auto;
- padding: 20px;
- border: solid #000 0.05em;
- border-radius: 0.2em;
+ padding: 1.5rem;
  font-family: Arial, Helvetica, sans-serif;
  font-size:1.2rem; color:#000;
  text-align: left;
- background-color:#a6a6a6;
- box-shadow: #000 0.5em 0.5em 0;
 }
 
 .webbrowser {
-  width: 300px;
+  max-width: 1rem;
   min-width: fit-content;
   border: 2px solid black;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin:auto;
+  margin: auto;
   background: white;
+  margin-top: -4.5rem;
 }
 
 #tab {
     background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
-    padding: 0px;
-    width: 55em;
-    height: 21em;
     margin: 0px;
+    width: 55rem;
+    height: 30rem;
     border: 1px solid #333;
 }
 
@@ -294,27 +363,28 @@ iframe {
 </style>
 
 
+(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
 
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed.  XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window.
 
-[more...]<more1|
+For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
+It is not necessary to look into the the code.
+")
 
-{
-|workarea>[]
-(mouseover-replace: ?more1)[Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf4")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+
 <tw-consecutive-br></tw-consecutive-br>
-[more...]<more2|]
-
-(mouseover-replace: ?more2)[In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window\n\n.
 <tw-consecutive-br></tw-consecutive-br>
-[more...]<more3|]
-
-(mouseover-replace: ?more3)[For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)]
-}
-
-
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
@@ -328,21 +398,160 @@ Cross-Site Scripting (XSS) is a type of client-side injection attack where a mal
     </div>
 
 </div>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Hint 1")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "Hint 2")]
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 
-(if: $debug is true)[solution is: (click: "solution")[_solution]]\
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-Click here to check if you have completed the challenge (click: "Click here")[(print: $ctf4_result)]
 
 
-:: CT4_end {"position":"1600,100","size":"100,100"}
+:: CTF4_end {"position":"1500,0","size":"100,100"}
+(set: $ctfs to it + (a: "ctf4"))
+
 You made it!
 
+Story
 
-:: CTF 5 {"position":"1125,425","size":"100,100"}
-ctf5
+[[Main Page->MainPage]]
+
+
+:: CTF 5 {"position":"1375,125","size":"100,100"}
+<style>
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
+  
+ margin: 0;
+ padding: 1rem;
+ white-space: normal;
+ width: 100%
+}
+
+
+tw-passage {
+ width: 83rem;
+ height: 60rem;
+ margin:auto;
+ padding: 1.5rem;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; color:#000;
+ text-align: left;
+}
+
+.webbrowser {
+  max-width: 1rem;
+  min-width: fit-content;
+  border: 2px solid black;
+  margin: auto;
+  background: white;
+  margin-top: -4.5rem;
+}
+
+#tab {
+    background: url(img/ctf5/webbrowser_header.PNG) 0 0 no-repeat;
+    margin: 0px;
+    width: 55rem;
+    height: 30rem;
+    border: 1px solid #333;
+}
+
+.url {
+	padding: 0.1em;
+    align-self: center;
+}
+
+.controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
+
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
+</style>
+
+
+(set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.")
+
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf5")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<div class="webbrowser"> 
+	<div id="tab">
+		<div class="controls">
+            <span class="url label">URL:</span>
+            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
+           </div>
+            <iframe src="static/ctf5/t.html" title="Google"></iframe>
+    </div>
+
+</div>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same js here (onerror= oder src=)")]
+
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+
+:: CTF5_end {"position":"1500,125","size":"100,100"}
+(set: $ctfs to it + (a: "ctf5"))
+
+You made it!
+
+[[Main Page->MainPage]]
 
 
 :: CTF 6 {"position":"1250,425","size":"100,100"}
@@ -380,35 +589,82 @@ Enter memory trigger: ---
 <link rel="stylesheet" href=css/ctf7/styles.css></link>
 
 
-:: First Shelf {"position":"350,450","size":"100,100"}
+:: First Shelf {"position":"1275,600","size":"100,100"}
 Nothing really usefull here
 
 
-:: Second Shelf {"position":"475,450","size":"100,100"}
+:: Second Shelf {"position":"1400,600","size":"100,100"}
 No usefull information here..
 
 
-:: Third Shelf {"position":"600,450","size":"100,100"}
+:: Third Shelf {"position":"1525,600","size":"100,100"}
 Nothing here either..
 
 
-:: Fourth Shelf {"position":"725,450","size":"100,100"}
+:: Fourth Shelf {"position":"1650,600","size":"100,100"}
 This search has lead me nowhere sofar..
 
 
-:: Fifth Shelf {"position":"850,450","size":"100,100"}
+:: Fifth Shelf {"position":"1775,600","size":"100,100"}
 yup.. I did all of that for nothing :(
 
 
-:: CTF 8 {"position":"950,625","size":"100,100"}
-ctf8
+:: CTF 8 {"position":"950,550","size":"100,100"}
+<a href="/out/static/ctf8/important_note.txt" download="note">
+  <img src="/out/static/ctf8/important_note.txt" alt="note">
+</a>
 
 
-:: CTF 9 {"position":"1100,625","size":"100,100"}
-ctf9
+:: CTF 9 {"position":"950,675","size":"100,100"}
+On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
+<html>
+<head>
+<style>
+div {
+  border: 2px solid gray;
+  padding: 100px;
+}
+</style>
+</head>
+
+<body>
+<div>
+<code>
+public class ctf9 {<br>
+    static char [] theSecret;<br>
+    public static void encryptSecret(){<br>
+        theSecret = new char [14]; <br>
+        theSecret [3] = 'n'; <br>
+        theSecret [4] = 'o'; <br>
+        theSecret [0] = 'B'; <br>
+        theSecret [7] = 'l'; <br>
+        theSecret [2] = 'u'; <br>
+        theSecret [8] = 'l'; <br>
+        theSecret [10] = 'd'; <br>
+        theSecret [12] = 'e'; <br>
+        theSecret [13] = 'r'; <br>
+        theSecret [11] = 'H'; <br>
+        theSecret [1] = 'r'; <br>
+        theSecret [9] = 'e'; <br>
+        theSecret [5] = 'K'; <br>
+        theSecret [6] = 'i'; <br>
+    }<br>
+     public static String conclusion(){<br>
+        String conc = "This case is unsolvable. Give up!";<br>
+        return  conc;<br>
+    }<br>
+    public static void main(String[] args) {<br>
+      System.out.println(conclusion());<br>
+    }<br>
+}
+</code>
+</div>
+</body>
+</html>
+Hint: kommt noch
 
 
-:: MainPage {"position":"175,100","size":"100,100"}
+:: MainPage {"position":"200,25","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
@@ -419,12 +675,17 @@ Hello, Welcome to our litte CTF Challenge Game. In this game you will learn some
 ...
 Olea schreib mal was schönes
 [[Start Story->Story]]
+[[CTFs->CTFs]]
 
 Hello World
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
 <!--(Set: $debug to false)-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+(set: $ctfs to (a:)) 
 
 
 <!--Comment Text
@@ -463,5 +724,24 @@ Main Start
 
 :: Story2 {"position":"350,575","size":"100,100"}
 [[CTF 3->CTF 3]]
+
+
+:: CTFs {"position":"325,275","size":"100,100"}
+List with all CTFs and its status
+
+<!--(set: $ctfs to it + (a:"ctf1"))
+(set: $ctfs to it + (a:"ctf2"))
+(set: $ctfs to it + (a:"ctf3"))-->
+
+
+
+(if: $ctfs's length is 0)[\
+    no ctf finished 
+](else:)[\
+    <!-- we iterate over the array and print each item -->\
+    (for: each _item, ...$ctfs)[\
+        _item (unless: $ctfs's last is _item)[, ]\
+    ].
+]
 
 

@@ -1,2 +1,17 @@
 :: CTF 3 {"position":"800,275","size":"100,100"}
-ctf3
+html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>first Challenge</title>
+</head>
+<body>
+<h1>Capture the Flag</h1>
+<p>Capture the Flag (CTF) in computer security is an exercise in which "flags" are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.</p>
+<br>
+<p> Source: Wikipedia </p>
+<!--flag{12_234_ghuzt5r}-->
+</body>
+</html>
