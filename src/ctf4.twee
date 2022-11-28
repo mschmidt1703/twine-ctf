@@ -1,4 +1,5 @@
 :: CTF 4 {"position":"1375,0","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
 br {
@@ -104,7 +105,6 @@ It is not necessary to look into the the code.
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -119,9 +119,9 @@ It is not necessary to look into the the code.
 </div>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Hint 1")]
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "You need to insert some javascript, maybe the script tag helps")]
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "Hint 2")]
+(link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 

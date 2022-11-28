@@ -14,3 +14,24 @@ tw-story {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+/* Colors Fonts */
+
+:root {
+  --font_yellow: #F79E00;
+  --font_grey: #9B9B9B;
+}
+
+/* Colors Background */
+:root {
+  --purple: #B200DD;
+  --purple_dark: #4B0872;
+  --blue: #4316A5;
+  --blue_dark: #250777;
+  --grey1: #1E1E1E;
+  --grey2: #161616;
+  --grey3: #141414;
+}
+
+/* TODO override Button and Texts*/

@@ -16,7 +16,11 @@ twine-ctf
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
-#first    {color: red;}
+
+#first{
+background-color: var(--purple) !important;
+}
+
 </style>
 
 Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
@@ -58,7 +62,7 @@ Overview of all challanges with explanations:
 [[CTF 10->CTF 10]]
 
 So soll das, CSS ist der King!
-[[<button class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
+[[<button id="first" class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
 
 
 :: Story {"position":"175,350","size":"100,100"}

@@ -1,4 +1,5 @@
 :: CTF 5 {"position":"1375,125","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
 br {
@@ -95,7 +96,6 @@ iframe {
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -110,9 +110,9 @@ iframe {
 </div>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable")]
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable?")]
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same js here (onerror= oder src=)")]
+(link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
 
 (Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
 
@@ -120,6 +120,7 @@ iframe {
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
 
 :: CTF5_end {"position":"1500,125","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))

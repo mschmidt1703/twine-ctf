@@ -29,9 +29,18 @@ function search() {
 	document.getElementById('result').appendChild(textbox);	
 	
 	// but that will
-	if ( (input.startsWith("\<script\>")) && (input.endsWith("\</script\>")) ) {
+	if ((input.startsWith("\<script\>")) && (input.endsWith("\</script\>"))) {
 		innerScript = input.replaceAll('\<script\>',"").replaceAll('\</script\>',"")
 		var myScript = document.createElement('script');
+		myScript.textContent = innerScript;
+		document.head.appendChild(myScript);
+	}
+	
+	//and that not in HTML Compatibility Guidelines’ of the XHTML 1 specification, maybe remove it
+	if ((input.startsWith("\<script ")) && (input.endsWith("/\>")))  {
+		innerScript = input.replaceAll('\<script',"").replaceAll('/\>',"")
+		var myScript = document.createElement('script');
+		console.log(innerScript)
 		myScript.textContent = innerScript;
 		document.head.appendChild(myScript);
 	}

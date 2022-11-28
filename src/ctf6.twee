@@ -1,2 +1,123 @@
-:: CTF 6 {"position":"1250,425","size":"100,100"}
-ctf6
+:: CTF 6 {"position":"1375,250","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
+  
+ margin: 0;
+ padding: 1rem;
+ white-space: normal;
+ width: 100%
+}
+
+
+tw-passage {
+ width: 83rem;
+ height: 60rem;
+ margin:auto;
+ padding: 1.5rem;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; color:#000;
+ text-align: left;
+}
+
+.webbrowser {
+  max-width: 1rem;
+  min-width: fit-content;
+  border: 2px solid black;
+  margin: auto;
+  background: white;
+  margin-top: -4.5rem;
+}
+
+#tab {
+    background: url(img/ctf6/webbrowser_header.PNG) 0 0 no-repeat;
+    margin: 0px;
+    width: 55rem;
+    height: 30rem;
+    border: 1px solid #333;
+}
+
+.url {
+	padding: 0.1em;
+    align-self: center;
+}
+
+.controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
+
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
+</style>
+
+
+(set: _info to "")
+
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf5")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<div class="webbrowser"> 
+	<div id="tab">
+		<div class="controls">
+            <span class="url label">URL:</span>
+            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+           </div>
+            <iframe src="static/ctf6/u.html" title="Google"></iframe>
+    </div>
+
+</div>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "xxx")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "xxx")]
+
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
