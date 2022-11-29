@@ -1,11 +1,32 @@
 :: CTF 3 {"position":"800,275","size":"100,100"}
-html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+tw-story {
+ background-image: url('img/ctf1/pc_rahmen1.png');
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>first Challenge</title>
+
+(set: _whatToDo to "You should train taking a closer look at things...")
+
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+[(alert: _whatToDo)]
+
+<title>Challenge</title>
 </head>
 <body>
 <h1>Capture the Flag</h1>

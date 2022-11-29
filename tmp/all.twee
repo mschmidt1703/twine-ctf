@@ -30,12 +30,33 @@ tw-story {
 }
 
 
+/* Colors Fonts */
+
+:root {
+  --font_yellow: #F79E00;
+  --font_grey: #9B9B9B;
+}
+
+/* Colors Background */
+:root {
+  --purple: #B200DD;
+  --purple_dark: #4B0872;
+  --blue: #4316A5;
+  --blue_dark: #250777;
+  --grey1: #1E1E1E;
+  --grey2: #161616;
+  --grey3: #141414;
+}
+
+/* TODO override Button and Texts*/
+
+
 :: Story JavaScript [script]
 window.setup = window.setup || {};
 
 /* # CTF 1 Start */
 
-setup.start = function() {
+setup.ctf1 = function() {
 	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 
 }
@@ -91,13 +112,13 @@ setup.ctf4_updateFrame = function (frameNum, url) {
     	urlbar.value = "https://twine.ctf/ctf4.html";
         var frame = document.querySelector('iframe');
         frame.src = "static/ctf4/s.html"; 
-   		frame.contentWindow.postMessage(url, "*");
+   		//frame.contentWindow.postMessage(url, "*");
        return
   } else {
     var arg = url.replace("https://twine.ctf/ctf4.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf4/s.html" + arg; 
-    frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*");
   }
 
 };
@@ -136,13 +157,13 @@ setup.ctf5_updateFrame = function (frameNum, url) {
     	urlbar.value = "https://twine.ctf/ctf5.html";
         var frame = document.querySelector('iframe');
         frame.src = "static/ctf5/s.html"; 
-   		frame.contentWindow.postMessage(url, "*");
+   		//frame.contentWindow.postMessage(url, "*");
        return
   } else {
     var arg = url.replace("https://twine.ctf/ctf5.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf5/t.html" + arg; 
-    frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*");
   }
 
 };
@@ -163,16 +184,56 @@ function ctf5_levelSucceed() {
 
 
 
+/* # CTF 6 Start */
+
+setup.ctf6_updateFrame = function (frameNum, url) { 
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
+  // Make sure that the URL points to the frame of the current level
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf6.html') || !url.endsWith) {
+       alert("Sorry, I can't open this URL in a frame.");
+    	urlbar.value = "https://twine.ctf/ctf6.html";
+        var frame = document.querySelector('iframe');
+        frame.src = "static/ctf6/u.html"; 
+       return
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf6.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf6/u.html" + arg; 
+  }
+
+};
+
+
+
+function ctf5_updateURI(value) {
+  var urlbar = document.getElementById('input');
+  urlbar.value = "https://twine.ctf/ctf6.html";
+}
+
+function ctf5_levelSucceed() {
+  	Harlowe.goto("CTF5_end");
+}
+
+
+/* # CTF 6 End */
+
+
+
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
 // end Harlowe Macro Framework
 
 
-:: CTF 1 {"position":"1025,75","size":"100,100"}
+:: CTF 1 {"position":"1025,100","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<!--TODO Link-->
-
 <style>
 
 tw-story {
@@ -213,7 +274,7 @@ br {
 </style>
 
 
-<script> setup.start(); </script>
+<script> setup.ctf1(); </script>
 
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
@@ -235,6 +296,10 @@ br {
       <button id="ssss" class="button is-primary">Sign in</button>
     </form>
   </div>
+  
+  (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
 
 
 :: CTF 10 {"position":"1100,725","size":"100,100"}
@@ -261,13 +326,34 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 
 :: CTF 3 {"position":"800,275","size":"100,100"}
-html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+tw-story {
+ background-image: url('img/ctf1/pc_rahmen1.png');
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>first Challenge</title>
+
+(set: _whatToDo to "You should train taking a closer look at things...")
+
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+[(alert: _whatToDo)]
+
+<title>Challenge</title>
 </head>
 <body>
 <h1>Capture the Flag</h1>
@@ -280,6 +366,7 @@ html>
 
 
 :: CTF 4 {"position":"1375,0","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
 br {
@@ -385,7 +472,6 @@ It is not necessary to look into the the code.
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -400,9 +486,9 @@ It is not necessary to look into the the code.
 </div>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Hint 1")]
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "You need to insert some javascript, maybe the script tag helps")]
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "Hint 2")]
+(link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 
@@ -423,6 +509,7 @@ Story
 
 
 :: CTF 5 {"position":"1375,125","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
 br {
@@ -519,7 +606,6 @@ iframe {
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -534,9 +620,9 @@ iframe {
 </div>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable")]
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable?")]
 <tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same js here (onerror= oder src=)")]
+(link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
 
 (Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
 
@@ -554,8 +640,129 @@ You made it!
 [[Main Page->MainPage]]
 
 
-:: CTF 6 {"position":"1250,425","size":"100,100"}
-ctf6
+:: CTF 6 {"position":"1375,250","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ background-size: 110%;
+ background-position-x: -6.5rem;
+ background-repeat: no-repeat;
+  
+ margin: 0;
+ padding: 1rem;
+ white-space: normal;
+ width: 100%
+}
+
+
+tw-passage {
+ width: 83rem;
+ height: 60rem;
+ margin:auto;
+ padding: 1.5rem;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; color:#000;
+ text-align: left;
+}
+
+.webbrowser {
+  max-width: 1rem;
+  min-width: fit-content;
+  border: 2px solid black;
+  margin: auto;
+  background: white;
+  margin-top: -4.5rem;
+}
+
+#tab {
+    background: url(img/ctf6/webbrowser_header.PNG) 0 0 no-repeat;
+    margin: 0px;
+    width: 55rem;
+    height: 30rem;
+    border: 1px solid #333;
+}
+
+.url {
+	padding: 0.1em;
+    align-self: center;
+}
+
+.controls {
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: -webkit-flex;
+    margin-top: 47px;
+    padding: 2px;
+}
+
+.urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+}
+
+.input {
+    margin-right: auto;
+}
+
+
+iframe {
+ width: inherit;
+ height: inherit
+}
+</style>
+
+
+(set: _info to "")
+
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf5")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<div class="webbrowser"> 
+	<div id="tab">
+		<div class="controls">
+            <span class="url label">URL:</span>
+            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
+            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+           </div>
+            <iframe src="static/ctf6/u.html" title="Google"></iframe>
+    </div>
+
+</div>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "xxx")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "xxx")]
+
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
 
 
 :: CTF 7 {"position":"1375,425","size":"100,100"}
@@ -610,9 +817,31 @@ yup.. I did all of that for nothing :(
 
 
 :: CTF 8 {"position":"950,550","size":"100,100"}
-<a href="/out/static/ctf8/important_note.txt" download="note">
-  <img src="/out/static/ctf8/important_note.txt" alt="note">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+tw-story {
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-contianer{
+    text-align: -webkit-center;
+	height: 500px;
+}
+
+</style>
+
+<button class="button is-primary">Download</button>
+
+<a href="static/ctf8/important_note.txt" download="note">
+  <img src="static/ctf8/important_note.txt" alt="note">
 </a>
+
+<button type="submit" onclick="window.open('static/ctf8/important_note.txt')">Download!</button>
 
 
 :: CTF 9 {"position":"950,675","size":"100,100"}
@@ -668,7 +897,11 @@ Hint: kommt noch
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
-#first    {color: red;}
+
+#first{
+background-color: var(--purple) !important;
+}
+
 </style>
 
 Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
@@ -710,7 +943,7 @@ Overview of all challanges with explanations:
 [[CTF 10->CTF 10]]
 
 So soll das, CSS ist der King!
-[[<button class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
+[[<button id="first" class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
 
 
 :: Story {"position":"175,350","size":"100,100"}

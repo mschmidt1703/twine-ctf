@@ -1,4 +1,26 @@
 :: CTF 8 {"position":"950,550","size":"100,100"}
-<a href="/out/static/ctf8/important_note.txt" download="note">
-  <img src="/out/static/ctf8/important_note.txt" alt="note">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+tw-story {
+ background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-contianer{
+    text-align: -webkit-center;
+	height: 500px;
+}
+
+</style>
+
+<button class="button is-primary">Download</button>
+
+<a href="static/ctf8/important_note.txt" download="note">
+  <img src="static/ctf8/important_note.txt" alt="note">
 </a>
+
+<button type="submit" onclick="window.open('static/ctf8/important_note.txt')">Download!</button>
