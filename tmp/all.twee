@@ -27,6 +27,7 @@ tw-story {
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -47,6 +48,15 @@ tw-story {
   --grey2: #161616;
   --grey3: #141414;
 }
+
+.color_purple{
+	background-color: var(--purple) !important;
+}
+
+#resume-btn{
+	background-color: var(--purple) !important;
+}
+
 
 /* TODO override Button and Texts*/
 
@@ -85,6 +95,18 @@ window.addEventListener("message", function(event) {
   if (event.data == "js_inserted_ctf5") {
     ctf5_updateURI(event.data);
     ctf5_levelSucceed();
+    return;
+  }
+  
+    if (event.data.startsWith("ctf6_url_")) {
+    ctf6_updateURI(event.data);
+	console.log("success: " + event.data)
+    return;
+  }
+  
+  if (event.data == "js_inserted_ctf6") {
+    ctf6_updateURI(event.data);
+    ctf6_levelSucceed();
     return;
   }
 
@@ -185,6 +207,9 @@ function ctf5_levelSucceed() {
 
 
 /* # CTF 6 Start */
+setup.ctf6_reset = function(){
+  window.localStorage.setItem('picID', "1");	
+}
 
 setup.ctf6_updateFrame = function (frameNum, url) { 
   if (!url) {
@@ -196,31 +221,42 @@ setup.ctf6_updateFrame = function (frameNum, url) {
   var frameLink = document.createElement('a');
   frameLink.href = url;
 
-  if (!url.startsWith('https://twine.ctf/ctf6.html') || !url.endsWith) {
+  if (!url.startsWith('https://twine.ctf/ctf6.html')) {
        alert("Sorry, I can't open this URL in a frame.");
     	urlbar.value = "https://twine.ctf/ctf6.html";
         var frame = document.querySelector('iframe');
         frame.src = "static/ctf6/u.html"; 
        return
   } else {
-    var arg = url.replace("https://twine.ctf/ctf6.html", "");
+    var arg = url.replace("https://twine.ctf/ctf6.html#", "");
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf6/u.html" + arg; 
+    frame.src = "static/ctf6/u.html"; 
+    console.log("arg:" + arg)
+    
+    /*frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame*/
+    frame.contentWindow.postMessage(arg,"*")
   }
 
 };
 
 
 
-function ctf5_updateURI(value) {
+function ctf6_updateURI(value) {
   var urlbar = document.getElementById('input');
-  urlbar.value = "https://twine.ctf/ctf6.html";
+  var picID = value.replaceAll("ctf6_url_","");
+  urlbar.value = "https://twine.ctf/ctf6.html#" + picID;
 }
 
-function ctf5_levelSucceed() {
-  	Harlowe.goto("CTF5_end");
+function ctf6_levelSucceed() {
+  	Harlowe.goto("CTF6_end");
 }
 
+
+setup.ctf6_showCode = function() {
+  var codeBox = document.getElementById('code'); 
+  codeBox.innerHTML = Harlowe.variable("$ctf6_code")
+
+}
 
 /* # CTF 6 End */
 
@@ -244,6 +280,11 @@ tw-story {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
 
 .twine-background-login {
 	position: inherit;
@@ -301,12 +342,20 @@ br {
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
 
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->4.p]]
+</div>
+<!--End of button next -->
+
 
 :: CTF 10 {"position":"1100,725","size":"100,100"}
 ctf10
 
 
 :: CTF 2 {"position":"800,150","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <h3>Do I live alone? </h3>
 
 Great! Now you know your name, but nothing else. 
@@ -323,27 +372,16 @@ height: auto;
 Maybe taking a closer look at it is not a bad idea. 
 
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
+</div>
+<!--End of button next -->
 
 
 :: CTF 3 {"position":"800,275","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<style>
 
-tw-story {
- background-image: url('img/ctf1/pc_rahmen1.png');
- background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-}
-</style>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 (set: _whatToDo to "You should train taking a closer look at things...")
 
@@ -368,6 +406,10 @@ tw-story {
 :: CTF 4 {"position":"1375,0","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
 
 br {
 	max-height: 0px;
@@ -471,7 +513,6 @@ It is not necessary to look into the the code.
 (link-repeat: "What should I do?")[(alert: _info)]
 
 <tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -506,6 +547,12 @@ You made it!
 Story
 
 [[Main Page->MainPage]]
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->5.p]]
+</div>
+<!--End of button next -->
 
 
 :: CTF 5 {"position":"1375,125","size":"100,100"}
@@ -517,6 +564,11 @@ br {
 	visibility: hidden;
 	display: none;
 }
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
 
 tw-story {
  background-image: url('img/4all/pc_rahmen.png');
@@ -605,7 +657,6 @@ iframe {
 (link-repeat: "What should I do?")[(alert: _info)]
 
 <tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -638,17 +689,28 @@ iframe {
 You made it!
 
 [[Main Page->MainPage]]
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
+</div>
+<!--End of button next -->
 
 
 :: CTF 6 {"position":"1375,250","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
 br {
 	max-height: 0px;
 	visibility: hidden;
 	display: none;
 }
+
 
 tw-story {
  background-image: url('img/4all/pc_rahmen.png');
@@ -659,7 +721,8 @@ tw-story {
  margin: 0;
  padding: 1rem;
  white-space: normal;
- width: 100%
+ width: 100%;
+ /*overflow-y: auto; Scroll y*/
 }
 
 
@@ -724,21 +787,43 @@ iframe {
 }
 </style>
 
+<!--TmpVar is not allowed -->
+(set: $ctf6_code to "function chooseTab(num) {  
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/x-highlightx/) != -1)
+      return process(block, true, 0x0F) +
+             ` class=\"${cls}\"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+
+  return false;
+}
+
+export  $initHighlight;
+
+// Tell parent we've changed the tab
+top.postMessage(self.location.toString(), '*');
+}")
 
 (set: _info to "")
-
-<!--(if: $onTimeShow is false)
-(if: $onTimeShow is true)[ (alert: _info)]
-(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
-
-(if: $ctfs contains "ctf5")[]
+(if: $ctfs contains "ctf6")[]
 (else:)[(alert: _info)]
-
 (link-repeat: "What should I do?")[(alert: _info)]
 
-<tw-consecutive-br></tw-consecutive-br>
+<script> 
+	setup.ctf6_reset()
+</script>
+
 <tw-consecutive-br></tw-consecutive-br>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -747,116 +832,143 @@ iframe {
             <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
             <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
            </div>
-            <iframe src="static/ctf6/u.html" title="Google"></iframe>
+            <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe>
     </div>
-
 </div>
 <tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Show Implemation Code")[(alert: "
+	<pre><code id=\"code\" class=\"language-javascript\">
+    </code></pre>
+
+<script> 
+  setup.ctf6_showCode();
+  hljs.highlightAll();  
+</script>")]
+
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "xxx")]
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "xxx")]
 
-(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
 
+:: CTF6_end {"position":"1500,250","size":"100,100"}
+(set: $ctfs to it + (a: "ctf6"))
+
+<script> 
+	setup.ctf6_reset()
+</script>
+
+You made it!
+
+[[Main Page->MainPage]]
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
+</div>
+<!--End of button next -->
+
+
 :: CTF 7 {"position":"1375,425","size":"100,100"}
-<h1> What is my name?</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<h1>Who even am I?</h1>
 
-<body>
 <img src= "https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg">
-(enchant: ?Passage, (text-color: white) + (background: black))
-A memory is like a picture that is made of multiple puzzle pieces. The pieces are lost and scattered all over the place. 
-Let's start in the living room. Here, there is a bookshelf that houses many memories. This is defenetly a good place to start
 
-[[First Shelf]] 
+Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<Style>
+#first{
+background-color: var(--purple) !important;
+}
+</Style>
+[[<button id="first" class="button is-danger is-rounded">First Shelf->First Shelf]]
 
-[[Second Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Second Shelf->Second Shelf]]
 
-[[Third Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Third Shelf->Third Shelf]]
 
-[[Fourth Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Fourth Shelf->Fourth Shelf]]
 
-[[Fifth Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Fifth Shelf->Fifth Shelf]]
+</div>
 
 <!--My first name ist: John -->
 
-Although this seems like an obvios place for where a memory trigger can be found, appearently this is not the case. 
-Further inspection may be required...
-Enter memory trigger: ---
-</body>
+However, these shelfs are stacked with material. A search on the surface level is not enough. Further inspection is needed. 
 
+Enter the flag for “who even am I?”: ___
 
+Hints: open your inspector view and have a look at the website’s resources. 
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<Style>
+#first{
+background-color: var(--purple) !important;
+}
+</Style>
+
+[[<button id="first" class="button is-danger is-rounded">resume story->3.p]]
+</div>
 
 <link rel="stylesheet" href=css/ctf7/styles.css></link>
 
 
-:: First Shelf {"position":"1275,600","size":"100,100"}
+:: First Shelf {"position":"500,800","size":"100,100"}
 Nothing really usefull here
 
 
-:: Second Shelf {"position":"1400,600","size":"100,100"}
+:: Second Shelf {"position":"625,800","size":"100,100"}
 No usefull information here..
 
 
-:: Third Shelf {"position":"1525,600","size":"100,100"}
+:: Third Shelf {"position":"750,800","size":"100,100"}
 Nothing here either..
 
 
-:: Fourth Shelf {"position":"1650,600","size":"100,100"}
+:: Fourth Shelf {"position":"875,800","size":"100,100"}
 This search has lead me nowhere sofar..
 
 
-:: Fifth Shelf {"position":"1775,600","size":"100,100"}
+:: Fifth Shelf {"position":"1000,800","size":"100,100"}
 yup.. I did all of that for nothing :(
 
 
 :: CTF 8 {"position":"950,550","size":"100,100"}
+Let's download the file and check for valuable information. 
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<style>
 
-tw-story {
- background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.login-contianer{
-    text-align: -webkit-center;
-	height: 500px;
-}
-
-</style>
-
-<button class="button is-primary">Download</button>
-
-<a href="static/ctf8/important_note.txt" download="note">
-  <img src="static/ctf8/important_note.txt" alt="note">
-</a>
-
-<button type="submit" onclick="window.open('static/ctf8/important_note.txt')">Download!</button>
-
-
-:: CTF 9 {"position":"950,675","size":"100,100"}
-On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
-<html>
 <head>
-<style>
-div {
-  border: 2px solid gray;
-  padding: 100px;
-}
-</style>
+    <title>Center align button</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
+  <button class="button is-primary onclick="window.open('static/ctf8/important_note.txt')"">Download</button>
+</body>
+
+
+:: CTF 9 {"position":"350,1675","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<h1>A random file in your home directory </h1>
+
+Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
+
 <div>
 <code>
 public class ctf9 {<br>
@@ -888,75 +1000,76 @@ public class ctf9 {<br>
 }
 </code>
 </div>
-</body>
-</html>
-Hint: kommt noch
+
+Hint: Have you tried working with char arrays in java?
+
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
+</div>
+<!--End of button next -->
 
 
 :: MainPage {"position":"200,25","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<style>
+<!--Button Achievments -->
+<div>
+[[<button class="button is-danger is-rounded color_purple" style="float: right">Achievments->CTFs]]
+</div>
+<!--End of button Achievments -->
 
-#first{
-background-color: var(--purple) !important;
-}
+Hello there, 
 
-</style>
+Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you're in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let's go!
 
-Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
-...
-Olea schreib mal was schönes
-[[Start Story->Story]]
-[[CTFs->CTFs]]
+[[<button class="button is-large is-danger is-rounded color_purple">Start the Adventure!</button> ->Story]]
 
-Hello World
+You can skip the story and go straight to the challanges:
+
+[[<button class="button is-danger is-rounded color_purple">Start first challange</button> ->CTF 1]]
+
+or you can jump straight to you favorit challange: 
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 -XXS - difficulty level: 1->CTF 1]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Web exploitation - difficulty level: 1->CTF 3]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XXS - difficulty level: 2->CTF 4]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 5 - XXS - difficulty level: 3->CTF 5]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 6 - XXS - difficulty level: 3->CTF 6]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 7 - Web exploitation - difficulty level: 1->CTF 7]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - Forensics - difficulty level: 2->CTF 8]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - coming soon->CTF 10]]
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
 <!--(Set: $debug to false)-->
-
 <!-- :: init [startup] -->
 <!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
-(set: $ctfs to (a:)) 
-
-
-<!--Comment Text
-<button id="first" class="button is-rounded">Rounded</button>
-<button class="button is-primary is-rounded">Rounded</button>
-<button class="button is-link is-rounded">Rounded</button>
-<button class="button is-info is-rounded">Rounded</button>
-<button class="button is-success is-rounded">Rounded</button>
-<button class="button is-danger is-rounded">Rounded</button>
--->
-
-Overview of all challanges with explanations:
-[[CTF 1->CTF 1]]
-[[CTF 2->CTF 2]]
-[[CTF 3->CTF 3]]
-[[CTF 4->CTF 4]]
-[[CTF 5->CTF 5]]
-[[CTF 6->CTF 6]]
-[[CTF 7->CTF 7]]
-[[CTF 8->CTF 8]]
-[[CTF 9->CTF 9]]
-[[CTF 10->CTF 10]]
-
-So soll das, CSS ist der King!
-[[<button id="first" class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
+(set: $ctfs to (a:))
 
 
 :: Story {"position":"175,350","size":"100,100"}
-Hier beginnt die Story!
+You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
-Main Start
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
 
-
-:: Story1 {"position":"150,500","size":"100,100"}
-
-
-:: Story2 {"position":"350,575","size":"100,100"}
-[[CTF 3->CTF 3]]
+<!--Button next -->
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+[[<button id="resume-btn" class="button is-danger is-rounded">next->1.p]]
+</div>
+<!--End of button next -->
 
 
 :: CTFs {"position":"325,275","size":"100,100"}
@@ -976,5 +1089,132 @@ List with all CTFs and its status
         _item (unless: $ctfs's last is _item)[, ]\
     ].
 ]
+
+
+:: 1.p {"position":"175,550","size":"100,100"}
+To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+
+“I don’t seem to remember anything. Who even am I?”
+To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
+However, what they know for sure is that he might be in a great danger. 
+You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
+“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->2.p]]
+</div>
+<!--End of button next -->
+
+
+:: 2.p {"position":"175,800","size":"100,100"}
+After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 7]]
+</div>
+<!--End of button next -->
+
+
+:: 3.p {"position":"175,925","size":"100,100"}
+<h1>Wait... but how can I log in to my account?</h1>
+Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 1]]
+</div>
+<!--End of button next -->
+
+
+:: 4.p {"position":"175,1050","size":"100,100"}
+<h1>Let the search begin!</h1>
+
+You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. "Maybe the bad guy’s looking for me have restricted the search.”
+You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 4]]
+</div>
+<!--End of button next -->
+
+
+:: 5.p {"position":"175,1175","size":"100,100"}
+<h1>I just wanna go home...  </h1>
+It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you're going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->CTF 5]]
+</div>
+<!--End of button next -->
+
+
+:: 6.p {"position":"175,1300","size":"100,100"}
+Finally! You opened your account and found some information about yourself. You’re done for the day it's time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It's not a long distance. So, you walk your way back home. 
+
+You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
+ 
+You know something important that changed your life forever happened here, but you can't remember it. 
+
+You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->CTF 2]]
+</div>
+<!--End of button next -->
+
+
+:: 7.p {"position":"175,1425","size":"100,100"}
+Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+
+(Continuation of the girlfriend tragedy here maybe?)
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->8.p]]
+</div>
+<!--End of button next -->
+
+
+:: 8.p {"position":"175,1550","size":"100,100"}
+Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->9.p]]
+</div>
+<!--End of button next -->
+
+
+:: 9.p {"position":"175,1675","size":"100,100"}
+“I'm sure they have the tools that will help me extract some information out of it.”
+You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
+After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange ->CTF 9]]
+</div>
+<!--End of button next -->
+
+
+:: 10.p {"position":"175,1800","size":"100,100"}
+Coming soom. Stay tuned!
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
+</div>
+<!--End of button next -->
 
 
