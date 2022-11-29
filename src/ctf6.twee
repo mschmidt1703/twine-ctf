@@ -2,11 +2,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
 br {
 	max-height: 0px;
 	visibility: hidden;
 	display: none;
 }
+
 
 tw-story {
  background-image: url('img/4all/pc_rahmen.png');
@@ -17,7 +22,8 @@ tw-story {
  margin: 0;
  padding: 1rem;
  white-space: normal;
- width: 100%
+ width: 100%;
+ /*overflow-y: auto; Scroll y*/
 }
 
 
@@ -82,21 +88,44 @@ iframe {
 }
 </style>
 
+<!--TmpVar is not allowed -->
+(set: $ctf6_code to "function chooseTab(num) {  
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/x-highlightx/) != -1)
+      return process(block, true, 0x0F) +
+             ` class=\"${cls}\"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+
+  return false;
+}
+
+export  $initHighlight;
+
+// Tell parent we've changed the tab
+top.postMessage(self.location.toString(), '*');
+}")
 
 (set: _info to "")
-
-<!--(if: $onTimeShow is false)
-(if: $onTimeShow is true)[ (alert: _info)]
-(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
-
-(if: $ctfs contains "ctf5")[]
+(if: $ctfs contains "ctf6")[]
 (else:)[(alert: _info)]
-
 (link-repeat: "What should I do?")[(alert: _info)]
 
-<tw-consecutive-br></tw-consecutive-br>
+<script> 
+	setup.ctf6_reset()
+</script>
+
 <tw-consecutive-br></tw-consecutive-br>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -105,19 +134,42 @@ iframe {
             <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
             <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
            </div>
-            <iframe src="static/ctf6/u.html" title="Google"></iframe>
+            <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe>
     </div>
-
 </div>
 <tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Show Implemation Code")[(alert: "
+	<pre><code id=\"code\" class=\"language-javascript\">
+    </code></pre>
+
+<script> 
+  setup.ctf6_showCode();
+  hljs.highlightAll();  
+</script>")]
+
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "xxx")]
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "xxx")]
 
-(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
+:: CTF6_end {"position":"1500,250","size":"100,100"}
+(set: $ctfs to it + (a: "ctf6"))
+
+<script> 
+	setup.ctf6_reset()
+</script>
+
+You made it!
+
+[[Main Page->MainPage]]
+

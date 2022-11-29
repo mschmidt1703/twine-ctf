@@ -1,57 +1,76 @@
 <html>
 <head> </head>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<script>
-parent.postMessage(window.location.toString(), "*");
-
+<script>	
 /* safe old alert */
 var originalAlert = window.alert;
 
+
 /* Override alert with parent.postMessage for ctf*/
 window.alert = function(s) {
-  parent.postMessage("js_inserted_ctf5", "*");
+  parent.postMessage("js_inserted_ctf6", "*");
   originalAlert()
 }
 
-function search() {
-  	var div = document.getElementById('container'); 
-	div.style.display = "none";	
+function showTab(input) {
+	var picID;
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
 	
-	var input = document.getElementById('query').value;
+ 	var html = "Image " + picID + "<br>";
+	html += "<img src='../../img/ctf6/" + input + ".jpg' />";
+	html += "</br>"
+	document.getElementById(picID).innerHTML = html;  
+	console.log(html)
+
+	/*window.location.hash = picID
+	history.pushState(null, null, '#'+parseInt(picID)); Does not work in twine*/
+	window.localStorage.setItem('picID', input);
 	
-	var message = "Sorry, it is not that simple <b>" + input + "</b>"
-	message += " <a href='?'>Try again</a>"
-		
-	var textbox = document.createElement('textbox');
-	var div_r = document.getElementById('result'); 
-	textbox.innerHTML = message;  
-	
-	document.getElementById('result').appendChild(textbox);
+	var i;
+	var x = document.getElementsByClassName("animals");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";  
+	}
+	document.getElementById(picID).style.display = "block";  
+	parent.postMessage("ctf6_url_" + input, "*");
+	return
 }
 
-function openCity(cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+ window.onload = function() { 
+	/*get hash from localStorage back or 1, can trigger js*/
+	var input = window.localStorage.getItem('picID');
+	if (input == null){
+		input = '1'
+	}
+	console.log("input:" + input);
+	showTab(input);
   }
-  document.getElementById(cityName).style.display = "block";  
-}
+  
+  window.addEventListener("message", (event) => {
+  	console.log("eventdata: " + event.data)
+	showTab(event.data);
+}, false);
+ 
 </script>
 
 <style>
 
-#ctf4 {
+#ctf6 {
   text-align: center;
   margin: 0 auto;
 }
 
-#ctf4 form {
+#ctf6 form {
   margin-top: -16px;
 }
 
-#ctf4 #query {
+#ctf6 #query {
   -moz-border-bottom-colors: none;
   -moz-border-image: none;
   -moz-border-left-colors: none;
@@ -67,7 +86,7 @@ function openCity(cityName) {
   padding: 4px;
 }
 
-#ctf4 #button {
+#ctf6 #button {
   margin: 16px 8px;
   background-color: #F5F5F5;
   background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
@@ -87,11 +106,11 @@ function openCity(cityName) {
   text-decoration: none !important;
 }
 
-#ctf4 img {
+#ctf6 img {
   margin: 8px 0 8px 0;
 }
 
-#ctf4 div {
+#ctf6 div {
   margin-top: 14px;
 }
 
@@ -101,42 +120,28 @@ img{
 	height: 15rem;
 }
 
-#container {
-	padding-top: 5rem;
-}
 
 
 
 </style>
 
-<body id="ctf4">
+<body id="ctf6">
 <div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
+  <button class="w3-bar-item w3-button" onclick="showTab('1')">Jay</button>
+  <button class="w3-bar-item w3-button" onclick="showTab('2')">Wolf</button>
+  <button class="w3-bar-item w3-button" onclick="showTab('3')">Wolves</button>
 </div>
 
-<div id="London" class="w3-container city">
-  <h2>London</h2>
-  <p>London is the capital city of England.</p>
-      <img src="../../img/ctf6/a.jpg">
+<div id="1" class="w3-container animals">
 </div>
 
-<div id="Paris" class="w3-container city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
-      <img src="../../img/ctf6/b.jpg">
-
+<div id="2" class="w3-container animals">
 </div>
 
-<div id="Tokyo" class="w3-container city" style="display:none">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
-      <img src="../../img/ctf6/c.jpg">
-
+<div id="3" class="w3-container animals">
 </div>
 
-<div id="container">
+</div>
 
 </div>
 </body>

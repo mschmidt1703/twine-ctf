@@ -8,6 +8,9 @@ ctf4
 ctf5
 <img src='#' onerror=alert(1) />
 
+ctf6
+
+https://twine.ctf/ctf6.html#3' onerror='alert();//
 
 
 
