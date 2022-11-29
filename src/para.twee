@@ -15,67 +15,63 @@ twine-ctf
 :: MainPage {"position":"200,25","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<style>
+<!--Button Achievments -->
+<div>
+[[<button class="button is-danger is-rounded color_purple" style="float: right">Achievments->CTFs]]
+</div>
+<!--End of button Achievments -->
 
-#first{
-background-color: var(--purple) !important;
-}
+Hello there, 
 
-</style>
+Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you're in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let's go!
 
-Hello, Welcome to our litte CTF Challenge Game. In this game you will learn something about same basic CTF Challenges.  Capture the Flag (CTF) is a cybersecurity competition that is used as a test of security skills. 
-...
-Olea schreib mal was schönes
-[[Start Story->Story]]
-[[CTFs->CTFs]]
+[[<button class="button is-large is-danger is-rounded color_purple">Start the Adventure!</button> ->Story]]
 
-Hello World
+You can skip the story and go straight to the challanges:
+
+[[<button class="button is-danger is-rounded color_purple">Start first challange</button> ->CTF 1]]
+
+or you can jump straight to you favorit challange: 
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 -XXS - difficulty level: 1->CTF 1]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - coming soon->CTF 3]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XXS - difficulty level: 2->CTF 4]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 5 - XXS - difficulty level: 3->CTF 5]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 6 - XXS - difficulty level: 3->CTF 6]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 7 - Web exploitation - difficulty level: 1->CTF 7]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - coming soon->CTF 8]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - coming soon->CTF 10]]
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
 <!--(Set: $debug to false)-->
-
 <!-- :: init [startup] -->
 <!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
 (set: $ctfs to (a:)) 
 
-
-<!--Comment Text
-<button id="first" class="button is-rounded">Rounded</button>
-<button class="button is-primary is-rounded">Rounded</button>
-<button class="button is-link is-rounded">Rounded</button>
-<button class="button is-info is-rounded">Rounded</button>
-<button class="button is-success is-rounded">Rounded</button>
-<button class="button is-danger is-rounded">Rounded</button>
--->
-
-Overview of all challanges with explanations:
-[[CTF 1->CTF 1]]
-[[CTF 2->CTF 2]]
-[[CTF 3->CTF 3]]
-[[CTF 4->CTF 4]]
-[[CTF 5->CTF 5]]
-[[CTF 6->CTF 6]]
-[[CTF 7->CTF 7]]
-[[CTF 8->CTF 8]]
-[[CTF 9->CTF 9]]
-[[CTF 10->CTF 10]]
-
-So soll das, CSS ist der King!
-[[<button id="first" class="button is-danger is-rounded">Start Challenge 1</button> ->CTF 1]]
-
-
 :: Story {"position":"175,350","size":"100,100"}
-Hier beginnt die Story!
+You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
-Main Start
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
 
+<!--Button next -->
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+[[<button id="resume-btn" class="button is-danger is-rounded">next->1.p]]
+</div>
+<!--End of button next -->
 
-:: Story1 {"position":"150,500","size":"100,100"}
-
-
-:: Story2 {"position":"350,575","size":"100,100"}
-[[CTF 3->CTF 3]]
 
 
 :: CTFs {"position":"325,275","size":"100,100"}

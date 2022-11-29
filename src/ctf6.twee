@@ -126,7 +126,6 @@ top.postMessage(self.location.toString(), '*');
 
 
 
-
 <div class="webbrowser"> 
 	<div id="tab">
 		<div class="controls">
@@ -172,4 +171,9 @@ top.postMessage(self.location.toString(), '*');
 You made it!
 
 [[Main Page->MainPage]]
-
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
+</div>
+<!--End of button next -->

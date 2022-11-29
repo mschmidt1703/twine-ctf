@@ -1,49 +1,64 @@
 :: CTF 7 {"position":"1375,425","size":"100,100"}
-<h1> What is my name?</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<h1>Who even am I?</h1>
 
-<body>
 <img src= "https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg">
-(enchant: ?Passage, (text-color: white) + (background: black))
-A memory is like a picture that is made of multiple puzzle pieces. The pieces are lost and scattered all over the place. 
-Let's start in the living room. Here, there is a bookshelf that houses many memories. This is defenetly a good place to start
 
-[[First Shelf]] 
+Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<Style>
+#first{
+background-color: var(--purple) !important;
+}
+</Style>
+[[<button id="first" class="button is-danger is-rounded">First Shelf->First Shelf]]
 
-[[Second Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Second Shelf->Second Shelf]]
 
-[[Third Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Third Shelf->Third Shelf]]
 
-[[Fourth Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Fourth Shelf->Fourth Shelf]]
 
-[[Fifth Shelf]]
+[[<button id="first" class="button is-danger is-rounded">Fifth Shelf->Fifth Shelf]]
+</div>
 
 <!--My first name ist: John -->
 
-Although this seems like an obvios place for where a memory trigger can be found, appearently this is not the case. 
-Further inspection may be required...
-Enter memory trigger: ---
-</body>
+However, these shelfs are stacked with material. A search on the surface level is not enough. Further inspection is needed. 
 
+Enter the flag for “who even am I?”: ___
 
+Hints: open your inspector view and have a look at the website’s resources. 
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<Style>
+#first{
+background-color: var(--purple) !important;
+}
+</Style>
+
+[[<button id="first" class="button is-danger is-rounded">resume story->3.p]]
+</div>
 
 <link rel="stylesheet" href=css/ctf7/styles.css></link>
 
 
-:: First Shelf {"position":"1275,600","size":"100,100"}
+:: First Shelf {"position":"500,800","size":"100,100"}
 Nothing really usefull here
 
 
-:: Second Shelf {"position":"1400,600","size":"100,100"}
+:: Second Shelf {"position":"625,800","size":"100,100"}
 No usefull information here..
 
 
-:: Third Shelf {"position":"1525,600","size":"100,100"}
+:: Third Shelf {"position":"750,800","size":"100,100"}
 Nothing here either..
 
 
-:: Fourth Shelf {"position":"1650,600","size":"100,100"}
+:: Fourth Shelf {"position":"875,800","size":"100,100"}
 This search has lead me nowhere sofar..
 
 
-:: Fifth Shelf {"position":"1775,600","size":"100,100"}
+:: Fifth Shelf {"position":"1000,800","size":"100,100"}
 yup.. I did all of that for nothing :(

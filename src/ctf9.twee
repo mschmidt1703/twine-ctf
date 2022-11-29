@@ -1,16 +1,9 @@
-:: CTF 9 {"position":"950,675","size":"100,100"}
-On your computer you finde an interesting file. It seems that it hiding a secret. And your task is to retreive it.
-<html>
-<head>
-<style>
-div {
-  border: 2px solid gray;
-  padding: 100px;
-}
-</style>
-</head>
+:: CTF 9 {"position":"350,1675","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<h1>A random file in your home directory </h1>
 
-<body>
+Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
+
 <div>
 <code>
 public class ctf9 {<br>
@@ -42,6 +35,11 @@ public class ctf9 {<br>
 }
 </code>
 </div>
-</body>
-</html>
-Hint: kommt noch
+
+Hint: Have you tried working with char arrays in java?
+
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
+</div>
+<!--End of button next -->

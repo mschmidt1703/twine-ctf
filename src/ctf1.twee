@@ -11,6 +11,11 @@ tw-story {
   background-repeat: no-repeat;
 }
 
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+
 .twine-background-login {
 	position: inherit;
 	background-color:  white;
@@ -66,3 +71,9 @@ br {
   (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
+
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->4.p]]
+</div>
+<!--End of button next -->

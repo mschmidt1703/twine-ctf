@@ -8,6 +8,11 @@ br {
 	display: none;
 }
 
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+
 tw-story {
  background-image: url('img/4all/pc_rahmen.png');
  background-size: 110%;
@@ -95,7 +100,6 @@ iframe {
 (link-repeat: "What should I do?")[(alert: _info)]
 
 <tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser"> 
 	<div id="tab">
@@ -128,3 +132,9 @@ iframe {
 You made it!
 
 [[Main Page->MainPage]]
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
+</div>
+<!--End of button next -->

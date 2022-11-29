@@ -1,0 +1,124 @@
+:: 1.p {"position":"175,550","size":"100,100"}
+To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+
+“I don’t seem to remember anything. Who even am I?”
+To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
+However, what they know for sure is that he might be in a great danger. 
+You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
+“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->2.p]]
+</div>
+<!--End of button next -->
+
+
+:: 2.p {"position":"175,800","size":"100,100"}
+After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 7]]
+</div>
+<!--End of button next -->
+
+
+:: 3.p {"position":"175,925","size":"100,100"}
+<h1>Wait... but how can I log in to my account?</h1>
+Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 1]]
+</div>
+<!--End of button next -->
+
+:: 4.p {"position":"175,1050","size":"100,100"}
+<h1>Let the search begin!</h1>
+
+You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. "Maybe the bad guy’s looking for me have restricted the search.”
+You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 4]]
+</div>
+<!--End of button next -->
+
+
+:: 5.p {"position":"175,1175","size":"100,100"}
+<h1>I just wanna go home...  </h1>
+It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you're going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->CTF 5]]
+</div>
+<!--End of button next -->
+
+
+:: 6.p {"position":"175,1300","size":"100,100"}
+Finally! You opened your account and found some information about yourself. You’re done for the day it's time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It's not a long distance. So, you walk your way back home. 
+
+You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
+ 
+You know something important that changed your life forever happened here, but you can't remember it. 
+
+You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->CTF 2]]
+</div>
+<!--End of button next -->
+
+
+:: 7.p {"position":"175,1425","size":"100,100"}
+Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+
+(Continuation of the girlfriend tragedy here maybe?)
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->8.p]]
+</div>
+<!--End of button next -->
+
+
+:: 8.p {"position":"175,1550","size":"100,100"}
+Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">next->9.p]]
+</div>
+<!--End of button next -->
+
+
+:: 9.p {"position":"175,1675","size":"100,100"}
+“I'm sure they have the tools that will help me extract some information out of it.”
+You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
+After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange ->CTF 9]]
+</div>
+<!--End of button next -->
+
+
+:: 10.p {"position":"175,1800","size":"100,100"}
+Coming soom. Stay tuned!
+<!--Button next -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
+</div>
+<!--End of button next -->

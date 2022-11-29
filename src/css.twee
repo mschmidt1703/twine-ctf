@@ -13,6 +13,7 @@ tw-story {
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -33,5 +34,14 @@ tw-story {
   --grey2: #161616;
   --grey3: #141414;
 }
+
+.color_purple{
+	background-color: var(--purple) !important;
+}
+
+#resume-btn{
+	background-color: var(--purple) !important;
+}
+
 
 /* TODO override Button and Texts*/

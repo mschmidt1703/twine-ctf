@@ -1,4 +1,6 @@
 :: CTF 2 {"position":"800,150","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <h3>Do I live alone? </h3>
 
 Great! Now you know your name, but nothing else. 
@@ -15,5 +17,10 @@ height: auto;
 Maybe taking a closer look at it is not a bad idea. 
 
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
+<!--Button next -->
+<div>
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
+</div>
+<!--End of button next -->
 
 
