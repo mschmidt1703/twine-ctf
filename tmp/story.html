@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="19" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
 tw-icon{
      color: #ad00d8;
 }
@@ -927,171 +927,164 @@ Hint: Have you tried working with char arrays in java?
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="19" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;!--Button Achievments --&gt;
-&lt;div&gt;
-[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot; style=&quot;float: right&quot;&gt;Achievments-&gt;CTFs]]
-&lt;/div&gt;
-&lt;!--End of button Achievments --&gt;
-
-Hello there, 
-
-Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you&#39;re in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let&#39;s go!
-
-[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Start the Adventure!&lt;/button&gt; -&gt;Story]]
-
-[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Inspect new start site&lt;/button&gt; -&gt;newMainPage]]
-
-You can skip the story and go straight to the challanges:
-
-[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot;&gt;Start first challange&lt;/button&gt; -&gt;CTF 1]]
-
-or you can jump straight to you favorit challange: 
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XXS - difficulty level: 1-&gt;CTF 1]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - coming soon-&gt;CTF 3]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 4 - XXS - difficulty level: 2-&gt;CTF 4]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 5 - XXS - difficulty level: 3-&gt;CTF 5]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 6 - XXS - difficulty level: 3-&gt;CTF 6]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 7 - Web exploitation - difficulty level: 1-&gt;CTF 7]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 - coming soon-&gt;CTF 8]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
-
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - coming soon-&gt;CTF 10]]
-
-Debug Mode with all solutions is: $debug 
-(Set: $debug to true)
-&lt;!--(Set: $debug to false)--&gt;
-&lt;!-- :: init [startup] --&gt;
-&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
-(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="20" name="Story" tags="" position="175,350" size="100,100">You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
-
-Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
-
-&lt;!--Button next --&gt;
-&lt;div&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="21" name="CTFs" tags="" position="400,50" size="100,100">List with all CTFs and its status
-
-&lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
-(set: $ctfs to it + (a:&quot;ctf2&quot;))
-(set: $ctfs to it + (a:&quot;ctf3&quot;))--&gt;
-
-
-
-(if: $ctfs&#39;s length is 0)[\
-    no ctf finished 
-](else:)[\
-    &lt;!-- we iterate over the array and print each item --&gt;\
-    (for: each _item, ...$ctfs)[\
-        _item (unless: $ctfs&#39;s last is _item)[, ]\
-    ].
-]</tw-passagedata><tw-passagedata pid="22" name="1.p" tags="" position="175,550" size="100,100">To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
-
-“I don’t seem to remember anything. Who even am I?”
-To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
-However, what they know for sure is that he might be in a great danger. 
-You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
-“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="23" name="2.p" tags="" position="175,800" size="100,100">After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="24" name="3.p" tags="" position="175,925" size="100,100">&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
-Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="25" name="4.p" tags="" position="175,1050" size="100,100">&lt;h1&gt;Let the search begin!&lt;/h1&gt;
-
-You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
-You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="5.p" tags="" position="175,1175" size="100,100">&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
-It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="6.p" tags="" position="175,1300" size="100,100">Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
-
-You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
- 
-You know something important that changed your life forever happened here, but you can&#39;t remember it. 
-
-You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="7.p" tags="" position="175,1425" size="100,100">Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
-
-(Continuation of the girlfriend tragedy here maybe?)
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="8.p" tags="" position="175,1550" size="100,100">Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
-
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="9.p" tags="" position="175,1675" size="100,100">“I&#39;m sure they have the tools that will help me extract some information out of it.”
-You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
-After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="10.p" tags="" position="175,1800" size="100,100">Coming soom. Stay tuned!
-&lt;!--Button next --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;div&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="newMainPage" tags="" position="75,125" size="100,100">&lt;head&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="19" name="newMainPage" tags="" position="75,125" size="100,100">&lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
     &lt;title&gt;Memory Loss: Find Your Way Back&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;CSS/mainpage/style.css&quot;&gt;
 &lt;/head&gt;
+
+&lt;style&gt;
+/*
+TODO: Add portrait mode
+TODO: Rework wires in Ai 
+TODO: Add portrait mode of wires
+*/
+
+@import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+* {
+  font-family: &quot;OCR A Extended&quot;, sans-serif;
+  color: #9b9b9b;
+}
+
+tw-sidebar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  height: 25vh;
+  display: flex;
+  background-image: url(src/header/blurred_header.svg);
+  background-repeat: no-repeat;
+}
+
+header .logo img {
+  height: 10vh;
+  padding: 5vh;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+nav li a {
+  padding: 2vw;
+  font-size: 1.6vw;
+  color: #9b9b9b;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+nav .active a {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+.sec1 {
+  height: 60%;
+  padding: 5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* TODO: Check Background shadow */
+section .usb-stick img {
+  height: 50vh;
+  padding-left: 10vw;
+}
+
+.preview {
+  position: relative;
+}
+
+/*
+.preview_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+.preview_bg img {
+  position: relative;
+  z-index: 1;
+
+  height: 50vh;
+}
+
+.rectangle {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20vh;
+  width: 100%;
+
+  border-radius: 0px 0px 45px 45px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3;
+
+  height: 5.5em;
+  width: 25em;
+
+  border-radius: 45px 45px 45px 45px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton a {
+  font-size: 5vh;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+body {
+  background-image: url(src/background/wires_landscape.svg),
+    url(src/background/background_landscape.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, cover;
+  background-attachment: local, fixed;
+  box-sizing: border-box;
+}
+
+&lt;/style&gt;
 
 &lt;body&gt;
 &lt;main&gt;
@@ -1150,8 +1143,165 @@ After some fiddling around you manage to connect the drive to a new computer. An
   &lt;/footer&gt;
   
   &lt;/main&gt;   
-&lt;/body&gt;
-</tw-passagedata></tw-storydata>
+&lt;/body&gt;</tw-passagedata><tw-passagedata pid="20" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;!--Button Achievments --&gt;
+&lt;div&gt;
+[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot; style=&quot;float: right&quot;&gt;Achievments-&gt;CTFs]]
+&lt;/div&gt;
+&lt;!--End of button Achievments --&gt;
+
+Hello there, 
+
+Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you&#39;re in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let&#39;s go!
+
+[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Start the Adventure!&lt;/button&gt; -&gt;Story]]
+
+[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Inspect new start site&lt;/button&gt; -&gt;newMainPage]]
+
+You can skip the story and go straight to the challanges:
+
+[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot;&gt;Start first challange&lt;/button&gt; -&gt;CTF 1]]
+
+or you can jump straight to you favorit challange: 
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XXS - difficulty level: 1-&gt;CTF 1]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - coming soon-&gt;CTF 3]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 4 - XXS - difficulty level: 2-&gt;CTF 4]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 5 - XXS - difficulty level: 3-&gt;CTF 5]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 6 - XXS - difficulty level: 3-&gt;CTF 6]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 7 - Web exploitation - difficulty level: 1-&gt;CTF 7]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 - coming soon-&gt;CTF 8]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - coming soon-&gt;CTF 10]]
+
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+&lt;!--(Set: $debug to false)--&gt;
+&lt;!-- :: init [startup] --&gt;
+&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
+(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="21" name="Story" tags="" position="175,350" size="100,100">You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+
+&lt;!--Button next --&gt;
+&lt;div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="22" name="CTFs" tags="" position="400,50" size="100,100">List with all CTFs and its status
+
+&lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
+(set: $ctfs to it + (a:&quot;ctf2&quot;))
+(set: $ctfs to it + (a:&quot;ctf3&quot;))--&gt;
+
+
+
+(if: $ctfs&#39;s length is 0)[\
+    no ctf finished 
+](else:)[\
+    &lt;!-- we iterate over the array and print each item --&gt;\
+    (for: each _item, ...$ctfs)[\
+        _item (unless: $ctfs&#39;s last is _item)[, ]\
+    ].
+]</tw-passagedata><tw-passagedata pid="23" name="1.p" tags="" position="175,550" size="100,100">To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+
+“I don’t seem to remember anything. Who even am I?”
+To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
+However, what they know for sure is that he might be in a great danger. 
+You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
+“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="24" name="2.p" tags="" position="175,800" size="100,100">After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="25" name="3.p" tags="" position="175,925" size="100,100">&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
+Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="4.p" tags="" position="175,1050" size="100,100">&lt;h1&gt;Let the search begin!&lt;/h1&gt;
+
+You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
+You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="5.p" tags="" position="175,1175" size="100,100">&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
+It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="6.p" tags="" position="175,1300" size="100,100">Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
+
+You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
+ 
+You know something important that changed your life forever happened here, but you can&#39;t remember it. 
+
+You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="7.p" tags="" position="175,1425" size="100,100">Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+
+(Continuation of the girlfriend tragedy here maybe?)
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="8.p" tags="" position="175,1550" size="100,100">Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="9.p" tags="" position="175,1675" size="100,100">“I&#39;m sure they have the tools that will help me extract some information out of it.”
+You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
+After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="10.p" tags="" position="175,1800" size="100,100">Coming soom. Stay tuned!
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
