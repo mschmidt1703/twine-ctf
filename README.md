@@ -2,12 +2,32 @@
 
 ![](/lara/Title.png)
 
-## Git-Commands
+## Git for Noobies
 
-### Add files
+### Some Introduction
+Since the project becomes more and more complex, it is necessary to upgrade our way of developing o the next level. That means that this READMe will become your holy bible for expert developing, so read it, internalize it, live it.Otherwise your commits will not be merged to the protected master branch. You have been warned.
+
+#### Branching
+Normally when working with version control software, nobody works on the master branch.
+
+### Git Commands
+The very first thing to always do:
+```sh
+git pull
+```
+
+#### Add files
+First, pull the current state of the repository with:
+```sh
+git pull
+```
+
+Pulling makes it possible to obtain a local copy of the repository, which you can then work with.
+After work has been done, you need to prepare a commit for pushing your work into the repository. 
+Therefore you need the following commands:
 ```sh
 git add
-git commit -m "Test"
+git commit -m "<Commit message>"
 git push
 ```
 
