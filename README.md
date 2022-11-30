@@ -8,7 +8,14 @@
 Since the project becomes more and more complex, it is necessary to upgrade our way of developing o the next level. That means that this READMe will become your holy bible for expert developing, so read it, internalize it, live it.Otherwise your commits will not be merged to the protected master branch. You have been warned.
 
 #### Branching
-Normally when working with version control software, nobody works on the master branch.
+Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
+
+Create a new branch from an existing one:
+```sh
+git checkout -b <Branch name> <Branch name to copy from>
+```
+
+Then you need to commit the new branch: 
 
 ### Git Commands
 The very first thing to always do:
