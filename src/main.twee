@@ -1,0 +1,218 @@
+:: newMainPage {"position":"75,125","size":"100,100"}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory Loss: Find Your Way Back</title>
+    <link rel="stylesheet" href="CSS/mainpage/style.css">
+</head>
+
+<style>
+/*
+TODO: Add portrait mode
+TODO: Rework wires in Ai 
+TODO: Add portrait mode of wires
+*/
+
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+tw-sidebar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  height: 25vh;
+  display: flex;
+  background-image: url(src/header/blurred_header.svg);
+  background-repeat: no-repeat;
+}
+
+header .logo img {
+  height: 10vh;
+  padding: 5vh;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+nav li a {
+  padding: 2vw;
+  font-size: 1.6vw;
+  color: #9b9b9b;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+nav .active a {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+.sec1 {
+  height: 60%;
+  padding: 5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* TODO: Check Background shadow */
+section .usb-stick img {
+  height: 50vh;
+  padding-left: 10vw;
+}
+
+.preview {
+  position: relative;
+}
+
+/*
+.preview_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+.preview_bg img {
+  position: relative;
+  z-index: 1;
+
+  height: 50vh;
+}
+
+.rectangle {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20vh;
+  width: 100%;
+
+  border-radius: 0px 0px 45px 45px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3;
+
+  height: 5.5em;
+  width: 25em;
+
+  border-radius: 45px 45px 45px 45px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton a {
+  font-size: 5vh;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+body {
+  background-image: url(src/background/wires_landscape.svg),
+    url(src/background/background_landscape.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, cover;
+  background-attachment: local, fixed;
+  box-sizing: border-box;
+}
+
+</style>
+
+<body>
+<main>
+  <header>
+    <div class="logo">
+      <img src="src/header/logo.svg" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">CTFs</a>
+        </li>
+        <li>
+          <a href="#">Achievements</a>
+        </li>
+        <li>
+          <a href="#">Tutorial</a>
+        </li>
+        <li>
+          <a href="#">Settings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="sec1">
+    <div class="usb-stick">
+      <img src="src/svg/usb_stick.svg" alt="usb-stick">
+    </div>
+    <div class="preview">
+      <div class="preview_bg">
+        <img src="src/svg/preview_bg.svg" alt="preview">
+        <div class="rectangle">
+          <div class="outer">
+            <div class="start">
+            </div>
+            <div class="startButton">
+              <a href="#">Start</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> 
+  </section>
+
+  <section class="sec2">
+    <h1>Requirements</h1>
+    <h2>Tools</h2>
+  </section>
+
+  <footer>
+    <h1>Information about Developer</h1>
+  </footer>
+  
+  </main>   
+</body>

@@ -1025,6 +1025,8 @@ Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber se
 
 [[<button class="button is-large is-danger is-rounded color_purple">Start the Adventure!</button> ->Story]]
 
+[[<button class="button is-large is-danger is-rounded color_purple">Inspect new start site</button> ->newMainPage]]
+
 You can skip the story and go straight to the challanges:
 
 [[<button class="button is-danger is-rounded color_purple">Start first challange</button> ->CTF 1]]
@@ -1035,7 +1037,7 @@ or you can jump straight to you favorit challange:
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Web exploitation - difficulty level: 1->CTF 3]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - coming soon->CTF 3]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XXS - difficulty level: 2->CTF 4]]
 
@@ -1045,7 +1047,7 @@ or you can jump straight to you favorit challange:
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 7 - Web exploitation - difficulty level: 1->CTF 7]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - Forensics - difficulty level: 2->CTF 8]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - coming soon->CTF 8]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
 
@@ -1216,5 +1218,74 @@ Coming soom. Stay tuned!
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
 </div>
 <!--End of button next -->
+
+
+:: newMainPage {"position":"75,125","size":"100,100"}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory Loss: Find Your Way Back</title>
+    <link rel="stylesheet" href="CSS/mainpage/style.css">
+</head>
+
+<body>
+<main>
+  <header>
+    <div class="logo">
+      <img src="src/header/logo.svg" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">CTFs</a>
+        </li>
+        <li>
+          <a href="#">Achievements</a>
+        </li>
+        <li>
+          <a href="#">Tutorial</a>
+        </li>
+        <li>
+          <a href="#">Settings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="sec1">
+    <div class="usb-stick">
+      <img src="src/svg/usb_stick.svg" alt="usb-stick">
+    </div>
+    <div class="preview">
+      <div class="preview_bg">
+        <img src="src/svg/preview_bg.svg" alt="preview">
+        <div class="rectangle">
+          <div class="outer">
+            <div class="start">
+            </div>
+            <div class="startButton">
+              <a href="#">Start</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> 
+  </section>
+
+  <section class="sec2">
+    <h1>Requirements</h1>
+    <h2>Tools</h2>
+  </section>
+
+  <footer>
+    <h1>Information about Developer</h1>
+  </footer>
+  
+  </main>   
+</body>
 
 
