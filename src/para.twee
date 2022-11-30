@@ -27,6 +27,8 @@ Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber se
 
 [[<button class="button is-large is-danger is-rounded color_purple">Start the Adventure!</button> ->Story]]
 
+[[<button class="button is-large is-danger is-rounded color_purple">Inspect new start site</button> ->newMainPage]]
+
 You can skip the story and go straight to the challanges:
 
 [[<button class="button is-danger is-rounded color_purple">Start first challange</button> ->CTF 1]]
