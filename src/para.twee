@@ -74,7 +74,7 @@ Some strangers hear you fussing around. They enter the room where you are lying.
 
 
 
-:: CTFs {"position":"325,275","size":"100,100"}
+:: CTFs {"position":"400,50","size":"100,100"}
 List with all CTFs and its status
 
 <!--(set: $ctfs to it + (a:"ctf1"))

@@ -1,4 +1,4 @@
-:: CTF 4 {"position":"1375,0","size":"100,100"}
+:: CTF 4 {"position":"350,1050","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -134,7 +134,7 @@ It is not necessary to look into the the code.
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF4_end {"position":"1500,0","size":"100,100"}
+:: CTF4_end {"position":"575,1050","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
 
 You made it!

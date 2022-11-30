@@ -1,4 +1,4 @@
-:: CTF 5 {"position":"1375,125","size":"100,100"}
+:: CTF 5 {"position":"350,1175","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -126,7 +126,7 @@ iframe {
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF5_end {"position":"1500,125","size":"100,100"}
+:: CTF5_end {"position":"500,1175","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
 
 You made it!
