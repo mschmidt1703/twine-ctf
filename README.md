@@ -1,18 +1,33 @@
-# Introduction
-
+# Memory Loss: Find Your Way Back
 ![](title.png)
 
+This game was developed on the Twine engine to teach some basic knowledge about IT security and vulnerabilities using CTFs.
+
 # Table of contents
-1. [Introduction](#introduction)
-    1. [About](#about)
-2. [Developing](#developing)
-    1. [Workflow](#workflow)
-    2. [Git for Noobies](#Git-for-Noobies)
-3. [Another paragraph](#paragraph2)
+1. [Memory Loss: Find Your Way Back](#memory-loss-find-your-way-back)
+    1. [Overview of CTFs](#overview-of-ctfs)
+    2. [How to start the Game](#how-to-start-the-game)
+2. [Development](#development)
+    1. [Requirements](#requirements)
+    2. [Workflow](#workflow)
+    3. [Git for Noobies](#git-for-noobies)
+3. [Credits](#credits)
 
-## About
+## Overview of CTFs
+- XSS
+- Web
 
-# Developing
+## How to start the Game
+1. Clone the repository
+2. Change into /out
+3. Double click to start the story.html
+
+# Development
+For working with this project
+
+## Requirements
+- Twine with Harlow 3.3.1
+- Tweego
 
 ## Workflow 
 - 1.) git pull
@@ -84,16 +99,5 @@ git commit -m "<Commit message>"
 git push
 ```
 
-## CTF-Challenges Ideas
-
-### Web
-- XSS
-- Injection
-- CSRF Vulnerabilities
-
-### Cryptography
-
-### Binary Exploitation
-- Buffer Overflow
-
+# Credits
 
