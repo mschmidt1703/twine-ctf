@@ -7,21 +7,48 @@
 ### Some Introduction
 Since the project becomes more and more complex, it is necessary to upgrade our way of developing o the next level. That means that this READMe will become your holy bible for expert developing, so read it, internalize it, live it.Otherwise your commits will not be merged to the protected master branch. You have been warned.
 
-#### Branching
+#### Git
+
+##### Branching
 Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
 
-Create a new branch from an existing one:
-```sh
-git checkout -b <Branch name> <Branch name to copy from>
-```
+##### Commit Messages
+Commit messages should make sense. This means that a commit message gives the developers information about what the commit contains.
 
-Then you need to commit the new branch: 
+For example:
+A commit message like this "fixes" does not give any information about its commit. There is no reference to the content of the commit. This is important to make bugfixing easier.
+
+Better: 
+"CTF 4: Fixed responsive design for background"
+
+Another note: Commit messages generally start with a capital letter.
+
+So here is how to do any future commit messages:
+<Affiliation>: <What has been done>
+
+To eliminate any further confusion, here are some more examples:
+"CTF 8: Add the necessary file for downloading"
+"Mainpage: Add external css file"
+
 
 ### Git Commands
 The very first thing to always do:
 ```sh
 git pull
 ```
+
+#### Create a Branch
+Firstly:
+```sh
+git pull
+```
+
+Then create a new branch from an existing one:
+```sh
+git checkout -b <Branch name> <Branch name to copy from>
+```
+
+Then you need to commit the new branch: 
 
 #### Add files
 First, pull the current state of the repository with:
