@@ -1,6 +1,6 @@
 # Twine CTF
 
-![](/out/src/header/logo.svg)
+![](title.png)
 
 [Git for Noobies](#Git-for-Noobies)
 
