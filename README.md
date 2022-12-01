@@ -2,6 +2,8 @@
 
 ![](/out/src/header/logo.svg)
 
+[Git for Noobies](#Git-for-Noobies)
+
 ## Git for Noobies
 
 ### Some Introduction
