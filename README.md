@@ -1,6 +1,6 @@
 # Twine CTF
 
-![](/lara/Title.png)
+![](/out/src/header/logo.svg)
 
 ## Git for Noobies
 
