@@ -7,12 +7,7 @@
 ### Some Introduction
 Since the project becomes more and more complex, it is necessary to upgrade our way of developing o the next level. That means that this READMe will become your holy bible for expert developing, so read it, internalize it, live it.Otherwise your commits will not be merged to the protected master branch. You have been warned.
 
-#### Git
-
-##### Branching
-Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
-
-##### Commit Messages
+#### Commit Messages
 Commit messages should make sense. This means that a commit message gives the developers information about what the commit contains.
 
 For example:
@@ -28,8 +23,11 @@ So here is how to do any future commit messages:
 
 To eliminate any further confusion, here are some more examples:
 "CTF 8: Add the necessary file for downloading"
+  
 "Mainpage: Add external css file"
 
+#### Branching
+Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
 
 ### Git Commands
 The very first thing to always do:
