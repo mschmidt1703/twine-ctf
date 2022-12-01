@@ -7,9 +7,20 @@ twine-ctf
 	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
 	"format": "Harlowe",
 	"format-version": "3.3.3",
-	"start": "MainPage",
+	"start": "initMain",
 	"zoom": 1
 }
+
+:: initMain {"position":"75,25","size":"100,100"}
+<!--only for init-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+(set: $ctfs to (a:))
+
+
+(go-to: "MainPage")
+
 
 
 :: MainPage {"position":"200,25","size":"100,100"}

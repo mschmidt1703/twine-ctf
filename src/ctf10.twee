@@ -1,2 +1,98 @@
-:: CTF 10 {"position":"1125,275","size":"100,100"}
-ctf10
+:: CTF 10 {"position":"1400,400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ padding: inherit;
+ float: initial;
+ width: inherit;
+ height: inherit;
+}
+
+
+tw-passage {
+ margin-left: 15%;
+ width: 70%;
+ height: 100%;
+ padding: 1.5%;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; 
+ color:#000;
+}
+
+.webbrowser {
+  float: inherit;
+  width: 70%;
+  height: 54%;
+  margin-left: 15.5%;
+  margin-top: -4%;
+  border: 2px solid black;
+  background: white;
+}
+
+
+tw-story tw-consecutive-br {
+    height: 1.7% !important;
+}
+
+:root {
+    --color: #aaa;
+    --background: #000;
+    --size: 1;
+    /* --glow: 1 */
+    --animation: terminal-blink;
+}
+
+</style>
+
+
+(set: _info to "")
+
+
+(if: $ctfs contains "ctf10")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.js"></script>
+
+
+<tw-consecutive-br></tw-consecutive-br>
+<script>
+$('terminal').terminal({
+    hello: function(what) {
+        this.echo('Hello, ' + what + '. Wellcome to this terminal.');
+        // this string can be written with ES6 - uncomment to test
+        // this.echo(`Hello, ${what}. Wellcome to this terminal.`);
+    }
+}, {
+    greetings: 'My First Web Terminal'
+});
+</script>
+<terminal>TerminaL: </terminal>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "")]
+
+
+(Set: _solution to "<#script> alert(\"XSS\");</script>")
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
