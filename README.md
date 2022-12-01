@@ -45,30 +45,46 @@ Since the project becomes more and more complex, it is necessary to upgrade our 
 
 #### Commit Messages
 Commit messages should make sense. This means that a commit message gives the developers information about what the commit contains.
+A commit message like this "fixes" does not give any information about its commit. There is no reference to the content of the commit. This is important to make bugfixing easier. Another note for commit messages is that they generally start with a capital letter.
 
-For example:
-A commit message like this "fixes" does not give any information about its commit. There is no reference to the content of the commit. This is important to make bugfixing easier.
+- Don't: "Fixed"
+- Do: "CTF 4: Fixed responsive design for background"
 
-Better: 
-"CTF 4: Fixed responsive design for background"
-
-Another note: Commit messages generally start with a capital letter.
-
-So here is how to do any future commit messages:
-<Affiliation>: <What has been done>
+So here is the syntax for any future commit messages:
+```
+Affiliation: What has been done
+```
 
 To eliminate any further confusion, here are some more examples:
-"CTF 8: Add the necessary file for downloading"
-  
-"Mainpage: Add external css file"
+- "CTF 8: Add the necessary file for downloading"
+- "Mainpage: Add external css file"
+- "Repository: Add title.png"
 
 #### Branching
 Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
 
 ### Git Commands
-The very first thing to always do:
+To avoid confusion about the git commands, here is a list of the most common git commands.
+
+#### Add files
+First, before starting to work pull the current state of the repository with:
 ```sh
 git pull
+```
+
+Pulling makes it possible to obtain a local copy of the repository, which you can then work with.
+After work has been done, you need to prepare a commit for pushing your work into the repository. 
+Therefore you need the following commands:
+```sh
+git add
+git commit -m "<Commit message>"
+git push
+```
+
+#### Checkout a Branch
+The git console shows the current branch. For switching branches you only need:
+```sh
+git checkout <Branch name to checkout>
 ```
 
 #### Create a Branch
@@ -82,17 +98,9 @@ Then create a new branch from an existing one:
 git checkout -b <Branch name> <Branch name to copy from>
 ```
 
+Git will automatically switch to the new branch so you can start working on it.
+
 Then you need to commit the new branch: 
-
-#### Add files
-First, pull the current state of the repository with:
-```sh
-git pull
-```
-
-Pulling makes it possible to obtain a local copy of the repository, which you can then work with.
-After work has been done, you need to prepare a commit for pushing your work into the repository. 
-Therefore you need the following commands:
 ```sh
 git add
 git commit -m "<Commit message>"
