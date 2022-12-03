@@ -11,6 +11,7 @@ This game was developed on the Twine engine to teach some basic knowledge about 
     1. [Requirements](#requirements)
     2. [Workflow](#workflow)
     3. [Git for Noobies](#git-for-noobies)
+3. [Image Sources](#image-sources)
 3. [Credits](#credits)
 
 ## Overview of CTFs
@@ -106,6 +107,26 @@ git add
 git commit -m "<Commit message>"
 git push
 ```
+# Image Sources
+Background Images by Lara Laskowsky -> /out/img/4all/*.svg, /out/src/*
+PC Background: https://www.pexels.com/de-de/foto/grauer-lenovo-flachbildschirm-zeigt-an-was-sie-lieben-neon-signage-1772120/
+
+CTF1:
+https://www.hippopx.com/en/assorted-books-shelf-school-library-study-knowledge-51883
+
+CTF2:
+?
+
+CTF4:
+/out/img/ctf4/www.png by Marc Schmidt
+
+CTF5:
+https://www.pexels.com/de-de/foto/verschiedene-gemalde-383568/
+
+CTF6:
+https://pixabay.com/de/photos/wolf-winter-schnee-raubtier-frost-2043464/
+https://pixabay.com/de/photos/jay-vogel-zweig-sitzend-schneefall-548381/
+https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/
 
 # Credits
 
