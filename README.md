@@ -128,5 +128,8 @@ https://pixabay.com/de/photos/wolf-winter-schnee-raubtier-frost-2043464/
 https://pixabay.com/de/photos/jay-vogel-zweig-sitzend-schneefall-548381/
 https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/
 
+CTF7:
+?
+
 # Credits
 
