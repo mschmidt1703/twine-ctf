@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
+<tw-storydata name="twine-ctf" startnode="20" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
 tw-icon{
      color: #ad00d8;
 }
@@ -55,6 +55,15 @@ tw-story {
 
 
 /* TODO override Button and Texts*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+
+if (typeof window.downloadButton == "undefined") {
+	window.downloadButton = {
+		myEventHandler: function() {
+			alert('download file');   
+			//actual work here
+		}
+	};
+};
 
 /* # CTF 1 Start */
 
@@ -466,6 +475,11 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 &lt;title&gt;Challenge&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
+&lt;style&gt;
+body {
+  background-image: url(&#39;img_girl.jpg&#39;);
+}
+&lt;/style&gt;
 &lt;h1&gt;Capture the Flag&lt;/h1&gt;
 &lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
 &lt;br&gt;
@@ -958,20 +972,24 @@ background-color: var(--purple) !important;
 [[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]
 &lt;/div&gt;
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="950,275" size="100,100">Let&#39;s download the file and check for valuable information. 
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="950,275" size="100,100">Download the file and check for valuable information. 
+There might be something more to it than what you first see...
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;head&gt;
-    &lt;title&gt;Center align button&lt;/title&gt;
+&lt;title&gt;Center align button&lt;/title&gt;
     &lt;style&gt;
         body {
             text-align: center;
         }
     &lt;/style&gt;
-&lt;/head&gt;
+&lt;head/&gt;
 &lt;body&gt;
-  &lt;button class=&quot;button is-primary onclick=&quot;window.open(&#39;static/ctf8/important_note.txt&#39;)&quot;&quot;&gt;Download&lt;/button&gt;
+
+ 
+  
+  &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office&#39;)&quot;&gt;Download&lt;/button&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
@@ -1264,7 +1282,7 @@ or you can jump straight to you favorit challange:
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - coming soon-&gt;CTF 3]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - Web exploitation - difficulty level: 1-&gt;CTF 3]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 4 - XXS - difficulty level: 2-&gt;CTF 4]]
 
@@ -1274,7 +1292,7 @@ or you can jump straight to you favorit challange:
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 7 - Web exploitation - difficulty level: 1-&gt;CTF 7]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 - coming soon-&gt;CTF 8]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 -  Forensics - difficulty level: 1-&gt;CTF 8]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
 

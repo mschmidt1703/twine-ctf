@@ -7,7 +7,7 @@ twine-ctf
 	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
 	"format": "Harlowe",
 	"format-version": "3.3.3",
-	"start": "MainPage",
+	"start": "initMain",
 	"zoom": 1
 }
 
@@ -268,7 +268,7 @@ setup.ctf6_showCode = function() {
 // end Harlowe Macro Framework
 
 
-:: CTF 1 {"position":"1025,100","size":"100,100"}
+:: CTF 1 {"position":"350,925","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -349,11 +349,107 @@ br {
 <!--End of button next -->
 
 
-:: CTF 10 {"position":"1100,725","size":"100,100"}
-ctf10
+:: CTF 10 {"position":"1400,400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ padding: inherit;
+ float: initial;
+ width: inherit;
+ height: inherit;
+}
 
 
-:: CTF 2 {"position":"800,150","size":"100,100"}
+tw-passage {
+ margin-left: 15%;
+ width: 70%;
+ height: 100%;
+ padding: 1.5%;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; 
+ color:#000;
+}
+
+.webbrowser {
+  float: inherit;
+  width: 70%;
+  height: 54%;
+  margin-left: 15.5%;
+  margin-top: -4%;
+  border: 2px solid black;
+  background: white;
+}
+
+
+tw-story tw-consecutive-br {
+    height: 1.7% !important;
+}
+
+:root {
+    --color: #aaa;
+    --background: #000;
+    --size: 1;
+    /* --glow: 1 */
+    --animation: terminal-blink;
+}
+
+</style>
+
+
+(set: _info to "")
+
+
+(if: $ctfs contains "ctf10")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.js"></script>
+
+
+<tw-consecutive-br></tw-consecutive-br>
+<script>
+$('terminal').terminal({
+    hello: function(what) {
+        this.echo('Hello, ' + what + '. Wellcome to this terminal.');
+        // this string can be written with ES6 - uncomment to test
+        // this.echo(`Hello, ${what}. Wellcome to this terminal.`);
+    }
+}, {
+    greetings: 'My First Web Terminal'
+});
+</script>
+<terminal>TerminaL: </terminal>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "")]
+
+
+(Set: _solution to "<#script> alert(\"XSS\");</script>")
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+
+:: CTF 2 {"position":"350,1300","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <h3>Do I live alone? </h3>
@@ -403,7 +499,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 </html>
 
 
-:: CTF 4 {"position":"1375,0","size":"100,100"}
+:: CTF 4 {"position":"350,1050","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -419,41 +515,39 @@ br {
 
 tw-story {
  background-image: url('img/4all/pc_rahmen.png');
- background-size: 110%;
- background-position-x: -6.5rem;
- background-repeat: no-repeat;
-  
- margin: 0;
- padding: 1rem;
- white-space: normal;
- width: 100%
+ padding: inherit;
+ float: initial;
+ width: inherit;
+ height: inherit;
 }
 
 
 tw-passage {
- width: 83rem;
- height: 60rem;
- margin:auto;
- padding: 1.5rem;
+ margin-left: 15%;
+ width: 70%;
+ height: 100%;
+ padding: 1.5%;
  font-family: Arial, Helvetica, sans-serif;
- font-size:1.2rem; color:#000;
- text-align: left;
+ font-size:1.2rem; 
+ color:#000;
 }
 
 .webbrowser {
-  max-width: 1rem;
-  min-width: fit-content;
+  float: inherit;
+  width: 70%;
+  height: 54%;
+  margin-left: 15.5%;
+  margin-top: -4%;
   border: 2px solid black;
-  margin: auto;
   background: white;
-  margin-top: -4.5rem;
 }
 
 #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
     background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
-    margin: 0px;
-    width: 55rem;
-    height: 30rem;
+    background-repeat: repeat-x;
     border: 1px solid #333;
 }
 
@@ -463,7 +557,6 @@ tw-passage {
 }
 
 .controls {
-    margin: 0 auto;
     background-color: #f4f4f4;
     border: 1px solid #f0f0f0;
     padding: 2px 3px;
@@ -489,6 +582,11 @@ iframe {
  width: inherit;
  height: inherit
 }
+
+tw-story tw-consecutive-br {
+    height: 1.7% !important;
+}
+
 </style>
 
 
@@ -539,23 +637,13 @@ It is not necessary to look into the the code.
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF4_end {"position":"1500,0","size":"100,100"}
+:: CTF4_end {"position":"575,1050","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
 
 You made it!
 
-Story
 
-[[Main Page->MainPage]]
-<!--Button next -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<div>
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->5.p]]
-</div>
-<!--End of button next -->
-
-
-:: CTF 5 {"position":"1375,125","size":"100,100"}
+:: CTF 5 {"position":"350,1175","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -683,7 +771,7 @@ iframe {
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF5_end {"position":"1500,125","size":"100,100"}
+:: CTF5_end {"position":"500,1175","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
 
 You made it!
@@ -697,7 +785,7 @@ You made it!
 <!--End of button next -->
 
 
-:: CTF 6 {"position":"1375,250","size":"100,100"}
+:: CTF 6 {"position":"1300,275","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -879,7 +967,7 @@ You made it!
 <!--End of button next -->
 
 
-:: CTF 7 {"position":"1375,425","size":"100,100"}
+:: CTF 7 {"position":"350,800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <h1>Who even am I?</h1>
 
@@ -945,7 +1033,7 @@ This search has lead me nowhere sofar..
 yup.. I did all of that for nothing :(
 
 
-:: CTF 8 {"position":"950,550","size":"100,100"}
+:: CTF 8 {"position":"950,275","size":"100,100"}
 Let's download the file and check for valuable information. 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -1008,6 +1096,237 @@ Hint: Have you tried working with char arrays in java?
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
 </div>
 <!--End of button next -->
+
+
+:: newMainPage {"position":"75,125","size":"100,100"}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory Loss: Find Your Way Back</title>
+    <link rel="stylesheet" href="CSS/mainpage/style.css">
+</head>
+
+<style>
+/*
+TODO: Add portrait mode
+TODO: Rework wires in Ai 
+TODO: Add portrait mode of wires
+*/
+
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+tw-sidebar {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  height: 25vh;
+  display: flex;
+  background-image: url(src/header/blurred_header.svg);
+  background-repeat: no-repeat;
+}
+
+header .logo img {
+  height: 10vh;
+  padding: 5vh;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+nav li a {
+  padding: 2vw;
+  font-size: 1.6vw;
+  color: #9b9b9b;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+nav .active a {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+.sec1 {
+  height: 60%;
+  padding: 5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* TODO: Check Background shadow */
+section .usb-stick img {
+  height: 50vh;
+  padding-left: 10vw;
+}
+
+.preview {
+  position: relative;
+}
+
+/*
+.preview_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+.preview_bg img {
+  position: relative;
+  z-index: 1;
+
+  height: 50vh;
+}
+
+.rectangle {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20vh;
+  width: 100%;
+
+  border-radius: 0px 0px 45px 45px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3;
+
+  height: 5.5em;
+  width: 25em;
+
+  border-radius: 45px 45px 45px 45px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.outer .startButton a {
+  font-size: 5vh;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+body {
+  background-image: url(src/background/wires_landscape.svg),
+    url(src/background/background_landscape.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, cover;
+  background-attachment: local, fixed;
+  box-sizing: border-box;
+}
+
+</style>
+
+<body>
+<main>
+  <header>
+    <div class="logo">
+      <img src="src/header/logo.svg" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">CTFs</a>
+        </li>
+        <li>
+          <a href="#">Achievements</a>
+        </li>
+        <li>
+          <a href="#">Tutorial</a>
+        </li>
+        <li>
+          <a href="#">Settings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="sec1">
+    <div class="usb-stick">
+      <img src="src/svg/usb_stick.svg" alt="usb-stick">
+    </div>
+    <div class="preview">
+      <div class="preview_bg">
+        <img src="src/svg/preview_bg.svg" alt="preview">
+        <div class="rectangle">
+          <div class="outer">
+            <div class="start">
+            </div>
+            <div class="startButton">
+              <a href="#">Start</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> 
+  </section>
+
+  <section class="sec2">
+    <h1>Requirements</h1>
+    <h2>Tools</h2>
+  </section>
+
+  <footer>
+    <h1>Information about Developer</h1>
+  </footer>
+  
+  </main>   
+</body>
+
+
+:: initMain {"position":"75,25","size":"100,100"}
+<!--only for init-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+(set: $ctfs to (a:))
+
+
+(go-to: "MainPage")
 
 
 :: MainPage {"position":"200,25","size":"100,100"}
@@ -1074,7 +1393,7 @@ Some strangers hear you fussing around. They enter the room where you are lying.
 <!--End of button next -->
 
 
-:: CTFs {"position":"325,275","size":"100,100"}
+:: CTFs {"position":"400,50","size":"100,100"}
 List with all CTFs and its status
 
 <!--(set: $ctfs to it + (a:"ctf1"))
@@ -1218,74 +1537,5 @@ Coming soom. Stay tuned!
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
 </div>
 <!--End of button next -->
-
-
-:: newMainPage {"position":"75,125","size":"100,100"}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Memory Loss: Find Your Way Back</title>
-    <link rel="stylesheet" href="CSS/mainpage/style.css">
-</head>
-
-<body>
-<main>
-  <header>
-    <div class="logo">
-      <img src="src/header/logo.svg" alt="Logo">
-    </div>
-    <nav>
-      <ul>
-        <li class="active">
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">CTFs</a>
-        </li>
-        <li>
-          <a href="#">Achievements</a>
-        </li>
-        <li>
-          <a href="#">Tutorial</a>
-        </li>
-        <li>
-          <a href="#">Settings</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="sec1">
-    <div class="usb-stick">
-      <img src="src/svg/usb_stick.svg" alt="usb-stick">
-    </div>
-    <div class="preview">
-      <div class="preview_bg">
-        <img src="src/svg/preview_bg.svg" alt="preview">
-        <div class="rectangle">
-          <div class="outer">
-            <div class="start">
-            </div>
-            <div class="startButton">
-              <a href="#">Start</a>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </div> 
-  </section>
-
-  <section class="sec2">
-    <h1>Requirements</h1>
-    <h2>Tools</h2>
-  </section>
-
-  <footer>
-    <h1>Information about Developer</h1>
-  </footer>
-  
-  </main>   
-</body>
 
 
