@@ -1,2 +1,203 @@
-:: CTF 10 {"position":"1125,275","size":"100,100"}
-ctf10
+:: CTF 10 {"position":"1300,425","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+
+html {
+	overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+br {
+	max-height: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+tw-story {
+ background-image: url('img/4all/pc_rahmen.png');
+ padding: inherit;
+ float: initial;
+ width: inherit;
+ height: inherit;
+}
+
+
+tw-passage {
+ margin-left: 15%;
+ width: 70%;
+ height: 100%;
+ padding: 1.5%;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:1.2rem; 
+ color:#000;
+}
+
+.webbrowser {
+  float: inherit;
+  width: 70%;
+  height: 54%;
+  margin-left: 15.5%;
+  margin-top: -4%;
+  border: 2px solid black;
+  background: white;
+}
+
+
+tw-story tw-consecutive-br {
+    height: 1.7% !important;
+}
+
+:root {
+    --color: #aaa;
+    --background: #000;
+    --size: 1;
+    /* --glow: 1 */
+    --animation: terminal-blink;
+}
+
+terminal {
+    margin-left: 15.5%;
+    margin-top: -7%;
+}
+
+</style>
+
+
+(set: _info to "")
+
+
+(if: $ctfs contains "ctf10")[]
+(else:)[(alert: _info)]
+
+(link-repeat: "What should I do?")[(alert: _info)]
+<script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/animation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/less.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/pipe.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+
+
+<script>
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
+BrowserFS.configure({
+  fs: "LocalStorage", // from Backends table below,
+  options: {
+  }
+}, function (e) {
+  if (e) {
+    // An error occurred.
+    throw e;
+  }
+  // Otherwise, you can interact with the configured backends via our Node FS polyfill!
+  var fs = BrowserFS.BFSRequire('fs');
+  fs.readdir('/', function(e, contents) {
+    // etc
+    
+  fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
+  var current_dir = "/";
+
+    terminal = $('terminal').terminal((command) => {
+      var cmd = $.terminal.parse_command(command);
+      /*terminal.echo(command);*/
+          if (commandList[cmd.name]) {
+              commandList[cmd.name].call(terminal, cmd);
+          } else if (cmd.name.length == 0) {
+              return;
+          } else {
+              terminal.error('Command not found: ' + cmd.name);
+         }
+      }, {
+      greetings: 'Your PC',
+      name: 'js_demo',
+      height: 500,
+      width: 900,
+      prompt: 'root@localhost:'+current_dir+'\$> '
+  });
+  
+  var commandList = {
+    help: function(cmd) {
+      terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) => accumulator +"\n"+ currentValue, "Available commands:"));
+    },
+    add: function(cmd) {
+      terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
+    },
+
+    sub: function(cmd) {
+          terminal.echo(parseInt(cmd.args[0])-parseInt(cmd.args[1]));
+    },
+    cd: function(cmd) {
+        if (cmd.args[0] == ".."){
+          //Function go back or /
+          //change promt
+        } else if (cmd.args[0] == ".") {
+          return;
+        }
+        //Check if dir exists
+        current_dir = cmd.args[0];
+        terminal.set_prompt('root@localhost:/'+current_dir+'\$>');
+    },
+ 
+    ls: function(cmd) {
+      /*ls <dir>*/
+          fs.readdir(current_dir, function(err, contents) {
+          terminal.echo(contents.toString().split(","));
+        }); 
+    },
+
+    mkdir: function(cmd) {
+      if (cmd.args.length != 1) {
+        printHelp("mkdir");
+      } else {
+         fs.mkdir(cmd.args[0], function(err, contents) {}); 
+      }
+    },
+    less: function(cmd) {
+      if (cmd.args.length != 1) {
+        printHelp("less");
+      } else {
+          fs.readFile(cmd.args[0], function(err, contents) {
+          terminal.echo(contents.toString());
+        }); 
+      }
+    }
+  }
+
+  function printHelp(forCommand){
+    switch (forCommand){
+      case "mkdir":
+        terminal.echo("Usage mkdir <foldername>");
+        break;
+       case "less":
+        terminal.echo("Usage less <filename>");  
+        }
+      }  
+  });
+});
+
+</script>
+<terminal> </terminal>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
+<tw-consecutive-br></tw-consecutive-br>
+(link-repeat: "Give me a second hint")[(alert: "")]
+
+
+(Set: _solution to "<#script> alert(\"XSS\");</script>")
+(if: $debug is true)[solution is: (click: "solution")[_solution]]
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>

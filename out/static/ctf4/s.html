@@ -36,7 +36,7 @@ function search() {
 		document.head.appendChild(myScript);
 	}
 	
-	//and that not in HTML Compatibility Guidelines’ of the XHTML 1 specification, maybe remove it
+	//and that, not in HTML Compatibility Guidelines of the XHTML 1 specification, maybe remove it
 	if ((input.startsWith("\<script ")) && (input.endsWith("/\>")))  {
 		innerScript = input.replaceAll('\<script',"").replaceAll('/\>',"")
 		var myScript = document.createElement('script');

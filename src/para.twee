@@ -7,9 +7,20 @@ twine-ctf
 	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
 	"format": "Harlowe",
 	"format-version": "3.3.3",
-	"start": "MainPage",
+	"start": "initMain",
 	"zoom": 1
 }
+
+:: initMain {"position":"75,25","size":"100,100"}
+<!--only for init-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+(set: $ctfs to (a:))
+
+
+(go-to: "MainPage")
+
 
 
 :: MainPage {"position":"200,25","size":"100,100"}
@@ -26,6 +37,8 @@ Hello there,
 Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you're in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let's go!
 
 [[<button class="button is-large is-danger is-rounded color_purple">Start the Adventure!</button> ->Story]]
+
+[[<button class="button is-large is-danger is-rounded color_purple">Inspect new start site</button> ->newMainPage]]
 
 You can skip the story and go straight to the challanges:
 
