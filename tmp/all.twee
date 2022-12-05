@@ -8,11 +8,43 @@ twine-ctf
 	"format": "Harlowe",
 	"format-version": "3.3.3",
 	"start": "initMain",
-	"zoom": 1
+	"zoom": 0.6
 }
 
 
 :: Story Stylesheet [stylesheet]
+.fixedButton1{
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton2{
+            position: fixed;
+            bottom: 40px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton3{
+            position: fixed;
+            bottom:80px;
+            right: 0px; 
+            padding: 20px;
+        }
+
+.addMore{
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.addMore:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
 /*Button redo undo*/
 tw-icon{
      color: #ad00d8;
@@ -63,6 +95,15 @@ tw-story {
 
 :: Story JavaScript [script]
 window.setup = window.setup || {};
+
+if (typeof window.downloadButton == "undefined") {
+	window.downloadButton = {
+		myEventHandler: function() {
+			alert('download file');   
+			//actual work here
+		}
+	};
+};
 
 /* # CTF 1 Start */
 
@@ -265,6 +306,20 @@ setup.ctf6_showCode = function() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
+
+/* # CTF 3 Start */
+
+setup.ctf3 = function() {
+	   document.getElementById("hint-button").addEventListener("click", eventOnClickHandler);
+
+}
+
+function eventOnClickHandler(event) {
+	alert("ALERT");
+}
+
+/* # CTF 3 End */
+
 // end Harlowe Macro Framework
 
 
@@ -319,6 +374,14 @@ br {
 
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
+
+<span id='img-pop'>Click me.</span>
+
+<script>
+$('#img-pop').click(function() {
+	window.parent.postMessage('hello', '*');
+});
+</script>
 
 <div class="container is-fluidno login-contianer">
    <form method="POST" class="box twine-background-login">
@@ -479,7 +542,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 
-(set: _whatToDo to "You should train taking a closer look at things...")
+(set: _whatToDo to "You should be taking a closer look at things...")
 
 <!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
@@ -487,13 +550,27 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 [(alert: _whatToDo)]
 
+
 <title>Challenge</title>
 </head>
 <body>
+
+
+
+<style>
+body {
+  background-image: url('img_girl.jpg');
+}
+</style>
 <h1>Capture the Flag</h1>
 <p>Capture the Flag (CTF) in computer security is an exercise in which "flags" are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.</p>
-<br>
 <p> Source: Wikipedia </p>
+
+ <a class="fixedButton1" href>
+         <button class="addMore" title="maybe there's something to inspect">hint</button>
+ </a>
+
+
 <!--flag{12_234_ghuzt5r}-->
 </body>
 </html>
@@ -1034,20 +1111,28 @@ yup.. I did all of that for nothing :(
 
 
 :: CTF 8 {"position":"950,275","size":"100,100"}
-Let's download the file and check for valuable information. 
+Download the file and check for valuable information. 
+There might be something more to it than what you first see...
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <head>
-    <title>Center align button</title>
+<title>Center align button</title>
     <style>
         body {
             text-align: center;
         }
     </style>
-</head>
+<head/>
+
+ 
 <body>
-  <button class="button is-primary onclick="window.open('static/ctf8/important_note.txt')"">Download</button>
+
+  <a class="fixedButton1" href>
+         <button class="addMore" title="don't focus on the image itself">hint</button>
+ </a>
+  
+  <button type="submit" onclick="window.open('static/ctf8/my_office')">Download</button>
 </body>
 
 
@@ -1356,7 +1441,7 @@ or you can jump straight to you favorit challange:
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - coming soon->CTF 3]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Web exploitation - difficulty level: 1->CTF 3]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XXS - difficulty level: 2->CTF 4]]
 
@@ -1366,7 +1451,7 @@ or you can jump straight to you favorit challange:
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 7 - Web exploitation - difficulty level: 1->CTF 7]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - coming soon->CTF 8]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 -  Forensics - difficulty level: 1->CTF 8]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
 

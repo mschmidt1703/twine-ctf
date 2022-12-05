@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 
-(set: _whatToDo to "You should train taking a closer look at things...")
+(set: _whatToDo to "You should be taking a closer look at things...")
 
 <!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
@@ -10,13 +10,25 @@
 
 [(alert: _whatToDo)]
 
+
 <title>Challenge</title>
 </head>
 <body>
+
+
+
+<style>
+
+</style>
 <h1>Capture the Flag</h1>
 <p>Capture the Flag (CTF) in computer security is an exercise in which "flags" are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.</p>
-<br>
 <p> Source: Wikipedia </p>
+
+ <a class="fixedButton1" href>
+         <button class="addMore" title="maybe there's something to inspect">hint</button>
+ </a>
+
+
 <!--flag{12_234_ghuzt5r}-->
 </body>
 </html>

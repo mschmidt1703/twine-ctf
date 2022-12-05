@@ -1,4 +1,36 @@
 :: Story Stylesheet [stylesheet]
+.fixedButton1{
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton2{
+            position: fixed;
+            bottom: 40px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton3{
+            position: fixed;
+            bottom:80px;
+            right: 0px; 
+            padding: 20px;
+        }
+
+.addMore{
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.addMore:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
 /*Button redo undo*/
 tw-icon{
      color: #ad00d8;

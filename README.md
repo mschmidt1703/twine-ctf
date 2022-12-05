@@ -39,6 +39,11 @@ For working with this project
 - 6.) Test if story compiles with out errors if not correct errors tweego.exe src/ -o tmp/story.html
 - 7.) Commit all (/tmp ist egal)
 
+<<<<<<< HEAD
+## Credits
+ctf2: https://pixabay.com/de/illustrations/frau-malen-aquarell-papier-kunst-4178302/
+ctf7: https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg
+=======
 ## Git for Noobies
 
 ### Some Introduction
@@ -115,7 +120,7 @@ CTF1:
 https://www.hippopx.com/en/assorted-books-shelf-school-library-study-knowledge-51883
 
 CTF2:
-?
+https://pixabay.com/de/illustrations/frau-malen-aquarell-papier-kunst-4178302/
 
 CTF4:
 /out/img/ctf4/www.png by Marc Schmidt
@@ -129,7 +134,8 @@ https://pixabay.com/de/photos/jay-vogel-zweig-sitzend-schneefall-548381/
 https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/
 
 CTF7:
-?
+https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg
 
 # Credits
 
+>>>>>>> 62a2192a14516e6130a3831e33ca196827d9cfe7

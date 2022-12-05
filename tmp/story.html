@@ -9,7 +9,39 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.fixedButton1{
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton2{
+            position: fixed;
+            bottom: 40px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton3{
+            position: fixed;
+            bottom:80px;
+            right: 0px; 
+            padding: 20px;
+        }
+
+.addMore{
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.addMore:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
+/*Button redo undo*/
 tw-icon{
      color: #ad00d8;
 }
@@ -334,7 +366,7 @@ br {
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;4.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1400,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1300,425" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 html {
@@ -389,6 +421,11 @@ tw-story tw-consecutive-br {
     --animation: terminal-blink;
 }
 
+terminal {
+    margin-left: 15.5%;
+    margin-top: -7%;
+}
+
 &lt;/style&gt;
 
 
@@ -399,24 +436,124 @@ tw-story tw-consecutive-br {
 (else:)[(alert: _info)]
 
 (link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/animation.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/less.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/pipe.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js&quot;&gt;&lt;/script&gt;
 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+
+
 &lt;script&gt;
-$(&#39;terminal&#39;).terminal({
-    hello: function(what) {
-        this.echo(&#39;Hello, &#39; + what + &#39;. Wellcome to this terminal.&#39;);
-        // this string can be written with ES6 - uncomment to test
-        // this.echo(`Hello, ${what}. Wellcome to this terminal.`);
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
+BrowserFS.configure({
+  fs: &quot;LocalStorage&quot;, // from Backends table below,
+  options: {
+  }
+}, function (e) {
+  if (e) {
+    // An error occurred.
+    throw e;
+  }
+  // Otherwise, you can interact with the configured backends via our Node FS polyfill!
+  var fs = BrowserFS.BFSRequire(&#39;fs&#39;);
+  fs.readdir(&#39;/&#39;, function(e, contents) {
+    // etc
+    
+  fs.writeFile(&#39;/test.txt&#39;, &#39;Cool, I can do this in the browser!&#39;, function(err) {});
+  var current_dir = &quot;/&quot;;
+
+    terminal = $(&#39;terminal&#39;).terminal((command) =&gt; {
+      var cmd = $.terminal.parse_command(command);
+      /*terminal.echo(command);*/
+          if (commandList[cmd.name]) {
+              commandList[cmd.name].call(terminal, cmd);
+          } else if (cmd.name.length == 0) {
+              return;
+          } else {
+              terminal.error(&#39;Command not found: &#39; + cmd.name);
+         }
+      }, {
+      greetings: &#39;Your PC&#39;,
+      name: &#39;js_demo&#39;,
+      height: 500,
+      width: 900,
+      prompt: &#39;root@localhost:&#39;+current_dir+&#39;\$&gt; &#39;
+  });
+  
+  var commandList = {
+    help: function(cmd) {
+      terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) =&gt; accumulator +&quot;\n&quot;+ currentValue, &quot;Available commands:&quot;));
+    },
+    add: function(cmd) {
+      terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
+    },
+
+    sub: function(cmd) {
+          terminal.echo(parseInt(cmd.args[0])-parseInt(cmd.args[1]));
+    },
+    cd: function(cmd) {
+        if (cmd.args[0] == &quot;..&quot;){
+          //Function go back or /
+          //change promt
+        } else if (cmd.args[0] == &quot;.&quot;) {
+          return;
+        }
+        //Check if dir exists
+        current_dir = cmd.args[0];
+        terminal.set_prompt(&#39;root@localhost:/&#39;+current_dir+&#39;\$&gt;&#39;);
+    },
+ 
+    ls: function(cmd) {
+      /*ls &lt;dir&gt;*/
+          fs.readdir(current_dir, function(err, contents) {
+          terminal.echo(contents.toString().split(&quot;,&quot;));
+        }); 
+    },
+
+    mkdir: function(cmd) {
+      if (cmd.args.length != 1) {
+        printHelp(&quot;mkdir&quot;);
+      } else {
+         fs.mkdir(cmd.args[0], function(err, contents) {}); 
+      }
+    },
+    less: function(cmd) {
+      if (cmd.args.length != 1) {
+        printHelp(&quot;less&quot;);
+      } else {
+          fs.readFile(cmd.args[0], function(err, contents) {
+          terminal.echo(contents.toString());
+        }); 
+      }
     }
-}, {
-    greetings: &#39;My First Web Terminal&#39;
+  }
+
+  function printHelp(forCommand){
+    switch (forCommand){
+      case &quot;mkdir&quot;:
+        terminal.echo(&quot;Usage mkdir &lt;foldername&gt;&quot;);
+        break;
+       case &quot;less&quot;:
+        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);  
+        }
+      }  
+  });
 });
+
 &lt;/script&gt;
-&lt;terminal&gt;TerminaL: &lt;/terminal&gt;
+&lt;terminal&gt; &lt;/terminal&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
@@ -455,7 +592,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,275" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 
-(set: _whatToDo to &quot;You should train taking a closer look at things...&quot;)
+(set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
 
 &lt;!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
@@ -463,13 +600,25 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 [(alert: _whatToDo)]
 
+
 &lt;title&gt;Challenge&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
+
+
+
+&lt;style&gt;
+
+&lt;/style&gt;
 &lt;h1&gt;Capture the Flag&lt;/h1&gt;
 &lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
-&lt;br&gt;
 &lt;p&gt; Source: Wikipedia &lt;/p&gt;
+
+ &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;maybe there&#39;s something to inspect&quot;&gt;hint&lt;/button&gt;
+ &lt;/a&gt;
+
+
 &lt;!--flag{12_234_ghuzt5r}--&gt;
 &lt;/body&gt;
 &lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="350,1050" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
@@ -958,20 +1107,28 @@ background-color: var(--purple) !important;
 [[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]
 &lt;/div&gt;
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="950,275" size="100,100">Let&#39;s download the file and check for valuable information. 
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="950,275" size="100,100">Download the file and check for valuable information. 
+There might be something more to it than what you first see...
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;head&gt;
-    &lt;title&gt;Center align button&lt;/title&gt;
+&lt;title&gt;Center align button&lt;/title&gt;
     &lt;style&gt;
         body {
             text-align: center;
         }
     &lt;/style&gt;
-&lt;/head&gt;
+&lt;head/&gt;
+
+ 
 &lt;body&gt;
-  &lt;button class=&quot;button is-primary onclick=&quot;window.open(&#39;static/ctf8/important_note.txt&#39;)&quot;&quot;&gt;Download&lt;/button&gt;
+
+  &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;hint&lt;/button&gt;
+ &lt;/a&gt;
+  
+  &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office&#39;)&quot;&gt;Download&lt;/button&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
