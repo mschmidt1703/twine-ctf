@@ -137,5 +137,3 @@ CTF7:
 https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg
 
 # Credits
-
->>>>>>> 62a2192a14516e6130a3831e33ca196827d9cfe7
