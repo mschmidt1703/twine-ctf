@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1044.95 453.92">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+        filter: url(#drop-shadow-1);
+        font-family: SegoeUISymbol, 'Segoe UI Symbol';
+        font-size: 50px;
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_173);
+      }
+
+      .cls-3 {
+        fill: url(#Unbenannter_Verlauf_53);
+      }
+
+      .cls-4 {
+        fill: url(#Unbenannter_Verlauf_24);
+      }
+
+      .cls-5 {
+        fill: #6f0074;
+      }
+
+      .cls-6 {
+        letter-spacing: .03em;
+      }
+
+      .cls-7 {
+        fill: url(#Unbenannter_Verlauf_65);
+      }
+    </style>
+    <radialGradient id="Unbenannter_Verlauf_24" data-name="Unbenannter Verlauf 24" cx="522.47" cy="225.85" fx="522.47" fy="225.85" r="402.48" gradientUnits="userSpaceOnUse">
+      <stop offset=".1" stop-color="#18003f"/>
+      <stop offset=".3" stop-color="#130032"/>
+      <stop offset=".5" stop-color="#10002b"/>
+      <stop offset=".74" stop-color="#0d0032"/>
+      <stop offset=".98" stop-color="#08003f"/>
+    </radialGradient>
+    <linearGradient id="Unbenannter_Verlauf_53" data-name="Unbenannter Verlauf 53" x1=".06" y1="346.35" x2="1044.88" y2="346.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#007bac"/>
+      <stop offset="1" stop-color="#ff7bac" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_65" data-name="Unbenannter Verlauf 65" x1=".06" y1="322.86" x2="1044.88" y2="322.86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0014aa"/>
+      <stop offset=".43" stop-color="#74a" stop-opacity=".53"/>
+      <stop offset=".82" stop-color="#d86bab" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#ff7bac" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="Unbenannter_Verlauf_173" data-name="Unbenannter Verlauf 173" cx="522.47" cy="368.46" fx="522.47" fy="368.46" r="570.72" gradientTransform="translate(0 216.48) scale(1 .41)" gradientUnits="userSpaceOnUse">
+      <stop offset=".22" stop-color="#4c006a"/>
+      <stop offset=".57" stop-color="#4f026b" stop-opacity=".98"/>
+      <stop offset=".69" stop-color="#5a0a6f" stop-opacity=".92"/>
+      <stop offset=".78" stop-color="#6e1776" stop-opacity=".81"/>
+      <stop offset=".85" stop-color="#8b2b81" stop-opacity=".65"/>
+      <stop offset=".91" stop-color="#b0448e" stop-opacity=".44"/>
+      <stop offset=".97" stop-color="#dd639f" stop-opacity=".19"/>
+      <stop offset="1" stop-color="#ff7bac" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur result="blur" stdDeviation="5"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Preview">
+    <rect id="Background" class="cls-4" width="1044.95" height="451.7" rx="40" ry="40"/>
+    <g id="Filling">
+      <path id="Schnittmenge_3" data-name="Schnittmenge 3" class="cls-3" d="M40.06,451.85C17.97,451.85,.06,433.94,.06,411.85v-149.23c34.26-47.8,106.79-8.52,158.69,37.44,70.04,62.03,206.01,76.37,312.59,48.1,106.58-28.27,178.75-124.48,378.67,27.85,115.46,87.97,169.67,49,194.87,.37v35.47c0,22.09-17.91,40-40,40H40.06Z"/>
+      <path id="Schnittmenge_4" data-name="Schnittmenge 4" class="cls-7" d="M40.06,451.85C17.97,451.85,.06,433.94,.06,411.85H.06V240.07c12.45,9.22,26.73,15.65,41.88,18.86,21.5,4.58,38.12-13.8,60.47-32.17,41.17-33.85,101.78-67.71,248.06,41.97,225.68,169.2,325.78,50.51,408.46,39.9s116.89,64.29,171.34,74.9c34.01,6.63,82.79-28.08,114.61-55.06v83.39c0,22.09-17.91,40-40,40H40.06Z"/>
+    </g>
+    <g id="Front">
+      <path id="Overlay" class="cls-2" d="M0,283H1044.95v130.92c0,22.09-17.91,40-40,40H40c-22.09,0-40-17.91-40-40v-130.92H0Z"/>
+      <path id="Button" class="cls-5" d="M341.47,327h362c22.92,0,41.5,18.58,41.5,41.5h0c0,22.92-18.58,41.5-41.5,41.5H341.47c-22.92,0-41.5-18.58-41.5-41.5h0c0-22.92,18.58-41.5,41.5-41.5Z"/>
+      <text class="cls-1" transform="translate(351.7 389)"><tspan x="0" y="0">Spiel fo</tspan><tspan class="cls-6" x="164.97" y="0">r</tspan><tspan x="183.79" y="0">tsetzen</tspan></text>
+    </g>
+  </g>
+</svg>
