@@ -20,6 +20,6 @@ There might be something more to it than what you first see...
          <button class="addMore" title="don't focus on the image itself">hint</button>
  </a>
   
-  <button type="submit" onclick="window.open('static/ctf8/my_office')">Download</button>
+  <button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button>
 </body>
 
