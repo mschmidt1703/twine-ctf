@@ -46,25 +46,25 @@ You can skip the story and go straight to the challanges:
 
 or you can jump straight to you favorit challange: 
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 -XXS - difficulty level: 1->CTF 1]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 -XSS - difficulty level: 1->CTF 1]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - coming soon->CTF 3]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Forensics ->CTF 3]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XXS - difficulty level: 2->CTF 4]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XSS - difficulty level: 2->CTF 4]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 5 - XXS - difficulty level: 3->CTF 5]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 5 - XSS - difficulty level: 3->CTF 5]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 6 - XXS - difficulty level: 3->CTF 6]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 6 - XSS - difficulty level: 3->CTF 6]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 7 - Web exploitation - difficulty level: 1->CTF 7]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - coming soon->CTF 8]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - Forensics->CTF 8]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - coming soon->CTF 10]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - Forensics->CTF 10]]
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
