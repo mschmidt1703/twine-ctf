@@ -62,7 +62,7 @@ To eliminate any further confusion, here are some more examples:
 - "Repository: Add title.png"
 
 #### Branching
-Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch.
+Normally when working with version control software, nobody works on the master branch. Therefor you need to create an own branch that contains a copy of the master branch. When work is finished, then create a merge request to the main branch. If you are able to merge, you can do it, otherwise put an @ to someone who is able to merge in the merge message.
 
 ### Git Commands
 To avoid confusion about the git commands, here is a list of the most common git commands.
