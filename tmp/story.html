@@ -457,6 +457,10 @@ terminal {
 BrowserFS.install(window);
 
 // Write JavaScript here
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
 BrowserFS.configure({
   fs: &quot;LocalStorage&quot;, // from Backends table below,
   options: {
@@ -472,7 +476,34 @@ BrowserFS.configure({
     // etc
     
   fs.writeFile(&#39;/test.txt&#39;, &#39;Cool, I can do this in the browser!&#39;, function(err) {});
+    
   var current_dir = &quot;/&quot;;
+  
+    function getCurrentDir(){
+       if (!String(current_dir).endsWith(&#39;/&#39;)) {
+          current_dir += &quot;/&quot;;
+        }
+      return current_dir.toString();
+    }
+    
+
+    
+    function setDirDown(){
+      if (current_dir == &quot;/&quot;) {
+        return current_dir;
+      } else {
+        // /home/marc/test
+        dirs = getCurrentDir().slice(0, -1).split(&#39;/&#39;);
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        terminal.echo(&quot;current_dir: &quot; + current_dir);
+        dirs.pop();
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        current_dir = dirs.join(&#39;/&#39;);
+        terminal.echo(&quot;current_dir: &quot; + getCurrentDir());
+      }
+    }
+    
+    
 
     terminal = $(&#39;terminal&#39;).terminal((command) =&gt; {
       var cmd = $.terminal.parse_command(command);
@@ -496,6 +527,7 @@ BrowserFS.configure({
     help: function(cmd) {
       terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) =&gt; accumulator +&quot;\n&quot;+ currentValue, &quot;Available commands:&quot;));
     },
+    qq: function(cmd) {commandList.call(terminal, help) },
     add: function(cmd) {
       terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
     },
@@ -507,21 +539,36 @@ BrowserFS.configure({
         if (cmd.args[0] == &quot;..&quot;){
           //Function go back or /
           //change promt
+          setDirDown();
+          terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
+          return;
         } else if (cmd.args[0] == &quot;.&quot;) {
           return;
         }
         //Check if dir exists
-        current_dir = cmd.args[0];
-        terminal.set_prompt(&#39;root@localhost:/&#39;+current_dir+&#39;\$&gt;&#39;);
+        if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;Not a directory&quot;);
+        }
+        current_dir = &quot;/&quot; + cmd.args[0];
+        terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
     },
  
     ls: function(cmd) {
       /*ls &lt;dir&gt;*/
-          fs.readdir(current_dir, function(err, contents) {
+          fs.readdir(getCurrentDir(), function(err, contents) {
           terminal.echo(contents.toString().split(&quot;,&quot;));
         }); 
     },
-
+    touch: function(cmd) {
+        if (cmd.args.length != 1) {
+        printHelp(&quot;touch&quot;);
+        } else {
+        fs.writeFile(cmd.args[0], &#39;&#39;, function(err) {});
+        }
+    },
+    pwd: function(cmd) {
+        terminal.echo(getCurrentDir());
+    },
     mkdir: function(cmd) {
       if (cmd.args.length != 1) {
         printHelp(&quot;mkdir&quot;);
@@ -533,10 +580,21 @@ BrowserFS.configure({
       if (cmd.args.length != 1) {
         printHelp(&quot;less&quot;);
       } else {
+          //check if exsis
+          if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;no such file or directory&quot;);
+          }
           fs.readFile(cmd.args[0], function(err, contents) {
           terminal.echo(contents.toString());
         }); 
       }
+    },
+    startCTF:  function(cmd) {
+      terminal.echo(&quot;Welcome to this reverse engineering CTF.&quot;);
+      terminal.echo(&quot;Try to find the CTF and have fun!&quot;);
+      terminal.echo(&quot;&quot;);
+      terminal.set_prompt(&quot;&quot;);
+      ctf();
     }
   }
 
@@ -546,12 +604,21 @@ BrowserFS.configure({
         terminal.echo(&quot;Usage mkdir &lt;foldername&gt;&quot;);
         break;
        case &quot;less&quot;:
-        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);  
+        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);
+        break;
+       case &quot;touch&quot;:
+        terminal.echo(&quot;Usage touch &lt;filename&gt;&quot;);
+        break;
         }
       }  
+  
+  function ctf(){
+    var input = terminal.read(&#39;&#39;);
+    terminal.echo(input);      
+  }
+  
   });
 });
-
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
 
@@ -565,7 +632,11 @@ BrowserFS.configure({
 
 (Set: _solution to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
-
+ 
+ &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;reload&lt;/button&gt;
+ &lt;/a&gt;
+ 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="350,1300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
@@ -594,22 +665,12 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 (set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
 
-&lt;!--(if: $onTimeShow is false)
-(if: $onTimeShow is true)[ (alert: _info)]
-(if: $onTimeShow is true)[ (set: $onTimeShow to false)]--&gt;
-
 [(alert: _whatToDo)]
 
 
 &lt;title&gt;Challenge&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-
-
-
-&lt;style&gt;
-
-&lt;/style&gt;
 &lt;h1&gt;Capture the Flag&lt;/h1&gt;
 &lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
 &lt;p&gt; Source: Wikipedia &lt;/p&gt;
@@ -891,7 +952,7 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;6.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1300,275" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1400,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 html {
@@ -981,27 +1042,34 @@ iframe {
 &lt;/style&gt;
 
 &lt;!--TmpVar is not allowed --&gt;
-(set: $ctf6_code to &quot;function chooseTab(num) {  
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/x-highlightx/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=\&quot;${cls}\&quot;`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&#39;undefined&#39;);
-  }
+(set: $ctf6_code to &quot;function showTab(input) {
+	var picID;
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
+	
+ 	var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
+	html += \&quot;&lt;img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
+	html += \&quot;&lt;/br&gt;\&quot;
+	document.getElementById(picID).innerHTML = html;  
+	console.log(html)
 
-  return false;
-}
+	/*window.location.hash = picID
+	history.pushState(null, null, &#39;#&#39;+parseInt(picID)); Does not work in twine*/
+	window.localStorage.setItem(&#39;picID&#39;, input);
+	
+	var i;
+	var x = document.getElementsByClassName(\&quot;animals\&quot;);
+	for (i = 0; i &lt; x.length; i++) {
+		x[i].style.display = \&quot;none\&quot;;  
+	}
+	document.getElementById(picID).style.display = \&quot;block\&quot;;
 
-export  $initHighlight;
-
-// Tell parent we&#39;ve changed the tab
-top.postMessage(self.location.toString(), &#39;*&#39;);
+	/*Ignore jsut for the Challenge*/	
+	parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
+	return
 }&quot;)
 
 (set: _info to &quot;&quot;)
@@ -1051,7 +1119,7 @@ top.postMessage(self.location.toString(), &#39;*&#39;);
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1500,250" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1600,200" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
 
 &lt;script&gt; 
 	setup.ctf6_reset()
@@ -1128,7 +1196,7 @@ There might be something more to it than what you first see...
          &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;hint&lt;/button&gt;
  &lt;/a&gt;
   
-  &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office&#39;)&quot;&gt;Download&lt;/button&gt;
+  &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
@@ -1417,25 +1485,25 @@ You can skip the story and go straight to the challanges:
 
 or you can jump straight to you favorit challange: 
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XXS - difficulty level: 1-&gt;CTF 1]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XSS - difficulty level: 1-&gt;CTF 1]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - coming soon-&gt;CTF 3]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 3 - Forensics -&gt;CTF 3]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 4 - XXS - difficulty level: 2-&gt;CTF 4]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 4 - XSS - difficulty level: 2-&gt;CTF 4]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 5 - XXS - difficulty level: 3-&gt;CTF 5]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 5 - XSS - difficulty level: 3-&gt;CTF 5]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 6 - XXS - difficulty level: 3-&gt;CTF 6]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 6 - XSS - difficulty level: 3-&gt;CTF 6]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 7 - Web exploitation - difficulty level: 1-&gt;CTF 7]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 - coming soon-&gt;CTF 8]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 8 - Forensics-&gt;CTF 8]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - coming soon-&gt;CTF 10]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - Forensics-&gt;CTF 10]]
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)

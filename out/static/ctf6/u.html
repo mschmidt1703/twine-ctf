@@ -37,7 +37,9 @@ function showTab(input) {
 	for (i = 0; i < x.length; i++) {
 		x[i].style.display = "none";  
 	}
-	document.getElementById(picID).style.display = "block";  
+	document.getElementById(picID).style.display = "block";
+
+	/*Ignore jsut for the Challenge*/	
 	parent.postMessage("ctf6_url_" + input, "*");
 	return
 }
