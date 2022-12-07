@@ -1,3 +1,17 @@
+
+:: Story {"position":"175,350","size":"100,100"}
+You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+
+<!--Button next -->
+<div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+[[<button id="resume-btn" class="button is-danger is-rounded">next->1.p]]
+</div>
+<!--End of button next -->
+
+
 :: 1.p {"position":"200,600","size":"100,100"}
 <style>
 /* -- Twine overrides -- */

@@ -136,9 +136,11 @@ List with all CTFs and its state
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - Forensics->CTF 8]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - Reverse Engineering - difficulty level: 1->CTF 9]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - Forensics->CTF 10]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - Reverse Engineering->CTF 10]]
+
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 11 - Cryptography->CTF 11]]
 
 <!--(set: $ctfs to it + (a:"ctf1"))
 (set: $ctfs to it + (a:"ctf2"))
