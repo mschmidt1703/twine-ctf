@@ -1,52 +1,47 @@
-:: CTF 1 {"position":"350,925","size":"100,100"}
+:: CTF 1 {"position":"400,1000","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
+	tw-story {
+		background-image: url('img/ctf1/pc_rahmen1.png');
+		background-size: 110%;
 
-tw-story {
- background-image: url('img/ctf1/pc_rahmen1.png');
- background-size: 110%;
+		/* Center and scale the image nicely */
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-}
+	html {
+		overflow-y: hidden !important; /*Disabe sroll*/
+	}
 
-html {
-	overflow-y: hidden !important; /*Disabe sroll*/
-}
+	.twine-background-login {
+		position: inherit;
+		background-color:  white;
+		width: 500px;
+	}
 
+	.login-contianer{
+		text-align: -webkit-center;
+		height: 500px;
+	}
 
-.twine-background-login {
-	position: inherit;
-	background-color:  white;
-	width: 500px;
-}
+	#ui-bar {
+		display: none;
+	}
 
-.login-contianer{
-    text-align: -webkit-center;
-	height: 500px;
-}
+	br {
+		max-height: 0px;
+		visibility: hidden;
+		display: none;
+	}
 
-#ui-bar {
-display: none;
-}
-
-br {
-	max-height: 0px;
-	visibility: hidden;
-	display: none;
-}
-
-.headline {
-    margin-top: -7rem;
-    margin-bottom: 7rem;
-}
-
+	.headline {
+		margin-top: -7rem;
+		margin-bottom: 7rem;
+	}
 </style>
 
-
 <script> setup.ctf1(); </script>
-
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
 
@@ -72,8 +67,9 @@ br {
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
 
-<!--Button next -->
+<!-- Button next -->
 <div>
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->4.p]]
+	[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->4.p]]
 </div>
+
 <!--End of button next -->

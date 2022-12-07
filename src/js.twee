@@ -4,8 +4,7 @@ window.setup = window.setup || {};
 /* # CTF 1 Start */
 
 setup.ctf1 = function() {
-	   document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
-
+	document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
 }
 
 function eventOnClickHandler(event) {
@@ -13,11 +12,9 @@ function eventOnClickHandler(event) {
     var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
 
   	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
-  
 }
 
 /* # CTF 1 End */
-
 
 
 /* Global Start */
@@ -47,14 +44,12 @@ window.addEventListener("message", function(event) {
     return;
   }
 
-
 }, false);
 
 /* Global End */
 
 
 /* # CTF 4 Start */
-
 
 setup.ctf4_updateFrame = function (frameNum, url) {
   if (!url) {
@@ -82,7 +77,6 @@ setup.ctf4_updateFrame = function (frameNum, url) {
 
 };
 
-
 function ctf4_updateURI(value) {
   var urlbar = document.getElementById('input');
   urlbar.value = "https://twine.ctf/ctf4.html";
@@ -93,13 +87,10 @@ function ctf4_levelSucceed() {
   	Harlowe.goto("CTF4_end");
 }
 
-
 /* # CTF 4 End */
 
 
-
 /* # CTF 5 Start */
-
 
 setup.ctf5_updateFrame = function (frameNum, url) { 
   if (!url) {
@@ -127,8 +118,6 @@ setup.ctf5_updateFrame = function (frameNum, url) {
 
 };
 
-
-
 function ctf5_updateURI(value) {
   var urlbar = document.getElementById('input');
   urlbar.value = "https://twine.ctf/ctf5.html";
@@ -138,9 +127,7 @@ function ctf5_levelSucceed() {
   	Harlowe.goto("CTF5_end");
 }
 
-
 /* # CTF 5 End */
-
 
 
 /* # CTF 6 Start */
@@ -176,8 +163,6 @@ setup.ctf6_updateFrame = function (frameNum, url) {
 
 };
 
-
-
 function ctf6_updateURI(value) {
   var urlbar = document.getElementById('input');
   var picID = value.replaceAll("ctf6_url_","");
@@ -196,8 +181,6 @@ setup.ctf6_showCode = function() {
 }
 
 /* # CTF 6 End */
-
-
 
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2

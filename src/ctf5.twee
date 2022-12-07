@@ -1,92 +1,90 @@
-:: CTF 5 {"position":"350,1175","size":"100,100"}
+:: CTF 5 {"position":"400,1400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
-br {
-	max-height: 0px;
-	visibility: hidden;
-	display: none;
-}
+	br {
+		max-height: 0px;
+		visibility: hidden;
+		display: none;
+	}
 
-html {
-	overflow-y: hidden !important; /*Disabe sroll*/
-}
+	html {
+		overflow-y: hidden !important; /*Disabe sroll*/
+	}
 
-
-tw-story {
- background-image: url('img/4all/pc_rahmen.png');
- background-size: 110%;
- background-position-x: -6.5rem;
- background-repeat: no-repeat;
-  
- margin: 0;
- padding: 1rem;
- white-space: normal;
- width: 100%
-}
-
-
-tw-passage {
- width: 83rem;
- height: 60rem;
- margin:auto;
- padding: 1.5rem;
- font-family: Arial, Helvetica, sans-serif;
- font-size:1.2rem; color:#000;
- text-align: left;
-}
-
-.webbrowser {
-  max-width: 1rem;
-  min-width: fit-content;
-  border: 2px solid black;
-  margin: auto;
-  background: white;
-  margin-top: -4.5rem;
-}
-
-#tab {
-    background: url(img/ctf5/webbrowser_header.PNG) 0 0 no-repeat;
-    margin: 0px;
-    width: 55rem;
-    height: 30rem;
-    border: 1px solid #333;
-}
-
-.url {
-	padding: 0.1em;
-    align-self: center;
-}
-
-.controls {
-    margin: 0 auto;
-    background-color: #f4f4f4;
-    border: 1px solid #f0f0f0;
-    padding: 2px 3px;
-    border: 1px solid #999;
-    border-bottom: none;
-    display: -webkit-flex;
-    margin-top: 47px;
-    padding: 2px;
-}
-
-.urlbutton {
-    margin-left: auto;
-    align-self: center;
-    padding-right: 1em;
-}
-
-.input {
-    margin-right: auto;
-}
+	tw-story {
+		background-image: url('img/4all/pc_rahmen.png');
+		background-size: 110%;
+		background-position-x: -6.5rem;
+		background-repeat: no-repeat;
+	  
+		margin: 0;
+		padding: 1rem;
+		white-space: normal;
+		width: 100%
+	}
 
 
-iframe {
- width: inherit;
- height: inherit
-}
+	tw-passage {
+		width: 83rem;
+		height: 60rem;
+		margin:auto;
+		padding: 1.5rem;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:1.2rem; color:#000;
+		text-align: left;
+	}
+
+	.webbrowser {
+		max-width: 1rem;
+		min-width: fit-content;
+		border: 2px solid black;
+		margin: auto;
+		background: white;
+		margin-top: -4.5rem;
+	}
+
+	#tab {
+		background: url(img/ctf5/webbrowser_header.PNG) 0 0 no-repeat;
+		margin: 0px;
+		width: 55rem;
+		height: 30rem;
+		border: 1px solid #333;
+	}
+
+	.url {
+		padding: 0.1em;
+		align-self: center;
+	}
+
+	.controls {
+		margin: 0 auto;
+		background-color: #f4f4f4;
+		border: 1px solid #f0f0f0;
+		padding: 2px 3px;
+		border: 1px solid #999;
+		border-bottom: none;
+		display: -webkit-flex;
+		margin-top: 47px;
+		padding: 2px;
+	}
+
+	.urlbutton {
+		margin-left: auto;
+		align-self: center;
+		padding-right: 1em;
+	}
+
+	.input {
+		margin-right: auto;
+	}
+
+	iframe {
+		width: inherit;
+		height: inherit
+	}
+
 </style>
-
 
 (set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.")
 
@@ -107,10 +105,9 @@ iframe {
             <span class="url label">URL:</span>
             <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html">
             <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
-           </div>
-            <iframe src="static/ctf5/t.html" title="Google"></iframe>
+        </div>
+        <iframe src="static/ctf5/t.html" title="Google"></iframe>
     </div>
-
 </div>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
@@ -125,16 +122,17 @@ iframe {
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-
-:: CTF5_end {"position":"500,1175","size":"100,100"}
+:: CTF5_end {"position":"600,1400","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
 
 You made it!
 
 [[Main Page->MainPage]]
+
 <!--Button next -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <div>
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
+	[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
 </div>
+
 <!--End of button next -->

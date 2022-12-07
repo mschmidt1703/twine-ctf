@@ -1,79 +1,76 @@
 :: Story Stylesheet [stylesheet]
-.fixedButton1{
-            position: fixed;
-            bottom: 0px;
-            right: 0px; 
-            padding: 20px;
-        }
-.fixedButton2{
-            position: fixed;
-            bottom: 40px;
-            right: 0px; 
-            padding: 20px;
-        }
-.fixedButton3{
-            position: fixed;
-            bottom:80px;
-            right: 0px; 
-            padding: 20px;
-        }
-
-.addMore{
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: #eee;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-.addMore:hover{
-  border: 1px solid #888;
-  background-color: #ddd;
-}
 
 /*Button redo undo*/
-tw-icon{
-     color: #ad00d8;
+tw-icon {
+	color: #ad00d8;
 }
-
 
 /**/
 tw-story {
- background-image: url('img/4all/background_landscape.svg');
- background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	background-image: url('src/img/general/background/background_landscape.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
-
 /* Colors Fonts */
-
 :root {
-  --font_yellow: #F79E00;
-  --font_grey: #9B9B9B;
+	--font_yellow: #F79E00;
+	--font_grey: #9B9B9B;
 }
 
 /* Colors Background */
 :root {
-  --purple: #B200DD;
-  --purple_dark: #4B0872;
-  --blue: #4316A5;
-  --blue_dark: #250777;
-  --grey1: #1E1E1E;
-  --grey2: #161616;
-  --grey3: #141414;
+	--purple: #B200DD;
+	--purple_dark: #4B0872;
+	--blue: #4316A5;
+	--blue_dark: #250777;
+	--grey1: #1E1E1E;
+	--grey2: #161616;
+	--grey3: #141414;
 }
 
-.color_purple{
+.color_purple {
 	background-color: var(--purple) !important;
 }
 
-#resume-btn{
+#resume-btn {
 	background-color: var(--purple) !important;
 }
 
+.fixedButton1 {
+	position: fixed;
+	bottom: 0px;
+	right: 0px; 
+	padding: 20px;
+}
+
+.fixedButton2 {
+	position: fixed;
+	bottom: 40px;
+	right: 0px; 
+	padding: 20px;
+}
+
+.fixedButton3 {
+	position: fixed;
+	bottom:80px;
+	right: 0px; 
+	padding: 20px;
+}
+
+.addMore {
+	border: none;
+	width: 32px;
+	height: 32px;
+	background-color: #eee;
+	transition: all ease-in-out 0.2s;
+	cursor: pointer;
+}
+
+.addMore:hover {
+	border: 1px solid #888;
+	background-color: #ddd;
+}
 
 /* TODO override Button and Texts*/

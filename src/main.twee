@@ -1,218 +1,219 @@
-:: newMainPage {"position":"75,125","size":"100,100"}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Memory Loss: Find Your Way Back</title>
-    <link rel="stylesheet" href="CSS/mainpage/style.css">
-</head>
+:: StoryTitle
+Memory Loss: Find Your Way Back
+
+
+:: StoryData
+{
+	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
+	"format": "Harlowe",
+	"format-version": "3.3.3",
+	"start": "initMain",
+	"zoom": 1
+}
+
+
+:: initMain {"position":"100,0","size":"100,100"}
+<!--only for init-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+(set: $ctfs to (a:))
+
+(go-to: "MainPage")
+
+
+:: MainPage {"position":"200,200","size":"100,100"}
 
 <style>
-/*
-TODO: Add portrait mode
-TODO: Rework wires in Ai 
-TODO: Add portrait mode of wires
-*/
+	/* -- Twine overrides -- */
+	tw-story {
+		width: 100%;
+		padding: 0px;
 
-@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+		background-image: url(src/img/mainPage/wires_landscape.svg),
+		url(src/img/general/background/background_landscape.svg) ! important;
+		background-repeat: no-repeat, no-repeat;
+		background-size: 100%, cover;
+		background-attachment: local, fixed;
+		box-sizing: border-box;
+	}
 
-* {
-  font-family: "OCR A Extended", sans-serif;
-  color: #9b9b9b;
-}
+	tw-consecutive-br {
+		display: none;
+		visibility: hidden;
+	}
 
-tw-sidebar {
-  display: none;
-}
+	tw-sidebar {
+		display: none;
+	}
 
-body {
-  width: 100%;
-  height: 100%;
-}
+	br {
+		display: none;
+	}
 
-main {
-  width: 100%;
-  height: 100%;
-}
+	/* -- Normal CSS -- */
+	@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-header {
-  height: 25vh;
-  display: flex;
-  background-image: url(src/header/blurred_header.svg);
-  background-repeat: no-repeat;
-}
+	* {
+		font-family: "OCR A Extended", sans-serif;
+		color: #9b9b9b;
+	}
 
-header .logo img {
-  height: 10vh;
-  padding: 5vh;
-}
+	/* Header */
+	header {
+		height: 25vh;
+		display: flex;
+	}
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
+	header .logo img {
+		height: 4em;
+		margin: 2em;
+	}
 
-nav li a {
-  padding: 2vw;
-  font-size: 1.6vw;
-  color: #9b9b9b;
-  text-decoration: none;
-  text-shadow: 4px 4px 5px #000000;
-}
+	header br {
+		display: none;
+	}
 
-nav .active a {
-  color: #f79e00;
-  text-decoration: none;
-  text-shadow: 4px 4px 5px #000000;
-}
+	nav ul {
+		margin-left: 110px;
+		margin-top: 50px;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
 
-.sec1 {
-  height: 60%;
-  padding: 5vw;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
+	nav li a {
+		padding: 2vw;
+		font-size: 1.6vw;
+		color: #9b9b9b;
+		text-decoration: none;
+		text-shadow: 4px 4px 5px #000000;
+	}
 
-/* TODO: Check Background shadow */
-section .usb-stick img {
-  height: 50vh;
-  padding-left: 10vw;
-}
+	nav .active a {
+		color: #f79e00;
+		text-decoration: none;
+		text-shadow: 4px 4px 5px #000000;
+	}
 
-.preview {
-  position: relative;
-}
+	/* Section */
+	.sec1 {
+		height: 60%;
+		padding: 5vw;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
 
-/*
-.preview_bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-*/
-.preview_bg img {
-  position: relative;
-  z-index: 1;
+	section .usb-stick img {
+		height: 50vh;
+		padding-left: 10vw;
+	}
 
-  height: 50vh;
-}
+	.preview {
+		position: relative;
+	}
 
-.rectangle {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
+	.preview_bg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+		.preview_bg img {
+		position: relative;
+		z-index: 1;
 
-  height: 20vh;
-  width: 100%;
+		height: 50vh;
+	}
 
-  border-radius: 0px 0px 45px 45px;
+	.rectangle {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-  backdrop-filter: blur(5px);
+		height: 20vh;
+		width: 100%;
 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+		border-radius: 0px 0px 45px 45px;
 
-.outer .startButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+		background: linear-gradient(
+		  135deg,
+		  rgba(255, 255, 255, 0.1),
+		  rgba(255, 255, 255, 0)
+		);
 
-  z-index: 3;
+		backdrop-filter: blur(5px);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	}
 
-  height: 5.5em;
-  width: 25em;
+	.outer .startButton {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-  border-radius: 45px 45px 45px 45px;
-  background-color: #f79e00;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+		z-index: 3;
 
-.outer .startButton a {
-  font-size: 5vh;
-  color: #1e1e1e;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000000;
-}
+		height: 5.5em;
+		width: 25em;
 
-body {
-  background-image: url(src/background/wires_landscape.svg),
-    url(src/background/background_landscape.svg);
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100%, cover;
-  background-attachment: local, fixed;
-  box-sizing: border-box;
-}
+		border-radius: 45px 45px 45px 45px;
+		background-color: #f79e00;
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	}
 
+	.outer .startButton a {
+		font-size: 5vh;
+		color: #1e1e1e;
+		text-decoration: none;
+		text-shadow: 2px 2px 4px #000000;
+	}
 </style>
 
-<body>
-<main>
-  <header>
-    <div class="logo">
-      <img src="src/header/logo.svg" alt="Logo">
-    </div>
-    <nav>
-      <ul>
-        <li class="active">
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">CTFs</a>
-        </li>
-        <li>
-          <a href="#">Achievements</a>
-        </li>
-        <li>
-          <a href="#">Tutorial</a>
-        </li>
-        <li>
-          <a href="#">Settings</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header>
+	<div class="logo">
+		<img src="src/img/mainPage/header/logo.svg" alt="Logo">
+	</div>
+	<nav>
+		<ul>
+			<li class="active">
+				[[<a>Home</a>->MainPage]]
+			</li>
+			<li>
+				[[<a>CTFs</a>->CTFs]]
+			</li>
+			<li>
+				[[<a>Achievements</a>->Achievements]]
+			</li>
+			<li>
+				[[<a>Tutorial</a>->Tutorial]]
+			</li>
+			<li>
+				[[<a>Settings</a>->Settings]]
+			</li>
+		</ul>
+	</nav>
+</header>
 
-  <section class="sec1">
-    <div class="usb-stick">
-      <img src="src/svg/usb_stick.svg" alt="usb-stick">
-    </div>
-    <div class="preview">
-      <div class="preview_bg">
-        <img src="src/svg/preview_bg.svg" alt="preview">
-        <div class="rectangle">
-          <div class="outer">
-            <div class="start">
-            </div>
-            <div class="startButton">
-              <a href="#">Start</a>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </div> 
-  </section>
-
-  <section class="sec2">
-    <h1>Requirements</h1>
-    <h2>Tools</h2>
-  </section>
-
-  <footer>
-    <h1>Information about Developer</h1>
-  </footer>
-  
-  </main>   
-</body>
+<section class="sec1">
+	<div class="usb-stick">
+		<img src="src/img/mainPage/usb_stick.svg" alt="usb-stick">
+	</div>            
+	<div class="preview">
+		<div class="preview_bg">
+			<img src="src/img/mainPage/previews/preview_default.svg" alt="preview">
+			<div class="rectangle">
+				<div class="outer">
+					<div class="startButton">
+						[[<a>Start</a>->1.p]]
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div> 
+</section>

@@ -1,26 +1,29 @@
-:: CTF 7 {"position":"350,800","size":"100,100"}
+:: CTF 7 {"position":"400,800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <h1>Who even am I?</h1>
 
 <img src= "https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg">
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 <div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<Style>
-#first{
-background-color: var(--purple) !important;
-}
-</Style>
-[[<button id="first" class="button is-danger is-rounded">First Shelf->First Shelf]]
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-[[<button id="first" class="button is-danger is-rounded">Second Shelf->Second Shelf]]
+	<style>
+		#first{
+			background-color: var(--purple) !important;
+		}
+	</style>
 
-[[<button id="first" class="button is-danger is-rounded">Third Shelf->Third Shelf]]
+	[[<button id="first" class="button is-danger is-rounded">First Shelf->First Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">Fourth Shelf->Fourth Shelf]]
+	[[<button id="first" class="button is-danger is-rounded">Second Shelf->Second Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">Fifth Shelf->Fifth Shelf]]
+	[[<button id="first" class="button is-danger is-rounded">Third Shelf->Third Shelf]]
+
+	[[<button id="first" class="button is-danger is-rounded">Fourth Shelf->Fourth Shelf]]
+
+	[[<button id="first" class="button is-danger is-rounded">Fifth Shelf->Fifth Shelf]]
 </div>
 
 <!--My first name ist: John -->
@@ -31,34 +34,30 @@ Enter the flag for “who even am I?”: ___
 
 Hints: open your inspector view and have a look at the website’s resources. 
 <div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<Style>
-#first{
-background-color: var(--purple) !important;
-}
-</Style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	
+	<style>
+		#first{
+			background-color: var(--purple) !important;
+		}
+	</style>
 
-[[<button id="first" class="button is-danger is-rounded">resume story->3.p]]
+	[[<button id="first" class="button is-danger is-rounded">resume story->3.p]]
 </div>
 
 <link rel="stylesheet" href=css/ctf7/styles.css></link>
 
-
-:: First Shelf {"position":"500,800","size":"100,100"}
+:: First Shelf {"position":"600,800","size":"100,100"}
 Nothing really usefull here
 
-
-:: Second Shelf {"position":"625,800","size":"100,100"}
+:: Second Shelf {"position":"725,800","size":"100,100"}
 No usefull information here..
 
-
-:: Third Shelf {"position":"750,800","size":"100,100"}
+:: Third Shelf {"position":"850,800","size":"100,100"}
 Nothing here either..
 
-
-:: Fourth Shelf {"position":"875,800","size":"100,100"}
+:: Fourth Shelf {"position":"975,800","size":"100,100"}
 This search has lead me nowhere sofar..
 
-
-:: Fifth Shelf {"position":"1000,800","size":"100,100"}
+:: Fifth Shelf {"position":"1100,800","size":"100,100"}
 yup.. I did all of that for nothing :(

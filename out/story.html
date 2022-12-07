@@ -9,51 +9,17 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.fixedButton1{
-            position: fixed;
-            bottom: 0px;
-            right: 0px; 
-            padding: 20px;
-        }
-.fixedButton2{
-            position: fixed;
-            bottom: 40px;
-            right: 0px; 
-            padding: 20px;
-        }
-.fixedButton3{
-            position: fixed;
-            bottom:80px;
-            right: 0px; 
-            padding: 20px;
-        }
-
-.addMore{
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: #eee;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-.addMore:hover{
-  border: 1px solid #888;
-  background-color: #ddd;
-}
-
+<tw-storydata name="twine-ctf" startnode="20" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 /*Button redo undo*/
-tw-icon{
+tw-icon {
      color: #ad00d8;
 }
 
 
 /**/
 tw-story {
- background-image: url('img/4all/background_landscape.svg');
- background-size: 110%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
+  background-image: url('src/img/general/background/background_landscape.svg');
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -77,14 +43,48 @@ tw-story {
   --grey3: #141414;
 }
 
-.color_purple{
+.color_purple {
 	background-color: var(--purple) !important;
 }
 
-#resume-btn{
+#resume-btn {
 	background-color: var(--purple) !important;
 }
 
+.fixedButton1 {
+  position: fixed;
+  bottom: 0px;
+  right: 0px; 
+  padding: 20px;
+}
+
+.fixedButton2 {
+  position: fixed;
+  bottom: 40px;
+  right: 0px; 
+  padding: 20px;
+}
+
+.fixedButton3 {
+  position: fixed;
+  bottom:80px;
+  right: 0px; 
+  padding: 20px;
+}
+
+.addMore {
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.addMore:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
+}
 
 /* TODO override Button and Texts*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
@@ -289,7 +289,7 @@ setup.ctf6_showCode = function() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
-// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="350,925" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="400,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 tw-story {
@@ -366,7 +366,7 @@ br {
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;4.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1300,425" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1300,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 html {
@@ -567,7 +567,7 @@ BrowserFS.configure({
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="350,1300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;h3&gt;Do I live alone? &lt;/h3&gt;
 
@@ -589,7 +589,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;7.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="800,275" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 
 (set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
@@ -611,7 +611,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 &lt;!--flag{12_234_ghuzt5r}--&gt;
 &lt;/body&gt;
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="350,1050" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 html {
@@ -745,9 +745,9 @@ It is not necessary to look into the the code.
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF4_end" tags="" position="575,1050" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
 
-You made it!</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="350,1175" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+You made it!</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 br {
@@ -871,7 +871,7 @@ iframe {
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF5_end" tags="" position="500,1175" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
 
 You made it!
 
@@ -881,7 +881,7 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;6.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1300,275" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1100,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;style&gt;
 
 html {
@@ -1041,7 +1041,7 @@ top.postMessage(self.location.toString(), &#39;*&#39;);
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1500,250" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1100,425" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
 
 &lt;script&gt; 
 	setup.ctf6_reset()
@@ -1055,7 +1055,7 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story (fehlt noch)-&gt;x.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 7" tags="" position="350,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;h1&gt;Who even am I?&lt;/h1&gt;
 
 &lt;img src= &quot;https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg&quot;&gt;
@@ -1097,7 +1097,7 @@ background-color: var(--purple) !important;
 [[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]
 &lt;/div&gt;
 
-&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="950,275" size="100,100">Download the file and check for valuable information. 
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="600,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="725,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="850,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="975,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1100,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="900,300" size="100,100">Download the file and check for valuable information. 
 There might be something more to it than what you first see...
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
@@ -1119,7 +1119,7 @@ There might be something more to it than what you first see...
  &lt;/a&gt;
   
   &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;
-&lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
@@ -1162,252 +1162,357 @@ Hint: Have you tried working with char arrays in java?
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="19" name="newMainPage" tags="" position="75,125" size="100,100">&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    &lt;title&gt;Memory Loss: Find Your Way Back&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;CSS/mainpage/style.css&quot;&gt;
-&lt;/head&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="19" name="MainPage" tags="" position="200,200" size="100,100">&lt;style&gt;
+  /* -- Twine overrides -- */
+  tw-story {
+      width: 100%;
+      padding: 0px;
 
-&lt;style&gt;
-/*
-TODO: Add portrait mode
-TODO: Rework wires in Ai 
-TODO: Add portrait mode of wires
-*/
+    background-image: url(src/img/mainPage/wires_landscape.svg),
+      url(src/img/general/background/background_landscape.svg) ! important;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
 
-@import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
 
-* {
-  font-family: &quot;OCR A Extended&quot;, sans-serif;
-  color: #9b9b9b;
-}
+  tw-sidebar {
+      display: none;
+  }
 
-tw-sidebar {
-  display: none;
-}
+  br {
+      display: none;
+  }
 
-body {
-  width: 100%;
-  height: 100%;
-}
+  /* -- Normal CSS -- */
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
-main {
-  width: 100%;
-  height: 100%;
-}
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 
-header {
-  height: 25vh;
-  display: flex;
-  background-image: url(src/header/blurred_header.svg);
-  background-repeat: no-repeat;
-}
+  /* Header */
+  header {
+    height: 25vh;
+    display: flex;
+  }
 
-header .logo img {
-  height: 10vh;
-  padding: 5vh;
-}
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+  }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
+  header br {
+      display: none;
+  }
 
-nav li a {
-  padding: 2vw;
-  font-size: 1.6vw;
-  color: #9b9b9b;
-  text-decoration: none;
-  text-shadow: 4px 4px 5px #000000;
-}
+  nav ul {
+      margin-left: 110px;
+      margin-top: 50px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  }
 
-nav .active a {
-  color: #f79e00;
-  text-decoration: none;
-  text-shadow: 4px 4px 5px #000000;
-}
+  nav li a {
+    padding: 2vw;
+    font-size: 1.6vw;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
 
-.sec1 {
-  height: 60%;
-  padding: 5vw;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
 
-/* TODO: Check Background shadow */
-section .usb-stick img {
-  height: 50vh;
-  padding-left: 10vw;
-}
+  /* Section */
+  .sec1 {
+    height: 60%;
+    padding: 5vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
-.preview {
-  position: relative;
-}
+  section .usb-stick img {
+    height: 50vh;
+    padding-left: 10vw;
+  }
 
-/*
-.preview_bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-*/
-.preview_bg img {
-  position: relative;
-  z-index: 1;
+  .preview {
+    position: relative;
+  }
 
-  height: 50vh;
-}
+  .preview_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.rectangle {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
+  .preview_bg img {
+    position: relative;
+    z-index: 1;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 50vh;
+  }
 
-  height: 20vh;
-  width: 100%;
+  .rectangle {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
 
-  border-radius: 0px 0px 45px 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
+    height: 20vh;
+    width: 100%;
 
-  backdrop-filter: blur(5px);
+    border-radius: 0px 0px 45px 45px;
 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
 
-.outer .startButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
 
-  z-index: 3;
+  .outer .startButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  height: 5.5em;
-  width: 25em;
+    z-index: 3;
 
-  border-radius: 45px 45px 45px 45px;
-  background-color: #f79e00;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+    height: 5.5em;
+    width: 25em;
 
-.outer .startButton a {
-  font-size: 5vh;
-  color: #1e1e1e;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000000;
-}
+    border-radius: 45px 45px 45px 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
 
-body {
-  background-image: url(src/background/wires_landscape.svg),
-    url(src/background/background_landscape.svg);
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100%, cover;
-  background-attachment: local, fixed;
-  box-sizing: border-box;
-}
-
+  .outer .startButton a {
+    font-size: 5vh;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
 &lt;/style&gt;
 
-&lt;body&gt;
-&lt;main&gt;
-  &lt;header&gt;
-    &lt;div class=&quot;logo&quot;&gt;
-      &lt;img src=&quot;src/header/logo.svg&quot; alt=&quot;Logo&quot;&gt;
-    &lt;/div&gt;
-    &lt;nav&gt;
-      &lt;ul&gt;
-        &lt;li class=&quot;active&quot;&gt;
-          &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;a href=&quot;#&quot;&gt;CTFs&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;a href=&quot;#&quot;&gt;Achievements&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;a href=&quot;#&quot;&gt;Tutorial&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-  &lt;/header&gt;
+&lt;header&gt;
+	&lt;div class=&quot;logo&quot;&gt;
+		&lt;img src=&quot;src/img/mainPage/header/logo.svg&quot; alt=&quot;Logo&quot;&gt;
+	&lt;/div&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;
+			&lt;li class=&quot;active&quot;&gt;
+				[[&lt;a&gt;Home&lt;/a&gt;-&gt;MainPage]]
+			&lt;/li&gt;
+			&lt;li&gt;
+				[[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
+			&lt;/li&gt;
+			&lt;li&gt;
+				[[&lt;a&gt;Achievements&lt;/a&gt;-&gt;Achievements]]
+			&lt;/li&gt;
+			&lt;li&gt;
+				[[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+			&lt;/li&gt;
+			&lt;li&gt;
+				[[&lt;a&gt;Settings&lt;/a&gt;-&gt;Settings]]
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/header&gt;
 
-  &lt;section class=&quot;sec1&quot;&gt;
-    &lt;div class=&quot;usb-stick&quot;&gt;
-      &lt;img src=&quot;src/svg/usb_stick.svg&quot; alt=&quot;usb-stick&quot;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;preview&quot;&gt;
-      &lt;div class=&quot;preview_bg&quot;&gt;
-        &lt;img src=&quot;src/svg/preview_bg.svg&quot; alt=&quot;preview&quot;&gt;
-        &lt;div class=&quot;rectangle&quot;&gt;
-          &lt;div class=&quot;outer&quot;&gt;
-            &lt;div class=&quot;start&quot;&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;startButton&quot;&gt;
-              &lt;a href=&quot;#&quot;&gt;Start&lt;/a&gt;
-            &lt;/div&gt;
+&lt;section class=&quot;sec1&quot;&gt;
+  &lt;div class=&quot;usb-stick&quot;&gt;
+  	&lt;img src=&quot;src/img/mainPage/usb_stick.svg&quot; alt=&quot;usb-stick&quot;&gt;
+  &lt;/div&gt;            
+  &lt;div class=&quot;preview&quot;&gt;
+    &lt;div class=&quot;preview_bg&quot;&gt;
+      &lt;img src=&quot;src/img/mainPage/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
+      &lt;div class=&quot;rectangle&quot;&gt;
+        &lt;div class=&quot;outer&quot;&gt;
+          &lt;div class=&quot;startButton&quot;&gt;
+			[[&lt;a&gt;Start&lt;/a&gt;-&gt;Story]]
           &lt;/div&gt;
-        &lt;/div&gt; 
-      &lt;/div&gt;
-    &lt;/div&gt; 
-  &lt;/section&gt;
-
-  &lt;section class=&quot;sec2&quot;&gt;
-    &lt;h1&gt;Requirements&lt;/h1&gt;
-    &lt;h2&gt;Tools&lt;/h2&gt;
-  &lt;/section&gt;
-
-  &lt;footer&gt;
-    &lt;h1&gt;Information about Developer&lt;/h1&gt;
-  &lt;/footer&gt;
-  
-  &lt;/main&gt;   
-&lt;/body&gt;</tw-passagedata><tw-passagedata pid="20" name="initMain" tags="" position="75,25" size="100,100">&lt;!--only for init--&gt;
+        &lt;/div&gt;
+      &lt;/div&gt; 
+    &lt;/div&gt;
+  &lt;/div&gt; 
+&lt;/section&gt;</tw-passagedata><tw-passagedata pid="20" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
 (set: $ctfs to (a:))
 
-
-(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="21" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;!--Button Achievments --&gt;
-&lt;div&gt;
-[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot; style=&quot;float: right&quot;&gt;Achievments-&gt;CTFs]]
-&lt;/div&gt;
-&lt;!--End of button Achievments --&gt;
-
-Hello there, 
-
-Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you&#39;re in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let&#39;s go!
-
-[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Start the Adventure!&lt;/button&gt; -&gt;Story]]
-
-[[&lt;button class=&quot;button is-large is-danger is-rounded color_purple&quot;&gt;Inspect new start site&lt;/button&gt; -&gt;newMainPage]]
-
-You can skip the story and go straight to the challanges:
-
-[[&lt;button class=&quot;button is-danger is-rounded color_purple&quot;&gt;Start first challange&lt;/button&gt; -&gt;CTF 1]]
+(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="21" name="test" tags="" position="700,500" size="100,100">
 
 or you can jump straight to you favorit challange: 
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XSS - difficulty level: 1-&gt;CTF 1]]
+
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+&lt;!--(Set: $debug to false)--&gt;
+&lt;!-- :: init [startup] --&gt;
+&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
+(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="22" name="Story" tags="" position="200,400" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+
+“I don’t seem to remember anything. Who even am I?”
+To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
+However, what they know for sure is that he might be in a great danger. 
+You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
+“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+&lt;!--Button next --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;div&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="500,200" size="100,100">&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+  
+  ctf1 {
+    	box-sizing:  border-box;
+  }
+  
+  
+  .rectangle {
+  	position: relative;
+    
+  display: grid;
+  grid-template-columns: 1fr 1 fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+    z-index: 0;
+
+    height: 20vh;
+    width: 100%;
+    border-radius: 45px 45px 45px 45px;
+    background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+    );
+
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  .box {
+  	display: inline-block;
+  }
+  
+  .preview {
+  	position: absolute;
+  	z-index: 1;
+    width: 30%;
+    float: left;
+  }
+
+   img {
+    height: 6em;
+    margin-left: 20px;
+    float: left;
+  }
+  
+   div .information {
+    position: absolute;
+  	z-index: 1;
+	width: 30%;
+   }
+    
+    ul {
+      	margin: 0 auto;
+   		list-style: none;
+      line-height: 10px;
+      font-size: 1em;
+      color: #9b9b9b;
+      text-shadow: 4px 4px 5px #000000;
+    }
+    
+  .outer {
+    float: right;
+    width: 30%;
+  }
+    
+   .startButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    height: 3em;
+    width: 5em;
+
+    border-radius: 35px 35px 35px 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .startButton a {
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;
+
+List with all CTFs and its state
+
+&lt;section class=&quot;ctf1&quot;&gt;
+	&lt;div class=&quot;rectangle&quot;&gt;
+    
+      &lt;div class=&quot;box&quot;&gt;
+        &lt;img src=&#39;src/img/mainPage/previews/preview_default.svg&#39; alt=&#39;preview&#39;&gt;
+      &lt;/div&gt;     
+      &lt;div class=&quot;box&quot;&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                CTF 1 - XSS
+            &lt;/li&gt;
+            &lt;li&gt;
+                Difficulty level: 1
+            &lt;/li&gt;
+            &lt;li&gt;
+                State: Not started
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;box&quot;&gt;
+          &lt;div class=&quot;startButton&quot;&gt;
+              [[&lt;a&gt;Start&lt;/a&gt;-&gt;CTF 1]]
+          &lt;/div&gt;
+        &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/section&gt;
+
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 - XSS - difficulty level: 1-&gt;CTF 1]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
 
@@ -1427,27 +1532,9 @@ or you can jump straight to you favorit challange:
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - Forensics-&gt;CTF 10]]
 
-Debug Mode with all solutions is: $debug 
-(Set: $debug to true)
-&lt;!--(Set: $debug to false)--&gt;
-&lt;!-- :: init [startup] --&gt;
-&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
-(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="22" name="Story" tags="" position="175,350" size="100,100">You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
-
-Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
-
-&lt;!--Button next --&gt;
-&lt;div&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]
-&lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="400,50" size="100,100">List with all CTFs and its status
-
 &lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
 (set: $ctfs to it + (a:&quot;ctf2&quot;))
 (set: $ctfs to it + (a:&quot;ctf3&quot;))--&gt;
-
-
 
 (if: $ctfs&#39;s length is 0)[\
     no ctf finished 
@@ -1456,7 +1543,14 @@ Some strangers hear you fussing around. They enter the room where you are lying.
     (for: each _item, ...$ctfs)[\
         _item (unless: $ctfs&#39;s last is _item)[, ]\
     ].
-]</tw-passagedata><tw-passagedata pid="24" name="1.p" tags="" position="175,550" size="100,100">To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+]</tw-passagedata><tw-passagedata pid="24" name="1.p" tags="" position="200,600" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
 “I don’t seem to remember anything. Who even am I?”
 To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
@@ -1468,14 +1562,28 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="25" name="2.p" tags="" position="175,800" size="100,100">After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="25" name="2.p" tags="" position="200,800" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="3.p" tags="" position="175,925" size="100,100">&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="3.p" tags="" position="200,1000" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
 &lt;!--Button next --&gt;
@@ -1483,7 +1591,14 @@ Finding your name is a great start. But you need to learn more about yourself. S
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="4.p" tags="" position="175,1050" size="100,100">&lt;h1&gt;Let the search begin!&lt;/h1&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="4.p" tags="" position="200,1200" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+&lt;h1&gt;Let the search begin!&lt;/h1&gt;
 
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
@@ -1493,7 +1608,14 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="5.p" tags="" position="175,1175" size="100,100">&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="5.p" tags="" position="200,1400" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
 
 &lt;!--Button next --&gt;
@@ -1501,7 +1623,14 @@ It has been a long day and this search is taking a toll on you. You just want to
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="6.p" tags="" position="175,1300" size="100,100">Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="6.p" tags="" position="200,1600" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
 
 You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
  
@@ -1514,7 +1643,14 @@ You end up finding your apartment in the first floor. The door is open! It seems
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="7.p" tags="" position="175,1425" size="100,100">Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="7.p" tags="" position="200,1800" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
 
 (Continuation of the girlfriend tragedy here maybe?)
 &lt;!--Button next --&gt;
@@ -1522,14 +1658,28 @@ You end up finding your apartment in the first floor. The door is open! It seems
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="8.p" tags="" position="175,1550" size="100,100">Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="8.p" tags="" position="200,2000" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="9.p" tags="" position="175,1675" size="100,100">“I&#39;m sure they have the tools that will help me extract some information out of it.”
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="9.p" tags="" position="200,2200" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+“I&#39;m sure they have the tools that will help me extract some information out of it.”
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 &lt;!--Button next --&gt;
@@ -1537,13 +1687,22 @@ After some fiddling around you manage to connect the drive to a new computer. An
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="33" name="10.p" tags="" position="175,1800" size="100,100">Coming soom. Stay tuned!
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="33" name="10.p" tags="" position="200,2400" size="100,100">&lt;style&gt;
+/* -- Twine overrides -- */
+tw-story {
+  background-image: url(src/img/general/background/background_landscape_dark.svg);
+}
+&lt;/style&gt;
+
+Coming soom. Stay tuned!
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]
 &lt;/div&gt;
-&lt;!--End of button next --&gt;</tw-passagedata></tw-storydata>
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="34" name="Tutorial" tags="" position="0,300" size="100,100">Hello there, 
+
+Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber security skills in a fun way? Well then you&#39;re in the right place! Here you will get to learn how to solve some fun CTF-Challanges along an interesting storyline. Solve the challanges to discover your hidden past and save your future. Are you ready? Then let&#39;s go!</tw-passagedata><tw-passagedata pid="35" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

@@ -1,91 +1,89 @@
-:: CTF 6 {"position":"1300,275","size":"100,100"}
+:: CTF 6 {"position":"1100,300","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
-html {
-	overflow-y: hidden !important; /*Disabe sroll*/
-}
+	html {
+		overflow-y: hidden !important; /*Disabe sroll*/
+	}
 
-br {
-	max-height: 0px;
-	visibility: hidden;
-	display: none;
-}
+	br {
+		max-height: 0px;
+		visibility: hidden;
+		display: none;
+	}
 
+	tw-story {
+		background-image: url('img/4all/pc_rahmen.png');
+		background-size: 110%;
+		background-position-x: -6.5rem;
+		background-repeat: no-repeat;
+	  
+		margin: 0;
+		padding: 1rem;
+		white-space: normal;
+		width: 100%;
+		/*overflow-y: auto; Scroll y*/
+	}
 
-tw-story {
- background-image: url('img/4all/pc_rahmen.png');
- background-size: 110%;
- background-position-x: -6.5rem;
- background-repeat: no-repeat;
-  
- margin: 0;
- padding: 1rem;
- white-space: normal;
- width: 100%;
- /*overflow-y: auto; Scroll y*/
-}
+	tw-passage {
+		width: 83rem;
+		height: 60rem;
+		margin:auto;
+		padding: 1.5rem;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:1.2rem; color:#000;
+		text-align: left;
+	}
 
+	.webbrowser {
+		max-width: 1rem;
+		min-width: fit-content;
+		border: 2px solid black;
+		margin: auto;
+		background: white;
+		margin-top: -4.5rem;
+	}
 
-tw-passage {
- width: 83rem;
- height: 60rem;
- margin:auto;
- padding: 1.5rem;
- font-family: Arial, Helvetica, sans-serif;
- font-size:1.2rem; color:#000;
- text-align: left;
-}
+	#tab {
+		background: url(img/ctf6/webbrowser_header.PNG) 0 0 no-repeat;
+		margin: 0px;
+		width: 55rem;
+		height: 30rem;
+		border: 1px solid #333;
+	}
 
-.webbrowser {
-  max-width: 1rem;
-  min-width: fit-content;
-  border: 2px solid black;
-  margin: auto;
-  background: white;
-  margin-top: -4.5rem;
-}
+	.url {
+		padding: 0.1em;
+		align-self: center;
+	}
 
-#tab {
-    background: url(img/ctf6/webbrowser_header.PNG) 0 0 no-repeat;
-    margin: 0px;
-    width: 55rem;
-    height: 30rem;
-    border: 1px solid #333;
-}
+	.controls {
+		margin: 0 auto;
+		background-color: #f4f4f4;
+		border: 1px solid #f0f0f0;
+		padding: 2px 3px;
+		border: 1px solid #999;
+		border-bottom: none;
+		display: -webkit-flex;
+		margin-top: 47px;
+		padding: 2px;
+	}
 
-.url {
-	padding: 0.1em;
-    align-self: center;
-}
+	.urlbutton {
+		margin-left: auto;
+		align-self: center;
+		padding-right: 1em;
+	}
 
-.controls {
-    margin: 0 auto;
-    background-color: #f4f4f4;
-    border: 1px solid #f0f0f0;
-    padding: 2px 3px;
-    border: 1px solid #999;
-    border-bottom: none;
-    display: -webkit-flex;
-    margin-top: 47px;
-    padding: 2px;
-}
+	.input {
+		margin-right: auto;
+	}
 
-.urlbutton {
-    margin-left: auto;
-    align-self: center;
-    padding-right: 1em;
-}
-
-.input {
-    margin-right: auto;
-}
-
-
-iframe {
- width: inherit;
- height: inherit
-}
+	iframe {
+		width: inherit;
+		height: inherit
+	}
+	
 </style>
 
 <!--TmpVar is not allowed -->
@@ -102,7 +100,6 @@ function $initHighlight(block, cls) {
     if (checkCondition(classes[i]) === undefined)
       console.log('undefined');
   }
-
   return false;
 }
 
@@ -124,16 +121,14 @@ top.postMessage(self.location.toString(), '*');
 <tw-consecutive-br></tw-consecutive-br>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-
-
 <div class="webbrowser"> 
 	<div id="tab">
 		<div class="controls">
             <span class="url label">URL:</span>
             <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
             <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
-           </div>
-            <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe>
+        </div>
+        <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe>
     </div>
 </div>
 <tw-consecutive-br></tw-consecutive-br>
@@ -161,7 +156,7 @@ top.postMessage(self.location.toString(), '*');
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-:: CTF6_end {"position":"1500,250","size":"100,100"}
+:: CTF6_end {"position":"1100,425","size":"100,100"}
 (set: $ctfs to it + (a: "ctf6"))
 
 <script> 
@@ -171,9 +166,11 @@ top.postMessage(self.location.toString(), '*');
 You made it!
 
 [[Main Page->MainPage]]
+
 <!--Button next -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <div>
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
 </div>
+
 <!--End of button next -->
