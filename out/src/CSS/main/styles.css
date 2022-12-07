@@ -3,8 +3,8 @@ tw-story {
   width: 100%;
   padding: 0px;
 
-  background-image: url(src/img/mainPage/wires_landscape.svg),
-    url(src/img/general/background/background_landscape.svg) !important;
+  background-image: url(../../img/main/wires_landscape.svg),
+    url(../../img/general/background/background_landscape.svg) !important;
   background-repeat: no-repeat, no-repeat;
   background-size: 100%, cover;
   background-attachment: local, fixed;

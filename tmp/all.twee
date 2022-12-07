@@ -994,11 +994,7 @@ You made it!
 <!--End of button next -->
 
 
-<<<<<<< HEAD
 :: CTF 6 {"position":"1100,300","size":"100,100"}
-=======
-:: CTF 6 {"position":"1400,200","size":"100,100"}
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -1169,11 +1165,7 @@ iframe {
 <tw-consecutive-br></tw-consecutive-br>
 
 
-<<<<<<< HEAD
 :: CTF6_end {"position":"1100,425","size":"100,100"}
-=======
-:: CTF6_end {"position":"1600,200","size":"100,100"}
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 (set: $ctfs to it + (a: "ctf6"))
 
 <script> 
@@ -1592,11 +1584,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
   grid-template-columns: 1fr 1 fr 1fr 1fr;
   grid-template-rows: 1fr;
 
-<<<<<<< HEAD
     z-index: 0;
-=======
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 -XSS - difficulty level: 1->CTF 1]]
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
     height: 20vh;
     width: 100%;
@@ -1607,7 +1595,6 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     rgba(255, 255, 255, 0)
     );
 
-<<<<<<< HEAD
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
@@ -1672,15 +1659,6 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 </style>
 
 List with all CTFs and its state
-=======
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Forensics ->CTF 3]]
-
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XSS - difficulty level: 2->CTF 4]]
-
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 5 - XSS - difficulty level: 3->CTF 5]]
-
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 6 - XSS - difficulty level: 3->CTF 6]]
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 <section class="ctf1">
 	<div class="rectangle">
@@ -1709,21 +1687,11 @@ List with all CTFs and its state
    </div>
 </section>
 
-<<<<<<< HEAD
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 - XSS - difficulty level: 1->CTF 1]]
-=======
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 8 - Forensics->CTF 8]]
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
 
-<<<<<<< HEAD
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 3 - Forensics ->CTF 3]]
-=======
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - reverse engineering->CTF 10]]
-
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 11 - Cryptography->CTF 11]]
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 4 - XSS - difficulty level: 2->CTF 4]]
 
@@ -1950,7 +1918,6 @@ Coming soom. Stay tuned!
 <!--End of button next -->
 
 
-<<<<<<< HEAD
 :: Tutorial {"position":"0,300","size":"100,100"}
 Hello there, 
 
@@ -1961,7 +1928,6 @@ Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber se
 
 
 :: Settings {"position":"500,0","size":"100,100"}
-=======
 :: CTF 11 {"position":"950,450","size":"100,100"}
 (set: _whatToDo to "Seems like some kind of encrypted text")
 
@@ -1976,6 +1942,5 @@ key: NoIdea
  <a class="fixedButton1" href>
          <button class="addMore" title="ever heard of Vigenere?">hint</button>
  </a>
->>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 

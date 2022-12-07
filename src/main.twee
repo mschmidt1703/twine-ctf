@@ -23,7 +23,7 @@ Memory Loss: Find Your Way Back
 
 
 :: MainPage {"position":"200,200","size":"100,100"}
-<link rel="stylesheet" href=src/css/main/styles.css></link>
+<link rel="stylesheet" href="src/css/main/styles.css"></link>
 
 <header>
 	<div class="logo">
@@ -52,11 +52,11 @@ Memory Loss: Find Your Way Back
 
 <section class="sec1">
 	<div class="usb-stick">
-		<img src="src/img/mainPage/usb_stick.svg" alt="usb-stick">
+		<img src="src/img/main/usb_stick.svg" alt="usb-stick">
 	</div>            
 	<div class="preview">
 		<div class="preview_bg">
-			<img src="src/img/mainPage/previews/preview_default.svg" alt="preview">
+			<img src="src/img/main/previews/preview_default.svg" alt="preview">
 			<div class="rectangle">
 				<div class="outer">
 					<div class="startButton">
