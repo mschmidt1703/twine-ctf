@@ -90,6 +90,10 @@ terminal {
 BrowserFS.install(window);
 
 // Write JavaScript here
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
 BrowserFS.configure({
   fs: "LocalStorage", // from Backends table below,
   options: {
@@ -105,7 +109,34 @@ BrowserFS.configure({
     // etc
     
   fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
+    
   var current_dir = "/";
+  
+    function getCurrentDir(){
+       if (!String(current_dir).endsWith('/')) {
+          current_dir += "/";
+        }
+      return current_dir.toString();
+    }
+    
+
+    
+    function setDirDown(){
+      if (current_dir == "/") {
+        return current_dir;
+      } else {
+        // /home/marc/test
+        dirs = getCurrentDir().slice(0, -1).split('/');
+        terminal.echo("dirs: " + dirs);
+        terminal.echo("current_dir: " + current_dir);
+        dirs.pop();
+        terminal.echo("dirs: " + dirs);
+        current_dir = dirs.join('/');
+        terminal.echo("current_dir: " + getCurrentDir());
+      }
+    }
+    
+    
 
     terminal = $('terminal').terminal((command) => {
       var cmd = $.terminal.parse_command(command);
@@ -129,6 +160,7 @@ BrowserFS.configure({
     help: function(cmd) {
       terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) => accumulator +"\n"+ currentValue, "Available commands:"));
     },
+    qq: function(cmd) {commandList.call(terminal, help) },
     add: function(cmd) {
       terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
     },
@@ -140,21 +172,36 @@ BrowserFS.configure({
         if (cmd.args[0] == ".."){
           //Function go back or /
           //change promt
+          setDirDown();
+          terminal.set_prompt('root@localhost:'+getCurrentDir()+'\$>');
+          return;
         } else if (cmd.args[0] == ".") {
           return;
         }
         //Check if dir exists
-        current_dir = cmd.args[0];
-        terminal.set_prompt('root@localhost:/'+current_dir+'\$>');
+        if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo("Not a directory");
+        }
+        current_dir = "/" + cmd.args[0];
+        terminal.set_prompt('root@localhost:'+getCurrentDir()+'\$>');
     },
  
     ls: function(cmd) {
       /*ls <dir>*/
-          fs.readdir(current_dir, function(err, contents) {
+          fs.readdir(getCurrentDir(), function(err, contents) {
           terminal.echo(contents.toString().split(","));
         }); 
     },
-
+    touch: function(cmd) {
+        if (cmd.args.length != 1) {
+        printHelp("touch");
+        } else {
+        fs.writeFile(cmd.args[0], '', function(err) {});
+        }
+    },
+    pwd: function(cmd) {
+        terminal.echo(getCurrentDir());
+    },
     mkdir: function(cmd) {
       if (cmd.args.length != 1) {
         printHelp("mkdir");
@@ -166,10 +213,21 @@ BrowserFS.configure({
       if (cmd.args.length != 1) {
         printHelp("less");
       } else {
+          //check if exsis
+          if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo("no such file or directory");
+          }
           fs.readFile(cmd.args[0], function(err, contents) {
           terminal.echo(contents.toString());
         }); 
       }
+    },
+    startCTF:  function(cmd) {
+      terminal.echo("Welcome to this reverse engineering CTF.");
+      terminal.echo("Try to find the CTF and have fun!");
+      terminal.echo("");
+      terminal.set_prompt("");
+      ctf();
     }
   }
 
@@ -179,12 +237,21 @@ BrowserFS.configure({
         terminal.echo("Usage mkdir <foldername>");
         break;
        case "less":
-        terminal.echo("Usage less <filename>");  
+        terminal.echo("Usage less <filename>");
+        break;
+       case "touch":
+        terminal.echo("Usage touch <filename>");
+        break;
         }
       }  
+  
+  function ctf(){
+    var input = terminal.read('');
+    terminal.echo(input);      
+  }
+  
   });
 });
-
 </script>
 <terminal> </terminal>
 
@@ -198,6 +265,10 @@ BrowserFS.configure({
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
-
+ 
+ <a class="fixedButton1" href>
+         <button class="addMore" title="don't focus on the image itself">reload</button>
+ </a>
+ 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>

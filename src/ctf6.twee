@@ -1,4 +1,5 @@
 :: CTF 6 {"position":"1100,300","size":"100,100"}
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 
@@ -87,26 +88,34 @@
 </style>
 
 <!--TmpVar is not allowed -->
-(set: $ctf6_code to "function chooseTab(num) {  
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/x-highlightx/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=\"${cls}\"`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
-  }
-  return false;
-}
+(set: $ctf6_code to "function showTab(input) {
+	var picID;
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
+	
+ 	var html = \"Image \" + picID + \"<br>\";
+	html += \"<img src='../../img/ctf6/\" + input + \".jpg' />\";
+	html += \"</br>\"
+	document.getElementById(picID).innerHTML = html;  
+	console.log(html)
 
-export  $initHighlight;
+	/*window.location.hash = picID
+	history.pushState(null, null, '#'+parseInt(picID)); Does not work in twine*/
+	window.localStorage.setItem('picID', input);
+	
+	var i;
+	var x = document.getElementsByClassName(\"animals\");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = \"none\";  
+	}
+	document.getElementById(picID).style.display = \"block\";
 
-// Tell parent we've changed the tab
-top.postMessage(self.location.toString(), '*');
+	/*Ignore jsut for the Challenge*/	
+	parent.postMessage(\"ctf6_url_\" + input, \"*\");
+	return
 }")
 
 (set: _info to "")

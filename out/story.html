@@ -9,7 +9,42 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play twine-ctf.</tw-noscript></noscript></tw-story>
+<<<<<<< HEAD
 <tw-storydata name="twine-ctf" startnode="20" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+=======
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="twine-ctf" startnode="21" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.fixedButton1{
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton2{
+            position: fixed;
+            bottom: 40px;
+            right: 0px; 
+            padding: 20px;
+        }
+.fixedButton3{
+            position: fixed;
+            bottom:80px;
+            right: 0px; 
+            padding: 20px;
+        }
+
+.addMore{
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.addMore:hover{
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 /*Button redo undo*/
 tw-icon {
      color: #ad00d8;
@@ -457,6 +492,10 @@ terminal {
 BrowserFS.install(window);
 
 // Write JavaScript here
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
 BrowserFS.configure({
   fs: &quot;LocalStorage&quot;, // from Backends table below,
   options: {
@@ -472,7 +511,34 @@ BrowserFS.configure({
     // etc
     
   fs.writeFile(&#39;/test.txt&#39;, &#39;Cool, I can do this in the browser!&#39;, function(err) {});
+    
   var current_dir = &quot;/&quot;;
+  
+    function getCurrentDir(){
+       if (!String(current_dir).endsWith(&#39;/&#39;)) {
+          current_dir += &quot;/&quot;;
+        }
+      return current_dir.toString();
+    }
+    
+
+    
+    function setDirDown(){
+      if (current_dir == &quot;/&quot;) {
+        return current_dir;
+      } else {
+        // /home/marc/test
+        dirs = getCurrentDir().slice(0, -1).split(&#39;/&#39;);
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        terminal.echo(&quot;current_dir: &quot; + current_dir);
+        dirs.pop();
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        current_dir = dirs.join(&#39;/&#39;);
+        terminal.echo(&quot;current_dir: &quot; + getCurrentDir());
+      }
+    }
+    
+    
 
     terminal = $(&#39;terminal&#39;).terminal((command) =&gt; {
       var cmd = $.terminal.parse_command(command);
@@ -496,6 +562,7 @@ BrowserFS.configure({
     help: function(cmd) {
       terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) =&gt; accumulator +&quot;\n&quot;+ currentValue, &quot;Available commands:&quot;));
     },
+    qq: function(cmd) {commandList.call(terminal, help) },
     add: function(cmd) {
       terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
     },
@@ -507,21 +574,36 @@ BrowserFS.configure({
         if (cmd.args[0] == &quot;..&quot;){
           //Function go back or /
           //change promt
+          setDirDown();
+          terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
+          return;
         } else if (cmd.args[0] == &quot;.&quot;) {
           return;
         }
         //Check if dir exists
-        current_dir = cmd.args[0];
-        terminal.set_prompt(&#39;root@localhost:/&#39;+current_dir+&#39;\$&gt;&#39;);
+        if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;Not a directory&quot;);
+        }
+        current_dir = &quot;/&quot; + cmd.args[0];
+        terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
     },
  
     ls: function(cmd) {
       /*ls &lt;dir&gt;*/
-          fs.readdir(current_dir, function(err, contents) {
+          fs.readdir(getCurrentDir(), function(err, contents) {
           terminal.echo(contents.toString().split(&quot;,&quot;));
         }); 
     },
-
+    touch: function(cmd) {
+        if (cmd.args.length != 1) {
+        printHelp(&quot;touch&quot;);
+        } else {
+        fs.writeFile(cmd.args[0], &#39;&#39;, function(err) {});
+        }
+    },
+    pwd: function(cmd) {
+        terminal.echo(getCurrentDir());
+    },
     mkdir: function(cmd) {
       if (cmd.args.length != 1) {
         printHelp(&quot;mkdir&quot;);
@@ -533,10 +615,21 @@ BrowserFS.configure({
       if (cmd.args.length != 1) {
         printHelp(&quot;less&quot;);
       } else {
+          //check if exsis
+          if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;no such file or directory&quot;);
+          }
           fs.readFile(cmd.args[0], function(err, contents) {
           terminal.echo(contents.toString());
         }); 
       }
+    },
+    startCTF:  function(cmd) {
+      terminal.echo(&quot;Welcome to this reverse engineering CTF.&quot;);
+      terminal.echo(&quot;Try to find the CTF and have fun!&quot;);
+      terminal.echo(&quot;&quot;);
+      terminal.set_prompt(&quot;&quot;);
+      ctf();
     }
   }
 
@@ -546,12 +639,21 @@ BrowserFS.configure({
         terminal.echo(&quot;Usage mkdir &lt;foldername&gt;&quot;);
         break;
        case &quot;less&quot;:
-        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);  
+        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);
+        break;
+       case &quot;touch&quot;:
+        terminal.echo(&quot;Usage touch &lt;filename&gt;&quot;);
+        break;
         }
       }  
+  
+  function ctf(){
+    var input = terminal.read(&#39;&#39;);
+    terminal.echo(input);      
+  }
+  
   });
 });
-
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
 
@@ -565,9 +667,29 @@ BrowserFS.configure({
 
 (Set: _solution to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
-
+ 
+ &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;reload&lt;/button&gt;
+ &lt;/a&gt;
+ 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+<<<<<<< HEAD
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 11" tags="" position="950,450" size="100,100">(set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
+
+[(alert: _whatToDo)]
+
+Usg wlees,
+
+qi coh&#39;fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh trbdmupy.  Ng i uiwnfl kirr&#39;g gryr asfw jlnu: noeg{wvo_125}. Jsoq zcfo fbf bki nrlb flayzmqkef.
+
+key: NoIdea
+
+ &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;ever heard of Vigenere?&quot;&gt;hint&lt;/button&gt;
+ &lt;/a&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF 2" tags="" position="350,1300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;h3&gt;Do I live alone? &lt;/h3&gt;
 
@@ -589,7 +711,11 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;7.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 3" tags="" position="800,275" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 
 (set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
@@ -611,7 +737,11 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 &lt;!--flag{12_234_ghuzt5r}--&gt;
 &lt;/body&gt;
+<<<<<<< HEAD
 &lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF 4" tags="" position="350,1050" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;style&gt;
 
 html {
@@ -745,9 +875,15 @@ It is not necessary to look into the the code.
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+<<<<<<< HEAD
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
 
 You made it!</tw-passagedata><tw-passagedata pid="7" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF4_end" tags="" position="575,1050" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
+
+You made it!</tw-passagedata><tw-passagedata pid="8" name="CTF 5" tags="" position="350,1175" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;style&gt;
 
 br {
@@ -871,7 +1007,11 @@ iframe {
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+<<<<<<< HEAD
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
+=======
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF5_end" tags="" position="500,1175" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 You made it!
 
@@ -881,7 +1021,11 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;6.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1100,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF 6" tags="" position="1400,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;style&gt;
 
 html {
@@ -971,27 +1115,34 @@ iframe {
 &lt;/style&gt;
 
 &lt;!--TmpVar is not allowed --&gt;
-(set: $ctf6_code to &quot;function chooseTab(num) {  
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/x-highlightx/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=\&quot;${cls}\&quot;`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&#39;undefined&#39;);
-  }
+(set: $ctf6_code to &quot;function showTab(input) {
+	var picID;
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
+	
+ 	var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
+	html += \&quot;&lt;img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
+	html += \&quot;&lt;/br&gt;\&quot;
+	document.getElementById(picID).innerHTML = html;  
+	console.log(html)
 
-  return false;
-}
+	/*window.location.hash = picID
+	history.pushState(null, null, &#39;#&#39;+parseInt(picID)); Does not work in twine*/
+	window.localStorage.setItem(&#39;picID&#39;, input);
+	
+	var i;
+	var x = document.getElementsByClassName(\&quot;animals\&quot;);
+	for (i = 0; i &lt; x.length; i++) {
+		x[i].style.display = \&quot;none\&quot;;  
+	}
+	document.getElementById(picID).style.display = \&quot;block\&quot;;
 
-export  $initHighlight;
-
-// Tell parent we&#39;ve changed the tab
-top.postMessage(self.location.toString(), &#39;*&#39;);
+	/*Ignore jsut for the Challenge*/	
+	parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
+	return
 }&quot;)
 
 (set: _info to &quot;&quot;)
@@ -1041,7 +1192,11 @@ top.postMessage(self.location.toString(), &#39;*&#39;);
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+<<<<<<< HEAD
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1100,425" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+=======
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF6_end" tags="" position="1600,200" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;script&gt; 
 	setup.ctf6_reset()
@@ -1055,7 +1210,11 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story (fehlt noch)-&gt;x.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF 7" tags="" position="350,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;h1&gt;Who even am I?&lt;/h1&gt;
 
 &lt;img src= &quot;https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg&quot;&gt;
@@ -1097,7 +1256,11 @@ background-color: var(--purple) !important;
 [[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]
 &lt;/div&gt;
 
+<<<<<<< HEAD
 &lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="12" name="First Shelf" tags="" position="600,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="13" name="Second Shelf" tags="" position="725,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="14" name="Third Shelf" tags="" position="850,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="15" name="Fourth Shelf" tags="" position="975,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="16" name="Fifth Shelf" tags="" position="1100,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="17" name="CTF 8" tags="" position="900,300" size="100,100">Download the file and check for valuable information. 
+=======
+&lt;link rel=&quot;stylesheet&quot; href=css/ctf7/styles.css&gt;&lt;/link&gt;</tw-passagedata><tw-passagedata pid="13" name="First Shelf" tags="" position="500,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="14" name="Second Shelf" tags="" position="625,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="15" name="Third Shelf" tags="" position="750,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="16" name="Fourth Shelf" tags="" position="875,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="17" name="Fifth Shelf" tags="" position="1000,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="18" name="CTF 8" tags="" position="950,275" size="100,100">Download the file and check for valuable information. 
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 There might be something more to it than what you first see...
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
@@ -1119,7 +1282,11 @@ There might be something more to it than what you first see...
  &lt;/a&gt;
   
   &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;
+<<<<<<< HEAD
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;/body&gt;</tw-passagedata><tw-passagedata pid="19" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
@@ -1162,6 +1329,7 @@ Hint: Have you tried working with char arrays in java?
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="19" name="MainPage" tags="" position="200,200" size="100,100">&lt;style&gt;
   /* -- Twine overrides -- */
   tw-story {
@@ -1175,6 +1343,24 @@ Hint: Have you tried working with char arrays in java?
     background-attachment: local, fixed;
     box-sizing: border-box;
   }
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="20" name="newMainPage" tags="" position="75,125" size="100,100">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Memory Loss: Find Your Way Back&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;CSS/mainpage/style.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;style&gt;
+/*
+TODO: Add portrait mode
+TODO: Rework wires in Ai 
+TODO: Add portrait mode of wires
+*/
+
+@import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
   tw-consecutive-br {
     display: none;
@@ -1350,11 +1536,30 @@ Hint: Have you tried working with char arrays in java?
           &lt;div class=&quot;startButton&quot;&gt;
 			[[&lt;a&gt;Start&lt;/a&gt;-&gt;Story]]
           &lt;/div&gt;
+<<<<<<< HEAD
         &lt;/div&gt;
       &lt;/div&gt; 
     &lt;/div&gt;
   &lt;/div&gt; 
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="20" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+=======
+        &lt;/div&gt; 
+      &lt;/div&gt;
+    &lt;/div&gt; 
+  &lt;/section&gt;
+
+  &lt;section class=&quot;sec2&quot;&gt;
+    &lt;h1&gt;Requirements&lt;/h1&gt;
+    &lt;h2&gt;Tools&lt;/h2&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;h1&gt;Information about Developer&lt;/h1&gt;
+  &lt;/footer&gt;
+  
+  &lt;/main&gt;   
+&lt;/body&gt;</tw-passagedata><tw-passagedata pid="21" name="initMain" tags="" position="75,25" size="100,100">&lt;!--only for init--&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
@@ -1364,6 +1569,10 @@ Hint: Have you tried working with char arrays in java?
 
 or you can jump straight to you favorit challange: 
 
+<<<<<<< HEAD
+=======
+(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="22" name="MainPage" tags="" position="200,25" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
@@ -1530,8 +1739,29 @@ List with all CTFs and its state
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
 
-[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - Forensics-&gt;CTF 10]]
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - reverse engineering-&gt;CTF 10]]
 
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 11 - Cryptography-&gt;CTF 11]]
+
+<<<<<<< HEAD
+=======
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+&lt;!--(Set: $debug to false)--&gt;
+&lt;!-- :: init [startup] --&gt;
+&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
+(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="23" name="Story" tags="" position="175,350" size="100,100">You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+
+&lt;!--Button next --&gt;
+&lt;div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="24" name="CTFs" tags="" position="400,50" size="100,100">List with all CTFs and its status
+
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
 (set: $ctfs to it + (a:&quot;ctf2&quot;))
 (set: $ctfs to it + (a:&quot;ctf3&quot;))--&gt;
@@ -1543,6 +1773,7 @@ List with all CTFs and its state
     (for: each _item, ...$ctfs)[\
         _item (unless: $ctfs&#39;s last is _item)[, ]\
     ].
+<<<<<<< HEAD
 ]</tw-passagedata><tw-passagedata pid="24" name="1.p" tags="" position="200,600" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1551,6 +1782,9 @@ tw-story {
 &lt;/style&gt;
 
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+=======
+]</tw-passagedata><tw-passagedata pid="25" name="1.p" tags="" position="175,550" size="100,100">To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 “I don’t seem to remember anything. Who even am I?”
 To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
@@ -1562,6 +1796,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="25" name="2.p" tags="" position="200,800" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1570,12 +1805,16 @@ tw-story {
 &lt;/style&gt;
 
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="2.p" tags="" position="175,800" size="100,100">After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="26" name="3.p" tags="" position="200,1000" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1584,6 +1823,9 @@ tw-story {
 &lt;/style&gt;
 
 &lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="3.p" tags="" position="175,925" size="100,100">&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
 &lt;!--Button next --&gt;
@@ -1591,6 +1833,7 @@ Finding your name is a great start. But you need to learn more about yourself. S
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="27" name="4.p" tags="" position="200,1200" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1599,6 +1842,9 @@ tw-story {
 &lt;/style&gt;
 
 &lt;h1&gt;Let the search begin!&lt;/h1&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="4.p" tags="" position="175,1050" size="100,100">&lt;h1&gt;Let the search begin!&lt;/h1&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
@@ -1608,6 +1854,7 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="28" name="5.p" tags="" position="200,1400" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1616,6 +1863,9 @@ tw-story {
 &lt;/style&gt;
 
 &lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="5.p" tags="" position="175,1175" size="100,100">&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
 
 &lt;!--Button next --&gt;
@@ -1623,6 +1873,7 @@ It has been a long day and this search is taking a toll on you. You just want to
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="29" name="6.p" tags="" position="200,1600" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1631,6 +1882,9 @@ tw-story {
 &lt;/style&gt;
 
 Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="6.p" tags="" position="175,1300" size="100,100">Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
  
@@ -1643,6 +1897,7 @@ You end up finding your apartment in the first floor. The door is open! It seems
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="30" name="7.p" tags="" position="200,1800" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1651,6 +1906,9 @@ tw-story {
 &lt;/style&gt;
 
 Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="7.p" tags="" position="175,1425" size="100,100">Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 (Continuation of the girlfriend tragedy here maybe?)
 &lt;!--Button next --&gt;
@@ -1658,6 +1916,7 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="31" name="8.p" tags="" position="200,2000" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1666,12 +1925,16 @@ tw-story {
 &lt;/style&gt;
 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="8.p" tags="" position="175,1550" size="100,100">Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="32" name="9.p" tags="" position="200,2200" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1680,6 +1943,9 @@ tw-story {
 &lt;/style&gt;
 
 “I&#39;m sure they have the tools that will help me extract some information out of it.”
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="33" name="9.p" tags="" position="175,1675" size="100,100">“I&#39;m sure they have the tools that will help me extract some information out of it.”
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 &lt;!--Button next --&gt;
@@ -1687,6 +1953,7 @@ After some fiddling around you manage to connect the drive to a new computer. An
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="33" name="10.p" tags="" position="200,2400" size="100,100">&lt;style&gt;
 /* -- Twine overrides -- */
 tw-story {
@@ -1695,6 +1962,9 @@ tw-story {
 &lt;/style&gt;
 
 Coming soom. Stay tuned!
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="34" name="10.p" tags="" position="175,1800" size="100,100">Coming soom. Stay tuned!
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;!--Button next --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;div&gt;

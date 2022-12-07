@@ -457,6 +457,10 @@ terminal {
 BrowserFS.install(window);
 
 // Write JavaScript here
+//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+BrowserFS.install(window);
+
+// Write JavaScript here
 BrowserFS.configure({
   fs: &quot;LocalStorage&quot;, // from Backends table below,
   options: {
@@ -472,7 +476,34 @@ BrowserFS.configure({
     // etc
     
   fs.writeFile(&#39;/test.txt&#39;, &#39;Cool, I can do this in the browser!&#39;, function(err) {});
+    
   var current_dir = &quot;/&quot;;
+  
+    function getCurrentDir(){
+       if (!String(current_dir).endsWith(&#39;/&#39;)) {
+          current_dir += &quot;/&quot;;
+        }
+      return current_dir.toString();
+    }
+    
+
+    
+    function setDirDown(){
+      if (current_dir == &quot;/&quot;) {
+        return current_dir;
+      } else {
+        // /home/marc/test
+        dirs = getCurrentDir().slice(0, -1).split(&#39;/&#39;);
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        terminal.echo(&quot;current_dir: &quot; + current_dir);
+        dirs.pop();
+        terminal.echo(&quot;dirs: &quot; + dirs);
+        current_dir = dirs.join(&#39;/&#39;);
+        terminal.echo(&quot;current_dir: &quot; + getCurrentDir());
+      }
+    }
+    
+    
 
     terminal = $(&#39;terminal&#39;).terminal((command) =&gt; {
       var cmd = $.terminal.parse_command(command);
@@ -496,6 +527,7 @@ BrowserFS.configure({
     help: function(cmd) {
       terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) =&gt; accumulator +&quot;\n&quot;+ currentValue, &quot;Available commands:&quot;));
     },
+    qq: function(cmd) {commandList.call(terminal, help) },
     add: function(cmd) {
       terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
     },
@@ -507,21 +539,36 @@ BrowserFS.configure({
         if (cmd.args[0] == &quot;..&quot;){
           //Function go back or /
           //change promt
+          setDirDown();
+          terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
+          return;
         } else if (cmd.args[0] == &quot;.&quot;) {
           return;
         }
         //Check if dir exists
-        current_dir = cmd.args[0];
-        terminal.set_prompt(&#39;root@localhost:/&#39;+current_dir+&#39;\$&gt;&#39;);
+        if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;Not a directory&quot;);
+        }
+        current_dir = &quot;/&quot; + cmd.args[0];
+        terminal.set_prompt(&#39;root@localhost:&#39;+getCurrentDir()+&#39;\$&gt;&#39;);
     },
  
     ls: function(cmd) {
       /*ls &lt;dir&gt;*/
-          fs.readdir(current_dir, function(err, contents) {
+          fs.readdir(getCurrentDir(), function(err, contents) {
           terminal.echo(contents.toString().split(&quot;,&quot;));
         }); 
     },
-
+    touch: function(cmd) {
+        if (cmd.args.length != 1) {
+        printHelp(&quot;touch&quot;);
+        } else {
+        fs.writeFile(cmd.args[0], &#39;&#39;, function(err) {});
+        }
+    },
+    pwd: function(cmd) {
+        terminal.echo(getCurrentDir());
+    },
     mkdir: function(cmd) {
       if (cmd.args.length != 1) {
         printHelp(&quot;mkdir&quot;);
@@ -533,10 +580,21 @@ BrowserFS.configure({
       if (cmd.args.length != 1) {
         printHelp(&quot;less&quot;);
       } else {
+          //check if exsis
+          if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
+              terminal.echo(&quot;no such file or directory&quot;);
+          }
           fs.readFile(cmd.args[0], function(err, contents) {
           terminal.echo(contents.toString());
         }); 
       }
+    },
+    startCTF:  function(cmd) {
+      terminal.echo(&quot;Welcome to this reverse engineering CTF.&quot;);
+      terminal.echo(&quot;Try to find the CTF and have fun!&quot;);
+      terminal.echo(&quot;&quot;);
+      terminal.set_prompt(&quot;&quot;);
+      ctf();
     }
   }
 
@@ -546,12 +604,21 @@ BrowserFS.configure({
         terminal.echo(&quot;Usage mkdir &lt;foldername&gt;&quot;);
         break;
        case &quot;less&quot;:
-        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);  
+        terminal.echo(&quot;Usage less &lt;filename&gt;&quot;);
+        break;
+       case &quot;touch&quot;:
+        terminal.echo(&quot;Usage touch &lt;filename&gt;&quot;);
+        break;
         }
       }  
+  
+  function ctf(){
+    var input = terminal.read(&#39;&#39;);
+    terminal.echo(input);      
+  }
+  
   });
 });
-
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
 
@@ -565,7 +632,11 @@ BrowserFS.configure({
 
 (Set: _solution to &quot;&lt;#script&gt; alert(\&quot;XSS\&quot;);&lt;/script&gt;&quot;)
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
-
+ 
+ &lt;a class=&quot;fixedButton1&quot; href&gt;
+         &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;reload&lt;/button&gt;
+ &lt;/a&gt;
+ 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
@@ -881,7 +952,11 @@ You made it!
 &lt;div&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;6.p]]
 &lt;/div&gt;
+<<<<<<< HEAD
 &lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1100,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 6" tags="" position="1400,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;style&gt;
 
 html {
@@ -971,27 +1046,34 @@ iframe {
 &lt;/style&gt;
 
 &lt;!--TmpVar is not allowed --&gt;
-(set: $ctf6_code to &quot;function chooseTab(num) {  
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/x-highlightx/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=\&quot;${cls}\&quot;`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&#39;undefined&#39;);
-  }
+(set: $ctf6_code to &quot;function showTab(input) {
+	var picID;
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
+	
+ 	var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
+	html += \&quot;&lt;img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
+	html += \&quot;&lt;/br&gt;\&quot;
+	document.getElementById(picID).innerHTML = html;  
+	console.log(html)
 
-  return false;
-}
+	/*window.location.hash = picID
+	history.pushState(null, null, &#39;#&#39;+parseInt(picID)); Does not work in twine*/
+	window.localStorage.setItem(&#39;picID&#39;, input);
+	
+	var i;
+	var x = document.getElementsByClassName(\&quot;animals\&quot;);
+	for (i = 0; i &lt; x.length; i++) {
+		x[i].style.display = \&quot;none\&quot;;  
+	}
+	document.getElementById(picID).style.display = \&quot;block\&quot;;
 
-export  $initHighlight;
-
-// Tell parent we&#39;ve changed the tab
-top.postMessage(self.location.toString(), &#39;*&#39;);
+	/*Ignore jsut for the Challenge*/	
+	parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
+	return
 }&quot;)
 
 (set: _info to &quot;&quot;)
@@ -1041,7 +1123,11 @@ top.postMessage(self.location.toString(), &#39;*&#39;);
 (if: $debug is true)[solution is: (click: &quot;solution&quot;)[_solution]]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+<<<<<<< HEAD
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1100,425" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+=======
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF6_end" tags="" position="1600,200" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;script&gt; 
 	setup.ctf6_reset()
@@ -1119,7 +1205,11 @@ There might be something more to it than what you first see...
  &lt;/a&gt;
   
   &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;
+<<<<<<< HEAD
 &lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+=======
+&lt;/body&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF 9" tags="" position="350,1675" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 &lt;h1&gt;A random file in your home directory &lt;/h1&gt;
 
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
@@ -1512,7 +1602,11 @@ List with all CTFs and its state
    &lt;/div&gt;
 &lt;/section&gt;
 
+<<<<<<< HEAD
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 - XSS - difficulty level: 1-&gt;CTF 1]]
+=======
+[[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 -XSS - difficulty level: 1-&gt;CTF 1]]
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
 
@@ -1531,6 +1625,25 @@ List with all CTFs and its state
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 9 - reverse engineering - difficulty level: 1-&gt;CTF 9]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 10 - Forensics-&gt;CTF 10]]
+<<<<<<< HEAD
+=======
+
+Debug Mode with all solutions is: $debug 
+(Set: $debug to true)
+&lt;!--(Set: $debug to false)--&gt;
+&lt;!-- :: init [startup] --&gt;
+&lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
+(set: $ctfs to (a:))</tw-passagedata><tw-passagedata pid="22" name="Story" tags="" position="175,350" size="100,100">You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+
+&lt;!--Button next --&gt;
+&lt;div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]
+&lt;/div&gt;
+&lt;!--End of button next --&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="400,50" size="100,100">List with all CTFs and its status
+>>>>>>> e71c0cb83a802c8c925efddececf228726283209
 
 &lt;!--(set: $ctfs to it + (a:&quot;ctf1&quot;))
 (set: $ctfs to it + (a:&quot;ctf2&quot;))

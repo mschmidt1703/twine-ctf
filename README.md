@@ -131,4 +131,7 @@ https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/
 CTF7:
 https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg
 
+CTF8:
+https://www.pexels.com/de-de/foto/foto-eines-verlassenen-arbeitsbereichs-3359003/
+
 # Credits

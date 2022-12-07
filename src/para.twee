@@ -63,7 +63,7 @@ or you can jump straight to you favorit challange:
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 9 - reverse engineering - difficulty level: 1->CTF 9]]
 
-[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - Forensics->CTF 10]]
+[[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 10 - reverse engineering->CTF 10]]
 
 Debug Mode with all solutions is: $debug 
 (Set: $debug to true)
