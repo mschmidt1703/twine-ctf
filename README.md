@@ -24,20 +24,46 @@ This game was developed on the Twine engine to teach some basic knowledge about 
 3. Double click to start the story.html
 
 # Development
-For working with this project
+Everything you need to work with this project.
 
 ## Requirements
 - Twine with Harlow 3.3.1
 - Tweego
 
 ## Workflow 
-- 1.) git pull
-- 2.) build your local twine project to work on in -> tweego.exe src/ -o out/story.html / (in src sollen immer die aktuellen files liegen)
-- 3.) import story.html in your twine (work on it) if finished export twine --> Build --> export (als datei veröffentlichen)
-- 4.) Decompile  project with tweego -d -o tmp/all.twee example5.html (Wichtig in tmp)
-- 5.) Copy changes from all.twee in src/ (if necessary create new files and update main files)
-- 6.) Test if story compiles with out errors if not correct errors tweego.exe src/ -o tmp/story.html
-- 7.) Commit all (/tmp ist egal)
+1.) Pull the current data from repository:
+```sh
+git pull
+```
+
+2.) Build your local twine project to work on in 
+```sh
+tweego.exe src/ -o out/story.html
+```
+/src will always contain the current files.
+
+3.) Import story.html in your twine folder to locally work on it. If work is done then export html file from Twine:
+```
+Build --> Export 
+```
+
+4.) Rename your exported html file to story.html
+
+5.) Move story.html into the project directory /tmp
+
+6.) Decompile the project with:
+```sh
+tweego -d -o tmp/all.twee story.html (Wichtig in tmp)
+```
+
+7.) Copy changes from all.twee into the single twee files in /src. If necessary, create new files or adapt existing ones. 
+
+8.) Test that the project compiles without errors:
+```sh
+tweego.exe src/ -o tmp/story.html
+```
+
+7.) Commit all 
 
 ## Git for Noobies
 
