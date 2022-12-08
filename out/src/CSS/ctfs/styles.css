@@ -1,0 +1,90 @@
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+ctf1 {
+  box-sizing: border-box;
+}
+
+.rectangle {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1 fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  z-index: 0;
+
+  height: 20vh;
+  width: 100%;
+  border-radius: 45px 45px 45px 45px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.box {
+  display: inline-block;
+}
+
+.preview {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  float: left;
+}
+
+img {
+  height: 6em;
+  margin-left: 20px;
+  float: left;
+}
+
+div .information {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+}
+
+ul {
+  margin: 0 auto;
+  list-style: none;
+  line-height: 10px;
+  font-size: 1em;
+  color: #9b9b9b;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+.outer {
+  float: right;
+  width: 30%;
+}
+
+.startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  height: 3em;
+  width: 5em;
+
+  border-radius: 35px 35px 35px 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.startButton a {
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
