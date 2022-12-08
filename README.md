@@ -42,7 +42,7 @@ tweego.exe src/ -o out/story.html
 ```
 /src will always contain the current files.
 
-3.) Import story.html in your twine folder to locally work on it. If work is done then export html file from Twine:
+3.) Import story.html in your twine folder. If work is done then export html file from Twine:
 ```
 Build --> Export 
 ```
