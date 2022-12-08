@@ -670,95 +670,8 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 		&lt;!--flag{12_234_ghuzt5r}--&gt;
 	&lt;/body&gt;
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;style&gt;
-
-	html {
-		overflow-y: hidden !important; /*Disabe sroll*/
-	}
-
-	br {
-		max-height: 0px;
-		visibility: hidden;
-		display: none;
-	}
-
-	tw-story {
-		background-image: url(&#39;img/4all/pc_rahmen.png&#39;);
-		padding: inherit;
-		float: initial;
-		width: inherit;
-		height: inherit;
-	}
-
-
-	tw-passage {
-		margin-left: 15%;
-		width: 70%;
-		height: 100%;
-		padding: 1.5%;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size:1.2rem; 
-		color:#000;
-	}
-
-	.webbrowser {
-		float: inherit;
-		width: 70%;
-		height: 54%;
-		margin-left: 15.5%;
-		margin-top: -4%;
-		border: 2px solid black;
-		background: white;
-	}
-
-	#tab {
-		float: inherit;
-		width: 100%;
-		height: 100%;
-		background: url(img/ctf4/webbrowser_header.PNG) 0 0 no-repeat;
-		background-repeat: repeat-x;
-		border: 1px solid #333;
-	}
-
-	.url {
-		padding: 0.1em;
-		align-self: center;
-	}
-
-	.controls {
-		background-color: #f4f4f4;
-		border: 1px solid #f0f0f0;
-		padding: 2px 3px;
-		border: 1px solid #999;
-		border-bottom: none;
-		display: -webkit-flex;
-		margin-top: 47px;
-		padding: 2px;
-	}
-
-	.urlbutton {
-		margin-left: auto;
-		align-self: center;
-		padding-right: 1em;
-	}
-
-	.input {
-		margin-right: auto;
-	}
-
-
-	iframe {
-	 width: inherit;
-	 height: inherit
-	}
-
-	tw-story tw-consecutive-br {
-		height: 1.7% !important;
-	}
-
-&lt;/style&gt;
-
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles.css&quot;&gt;&lt;/link&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 (set: _info to &quot;Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
 
@@ -789,7 +702,7 @@ It is not necessary to look into the the code.
             &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot;&gt;
             &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Surf&quot;&gt;
         &lt;/div&gt;
-        &lt;iframe src=&quot;static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
+        &lt;iframe src=&quot;src/static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
