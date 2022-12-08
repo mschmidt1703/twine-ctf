@@ -97,7 +97,7 @@ List with all CTFs and its state
 <section class="ctf1">
 	<div class="rectangle">
 		<div class="box">
-			<img src='src/img/mainPage/previews/preview_default.svg' alt='preview'>
+			<img src='src/img/main/previews/preview_default.svg' alt='preview'>
 		</div>     
 		<div class="box">
 			<ul>

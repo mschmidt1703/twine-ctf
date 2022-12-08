@@ -1,0 +1,38 @@
+tw-story {
+  background-image: url("../../img/ctf1/pc_rahmen1.png");
+  background-size: 110%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+html {
+  overflow-y: hidden !important; /* Disabe scroll */
+}
+
+.twine-background-login {
+  position: inherit;
+  background-color: white;
+  width: 500px;
+}
+
+.login-contianer {
+  text-align: -webkit-center;
+  height: 500px;
+}
+
+#ui-bar {
+  display: none;
+}
+
+br {
+  max-height: 0px;
+  visibility: hidden;
+  display: none;
+}
+
+.headline {
+  margin-top: -7rem;
+  margin-bottom: 7rem;
+}
