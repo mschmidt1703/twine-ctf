@@ -15,23 +15,27 @@
 
 <tw-consecutive-br></tw-consecutive-br>
 
-<div class="webbrowser"> 
-	<div id="tab">
-		<div class="controls">
-            <span class="url label">URL:</span>
-            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html">
-            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
-        </div>
-        <iframe src="static/ctf5/t.html" title="Google"></iframe>
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
     </div>
+    <iframe src="static/ctf5/t.html" title="Google"></iframe>
+  </div>
 </div>
+
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Maybe there are other html tags that are vulnerable?")]
+
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
 
-(Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
+(Set: _solution to "<#script> src='#' onerror=alert(1) </script>") /* TODO: Delete end tag */
 
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
 
@@ -43,12 +47,4 @@
 
 You made it!
 
-[[Main Page->MainPage]]
-
-<!--Button next -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<div>
-	[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
-</div>
-
-<!--End of button next -->
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]

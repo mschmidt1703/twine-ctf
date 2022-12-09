@@ -1,6 +1,7 @@
 :: CTF 6 {"position":"1100,300","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf6/styles.css"></link>
+<link rel="stylesheet" href="src/css/ctf6/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
 <!--TmpVar is not allowed -->
 (set: $ctf6_code to "function showTab(input) {
@@ -43,35 +44,36 @@
 </script>
 
 <tw-consecutive-br></tw-consecutive-br>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<div class="webbrowser"> 
-	<div id="tab">
-		<div class="controls">
-            <span class="url label">URL:</span>
-            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
-            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
-        </div>
-        <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe>
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+	  <span class="url label">URL:</span>
+	  <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
+	  <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
     </div>
+    <iframe scrolling="yes" src="static/ctf6/u.html" title="Google"></iframe> /* TODO: Change path */
+  </div>
 </div>
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Show Implemation Code")[(alert: "
-	<pre><code id=\"code\" class=\"language-javascript\">
-    </code></pre>
 
-<script> 
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+(link-repeat: "Show Implemation Code")[(alert: "
+  <pre><code id=\"code\" class=\"language-javascript\">
+</code></pre>
+
+<script>
   setup.ctf6_showCode();
-  hljs.highlightAll();  
+  hljs.highlightAll();
 </script>")]
 
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "xxx")]
 <tw-consecutive-br></tw-consecutive-br>
 (link-repeat: "Give me a second hint")[(alert: "xxx")]
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 (Set: _solution to "<#script> src='#' onerror=alert(1) </script>")
@@ -83,18 +85,10 @@
 :: CTF6_end {"position":"1100,425","size":"100,100"}
 (set: $ctfs to it + (a: "ctf6"))
 
-<script> 
+<script>
 	setup.ctf6_reset()
 </script>
 
 You made it!
 
-[[Main Page->MainPage]]
-
-<!--Button next -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<div>
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
-</div>
-
-<!--End of button next -->

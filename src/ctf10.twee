@@ -1,9 +1,9 @@
 :: CTF 10 {"position":"1300,425","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf10/styles.css"></link>
+<link rel="stylesheet" href="src/css/ctf10/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
 (set: _info to "")
-
 
 (if: $ctfs contains "ctf10")[]
 (else:)[(alert: _info)]
@@ -18,8 +18,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/pipe.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
 <tw-consecutive-br></tw-consecutive-br>
 
@@ -57,8 +55,6 @@ BrowserFS.configure({
       return current_dir.toString();
     }
     
-
-    
     function setDirDown(){
       if (current_dir == "/") {
         return current_dir;
@@ -73,8 +69,6 @@ BrowserFS.configure({
         terminal.echo("current_dir: " + getCurrentDir());
       }
     }
-    
-    
 
     terminal = $('terminal').terminal((command) => {
       var cmd = $.terminal.parse_command(command);
@@ -197,16 +191,17 @@ BrowserFS.configure({
 <tw-consecutive-br></tw-consecutive-br>
 
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
-<tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "")]
 
+<tw-consecutive-br></tw-consecutive-br>
+
+(link-repeat: "Give me a second hint")[(alert: "")]
 
 (Set: _solution to "<#script> alert(\"XSS\");</script>")
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
  
- <a class="fixedButton1" href>
-         <button class="addMore" title="don't focus on the image itself">reload</button>
- </a>
+<a class="fixedButton1" href>
+  <button class="addMore" title="don't focus on the image itself">reload</button>
+</a>
  
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>

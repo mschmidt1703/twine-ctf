@@ -1,13 +1,12 @@
 :: CTF 4 {"position":"400,1200","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf4/styles.css"></link>
+<link rel="stylesheet" href="src/css/ctf4/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user. 
+(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
 
 Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
 
-
-In this challenge you can try to insert a JavaScript alert() in the frame below. This  JavaScript alert() should show up a  pop up window.
+In this challenge you can try to insert a JavaScript alert() in the frame below. This JavaScript alert() should show up a pop up window.
 
 For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
 It is not necessary to look into the the code.
@@ -24,23 +23,27 @@ It is not necessary to look into the the code.
 
 <tw-consecutive-br></tw-consecutive-br>
 
-<div class="webbrowser"> 
-	<div id="tab">
-		<div class="controls">
-            <span class="url label">URL:</span>
-            <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
-            <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
-        </div>
-        <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
     </div>
+    <iframe src="src/static/ctf4/s.html" title="Google"></iframe> /* TODO: Change path */
+  </div>
 </div>
+
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "You need to insert some javascript, maybe the script tag helps")]
+
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
 
-(Set: _solution to "<#script> alert(\"XSS\");</script>")
+(Set: _solution to "<#script> alert(\"XSS\");</script>") /* TODO: Delete end tag? */
 
 (if: $debug is true)[solution is: (click: "solution")[_solution]]
 

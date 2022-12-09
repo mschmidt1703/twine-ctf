@@ -3,26 +3,14 @@
 
 <h3>Do I live alone? </h3>
 
-Great! Now you know your name, but nothing else. 
+Great! Now you know your name, but nothing else.
 
-After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on..
+After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on...
 
-<style>  
-	img {  
-		max-width: 100%;  
-		height: auto;  
-	}  
-</style>  
+<img src="./img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;"></img> /* TODO: Add alt */
 
-<img src= "./img/ctf2/ctf2.jpg"></img>
-
-Maybe taking a closer look at it is not a bad idea. 
+Maybe taking a closer look at it is not a bad idea.
 
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
-<!-- Button next -->
-<div>
-	[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
-</div>
-
-<!--End of button next -->
+[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]

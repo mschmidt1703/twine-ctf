@@ -23,47 +23,47 @@ Memory Loss: Find Your Way Back
 
 
 :: MainPage {"position":"200,200","size":"100,100"}
-<link rel="stylesheet" href="src/css/main/styles.css"></link>
+<link rel="stylesheet" href="src/css/main/styles.css">
 
 <header>
-	<div class="logo">
-		<img src="src/img/main/header/logo.svg" alt="logo">
-	</div>
-	<nav>
-		<ul>
-			<li class="active">
-				[[<a>Home</a>->MainPage]]
-			</li>
-			<li>
-				[[<a>CTFs</a>->CTFs]]
-			</li>
-			<li>
-				[[<a>Achievements</a>->Achievements]]
-			</li>
-			<li>
-				[[<a>Tutorial</a>->Tutorial]]
-			</li>
-			<li>
-				[[<a>Settings</a>->Settings]]
-			</li>
-		</ul>
-	</nav>
+  <div class="logo">
+    <img src="src/img/main/header/logo.svg" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li class="active">
+        [[<a>Home</a>->MainPage]]
+      </li>
+      <li>
+        [[<a>CTFs</a>->CTFs]]
+      </li>
+      <li>
+        [[<a>Achievements</a>->Achievements]]
+      </li>
+      <li>
+        [[<a>Tutorial</a>->Tutorial]]
+      </li>
+      <li>
+        [[<a>Settings</a>->Settings]]
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <section class="sec1">
-	<div class="usb-stick">
-		<img src="src/img/main/usb_stick.svg" alt="usb-stick">
-	</div>            
-	<div class="preview">
-		<div class="preview_bg">
-			<img src="src/img/main/previews/preview_default.svg" alt="preview">
-			<div class="rectangle">
-				<div class="outer">
-					<div class="startButton">
-						[[<a>Start</a>->Story]]
-					</div>
-				</div>
-			</div> 
-		</div>
-	</div> 
+  <div class="usb-stick">
+    <img src="src/img/main/usb_stick.svg" alt="usb-stick">
+  </div>
+  <div class="preview">
+    <div class="preview_bg">
+      <img src="src/img/main/previews/preview_default.svg" alt="preview">
+      <div class="rectangle">
+        <div class="outer">
+          <div class="startButton">
+            [[<a>Start</a>->Story]]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

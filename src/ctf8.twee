@@ -1,24 +1,19 @@
 :: CTF 8 {"position":"900,300","size":"100,100"}
-Download the file and check for valuable information. 
-There might be something more to it than what you first see...
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<head>
-	<title>Center align button</title>
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
-</head>
+<title>Center align button</title>
 
-<body>
+Download the file and check for valuable information. 
+There might be something more to it than what you first see...
+	
+<style>
+    body {
+        text-align: center;
+    }
+</style>
 
-	<a class="fixedButton1" href>
-         <button class="addMore" title="don't focus on the image itself">hint</button>
-	</a>
-  
-	<button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button>
-</body>
+<a class="fixedButton1" href>
+    <button class="addMore" title="don't focus on the image itself">Hint</button>
+</a>
 
+<button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button> /* TODO: Change path */
