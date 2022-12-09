@@ -2,38 +2,40 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <h1>A random file in your home directory </h1>
 
-Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. You’re an expert on reverse engineering. This should be an easy task for you. 
+Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
 
 <div>
-	<code>
-		public class ctf9 {<br>
-			static char [] theSecret;<br>
-			public static void encryptSecret(){<br>
-				theSecret = new char [14]; <br>
-				theSecret [3] = 'n'; <br>
-				theSecret [4] = 'o'; <br>
-				theSecret [0] = 'B'; <br>
-				theSecret [7] = 'l'; <br>
-				theSecret [2] = 'u'; <br>
-				theSecret [8] = 'l'; <br>
-				theSecret [10] = 'd'; <br>
-				theSecret [12] = 'e'; <br>
-				theSecret [13] = 'r'; <br>
-				theSecret [11] = 'H'; <br>
-				theSecret [1] = 'r'; <br>
-				theSecret [9] = 'e'; <br>
-				theSecret [5] = 'K'; <br>
-				theSecret [6] = 'i'; <br>
-			}<br>
-			 public static String conclusion(){<br>
-				String conc = "This case is unsolvable. Give up!";<br>
-				return  conc;<br>
-			}<br>
-			public static void main(String[] args) {<br>
-			  System.out.println(conclusion());<br>
-			}<br>
-		}
-	</code>
+	<pre>
+		<code>
+			public class ctf9 &#123;<br>
+				static char [] theSecret;<br>
+				public static void encryptSecret()&#123;<br>
+					theSecret = new char [14]; <br>
+					theSecret [3] = 'n'; <br>
+					theSecret [4] = 'o'; <br>
+					theSecret [0] = 'B'; <br>
+					theSecret [7] = 'l'; <br>
+					theSecret [2] = 'u'; <br>
+					theSecret [8] = 'l'; <br>
+					theSecret [10] = 'd'; <br>
+					theSecret [12] = 'e'; <br>
+					theSecret [13] = 'r'; <br>
+					theSecret [11] = 'H'; <br>
+					theSecret [1] = 'r'; <br>
+					theSecret [9] = 'e'; <br>
+					theSecret [5] = 'K'; <br>
+					theSecret [6] = 'i'; <br>
+				}<br>
+				public static String conclusion()&#123;<br>
+					String conc = "This case is unsolvable. Give up!";<br>
+					return  conc;<br>
+				}<br>
+				public static void main(String[] args) &#123;<br>
+				System.out.println(conclusion());<br>
+				}<br>
+			}
+		</code>
+	</pre>
 </div>
 
 Hint: Have you tried working with char arrays in java?
