@@ -9,80 +9,101 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Loss: Find Your Way Back.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="21" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/*Button redo undo*/
-tw-icon {
-	color: #ad00d8;
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="21" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
+
+/* Redo and undo button */
+tw-icon
+{
+  color: #ad00d8;
 }
 
-/**/
-tw-story {
-	background-image: url('src/img/general/background/background_landscape.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+tw-story
+{
+  background-image: url('src/img/general/background/background_landscape.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* Colors Fonts */
-:root {
-	--font_yellow: #F79E00;
-	--font_grey: #9B9B9B;
+#resume-btn
+{
+  background-color: var(--purple) !important;
 }
 
-/* Colors Background */
-:root {
-	--purple: #B200DD;
-	--purple_dark: #4B0872;
-	--blue: #4316A5;
-	--blue_dark: #250777;
-	--grey1: #1E1E1E;
-	--grey2: #161616;
-	--grey3: #141414;
+/* -- General CSS -- */
+
+/* Font */
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+/* TODO: Should this font be global? */
+* {
+  font-family: "OCR A Extended", sans-serif;
 }
 
-.color_purple {
-	background-color: var(--purple) !important;
+/* Font colors */
+:root
+{
+  --font_yellow: #F79E00;
+  --font_grey: #9B9B9B;
 }
 
-#resume-btn {
-	background-color: var(--purple) !important;
+/* Background colors */
+:root
+{
+  --purple: #B200DD;
+  --purple_dark: #4B0872;
+  --blue: #4316A5;
+  --blue_dark: #250777;
+  --grey1: #1E1E1E;
+  --grey2: #161616;
+  --grey3: #141414;
 }
 
-.fixedButton1 {
-	position: fixed;
-	bottom: 0px;
-	right: 0px; 
-	padding: 20px;
+.color_purple
+{
+  background-color: var(--purple) !important;
 }
 
-.fixedButton2 {
-	position: fixed;
-	bottom: 40px;
-	right: 0px; 
-	padding: 20px;
+/* TODO: What are those? Where do these belong to? */
+.fixedButton1
+{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
 }
 
-.fixedButton3 {
-	position: fixed;
-	bottom:80px;
-	right: 0px; 
-	padding: 20px;
+.fixedButton2
+{
+  position: fixed;
+  bottom: 40px;
+  right: 0;
+  padding: 20px;
 }
 
-.addMore {
-	border: none;
-	width: 32px;
-	height: 32px;
-	background-color: #eee;
-	transition: all ease-in-out 0.2s;
-	cursor: pointer;
+.fixedButton3
+{
+  position: fixed;
+  bottom: 80px;
+  right: 0;
+  padding: 20px;
 }
 
-.addMore:hover {
-	border: 1px solid #888;
-	background-color: #ddd;
+.addMore
+{
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
 }
 
-/* TODO override Button and Texts*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+.addMore:hover
+{
+  border: 1px solid #888;
+  background-color: #ddd;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* # CTF 1 Start */
 

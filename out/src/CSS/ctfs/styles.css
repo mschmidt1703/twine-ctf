@@ -5,19 +5,16 @@
   color: #9b9b9b;
 }
 
-ctf1 {
+.ctf1 {
   box-sizing: border-box;
 }
 
 .rectangle {
   position: relative;
-
   display: grid;
   grid-template-columns: 1fr 1 fr 1fr 1fr;
   grid-template-rows: 1fr;
-
   z-index: 0;
-
   height: 20vh;
   width: 100%;
   border-radius: 45px 45px 45px 45px;
@@ -26,7 +23,6 @@ ctf1 {
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0)
   );
-
   backdrop-filter: blur(5px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }

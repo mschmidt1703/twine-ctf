@@ -1,12 +1,4 @@
-html {
-  overflow-y: hidden !important; /*Disabe sroll*/
-}
-
-br {
-  max-height: 0px;
-  visibility: hidden;
-  display: none;
-}
+/* -- Twine overrides -- */
 
 tw-story {
   background-image: url("../../img/4all/pc_rahmen.png");
@@ -26,6 +18,22 @@ tw-passage {
   color: #000;
 }
 
+tw-story tw-consecutive-br {
+  height: 1.7% !important;
+}
+
+/* -- General CSS -- */
+
+html {
+  overflow-y: hidden !important; /* Disable scroll */
+}
+
+br {
+  max-height: 0px;
+  visibility: hidden;
+  display: none;
+}
+
 .webbrowser {
   float: inherit;
   width: 70%;
@@ -34,10 +42,6 @@ tw-passage {
   margin-top: -4%;
   border: 2px solid black;
   background: white;
-}
-
-tw-story tw-consecutive-br {
-  height: 1.7% !important;
 }
 
 :root {

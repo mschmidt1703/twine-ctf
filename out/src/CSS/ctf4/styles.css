@@ -1,12 +1,4 @@
-html {
-  overflow-y: hidden !important; /*Disabe sroll*/
-}
-
-br {
-  max-height: 0px;
-  visibility: hidden;
-  display: none;
-}
+/* -- Twine overrides -- */
 
 tw-story {
   background-image: url("../../img/4all/pc_rahmen.png");
@@ -24,6 +16,22 @@ tw-passage {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: #000;
+}
+
+tw-story tw-consecutive-br {
+  height: 1.7% !important;
+}
+
+/* -- General CSS -- */
+
+html {
+  overflow-y: hidden !important; /*Disabe sroll*/
+}
+
+br {
+  max-height: 0px;
+  visibility: hidden;
+  display: none;
 }
 
 .webbrowser {
@@ -74,8 +82,4 @@ tw-passage {
 iframe {
   width: inherit;
   height: inherit;
-}
-
-tw-story tw-consecutive-br {
-  height: 1.7% !important;
 }
