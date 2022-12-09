@@ -1,14 +1,33 @@
+/* -- Twine overrides -- */
 tw-story {
   background-image: url("../../img/ctf1/pc_rahmen1.png");
   background-size: 110%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
 }
 
+/* TODO: Test using ui bar or sidebar makes a difference */
+#ui-bar {
+  display: none;
+}
+
+/*
+tw-sidebar {
+  display: none;
+}
+*/
+
+/* -- General CSS -- */
+
+/* TODO: Why does this not override? */
 html {
-  overflow-y: hidden !important; /* Disabe scroll */
+  overflow-y: hidden !important; /* Disable scroll */
+}
+
+br {
+  max-height: 0; /* TODO: Is this necessary? */
+  visibility: hidden;
+  display: none;
 }
 
 .twine-background-login {
@@ -18,18 +37,7 @@ html {
 }
 
 .login-contianer {
-  text-align: -webkit-center;
   height: 500px;
-}
-
-#ui-bar {
-  display: none;
-}
-
-br {
-  max-height: 0px;
-  visibility: hidden;
-  display: none;
 }
 
 .headline {
