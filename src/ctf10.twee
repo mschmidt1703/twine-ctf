@@ -1,4 +1,4 @@
-:: CTF 10 {"position":"1300,425","size":"100,100"}
+:: CTF 10 {"position":"1150,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf10/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>

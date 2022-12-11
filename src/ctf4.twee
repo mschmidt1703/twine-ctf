@@ -1,5 +1,5 @@
 :: CTF 4 {"position":"400,1200","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf4/styles.css">
+<link rel="stylesheet" href="src/CSS/ctf4/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 (set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
@@ -30,7 +30,7 @@ It is not necessary to look into the the code.
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html">
       <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
     </div>
-    <iframe src="src/static/ctf4/s.html" title="Google"></iframe> /* TODO: Change path */
+    <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
   </div>
 </div>
 
@@ -43,12 +43,11 @@ It is not necessary to look into the the code.
 
 (link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
 
-(Set: _solution to "<#script> alert(\"XSS\");</script>") /* TODO: Delete end tag? */
-
-(if: $debug is true)[solution is: (click: "solution")[_solution]]
+/*Hint rechts*/
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))

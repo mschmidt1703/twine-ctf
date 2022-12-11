@@ -1,6 +1,46 @@
 :: CTF 1 {"position":"400,1000","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf1/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<style>
+tw-story {
+  background-image: url("src/img/4all/pc_rahmen.png");
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#ui-bar {
+  display: none;
+}
+
+html {
+  overflow-y: hidden !important; /* Disable scroll */
+}
+
+br {
+  max-height: 0; /* TODO: Is this necessary? */
+  visibility: hidden;
+  display: none;
+}
+
+.twine-background-login {
+  position: inherit;
+  background-color: white;
+  width: 500px;
+}
+
+.login-contianer {
+  height: 500px;
+  margin-left: 21rem;
+}
+
+.headline {
+  margin-top: -7rem;
+  margin-bottom: 7rem;
+}
+
+
+</style>
 
 <script>
   setup.ctf1();
@@ -8,7 +48,7 @@
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
 
-<div class="container is-fluidno login-contianer">
+<div class="container login-contianer">
   <form method="POST" class="box twine-background-login">
     <div class="field">
       <label class="label">Username</label>

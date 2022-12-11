@@ -1,4 +1,4 @@
-:: CTF 11 {"position":"950,450","size":"100,100"}
+:: CTF 11 {"position":"1300,300","size":"100,100"}
 (set: _whatToDo to "Seems like some kind of encrypted text")
 
 [(alert: _whatToDo)]
