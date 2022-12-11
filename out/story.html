@@ -389,10 +389,6 @@ br {
 BrowserFS.install(window);
 
 // Write JavaScript here
-//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
-BrowserFS.install(window);
-
-// Write JavaScript here
 BrowserFS.configure({
   fs: &quot;LocalStorage&quot;, // from Backends table below,
   options: {
@@ -418,6 +414,8 @@ BrowserFS.configure({
       return current_dir.toString();
     }
     
+
+    
     function setDirDown(){
       if (current_dir == &quot;/&quot;) {
         return current_dir;
@@ -432,6 +430,8 @@ BrowserFS.configure({
         terminal.echo(&quot;current_dir: &quot; + getCurrentDir());
       }
     }
+    
+    
 
     terminal = $(&#39;terminal&#39;).terminal((command) =&gt; {
       var cmd = $.terminal.parse_command(command);
@@ -521,8 +521,9 @@ BrowserFS.configure({
       terminal.echo(&quot;Welcome to this reverse engineering CTF.&quot;);
       terminal.echo(&quot;Try to find the CTF and have fun!&quot;);
       terminal.echo(&quot;&quot;);
-      terminal.set_prompt(&quot;&quot;);
-      ctf();
+      //terminal.pause();
+      //ctf();
+      ctf2(terminal);
     }
   }
 
@@ -540,13 +541,114 @@ BrowserFS.configure({
         }
       }  
   
-  function ctf(){
-    var input = terminal.read(&#39;&#39;);
-    terminal.echo(input);      
-  }
-  
   });
 });
+
+
+ function ctf2(terminal) {
+     var money = 100;
+    
+    var localInv = []
+        
+    var items = {
+      // Name Costs Amount
+      &quot;first Item&quot;: {&quot;costs&quot;: 5, &quot;amount&quot;: 0},
+      &quot;second Item&quot;: {&quot;costs&quot;: 10, &quot;amount&quot;: 0},
+      &quot;secret flag&quot;: {&quot;costs&quot;: 500, &quot;amount&quot;: 0},
+      &quot;third Item&quot;: {&quot;costs&quot;: 20, &quot;amount&quot;: 0},
+      &quot;fourth Item&quot;: {&quot;costs&quot;: 1, &quot;amount&quot;: 0},
+    };  
+    function getItems(){
+      return items;
+    }
+    
+    function getMoney(){
+      return money;
+    }
+    
+    function removeMoney(m) {
+      return money-=m;
+    }
+    
+    function addMoney(m) {
+      return money+=m;
+    }
+    
+    function printWhatTodo() {
+      terminal.echo(&quot;What do you what to do&quot;);
+      terminal.echo(&quot;&quot;);
+      terminal.echo(&quot;1: to sell a item&quot;);
+      terminal.echo(&quot;2: to buy a item&quot;);
+    }
+   
+    function sellItem() {
+      terminal.echo(&quot;&quot;);    
+      terminal.echo(&quot;&quot;);
+      terminal.echo(&quot;What do you what to sell&quot;);
+      terminal.echo(&quot;You have:&quot;);
+      terminal.echo(&quot;&quot;);
+      i = 0;
+      
+      terminal.echo(&quot;pos\t\tname\t\t\t\tamount&quot;);
+      for (key of Object.keys(getItems())) {
+        terminal.echo(i++ +&quot;\t\t&quot;+ key + &quot;\t\t\t\t&quot; + items[key][&#39;amount&#39;], true);
+      }
+      
+    /* terminal.stop();
+     terminal.read(&#39;&#39;,nextChooise1,function(err) {})
+     terminal.resume(); 
+      
+      switch(input) {
+        case 1:
+          break;
+        case 2:
+          terminal.echo(&quot;2&quot;);
+          break;
+        case &quot;q&quot;:
+          return;
+        default:
+        terminal.echo(&quot;default&quot;);
+          return;
+        }*/
+    }
+   
+    function printInventory(){
+      terminal.echo(&quot;Your are in a mall and want to buy or sell some items&quot;);
+      terminal.echo(&quot;Your currently have &quot; + getMoney() + &quot; Bitcoins &quot;);
+      terminal.echo(&quot;You can buy these things&quot;);
+      terminal.echo(&quot;&quot;);
+      
+      terminal.echo(&quot;name\t\t\t\t\tcosts\t\t\t\tamount&quot;);
+      for (const key of Object.keys(getItems())) {
+        terminal.echo(key + &quot;\t\t\t\t&quot; + items[key][&#39;costs&#39;] + &quot;\tBitcoins \t\t&quot; + items[key][&#39;amount&#39;], false);
+      }
+    }
+    
+    printInventory();    
+    terminal.flush();
+    terminal.echo(&quot;&quot;)
+    printWhatTodo();
+
+     terminal.stop();
+     terminal.read(&#39;&#39;,nextChooise,function(err) {})
+     terminal.resume(); 
+   
+   function nextChooise(i){
+    switch(i) {
+      case &quot;1&quot;:
+        sellItem();
+        break;
+      case &quot;2&quot;:
+        terminal.echo(&quot;2&quot;);
+        break;
+      default:
+        terminal.echo(&quot;error reading input&quot;);
+        terminal.read(&#39;&#39;,nextChooise,function(err) {})
+        return;
+      }
+    }
+    
+ }
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
 
