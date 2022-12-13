@@ -1,25 +1,29 @@
 /* -- Twine overrides -- */
+
 tw-story {
-  background-image: url("../../img/ctf1/pc_rahmen1.png");
+  background-image: url("../../img/4all/pc_rahmen.png");
   background-size: 110%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* TODO: Test using ui bar or sidebar makes a difference */
+/* TODO: What should this do? Can't see a difference...delete it? */
 #ui-bar {
   display: none;
 }
 
-/*
 tw-sidebar {
-  display: none;
+  left: -15em;
+  width: 15em;
+  text-align: left;
 }
-*/
+
+tw-icon {
+  left: 3.5em;
+}
 
 /* -- General CSS -- */
 
-/* TODO: Why does this not override? */
 html {
   overflow-y: hidden !important; /* Disable scroll */
 }
@@ -38,9 +42,30 @@ br {
 
 .login-contianer {
   height: 500px;
+  margin-left: 21rem;
 }
 
 .headline {
   margin-top: -7rem;
   margin-bottom: 7rem;
+}
+
+.outer .startButton {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 3em;
+  width: 12em;
+  border-radius: 45px 45px 45px 45px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0);
+}
+
+.startButton a {
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
 }

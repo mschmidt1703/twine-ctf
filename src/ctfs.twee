@@ -1,33 +1,40 @@
 :: CTFs {"position":"500,200","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctfs/styles.css"></link>
+<link rel="stylesheet" href="src/css/ctfs/styles.css">
 
 List with all CTFs and its state
 
 <section class="ctf1">
-	<div class="rectangle">
-		<div class="box">
-			<img src='src/img/main/previews/preview_default.svg' alt='preview'>
-		</div>     
-		<div class="box">
-			<ul>
-				<li>
-					CTF 1 - XSS
-				</li>
-				<li>
-					Difficulty level: 1
-				</li>
-				<li>
-					State: Not started
-				</li>
-			</ul>
-        </div>
-        <div class="box">
-			<div class="startButton">
-				[[<a>Start</a>->CTF 1]]
-			</div>
-        </div>
-   </div>
+  <div class="rectangle">
+    <div class="box">
+      <img src='src/img/main/previews/preview_default.svg' alt='preview'>
+    </div>
+    <div class="box">
+      <ul>
+        <li>
+          CTF 1 - XSS
+        </li>
+        <li>
+          Difficulty level: 1
+        </li>
+        <li>
+          State: Not started
+        </li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="startButton">
+        [[<a>Start</a>->CTF 1]]
+      </div>
+    </div>
+  </div>
 </section>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 - XSS - difficulty level: 1->CTF 1]]
 
@@ -63,3 +70,4 @@ List with all CTFs and its state
         _item (unless: $ctfs's last is _item)[, ]\
     ].
 ]
+

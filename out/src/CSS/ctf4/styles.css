@@ -9,7 +9,7 @@ tw-story {
 }
 
 tw-passage {
-  margin-left: 15%;
+  margin-left: 17%;
   width: 70%;
   height: 100%;
   padding: 1.5%;
@@ -36,10 +36,10 @@ br {
 
 .webbrowser {
   float: inherit;
-  width: 70%;
-  height: 54%;
+  width: 64%;
+  height: 52%;
   margin-left: 15.5%;
-  margin-top: -4%;
+  margin-top: 4%;
   border: 2px solid black;
   background: white;
 }

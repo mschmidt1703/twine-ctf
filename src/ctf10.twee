@@ -1,9 +1,9 @@
-:: CTF 10 {"position":"1300,425","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf10/styles.css"></link>
+:: CTF 10 {"position":"1150,300","size":"100,100"}
+<link rel="stylesheet" href="src/css/ctf10/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
 (set: _info to "")
-
 
 (if: $ctfs contains "ctf10")[]
 (else:)[(alert: _info)]
@@ -19,8 +19,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
-
 <tw-consecutive-br></tw-consecutive-br>
 
 <script>
@@ -28,168 +26,374 @@
 BrowserFS.install(window);
 
 // Write JavaScript here
-//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
-BrowserFS.install(window);
-
-// Write JavaScript here
-BrowserFS.configure({
-  fs: "LocalStorage", // from Backends table below,
-  options: {
-  }
-}, function (e) {
-  if (e) {
-    // An error occurred.
-    throw e;
-  }
-  // Otherwise, you can interact with the configured backends via our Node FS polyfill!
-  var fs = BrowserFS.BFSRequire('fs');
-  fs.readdir('/', function(e, contents) {
-    // etc
-    
-  fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
-    
-  var current_dir = "/";
-  
-    function getCurrentDir(){
-       if (!String(current_dir).endsWith('/')) {
-          current_dir += "/";
-        }
-      return current_dir.toString();
+BrowserFS.configure(
+{
+    fs: "LocalStorage", // from Backends table below,
+    options:
+    {}
+}, function(e)
+{
+    if (e)
+    {
+        // An error occurred.
+        throw e;
     }
-    
+    // Otherwise, you can interact with the configured backends via our Node FS polyfill!
+    var fs = BrowserFS.BFSRequire('fs');
+    fs.readdir('/', function(e, contents)
+    {
+        // etc
 
-    
-    function setDirDown(){
-      if (current_dir == "/") {
-        return current_dir;
-      } else {
-        // /home/marc/test
-        dirs = getCurrentDir().slice(0, -1).split('/');
-        terminal.echo("dirs: " + dirs);
-        terminal.echo("current_dir: " + current_dir);
-        dirs.pop();
-        terminal.echo("dirs: " + dirs);
-        current_dir = dirs.join('/');
-        terminal.echo("current_dir: " + getCurrentDir());
-      }
-    }
-    
-    
+        fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
 
-    terminal = $('terminal').terminal((command) => {
-      var cmd = $.terminal.parse_command(command);
-      /*terminal.echo(command);*/
-          if (commandList[cmd.name]) {
-              commandList[cmd.name].call(terminal, cmd);
-          } else if (cmd.name.length == 0) {
-              return;
-          } else {
-              terminal.error('Command not found: ' + cmd.name);
-         }
-      }, {
-      greetings: 'Your PC',
-      name: 'js_demo',
-      height: 500,
-      width: 900,
-      prompt: 'root@localhost:'+current_dir+'\$> '
-  });
-  
-  var commandList = {
-    help: function(cmd) {
-      terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) => accumulator +"\n"+ currentValue, "Available commands:"));
-    },
-    qq: function(cmd) {commandList.call(terminal, help) },
-    add: function(cmd) {
-      terminal.echo(parseInt(cmd.args[0])+parseInt(cmd.args[1]));
-    },
+        var current_dir = "/";
 
-    sub: function(cmd) {
-          terminal.echo(parseInt(cmd.args[0])-parseInt(cmd.args[1]));
-    },
-    cd: function(cmd) {
-        if (cmd.args[0] == ".."){
-          //Function go back or /
-          //change promt
-          setDirDown();
-          terminal.set_prompt('root@localhost:'+getCurrentDir()+'\$>');
-          return;
-        } else if (cmd.args[0] == ".") {
-          return;
+        function getCurrentDir()
+        {
+            if (!String(current_dir).endsWith('/'))
+            {
+                current_dir += "/";
+            }
+            return current_dir.toString();
         }
-        //Check if dir exists
-        if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
-              terminal.echo("Not a directory");
-        }
-        current_dir = "/" + cmd.args[0];
-        terminal.set_prompt('root@localhost:'+getCurrentDir()+'\$>');
-    },
- 
-    ls: function(cmd) {
-      /*ls <dir>*/
-          fs.readdir(getCurrentDir(), function(err, contents) {
-          terminal.echo(contents.toString().split(","));
-        }); 
-    },
-    touch: function(cmd) {
-        if (cmd.args.length != 1) {
-        printHelp("touch");
-        } else {
-        fs.writeFile(cmd.args[0], '', function(err) {});
-        }
-    },
-    pwd: function(cmd) {
-        terminal.echo(getCurrentDir());
-    },
-    mkdir: function(cmd) {
-      if (cmd.args.length != 1) {
-        printHelp("mkdir");
-      } else {
-         fs.mkdir(cmd.args[0], function(err, contents) {}); 
-      }
-    },
-    less: function(cmd) {
-      if (cmd.args.length != 1) {
-        printHelp("less");
-      } else {
-          //check if exsis
-          if (!fs.existsSync(getCurrentDir()+cmd.args[0])) {
-              terminal.echo("no such file or directory");
-          }
-          fs.readFile(cmd.args[0], function(err, contents) {
-          terminal.echo(contents.toString());
-        }); 
-      }
-    },
-    startCTF:  function(cmd) {
-      terminal.echo("Welcome to this reverse engineering CTF.");
-      terminal.echo("Try to find the CTF and have fun!");
-      terminal.echo("");
-      terminal.set_prompt("");
-      ctf();
-    }
-  }
 
-  function printHelp(forCommand){
-    switch (forCommand){
-      case "mkdir":
-        terminal.echo("Usage mkdir <foldername>");
-        break;
-       case "less":
-        terminal.echo("Usage less <filename>");
-        break;
-       case "touch":
-        terminal.echo("Usage touch <filename>");
-        break;
+
+
+        function setDirDown()
+        {
+            if (current_dir == "/")
+            {
+                return current_dir;
+            }
+            else
+            {
+                // /home/marc/test
+                dirs = getCurrentDir().slice(0, -1).split('/');
+                terminal.echo("dirs: " + dirs);
+                terminal.echo("current_dir: " + current_dir);
+                dirs.pop();
+                terminal.echo("dirs: " + dirs);
+                current_dir = dirs.join('/');
+                terminal.echo("current_dir: " + getCurrentDir());
+            }
         }
-      }  
-  
-  function ctf(){
-    var input = terminal.read('');
-    terminal.echo(input);      
-  }
-  
-  });
+
+
+
+        terminal = $('terminal').terminal((command) =>
+        {
+            var cmd = $.terminal.parse_command(command);
+            /*terminal.echo(command);*/
+            if (commandList[cmd.name])
+            {
+                commandList[cmd.name].call(terminal, cmd);
+            }
+            else if (cmd.name.length == 0)
+            {
+                return;
+            }
+            else
+            {
+                terminal.error('Command not found: ' + cmd.name);
+            }
+        },
+        {
+            greetings: 'Your PC',
+            name: 'js_demo',
+            height: 460,
+            width: 823,
+            prompt: 'root@localhost:' + current_dir + '\$> '
+        });
+
+        var commandList = {
+            help: function(cmd)
+            {
+                terminal.echo(Object.keys(commandList).reduce((accumulator, currentValue) => accumulator + "\n" + currentValue, "Available commands:"));
+            },
+            qq: function(cmd)
+            {
+                commandList.call(terminal, help)
+            },
+            add: function(cmd)
+            {
+                terminal.echo(parseInt(cmd.args[0]) + parseInt(cmd.args[1]));
+            },
+
+            sub: function(cmd)
+            {
+                terminal.echo(parseInt(cmd.args[0]) - parseInt(cmd.args[1]));
+            },
+            cd: function(cmd)
+            {
+                if (cmd.args[0] == "..")
+                {
+                    //Function go back or /
+                    //change promt
+                    setDirDown();
+                    terminal.set_prompt('root@localhost:' + getCurrentDir() + '\$>');
+                    return;
+                }
+                else if (cmd.args[0] == ".")
+                {
+                    return;
+                }
+                //Check if dir exists
+                if (!fs.existsSync(getCurrentDir() + cmd.args[0]))
+                {
+                    terminal.echo("Not a directory");
+                }
+                current_dir = "/" + cmd.args[0];
+                terminal.set_prompt('root@localhost:' + getCurrentDir() + '\$>');
+            },
+
+            ls: function(cmd)
+            {
+                /*ls <dir>*/
+                fs.readdir(getCurrentDir(), function(err, contents)
+                {
+                    terminal.echo(contents.toString().split(","));
+                });
+            },
+            touch: function(cmd)
+            {
+                if (cmd.args.length != 1)
+                {
+                    printHelp("touch");
+                }
+                else
+                {
+                    fs.writeFile(cmd.args[0], '', function(err) {});
+                }
+            },
+            pwd: function(cmd)
+            {
+                terminal.echo(getCurrentDir());
+            },
+            mkdir: function(cmd)
+            {
+                if (cmd.args.length != 1)
+                {
+                    printHelp("mkdir");
+                }
+                else
+                {
+                    fs.mkdir(cmd.args[0], function(err, contents) {});
+                }
+            },
+            less: function(cmd)
+            {
+                if (cmd.args.length != 1)
+                {
+                    printHelp("less");
+                }
+                else
+                {
+                    //check if exsis
+                    if (!fs.existsSync(getCurrentDir() + cmd.args[0]))
+                    {
+                        terminal.echo("no such file or directory");
+                    }
+                    fs.readFile(cmd.args[0], function(err, contents)
+                    {
+                        terminal.echo(contents.toString());
+                    });
+                }
+            },
+            startCTF: function(cmd)
+            {
+                terminal.echo("Welcome to this reverse engineering CTF.");
+                terminal.echo("Try to find the CTF and have fun!");
+                terminal.echo("");
+                //terminal.pause();
+                //ctf();
+                ctf2(terminal);
+            }
+        }
+
+        function printHelp(forCommand)
+        {
+            switch (forCommand)
+            {
+                case "mkdir":
+                    terminal.echo("Usage mkdir <foldername>");
+                    break;
+                case "less":
+                    terminal.echo("Usage less <filename>");
+                    break;
+                case "touch":
+                    terminal.echo("Usage touch <filename>");
+                    break;
+            }
+        }
+
+    });
 });
+
+
+function ctf2(terminal)
+{
+      const Action = {
+        sellOrBuy: 'sellOrBuy',
+        SellWhat: 'SellWhat',
+        BuyWhat: 'BuyWhat',
+        HowMany: 'HowMany',
+        Default: 'default'
+      };
+  
+    var next = Action.default;
+   
+    var money = 100;
+
+    var localInv = []
+
+    var items = {
+        // Name Costs Amount
+        1:{"costs": 5, "amount": 0},
+        2:{"costs": 10, "amount": 0},
+        3:{"costs": 500, "amount": 0},
+        4:{"costs": 20, "amount": 0},
+    };
+  
+    const itemNames = new Map();
+
+    itemNames.set("1", "first");
+    itemNames.set("2", "second");
+    itemNames.set("3", "secret");
+    itemNames.set("4", "third");
+
+
+    function getItems()
+    {
+        return items;
+    }
+
+    function getMoney()
+    {
+        return money;
+    }
+
+    function removeMoney(m)
+    {
+        return money -= m;
+    }
+
+    function addMoney(m)
+    {
+        return money += m;
+    }
+
+    function printWhatTodo()
+    {
+        terminal.echo("What do you what to do");
+        terminal.echo("");
+        terminal.echo("1: to sell a item");
+        terminal.echo("2: to buy a item");
+    }
+
+    function sellItem()
+    {
+        terminal.echo("");
+        terminal.echo("");
+        terminal.echo("What do you what to sell (only one at the time)");
+        terminal.echo("You have:");
+        terminal.echo("");
+        i = 0;
+
+        terminal.echo("pos\t\tname\t\t\t\tamount");
+        for (key of Object.keys(getItems()))
+        {
+            terminal.echo(i++ + "\t\t" + itemNames.get(key) + "\t\t\t\t" + items[key]['amount'], true);
+        }
+
+        terminal.read('', readSwitch, function(err) {})
+        next = Action.SellWhat;
+    }
+  
+    function sellOneItem(item){
+      items[item]['amount']--;
+      removeMoney(items[key]['costs']);
+    }
+
+    function sellChooise(i)
+    {
+        switch (i)
+        {
+            case "0":
+                if (items[0]['amount'] > 0) {
+                    sellOneItem(0);
+                } else {
+                    terminal.echo("You don't have enought to sell");
+                }
+                break;
+            case "1":
+                if (items[1]['amount'] > 0) {
+                    sellOneItem(1);
+                } else {
+                    terminal.echo("You don't have enought to sell");
+                }
+                break;
+            case "q":
+                return;
+            default:
+                /*terminal.echo("error reading input");
+                terminal.read('', sellChooise(i), function(err) {})*/
+                return;
+        }
+
+    }
+
+
+
+    function printInventory()
+    {
+        terminal.echo("Your are in a mall and want to buy or sell some items");
+        terminal.echo("Your currently have " + getMoney() + " Bitcoins ");
+        terminal.echo("You can buy these things");
+        terminal.echo("");
+
+        terminal.echo("name\t\t\t\t\tcosts\t\t\t\tamount");
+        for (const key of Object.keys(getItems()))
+        {    
+            terminal.echo(itemNames.get(key) + "\t\t\t\t" + items[key]['costs'] + "\tBitcoins \t\t" + items[key]['amount'], false);
+        }
+    }
+
+    printInventory();
+    terminal.flush();
+    terminal.echo("")
+    printWhatTodo();
+
+    terminal.read('', readSwitch, function(err) {})
+    next = Action.sellOrBuy;
+  
+
+      
+    function sellOrBuy(i)
+    {
+        switch (i)
+        {
+            case "1":
+                sellItem();
+                break;
+            case "2":
+                terminal.echo("2");
+                break;
+            default:
+                terminal.echo("error reading input");
+                terminal.read('', readSwitch, function(err) {})
+                return;
+        }
+    }
+  
+    function readSwitch(readIn){
+      if (next == Action.sellOrBuy){
+        sellOrBuy(readIn);
+      } if (next == Action.SellWhat){
+        sellChooise(readIn);
+      } 
+    }
+
+}
 </script>
 <terminal> </terminal>
 
@@ -197,16 +401,15 @@ BrowserFS.configure({
 <tw-consecutive-br></tw-consecutive-br>
 
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
+
 <tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "Give me a second hint")[(alert: "")]
 
+<a class="fixedButton1" href>
+  <button class="addMore" >reload</button>
+</a>
+ 
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
 
-(Set: _solution to "<#script> alert(\"XSS\");</script>")
-(if: $debug is true)[solution is: (click: "solution")[_solution]]
- 
- <a class="fixedButton1" href>
-         <button class="addMore" title="don't focus on the image itself">reload</button>
- </a>
- 
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
