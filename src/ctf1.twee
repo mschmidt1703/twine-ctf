@@ -8,6 +8,22 @@
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
 
+(append: ?SideBar)[\
+  (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funcion atob() do?")]
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <div class="outer">
+    <div class="startButton">
+      [[<a>Resume Story</a>->4.p]]
+    </div>
+  </div>
+]
+
 <div class="container login-contianer">
   <form method="POST" class="box twine-background-login">
     <div class="field">
@@ -32,4 +48,9 @@
 
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->4.p]]
+<div class="outer">
+  <div class="startButton">
+    [[Resume Story->4.p]]
+  </div>
+</div>
+

@@ -298,6 +298,22 @@ setup.ctf6_showCode = function() {
 
 &lt;div class=&quot;headline&quot;&gt;Your forgot your password, maybe it is possible to find it, somewhere else. &lt;/div&gt;
 
+(append: ?SideBar)[\
+  (link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;What does the JavaScript funcion atob() do?&quot;)]
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  &lt;div class=&quot;outer&quot;&gt;
+    &lt;div class=&quot;startButton&quot;&gt;
+      [[&lt;a&gt;Resume Story&lt;/a&gt;-&gt;4.p]]
+    &lt;/div&gt;
+  &lt;/div&gt;
+]
+
 &lt;div class=&quot;container login-contianer&quot;&gt;
   &lt;form method=&quot;POST&quot; class=&quot;box twine-background-login&quot;&gt;
     &lt;div class=&quot;field&quot;&gt;
@@ -322,7 +338,12 @@ setup.ctf6_showCode = function() {
 
 (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;4.p]]</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles.css&quot;&gt;
+
+&lt;div class=&quot;outer&quot;&gt;
+  &lt;div class=&quot;startButton&quot;&gt;
+    [[Resume Story-&gt;4.p]]
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
 
