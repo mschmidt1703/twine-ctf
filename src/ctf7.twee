@@ -8,22 +8,15 @@
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 
-/* TODO: Implement background-color in buttons */
-<style>
-	#first{
-		background-color: var(--purple) !important;
-	}
-</style>
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">First Shelf->First Shelf]]
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">Second Shelf->Second Shelf]]
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">Third Shelf->Third Shelf]]
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
 
-[[<button id="first" class="button is-danger is-rounded">Fourth Shelf->Fourth Shelf]]
-
-[[<button id="first" class="button is-danger is-rounded">Fifth Shelf->Fifth Shelf]]
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
 
 <!--My first name ist: John -->
 
@@ -33,7 +26,7 @@ Enter the flag for “who even am I?”: ___
 
 Hints: open your inspector view and have a look at the website’s resources. 
 
-[[<button id="first" class="button is-danger is-rounded">resume story->3.p]]
+[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
 
 :: First Shelf {"position":"600,800","size":"100,100"}
 Nothing really usefull here

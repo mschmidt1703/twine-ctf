@@ -7,8 +7,9 @@ tw-story {
   background-repeat: no-repeat;
 }
 
+/* TODO: What should this do? Can't see a difference...delete it? */
 #ui-bar {
-  /*display: none;*/
+  display: none;
 }
 
 tw-sidebar {

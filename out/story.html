@@ -334,6 +334,7 @@ setup.ctf6_showCode = function() {
 
 (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
 
+/* TODO: Make it a button */
 &lt;div class=&quot;outer&quot;&gt;
   &lt;div class=&quot;startButton&quot;&gt;
     [[Resume Story-&gt;4.p]]
@@ -879,22 +880,15 @@ You made it!
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 
-/* TODO: Implement background-color in buttons */
-&lt;style&gt;
-	#first{
-		background-color: var(--purple) !important;
-	}
-&lt;/style&gt;
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;First Shelf-&gt;First Shelf]]
 
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;First Shelf-&gt;First Shelf]]
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Second Shelf-&gt;Second Shelf]]
 
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;Second Shelf-&gt;Second Shelf]]
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Third Shelf-&gt;Third Shelf]]
 
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;Third Shelf-&gt;Third Shelf]]
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fourth Shelf-&gt;Fourth Shelf]]
 
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;Fourth Shelf-&gt;Fourth Shelf]]
-
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;Fifth Shelf-&gt;Fifth Shelf]]
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fifth Shelf-&gt;Fifth Shelf]]
 
 &lt;!--My first name ist: John --&gt;
 
@@ -904,7 +898,7 @@ Enter the flag for “who even am I?”: ___
 
 Hints: open your inspector view and have a look at the website’s resources. 
 
-[[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]</tw-passagedata><tw-passagedata pid="13" name="First Shelf" tags="" position="600,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="14" name="Second Shelf" tags="" position="725,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="15" name="Third Shelf" tags="" position="850,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="16" name="Fourth Shelf" tags="" position="975,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="17" name="Fifth Shelf" tags="" position="1100,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="18" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Resume Story-&gt;3.p]]</tw-passagedata><tw-passagedata pid="13" name="First Shelf" tags="" position="600,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="14" name="Second Shelf" tags="" position="725,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="15" name="Third Shelf" tags="" position="850,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="16" name="Fourth Shelf" tags="" position="975,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="17" name="Fifth Shelf" tags="" position="1100,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="18" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
     body {
@@ -928,10 +922,10 @@ There might be something more to it than what you first see...
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
 
 &lt;div&gt;
-	&lt;pre&gt;
-		&lt;code&gt;
-			public class ctf9 &amp;#123;&lt;br&gt;
-				static char [] theSecret;&lt;br&gt;
+   &lt;pre&gt;
+    &lt;code&gt;
+	  public class ctf9 &amp;#123;&lt;br&gt;
+		static char [] theSecret;&lt;br&gt;
 				public static void encryptSecret()&amp;#123;&lt;br&gt;
 					theSecret = new char [14]; &lt;br&gt;
 					theSecret [3] = &#39;n&#39;; &lt;br&gt;
@@ -956,9 +950,9 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 				public static void main(String[] args) &amp;#123;&lt;br&gt;
 				System.out.println(conclusion());&lt;br&gt;
 				}&lt;br&gt;
-			}
-		&lt;/code&gt;
-	&lt;/pre&gt;
+	  }
+	&lt;/code&gt;
+  &lt;/pre&gt;
 &lt;/div&gt;
 
 Hint: Have you tried working with char arrays in java?
@@ -1067,11 +1061,12 @@ List with all CTFs and its state
     &lt;div class=&quot;preview_bg&quot;&gt;
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
-        &lt;div class=&quot;outer&quot;&gt;
+    
           &lt;div class=&quot;startButton&quot;&gt;
-            [[&lt;a&gt;Start&lt;/a&gt;-&gt;Story]]
+            &lt;!-- TODO: Make it a button --&gt;
+            [[&lt;button class=&quot;startButton&gt;Start-&gt;Story]]
           &lt;/div&gt;
-        &lt;/div&gt;
+        
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;

@@ -48,6 +48,7 @@
 
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
 
+/* TODO: Make it a button */
 <div class="outer">
   <div class="startButton">
     [[Resume Story->4.p]]
