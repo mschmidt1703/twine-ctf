@@ -29,6 +29,13 @@ List with all CTFs and its state
   </div>
 </section>
 
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 - XSS - difficulty level: 1->CTF 1]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]
@@ -63,3 +70,4 @@ List with all CTFs and its state
         _item (unless: $ctfs's last is _item)[, ]\
     ].
 ]
+

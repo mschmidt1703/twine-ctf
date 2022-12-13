@@ -22,7 +22,7 @@
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html">
       <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
     </div>
-    <iframe src="static/ctf5/t.html" title="Google"></iframe>
+    <iframe src="src/static/ctf5/t.html" title="Google"></iframe>
   </div>
 </div>
 
@@ -35,12 +35,10 @@
 
 (link-repeat: "Give me a second hint")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
 
-(Set: _solution to "<#script> src='#' onerror=alert(1) </script>") /* TODO: Delete end tag */
-
-(if: $debug is true)[solution is: (click: "solution")[_solution]]
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
+
 
 :: CTF5_end {"position":"600,1400","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
@@ -48,3 +46,5 @@
 You made it!
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
+
+[[MainPage->MainPage]]
