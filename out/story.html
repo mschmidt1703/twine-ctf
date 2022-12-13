@@ -113,9 +113,8 @@ setup.ctf1 = function() {
 
 function eventOnClickHandler(event) {
 	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
-    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
-
-  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+  return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
 }
 
 /* # CTF 1 End */
@@ -136,9 +135,9 @@ window.addEventListener("message", function(event) {
     return;
   }
   
-    if (event.data.startsWith("ctf6_url_")) {
+  if (event.data.startsWith("ctf6_url_")) {
     ctf6_updateURI(event.data);
-	console.log("success: " + event.data)
+	  console.log("success: " + event.data)
     return;
   }
   
@@ -166,19 +165,18 @@ setup.ctf4_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf4.html') || !url.endsWith) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf4.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf4/s.html"; /*TODO: Change path */
-   		//frame.contentWindow.postMessage(url, "*");
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf4.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf4/s.html"; /*TODO: Change path */
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf4.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf4/s.html" + arg; /*TODO: Change path */
-    //frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
-
 };
 
 function ctf4_updateURI(value) {
@@ -188,7 +186,7 @@ function ctf4_updateURI(value) {
 
 function ctf4_levelSucceed() {
 	alert("XSS Success");
-  	Harlowe.goto("CTF4_end");
+  Harlowe.goto("CTF4_end");
 }
 
 /* # CTF 4 End */
@@ -207,17 +205,17 @@ setup.ctf5_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf5.html') || !url.endsWith) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf5.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf5/s.html"; /*TODO: Change path */
-   		//frame.contentWindow.postMessage(url, "*");
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf5.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf5/s.html"; /*TODO: Change path */
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf5.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf5/t.html" + arg; /*TODO: Change path */
-    //frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
 
 };
@@ -228,7 +226,7 @@ function ctf5_updateURI(value) {
 }
 
 function ctf5_levelSucceed() {
-  	Harlowe.goto("CTF5_end");
+  Harlowe.goto("CTF5_end");
 }
 
 /* # CTF 5 End */
@@ -250,21 +248,20 @@ setup.ctf6_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf6.html')) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf6.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf6/u.html"; /*TODO: Change path */
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf6.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf6/u.html";
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf6.html#", "");
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf6/u.html";  /*TODO: Change path */
+    frame.src = "src/static/ctf6/u.html"; 
     console.log("arg:" + arg)
     
-    /*frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame*/
+    /* frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame */ /* TODO: When code is not used then delete it */
     frame.contentWindow.postMessage(arg,"*")
   }
-
 };
 
 function ctf6_updateURI(value) {
@@ -274,14 +271,13 @@ function ctf6_updateURI(value) {
 }
 
 function ctf6_levelSucceed() {
-  	Harlowe.goto("CTF6_end");
+  Harlowe.goto("CTF6_end");
 }
 
 
 setup.ctf6_showCode = function() {
   var codeBox = document.getElementById('code'); 
   codeBox.innerHTML = Harlowe.variable("$ctf6_code")
-
 }
 
 /* # CTF 6 End */
@@ -337,7 +333,6 @@ setup.ctf6_showCode = function() {
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
-
 
 &lt;div class=&quot;outer&quot;&gt;
   &lt;div class=&quot;startButton&quot;&gt;
@@ -525,55 +520,55 @@ BrowserFS.configure({
   });
 });
 
-
- function ctf2(terminal) {
-     var money = 100;
+function ctf2(terminal) {
+  var money = 100;
     
-    var localInv = []
+  var localInv = []
         
-    var items = {
-      // Name Costs Amount
-      &quot;first Item&quot;: {&quot;costs&quot;: 5, &quot;amount&quot;: 0},
-      &quot;second Item&quot;: {&quot;costs&quot;: 10, &quot;amount&quot;: 0},
-      &quot;secret flag&quot;: {&quot;costs&quot;: 500, &quot;amount&quot;: 0},
-      &quot;third Item&quot;: {&quot;costs&quot;: 20, &quot;amount&quot;: 0},
-      &quot;fourth Item&quot;: {&quot;costs&quot;: 1, &quot;amount&quot;: 0},
-    };  
-    function getItems(){
-      return items;
-    }
+  var items = {
+    // Name Costs Amount
+    &quot;first Item&quot;: {&quot;costs&quot;: 5, &quot;amount&quot;: 0},
+    &quot;second Item&quot;: {&quot;costs&quot;: 10, &quot;amount&quot;: 0},
+    &quot;secret flag&quot;: {&quot;costs&quot;: 500, &quot;amount&quot;: 0},
+    &quot;third Item&quot;: {&quot;costs&quot;: 20, &quot;amount&quot;: 0},
+    &quot;fourth Item&quot;: {&quot;costs&quot;: 1, &quot;amount&quot;: 0},
+  };  
+
+  function getItems(){
+    return items;
+  }
     
-    function getMoney(){
-      return money;
-    }
+  function getMoney(){
+    return money;
+  }
     
-    function removeMoney(m) {
-      return money-=m;
-    }
+  function removeMoney(m) {
+    return money-=m;
+  }
     
-    function addMoney(m) {
-      return money+=m;
-    }
+  function addMoney(m) {
+    return money+=m;
+  }
     
-    function printWhatTodo() {
-      terminal.echo(&quot;What do you what to do&quot;);
-      terminal.echo(&quot;&quot;);
-      terminal.echo(&quot;1: to sell a item&quot;);
-      terminal.echo(&quot;2: to buy a item&quot;);
-    }
+  function printWhatTodo() {
+    terminal.echo(&quot;What do you what to do&quot;);
+    terminal.echo(&quot;&quot;);
+    terminal.echo(&quot;1: to sell a item&quot;);
+    terminal.echo(&quot;2: to buy a item&quot;);
+  }
    
-    function sellItem() {
-      terminal.echo(&quot;&quot;);    
-      terminal.echo(&quot;&quot;);
-      terminal.echo(&quot;What do you what to sell&quot;);
-      terminal.echo(&quot;You have:&quot;);
-      terminal.echo(&quot;&quot;);
-      i = 0;
-      
-      terminal.echo(&quot;pos\t\tname\t\t\t\tamount&quot;);
-      for (key of Object.keys(getItems())) {
-        terminal.echo(i++ +&quot;\t\t&quot;+ key + &quot;\t\t\t\t&quot; + items[key][&#39;amount&#39;], true);
-      }
+  function sellItem() {
+    terminal.echo(&quot;&quot;);    
+    terminal.echo(&quot;&quot;);
+    terminal.echo(&quot;What do you what to sell&quot;);
+    terminal.echo(&quot;You have:&quot;);
+    terminal.echo(&quot;&quot;);
+    i = 0;
+    
+    terminal.echo(&quot;pos\t\tname\t\t\t\tamount&quot;);
+    for (key of Object.keys(getItems())) {
+      terminal.echo(i++ +&quot;\t\t&quot;+ key + &quot;\t\t\t\t&quot; + items[key][&#39;amount&#39;], true);
+    }
       
     /* terminal.stop();
      terminal.read(&#39;&#39;,nextChooise1,function(err) {})
@@ -628,7 +623,6 @@ BrowserFS.configure({
         return;
       }
     }
-    
  }
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
@@ -737,7 +731,7 @@ It is not necessary to look into the the code.
 
 (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
 
-/*Hint rechts*/
+/* TODO: Hint rechts */
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
@@ -885,6 +879,7 @@ You made it!
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 
+/* TODO: Implement background-color in buttons */
 &lt;style&gt;
 	#first{
 		background-color: var(--purple) !important;
@@ -911,17 +906,17 @@ Hints: open your inspector view and have a look at the website’s resources.
 
 [[&lt;button id=&quot;first&quot; class=&quot;button is-danger is-rounded&quot;&gt;resume story-&gt;3.p]]</tw-passagedata><tw-passagedata pid="13" name="First Shelf" tags="" position="600,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="14" name="Second Shelf" tags="" position="725,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="15" name="Third Shelf" tags="" position="850,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="16" name="Fourth Shelf" tags="" position="975,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="17" name="Fifth Shelf" tags="" position="1100,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="18" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
-&lt;title&gt;Center align button&lt;/title&gt;
-
-Download the file and check for valuable information. 
-There might be something more to it than what you first see...
-	
 &lt;style&gt;
     body {
         text-align: center;
     }
 &lt;/style&gt;
 
+&lt;title&gt;Center align button&lt;/title&gt; /* TODO: Title is not visible */
+
+Download the file and check for valuable information. 
+There might be something more to it than what you first see...
+	
 &lt;a class=&quot;fixedButton1&quot; href&gt;
     &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;Hint&lt;/button&gt;
 &lt;/a&gt;

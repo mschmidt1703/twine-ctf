@@ -181,55 +181,55 @@ BrowserFS.configure({
   });
 });
 
-
- function ctf2(terminal) {
-     var money = 100;
+function ctf2(terminal) {
+  var money = 100;
     
-    var localInv = []
+  var localInv = []
         
-    var items = {
-      // Name Costs Amount
-      "first Item": {"costs": 5, "amount": 0},
-      "second Item": {"costs": 10, "amount": 0},
-      "secret flag": {"costs": 500, "amount": 0},
-      "third Item": {"costs": 20, "amount": 0},
-      "fourth Item": {"costs": 1, "amount": 0},
-    };  
-    function getItems(){
-      return items;
-    }
+  var items = {
+    // Name Costs Amount
+    "first Item": {"costs": 5, "amount": 0},
+    "second Item": {"costs": 10, "amount": 0},
+    "secret flag": {"costs": 500, "amount": 0},
+    "third Item": {"costs": 20, "amount": 0},
+    "fourth Item": {"costs": 1, "amount": 0},
+  };  
+
+  function getItems(){
+    return items;
+  }
     
-    function getMoney(){
-      return money;
-    }
+  function getMoney(){
+    return money;
+  }
     
-    function removeMoney(m) {
-      return money-=m;
-    }
+  function removeMoney(m) {
+    return money-=m;
+  }
     
-    function addMoney(m) {
-      return money+=m;
-    }
+  function addMoney(m) {
+    return money+=m;
+  }
     
-    function printWhatTodo() {
-      terminal.echo("What do you what to do");
-      terminal.echo("");
-      terminal.echo("1: to sell a item");
-      terminal.echo("2: to buy a item");
-    }
+  function printWhatTodo() {
+    terminal.echo("What do you what to do");
+    terminal.echo("");
+    terminal.echo("1: to sell a item");
+    terminal.echo("2: to buy a item");
+  }
    
-    function sellItem() {
-      terminal.echo("");    
-      terminal.echo("");
-      terminal.echo("What do you what to sell");
-      terminal.echo("You have:");
-      terminal.echo("");
-      i = 0;
-      
-      terminal.echo("pos\t\tname\t\t\t\tamount");
-      for (key of Object.keys(getItems())) {
-        terminal.echo(i++ +"\t\t"+ key + "\t\t\t\t" + items[key]['amount'], true);
-      }
+  function sellItem() {
+    terminal.echo("");    
+    terminal.echo("");
+    terminal.echo("What do you what to sell");
+    terminal.echo("You have:");
+    terminal.echo("");
+    i = 0;
+    
+    terminal.echo("pos\t\tname\t\t\t\tamount");
+    for (key of Object.keys(getItems())) {
+      terminal.echo(i++ +"\t\t"+ key + "\t\t\t\t" + items[key]['amount'], true);
+    }
       
     /* terminal.stop();
      terminal.read('',nextChooise1,function(err) {})
@@ -284,7 +284,6 @@ BrowserFS.configure({
         return;
       }
     }
-    
  }
 </script>
 <terminal> </terminal>

@@ -9,9 +9,8 @@ setup.ctf1 = function() {
 
 function eventOnClickHandler(event) {
 	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
-    var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
-
-  	return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+  return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
 }
 
 /* # CTF 1 End */
@@ -32,9 +31,9 @@ window.addEventListener("message", function(event) {
     return;
   }
   
-    if (event.data.startsWith("ctf6_url_")) {
+  if (event.data.startsWith("ctf6_url_")) {
     ctf6_updateURI(event.data);
-	console.log("success: " + event.data)
+	  console.log("success: " + event.data)
     return;
   }
   
@@ -62,19 +61,18 @@ setup.ctf4_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf4.html') || !url.endsWith) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf4.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf4/s.html"; /*TODO: Change path */
-   		//frame.contentWindow.postMessage(url, "*");
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf4.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf4/s.html"; /*TODO: Change path */
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf4.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf4/s.html" + arg; /*TODO: Change path */
-    //frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
-
 };
 
 function ctf4_updateURI(value) {
@@ -84,7 +82,7 @@ function ctf4_updateURI(value) {
 
 function ctf4_levelSucceed() {
 	alert("XSS Success");
-  	Harlowe.goto("CTF4_end");
+  Harlowe.goto("CTF4_end");
 }
 
 /* # CTF 4 End */
@@ -103,17 +101,17 @@ setup.ctf5_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf5.html') || !url.endsWith) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf5.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf5/s.html"; /*TODO: Change path */
-   		//frame.contentWindow.postMessage(url, "*");
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf5.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "static/ctf5/s.html"; /*TODO: Change path */
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf5.html", "");
     var frame = document.querySelector('iframe');
     frame.src = "static/ctf5/t.html" + arg; /*TODO: Change path */
-    //frame.contentWindow.postMessage(url, "*");
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
 
 };
@@ -124,7 +122,7 @@ function ctf5_updateURI(value) {
 }
 
 function ctf5_levelSucceed() {
-  	Harlowe.goto("CTF5_end");
+  Harlowe.goto("CTF5_end");
 }
 
 /* # CTF 5 End */
@@ -146,21 +144,20 @@ setup.ctf6_updateFrame = function (frameNum, url) {
   frameLink.href = url;
 
   if (!url.startsWith('https://twine.ctf/ctf6.html')) {
-       alert("Sorry, I can't open this URL in a frame.");
-    	urlbar.value = "https://twine.ctf/ctf6.html";
-        var frame = document.querySelector('iframe');
-        frame.src = "static/ctf6/u.html"; /*TODO: Change path */
-       return
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf6.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf6/u.html";
+    return
   } else {
     var arg = url.replace("https://twine.ctf/ctf6.html#", "");
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf6/u.html";  /*TODO: Change path */
+    frame.src = "src/static/ctf6/u.html"; 
     console.log("arg:" + arg)
     
-    /*frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame*/
+    /* frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame */ /* TODO: When code is not used then delete it */
     frame.contentWindow.postMessage(arg,"*")
   }
-
 };
 
 function ctf6_updateURI(value) {
@@ -170,14 +167,13 @@ function ctf6_updateURI(value) {
 }
 
 function ctf6_levelSucceed() {
-  	Harlowe.goto("CTF6_end");
+  Harlowe.goto("CTF6_end");
 }
 
 
 setup.ctf6_showCode = function() {
   var codeBox = document.getElementById('code'); 
   codeBox.innerHTML = Harlowe.variable("$ctf6_code")
-
 }
 
 /* # CTF 6 End */

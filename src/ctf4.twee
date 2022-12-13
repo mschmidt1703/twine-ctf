@@ -43,11 +43,10 @@ It is not necessary to look into the the code.
 
 (link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
 
-/*Hint rechts*/
+/* TODO: Hint rechts */
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
