@@ -64,13 +64,13 @@ setup.ctf4_updateFrame = function (frameNum, url) {
     alert("Sorry, I can't open this URL in a frame.");
     urlbar.value = "https://twine.ctf/ctf4.html";
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf4/s.html"; /*TODO: Change path */
+    frame.src = "src/static/ctf4/s.html";
    	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
     return
   } else {
     var arg = url.replace("https://twine.ctf/ctf4.html", "");
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf4/s.html" + arg; /*TODO: Change path */
+    frame.src = "src/static/ctf4/s.html" + arg;
     //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
 };
@@ -104,13 +104,13 @@ setup.ctf5_updateFrame = function (frameNum, url) {
     alert("Sorry, I can't open this URL in a frame.");
     urlbar.value = "https://twine.ctf/ctf5.html";
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf5/s.html"; /*TODO: Change path */
+    frame.src = "src/static/ctf5/s.html";
    	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
     return
   } else {
     var arg = url.replace("https://twine.ctf/ctf5.html", "");
     var frame = document.querySelector('iframe');
-    frame.src = "static/ctf5/t.html" + arg; /*TODO: Change path */
+    frame.src = "src/static/ctf5/t.html" + arg;
     //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
 
