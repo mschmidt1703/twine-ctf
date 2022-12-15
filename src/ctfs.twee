@@ -3,7 +3,7 @@
 
 List with all CTFs and its state
 
-<section class="ctf1">
+<div class="ctf1">
   <div class="rectangle">
     <div class="box">
       <img src='src/img/main/previews/preview_default.svg' alt='preview'>
@@ -22,12 +22,10 @@ List with all CTFs and its state
       </ul>
     </div>
     <div class="box">
-      <div class="startButton">
-        [[<a>Start</a>->CTF 1]]
-      </div>
+        [[<button class="startButton">Start</a>->CTF 1]]
     </div>
   </div>
-</section>
+</div>
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
@@ -35,7 +33,51 @@ List with all CTFs and its state
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-
+<div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                    <h3>Design</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                        <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
+                    <h3>Code</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                        <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                    <h3>Launch</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                        <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 1 - XSS - difficulty level: 1->CTF 1]]
 
 [[<button class="color_purple button is-fullwidth is-danger is-rounded">CTF 2 - Forensics - difficulty level: 1->CTF 2]]

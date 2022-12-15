@@ -26,10 +26,7 @@ tw-story
 /* Font */
 @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-/* TODO: Should this font be global? */
-* {
-  font-family: "OCR A Extended", sans-serif;
-}
+
 
 /* Font colors */
 :root

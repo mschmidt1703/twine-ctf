@@ -35,10 +35,7 @@ tw-story
 /* Font */
 @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-/* TODO: Should this font be global? */
-* {
-  font-family: "OCR A Extended", sans-serif;
-}
+
 
 /* Font colors */
 :root
@@ -1066,7 +1063,7 @@ Hint: Have you tried working with char arrays in java?
 
 List with all CTFs and its state
 
-&lt;section class=&quot;ctf1&quot;&gt;
+&lt;div class=&quot;ctf1&quot;&gt;
   &lt;div class=&quot;rectangle&quot;&gt;
     &lt;div class=&quot;box&quot;&gt;
       &lt;img src=&#39;src/img/main/previews/preview_default.svg&#39; alt=&#39;preview&#39;&gt;
@@ -1085,12 +1082,10 @@ List with all CTFs and its state
       &lt;/ul&gt;
     &lt;/div&gt;
     &lt;div class=&quot;box&quot;&gt;
-      &lt;div class=&quot;startButton&quot;&gt;
-        [[&lt;a&gt;Start&lt;/a&gt;-&gt;CTF 1]]
-      &lt;/div&gt;
+        [[&lt;button class=&quot;startButton&quot;&gt;Start&lt;/a&gt;-&gt;CTF 1]]
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
@@ -1098,7 +1093,51 @@ List with all CTFs and its state
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-
+&lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;face face1&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;img src=&quot;https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true&quot;&gt;
+                    &lt;h3&gt;Design&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;face face2&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.&lt;/p&gt;
+                        &lt;a href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;face face1&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;img src=&quot;https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true&quot;&gt;
+                    &lt;h3&gt;Code&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;face face2&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.&lt;/p&gt;
+                        &lt;a href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;face face1&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;img src=&quot;https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true&quot;&gt;
+                    &lt;h3&gt;Launch&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;face face2&quot;&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.&lt;/p&gt;
+                        &lt;a href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 1 - XSS - difficulty level: 1-&gt;CTF 1]]
 
 [[&lt;button class=&quot;color_purple button is-fullwidth is-danger is-rounded&quot;&gt;CTF 2 - Forensics - difficulty level: 1-&gt;CTF 2]]
