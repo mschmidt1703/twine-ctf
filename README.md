@@ -55,7 +55,7 @@ Build --> Export
 
 7.) Decompile the project with:
 ```sh
-tweego -d -o tmp/all.twee story.html (Wichtig in tmp)
+tweego -d -o tmp/all.twee tmp/story.html (Wichtig in tmp)
 ```
 
 8.) Copy changes from all.twee into the single twee files in /src. If necessary, create new files or adapt existing ones. 
