@@ -63,7 +63,12 @@ tweego -d -o tmp/all.twee story.html (Wichtig in tmp)
 tweego.exe src/ -o tmp/story.html
 ```
 
-7.) Commit all 
+9.) After successful testing compile project to /out:
+```sh
+tweego.exe src/ -o out/story.html
+```
+
+9.) Commit all 
 
 ## Git for Noobies
 
