@@ -58,13 +58,7 @@ Memory Loss: Find Your Way Back
     <div class="preview_bg">
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
-    
-          <div class="startButton">
-            <!-- TODO: Make it a button -->
-            [[<button class="startButton>Start->Story]]
-          </div>
-        
+        [[<button class="startButton">Start</a>->Story]]
       </div>
-    </div>
   </div>
 </section>
