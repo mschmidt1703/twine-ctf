@@ -75,7 +75,7 @@ nav .active a {
 /* TODO: Rename section */
 .sec1 {
   height: 60%;
-  padding: 5vw;
+  margin: 0 2em 0 2em;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
