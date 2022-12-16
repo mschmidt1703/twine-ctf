@@ -10,7 +10,18 @@ setup.ctf1 = function() {
 function eventOnClickHandler(event) {
 	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
   var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
-  return "d3d3LWFkbWlu" !== user ? alert("Incorrect Username or Password") : "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass ? alert("Incorrect Username or Password") : void alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  
+  if ("d3d3LWFkbWlu" !== user && "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass) {
+    alert("Incorrect Username or Password");
+  } else {
+  	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+  }
+
+
+  /*Redirect to Story or Ctf Overview*/
+  Harlowe.goto("CTF1_end");
+
+
 }
 
 /* # CTF 1 End */

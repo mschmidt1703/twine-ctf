@@ -5,11 +5,12 @@
   color: #9b9b9b;
 }
 
-.ctf {
+.ctf1 .ctf2 .ctf3 .ctf4 .ctf5 .ctf6 .ctf7 .ctf8 .ctf9 .ctf10 .ctf11 {
   position: relative;
   display: flex;
   justify-content: space-between;
 }
+
 
 .rectangle {
   display: flex;

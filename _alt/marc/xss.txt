@@ -17,3 +17,5 @@ test
 
 <a href="google.de > hier</a>
 <script> setup.ctf4_giveResult() </script>
+
+www-admin, keyMemory(superSecretpassw0rd123)

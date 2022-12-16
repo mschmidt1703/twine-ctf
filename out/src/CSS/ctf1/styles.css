@@ -42,7 +42,8 @@ br {
 
 .login-contianer {
   height: 500px;
-  margin-left: 21rem;
+  margin-left: 30% !important;
+  margin-top: -1% !important;;
 }
 
 .headline {
@@ -69,3 +70,4 @@ br {
   text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
 }
+

@@ -8,21 +8,7 @@
 
 <div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
 
-(append: ?SideBar)[\
-  (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
-
-  <tw-consecutive-br></tw-consecutive-br>
-
-  (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funcion atob() do?")]
-
-  <tw-consecutive-br></tw-consecutive-br>
-
-  <div class="outer">
-    <div class="startButton">
-      [[<a>Resume Story</a>->4.p]]
-    </div>
-  </div>
-]
+<tw-consecutive-br></tw-consecutive-br>
 
 <div class="container login-contianer">
   <form method="POST" class="box twine-background-login">
@@ -44,9 +30,16 @@
 
 (link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
 
-<tw-consecutive-br></tw-consecutive-br>
-
 (link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
+
+[[MainPage->CTFs]]
+
+:: CTF1_end {"position":"550,1025","size":"100,100"}
+(set: $ctfs to it + (a: "ctf1"))
+
+[[MainPage->CTFs]]
+
+or 
 
 /* TODO: Make it a button */
 <div class="outer">
