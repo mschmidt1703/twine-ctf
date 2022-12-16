@@ -43,7 +43,7 @@ br {
 .login-contianer {
   height: 500px;
   margin-left: 30% !important;
-  margin-top: -1% !important;;
+  margin-top: -1% !important;
 }
 
 .headline {
@@ -51,23 +51,18 @@ br {
   margin-bottom: 7rem;
 }
 
-.outer .startButton {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  height: 3em;
-  width: 12em;
-  border-radius: 45px 45px 45px 45px;
-  background-color: #f79e00;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0);
-}
+.resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
 
-.startButton a {
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
   font-size: 1em;
   color: #1e1e1e;
   text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
 }
-

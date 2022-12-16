@@ -12,3 +12,13 @@ key: NoIdea
 <a class="fixedButton1" href>
   <button class="addMore" title="ever heard of Vigenere?">hint</button>
 </a>
+
+
+:: CTF11_end {"position":"1300,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf11"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]

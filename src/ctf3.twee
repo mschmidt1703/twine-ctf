@@ -17,3 +17,13 @@
 </a>
 
 <!--flag{12_234_ghuzt5r}-->
+
+
+:: CTF3_end {"position":"700,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf3"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]

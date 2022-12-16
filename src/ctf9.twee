@@ -42,3 +42,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 Hint: Have you tried working with char arrays in java?
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
+
+
+:: CTF9_end {"position":"600,2200","size":"100,100"}
+(set: $ctfs to it + (a: "ctf9"))
+<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->10.p]]

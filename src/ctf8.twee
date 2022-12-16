@@ -17,3 +17,13 @@ There might be something more to it than what you first see...
 </a>
 
 <button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button> /* TODO: Change path */
+
+
+:: CTF8_end {"position":"850,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf8"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]

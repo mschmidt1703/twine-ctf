@@ -1,5 +1,4 @@
-
-:: Story {"position":"175,350","size":"100,100"}
+:: Story {"position":"200,400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
@@ -175,3 +174,9 @@ After some fiddling around you manage to connect the drive to a new computer. An
 Coming soom. Stay tuned!
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
+
+
+:: x.p {"position":"1300,700","size":"100,100"}
+Sorry, these CTFs haven't been implemented in the story yet...
+
+Please come back later!

@@ -36,15 +36,12 @@
 
 :: CTF1_end {"position":"550,1025","size":"100,100"}
 (set: $ctfs to it + (a: "ctf1"))
+<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
 
 [[MainPage->CTFs]]
 
 or 
 
-/* TODO: Make it a button */
-<div class="outer">
-  <div class="startButton">
-    [[Resume Story->4.p]]
-  </div>
-</div>
+[[<button class="resumeButton">Resume Story</a>->4.p]]
+
 

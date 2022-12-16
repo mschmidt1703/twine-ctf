@@ -14,3 +14,14 @@ Maybe taking a closer look at it is not a bad idea.
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
+
+
+:: CTF2_end {"position":"600,1600","size":"100,100"}
+(set: $ctfs to it + (a: "ctf2"))
+<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->7.p]]
