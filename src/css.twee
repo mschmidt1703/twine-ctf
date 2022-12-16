@@ -3,21 +3,18 @@
 /* -- Twine overrides -- */
 
 /* Redo and undo button */
-tw-icon
-{
+tw-icon {
   color: #ad00d8;
 }
 
-tw-story
-{
+tw-story {
   background-image: url('src/img/general/background/background_landscape.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-#resume-btn
-{
+#resume-btn {
   background-color: var(--purple) !important;
 }
 
@@ -26,18 +23,14 @@ tw-story
 /* Font */
 @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-
-
 /* Font colors */
-:root
-{
+:root {
   --font_yellow: #F79E00;
   --font_grey: #9B9B9B;
 }
 
 /* Background colors */
-:root
-{
+:root {
   --purple: #B200DD;
   --purple_dark: #4B0872;
   --blue: #4316A5;
@@ -47,38 +40,34 @@ tw-story
   --grey3: #141414;
 }
 
-.color_purple
-{
+.color_purple {
   background-color: var(--purple) !important;
 }
 
 /* TODO: What are those? Where do these belong to? */
-.fixedButton1
-{
+/* TODO: Change names to meaningful names */
+.fixedButton1 {
   position: fixed;
   bottom: 0;
   right: 0;
   padding: 20px;
 }
 
-.fixedButton2
-{
+.fixedButton2 {
   position: fixed;
   bottom: 40px;
   right: 0;
   padding: 20px;
 }
 
-.fixedButton3
-{
+.fixedButton3 {
   position: fixed;
   bottom: 80px;
   right: 0;
   padding: 20px;
 }
 
-.addMore
-{
+.addMore {
   border: none;
   width: 32px;
   height: 32px;
@@ -87,8 +76,7 @@ tw-story
   cursor: pointer;
 }
 
-.addMore:hover
-{
+.addMore:hover {
   border: 1px solid #888;
   background-color: #ddd;
 }

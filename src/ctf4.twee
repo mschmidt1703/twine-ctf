@@ -53,6 +53,7 @@ It is not necessary to look into the the code.
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
+<link rel="stylesheet" href="src/css/ctf4/styles_end.css">
 
 You made it!
 

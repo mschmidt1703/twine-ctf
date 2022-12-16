@@ -416,6 +416,7 @@ function ctf2(terminal)
 
 :: CTF10_end {"position":"1150,500","size":"100,100"}
 (set: $ctfs to it + (a: "ctf10"))
+<link rel="stylesheet" href="src/css/ctf10/styles_end.css">
 
 [[MainPage->CTFs]]
 

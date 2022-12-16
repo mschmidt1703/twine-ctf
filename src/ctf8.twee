@@ -21,6 +21,7 @@ There might be something more to it than what you first see...
 
 :: CTF8_end {"position":"850,500","size":"100,100"}
 (set: $ctfs to it + (a: "ctf8"))
+<link rel="stylesheet" href="src/css/ctf8/styles_end.css">
 
 [[MainPage->CTFs]]
 

@@ -42,6 +42,7 @@
 
 :: CTF5_end {"position":"600,1400","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
+<link rel="stylesheet" href="src/css/ctf5/styles_end.css">
 
 You made it!
 

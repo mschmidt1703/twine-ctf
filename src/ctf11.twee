@@ -16,6 +16,7 @@ key: NoIdea
 
 :: CTF11_end {"position":"1300,500","size":"100,100"}
 (set: $ctfs to it + (a: "ctf11"))
+<link rel="stylesheet" href="src/css/ctf11/styles_end.css">
 
 [[MainPage->CTFs]]
 

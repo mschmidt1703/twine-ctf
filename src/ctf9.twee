@@ -46,7 +46,7 @@ Hint: Have you tried working with char arrays in java?
 
 :: CTF9_end {"position":"600,2200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf9"))
-<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+<link rel="stylesheet" href="src/css/ctf9/styles_end.css">
 
 [[MainPage->CTFs]]
 

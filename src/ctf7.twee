@@ -50,6 +50,7 @@ yup.. I did all of that for nothing :(
 
 :: CTF7_end {"position":"600,800","size":"100,100"}
 (set: $ctfs to it + (a: "ctf7"))
+<link rel="stylesheet" href="src/css/ctf7/styles_end.css">
 
 [[MainPage->CTFs]]
 

@@ -7,7 +7,7 @@ Great! Now you know your name, but nothing else.
 
 After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on...
 
-<img src="./img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;"></img> /* TODO: Add alt */
+<img src="src/img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;" alt="picture frame"></img>
 
 Maybe taking a closer look at it is not a bad idea.
 
@@ -18,7 +18,7 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 :: CTF2_end {"position":"600,1600","size":"100,100"}
 (set: $ctfs to it + (a: "ctf2"))
-<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+<link rel="stylesheet" href="src/css/ctf2/styles_end.css">
 
 [[MainPage->CTFs]]
 
