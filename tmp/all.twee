@@ -768,6 +768,16 @@ function ctf2(terminal)
 <tw-consecutive-br></tw-consecutive-br>
 
 
+:: CTF10_end {"position":"1150,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf10"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]
+
+
 :: CTF 11 {"position":"1300,300","size":"100,100"}
 (set: _whatToDo to "Seems like some kind of encrypted text")
 
@@ -782,6 +792,16 @@ key: NoIdea
 <a class="fixedButton1" href>
   <button class="addMore" title="ever heard of Vigenere?">hint</button>
 </a>
+
+
+:: CTF11_end {"position":"1300,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf11"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]
 
 
 :: CTF 2 {"position":"400,1600","size":"100,100"}
@@ -800,6 +820,17 @@ Maybe taking a closer look at it is not a bad idea.
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
+
+
+:: CTF2_end {"position":"600,1600","size":"100,100"}
+(set: $ctfs to it + (a: "ctf2"))
+<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->7.p]]
 
 
 :: CTF 3 {"position":"700,300","size":"100,100"}
@@ -821,6 +852,16 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 </a>
 
 <!--flag{12_234_ghuzt5r}-->
+
+
+:: CTF3_end {"position":"700,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf3"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]
 
 
 :: CTF 4 {"position":"400,1200","size":"100,100"}
@@ -1062,23 +1103,23 @@ Hints: open your inspector view and have a look at the website’s resources.
 [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
 
 
-:: First Shelf {"position":"600,800","size":"100,100"}
+:: First Shelf {"position":"800,800","size":"100,100"}
 Nothing really usefull here
 
 
-:: Second Shelf {"position":"725,800","size":"100,100"}
+:: Second Shelf {"position":"925,800","size":"100,100"}
 No usefull information here..
 
 
-:: Third Shelf {"position":"850,800","size":"100,100"}
+:: Third Shelf {"position":"1050,800","size":"100,100"}
 Nothing here either..
 
 
-:: Fourth Shelf {"position":"975,800","size":"100,100"}
+:: Fourth Shelf {"position":"1175,800","size":"100,100"}
 This search has lead me nowhere sofar..
 
 
-:: Fifth Shelf {"position":"1100,800","size":"100,100"}
+:: Fifth Shelf {"position":"1300,800","size":"100,100"}
 yup.. I did all of that for nothing :(
 
 
@@ -1101,6 +1142,16 @@ There might be something more to it than what you first see...
 </a>
 
 <button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button> /* TODO: Change path */
+
+
+:: CTF8_end {"position":"850,500","size":"100,100"}
+(set: $ctfs to it + (a: "ctf8"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->x.p]]
 
 
 :: CTF 9 {"position":"400,2200","size":"100,100"}
@@ -1147,6 +1198,17 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 Hint: Have you tried working with char arrays in java?
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
+
+
+:: CTF9_end {"position":"600,2200","size":"100,100"}
+(set: $ctfs to it + (a: "ctf9"))
+<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->10.p]]
 
 
 :: CTFs {"position":"500,200","size":"100,100"}
@@ -1470,6 +1532,12 @@ Coming soom. Stay tuned!
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
 
 
+:: x.p {"position":"400,600","size":"100,100"}
+Sorry, these CTFs haven't been implemented in the story yet...
+
+Please come back later!
+
+
 :: Tutorial {"position":"0,300","size":"100,100"}
 Hello there, 
 
@@ -1482,71 +1550,13 @@ Welcome to our CTF (Capture the Flag) Game. Do you want to improve your cyber se
 :: Settings {"position":"500,0","size":"100,100"}
 
 
-:: CTF2_end {"position":"600,1600","size":"100,100"}
-(set: $ctfs to it + (a: "ctf2"))
-<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+:: CTF7_end {"position":"600,800","size":"100,100"}
+(set: $ctfs to it + (a: "ctf7"))
 
 [[MainPage->CTFs]]
 
 or 
 
-[[<button class="resumeButton">Resume Story</a>->7.p]]
-
-
-:: CTF9_end {"position":"600,2200","size":"100,100"}
-(set: $ctfs to it + (a: "ctf9"))
-<link rel="stylesheet" href="src/css/ctf1/styles_end.css">
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->10.p]]
-
-
-:: CTF8_end {"position":"850,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf8"))
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
-
-
-:: x.p {"position":"1300,700","size":"100,100"}
-Sorry, these CTFs haven't been implemented in the story yet...
-
-Please come back later!
-
-
-:: CTF3_end {"position":"700,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf3"))
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
-
-
-:: CTF10_end {"position":"1150,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf10"))
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
-
-
-:: CTF11_end {"position":"1300,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf11"))
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
+[[<button class="resumeButton">Resume Story</a>->3.p]]
 
 

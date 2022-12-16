@@ -28,17 +28,31 @@ Hints: open your inspector view and have a look at the website’s resources.
 
 [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
 
-:: First Shelf {"position":"600,800","size":"100,100"}
+
+:: First Shelf {"position":"800,800","size":"100,100"}
 Nothing really usefull here
 
-:: Second Shelf {"position":"725,800","size":"100,100"}
+
+:: Second Shelf {"position":"925,800","size":"100,100"}
 No usefull information here..
 
-:: Third Shelf {"position":"850,800","size":"100,100"}
+
+:: Third Shelf {"position":"1050,800","size":"100,100"}
 Nothing here either..
 
-:: Fourth Shelf {"position":"975,800","size":"100,100"}
+
+:: Fourth Shelf {"position":"1175,800","size":"100,100"}
 This search has lead me nowhere sofar..
 
-:: Fifth Shelf {"position":"1100,800","size":"100,100"}
+
+:: Fifth Shelf {"position":"1300,800","size":"100,100"}
 yup.. I did all of that for nothing :(
+
+:: CTF7_end {"position":"600,800","size":"100,100"}
+(set: $ctfs to it + (a: "ctf7"))
+
+[[MainPage->CTFs]]
+
+or 
+
+[[<button class="resumeButton">Resume Story</a>->3.p]]
