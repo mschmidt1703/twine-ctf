@@ -40,7 +40,7 @@
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF5_end {"position":"725,1400","size":"100,100"}
+:: CTF5_end {"position":"600,1400","size":"100,100"}
 (set: $ctfs to it + (a: "ctf5"))
 
 You made it!

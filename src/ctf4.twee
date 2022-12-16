@@ -51,7 +51,7 @@ It is not necessary to look into the the code.
 <tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF4_end {"position":"800,1200","size":"100,100"}
+:: CTF4_end {"position":"600,1200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf4"))
 
 You made it!
