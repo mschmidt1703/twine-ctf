@@ -42,33 +42,35 @@ tweego.exe src/ -o out/story.html
 ```
 /src will always contain the current files.
 
-3.) Import story.html in your twine folder. If work is done then export html file from Twine:
+3.) Copy all directories and story.html from /out in your twine folder. 
+
+4.) If work is done then export html file from Twine:
 ```
 Build --> Export 
 ```
 
-4.) Rename your exported html file to story.html
+5.) Rename your exported html file to story.html
 
-5.) Move story.html into the project directory /tmp
+6.) Move story.html into the project directory /tmp
 
-6.) Decompile the project with:
+7.) Decompile the project with:
 ```sh
 tweego -d -o tmp/all.twee story.html (Wichtig in tmp)
 ```
 
-7.) Copy changes from all.twee into the single twee files in /src. If necessary, create new files or adapt existing ones. 
+8.) Copy changes from all.twee into the single twee files in /src. If necessary, create new files or adapt existing ones. 
 
-8.) Test that the project compiles without errors:
+9.) Test that the project compiles without errors:
 ```sh
 tweego.exe src/ -o tmp/story.html
 ```
 
-9.) After successful testing compile project to /out:
+10.) After successful testing compile project to /out:
 ```sh
 tweego.exe src/ -o out/story.html
 ```
 
-9.) Commit all 
+11.) Commit all 
 
 ## Git for Noobies
 
