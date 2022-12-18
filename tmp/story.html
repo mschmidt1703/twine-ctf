@@ -53,29 +53,62 @@ tw-story {
   background-color: var(--purple) !important;
 }
 
-/* TODO: What are those? Where do these belong to? */
-/* TODO: Change names to meaningful names */
-.fixedButton1 {
+
+/* Hints, Finish-BTN, ShowCode Postions*/
+
+
+.btn-pos1{
   position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 20px;
+  bottom: 0rem;
+  right: 0%;
 }
 
-.fixedButton2 {
+.btn-pos2{
   position: fixed;
-  bottom: 40px;
-  right: 0;
-  padding: 20px;
+  bottom: 4rem;
+  right: 0%;
 }
 
-.fixedButton3 {
+.btn-pos3 {
   position: fixed;
-  bottom: 80px;
-  right: 0;
-  padding: 20px;
+  bottom: 8rem;
+  right: 0%;
 }
 
+.btn-pos4{
+  position: fixed;
+  bottom: 12rem;
+  right: 0%;
+}
+
+.hint-btn-background {
+  background: url(src/img/4all/hint.png);
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+
+.success-btn-background {
+  background: url(src/img/4all/success.png);
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+
+.code-btn-background {
+  background: url(src/img/4all/code.png);
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+
+
+
+
+/* was soll das?
 .addMore {
   border: none;
   width: 32px;
@@ -88,7 +121,7 @@ tw-story {
 .addMore:hover {
   border: 1px solid #888;
   background-color: #ddd;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+}*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* # CTF 1 Start */
 
@@ -287,9 +320,14 @@ setup.ctf6_showCode = function() {
 &lt;script&gt;
   setup.ctf1();
 &lt;/script&gt;
+(set: _info to &quot;Your forgot your password, maybe it is possible to find it, somewhere else.&quot;)
+(if: $ctfs contains &quot;ctf1&quot;)[]
+(else:)[(alert: _info)]
 
-&lt;div class=&quot;headline&quot;&gt;Your forgot your password, maybe it is possible to find it, somewhere else. &lt;/div&gt;
-
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;container login-contianer&quot;&gt;
@@ -310,12 +348,27 @@ setup.ctf6_showCode = function() {
   &lt;/form&gt;
 &lt;/div&gt;
 
-(link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
+[[MainPage-&gt;CTFs]]
 
-(link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
-
-[[MainPage-&gt;CTFs]]</tw-passagedata><tw-passagedata pid="2" name="CTF1_end" tags="" position="600,1000" size="100,100">(set: $ctfs to it + (a: &quot;ctf1&quot;))
+&lt;div&gt;
+ &lt;div class=&quot;btn-pos3&quot;&gt;
+            [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
+ &lt;/div&gt;
+ &lt;div class=&quot;btn-pos2&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
+ &lt;/div&gt;
+  &lt;div class=&quot;btn-pos1&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
+ &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">(set: $ctfs to it + (a: &quot;ctf1&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf1/styles_end.css&quot;&gt;
+
+Please put here the flag: 
+
+(input-box: bind $flag, &quot;XX==&quot;, 5)[]
+
+   (link-repeat: &quot;&lt;button&gt;Check Flag&lt;/button&gt;&quot;)[(alert: &quot;Incorret flag&quot;)]
+
 
 [[MainPage-&gt;CTFs]]
 
@@ -814,7 +867,9 @@ Vulnerabilities that enable these attacks are widespread and occur wherever a we
 In this challenge you can try to insert a JavaScript alert() in the frame below. This JavaScript alert() should show up a pop up window.
 
 For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
-It is not necessary to look into the the code.
+It is not necessary to look into the the code. 
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
 &quot;)
 
 &lt;!--(if: $onTimeShow is false)
@@ -842,18 +897,16 @@ It is not necessary to look into the the code.
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-(link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-(link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
-
 [[MainPage-&gt;CTFs]]
 
-/*Hint rechts*/
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
+&lt;div&gt;
+ &lt;div class=&quot;btn-pos2&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
+ &lt;/div&gt;
+  &lt;div class=&quot;btn-pos1&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
+ &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles_end.css&quot;&gt;
 
 You made it!
@@ -861,7 +914,9 @@ You made it!
 [[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles.css&quot;&gt;&lt;/link&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
-(set: _info to &quot;This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.&quot;)
+(set: _info to &quot;This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
+
+Note: If you have injected XSS successfully, you will be redirected automatically.&quot;)
 
 &lt;!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
@@ -888,15 +943,14 @@ You made it!
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-(link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-(link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;Think of an image tag, could you insert same javascript here (onerror= and src=)&quot;)]
-
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
+&lt;div&gt;
+ &lt;div class=&quot;btn-pos2&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Think of an image tag, could you insert same javascript here (onerror= and src=)&quot;)]
+ &lt;/div&gt;
+  &lt;div class=&quot;btn-pos1&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
+ &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles_end.css&quot;&gt;
 
 You made it!
@@ -937,7 +991,10 @@ You made it!
 	return
 }&quot;)
 
-(set: _info to &quot;Try to insert some JavaScript ino this website. This time there is no input&quot;)
+(set: _info to &quot;Try to insert some JavaScript ino this website. This time there is no input
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
+&quot;)
 (if: $ctfs contains &quot;ctf6&quot;)[]
 (else:)[(alert: _info)]
 (link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
@@ -962,7 +1019,13 @@ You made it!
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-(link-repeat: &quot;Show Implemation Code&quot;)[(alert: &quot;
+
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;div&gt;
+ &lt;div class=&quot;btn-pos3&quot;&gt;
+ (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
   &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -970,17 +1033,14 @@ You made it!
   setup.ctf6_showCode();
   hljs.highlightAll();
 &lt;/script&gt;&quot;)]
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-(link-repeat: &quot;Give me a hint&quot;,(css:&quot;padding:0px&quot;))[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-(link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image&quot;)]
-
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+  &lt;/div&gt;
+ &lt;div class=&quot;btn-pos2&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image&quot;)]
+ &lt;/div&gt;
+  &lt;div class=&quot;btn-pos1&quot;&gt;
+   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
+ &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles_end.css&quot;&gt;
 
 &lt;script&gt;
@@ -996,7 +1056,7 @@ You made it!
 
 &lt;h1&gt;Who even am I?&lt;/h1&gt;
 
-&lt;img src= &quot;https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg&quot;&gt; /* TODO: Download image */
+&lt;img src=&quot;src/img/ctf7/books-shelf.jpg&quot;&gt;&lt;/img&gt;
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 
@@ -1101,32 +1161,19 @@ or
 [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctfs/styles.css&quot;&gt;
 
 &lt;!-- TODO: Fix that set statements dont make such an empty space --&gt;
-(set: _notStarted to &quot;CTF not started yet&quot;)
-(set: _started to &quot;Started but not finished&quot;)
-(set: _finished to &quot;CTF finished :&gt;&quot;)
-&lt;!--(dm:
-    &quot;Susan&quot;, &quot;A petite human in a yellow dress&quot;,
-    &quot;Tina&quot;, &quot;A ten-foot lizardoid in a three-piece suit&quot;,
-    &quot;Gertie&quot;, &quot;A griffin draped in a flowing cape&quot;,
-)
-
-(set: $player to (dm:
-	&quot;name&quot;, &quot;&quot;,
-	&quot;surname&quot;, &quot;&quot;,
-	&quot;gender&quot;, &quot;&quot;,
-	&quot;color&quot;, &quot;&quot;
-) )
---&gt;
-(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web exploitation&quot; , 8, &quot;CTF 8 - Forensics&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )
-
-(set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;0&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;0&quot;, 9, &quot;1&quot;, 10, &quot;0&quot;, 11, &quot;0&quot;) )
-
-List with all CTFs and its state
+(set: _notStarted to &quot;CTF not started yet&quot;) \
+(set: _started to &quot;Started but not finished&quot;) \
+(set: _finished to &quot;CTF finished :&gt;&quot;)\
+(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web exploitation&quot; , 8, &quot;CTF 8 - Forensics&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
+(set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;0&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;0&quot;, 9, &quot;1&quot;, 10, &quot;0&quot;, 11, &quot;0&quot;) )\
+&lt;div class=&quot;active&quot;&gt;
+Here you can find a overview of all CTF-Challenges, fell free to play them one by one
+&lt;/div&gt;
 
 &lt;!--http://twinery.org/questions/6143/can-i-use-variables-to-call-data-map-attributes-and-if-so-how--&gt;
 
 (for: each _i, ...(range:1,11))[
-(print: &#39;&lt;div class=&quot;ctf&#39; + (text: _i) + &#39;&quot;&gt;&#39;)
+(print: &#39;&lt;div class=&quot;ctfpos ctf&#39; + (text: _i) + &#39;&quot;&gt;&#39;)
   &lt;div class=&#39;rectangle&#39;&gt; 
     &lt;div class=&#39;box&#39;&gt; 
       &lt;img src=&#39;src/img/main/previews/preview_default.svg&#39; alt=&#39;preview&#39;&gt; 
