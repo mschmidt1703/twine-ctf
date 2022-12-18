@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-<!--TmpVar is not allowed -->
+<!-- TODO: TmpVar is not allowed -->
 (set: $ctf6_code to "
 	function showTab(input) {
 	var picID;
@@ -42,7 +42,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (link-repeat: "What should I do?")[(alert: _info)]
 
 <script> 
-	setup.ctf6_reset()
+  setup.ctf6_reset()
 </script>
 
 <tw-consecutive-br></tw-consecutive-br>
@@ -61,27 +61,26 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 <div>
- <div class="btn-pos3">
- (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
-  <pre><code id=\"code\" class=\"language-javascript\">
-</code></pre>
+  <div class="btn-pos3">
+    (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
+    <pre>
+	  <code id=\"code\" class=\"language-javascript\"></code>
+    </pre>
 
-<script>
-  setup.ctf6_showCode();
-  hljs.highlightAll();
-</script>")]
+    <script>
+      setup.ctf6_showCode();
+      hljs.highlightAll();
+    </script>")]
   </div>
- <div class="btn-pos2">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
- </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
+  </div>
   <div class="btn-pos1">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
- </div>
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
+  </div>
 </div>
 
 
@@ -90,7 +89,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <link rel="stylesheet" href="src/css/ctf6/styles_end.css">
 
 <script>
-	setup.ctf6_reset()
+  setup.ctf6_reset()
 </script>
 
 You made it!

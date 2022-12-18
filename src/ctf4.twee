@@ -42,12 +42,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 [[MainPage->CTFs]]
 
 <div>
- <div class="btn-pos2">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
- </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
+  </div>
   <div class="btn-pos1">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You need to insert some javascript, maybe the script tag helps")]
- </div>
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You need to insert some javascript, maybe the script tag helps")]
+  </div>
 </div>
 
 

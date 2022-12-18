@@ -43,34 +43,6 @@ tw-story {
   background-color: var(--purple) !important;
 }
 
-
-/* Hints, Finish-BTN, ShowCode Postions*/
-
-
-.btn-pos1{
-  position: fixed;
-  bottom: 0rem;
-  right: 0%;
-}
-
-.btn-pos2{
-  position: fixed;
-  bottom: 4rem;
-  right: 0%;
-}
-
-.btn-pos3 {
-  position: fixed;
-  bottom: 8rem;
-  right: 0%;
-}
-
-.btn-pos4{
-  position: fixed;
-  bottom: 12rem;
-  right: 0%;
-}
-
 .hint-btn-background {
   background: url(src/img/4all/hint.png);
   height: 4rem;
@@ -94,21 +66,3 @@ tw-story {
   background-size: cover;
   border: none;
 }
-
-
-
-
-/* was soll das?
-.addMore {
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: #eee;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-
-.addMore:hover {
-  border: 1px solid #888;
-  background-color: #ddd;
-}*/

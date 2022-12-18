@@ -36,15 +36,15 @@
 [[MainPage->CTFs]]
 
 <div>
- <div class="btn-pos3">
-            [[<button class="success-btn-background"></button>->CTF1end]]
- </div>
- <div class="btn-pos2">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What does the JavaScript funktion atob() do?")]
- </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF1end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What does the JavaScript funktion atob() do?")]
+  </div>
   <div class="btn-pos1">
-   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Can you find a method that will be executed when you press the button?")]
- </div>
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Can you find a method that will be executed when you press the button?")]
+  </div>
 </div>
 
 
@@ -56,7 +56,7 @@ Please put here the flag:
 
 (input-box: bind $flag, "XX==", 5)[]
 
-   (link-repeat: "<button>Check Flag</button>")[(alert: "Incorret flag")]
+(link-repeat: "<button>Check Flag</button>")[(alert: "Incorret flag")]
 
 
 [[MainPage->CTFs]]

@@ -1,22 +1,21 @@
 :: CTF 8 {"position":"850,300","size":"100,100"}
+<link rel="stylesheet" href="src/css/ctf8/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
-    body {
-        text-align: center;
-    }
+  body {
+    text-align: center;
+  }
 </style>
 
-<title>Center align button</title> /* TODO: Title is not visible */
+<title>Center align button</title> <!-- TODO: Title is not visible -->
 
 Download the file and check for valuable information. 
 There might be something more to it than what you first see...
 	
-<a class="fixedButton1" href>
-    <button class="addMore" title="don't focus on the image itself">Hint</button>
-</a>
+<button class="addMore" title="don't focus on the image itself">Hint</button>
 
-<button type="submit" onclick="window.open('static/ctf8/my_office.jpg')">Download</button> /* TODO: Change path */
+<button type="submit" onclick="window.open('src/static/ctf8/my_office.jpg')">Download</button>
 
 
 :: CTF8_end {"position":"850,500","size":"100,100"}
