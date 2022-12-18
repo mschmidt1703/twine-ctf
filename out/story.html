@@ -53,34 +53,6 @@ tw-story {
   background-color: var(--purple) !important;
 }
 
-
-/* Hints, Finish-BTN, ShowCode Postions*/
-
-
-.btn-pos1{
-  position: fixed;
-  bottom: 0rem;
-  right: 0%;
-}
-
-.btn-pos2{
-  position: fixed;
-  bottom: 4rem;
-  right: 0%;
-}
-
-.btn-pos3 {
-  position: fixed;
-  bottom: 8rem;
-  right: 0%;
-}
-
-.btn-pos4{
-  position: fixed;
-  bottom: 12rem;
-  right: 0%;
-}
-
 .hint-btn-background {
   background: url(src/img/4all/hint.png);
   height: 4rem;
@@ -103,25 +75,7 @@ tw-story {
   width: 4rem;
   background-size: cover;
   border: none;
-}
-
-
-
-
-/* was soll das?
-.addMore {
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: #eee;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-
-.addMore:hover {
-  border: 1px solid #888;
-  background-color: #ddd;
-}*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 
 /* # CTF 1 Start */
 
@@ -139,11 +93,8 @@ function eventOnClickHandler(event) {
   	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
   }
 
-
-  /*Redirect to Story or Ctf Overview*/
+  /* Redirect to Story or Ctf Overview */
   Harlowe.goto("CTF1_end");
-
-
 }
 
 /* # CTF 1 End */
@@ -175,7 +126,6 @@ window.addEventListener("message", function(event) {
     ctf6_levelSucceed();
     return;
   }
-
 }, false);
 
 /* Global End */
@@ -246,7 +196,6 @@ setup.ctf5_updateFrame = function (frameNum, url) {
     frame.src = "src/static/ctf5/t.html" + arg;
     //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
-
 };
 
 function ctf5_updateURI(value) {
@@ -303,7 +252,6 @@ function ctf6_levelSucceed() {
   Harlowe.goto("CTF6_end");
 }
 
-
 setup.ctf6_showCode = function() {
   var codeBox = document.getElementById('code'); 
   codeBox.innerHTML = Harlowe.variable("$ctf6_code")
@@ -351,15 +299,15 @@ setup.ctf6_showCode = function() {
 [[MainPage-&gt;CTFs]]
 
 &lt;div&gt;
- &lt;div class=&quot;btn-pos3&quot;&gt;
-            [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
- &lt;/div&gt;
- &lt;div class=&quot;btn-pos2&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
- &lt;/div&gt;
+  &lt;div class=&quot;btn-pos3&quot;&gt;
+    [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
+  &lt;/div&gt;
+  &lt;div class=&quot;btn-pos2&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
- &lt;/div&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
+  &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">(set: $ctfs to it + (a: &quot;ctf1&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf1/styles_end.css&quot;&gt;
 
@@ -367,7 +315,7 @@ Please put here the flag:
 
 (input-box: bind $flag, &quot;XX==&quot;, 5)[]
 
-   (link-repeat: &quot;&lt;button&gt;Check Flag&lt;/button&gt;&quot;)[(alert: &quot;Incorret flag&quot;)]
+(link-repeat: &quot;&lt;button&gt;Check Flag&lt;/button&gt;&quot;)[(alert: &quot;Incorret flag&quot;)]
 
 
 [[MainPage-&gt;CTFs]]
@@ -767,7 +715,6 @@ function ctf2(terminal)
         sellChooise(readIn);
       } 
     }
-
 }
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
@@ -781,9 +728,7 @@ function ctf2(terminal)
 
 (link-repeat: &quot;Give me a second hint&quot;)[(alert: &quot;&quot;)]
 
-&lt;a class=&quot;fixedButton1&quot; href&gt;
-  &lt;button class=&quot;addMore&quot; &gt;reload&lt;/button&gt;
-&lt;/a&gt;
+&lt;button class=&quot;addMore&quot; &gt;reload&lt;/button&gt;
  
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10_end" tags="" position="1150,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf10&quot;))
@@ -794,6 +739,7 @@ function ctf2(terminal)
 or 
 
 [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">(set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
+&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles.css&quot;&gt;
 
 [(alert: _whatToDo)]
 
@@ -803,9 +749,7 @@ qi coh&#39;fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfoo
 
 key: NoIdea
 
-&lt;a class=&quot;fixedButton1&quot; href&gt;
-  &lt;button class=&quot;addMore&quot; title=&quot;ever heard of Vigenere?&quot;&gt;hint&lt;/button&gt;
-&lt;/a&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11_end" tags="" position="1300,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf11&quot;))
+&lt;button class=&quot;addMore&quot; title=&quot;ever heard of Vigenere?&quot;&gt;hint&lt;/button&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11_end" tags="" position="1300,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf11&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -824,6 +768,7 @@ After the thorough search on the book shelf with little progress, you feel helpl
 
 Maybe taking a closer look at it is not a bad idea.
 
+&lt;!-- TODO: Make it a hint button --&gt;
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;7.p]]</tw-passagedata><tw-passagedata pid="8" name="CTF2_end" tags="" position="600,1600" size="100,100">(set: $ctfs to it + (a: &quot;ctf2&quot;))
@@ -833,7 +778,8 @@ Hint: A photo is way more that a bunch of colored pixels. The details of a pictu
 
 or 
 
-[[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 (set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
 
@@ -842,13 +788,11 @@ or
 &lt;title&gt;Challenge&lt;/title&gt;
 
 &lt;h1&gt;Capture the Flag&lt;/h1&gt;
-/* TODO: Delete citation */
+&lt;!-- TODO: Delete citation --&gt;
 &lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
 &lt;p&gt; Source: Wikipedia &lt;/p&gt;
 
-&lt;a class=&quot;fixedButton1&quot; href&gt;
-  &lt;button class=&quot;addMore&quot; title=&quot;maybe there&#39;s something to inspect&quot;&gt;hint&lt;/button&gt; &lt;!-- TODO: Inspect addMore button */
-&lt;/a&gt;
+&lt;button class=&quot;addMore&quot; title=&quot;maybe there&#39;s something to inspect&quot;&gt;hint&lt;/button&gt;
 
 &lt;!--flag{12_234_ghuzt5r}--&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3_end" tags="" position="700,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf3&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles_end.css&quot;&gt;
@@ -900,12 +844,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 [[MainPage-&gt;CTFs]]
 
 &lt;div&gt;
- &lt;div class=&quot;btn-pos2&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
- &lt;/div&gt;
+  &lt;div class=&quot;btn-pos2&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
- &lt;/div&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
+  &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles_end.css&quot;&gt;
 
@@ -918,6 +862,7 @@ You made it!
 
 Note: If you have injected XSS successfully, you will be redirected automatically.&quot;)
 
+&lt;!-- TODO: Delete unused code --&gt;
 &lt;!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
 (if: $onTimeShow is true)[ (set: $onTimeShow to false)]--&gt;
@@ -944,12 +889,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div&gt;
- &lt;div class=&quot;btn-pos2&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Think of an image tag, could you insert same javascript here (onerror= and src=)&quot;)]
- &lt;/div&gt;
+  &lt;div class=&quot;btn-pos2&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Think of an image tag, could you insert same javascript here (onerror= and src=)&quot;)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
- &lt;/div&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
+  &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles_end.css&quot;&gt;
 
@@ -961,7 +906,7 @@ You made it!
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
-&lt;!--TmpVar is not allowed --&gt;
+&lt;!-- TODO: TmpVar is not allowed --&gt;
 (set: $ctf6_code to &quot;
 	function showTab(input) {
 	var picID;
@@ -1000,7 +945,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
 
 &lt;script&gt; 
-	setup.ctf6_reset()
+  setup.ctf6_reset()
 &lt;/script&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
@@ -1019,32 +964,31 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-
-
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
 
 &lt;div&gt;
- &lt;div class=&quot;btn-pos3&quot;&gt;
- (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
-  &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;div class=&quot;btn-pos3&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
+    &lt;pre&gt;
+	  &lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;
+    &lt;/pre&gt;
 
-&lt;script&gt;
-  setup.ctf6_showCode();
-  hljs.highlightAll();
-&lt;/script&gt;&quot;)]
+    &lt;script&gt;
+      setup.ctf6_showCode();
+      hljs.highlightAll();
+    &lt;/script&gt;&quot;)]
   &lt;/div&gt;
- &lt;div class=&quot;btn-pos2&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image&quot;)]
- &lt;/div&gt;
+  &lt;div class=&quot;btn-pos2&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image&quot;)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-   (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
- &lt;/div&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
+  &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles_end.css&quot;&gt;
 
 &lt;script&gt;
-	setup.ctf6_reset()
+  setup.ctf6_reset()
 &lt;/script&gt;
 
 You made it!
@@ -1085,24 +1029,23 @@ Hints: open your inspector view and have a look at the website’s resources.
 
 or 
 
-[[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;style&gt;
-    body {
-        text-align: center;
-    }
+  body {
+    text-align: center;
+  }
 &lt;/style&gt;
 
-&lt;title&gt;Center align button&lt;/title&gt; /* TODO: Title is not visible */
+&lt;title&gt;Center align button&lt;/title&gt; &lt;!-- TODO: Title is not visible --&gt;
 
 Download the file and check for valuable information. 
 There might be something more to it than what you first see...
 	
-&lt;a class=&quot;fixedButton1&quot; href&gt;
-    &lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;Hint&lt;/button&gt;
-&lt;/a&gt;
+&lt;button class=&quot;addMore&quot; title=&quot;don&#39;t focus on the image itself&quot;&gt;Hint&lt;/button&gt;
 
-&lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt; /* TODO: Change path */</tw-passagedata><tw-passagedata pid="25" name="CTF8_end" tags="" position="850,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf8&quot;))
+&lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;src/static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8_end" tags="" position="850,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf8&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -1149,7 +1092,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   &lt;/pre&gt;
 &lt;/div&gt;
 
-Hint: Have you tried working with char arrays in java?
+Hint: Have you tried working with char arrays in java? &lt;!-- TODO: Make it a hint button --&gt;
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]</tw-passagedata><tw-passagedata pid="27" name="CTF9_end" tags="" position="600,2200" size="100,100">(set: $ctfs to it + (a: &quot;ctf9&quot;))
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles_end.css&quot;&gt;
@@ -1266,7 +1209,7 @@ Here you can find a overview of all CTF-Challenges, fell free to play them one b
   &lt;/nav&gt;
 &lt;/header&gt;
 
-&lt;section class=&quot;sec1&quot;&gt;
+&lt;section&gt;
   &lt;div class=&quot;usb-stick&quot;&gt;
     &lt;img src=&quot;src/img/main/usb_stick.svg&quot; alt=&quot;usb-stick&quot;&gt;
   &lt;/div&gt;
@@ -1277,25 +1220,15 @@ Here you can find a overview of all CTF-Challenges, fell free to play them one b
         [[&lt;button class=&quot;startButton&quot;&gt;Start&lt;/a&gt;-&gt;Story]]
       &lt;/div&gt;
   &lt;/div&gt;
-&lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+&lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]</tw-passagedata><tw-passagedata pid="32" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]</tw-passagedata><tw-passagedata pid="32" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
@@ -1305,60 +1238,35 @@ However, what they know for sure is that he might be in a great danger.
 You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]</tw-passagedata><tw-passagedata pid="33" name="2.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]</tw-passagedata><tw-passagedata pid="33" name="2.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]</tw-passagedata><tw-passagedata pid="34" name="3.p" tags="" position="200,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]</tw-passagedata><tw-passagedata pid="34" name="3.p" tags="" position="200,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
 
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="35" name="4.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="35" name="4.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;h1&gt;Let the search begin!&lt;/h1&gt;
 
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]</tw-passagedata><tw-passagedata pid="36" name="5.p" tags="" position="200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]</tw-passagedata><tw-passagedata pid="36" name="5.p" tags="" position="200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
 
-It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about you self. Especially you home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS-Skills and hack the website. 
+It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="37" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="37" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
 
@@ -1368,57 +1276,39 @@ You know something important that changed your life forever happened here, but y
 
 You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="38" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="38" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
 
 (Continuation of the girlfriend tragedy here maybe?)
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="39" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="39" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]</tw-passagedata><tw-passagedata pid="40" name="9.p" tags="" position="200,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]</tw-passagedata><tw-passagedata pid="40" name="9.p" tags="" position="200,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 “I&#39;m sure they have the tools that will help me extract some information out of it.”
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="41" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;style&gt;
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-&lt;/style&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="41" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 Coming soom. Stay tuned!
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="42" name="x.p" tags="" position="400,600" size="100,100">Sorry, these CTFs haven&#39;t been implemented in the story yet...
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="42" name="x.p" tags="" position="400,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
 Please come back later!</tw-passagedata><tw-passagedata pid="43" name="Tutorial" tags="" position="0,300" size="100,100">Hello there, 
 
-Welcome to Memory Loss_ Find Your Way Back. 
+Welcome to our CTF-Game &quot;Memory Loss: Find Your Way Back&quot;. 
 Here you can improve your cyber security skills while indulging in a fun game. 
-To move further in the story, you will need to solve some interesting CTF challanges. 
-Solve the challanges to discover your hidden past and save your future. 
+To move further in the story, you will need to solve some interesting CTF challenges. 
+Solve the challenges to discover your hidden past and save your future. 
 Are you ready? Then let&#39;s go!</tw-passagedata><tw-passagedata pid="44" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="45" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
