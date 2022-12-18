@@ -9,7 +9,9 @@ Vulnerabilities that enable these attacks are widespread and occur wherever a we
 In this challenge you can try to insert a JavaScript alert() in the frame below. This JavaScript alert() should show up a pop up window.
 
 For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
-It is not necessary to look into the the code.
+It is not necessary to look into the the code. 
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
 ")
 
 <!--(if: $onTimeShow is false)
@@ -37,18 +39,16 @@ It is not necessary to look into the the code.
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "You need to insert some javascript, maybe the script tag helps")]
-
-<tw-consecutive-br></tw-consecutive-br>
-
-(link-repeat: "Give me a second hint")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
-
 [[MainPage->CTFs]]
 
-/*Hint rechts*/
-
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
+<div>
+ <div class="btn-pos2">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
+ </div>
+  <div class="btn-pos1">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You need to insert some javascript, maybe the script tag helps")]
+ </div>
+</div>
 
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}

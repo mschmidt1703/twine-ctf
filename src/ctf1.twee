@@ -5,9 +5,14 @@
 <script>
   setup.ctf1();
 </script>
+(set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else.")
+(if: $ctfs contains "ctf1")[]
+(else:)[(alert: _info)]
 
-<div class="headline">Your forgot your password, maybe it is possible to find it, somewhere else. </div>
-
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="container login-contianer">
@@ -28,15 +33,31 @@
   </form>
 </div>
 
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "Can you find a method that will be executed when you press the button?")]
-
-(link-repeat: "Give me a second hint")[(alert: "What does the JavaScript funktion atob() do?")]
-
 [[MainPage->CTFs]]
 
-:: CTF1_end {"position":"600,1000","size":"100,100"}
+<div>
+ <div class="btn-pos3">
+            [[<button class="success-btn-background"></button>->CTF1end]]
+ </div>
+ <div class="btn-pos2">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What does the JavaScript funktion atob() do?")]
+ </div>
+  <div class="btn-pos1">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Can you find a method that will be executed when you press the button?")]
+ </div>
+</div>
+
+
+:: CTF1end {"position":"600,1000","size":"100,100"}
 (set: $ctfs to it + (a: "ctf1"))
 <link rel="stylesheet" href="src/css/ctf1/styles_end.css">
+
+Please put here the flag: 
+
+(input-box: bind $flag, "XX==", 5)[]
+
+   (link-repeat: "<button>Check Flag</button>")[(alert: "Incorret flag")]
+
 
 [[MainPage->CTFs]]
 

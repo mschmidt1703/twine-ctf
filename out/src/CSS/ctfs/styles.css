@@ -1,14 +1,21 @@
 @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-* {
-  font-family: "OCR A Extended", sans-serif;
-  color: #9b9b9b;
+/* -- Twine overrides -- */
+
+tw-expression {
+	
 }
+
+/* -- General CSS -- */
 
 .ctf1 .ctf2 .ctf3 .ctf4 .ctf5 .ctf6 .ctf7 .ctf8 .ctf9 .ctf10 .ctf11 {
   position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+.ctfpos {
+  margin-top: -10%;
 }
 
 .rectangle {
@@ -76,4 +83,17 @@ button {
   color: #1e1e1e;
   text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.active {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+  font-size: 1.6vw;
+}
+
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
 }

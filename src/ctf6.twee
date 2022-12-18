@@ -33,7 +33,10 @@
 	return
 }")
 
-(set: _info to "Try to insert some JavaScript ino this website. This time there is no input")
+(set: _info to "Try to insert some JavaScript ino this website. This time there is no input
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
+")
 (if: $ctfs contains "ctf6")[]
 (else:)[(alert: _info)]
 (link-repeat: "What should I do?")[(alert: _info)]
@@ -58,7 +61,13 @@
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-(link-repeat: "Show Implemation Code")[(alert: "
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+<div>
+ <div class="btn-pos3">
+ (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
   <pre><code id=\"code\" class=\"language-javascript\">
 </code></pre>
 
@@ -66,17 +75,14 @@
   setup.ctf6_showCode();
   hljs.highlightAll();
 </script>")]
-
-<tw-consecutive-br></tw-consecutive-br>
-
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
-<tw-consecutive-br></tw-consecutive-br>
-(link-repeat: "Give me a second hint")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
+  </div>
+ <div class="btn-pos2">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
+ </div>
+  <div class="btn-pos1">
+   (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
+ </div>
+</div>
 
 
 :: CTF6_end {"position":"1000,500","size":"100,100"}
