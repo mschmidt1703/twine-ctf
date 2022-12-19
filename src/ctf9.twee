@@ -57,7 +57,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 
 
 :: CTF9end {"position":"600,2200","size":"100,100"}
-(set: $ctfs to it + (a: "ctf9"))
+(unless: $ctfs contains "ctf9")[(set: $ctfs to it + (a: "ctf9"))]
 <link rel="stylesheet" href="src/css/ctf9/styles_end.css">
 
 [[MainPage->CTFs]]

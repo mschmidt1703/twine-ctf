@@ -43,7 +43,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 
 :: CTF5_end {"position":"600,1400","size":"100,100"}
-(set: $ctfs to it + (a: "ctf5"))
+(unless: $ctfs contains "ctf5")[(set: $ctfs to it + (a: "ctf5"))]
 <link rel="stylesheet" href="src/css/ctf5/styles_end.css">
 
 You made it!
@@ -51,3 +51,4 @@ You made it!
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
 
 [[MainPage->MainPage]]
+

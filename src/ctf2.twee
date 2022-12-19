@@ -29,7 +29,9 @@ Maybe taking a closer look at it is not a bad idea.
 
 
 :: CTF2end {"position":"600,1600","size":"100,100"}
-(set: $ctfs to it + (a: "ctf2"))
+(unless: $ctfs contains "ctf2")[(set: $ctfs to it + (a: "ctf2"))]
+
+
 <link rel="stylesheet" href="src/css/ctf2/styles_end.css">
 
 [[MainPage->CTFs]]

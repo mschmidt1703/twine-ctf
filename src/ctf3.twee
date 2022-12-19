@@ -29,7 +29,7 @@
 
 
 :: CTF3end {"position":"725,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf3"))
+(unless: $ctfs contains "ctf3")[(set: $ctfs to it + (a: "ctf3"))]
 <link rel="stylesheet" href="src/css/ctf3/styles_end.css">
 
 [[MainPage->CTFs]]
@@ -37,4 +37,3 @@
 or 
 
 [[<button class="resumeButton">Resume Story</a>->x.p]]
-

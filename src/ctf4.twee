@@ -52,7 +52,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}
-(set: $ctfs to it + (a: "ctf4"))
+(unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
 <link rel="stylesheet" href="src/css/ctf4/styles_end.css">
 
 You made it!
