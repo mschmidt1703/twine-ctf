@@ -5,6 +5,22 @@
 tw-icon {
   color: #ad00d8;
 }
+tw-sidebar
+{
+	display: none;
+}
+tw-icon.undo {
+display: none;
+}
+tw-icon.redo {
+display: none;
+}
+tw-link {
+  color: #4B0872;
+}
+tw-link:hover {
+  color: #B200DD;
+}
 
 tw-story {
   background-image: url('src/img/general/background/background_landscape.svg');
