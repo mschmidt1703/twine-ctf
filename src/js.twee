@@ -17,11 +17,8 @@ function eventOnClickHandler(event) {
   	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
   }
 
-
-  /*Redirect to Story or Ctf Overview*/
+  /* Redirect to Story or Ctf Overview */
   Harlowe.goto("CTF1_end");
-
-
 }
 
 /* # CTF 1 End */
@@ -53,7 +50,6 @@ window.addEventListener("message", function(event) {
     ctf6_levelSucceed();
     return;
   }
-
 }, false);
 
 /* Global End */
@@ -124,7 +120,6 @@ setup.ctf5_updateFrame = function (frameNum, url) {
     frame.src = "src/static/ctf5/t.html" + arg;
     //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
   }
-
 };
 
 function ctf5_updateURI(value) {
@@ -180,7 +175,6 @@ function ctf6_updateURI(value) {
 function ctf6_levelSucceed() {
   Harlowe.goto("CTF6_end");
 }
-
 
 setup.ctf6_showCode = function() {
   var codeBox = document.getElementById('code'); 

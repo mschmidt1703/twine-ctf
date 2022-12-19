@@ -48,11 +48,24 @@ br {
   --color: #aaa;
   --background: #000;
   --size: 1;
-  /* --glow: 1 */
   --animation: terminal-blink;
 }
 
 terminal {
-    margin-left: 18.5%;
-    margin-top: 5%;
+  margin-left: 18.5%;
+  margin-top: 5%;
+}
+
+.addMore {
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.addMore:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
 }

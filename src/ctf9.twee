@@ -39,7 +39,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   </pre>
 </div>
 
-Hint: Have you tried working with char arrays in java?
+Hint: Have you tried working with char arrays in java? <!-- TODO: Make it a hint button -->
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
 

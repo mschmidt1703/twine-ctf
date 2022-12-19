@@ -11,6 +11,7 @@ After the thorough search on the book shelf with little progress, you feel helpl
 
 Maybe taking a closer look at it is not a bad idea.
 
+<!-- TODO: Make it a hint button -->
 Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]

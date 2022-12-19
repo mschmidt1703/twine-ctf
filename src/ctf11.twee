@@ -1,5 +1,6 @@
 :: CTF 11 {"position":"1300,300","size":"100,100"}
 (set: _whatToDo to "Seems like some kind of encrypted text")
+<link rel="stylesheet" href="src/css/ctf11/styles.css">
 
 [(alert: _whatToDo)]
 
@@ -9,9 +10,7 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 
 key: NoIdea
 
-<a class="fixedButton1" href>
-  <button class="addMore" title="ever heard of Vigenere?">hint</button>
-</a>
+<button class="addMore" title="ever heard of Vigenere?">hint</button>
 
 
 :: CTF11_end {"position":"1300,500","size":"100,100"}

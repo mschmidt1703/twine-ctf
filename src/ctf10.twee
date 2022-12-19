@@ -392,7 +392,6 @@ function ctf2(terminal)
         sellChooise(readIn);
       } 
     }
-
 }
 </script>
 <terminal> </terminal>
@@ -406,9 +405,7 @@ function ctf2(terminal)
 
 (link-repeat: "Give me a second hint")[(alert: "")]
 
-<a class="fixedButton1" href>
-  <button class="addMore" >reload</button>
-</a>
+<button class="addMore" >reload</button>
  
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>

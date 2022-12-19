@@ -33,7 +33,6 @@ br {
   color: #9b9b9b;
 }
 
-/* Header */
 header {
   height: 25vh;
   display: flex;
@@ -71,11 +70,9 @@ nav .active a {
   text-shadow: 4px 4px 5px #000000;
 }
 
-/* Section */
-/* TODO: Rename section */
-.sec1 {
+section {
   height: 60%;
-  margin: 0 2em 0 2em;
+  margin: 0 2 0 2em;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
