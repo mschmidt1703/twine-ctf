@@ -5,6 +5,8 @@
 tw-icon {
   color: #ad00d8;
 }
+
+/* NUR Bei nicht StoryMode  playingStory == false
 tw-sidebar
 {
 	display: none;
@@ -14,7 +16,10 @@ display: none;
 }
 tw-icon.redo {
 display: none;
-}
+}*/
+
+
+
 tw-link {
   color: #4B0872;
 }

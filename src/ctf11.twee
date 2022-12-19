@@ -10,10 +10,20 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 
 key: NoIdea
 
-<button class="addMore" title="ever heard of Vigenere?">hint</button>
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF11end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+  </div>
+</div>
 
 
-:: CTF11_end {"position":"1300,500","size":"100,100"}
+:: CTF11end {"position":"1300,500","size":"100,100"}
 (set: $ctfs to it + (a: "ctf11"))
 <link rel="stylesheet" href="src/css/ctf11/styles_end.css">
 

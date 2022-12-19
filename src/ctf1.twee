@@ -49,7 +49,6 @@
 
 
 :: CTF1end {"position":"600,1000","size":"100,100"}
-(set: $ctfs to it + (a: "ctf1"))
 <link rel="stylesheet" href="src/css/ctf1/styles_end.css">
 
 Please put here the flag: 
@@ -57,10 +56,11 @@ Please put here the flag:
 (input-box: bind $flag, "XX==", 5)[]
 
 (link-repeat: "<button>Check Flag</button>")[(alert: "Incorret flag")]
-
+<!--if correct (set: $ctfs to it + (a: "ctf1")) -->
 
 [[MainPage->CTFs]]
 
 or 
 
 [[<button class="resumeButton">Resume Story</a>->4.p]]
+

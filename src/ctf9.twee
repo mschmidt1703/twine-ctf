@@ -1,5 +1,6 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="src/css/ctf9/styles.css">
 
 <h1>A random file in your home directory</h1>
 
@@ -39,12 +40,23 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   </pre>
 </div>
 
-Hint: Have you tried working with char arrays in java? <!-- TODO: Make it a hint button -->
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF9end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
+  </div>
+</div>
+
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
 
 
-:: CTF9_end {"position":"600,2200","size":"100,100"}
+:: CTF9end {"position":"600,2200","size":"100,100"}
 (set: $ctfs to it + (a: "ctf9"))
 <link rel="stylesheet" href="src/css/ctf9/styles_end.css">
 

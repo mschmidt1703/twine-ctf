@@ -12,13 +12,24 @@
 
 Download the file and check for valuable information. 
 There might be something more to it than what you first see...
-	
-<button class="addMore" title="don't focus on the image itself">Hint</button>
+
 
 <button type="submit" onclick="window.open('src/static/ctf8/my_office.jpg')">Download</button>
 
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF8end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+  </div>
+</div>
 
-:: CTF8_end {"position":"850,500","size":"100,100"}
+
+:: CTF8end {"position":"850,500","size":"100,100"}
 (set: $ctfs to it + (a: "ctf8"))
 <link rel="stylesheet" href="src/css/ctf8/styles_end.css">
 

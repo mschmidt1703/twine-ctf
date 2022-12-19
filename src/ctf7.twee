@@ -29,6 +29,19 @@ Hints: open your inspector view and have a look at the website’s resources.
 [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
 
 
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF7end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Open your inspector view and have a look at the website’s resources.")]
+  </div>
+</div>
+
+
 :: First Shelf {"position":"800,800","size":"100,100"}
 Nothing really usefull here
 
@@ -49,7 +62,7 @@ This search has lead me nowhere sofar..
 yup.. I did all of that for nothing :(
 
 
-:: CTF7_end {"position":"600,800","size":"100,100"}
+:: CTF7end {"position":"600,800","size":"100,100"}
 (set: $ctfs to it + (a: "ctf7"))
 <link rel="stylesheet" href="src/css/ctf7/styles_end.css">
 
