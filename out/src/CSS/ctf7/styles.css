@@ -1,5 +1,9 @@
 h1 {
-  color: #B200DD;
+  color: #b200dd;
+}
+
+br {
+  display: none;
 }
 
 .btn-pos1 {
@@ -25,6 +29,5 @@ h1 {
   bottom: 12rem;
   right: 0%;
 }
-
 
 /*My last name is: Doe*/

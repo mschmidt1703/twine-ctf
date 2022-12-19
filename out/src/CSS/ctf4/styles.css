@@ -29,8 +29,6 @@ html {
 }
 
 br {
-  max-height: 0px;
-  visibility: hidden;
   display: none;
 }
 

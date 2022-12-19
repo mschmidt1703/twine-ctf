@@ -16,7 +16,7 @@ tw-icon {
   color: #ad00d8;
 }
 
-/* NUR Bei nicht StoryMode  playingStory == false
+/* TODO NUR Bei nicht StoryMode  playingStory == false
 tw-sidebar
 {
 	display: none;
@@ -751,7 +751,7 @@ function ctf2(terminal)
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;button class=&quot;addMore&quot; &gt;reload&lt;/button&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf10&quot;))
+&lt;button class=&quot;addMore&quot; &gt;reload&lt;/button&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">(unless: $ctfs contains &quot;ctf10&quot;)[(set: $ctfs to it + (a: &quot;ctf10&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -779,7 +779,7 @@ key: NoIdea
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1300,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf11&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1300,500" size="100,100">(unless: $ctfs contains &quot;ctf11&quot;)[(set: $ctfs to it + (a: &quot;ctf11&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -812,7 +812,9 @@ Maybe taking a closer look at it is not a bad idea.
 &lt;/div&gt;
 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;7.p]]</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="600,1600" size="100,100">(set: $ctfs to it + (a: &quot;ctf2&quot;))
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;7.p]]</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="600,1600" size="100,100">(unless: $ctfs contains &quot;ctf2&quot;)[(set: $ctfs to it + (a: &quot;ctf2&quot;))]
+
+
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf2/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -845,7 +847,7 @@ or
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="725,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf3&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="725,500" size="100,100">(unless: $ctfs contains &quot;ctf3&quot;)[(set: $ctfs to it + (a: &quot;ctf3&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -901,7 +903,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(set: $ctfs to it + (a: &quot;ctf4&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles_end.css&quot;&gt;
 
 You made it!
@@ -946,7 +948,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(set: $ctfs to it + (a: &quot;ctf5&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles_end.css&quot;&gt;
 
 You made it!
@@ -1035,7 +1037,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf6&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles_end.css&quot;&gt;
 
 &lt;script&gt;
@@ -1086,7 +1088,7 @@ Hints: open your inspector view and have a look at the website’s resources.
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Open your inspector view and have a look at the website’s resources.&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">(set: $ctfs to it + (a: &quot;ctf7&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really usefull here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No usefull information here..</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either..</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere sofar..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">yup.. I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">(unless: $ctfs contains &quot;ctf7&quot;)[(set: $ctfs to it + (a: &quot;ctf7&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -1120,7 +1122,7 @@ There might be something more to it than what you first see...
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">(set: $ctfs to it + (a: &quot;ctf8&quot;))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">(unless: $ctfs contains &quot;ctf8&quot;)[(set: $ctfs to it + (a: &quot;ctf8&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -1181,7 +1183,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 &lt;/div&gt;
 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">(set: $ctfs to it + (a: &quot;ctf9&quot;))
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;10.p]]</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">(unless: $ctfs contains &quot;ctf9&quot;)[(set: $ctfs to it + (a: &quot;ctf9&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles_end.css&quot;&gt;
 
 [[MainPage-&gt;CTFs]]
@@ -1194,7 +1196,7 @@ or
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
 (set: _finished to &quot;CTF finished :&gt;&quot;)\
-(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web exploitation&quot; , 8, &quot;CTF 8 - Forensics&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
+(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Forensics&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
 (set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;0&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;0&quot;, 9, &quot;1&quot;, 10, &quot;0&quot;, 11, &quot;0&quot;) )\
 &lt;div class=&quot;active&quot;&gt;
 Here you can find a overview of all CTF-Challenges, fell free to play them one by one

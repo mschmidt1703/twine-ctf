@@ -1,3 +1,7 @@
+br {
+  display: none;
+}
+
 .btn-pos1 {
   position: fixed;
   bottom: 0rem;
