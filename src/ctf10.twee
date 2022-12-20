@@ -396,27 +396,46 @@ function ctf2(terminal)
 </script>
 <terminal> </terminal>
 
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-
-(link-repeat: "Give me a hint",(css:"padding:0px"))[(alert: "")]
-
-<tw-consecutive-br></tw-consecutive-br>
-
-(link-repeat: "Give me a second hint")[(alert: "")]
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF10end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+  </div>
+</div>
 
 <button class="addMore" >reload</button>
- 
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
 
 
-:: CTF10_end {"position":"1150,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf10"))
+:: CTF10end {"position":"1150,500","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf10/styles_end.css">
 
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+console.log("hash:" + CryptoJS.SHA512(input))
+console.log("base64:" + hashed)
+console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
+$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf10")[(set: $ctfs to it + (a: "ctf10"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+        (else:)[
+        [[Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>

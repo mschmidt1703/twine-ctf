@@ -1,3 +1,7 @@
+br {
+  display: none;
+}
+
 .addMore {
   border: none;
   width: 32px;
@@ -10,4 +14,28 @@
 .addMore:hover {
   border: 1px solid #888;
   background-color: #ddd;
+}
+
+.btn-pos1 {
+  position: fixed;
+  bottom: 0rem;
+  right: 0%;
+}
+
+.btn-pos2 {
+  position: fixed;
+  bottom: 4rem;
+  right: 0%;
+}
+
+.btn-pos3 {
+  position: fixed;
+  bottom: 8rem;
+  right: 0%;
+}
+
+.btn-pos4 {
+  position: fixed;
+  bottom: 12rem;
+  right: 0%;
 }

@@ -5,7 +5,13 @@
 tw-icon {
   color: #ad00d8;
 }
+<<<<<<< HEAD
 /*tw-sidebar
+=======
+
+/* TODO NUR Bei nicht StoryMode  playingStory == false
+tw-sidebar
+>>>>>>> 25ddb29bb29f58d09abee3e633ec94b0f4d68889
 {
 display: none;
 }
@@ -15,6 +21,12 @@ display: none;
 tw-icon.redo {
 display: none;
 }*/
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 25ddb29bb29f58d09abee3e633ec94b0f4d68889
 tw-link {
   color: #4B0872;
 }

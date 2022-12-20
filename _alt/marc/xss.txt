@@ -19,3 +19,6 @@ test
 <script> setup.ctf4_giveResult() </script>
 
 www-admin, keyMemory(superSecretpassw0rd123)
+
+SHA512 hash + base64
+YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==

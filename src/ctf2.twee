@@ -1,5 +1,6 @@
 :: CTF 2 {"position":"400,1600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="src/css/ctf2/styles.css">
 
 <h3>Do I live alone? </h3>
 
@@ -11,18 +12,48 @@ After the thorough search on the book shelf with little progress, you feel helpl
 
 Maybe taking a closer look at it is not a bad idea.
 
-<!-- TODO: Make it a hint button -->
-Hint: A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata).
+<div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF2end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata)")]
+  </div>
+</div>
+
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
 
 
-:: CTF2_end {"position":"600,1600","size":"100,100"}
-(set: $ctfs to it + (a: "ctf2"))
+:: CTF2end {"position":"600,1600","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf2/styles_end.css">
 
-[[MainPage->CTFs]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+console.log("hash:" + CryptoJS.SHA512(input))
+console.log("base64:" + hashed)
+console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
+$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf2")[(set: $ctfs to it + (a: "ctf2"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->7.p]]]\
+        (else:)[
+        [[Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>
 
-or 
-
-[[<button class="resumeButton">Resume Story</a>->7.p]]

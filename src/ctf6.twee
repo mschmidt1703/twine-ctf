@@ -85,7 +85,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 
 :: CTF6_end {"position":"1000,500","size":"100,100"}
-(set: $ctfs to it + (a: "ctf6"))
+(unless: $ctfs contains "ctf6")[(set: $ctfs to it + (a: "ctf6"))]
 <link rel="stylesheet" href="src/css/ctf6/styles_end.css">
 
 <script>

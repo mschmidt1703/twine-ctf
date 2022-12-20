@@ -1,13 +1,22 @@
-/* -- Twine overrides -- */
-
-/* TODO: Should it be possible to go back? */
-tw-sidebar {
-  display: none;
-}
-
 /* -- General CSS --*/
 
 .resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.checkFlagButton {
   z-index: 1;
   height: 2.5em;
   width: 8em;

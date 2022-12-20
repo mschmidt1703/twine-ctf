@@ -17,10 +17,14 @@ Memory Loss: Find Your Way Back
 
 <!-- :: init [startup] -->
 <!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+
+
+(set: $playingStory to false)
+<!-0  dann keine Story, wenn 1 dann Story-->
+
 (set: $ctfs to (a:))
 
 (go-to: "MainPage")
-
 
 :: MainPage {"position":"200,200","size":"100,100"}
 <link rel="stylesheet" href="src/css/main/styles.css">
@@ -58,7 +62,12 @@ Memory Loss: Find Your Way Back
     <div class="preview_bg">
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
-        [[<button class="startButton">Start</a>->Story]]
+        [[<button class="startButton">Start</a>->setStory]]
       </div>
   </div>
 </section>
+
+
+:: setStory {"position":"200,350","size":"100,100"}
+(set: $playingStory to true)
+(go-to: "Story")

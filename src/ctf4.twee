@@ -1,5 +1,5 @@
 :: CTF 4 {"position":"400,1200","size":"100,100"}
-<link rel="stylesheet" href="src/CSS/ctf4/styles.css">
+<link rel="stylesheet" href="src/css/ctf4/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 (set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
@@ -52,7 +52,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 
 :: CTF4_end {"position":"600,1200","size":"100,100"}
-(set: $ctfs to it + (a: "ctf4"))
+(unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
 <link rel="stylesheet" href="src/css/ctf4/styles_end.css">
 
 You made it!
