@@ -57,11 +57,30 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 
 
 :: CTF9end {"position":"600,2200","size":"100,100"}
-(unless: $ctfs contains "ctf9")[(set: $ctfs to it + (a: "ctf9"))]
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf9/styles_end.css">
 
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->10.p]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+console.log("hash:" + CryptoJS.SHA512(input))
+console.log("base64:" + hashed)
+console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
+$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf9")[(set: $ctfs to it + (a: "ctf9"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->10.p]]]\
+        (else:)[
+        [[Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>

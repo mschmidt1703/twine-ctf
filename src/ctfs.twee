@@ -1,5 +1,6 @@
 :: CTFs {"position":"500,200","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctfs/styles.css">
+(set: $playingStory to false)
 
 <!-- TODO: Fix that set statements dont make such an empty space -->
 (set: _notStarted to "CTF not started yet") \
