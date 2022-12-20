@@ -15,6 +15,22 @@
 tw-icon {
   color: #ad00d8;
 }
+tw-sidebar
+{
+	display: none;
+}
+tw-icon.undo {
+display: none;
+}
+tw-icon.redo {
+display: none;
+}
+tw-link {
+  color: #4B0872;
+}
+tw-link:hover {
+  color: #B200DD;
+}
 
 tw-story {
   background-image: url('src/img/general/background/background_landscape.svg');
@@ -1237,7 +1253,14 @@ To your surprise they respond, “we don’t know. We couldn’t find out who yo
 However, what they know for sure is that he might be in a great danger. 
 You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
-
+&lt;!--btns back &amp; nxt--&gt;
+[\
+|==
+(button:)+ (if: (history:)&#39;s length &gt; 0)[(link: &quot;↶&quot;) [(goto: (history:)&#39;s last)]]
+==|
+(button:)[(link: &quot;↷&quot;)[(goto: &quot;2.p&quot;)]]
+\]
+&lt;!--btns back &amp; nxt--&gt;
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]</tw-passagedata><tw-passagedata pid="33" name="2.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 

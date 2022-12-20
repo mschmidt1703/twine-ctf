@@ -36,6 +36,9 @@
 [[MainPage->CTFs]]
 
 <div>
+  <div class="btn-pos4">
+    [[<button class="home-btn-background"></button>->MainPage]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF1end]]
   </div>

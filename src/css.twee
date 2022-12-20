@@ -5,16 +5,16 @@
 tw-icon {
   color: #ad00d8;
 }
-tw-sidebar
+/*tw-sidebar
 {
-	display: none;
+display: none;
 }
 tw-icon.undo {
 display: none;
 }
 tw-icon.redo {
 display: none;
-}
+}*/
 tw-link {
   color: #4B0872;
 }
@@ -79,6 +79,13 @@ tw-story {
   background: url(src/img/4all/code.png);
   height: 4rem;
   width: 4rem;
+  background-size: cover;
+  border: none;
+}
+.home-btn-background {
+  background: url(src/img/4all/home.png);
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
