@@ -1,0 +1,92 @@
+/* -- Twine overrides -- */
+
+tw-story {
+  background-image: url("../../img/4all/pc_rahmen.png");
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* TODO: What should this do? Can't see a difference...delete it? */
+#ui-bar {
+  display: none;
+}
+
+tw-sidebar {
+  left: -15em;
+  width: 15em;
+  text-align: left;
+}
+
+tw-icon {
+  left: 3.5em;
+}
+
+/* -- General CSS -- */
+
+html {
+  overflow-y: hidden !important; /* Disable scroll */
+}
+
+br {
+  max-height: 0; /* TODO: Is this necessary? */
+  visibility: hidden;
+  display: none;
+}
+
+.twine-background-login {
+  position: inherit;
+  background-color: white;
+  width: 500px;
+}
+
+.login-contianer {
+  height: 500px;
+  margin-left: 30% !important;
+  margin-top: -1% !important;
+}
+
+.headline {
+  margin-top: -7rem;
+  margin-bottom: 7rem;
+}
+
+.resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.btn-pos1 {
+  position: fixed;
+  bottom: 0rem;
+  right: 0%;
+}
+
+.btn-pos2 {
+  position: fixed;
+  bottom: 4rem;
+  right: 0%;
+}
+
+.btn-pos3 {
+  position: fixed;
+  bottom: 8rem;
+  right: 0%;
+}
+
+.btn-pos4 {
+  position: fixed;
+  bottom: 12rem;
+  right: 0%;
+}
