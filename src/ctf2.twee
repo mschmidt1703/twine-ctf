@@ -42,8 +42,8 @@ var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 console.log("hash:" + CryptoJS.SHA512(input))
 console.log("base64:" + hashed)
-console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
-$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+console.log("MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==" == hashed)
+$success = "MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==" == hashed
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf2")[(set: $ctfs to it + (a: "ctf2"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
