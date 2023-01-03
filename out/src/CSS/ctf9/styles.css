@@ -25,3 +25,8 @@ br {
   bottom: 12rem;
   right: 0%;
 }
+.scrollbar{
+	height: 24rem;
+	width:60rem;
+   overflow: auto;
+}

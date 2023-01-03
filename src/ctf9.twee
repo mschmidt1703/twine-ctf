@@ -65,7 +65,7 @@ public class ctf9 {
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece{enterFlagHere}.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
   </div>
 </div>
 
