@@ -66,6 +66,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
 <link rel="stylesheet" href="src/css/ctf4/styles_end.css">
 
-You made it!
+Congratulations you made it!
 
-[[MainPage->MainPage]]
+(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+     (else:)[
+     [[Back to CTF-Overview->CTFs]]]

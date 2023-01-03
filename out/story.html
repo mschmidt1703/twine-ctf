@@ -1079,9 +1079,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles_end.css&quot;&gt;
 
-You made it!
+Congratulations you made it!
 
-[[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles.css&quot;&gt;&lt;/link&gt;
+(if: $playingStory is true)[
+    [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
+     (else:)[
+     [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles.css&quot;&gt;&lt;/link&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -1137,11 +1140,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles_end.css&quot;&gt;
 
-You made it!
+Congratulations you made it!
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story-&gt;6.p]]
-
-[[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles.css&quot;&gt;
+(if: $playingStory is true)[
+    [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;6.p]]]\
+     (else:)[
+     [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
@@ -1241,11 +1245,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   setup.ctf6_reset()
 &lt;/script&gt;
 
-You made it!
+Congratulations you made it!
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Resume Story (fehlt noch)-&gt;x.p]]
-
-[[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles.css&quot;&gt;
+(if: $playingStory is true)[
+    [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
+     (else:)[
+     [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script&gt;
   setup.all();

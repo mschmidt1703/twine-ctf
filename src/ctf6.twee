@@ -103,9 +103,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   setup.ctf6_reset()
 </script>
 
-You made it!
+Congratulations you made it!
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
-
-[[MainPage->MainPage]]
+(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+     (else:)[
+     [[Back to CTF-Overview->CTFs]]]
 
