@@ -67,7 +67,12 @@ Memory Loss: Find Your Way Back
   </div>
 </section>
 
-
 :: setStory {"position":"200,350","size":"100,100"}
 (set: $playingStory to true)
 (go-to: "Story")
+
+
+:: Achievements {"position":"300,0","size":"100,100"}
+
+
+:: Settings {"position":"500,0","size":"100,100"}

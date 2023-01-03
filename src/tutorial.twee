@@ -1,4 +1,9 @@
 :: Tutorial {"position":"0,300","size":"100,100"}
+<!--
+Introduction to the game:
+- What is this?
+-->
+
 Hello there, 
 
 Welcome to our CTF-Game "Memory Loss: Find Your Way Back". 
@@ -8,8 +13,26 @@ Solve the challenges to discover your hidden past and save your future.
 Are you ready? Then let's go!
 
 
-:: Achievements {"position":"300,0","size":"100,100"}
+<!-- Tutorial - pt. 2 -->
+<!--
+Explain both modes: story and ctf
+- Differences
+-->
 
 
-:: Settings {"position":"500,0","size":"100,100"}
+<!-- Tutorial - pt. 3 -->
+<!--
+- CTF example
+- Explain Buttons in CTF
+- Explain flag page
+-->
 
+<!-- Tutorial - pt. 4 -->
+<!--
+Safe game state
+-->
+
+<!-- Tutorial - pt. 2 -->
+<!-- 
+Outro
+-->
