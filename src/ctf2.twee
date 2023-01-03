@@ -26,15 +26,15 @@ Maybe taking a closer look at it is not a bad idea.
     [[<button class="success-btn-background"></button>->CTF2end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Do you know what meta data means?")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets (look in the metadata)")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets.")]
   </div>
 </div>
 
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]
+<!--[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]-->
 
 
 :: CTF2end {"position":"600,1600","size":"100,100"}
