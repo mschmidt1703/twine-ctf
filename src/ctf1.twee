@@ -4,7 +4,9 @@
 
 <script>
   setup.ctf1();
+  setup.all();
 </script>
+
 (set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else.")
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]
@@ -33,11 +35,12 @@
   </form>
 </div>
 
-[[MainPage->CTFs]]
-
 <div>
   <div class="btn-pos4">
-    [[<button class="home-btn-background"></button>->MainPage]]
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF1end]]
@@ -79,4 +82,3 @@ $success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5
 ]
 </div>
 </container>
-

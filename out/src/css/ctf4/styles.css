@@ -105,3 +105,9 @@ iframe {
   bottom: 12rem;
   right: 0;
 }
+
+.btn-pos5 {
+  position: fixed;
+  bottom: 16rem;
+  right: 0;
+}

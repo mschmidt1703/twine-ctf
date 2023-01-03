@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="src/css/ctf5/styles.css"></link>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
+<script>
+  setup.all();
+</script>
 (set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
 
 Note: If you have injected XSS successfully, you will be redirected automatically.")
@@ -13,9 +16,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 (if: $ctfs contains "ctf5")[]
 (else:)[(alert: _info)]
-
-(link-repeat: "What should I do?")[(alert: _info)]
-
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser">
@@ -33,6 +37,15 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <tw-consecutive-br></tw-consecutive-br>
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+      <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
+  </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
   </div>
@@ -46,9 +59,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (unless: $ctfs contains "ctf5")[(set: $ctfs to it + (a: "ctf5"))]
 <link rel="stylesheet" href="src/css/ctf5/styles_end.css">
 
-You made it!
+Congratulations you made it!
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->6.p]]
-
-[[MainPage->MainPage]]
-
+(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->6.p]]]\
+     (else:)[
+     [[Back to CTF-Overview->CTFs]]]

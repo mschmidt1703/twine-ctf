@@ -1,6 +1,9 @@
 :: CTF 7 {"position":"400,800","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf7/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+  setup.all();
+</script>
 
 <h1>Who even am I?</h1>
 
@@ -30,6 +33,12 @@ Hints: open your inspector view and have a look at the website’s resources.
 
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF7end]]
   </div>
@@ -76,8 +85,8 @@ var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 console.log("hash:" + CryptoJS.SHA512(input))
 console.log("base64:" + hashed)
-console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
-$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+console.log("9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==" == hashed)
+$success = "9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==" == hashed
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf7")[(set: $ctfs to it + (a: "ctf7"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
@@ -90,3 +99,4 @@ $success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5
 ]
 </div>
 </container>
+

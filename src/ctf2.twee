@@ -1,6 +1,9 @@
 :: CTF 2 {"position":"400,1600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf2/styles.css">
+<script>
+  setup.all();
+</script>
 
 <h3>Do I live alone? </h3>
 
@@ -13,6 +16,12 @@ After the thorough search on the book shelf with little progress, you feel helpl
 Maybe taking a closer look at it is not a bad idea.
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF2end]]
   </div>
@@ -42,8 +51,8 @@ var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 console.log("hash:" + CryptoJS.SHA512(input))
 console.log("base64:" + hashed)
-console.log("YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed)
-$success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==" == hashed
+console.log("MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==" == hashed)
+$success = "MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==" == hashed
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf2")[(set: $ctfs to it + (a: "ctf2"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
@@ -56,4 +65,3 @@ $success = "YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5
 ]
 </div>
 </container>
-
