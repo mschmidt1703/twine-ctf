@@ -39,12 +39,14 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 ")
 (if: $ctfs contains "ctf6")[]
 (else:)[(alert: _info)]
-(link-repeat: "What should I do?")[(alert: _info)]
 
 <script> 
   setup.ctf6_reset()
+  setup.all();
 </script>
 
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser">
@@ -64,7 +66,13 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 <div>
-  <div class="btn-pos3">
+  <div class="btn-pos5">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
     (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
     <pre>
 	  <code id=\"code\" class=\"language-javascript\"></code>
@@ -74,6 +82,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
       setup.ctf6_showCode();
       hljs.highlightAll();
     </script>")]
+  </div>
+      <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
@@ -97,3 +108,4 @@ You made it!
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story (fehlt noch)->x.p]]
 
 [[MainPage->MainPage]]
+

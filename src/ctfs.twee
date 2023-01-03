@@ -14,6 +14,9 @@ Here you can find a overview of all CTF-Challenges, fell free to play them one b
 
 <!--http://twinery.org/questions/6143/can-i-use-variables-to-call-data-map-attributes-and-if-so-how-->
 
+[[TMP HOME BTN->MainPage]]
+
+
 (for: each _i, ...(range:1,11))[
 (print: '<div class="ctfpos ctf' + (text: _i) + '">')
   <div class='rectangle'> 

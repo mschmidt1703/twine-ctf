@@ -1,6 +1,9 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf9/styles.css">
+<script>
+  setup.all();
+</script>
 
 <h1>A random file in your home directory</h1>
 
@@ -41,6 +44,12 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 </div>
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF9end]]
   </div>
@@ -84,3 +93,4 @@ $success = "uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4dhveK
 ]
 </div>
 </container>
+

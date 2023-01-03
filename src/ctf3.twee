@@ -1,6 +1,9 @@
 :: CTF 3 {"position":"700,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf3/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+  setup.all();
+</script>
 
 (set: _whatToDo to "You should be taking a closer look at things...")
 
@@ -16,6 +19,12 @@
 <!--flag{12_234_ghuzt5r}-->
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF3end]]
   </div>

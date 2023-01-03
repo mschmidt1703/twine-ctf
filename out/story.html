@@ -70,6 +70,12 @@ tw-story {
   --grey3: #141414;
 }
 
+
+.removeUndoReod {
+	display:none;
+  	visibility: hidden;
+}
+
 .color_purple {
   background-color: var(--purple) !important;
 }
@@ -99,8 +105,15 @@ tw-story {
 }
 .home-btn-background {
   background: url(src/img/4all/home.png);
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+.help-btn-background {
+  background: url(src/img/4all/help.png);
+  height: 4rem;
+  width: 4rem;
   background-size: cover;
   border: none;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
@@ -129,6 +142,19 @@ function eventOnClickHandler(event) {
 
 
 /* Global Start */
+
+//disable back btn if playing in ctf mode
+setup.all = function () {
+	var mode =  Harlowe.variable("$playingStory")
+    if (!mode){
+    	 var btns = document.querySelectorAll('tw-icon'); 
+        for (let b of btns) {
+            b.classList.add("removeUndoReod");
+        }
+    }
+}
+
+
 
 window.addEventListener("message", function(event) {
   if (event.data == "js_inserted_ctf4") {
@@ -295,7 +321,9 @@ setup.ctf6_showCode = function() {
 
 &lt;script&gt;
   setup.ctf1();
+  setup.all();
 &lt;/script&gt;
+
 (set: _info to &quot;Your forgot your password, maybe it is possible to find it, somewhere else.&quot;)
 (if: $ctfs contains &quot;ctf1&quot;)[]
 (else:)[(alert: _info)]
@@ -324,11 +352,12 @@ setup.ctf6_showCode = function() {
   &lt;/form&gt;
 &lt;/div&gt;
 
-[[MainPage-&gt;CTFs]]
-
 &lt;div&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
-    [[&lt;button class=&quot;home-btn-background&quot;&gt;&lt;/button&gt;-&gt;MainPage]]
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
@@ -368,6 +397,9 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 
 (set: _info to &quot;&quot;)
 
@@ -763,6 +795,12 @@ function ctf2(terminal)
 &lt;terminal&gt; &lt;/terminal&gt;
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF10end]]
   &lt;/div&gt;
@@ -800,8 +838,11 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 ]\
 ]
 &lt;/div&gt;
-&lt;/container&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">(set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles.css&quot;&gt;
+&lt;/container&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
+(set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
 
 [(alert: _whatToDo)]
 
@@ -812,6 +853,12 @@ qi coh&#39;fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfoo
 key: NoIdea
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF11end]]
   &lt;/div&gt;
@@ -849,6 +896,9 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 &lt;/div&gt;
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf2/styles.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 
 &lt;h3&gt;Do I live alone? &lt;/h3&gt;
 
@@ -861,6 +911,12 @@ After the thorough search on the book shelf with little progress, you feel helpl
 Maybe taking a closer look at it is not a bad idea.
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF2end]]
   &lt;/div&gt;
@@ -901,6 +957,9 @@ $success = &quot;MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfN
 &lt;/div&gt;
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 
 (set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
 
@@ -916,6 +975,12 @@ $success = &quot;MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfN
 &lt;!--flag{12_234_ghuzt5r}--&gt;
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF3end]]
   &lt;/div&gt;
@@ -954,6 +1019,11 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
+
+
 (set: _info to &quot;Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
 
 Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
@@ -966,14 +1036,13 @@ It is not necessary to look into the the code.
 Note: If you have injected XSS successfully, you will be redirected automatically.
 &quot;)
 
+
 &lt;!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
 (if: $onTimeShow is true)[ (set: $onTimeShow to false)]--&gt;
 
 (if: $ctfs contains &quot;ctf4&quot;)[]
 (else:)[(alert: _info)]
-
-(link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
@@ -991,9 +1060,16 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
-[[MainPage-&gt;CTFs]]
-
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
+    &lt;div class=&quot;btn-pos3&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;It is possible to pop an alert with javascript \&quot;alert()\&quot;, you should only add some script-tags&quot;)]
   &lt;/div&gt;
@@ -1008,6 +1084,9 @@ You made it!
 [[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles.css&quot;&gt;&lt;/link&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 (set: _info to &quot;This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
 
 Note: If you have injected XSS successfully, you will be redirected automatically.&quot;)
@@ -1019,9 +1098,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 (if: $ctfs contains &quot;ctf5&quot;)[]
 (else:)[(alert: _info)]
-
-(link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
-
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -1039,6 +1119,15 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
+      &lt;div class=&quot;btn-pos3&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Think of an image tag, could you insert same javascript here (onerror= and src=)&quot;)]
   &lt;/div&gt;
@@ -1092,12 +1181,14 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &quot;)
 (if: $ctfs contains &quot;ctf6&quot;)[]
 (else:)[(alert: _info)]
-(link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
 
 &lt;script&gt; 
   setup.ctf6_reset()
+  setup.all();
 &lt;/script&gt;
 
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -1117,7 +1208,13 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
 
 &lt;div&gt;
-  &lt;div class=&quot;btn-pos3&quot;&gt;
+  &lt;div class=&quot;btn-pos5&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
     &lt;pre&gt;
 	  &lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;
@@ -1127,6 +1224,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
       setup.ctf6_showCode();
       hljs.highlightAll();
     &lt;/script&gt;&quot;)]
+  &lt;/div&gt;
+      &lt;div class=&quot;btn-pos3&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image&quot;)]
@@ -1147,6 +1247,9 @@ You made it!
 
 [[MainPage-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 
 &lt;h1&gt;Who even am I?&lt;/h1&gt;
 
@@ -1176,6 +1279,12 @@ Hints: open your inspector view and have a look at the website’s resources.
 
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF7end]]
   &lt;/div&gt;
@@ -1213,6 +1322,10 @@ $success = &quot;9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLO
 &lt;/div&gt;
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
+
 
 &lt;style&gt;
   body {
@@ -1229,6 +1342,12 @@ There might be something more to it than what you first see...
 &lt;button type=&quot;submit&quot; onclick=&quot;window.open(&#39;src/static/ctf8/my_office.jpg&#39;)&quot;&gt;Download&lt;/button&gt;
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF8end]]
   &lt;/div&gt;
@@ -1266,6 +1385,9 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
 &lt;/div&gt;
 &lt;/container&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles.css&quot;&gt;
+&lt;script&gt;
+  setup.all();
+&lt;/script&gt;
 
 &lt;h1&gt;A random file in your home directory&lt;/h1&gt;
 
@@ -1306,6 +1428,12 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 &lt;/div&gt;
 
 &lt;div&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF9end]]
   &lt;/div&gt;
@@ -1358,6 +1486,9 @@ Here you can find a overview of all CTF-Challenges, fell free to play them one b
 &lt;/div&gt;
 
 &lt;!--http://twinery.org/questions/6143/can-i-use-variables-to-call-data-map-attributes-and-if-so-how--&gt;
+
+[[TMP HOME BTN-&gt;MainPage]]
+
 
 (for: each _i, ...(range:1,11))[
 (print: &#39;&lt;div class=&quot;ctfpos ctf&#39; + (text: _i) + &#39;&quot;&gt;&#39;)

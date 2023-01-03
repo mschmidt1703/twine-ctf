@@ -1,6 +1,9 @@
 :: CTF 11 {"position":"1300,300","size":"100,100"}
-(set: _whatToDo to "Seems like some kind of encrypted text")
 <link rel="stylesheet" href="src/css/ctf11/styles.css">
+<script>
+  setup.all();
+</script>
+(set: _whatToDo to "Seems like some kind of encrypted text")
 
 [(alert: _whatToDo)]
 
@@ -11,6 +14,12 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 key: NoIdea
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF11end]]
   </div>
