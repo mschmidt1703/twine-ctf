@@ -25,9 +25,6 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 
 A search on the surface level is not enough. Further inspection is needed. 
 
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
-
-
 <div>
   <div class="btn-pos4">
   	(if: $playingStory is true)[
