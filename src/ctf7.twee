@@ -21,13 +21,9 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 
 [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
 
-<!--My first name ist: John -->
+<!--1st Part: puzzelPiece{John-->
 
-However, these shelfs are stacked with material. A search on the surface level is not enough. Further inspection is needed. 
-
-Enter the flag for “who even am I?”: ___
-
-Hints: open your inspector view and have a look at the website’s resources. 
+A search on the surface level is not enough. Further inspection is needed. 
 
 [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Resume Story->3.p]]
 
