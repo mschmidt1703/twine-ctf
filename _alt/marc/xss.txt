@@ -22,3 +22,8 @@ www-admin, keyMemory(superSecretpassw0rd123)
 
 SHA512 hash + base64
 YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==
+
+
+CTF2 = puzzelPiece{JAne_DoE}
+CTF7 = puzzelPiece{John_Doe}
+CTF8 = puzzelPiece{BrunoKilledHer}
