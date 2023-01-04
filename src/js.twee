@@ -1,5 +1,6 @@
 :: Story JavaScript [script]
 window.setup = window.setup || {};
+$(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 /* # CTF 1 Start */
 
