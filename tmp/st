@@ -75,7 +75,7 @@ tw-story {
 }
 
 .hint-btn-background {
-  background: url(src/img/4all/hint.png);
+  background: url(src/img/general/ctf/hint.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -83,7 +83,7 @@ tw-story {
 }
 
 .success-btn-background {
-  background: url(src/img/4all/success.png);
+  background: url(src/img/general/ctf/success.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -91,14 +91,14 @@ tw-story {
 }
 
 .code-btn-background {
-  background: url(src/img/4all/code.png);
+  background: url(src/img/general/ctf/code.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
   border: none;
 }
 .home-btn-background {
-  background: url(src/img/4all/home.png);
+  background: url(src/img/general/ctf/home.png);
   height: 3rem;
   width: 3rem;
   background-size: cover;

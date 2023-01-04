@@ -5,7 +5,7 @@
 tw-story {
   width: 100%;
   padding: 0;
-  background-image: url("../../img/general/background/header_element.svg"),
+  background-image: url("../../img/header/header_element.svg"),
     url("../../img/general/background/background_landscape.svg");
   background-repeat: no-repeat, no-repeat;
   background-size: 100%, cover;
