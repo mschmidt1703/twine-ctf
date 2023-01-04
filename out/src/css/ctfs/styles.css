@@ -90,8 +90,10 @@ section {
 }
 
 .rectangle {
-  margin: 0 auto 0 auto;
+  margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   z-index: 0;
   height: 8em;
@@ -106,16 +108,25 @@ section {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-.box {
+.box_img {
   margin: auto;
 }
 
-img {
+.box_img img {
   height: 6em;
+  border-radius: 25px;
+}
+
+.box_text {
+  margin: auto;
+}
+
+.box_button {
+  margin: auto;
 }
 
 .rectangle ul {
-  margin: 0 auto;
+  margin: 0 2rem 0 -8rem;
   list-style: none;
   font-size: 1.5rem;
   color: #9b9b9b;

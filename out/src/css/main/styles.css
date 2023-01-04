@@ -98,7 +98,7 @@ section {
 .preview_bg img {
   position: relative;
   z-index: 1;
-
+  border-radius: 45px;
   height: 50vh;
 }
 
