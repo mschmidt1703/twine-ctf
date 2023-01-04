@@ -10,9 +10,8 @@ This game was developed on the Twine engine to teach some basic knowledge about 
 2. [Development](#development)
     1. [Requirements](#requirements)
     2. [Workflow](#workflow)
-    3. [Git for Noobies](#git-for-noobies)
 3. [Image Sources](#image-sources)
-3. [Credits](#credits)
+4. [Credits](#credits)
 
 ## Overview of CTFs
 - XSS
