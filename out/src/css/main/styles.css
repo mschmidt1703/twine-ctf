@@ -41,6 +41,7 @@ header {
 header .logo img {
   height: 4em;
   margin: 2em;
+  filter: drop-shadow(7px 7px 5px #000000);
 }
 
 nav ul {
