@@ -48,15 +48,19 @@ Memory Loss: Find Your Way Back
   </nav>
 </header>
 
+<script>
+  setup.main();
+</script>
+
 <section>
-  <div class="usb-stick">
+  <div class="usb-stick" id="demo">
     <img src="src/img/main/usb_stick.svg" alt="usb-stick">
   </div>
   <div class="preview">
     <div class="preview_bg">
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
-        [[<button class="startButton">Start</a>->setStory]]
+        <button id="startButton" class="startButton">Start</a>
       </div>
   </div>
 </section>

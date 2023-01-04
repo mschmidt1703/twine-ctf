@@ -2,6 +2,30 @@
 window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
+/* # Mainpage */
+
+setup.main = function() {
+	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+}
+
+function eventOnClickHandlerMain(event) {
+  // Access DOM element object
+  const rotated = document.getElementById("demo");
+  // Rotate element by 90 degrees clockwise
+  //rotated.style.transform = 'rotate(90deg)';
+  rotated.style.WebkitTransitionDuration='1s';
+  rotated.style.webkitTransform = 'translate(250px, -100px) rotate(90deg)';
+
+  /* Redirect to Story */
+  setTimeout(()=> {
+
+    Harlowe.goto("setStory");
+  }, 1500);
+}
+
+/* # Mainpage End */
+
+
 /* # CTF 1 Start */
 
 setup.ctf1 = function() {

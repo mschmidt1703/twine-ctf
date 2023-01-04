@@ -38,7 +38,7 @@
 <div>
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>

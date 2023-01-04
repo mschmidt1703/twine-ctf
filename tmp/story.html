@@ -119,6 +119,30 @@ tw-story {
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
+/* # Mainpage */
+
+setup.main = function() {
+	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+}
+
+function eventOnClickHandlerMain(event) {
+  // Access DOM element object
+  const rotated = document.getElementById("demo");
+  // Rotate element by 90 degrees clockwise
+  //rotated.style.transform = 'rotate(90deg)';
+  rotated.style.WebkitTransitionDuration='1s';
+  rotated.style.webkitTransform = 'translate(250px, -100px) rotate(90deg)';
+
+  /* Redirect to Story */
+  setTimeout(()=> {
+
+    Harlowe.goto("setStory");
+  }, 1500);
+}
+
+/* # Mainpage End */
+
+
 /* # CTF 1 Start */
 
 setup.ctf1 = function() {
@@ -363,7 +387,7 @@ setup.ctf9_showCode = function() {
 &lt;div&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
   	(if: $playingStory is true)[
-     [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
         (else:)[
       [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
   &lt;/div&gt;
@@ -1597,15 +1621,19 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
   &lt;/nav&gt;
 &lt;/header&gt;
 
+&lt;script&gt;
+  setup.main();
+&lt;/script&gt;
+
 &lt;section&gt;
-  &lt;div class=&quot;usb-stick&quot;&gt;
+  &lt;div class=&quot;usb-stick&quot; id=&quot;demo&quot;&gt;
     &lt;img src=&quot;src/img/main/usb_stick.svg&quot; alt=&quot;usb-stick&quot;&gt;
   &lt;/div&gt;
   &lt;div class=&quot;preview&quot;&gt;
     &lt;div class=&quot;preview_bg&quot;&gt;
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
-        [[&lt;button class=&quot;startButton&quot;&gt;Start&lt;/a&gt;-&gt;setStory]]
+        &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
