@@ -5,7 +5,7 @@
 tw-story {
   width: 100%;
   padding: 0;
-  background-image: url("../../img/general/background/header_element.svg"),
+  background-image: url("../../img/main/wires_landscape.svg"),
     url("../../img/general/background/background_landscape.svg");
   background-repeat: no-repeat, no-repeat;
   background-size: 100%, cover;
@@ -78,9 +78,10 @@ section {
   flex-direction: row;
 }
 
-section .usb-stick img {
+.usb-stick img {
   height: 50vh;
   padding-left: 10vw;
+  filter: drop-shadow(7px 7px 5px #000000);
 }
 
 .preview {

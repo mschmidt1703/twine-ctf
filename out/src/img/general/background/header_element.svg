@@ -3,34 +3,14 @@
   <defs>
     <style>
       .cls-1 {
-        filter: url(#drop-shadow-5);
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
-        fill: none;
-        stroke: #f79e00;
-        stroke-miterlimit: 10;
-        stroke-width: 10px;
-      }
-
-      .cls-6 {
         filter: url(#drop-shadow-1);
       }
 
       .cls-2 {
-        filter: url(#drop-shadow-4);
-      }
-
-      .cls-3 {
-        filter: url(#drop-shadow-6);
-      }
-
-      .cls-4 {
-        filter: url(#drop-shadow-3);
-      }
-
-      .cls-5 {
-        filter: url(#drop-shadow-2);
+        fill: none;
+        stroke: #f79e00;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
       }
     </style>
     <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
@@ -40,49 +20,13 @@
       <feComposite in2="blur" operator="in"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
-      <feOffset dx="7" dy="7"/>
-      <feGaussianBlur result="blur-2" stdDeviation="5"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur-2" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="drop-shadow-3" filterUnits="userSpaceOnUse">
-      <feOffset dx="7" dy="7"/>
-      <feGaussianBlur result="blur-3" stdDeviation="5"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur-3" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="drop-shadow-4" filterUnits="userSpaceOnUse">
-      <feOffset dx="7" dy="7"/>
-      <feGaussianBlur result="blur-4" stdDeviation="5"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur-4" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="drop-shadow-5" filterUnits="userSpaceOnUse">
-      <feOffset dx="7" dy="7"/>
-      <feGaussianBlur result="blur-5" stdDeviation="5"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur-5" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="drop-shadow-6" filterUnits="userSpaceOnUse">
-      <feOffset dx="7" dy="7"/>
-      <feGaussianBlur result="blur-6" stdDeviation="5"/>
-      <feFlood flood-color="#000" flood-opacity=".75"/>
-      <feComposite in2="blur-6" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
   </defs>
-  <g id="Wires">
-    <g class="cls-6">
-      <line class="cls-5" x1="0" y1="241.78" x2="1920" y2="241.78"/>
-      <path class="cls-4" d="m1827,179.53c12.15,0,22-9.85,22-22"/>
-      <path class="cls-2" d="m1849,157.53c0-12.15-9.85-22-22-22s-22,9.85-22,22,9.85,22,22,22"/>
-      <line class="cls-1" x1="680.5" y1="157.28" x2="559" y2="242.78"/>
-      <line class="cls-3" x1="677.5" y1="157.53" x2="1805" y2="157.53"/>
+  <g id="Ebene_20" data-name="Ebene 20">
+    <g class="cls-1">
+      <line class="cls-2" x1="0" y1="241.57" x2="1920" y2="241.57"/>
+      <circle class="cls-2" cx="1827" cy="157.57" r="22"/>
+      <line class="cls-2" x1="680.65" y1="157.28" x2="559.15" y2="242.78"/>
+      <line class="cls-2" x1="678" y1="157.57" x2="1805" y2="157.57"/>
     </g>
   </g>
 </svg>

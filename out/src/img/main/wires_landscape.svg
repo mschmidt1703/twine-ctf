@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1951 1103">
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1081">
   <defs>
     <style>
-      .cls-1 {
+      .cls-1, .cls-2 {
         fill: none;
-        filter: url(#drop-shadow-1);
         stroke: #f79e00;
         stroke-miterlimit: 10;
         stroke-width: 10px;
+      }
+
+      .cls-2 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-3 {
+        filter: url(#drop-shadow-2);
       }
     </style>
     <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
@@ -17,8 +24,26 @@
       <feComposite in2="blur" operator="in"/>
       <feComposite in="SourceGraphic"/>
     </filter>
+    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur result="blur-2" stdDeviation="5"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
   </defs>
   <g id="Wires">
-    <path id="Normal" class="cls-1" d="M111.07,937.82l95.57,77.97m357-78l-112,78M8.64,241.78H1928.64m-71-84.25c0-12.15-9.85-22-22-22s-22,9.85-22,22,9.85,22,22,22,22-9.85,22-22Zm-1168.5-.25l-121.5,85.5m118.5-85.25H1813.64M35.11,242.14l76.53,85.65m0-2v755m94-64.89H1315.84m-752.5-78H1690.84m43.8-.11c0-12.15-9.85-22-22-22s-22,9.85-22,22,9.85,22,22,22,22-9.85,22-22Zm-373,78c0-12.15-9.85-22-22-22s-22,9.85-22,22,9.85,22,22,22,22-9.85,22-22Z"/>
+    <g>
+      <path class="cls-2" d="m.23,177.98"/>
+      <g class="cls-3">
+        <path id="Normal" class="cls-1" d="m0,242h1920m-71-84c0-12.15-9.85-22-22-22s-22,9.85-22,22,9.85,22,22,22,22-9.85,22-22Zm-1168.86-.72l-121.5,85.5m118.36-84.78h1128M26.11,242.14l76.53,85.65m.36-1.78v755"/>
+        <line class="cls-1" x1="102.07" y1="806.82" x2="197.64" y2="884.78"/>
+        <line class="cls-1" x1="554.64" y1="806.78" x2="442.64" y2="884.78"/>
+        <line class="cls-1" x1="197" y1="885" x2="1307" y2="885"/>
+        <line class="cls-1" x1="554" y1="807" x2="1682" y2="807"/>
+        <circle class="cls-1" cx="1704" cy="807" r="22"/>
+        <circle class="cls-1" cx="1331" cy="885" r="22"/>
+      </g>
+    </g>
   </g>
 </svg>
