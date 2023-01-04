@@ -8,14 +8,32 @@
 (set: _finished to "CTF finished :>")\
 (set: _names to (dm: 1, "CTF 1 - XSS", 2, "CTF 2 - Forensics", 3, "CTF 3 - Forensics", 4, "CTF 4 - XSS", 5, "CTF 5 - XSS", 6, "CTF 6 - XSS", 7, "CTF 7 - Web Exploitation" , 8, "CTF 8 - Forensics", 9, "CTF 9 - Reverse Engineering", 10, "CTF 10 - Reverse Engineering", 11, "CTF 11 - Cryptography") )\
 (set: _difficulties to (dm: 1, "1", 2, "1", 3, "0", 4, "2", 5, "3", 6, "3", 7, "1", 8, "0", 9, "1", 10, "0", 11, "0") )\
-<div class="active">
-Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challange without having to go through our story mode. </div>
+
+<header>
+  <div class="logo">
+    <img src="src/img/main/header/logo.svg" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li>
+        [[<a>Home</a>->MainPage]]
+      </li>
+      <li class="active">
+        [[<a>CTFs</a>->CTFs]]
+      </li>
+      <li>
+        [[<a>Tutorial</a>->Tutorial]]
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
 
 <!--http://twinery.org/questions/6143/can-i-use-variables-to-call-data-map-attributes-and-if-so-how-->
 
-[[TMP HOME BTN->MainPage]]
-
-
+<div class="test">
 (for: each _i, ...(range:1,11))[
 (print: '<div class="ctfpos ctf' + (text: _i) + '">')
   <div class='rectangle'> 
@@ -44,32 +62,6 @@ Here you can find an overview of all CTF challenges. Feel free to browse through
 </div>
 ]
 
-<!--<div class="ctf2">
-  <div class="rectangle">
-    <div class="box">
-      <img src='src/img/main/previews/preview_default.svg' alt='preview'>
-    </div>
-    <div class="box">
-      <ul>
-        <li>
-         (print: _names's (2))
-        </li>
-        <li>
-          Difficulty level: (print: _difficulties's (2))
-        </li>
-        <li>
-          State: (if: $ctfs contains "ctf2")[(print: _finished)](else:)[(if: (history:) contains "CTF 2")[(print: _started)] (else:)[(print: _notStarted)]]
-        </li>
-      </ul>
-    </div>
-    <div class="box">
-        [[<button class="startButton">Start</a>->CTF 2]]
-    </div>
-  </div>
-</div>
--->
-
-
 (if: $ctfs's length is 0)[\
     no ctf finished 
 ](else:)[\
@@ -78,3 +70,5 @@ Here you can find an overview of all CTF challenges. Feel free to browse through
         _item (unless: $ctfs's last is _item)[, ]\
     ].
 ]
+</div>
+</section>

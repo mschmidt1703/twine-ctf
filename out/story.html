@@ -1507,14 +1507,32 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
 (set: _finished to &quot;CTF finished :&gt;&quot;)\
 (set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Forensics&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
 (set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;0&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;0&quot;, 9, &quot;1&quot;, 10, &quot;0&quot;, 11, &quot;0&quot;) )\
-&lt;div class=&quot;active&quot;&gt;
-Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challange without having to go through our story mode. &lt;/div&gt;
+
+&lt;header&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;img src=&quot;src/img/main/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
+  &lt;/div&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        [[&lt;a&gt;Home&lt;/a&gt;-&gt;MainPage]]
+      &lt;/li&gt;
+      &lt;li class=&quot;active&quot;&gt;
+        [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
+      &lt;/li&gt;
+      &lt;li&gt;
+        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;section&gt;
+Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
 
 &lt;!--http://twinery.org/questions/6143/can-i-use-variables-to-call-data-map-attributes-and-if-so-how--&gt;
 
-[[TMP HOME BTN-&gt;MainPage]]
-
-
+&lt;div class=&quot;test&quot;&gt;
 (for: each _i, ...(range:1,11))[
 (print: &#39;&lt;div class=&quot;ctfpos ctf&#39; + (text: _i) + &#39;&quot;&gt;&#39;)
   &lt;div class=&#39;rectangle&#39;&gt; 
@@ -1543,32 +1561,6 @@ Here you can find an overview of all CTF challenges. Feel free to browse through
 &lt;/div&gt;
 ]
 
-&lt;!--&lt;div class=&quot;ctf2&quot;&gt;
-  &lt;div class=&quot;rectangle&quot;&gt;
-    &lt;div class=&quot;box&quot;&gt;
-      &lt;img src=&#39;src/img/main/previews/preview_default.svg&#39; alt=&#39;preview&#39;&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;box&quot;&gt;
-      &lt;ul&gt;
-        &lt;li&gt;
-         (print: _names&#39;s (2))
-        &lt;/li&gt;
-        &lt;li&gt;
-          Difficulty level: (print: _difficulties&#39;s (2))
-        &lt;/li&gt;
-        &lt;li&gt;
-          State: (if: $ctfs contains &quot;ctf2&quot;)[(print: _finished)](else:)[(if: (history:) contains &quot;CTF 2&quot;)[(print: _started)] (else:)[(print: _notStarted)]]
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;box&quot;&gt;
-        [[&lt;button class=&quot;startButton&quot;&gt;Start&lt;/a&gt;-&gt;CTF 2]]
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
---&gt;
-
-
 (if: $ctfs&#39;s length is 0)[\
     no ctf finished 
 ](else:)[\
@@ -1576,14 +1568,16 @@ Here you can find an overview of all CTF challenges. Feel free to browse through
     (for: each _item, ...$ctfs)[\
         _item (unless: $ctfs&#39;s last is _item)[, ]\
     ].
-]</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+]
+&lt;/div&gt;
+&lt;/section&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
 
 
 (set: $playingStory to false)
-&lt;!-0  dann keine Story, wenn 1 dann Story--&gt;
+&lt;!--0  dann keine Story, wenn 1 dann Story--&gt;
 
 (set: $ctfs to (a:))
 
@@ -1602,13 +1596,7 @@ Here you can find an overview of all CTF challenges. Feel free to browse through
         [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
       &lt;/li&gt;
       &lt;li&gt;
-        [[&lt;a&gt;Achievements&lt;/a&gt;-&gt;Achievements]]
-      &lt;/li&gt;
-      &lt;li&gt;
         [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
-      &lt;/li&gt;
-      &lt;li&gt;
-        [[&lt;a&gt;Settings&lt;/a&gt;-&gt;Settings]]
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -1716,10 +1704,32 @@ Coming soom. Stay tuned!
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;!--
-Introduction to the game:
-- What is this?
---&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/tutorial/styles.css&quot;&gt;
+
+&lt;header&gt;
+  &lt;div class=&quot;logo&quot;&gt;
+    &lt;img src=&quot;src/img/main/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
+  &lt;/div&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        [[&lt;a&gt;Home&lt;/a&gt;-&gt;MainPage]]
+      &lt;/li&gt;
+      &lt;li&gt;
+        [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
+      &lt;/li&gt;
+      &lt;li class=&quot;active&quot;&gt;
+        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;section&gt;
+  &lt;!-- 
+    Introduction to the game:
+    - What is this?
+  --&gt;
 
 Hello there, 
 
@@ -1729,6 +1739,7 @@ To move further in the story, you will need to solve some interesting CTF challe
 Solve the challenges to discover your hidden past and save your future. 
 Are you ready? Then let&#39;s go!
 
+&lt;/section&gt;
 
 &lt;!-- Tutorial - pt. 2 --&gt;
 &lt;!--

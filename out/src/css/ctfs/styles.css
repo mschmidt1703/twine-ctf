@@ -2,8 +2,28 @@
 
 /* -- Twine overrides -- */
 
-tw-expression {
-	
+tw-story {
+  width: 100%;
+  padding: 0;
+  background-image: url("../../img/general/background/header_element.svg"),
+    url("../../img/general/background/background_landscape.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, cover;
+  background-attachment: local, fixed;
+  box-sizing: border-box;
+}
+
+tw-consecutive-br {
+  display: none;
+  visibility: hidden;
+}
+
+tw-sidebar {
+  display: none;
+}
+
+br {
+  display: none;
 }
 
 /* -- General CSS -- */
@@ -15,15 +35,66 @@ tw-expression {
 }
 
 .ctfpos {
-  margin-top: -10%;
+  margin: 1em 2em 1em 2em;
+}
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+header {
+  height: 25vh;
+  display: flex;
+}
+
+header .logo img {
+  height: 4em;
+  margin: 2em;
+}
+
+nav ul {
+  margin-left: 6em;
+  margin-top: 3em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+nav li {
+  padding: 0 4rem 0 1rem;
+}
+
+nav li a {
+  padding: 5rem;
+  font-size: 2rem;
+  color: #9b9b9b;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+nav .active a {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+section {
+  height: 80%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 2em 1em 2em;
 }
 
 .rectangle {
+  margin: 0 auto 0 auto;
   display: flex;
 
   z-index: 0;
   height: 8em;
-  width: 100%;
+  width: 80%;
   border-radius: 45px;
   background: linear-gradient(
     135deg,
@@ -42,32 +113,13 @@ img {
   height: 6em;
 }
 
-ul {
+.rectangle ul {
   margin: 0 auto;
   list-style: none;
-  line-height: 10px;
-  font-size: 1em;
+  font-size: 1.5rem;
   color: #9b9b9b;
   text-shadow: 4px 4px 5px #000000;
 }
-/*
-.startButton {
-  z-index: 1;
-
-  height: 2.5em;
-  width: 8em;
-
-  border-radius: 35px;
-  background-color: #f79e00;
-
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-  font-size: 1em;
-  color: #1e1e1e;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000000;
-}
-*/
 
 button {
   z-index: 1;
@@ -91,7 +143,6 @@ button {
   text-shadow: 4px 4px 5px #000000;
   font-size: 1.6vw;
 }
-
 
 * {
   font-family: "OCR A Extended", sans-serif;

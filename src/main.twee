@@ -20,7 +20,7 @@ Memory Loss: Find Your Way Back
 
 
 (set: $playingStory to false)
-<!-0  dann keine Story, wenn 1 dann Story-->
+<!--0  dann keine Story, wenn 1 dann Story-->
 
 (set: $ctfs to (a:))
 
@@ -42,13 +42,7 @@ Memory Loss: Find Your Way Back
         [[<a>CTFs</a>->CTFs]]
       </li>
       <li>
-        [[<a>Achievements</a>->Achievements]]
-      </li>
-      <li>
         [[<a>Tutorial</a>->Tutorial]]
-      </li>
-      <li>
-        [[<a>Settings</a>->Settings]]
       </li>
     </ul>
   </nav>
@@ -66,6 +60,7 @@ Memory Loss: Find Your Way Back
       </div>
   </div>
 </section>
+
 
 :: setStory {"position":"200,350","size":"100,100"}
 (set: $playingStory to true)
