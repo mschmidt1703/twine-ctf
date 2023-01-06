@@ -119,6 +119,7 @@ section {
 
 .box_text {
   margin: auto;
+  width: 25%;
 }
 
 .box_button {
