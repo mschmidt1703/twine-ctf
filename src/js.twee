@@ -6,6 +6,12 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+	document.getElementById("restartButton").addEventListener("click", eventOnClickHandlerMainRestart);
+
+}
+function eventOnClickHandlerMainRestart(event) {
+	 Harlowe.storage.clear("last_passage");
+	 eventOnClickHandlerMain();
 }
 
 function eventOnClickHandlerMain(event) {
@@ -61,6 +67,20 @@ setup.all = function () {
             b.classList.add("removeUndoReod");
         }
     }
+}
+
+setup.story = function () {
+var mode =  Harlowe.variable("$playingStory")
+	if (mode){
+		var sidebar = document.querySelector("tw-sidebar");
+		var btn = document.createElement('button');
+		btn.onclick = function(){
+			var passage = Harlowe.passage()
+			Harlowe.storage.save("last_passage", passage)
+			Harlowe.goto("MainPage")};
+		btn.id = "home-btn"
+		sidebar.appendChild(btn);
+	}
 }
 
 
