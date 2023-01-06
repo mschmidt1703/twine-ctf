@@ -34,9 +34,6 @@ Maybe taking a closer look at it is not a bad idea.
 </div>
 
 
-<!--[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->7.p]]-->
-
-
 :: CTF2end {"position":"600,1600","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf2/styles_end.css">

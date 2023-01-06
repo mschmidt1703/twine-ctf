@@ -43,6 +43,8 @@ public class ctf9 {
 }
 ")
 
+<!-- TODO: No highlighting in code -->
+<!-- TODO: Button on wrong position -->
 <div>
     (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
     <pre>
@@ -56,18 +58,17 @@ public class ctf9 {
  </div>
 
 <div class="buttons">
-  <div class="btn-pos4">
-    [[<button class="home-btn-background"></button>->MainPage]]
-  </div>
-<div>
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
-  <div class="btn-pos3">
+  <div class="btn-pos4">
     [[<button class="success-btn-background"></button>->CTF9end]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="code-btn-background"></button>->MainPage]]
   </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
@@ -76,10 +77,6 @@ public class ctf9 {
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
   </div>
 </div>
-
-<!--
-[[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
--->
 
 
 :: CTF9end {"position":"600,2200","size":"100,100"}

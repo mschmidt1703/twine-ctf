@@ -399,6 +399,8 @@ function ctf2(terminal)
 </script>
 <terminal> </terminal>
 
+<button class="reload-btn-background"></button>
+
 <div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
@@ -416,8 +418,6 @@ function ctf2(terminal)
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
   </div>
 </div>
-
-<button class="reload-btn-background"></button>
 
 
 :: CTF10end {"position":"1150,500","size":"100,100"}

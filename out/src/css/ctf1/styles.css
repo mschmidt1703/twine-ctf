@@ -78,22 +78,3 @@ br {
 .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
   padding: 0.25rem;
 }
-
-/*
-.btn-pos2 {
-  position: fixed;
-  bottom: 4rem;
-  right: 0%;
-}
-
-.btn-pos3 {
-  position: fixed;
-  bottom: 8rem;
-  right: 0%;
-}
-
-.btn-pos4 {
-  position: fixed;
-  bottom: 12rem;
-  right: 0%;
-}*/
