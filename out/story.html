@@ -116,6 +116,15 @@ tw-story {
   width: 4rem;
   background-size: cover;
   border: none;
+}
+
+#home-btn{
+ background: url(src/img/general/ctf/home.png);
+ height: 4rem;
+ width: 4rem;
+ background-size: cover;
+ border: 0px;
+ filter: grayscale(100%);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
@@ -1644,7 +1653,16 @@ if(success){
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
 (go-to: &quot;Story&quot;)</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
+&lt;script&gt;
+var mode =  Harlowe.variable(&quot;$playingStory&quot;)
+if (mode){
+	var sidebar = document.querySelector(&quot;tw-sidebar&quot;);
+	var btn = document.createElement(&#39;button&#39;);
+	btn.onclick = function(){Harlowe.goto(&quot;MainPage&quot;)};
+	btn.id = &quot;home-btn&quot;
+	sidebar.appendChild(btn);	
+}
+&lt;/script&gt;
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 

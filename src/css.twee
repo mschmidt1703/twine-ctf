@@ -107,3 +107,12 @@ tw-story {
   background-size: cover;
   border: none;
 }
+
+#home-btn{
+ background: url(src/img/general/ctf/home.png);
+ height: 4rem;
+ width: 4rem;
+ background-size: cover;
+ border: 0px;
+ filter: grayscale(100%);
+}

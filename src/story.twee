@@ -1,7 +1,16 @@
 :: Story {"position":"200,400","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+var mode =  Harlowe.variable("$playingStory")
+if (mode){
+	var sidebar = document.querySelector("tw-sidebar");
+	var btn = document.createElement('button');
+	btn.onclick = function(){Harlowe.goto("MainPage")};
+	btn.id = "home-btn"
+	sidebar.appendChild(btn);	
+}
+</script>
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
