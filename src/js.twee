@@ -63,6 +63,17 @@ setup.all = function () {
     }
 }
 
+setup.story = function () {
+var mode =  Harlowe.variable("$playingStory")
+	if (mode){
+		var sidebar = document.querySelector("tw-sidebar");
+		var btn = document.createElement('button');
+		btn.onclick = function(){Harlowe.goto("MainPage")};
+		btn.id = "home-btn"
+		sidebar.appendChild(btn);
+	}
+}
+
 
 
 window.addEventListener("message", function(event) {

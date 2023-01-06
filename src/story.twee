@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <script>
-var mode =  Harlowe.variable("$playingStory")
-if (mode){
-	var sidebar = document.querySelector("tw-sidebar");
-	var btn = document.createElement('button');
-	btn.onclick = function(){Harlowe.goto("MainPage")};
-	btn.id = "home-btn"
-	sidebar.appendChild(btn);	
+setup.story()
+var sidebar = document.querySelector("tw-sidebar");
+var notes = sidebar.childNodes;
+for (let i = 0; i < notes.length; i++) {
+	if (notes[i].getAttribute("title") == "Undo") {
+		notes[i].style = "visibility: hidden;";
+	}
 }
 </script>
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
@@ -21,7 +21,9 @@ Some strangers hear you fussing around. They enter the room where you are lying.
 :: 1.p {"position":"200,600","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
 “I don’t seem to remember anything. Who even am I?”
@@ -43,7 +45,9 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 :: 2.p {"position":"200,800","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 7]]
@@ -52,7 +56,9 @@ After wondering the streets for a while, you spot a big library at the end of th
 :: 3.p {"position":"200,1000","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 <h1>Wait... but how can I log in to my account?</h1>
 
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
@@ -63,7 +69,9 @@ Finding your name is a great start. But you need to learn more about yourself. S
 :: 4.p {"position":"200,1200","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 <h1>Let the search begin!</h1>
 
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. "Maybe the bad guy’s looking for me have restricted the search.”
@@ -75,7 +83,9 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 :: 5.p {"position":"200,1400","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 <h1>I just wanna go home...  </h1>
 
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you're going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
@@ -86,6 +96,9 @@ It has been a long day and this search is taking a toll on you. You just want to
 :: 6.p {"position":"200,1600","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+setup.story()
+</script>
 
 Finally! You opened your account and found some information about yourself. You’re done for the day it's time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It's not a long distance. So, you walk your way back home. 
 
@@ -101,6 +114,9 @@ You end up finding your apartment in the first floor. The door is open! It seems
 :: 7.p {"position":"200,1800","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+setup.story()
+</script>
 
 Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
 
@@ -112,6 +128,9 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 :: 8.p {"position":"200,2000","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+setup.story()
+</script>
 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
@@ -121,6 +140,9 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 :: 9.p {"position":"200,2200","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+setup.story()
+</script>
 
 “I'm sure they have the tools that will help me extract some information out of it.”
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
@@ -132,13 +154,18 @@ After some fiddling around you manage to connect the drive to a new computer. An
 :: 10.p {"position":"200,2400","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+<script>
+setup.story()
+</script>
 Coming soom. Stay tuned!
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
 
 
 :: x.p {"position":"400,600","size":"100,100"}
+<script>
+setup.story()
+</script>
 <link rel="stylesheet" href="src/css/story/styles.css">
 Sorry, these CTFs haven't been implemented in the story yet...
 
