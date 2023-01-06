@@ -68,7 +68,10 @@ var mode =  Harlowe.variable("$playingStory")
 	if (mode){
 		var sidebar = document.querySelector("tw-sidebar");
 		var btn = document.createElement('button');
-		btn.onclick = function(){Harlowe.goto("MainPage")};
+		btn.onclick = function(){
+			var passage = Harlowe.passage()
+			Harlowe.storage.save("last_passage", passage)
+			Harlowe.goto("MainPage")};
 		btn.id = "home-btn"
 		sidebar.appendChild(btn);
 	}

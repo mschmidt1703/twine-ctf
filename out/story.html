@@ -194,7 +194,10 @@ var mode =  Harlowe.variable("$playingStory")
 	if (mode){
 		var sidebar = document.querySelector("tw-sidebar");
 		var btn = document.createElement('button');
-		btn.onclick = function(){Harlowe.goto("MainPage")};
+		btn.onclick = function(){
+			var passage = Harlowe.passage()
+			Harlowe.storage.save("last_passage", passage)
+			Harlowe.goto("MainPage")};
 		btn.id = "home-btn"
 		sidebar.appendChild(btn);
 	}
@@ -1662,7 +1665,13 @@ if(success){
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
-(go-to: &quot;Story&quot;)</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;script&gt;
+var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
+if (nextPage == null){
+	nextPage = &quot;Story&quot;;
+}
+Harlowe.goto(nextPage);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script&gt;
 setup.story()
