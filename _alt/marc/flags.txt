@@ -1,0 +1,11 @@
+puzzelPiece{DhFpMXHyX5}
+puzzelPiece{gx6wQudvZb}
+puzzelPiece{TJeqNhQ5C9}
+<script alert("XSS")/>
+<img src='#' onerror=alert(1) />
+https://twine.ctf/ctf6.html#3' onerror='alert();//
+puzzelPiece{og9XEhgLE2}
+puzzelPiece{b5BLUdop4n}
+puzzelPiece{7tG8eJ58eY}
+puzzelPiece{2NCeUB5mpY}
+puzzelPiece{2NCeUB5mpY}

@@ -1,4 +1,6 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf9/styles.css">
 
@@ -41,7 +43,6 @@ public class ctf9 {
 }
 ")
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <div>
     (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
     <pre>
