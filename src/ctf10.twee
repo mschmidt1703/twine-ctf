@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="src/css/ctf10/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+
 <script>
   setup.all();
 </script>
@@ -25,33 +26,34 @@
 <tw-consecutive-br></tw-consecutive-br>
 
 <script>
-//https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
-BrowserFS.install(window);
+  //https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
+  BrowserFS.install(window);
 
-// Write JavaScript here
-BrowserFS.configure(
-{
+  // Write JavaScript here
+  BrowserFS.configure(
+  {
     fs: "LocalStorage", // from Backends table below,
     options:
     {}
-}, function(e)
-{
+  }, function(e)
+  {
     if (e)
     {
-        // An error occurred.
-        throw e;
+      // An error occurred.
+      throw e;
     }
+
     // Otherwise, you can interact with the configured backends via our Node FS polyfill!
     var fs = BrowserFS.BFSRequire('fs');
     fs.readdir('/', function(e, contents)
     {
-        // etc
+      // etc
 
-        fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
+      fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {});
 
-        var current_dir = "/";
+      var current_dir = "/";
 
-        function getCurrentDir()
+      function getCurrentDir()
         {
             if (!String(current_dir).endsWith('/'))
             {
@@ -59,8 +61,6 @@ BrowserFS.configure(
             }
             return current_dir.toString();
         }
-
-
 
         function setDirDown()
         {
@@ -80,8 +80,6 @@ BrowserFS.configure(
                 terminal.echo("current_dir: " + getCurrentDir());
             }
         }
-
-
 
         terminal = $('terminal').terminal((command) =>
         {
@@ -232,7 +230,6 @@ BrowserFS.configure(
     });
 });
 
-
 function ctf2(terminal)
 {
       const Action = {
@@ -368,9 +365,7 @@ function ctf2(terminal)
 
     terminal.read('', readSwitch, function(err) {})
     next = Action.sellOrBuy;
-  
 
-      
     function sellOrBuy(i)
     {
         switch (i)
@@ -404,7 +399,7 @@ function ctf2(terminal)
 <div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -426,26 +421,35 @@ function ctf2(terminal)
 
 Please enter the flag here: 
 (set: $success to false)
+
 <div class="container">
-<div>(input-box: bind $flag, "XXX=", 5)[]</div>
-<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
-[<script>
-var input = $flag
-var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-$success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
-var success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
-if(success){
-	document.getElementById("checkflag_btn").style.display = "none";
-}
-</script>
-(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf10")[(set: $ctfs to it + (a: "ctf10"))]  ] \
-(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
-(if: $success is true)[\
-	(if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+    [
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+    
+        $success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
+        var success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
+    
+        if(success){
+          document.getElementById("checkflag_btn").style.display = "none";
+        }
+      </script>
+
+      (if: $success is true)[
+        (alert: "Correct Flag!")
+      (unless: $ctfs contains "ctf10")[(set: $ctfs to it + (a: "ctf10"))]]\
+      (unless: $success is true)[
+        (alert: "Incorrect Flag, please try again!")]\
+
+      (if: $success is true)[\
+        (if: $playingStory is true)[
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]\
         (else:)[
-        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
-]\
-]
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+      ]\
+    ]
+  </div>
 </div>
-</container>

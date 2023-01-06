@@ -3,40 +3,44 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-<!-- TODO: TmpVar is not allowed -->
 (set: $ctf6_code to "
 	function showTab(input) {
-	var picID;
-	if (input.length == 1) {
-		picID = input;
-	} else {
-		picID = input.substring(1, 0);
-	}
-	
- 	var html = \"Image \" + picID + \"<br>\";
-	html += \"< img src='../../img/ctf6/\" + input + \".jpg' />\";
-	html += \"< /br>\"
-	document.getElementById(picID).innerHTML = html;  
-	console.log(html)
+    var picID;
 
-	window.localStorage.setItem('picID', input);
+    if (input.length == 1) {
+		  picID = input;
+	  } else {
+		  picID = input.substring(1, 0);
+	  }
 	
-	var i;
-	var x = document.getElementsByClassName(\"animals\");
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = \"none\";  
-	}
-	document.getElementById(picID).style.display = \"block\";
+    var html = \"Image \" + picID + \"<br>\";
+    html += \"< img src='../../img/ctf6/\" + input + \".jpg' />\";
+    html += \"< /br>\"
+    document.getElementById(picID).innerHTML = html;  
+    console.log(html)
 
-	/*Ignore jsut for the Challenge*/	
-	parent.postMessage(\"ctf6_url_\" + input, \"*\");
-	return
-}")
+	  window.localStorage.setItem('picID', input);
+	
+    var i;
+    var x = document.getElementsByClassName(\"animals\");
+
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = \"none\";  
+    }
+
+	  document.getElementById(picID).style.display = \"block\";
+
+	  /* Ignore if its just for the Challenge */	
+	  parent.postMessage(\"ctf6_url_\" + input, \"*\");
+	  return
+  }
+")
 
 (set: _info to "Try to insert some JavaScript ino this website. This time there is no input
 
 Note: If you have injected XSS successfully, you will be redirected automatically.
 ")
+
 (if: $ctfs contains "ctf6")[]
 (else:)[(alert: _info)]
 
@@ -52,9 +56,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <div class="webbrowser">
   <div id="tab">
     <div class="controls">
-	  <span class="url label">URL:</span>
-	  <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
-	  <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
     </div>
     <iframe scrolling="yes" src="src/static/ctf6/u.html" title="Google"></iframe>
   </div>
@@ -68,22 +72,22 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
   <div class="btn-pos4">
     (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
-    <pre>
-	  <code id=\"code\" class=\"language-javascript\"></code>
-    </pre>
+      <pre>
+      <code id=\"code\" class=\"language-javascript\"></code>
+      </pre>
 
-    <script>
-      setup.ctf6_showCode();
-      hljs.highlightAll();
-    </script>")]
+      <script>
+        setup.ctf6_showCode();
+        hljs.highlightAll();
+      </script>")]
   </div>
-      <div class="btn-pos3">
+  <div class="btn-pos3">
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
@@ -106,7 +110,6 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 Congratulations you made it!
 
 (if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
-     (else:)[
-     [[Back to CTF-Overview->CTFs]]]
-
+  [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+(else:)[
+  [[Back to CTF-Overview->CTFs]]]

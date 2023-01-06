@@ -1,6 +1,7 @@
 :: CTF 7 {"position":"400,800","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf7/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.all();
 </script>
@@ -28,7 +29,7 @@ A search on the surface level is not enough. Further inspection is needed.
 <div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -45,23 +46,23 @@ A search on the surface level is not enough. Further inspection is needed.
 
 
 :: First Shelf {"position":"800,800","size":"100,100"}
-Nothing really usefull here
+Nothing really useful here
 
 
 :: Second Shelf {"position":"925,800","size":"100,100"}
-No usefull information here..
+No useful information here...
 
 
 :: Third Shelf {"position":"1050,800","size":"100,100"}
-Nothing here either..
+Nothing here either...
 
 
 :: Fourth Shelf {"position":"1175,800","size":"100,100"}
-This search has lead me nowhere sofar..
+This search has lead me nowhere so far..
 
 
 :: Fifth Shelf {"position":"1300,800","size":"100,100"}
-yup.. I did all of that for nothing :(
+Yup... I did all of that for nothing :(
 
 
 :: CTF7end {"position":"600,800","size":"100,100"}
@@ -71,26 +72,34 @@ yup.. I did all of that for nothing :(
 Please enter the flag here: 
 (set: $success to false)
 <div class="container">
-<div>(input-box: bind $flag, "XXX=", 5)[]</div>
-<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
-[<script>
-var input = $flag
-var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-$success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
-var success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
-if(success){
-	document.getElementById("checkflag_btn").style.display = "none";
-}
-</script>
-(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf7")[(set: $ctfs to it + (a: "ctf7"))]  ] \
-(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
-(if: $success is true)[\
-	(if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->3.p]]]\
-        (else:)[
-        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
-]\
-]
-</div>
-</container>
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+    [
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
+        $success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
+        var success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
+        
+        if(success){
+          document.getElementById("checkflag_btn").style.display = "none";
+        }
+      </script>
+    
+      (if: $success is true)[  
+        (alert: "Correct Flag!")  
+      (unless: $ctfs contains "ctf7")[
+        (set: $ctfs to it + (a: "ctf7"))]]\
+      (unless: $success is true)[
+        (alert: "Incorrect Flag, please try again!")]\
+
+      (if: $success is true)[\
+        (if: $playingStory is true)[
+          [[<button class="resumeButton">Resume Story</a>->3.p]]]\
+        (else:)[
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+      ]\
+    ]
+  </div>
+</div>

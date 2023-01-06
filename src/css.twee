@@ -6,11 +6,11 @@ tw-icon {
   color: #ad00d8;
 }
 
-
-/* TODO NUR Bei nicht StoryMode  playingStory == false
+/* TODO: NUR Bei nicht StoryMode  playingStory == false
 tw-sidebar {
   display: none;
 }
+
 tw-icon.undo {
   display: none;
 }

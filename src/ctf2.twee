@@ -1,6 +1,7 @@
 :: CTF 2 {"position":"400,1600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf2/styles.css">
+
 <script>
   setup.all();
 </script>
@@ -18,7 +19,7 @@ Maybe taking a closer look at it is not a bad idea.
 <div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -40,26 +41,36 @@ Maybe taking a closer look at it is not a bad idea.
 
 Please enter the flag here: 
 (set: $success to false)
+
 <div class="container">
-<div>(input-box: bind $flag, "XXX=", 5)[]</div>
-<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
-[<script>
-var input = $flag
-var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-$success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
-var success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
-if(success){
-	document.getElementById("checkflag_btn").style.display = "none";
-}
-</script>
-(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf2")[(set: $ctfs to it + (a: "ctf2"))]  ] \
-(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
-(if: $success is true)[\
-	(if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->7.p]]]\
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+    [
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+
+        $success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
+        var success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
+        
+        if(success){
+          document.getElementById("checkflag_btn").style.display = "none";
+        }
+      </script>
+
+      (if: $success is true)[  
+        (alert: "Correct Flag!")  
+      (unless: $ctfs contains "ctf2")[
+        (set: $ctfs to it + (a: "ctf2"))]]\
+      (unless: $success is true)[
+        (alert: "Incorrect Flag, please try again!")]\
+      
+      (if: $success is true)[\
+        (if: $playingStory is true)[
+          [[<button class="resumeButton">Resume Story</a>->7.p]]]\
         (else:)[
-        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
-]\
-]
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+      ]\
+    ]
+  </div>
 </div>
-</container>
