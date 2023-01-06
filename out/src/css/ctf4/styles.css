@@ -25,7 +25,7 @@ tw-story tw-consecutive-br {
 /* -- General CSS -- */
 
 html {
-  overflow-y: hidden !important; /*Disabe sroll*/
+  overflow-y: hidden !important; /* Disable scroll */
 }
 
 br {
@@ -62,7 +62,7 @@ br {
   padding: 2px 3px;
   border: 1px solid #999;
   border-bottom: none;
-  display: -webkit-flex;
+  display: flex;
   margin-top: 47px;
   padding: 2px;
 }

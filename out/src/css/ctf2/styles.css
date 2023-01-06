@@ -1,3 +1,5 @@
+/* -- General CSS -- */
+
 br {
   display: none;
 }
@@ -17,5 +19,5 @@ br {
 .scrollbar{
 	height: 24rem;
 	width:60rem;
-   overflow: auto;
+  overflow: auto;
 }

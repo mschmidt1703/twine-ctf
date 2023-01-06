@@ -7,11 +7,6 @@ tw-story {
   background-repeat: no-repeat;
 }
 
-/* TODO: What should this do? Can't see a difference...delete it? */
-#ui-bar {
-  display: none;
-}
-
 tw-sidebar {
   left: -15em;
   width: 15em;
@@ -29,8 +24,6 @@ html {
 }
 
 br {
-  max-height: 0; /* TODO: Is this necessary? */
-  visibility: hidden;
   display: none;
 }
 
