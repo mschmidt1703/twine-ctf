@@ -20,7 +20,7 @@ Memory Loss: Find Your Way Back
 
 
 (set: $playingStory to false)
-<!-0  dann keine Story, wenn 1 dann Story-->
+<!--0  dann keine Story, wenn 1 dann Story-->
 
 (set: $ctfs to (a:))
 
@@ -31,7 +31,7 @@ Memory Loss: Find Your Way Back
 
 <header>
   <div class="logo">
-    <img src="src/img/main/header/logo.svg" alt="logo">
+    <img src="src/img/header/logo.svg" alt="logo">
   </div>
   <nav>
     <ul>
@@ -42,34 +42,36 @@ Memory Loss: Find Your Way Back
         [[<a>CTFs</a>->CTFs]]
       </li>
       <li>
-        [[<a>Achievements</a>->Achievements]]
-      </li>
-      <li>
         [[<a>Tutorial</a>->Tutorial]]
-      </li>
-      <li>
-        [[<a>Settings</a>->Settings]]
       </li>
     </ul>
   </nav>
 </header>
 
+<script>
+  setup.main();
+</script>
+
 <section>
-  <div class="usb-stick">
+  <div class="usb-stick" id="demo">
     <img src="src/img/main/usb_stick.svg" alt="usb-stick">
   </div>
   <div class="preview">
     <div class="preview_bg">
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
-        [[<button class="startButton">Start</a>->Story]]
+        <button id="startButton" class="startButton">Start</a>
       </div>
   </div>
 </section>
+
+
+:: setStory {"position":"200,350","size":"100,100"}
+(set: $playingStory to true)
+(go-to: "Story")
 
 
 :: Achievements {"position":"300,0","size":"100,100"}
 
 
 :: Settings {"position":"500,0","size":"100,100"}
-

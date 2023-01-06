@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="src/css/ctf4/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
+<script>
+  setup.all();
+</script>
+
+
 (set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
 
 Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
@@ -14,14 +19,13 @@ It is not necessary to look into the the code.
 Note: If you have injected XSS successfully, you will be redirected automatically.
 ")
 
+
 <!--(if: $onTimeShow is false)
 (if: $onTimeShow is true)[ (alert: _info)]
 (if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
 
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
-
-(link-repeat: "What should I do?")[(alert: _info)]
 
 <tw-consecutive-br></tw-consecutive-br>
 
@@ -39,9 +43,16 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-[[MainPage->CTFs]]
-
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+    <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
+  </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
   </div>
@@ -55,6 +66,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
 <link rel="stylesheet" href="src/css/ctf4/styles_end.css">
 
-You made it!
+Congratulations you made it!
 
-[[MainPage->MainPage]]
+(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+     (else:)[
+     [[Back to CTF-Overview->CTFs]]]

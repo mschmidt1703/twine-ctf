@@ -1,67 +1,114 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf9/styles.css">
+
+<script>
+  setup.all();
+</script>
 
 <h1>A random file in your home directory</h1>
 
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
+(set: $ctf9_code to "
+public class ctf9 {
+    static char [] theSecret;
+    public static void encryptSecret(){
+        theSecret = new char [14];
+        theSecret [3] = 'n';
+        theSecret [4] = 'o';
+        theSecret [0] = 'B';
+        theSecret [7] = 'l';
+        theSecret [2] = 'u';
+        theSecret [8] = 'l';
+        theSecret [10] = 'd';
+        theSecret [12] = 'e';
+        theSecret [13] = 'r';
+        theSecret [11] = 'H';
+        theSecret [1] = 'r';
+        theSecret [9] = 'e';
+        theSecret [5] = 'K';
+        theSecret [6] = 'i';
+    }
+
+    public static String conclusion(){
+    String conc = \"This case is unsolvable. Give up!\";
+        return  conc;
+   }
+
+    public static void main(String[] args) {
+     System.out.println(conclusion());
+    }
+}
+")
 
 <div>
-   <pre>
-    <code>
-	  public class ctf9 &#123;<br>
-		static char [] theSecret;<br>
-				public static void encryptSecret()&#123;<br>
-					theSecret = new char [14]; <br>
-					theSecret [3] = 'n'; <br>
-					theSecret [4] = 'o'; <br>
-					theSecret [0] = 'B'; <br>
-					theSecret [7] = 'l'; <br>
-					theSecret [2] = 'u'; <br>
-					theSecret [8] = 'l'; <br>
-					theSecret [10] = 'd'; <br>
-					theSecret [12] = 'e'; <br>
-					theSecret [13] = 'r'; <br>
-					theSecret [11] = 'H'; <br>
-					theSecret [1] = 'r'; <br>
-					theSecret [9] = 'e'; <br>
-					theSecret [5] = 'K'; <br>
-					theSecret [6] = 'i'; <br>
-				}<br>
-				public static String conclusion()&#123;<br>
-					String conc = "This case is unsolvable. Give up!";<br>
-					return  conc;<br>
-				}<br>
-				public static void main(String[] args) &#123;<br>
-				System.out.println(conclusion());<br>
-				}<br>
-	  }
-	</code>
-  </pre>
-</div>
+    (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
+    <pre>
+	  <code id=\"code\" class=\"language-java scrollbar\"></code>
+    </pre>
+
+    <script>
+      setup.ctf9_showCode();
+      hljs.highlightAll();
+    </script>")]
+ </div>
 
 <div>
+  <div class="btn-pos4">
+    [[<button class="home-btn-background"></button>->MainPage]]
+  </div>
+<div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF9end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
   </div>
 </div>
 
-
+<!--
 [[<button id="resume-btn" class="button is-danger is-rounded">Resume Story->10.p]]
+-->
 
 
 :: CTF9end {"position":"600,2200","size":"100,100"}
-(unless: $ctfs contains "ctf9")[(set: $ctfs to it + (a: "ctf9"))]
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf9/styles_end.css">
 
-[[MainPage->CTFs]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+$success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
+var success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf9")[(set: $ctfs to it + (a: "ctf9"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->10.p]]]\
+        (else:)[
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>
 
-or 
-
-[[<button class="resumeButton">Resume Story</a>->10.p]]

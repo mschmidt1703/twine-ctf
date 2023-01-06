@@ -6,10 +6,11 @@ tw-icon {
   color: #ad00d8;
 }
 
+
 /* TODO NUR Bei nicht StoryMode  playingStory == false
 tw-sidebar
 {
-	display: none;
+display: none;
 }
 tw-icon.undo {
 display: none;
@@ -17,7 +18,6 @@ display: none;
 tw-icon.redo {
 display: none;
 }*/
-
 
 
 tw-link {
@@ -60,12 +60,18 @@ tw-story {
   --grey3: #141414;
 }
 
+
+.removeUndoReod {
+	display:none;
+  	visibility: hidden;
+}
+
 .color_purple {
   background-color: var(--purple) !important;
 }
 
 .hint-btn-background {
-  background: url(src/img/4all/hint.png);
+  background: url(src/img/general/ctf/hint.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -73,7 +79,7 @@ tw-story {
 }
 
 .success-btn-background {
-  background: url(src/img/4all/success.png);
+  background: url(src/img/general/ctf/success.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -81,9 +87,32 @@ tw-story {
 }
 
 .code-btn-background {
-  background: url(src/img/4all/code.png);
+  background: url(src/img/general/ctf/code.png);
   height: 4rem;
   width: 4rem;
   background-size: cover;
   border: none;
+}
+.home-btn-background {
+  background: url(src/img/general/ctf/home.png);
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+.help-btn-background {
+  background: url(src/img/general/ctf/help.png);
+  height: 4rem;
+  width: 4rem;
+  background-size: cover;
+  border: none;
+}
+
+#home-btn{
+ background: url(src/img/general/ctf/home.png);
+ height: 4rem;
+ width: 4rem;
+ background-size: cover;
+ border: 0px;
+ filter: grayscale(100%);
 }

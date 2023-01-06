@@ -1,6 +1,9 @@
 :: CTF 11 {"position":"1300,300","size":"100,100"}
-(set: _whatToDo to "Seems like some kind of encrypted text")
 <link rel="stylesheet" href="src/css/ctf11/styles.css">
+<script>
+  setup.all();
+</script>
+(set: _whatToDo to "Seems like some kind of encrypted text")
 
 [(alert: _whatToDo)]
 
@@ -11,6 +14,12 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 key: NoIdea
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF11end]]
   </div>
@@ -24,11 +33,31 @@ key: NoIdea
 
 
 :: CTF11end {"position":"1300,500","size":"100,100"}
-(unless: $ctfs contains "ctf11")[(set: $ctfs to it + (a: "ctf11"))]
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf11/styles_end.css">
 
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+$success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf11")[(set: $ctfs to it + (a: "ctf11"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+        (else:)[
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>

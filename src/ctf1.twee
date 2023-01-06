@@ -4,7 +4,9 @@
 
 <script>
   setup.ctf1();
+  setup.all();
 </script>
+
 (set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else.")
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]
@@ -16,7 +18,7 @@
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="container login-contianer">
-  <form method="POST" class="box twine-background-login">
+  <form method="GET" action="javascript:void(0);" class="box twine-background-login">
     <div class="field">
       <label class="label">Username</label>
       <div class="control">
@@ -29,13 +31,17 @@
         <input class="input" id="password" type="password" placeholder="some password">
       </div>
     </div>
-    <button id="ssss" class="button is-primary">Sign in</button>
+    <button id="login-btn" class="button is-primary">Sign in</button>
   </form>
 </div>
 
-[[MainPage->CTFs]]
-
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF1end]]
   </div>
@@ -49,18 +55,31 @@
 
 
 :: CTF1end {"position":"600,1000","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf1/styles_end.css">
 
-Please put here the flag: 
-
-(input-box: bind $flag, "XX==", 5)[]
-
-(link-repeat: "<button>Check Flag</button>")[(alert: "Incorret flag")]
-<!--if correct (set: $ctfs to it + (a: "ctf1")) -->
-
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->4.p]]
-
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+$success = "pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==" == hashed
+var success = "pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf1")[(set: $ctfs to it + (a: "ctf1"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->4.p]]]\
+        (else:)[
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>

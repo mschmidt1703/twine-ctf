@@ -1,0 +1,77 @@
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+/* -- Twine overrides -- */
+
+tw-story {
+  width: 100%;
+  padding: 0;
+  background-image: url("../../img/header/header_element.svg"),
+    url("../../img/general/background/background_landscape.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, cover;
+  background-attachment: local, fixed;
+  box-sizing: border-box;
+}
+
+tw-consecutive-br {
+  display: none;
+  visibility: hidden;
+}
+
+tw-sidebar {
+  display: none;
+}
+
+br {
+  display: none;
+}
+
+/* -- General CSS -- */
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+header {
+  height: 25vh;
+  display: flex;
+}
+
+header .logo img {
+  height: 4em;
+  margin: 2em;
+  filter: drop-shadow(7px 7px 5px #000000);
+}
+
+nav ul {
+  margin-left: 6em;
+  margin-top: 3em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+nav li {
+  padding: 0 4rem 0 1rem;
+}
+
+nav li a {
+  padding: 5rem;
+  font-size: 2rem;
+  color: #9b9b9b;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+nav .active a {
+  color: #f79e00;
+  text-decoration: none;
+  text-shadow: 4px 4px 5px #000000;
+}
+
+section {
+  height: 60%;
+  margin: 0 2em 0 2em;
+}

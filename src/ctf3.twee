@@ -1,6 +1,9 @@
 :: CTF 3 {"position":"700,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf3/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+  setup.all();
+</script>
 
 (set: _whatToDo to "You should be taking a closer look at things...")
 
@@ -16,6 +19,12 @@
 <!--flag{12_234_ghuzt5r}-->
 
 <div>
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF3end]]
   </div>
@@ -29,11 +38,31 @@
 
 
 :: CTF3end {"position":"725,500","size":"100,100"}
-(unless: $ctfs contains "ctf3")[(set: $ctfs to it + (a: "ctf3"))]
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 <link rel="stylesheet" href="src/css/ctf3/styles_end.css">
 
-[[MainPage->CTFs]]
-
-or 
-
-[[<button class="resumeButton">Resume Story</a>->x.p]]
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+<div>(input-box: bind $flag, "XXX=", 5)[]</div>
+<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+[<script>
+var input = $flag
+var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+$success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+var success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
+</script>
+(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf3")[(set: $ctfs to it + (a: "ctf3"))]  ] \
+(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
+(if: $success is true)[\
+	(if: $playingStory is true)[
+    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+        (else:)[
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+]\
+]
+</div>
+</container>
