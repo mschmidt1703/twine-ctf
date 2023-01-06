@@ -137,13 +137,14 @@ tw-story {
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
+
 /* # Mainpage */
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
 	document.getElementById("restartButton").addEventListener("click", eventOnClickHandlerMainRestart);
-
 }
+
 function eventOnClickHandlerMainRestart(event) {
 	 Harlowe.storage.clear("last_passage");
 	 eventOnClickHandlerMain();
@@ -152,14 +153,13 @@ function eventOnClickHandlerMainRestart(event) {
 function eventOnClickHandlerMain(event) {
   // Access DOM element object
   const rotated = document.getElementById("demo");
+
   // Rotate element by 90 degrees clockwise
-  //rotated.style.transform = 'rotate(90deg)';
   rotated.style.WebkitTransitionDuration='1s';
   rotated.style.webkitTransform = 'translate(250px, -100px) rotate(90deg)';
 
   /* Redirect to Story */
-  setTimeout(()=> {
-
+  setTimeout(() => {
     Harlowe.goto("setStory");
   }, 1500);
 }
@@ -179,11 +179,12 @@ function eventOnClickHandler(event) {
   
   if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
     alert("Incorrect Username or Password");
-	return
+	  return
   } else {
   	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
-	/* Redirect to Story or Ctf Overview */
-	Harlowe.goto("CTF1end");
+
+	  /* Redirect to Story or Ctf Overview */
+	  Harlowe.goto("CTF1end");
     return
   }
 }
@@ -196,12 +197,13 @@ function eventOnClickHandler(event) {
 //disable back btn if playing in ctf mode
 setup.all = function () {
 	var mode =  Harlowe.variable("$playingStory")
-    if (!mode){
-    	 var btns = document.querySelectorAll('tw-icon'); 
-        for (let b of btns) {
-            b.classList.add("removeUndoReod");
-        }
+
+  if (!mode){
+    var btns = document.querySelectorAll('tw-icon'); 
+    for (let b of btns) {
+      b.classList.add("removeUndoReod");
     }
+  }
 }
 
 setup.story = function () {
@@ -212,13 +214,13 @@ var mode =  Harlowe.variable("$playingStory")
 		btn.onclick = function(){
 			var passage = Harlowe.passage()
 			Harlowe.storage.save("last_passage", passage)
-			Harlowe.goto("MainPage")};
+			Harlowe.goto("MainPage")
+    };
+
 		btn.id = "home-btn"
 		sidebar.appendChild(btn);
 	}
 }
-
-
 
 window.addEventListener("message", function(event) {
   if (event.data == "js_inserted_ctf4") {
@@ -266,6 +268,7 @@ setup.ctf4_updateFrame = function (frameNum, url) {
     urlbar.value = "https://twine.ctf/ctf4.html";
     var frame = document.querySelector('iframe');
     frame.src = "src/static/ctf4/s.html";
+
    	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
     return
   } else {
@@ -306,6 +309,7 @@ setup.ctf5_updateFrame = function (frameNum, url) {
     urlbar.value = "https://twine.ctf/ctf5.html";
     var frame = document.querySelector('iframe');
     frame.src = "src/static/ctf5/s.html";
+
    	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
     return
   } else {
@@ -1751,37 +1755,45 @@ Please enter the flag here:
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
-		&lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
+		    &lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
 &lt;script&gt;
-var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
-if (nextPage == null){
-	nextPage = &quot;Story&quot;;
-}
-Harlowe.goto(nextPage);
+  var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
+
+  if (nextPage == null){
+    nextPage = &quot;Story&quot;;
+  }
+  
+  Harlowe.goto(nextPage);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
-var sidebar = document.querySelector(&quot;tw-sidebar&quot;);
-var notes = sidebar.childNodes;
-for (let i = 0; i &lt; notes.length; i++) {
+  setup.story()
+
+  var sidebar = document.querySelector(&quot;tw-sidebar&quot;);
+  var notes = sidebar.childNodes;
+
+  for (let i = 0; i &lt; notes.length; i++) {
 	if (notes[i].getAttribute(&quot;title&quot;) == &quot;Undo&quot;) {
-		notes[i].style = &quot;visibility: hidden;&quot;;
+	  notes[i].style = &quot;visibility: hidden;&quot;;
 	}
-}
+  }
 &lt;/script&gt;
+
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
+
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
 “I don’t seem to remember anything. Who even am I?”
@@ -1791,25 +1803,31 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;2.p]]</tw-passagedata><tw-passagedata pid="36" name="2.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
+
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 7]]</tw-passagedata><tw-passagedata pid="37" name="3.p" tags="" position="200,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
+
 &lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
 
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
+
 &lt;h1&gt;Let the search begin!&lt;/h1&gt;
 
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
@@ -1817,17 +1835,20 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange-&gt;CTF 4]]</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
+
 &lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
 
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
 
 Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
@@ -1840,8 +1861,9 @@ You end up finding your apartment in the first floor. The door is open! It seems
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
 
 Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
@@ -1850,16 +1872,18 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
-setup.story()
+  setup.story()
 &lt;/script&gt;
 
 “I&#39;m sure they have the tools that will help me extract some information out of it.”
@@ -1868,15 +1892,19 @@ After some fiddling around you manage to connect the drive to a new computer. An
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challange -&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;script&gt;
-setup.story()
-&lt;/script&gt;
-Coming soom. Stay tuned!
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
-setup.story()
+&lt;script&gt;
+  setup.story()
 &lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+
+Coming soon. Stay tuned!
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
 Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/tutorial/styles.css&quot;&gt;

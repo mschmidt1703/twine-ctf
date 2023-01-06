@@ -61,7 +61,7 @@ Memory Loss: Find Your Way Back
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
         <button id="startButton" class="startButton">Start</a>
-		<button id="restartButton" class="restartButton">Restart</a>
+		    <button id="restartButton" class="restartButton">Restart</a>
       </div>
   </div>
 </section>
@@ -70,12 +70,15 @@ Memory Loss: Find Your Way Back
 :: setStory {"position":"200,350","size":"100,100"}
 (set: $playingStory to true)
 <script>
-var nextPage = Harlowe.storage.load('last_passage');
-if (nextPage == null){
-	nextPage = "Story";
-}
-Harlowe.goto(nextPage);
+  var nextPage = Harlowe.storage.load('last_passage');
+
+  if (nextPage == null){
+    nextPage = "Story";
+  }
+  
+  Harlowe.goto(nextPage);
 </script>
+
 
 :: Achievements {"position":"300,0","size":"100,100"}
 
