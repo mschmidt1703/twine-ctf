@@ -399,7 +399,7 @@ function ctf2(terminal)
 </script>
 <terminal> </terminal>
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]
@@ -417,7 +417,7 @@ function ctf2(terminal)
   </div>
 </div>
 
-<button class="addMore" >reload</button>
+<button class="reload-btn-background"></button>
 
 
 :: CTF10end {"position":"1150,500","size":"100,100"}

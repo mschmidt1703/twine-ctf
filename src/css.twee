@@ -8,15 +8,15 @@ tw-icon {
 
 
 /* TODO NUR Bei nicht StoryMode  playingStory == false
-tw-sidebar
-{
-display: none;
+tw-sidebar {
+  display: none;
 }
 tw-icon.undo {
-display: none;
+  display: none;
 }
+
 tw-icon.redo {
-display: none;
+  display: none;
 }*/
 
 
@@ -60,7 +60,6 @@ tw-story {
   --grey3: #141414;
 }
 
-
 .removeUndoReod {
 	display:none;
   	visibility: hidden;
@@ -72,47 +71,57 @@ tw-story {
 
 .hint-btn-background {
   background: url(src/img/general/ctf/hint.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 .success-btn-background {
   background: url(src/img/general/ctf/success.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 .code-btn-background {
   background: url(src/img/general/ctf/code.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
+
 .home-btn-background {
   background: url(src/img/general/ctf/home.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
+
 .help-btn-background {
   background: url(src/img/general/ctf/help.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.reload-btn-background {
+  background: url(src/img/general/ctf/reload.svg);
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 #home-btn{
- background: url(src/img/general/ctf/home.svg);
- height: 4rem;
- width: 4rem;
- background-size: cover;
- border: 0px;
- filter: grayscale(100%);
+  background: url(src/img/general/ctf/home.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: 0px;
+  filter: grayscale(100%);
 }

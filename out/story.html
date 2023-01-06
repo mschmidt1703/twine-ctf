@@ -18,15 +18,15 @@ tw-icon {
 
 
 /* TODO NUR Bei nicht StoryMode  playingStory == false
-tw-sidebar
-{
-display: none;
+tw-sidebar {
+  display: none;
 }
 tw-icon.undo {
-display: none;
+  display: none;
 }
+
 tw-icon.redo {
-display: none;
+  display: none;
 }*/
 
 
@@ -70,7 +70,6 @@ tw-story {
   --grey3: #141414;
 }
 
-
 .removeUndoReod {
 	display:none;
   	visibility: hidden;
@@ -82,49 +81,59 @@ tw-story {
 
 .hint-btn-background {
   background: url(src/img/general/ctf/hint.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 .success-btn-background {
   background: url(src/img/general/ctf/success.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 .code-btn-background {
   background: url(src/img/general/ctf/code.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
+
 .home-btn-background {
   background: url(src/img/general/ctf/home.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
+
 .help-btn-background {
   background: url(src/img/general/ctf/help.svg);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.reload-btn-background {
+  background: url(src/img/general/ctf/reload.svg);
+  height: 3rem;
+  width: 3rem;
   background-size: cover;
   border: none;
 }
 
 #home-btn{
- background: url(src/img/general/ctf/home.svg);
- height: 4rem;
- width: 4rem;
- background-size: cover;
- border: 0px;
- filter: grayscale(100%);
+  background: url(src/img/general/ctf/home.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: 0px;
+  filter: grayscale(100%);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
@@ -837,7 +846,7 @@ function ctf2(terminal)
 &lt;/script&gt;
 &lt;terminal&gt; &lt;/terminal&gt;
 
-&lt;div&gt;
+&lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
   	(if: $playingStory is true)[
      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
@@ -855,7 +864,7 @@ function ctf2(terminal)
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;button class=&quot;addMore&quot; &gt;reload&lt;/button&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;button class=&quot;reload-btn-background&quot;&gt;&lt;/button&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles_end.css&quot;&gt;
 
 Please enter the flag here: 
