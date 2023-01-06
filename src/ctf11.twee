@@ -45,6 +45,10 @@ Please enter the flag here:
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 $success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf11")[(set: $ctfs to it + (a: "ctf11"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
@@ -52,7 +56,7 @@ $success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGE
 	(if: $playingStory is true)[
     [[<button class="resumeButton">Resume Story</a>->x.p]]]\
         (else:)[
-        [[Back to CTF-Overview->CTFs]]]\
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
 ]\
 ]
 </div>

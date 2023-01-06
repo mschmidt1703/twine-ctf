@@ -45,11 +45,15 @@ Please enter the flag here:
 (set: $success to false)
 <div class="container">
 <div>(input-box: bind $flag, "XXX=", 5)[]</div>
-<div>(link-repeat: "<button class='color_purple checkFlagButton'>Check Flag</button>")
+<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
 [<script>
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 $success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+var success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+if(success){
+	document.getElementById("checkflag_btn").style.display = "none";
+}
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf3")[(set: $ctfs to it + (a: "ctf3"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
@@ -57,7 +61,7 @@ $success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6I
 	(if: $playingStory is true)[
     [[<button class="resumeButton">Resume Story</a>->x.p]]]\
         (else:)[
-        [[Back to CTF-Overview->CTFs]]]\
+        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
 ]\
 ]
 </div>
