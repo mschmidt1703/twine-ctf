@@ -81,7 +81,7 @@ tw-story {
 }
 
 .hint-btn-background {
-  background: url(src/img/general/ctf/hint.png);
+  background: url(src/img/general/ctf/hint.svg);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -89,7 +89,7 @@ tw-story {
 }
 
 .success-btn-background {
-  background: url(src/img/general/ctf/success.png);
+  background: url(src/img/general/ctf/success.svg);
   height: 4rem;
   width: 4rem;
   background-size: cover;
@@ -97,25 +97,34 @@ tw-story {
 }
 
 .code-btn-background {
-  background: url(src/img/general/ctf/code.png);
+  background: url(src/img/general/ctf/code.svg);
   height: 4rem;
   width: 4rem;
   background-size: cover;
   border: none;
 }
 .home-btn-background {
-  background: url(src/img/general/ctf/home.png);
+  background: url(src/img/general/ctf/home.svg);
   height: 4rem;
   width: 4rem;
   background-size: cover;
   border: none;
 }
 .help-btn-background {
-  background: url(src/img/general/ctf/help.png);
+  background: url(src/img/general/ctf/help.svg);
   height: 4rem;
   width: 4rem;
   background-size: cover;
   border: none;
+}
+
+#home-btn{
+ background: url(src/img/general/ctf/home.svg);
+ height: 4rem;
+ width: 4rem;
+ background-size: cover;
+ border: 0px;
+ filter: grayscale(100%);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
@@ -146,21 +155,22 @@ function eventOnClickHandlerMain(event) {
 /* # CTF 1 Start */
 
 setup.ctf1 = function() {
-	document.getElementById("ssss").addEventListener("click", eventOnClickHandler);
+	document.getElementById("login-btn").addEventListener("click", eventOnClickHandler);
 }
 
 function eventOnClickHandler(event) {
-	var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+  var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
   var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
   
-  if ("d3d3LWFkbWlu" !== user && "a2V5TWVtb3J5KHN1cGVyU2VjcmV0cGFzc3cwcmQxMjMp" !== pass) {
+  if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
     alert("Incorrect Username or Password");
+	return
   } else {
   	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+	/* Redirect to Story or Ctf Overview */
+	Harlowe.goto("CTF1end");
+    return
   }
-
-  /* Redirect to Story or Ctf Overview */
-  Harlowe.goto("CTF1_end");
 }
 
 /* # CTF 1 End */
@@ -367,7 +377,7 @@ setup.ctf9_showCode = function() {
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;container login-contianer&quot;&gt;
-  &lt;form method=&quot;POST&quot; class=&quot;box twine-background-login&quot;&gt;
+  &lt;form method=&quot;GET&quot; action=&quot;javascript:void(0);&quot; class=&quot;box twine-background-login&quot;&gt;
     &lt;div class=&quot;field&quot;&gt;
       &lt;label class=&quot;label&quot;&gt;Username&lt;/label&gt;
       &lt;div class=&quot;control&quot;&gt;
@@ -380,7 +390,7 @@ setup.ctf9_showCode = function() {
         &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;some password&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;button id=&quot;ssss&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
+    &lt;button id=&quot;login-btn&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
   &lt;/form&gt;
 &lt;/div&gt;
 
@@ -407,14 +417,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed)
-$success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed
+$success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed
+var success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf1&quot;)[(set: $ctfs to it + (a: &quot;ctf1&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -422,7 +433,7 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;4.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -851,14 +862,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed)
-$success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed
+$success = &quot;04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==&quot; == hashed
+var success = &quot;04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf10&quot;)[(set: $ctfs to it + (a: &quot;ctf10&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -866,7 +878,7 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -907,14 +919,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed)
-$success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed
+$success = &quot;oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==&quot; == hashed
+var success = &quot;oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf11&quot;)[(set: $ctfs to it + (a: &quot;ctf11&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -922,7 +935,7 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -968,14 +981,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==&quot; == hashed)
-$success = &quot;MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfNyDZS/65oZzqNvnbi2mODW3g==&quot; == hashed
+$success = &quot;rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==&quot; == hashed
+var success = &quot;rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf2&quot;)[(set: $ctfs to it + (a: &quot;ctf2&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -983,7 +997,7 @@ $success = &quot;MX+w5eAQfTiMNEnjGp5Ha/PIcZ7/LFxnVd3STLTk4MPnY+7QPGeAPysQHxeCcfN
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -1029,14 +1043,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed)
-$success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3ZUUbp5n/7owp0M0aBvjBNlvA==&quot; == hashed
+$success = &quot;kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==&quot; == hashed
+var success = &quot;kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf3&quot;)[(set: $ctfs to it + (a: &quot;ctf3&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -1044,7 +1059,7 @@ $success = &quot;YZ7zxrCIGmCiL+fCE+kvErBkUArddNQfQkh3qHB6goAiQaH5MD7eNpwsrx6UR3Z
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -1331,14 +1346,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==&quot; == hashed)
-$success = &quot;9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==&quot; == hashed
+$success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
+var success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf7&quot;)[(set: $ctfs to it + (a: &quot;ctf7&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -1346,7 +1362,7 @@ $success = &quot;9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLO
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -1394,14 +1410,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4dhveKyBhGcRK0/5uqos9yLg==&quot; == hashed)
-$success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4dhveKyBhGcRK0/5uqos9yLg==&quot; == hashed
+$success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
+var success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf8&quot;)[(set: $ctfs to it + (a: &quot;ctf8&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -1409,11 +1426,13 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
-&lt;/container&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/container&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles.css&quot;&gt;
 
 &lt;script&gt;
@@ -1455,7 +1474,6 @@ public class ctf9 {
 }
 &quot;)
 
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
 &lt;div&gt;
     (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
     &lt;pre&gt;
@@ -1499,14 +1517,15 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
 &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-&lt;div&gt;(link-repeat: &quot;&lt;button class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
+&lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
 [&lt;script&gt;
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log(&quot;hash:&quot; + CryptoJS.SHA512(input))
-console.log(&quot;base64:&quot; + hashed)
-console.log(&quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4dhveKyBhGcRK0/5uqos9yLg==&quot; == hashed)
-$success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4dhveKyBhGcRK0/5uqos9yLg==&quot; == hashed
+$success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
+var success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
+if(success){
+	document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
+}
 &lt;/script&gt;
 (if: $success is true)[  (alert: &quot;Correct Flag!&quot;)  (unless: $ctfs contains &quot;ctf9&quot;)[(set: $ctfs to it + (a: &quot;ctf9&quot;))]  ] \
 (unless: $success is true)[(alert: &quot;Incorrect Flag, please try again!&quot;)]\
@@ -1514,7 +1533,7 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
 	(if: $playingStory is true)[
     [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]]\
         (else:)[
-        [[Back to CTF-Overview-&gt;CTFs]]]\
+        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
 ]\
 ]
 &lt;/div&gt;
@@ -1634,7 +1653,16 @@ $success = &quot;uSuHSo+p5+IEsspIAjfwDHaETm+IX+uux187I+vuobTCTUsFbBqTFxswGz+35c4
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
 (go-to: &quot;Story&quot;)</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
+&lt;script&gt;
+var mode =  Harlowe.variable(&quot;$playingStory&quot;)
+if (mode){
+	var sidebar = document.querySelector(&quot;tw-sidebar&quot;);
+	var btn = document.createElement(&#39;button&#39;);
+	btn.onclick = function(){Harlowe.goto(&quot;MainPage&quot;)};
+	btn.id = &quot;home-btn&quot;
+	sidebar.appendChild(btn);	
+}
+&lt;/script&gt;
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
