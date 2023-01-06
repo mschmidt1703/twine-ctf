@@ -1,15 +1,10 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="src/css/ctf9/styles.css">
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-=======
 <script>
   setup.all();
 </script>
->>>>>>> fafdf71beb53c6aa7512e35596e99ffe4c579326
 
 <h1>A random file in your home directory</h1>
 
