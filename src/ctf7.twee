@@ -76,10 +76,7 @@ Please enter the flag here:
 [<script>
 var input = $flag
 var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-console.log("hash:" + CryptoJS.SHA512(input))
-console.log("base64:" + hashed)
-console.log("9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==" == hashed)
-$success = "9biz5TTGHlL1ExLMVy9Q2vbIa3kouhvVN/0ngNMqi9JtEJYTkp0nyOZT6bEhyLOrLf9zAgbZyatxatjS/J7y9w==" == hashed
+$success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
 </script>
 (if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf7")[(set: $ctfs to it + (a: "ctf7"))]  ] \
 (unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
