@@ -31,7 +31,7 @@
         <input class="input" id="password" type="password" placeholder="some password">
       </div>
     </div>
-    <button id="ssss" class="button is-primary">Sign in</button>
+    <button id="login-btn" class="button is-primary">Sign in</button>
   </form>
 </div>
 
