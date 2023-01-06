@@ -55,7 +55,7 @@ public class ctf9 {
     </script>")]
  </div>
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
     [[<button class="home-btn-background"></button>->MainPage]]
   </div>

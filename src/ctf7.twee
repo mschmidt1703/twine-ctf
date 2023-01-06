@@ -25,7 +25,7 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 
 A search on the surface level is not enough. Further inspection is needed. 
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]

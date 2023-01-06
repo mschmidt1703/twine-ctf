@@ -65,7 +65,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
-<div>
+<div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]

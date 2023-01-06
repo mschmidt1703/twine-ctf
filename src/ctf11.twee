@@ -13,7 +13,7 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 
 key: NoIdea
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]

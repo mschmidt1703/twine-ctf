@@ -18,7 +18,7 @@
 
 <!--flag{12_234_ghuzt5r}-->
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]

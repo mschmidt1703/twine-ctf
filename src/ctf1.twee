@@ -35,7 +35,7 @@
   </form>
 </div>
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]

@@ -36,7 +36,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
      [[<button class='home-btn-background'></button>->MainPage]]]

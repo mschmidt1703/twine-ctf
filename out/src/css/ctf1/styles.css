@@ -67,12 +67,19 @@ br {
   text-shadow: 2px 2px 4px #000000;
 }
 
-.btn-pos1 {
+.buttons {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  bottom: 0rem;
-  right: 0%;
+  right: 1rem;
+  bottom: 1rem;
 }
 
+.btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  padding: 0.25rem;
+}
+
+/*
 .btn-pos2 {
   position: fixed;
   bottom: 4rem;
@@ -89,4 +96,4 @@ br {
   position: fixed;
   bottom: 12rem;
   right: 0%;
-}
+}*/
