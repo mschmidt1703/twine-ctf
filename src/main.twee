@@ -61,6 +61,7 @@ Memory Loss: Find Your Way Back
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
         <button id="startButton" class="startButton">Start</a>
+		<button id="restartButton" class="restartButton">Restart</a>
       </div>
   </div>
 </section>

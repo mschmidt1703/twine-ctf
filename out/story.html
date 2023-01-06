@@ -132,6 +132,12 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+	document.getElementById("restartButton").addEventListener("click", eventOnClickHandlerMainRestart);
+
+}
+function eventOnClickHandlerMainRestart(event) {
+	 Harlowe.storage.clear("last_passage");
+	 eventOnClickHandlerMain();
 }
 
 function eventOnClickHandlerMain(event) {
@@ -1662,6 +1668,7 @@ if(success){
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
+		&lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
