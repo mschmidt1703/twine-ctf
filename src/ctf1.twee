@@ -1,12 +1,10 @@
 :: CTF 1 {"position":"400,1000","size":"100,100"}
 <!--<link rel="stylesheet" href="src/css/ctf1/styles.css">-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.ctf1();
   setup.all();
 </script>
-
 <style>
 /* -- Twine overrides -- */
 
