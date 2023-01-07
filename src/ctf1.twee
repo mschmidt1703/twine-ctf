@@ -1,11 +1,87 @@
 :: CTF 1 {"position":"400,1000","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf1/styles.css">
+<!--<link rel="stylesheet" href="src/css/ctf1/styles.css">-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.ctf1();
   setup.all();
 </script>
+
+<style>
+/* -- Twine overrides -- */
+
+tw-story {
+  background-image: url("src/img/general/ctf/pc_rahmen.png");
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+tw-sidebar {
+  left: -15em;
+  width: 15em;
+  text-align: left;
+}
+
+tw-icon {
+  left: 3.5em;
+}
+
+/* -- General CSS -- */
+
+html {
+  overflow-y: hidden !important; /* Disable scroll */
+}
+
+br {
+  display: none;
+}
+
+.twine-background-login {
+  position: inherit;
+  background-color: white;
+  width: 500px;
+}
+
+.login-contianer {
+  height: 500px;
+  margin-left: 30% !important;
+  margin-top: -1% !important;
+}
+
+.headline {
+  margin-top: -7rem;
+  margin-bottom: 7rem;
+}
+
+.resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  padding: 0.25rem;
+}
+</style>
 
 (set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else.")
 (if: $ctfs contains "ctf1")[]
