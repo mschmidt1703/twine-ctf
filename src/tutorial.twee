@@ -1,35 +1,6 @@
 :: Tutorial {"position":"0,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/tutorial/styles.css">
 
-<style>
-  /* -- General CSS -- */
-
-  html {
-    overflow-y: hidden !important;
-  }
-
-  section {
-    overflow-y: scroll;
-    height: 65vh;
-  }
-
-  .buttons {
-    display: flex-inline;
-    flex-direction: column;
-  }
-
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-  }
-
-  .buttons p {
-    padding-left: 1rem;
-  }
-</style>
-
 <header>
   <div class="logo">
     <img src="src/img/header/logo.svg" alt="logo">
@@ -108,6 +79,109 @@
   <!-- Outro -->
   If you want to read the tutorial again, click on "Tutorial" in the menu to open it.
 </section>
+
+<style>
+  /* -- General CSS -- */
+
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url("src/img/header/header_element.svg"),
+      url("src/img/general/background/background_landscape.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  br {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 70vh;
+    margin: 0 2em 0 2em;
+    overflow-y: scroll; 
+  }
+
+  .buttons {
+    display: flex-inline;
+    flex-direction: column;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+</style>
 
 <!--
 Hello there, 

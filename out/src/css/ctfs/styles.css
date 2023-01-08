@@ -34,6 +34,10 @@ tw-sidebar {
   margin: 1em 2em 1em 2em;
 }
 
+html {
+  overflow-y: hidden !important;
+}
+
 br {
   display: none;
 }
@@ -77,11 +81,12 @@ nav .active a {
 }
 
 section {
-  height: 80%;
+  height: 65vh;
   display: grid;
   justify-content: center;
   align-items: center;
   margin: 1em 2em 1em 2em;
+  overflow-y: scroll;
 }
 
 .rectangle {
