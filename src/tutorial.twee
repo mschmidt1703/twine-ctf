@@ -1,6 +1,35 @@
 :: Tutorial {"position":"0,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/tutorial/styles.css">
 
+<style>
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important;
+  }
+
+  section {
+    overflow-y: scroll;
+    height: 65vh;
+  }
+
+  .buttons {
+    display: flex-inline;
+    flex-direction: column;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+</style>
+
 <header>
   <div class="logo">
     <img src="src/img/header/logo.svg" alt="logo">
@@ -21,11 +50,66 @@
 </header>
 
 <section>
-  <!-- 
-    Introduction to the game:
-    - What is this?
-  -->
+  <h2>Tutorial</h2>
+  <!-- Introduction to the game -->
+  Welcome to the game "Memory Loss: Find Your Way Back". 
+  This game is about using capture-the-flag challenges to teach the concepts 
+  of IT security by learning attack techniques. Only when the various attack 
+  techniques used by hackers to penetrate IT systems are known can the 
+  appropriate countermeasures be taken.
 
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>Modes</h3>
+  <!-- Explain both modes: story and ctf -->
+  The game is structured in such a way that the challenges are built into a story. This means that in places the challenges are built into the story that must be overcome in order for the story to continue. 
+
+  However, it is possible to play the challenges without the story. To do this, click on "CTFs" in the menu.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>How to play the challenges</h3>
+  <!-- CTF example, buttons, and flag page -->
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>Story Mode</h3>
+  <!-- Safe game state and reset -->
+
+  <div class="buttons">
+    <div class="btn-pos6">
+      <button class='home-btn-background'></button>
+      <p>Returns to ctf overview</p>
+    </div>
+    <div class="btn-pos5">
+      <button class='success-btn-background'></button>
+      <p>Forwarding to flag check</p>
+    </div>
+    <div class="btn-pos4">
+      <button class='reload-btn-background'></button>
+      <p>Reloads the page</p>
+    </div>
+    <div class="btn-pos3">
+      <button class='code-btn-background'></button>
+      <p>Shows a code snippet</p>
+    </div>
+    <div class="btn-pos2">
+      <button class='help-btn-background'></button>
+      <p>Gives help</p>
+    </div>
+    <div class="btn-pos1">
+      <button class='hint-btn-background'></button>
+      <p>Gives a hint</p>
+    </div>
+  </div>
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <!-- Outro -->
+  If you want to read the tutorial again, click on "Tutorial" in the menu to open it.
+</section>
+
+<!--
 Hello there, 
 
 Welcome to our CTF-Game "Memory Loss: Find Your Way Back". 
@@ -33,29 +117,4 @@ Here you can improve your cyber security skills while indulging in a fun game.
 To move further in the story, you will need to solve some interesting CTF challenges. 
 Solve the challenges to discover your hidden past and save your future. 
 Are you ready? Then let's go!
-
-</section>
-
-<!-- Tutorial - pt. 2 -->
-<!--
-Explain both modes: story and ctf
-- Differences
--->
-
-
-<!-- Tutorial - pt. 3 -->
-<!--
-- CTF example
-- Explain Buttons in CTF
-- Explain flag page
--->
-
-<!-- Tutorial - pt. 4 -->
-<!--
-Safe game state
--->
-
-<!-- Tutorial - pt. 2 -->
-<!-- 
-Outro
 -->
