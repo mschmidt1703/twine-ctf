@@ -1,3 +1,5 @@
+/* -- General CSS -- */
+
 h1 {
   color: #b200dd;
 }
@@ -6,28 +8,16 @@ br {
   display: none;
 }
 
-.btn-pos1 {
+.buttons {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  bottom: 0rem;
-  right: 0%;
+  right: 1rem;
+  bottom: 1rem;
 }
 
-.btn-pos2 {
-  position: fixed;
-  bottom: 4rem;
-  right: 0%;
-}
-
-.btn-pos3 {
-  position: fixed;
-  bottom: 8rem;
-  right: 0%;
-}
-
-.btn-pos4 {
-  position: fixed;
-  bottom: 12rem;
-  right: 0%;
+.btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  padding: 0.25rem;
 }
 
 /*2nd Part: _Doe} */

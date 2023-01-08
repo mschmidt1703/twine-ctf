@@ -28,11 +28,6 @@ br {
 
 /* -- General CSS -- */
 
-* {
-  font-family: "OCR A Extended", sans-serif;
-  color: #9b9b9b;
-}
-
 header {
   height: 25vh;
   display: flex;
@@ -136,4 +131,9 @@ button {
   color: #1e1e1e;
   text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
+}
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
 }

@@ -13,10 +13,10 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 
 key: NoIdea
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -38,26 +38,36 @@ key: NoIdea
 
 Please enter the flag here: 
 (set: $success to false)
+
 <div class="container">
-<div>(input-box: bind $flag, "XXX=", 5)[]</div>
-<div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
-[<script>
-var input = $flag
-var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-$success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
-var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
-if(success){
-	document.getElementById("checkflag_btn").style.display = "none";
-}
-</script>
-(if: $success is true)[  (alert: "Correct Flag!")  (unless: $ctfs contains "ctf11")[(set: $ctfs to it + (a: "ctf11"))]  ] \
-(unless: $success is true)[(alert: "Incorrect Flag, please try again!")]\
-(if: $success is true)[\
-	(if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
+    [
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+        
+        $success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+        var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+        
+        if(success){
+          document.getElementById("checkflag_btn").style.display = "none";
+        }
+      </script>
+
+      (if: $success is true)[
+        (alert: "Correct Flag!")
+      (unless: $ctfs contains "ctf11")[
+        (set: $ctfs to it + (a: "ctf11"))]  ] \
+      (unless: $success is true)[
+        (alert: "Incorrect Flag, please try again!")]\
+      
+      (if: $success is true)[\
+        (if: $playingStory is true)[
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]\
         (else:)[
-        [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
-]\
-]
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
+      ]\
+    ]
+  </div>
 </div>
-</container>

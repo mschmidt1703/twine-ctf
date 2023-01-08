@@ -5,6 +5,7 @@
 <script>
   setup.all();
 </script>
+
 (set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
 
 Note: If you have injected XSS successfully, you will be redirected automatically.")
@@ -16,6 +17,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 (if: $ctfs contains "ctf5")[]
 (else:)[(alert: _info)]
+
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
@@ -36,14 +38,14 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 
-<div>
+<div class="buttons">
   <div class="btn-pos4">
   	(if: $playingStory is true)[
-     [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
-      <div class="btn-pos3">
+  <div class="btn-pos3">
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
@@ -62,6 +64,6 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 Congratulations you made it!
 
 (if: $playingStory is true)[
-    [[<button class="resumeButton">Resume Story</a>->6.p]]]\
-     (else:)[
-     [[Back to CTF-Overview->CTFs]]]
+  [[<button class="resumeButton">Resume Story</a>->6.p]]]\
+(else:)[
+  [[Back to CTF-Overview->CTFs]]]

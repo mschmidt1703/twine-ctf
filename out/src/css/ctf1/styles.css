@@ -7,11 +7,6 @@ tw-story {
   background-repeat: no-repeat;
 }
 
-/* TODO: What should this do? Can't see a difference...delete it? */
-#ui-bar {
-  display: none;
-}
-
 tw-sidebar {
   left: -15em;
   width: 15em;
@@ -29,8 +24,6 @@ html {
 }
 
 br {
-  max-height: 0; /* TODO: Is this necessary? */
-  visibility: hidden;
   display: none;
 }
 
@@ -67,26 +60,14 @@ br {
   text-shadow: 2px 2px 4px #000000;
 }
 
-.btn-pos1 {
+.buttons {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  bottom: 0rem;
-  right: 0%;
+  right: 1rem;
+  bottom: 1rem;
 }
 
-.btn-pos2 {
-  position: fixed;
-  bottom: 4rem;
-  right: 0%;
-}
-
-.btn-pos3 {
-  position: fixed;
-  bottom: 8rem;
-  right: 0%;
-}
-
-.btn-pos4 {
-  position: fixed;
-  bottom: 12rem;
-  right: 0%;
+.btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  padding: 0.25rem;
 }
