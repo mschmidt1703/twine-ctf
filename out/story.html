@@ -2015,26 +2015,42 @@ Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial"
 
   &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
+  &lt;h3&gt;What is a CTF challenge?&lt;/h3&gt;
+  In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
+  find a flag. This flag is usually a file or a string and can look like this: 
+  &amp;lt!-- flag: hur32782ruhu --&gt;.
+
+  In this game, the flags look like this:
+  puzzlePiece{&lt;Some hash&gt;}
+
+  Besides that, it is good to know that there are different categories of 
+  challenges. A few examples are XSS, Web Exploitation or Cryptography. 
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
   &lt;h3&gt;Modes&lt;/h3&gt;
   &lt;!-- Explain both modes: story and ctf --&gt;
-  The game is structured in such a way that the challenges are built into a story. This means that in places the challenges are built into the story that must be overcome in order for the story to continue. 
+  The game is structured in such a way that the challenges are built into a story. This means that in 
+  places the challenges are built into the story that must be overcome in order for the story to continue. 
 
   However, it is possible to play the challenges without the story. To do this, click on &quot;CTFs&quot; in the menu.
+
+  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
+  page by pressing the &quot;Reset&quot; button.
 
   &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
   &lt;h3&gt;How to play the challenges&lt;/h3&gt;
   &lt;!-- CTF example, buttons, and flag page --&gt;
+  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
+  even using Google.
 
-  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-  &lt;h3&gt;Story Mode&lt;/h3&gt;
-  &lt;!-- Safe game state and reset --&gt;
+  The following buttons can be found in the challenges to support you:
 
   &lt;div class=&quot;buttons&quot;&gt;
     &lt;div class=&quot;btn-pos6&quot;&gt;
       &lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;
-      &lt;p&gt;Returns to ctf overview&lt;/p&gt;
+      &lt;p&gt;Returns to ctf overview or main page depending on the game mode&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&quot;btn-pos5&quot;&gt;
       &lt;button class=&#39;success-btn-background&#39;&gt;&lt;/button&gt;
@@ -2058,10 +2074,11 @@ Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial"
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+  A little tip before you start solving the challenge:
+  It often makes sense to use the developer mode of the browser. If this 
+  doesn&#39;t mean anything to you, Google can help.
 
-  &lt;!-- Outro --&gt;
-  If you want to read the tutorial again, click on &quot;Tutorial&quot; in the menu to open it.
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;/section&gt;
 
 &lt;style&gt;
@@ -2165,17 +2182,7 @@ Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial"
   .buttons p {
     padding-left: 1rem;
   }
-&lt;/style&gt;
-
-&lt;!--
-Hello there, 
-
-Welcome to our CTF-Game &quot;Memory Loss: Find Your Way Back&quot;. 
-Here you can improve your cyber security skills while indulging in a fun game. 
-To move further in the story, you will need to solve some interesting CTF challenges. 
-Solve the challenges to discover your hidden past and save your future. 
-Are you ready? Then let&#39;s go!
---&gt;</tw-passagedata></tw-storydata>
+&lt;/style&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
