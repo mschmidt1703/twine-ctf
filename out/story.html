@@ -1177,7 +1177,7 @@ Please enter the flag here:
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="725,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles_end.css&quot;&gt;
 
 Please enter the flag here: 
@@ -1853,22 +1853,153 @@ Please enter the flag here:
   var notes = sidebar.childNodes;
 
   for (let i = 0; i &lt; notes.length; i++) {
-	if (notes[i].getAttribute(&quot;title&quot;) == &quot;Undo&quot;) {
-	  notes[i].style = &quot;visibility: hidden;&quot;;
-	}
+    if (notes[i].getAttribute(&quot;title&quot;) == &quot;Undo&quot;) {
+      notes[i].style = &quot;visibility: hidden;&quot;;
+    }
   }
+&lt;/script&gt;
+
+&lt;div class=&quot;section&quot;&gt;
+  &lt;h1&gt;Tutorial&lt;/h1&gt;
+  &lt;!-- Introduction to the game --&gt;
+  Welcome to the game &quot;Memory Loss: Find Your Way Back&quot;. 
+  This game is about using capture-the-flag challenges to teach the concepts 
+  of IT security by learning attack techniques. Only when the various attack 
+  techniques used by hackers to penetrate IT systems are known can the 
+  appropriate countermeasures be taken.
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  &lt;h2&gt;What is a CTF challenge?&lt;/h2&gt;
+  In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
+  find a flag. This flag is usually a file or a string and can look like this: 
+  &amp;lt!-- flag: hur32782ruhu --&gt;.
+
+  In this game, the flags look like this:
+  puzzlePiece{&lt;Some hash&gt;}
+
+  Besides that, it is good to know that there are different categories of 
+  challenges. A few examples are XSS, Web Exploitation or Cryptography. 
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  &lt;h2&gt;Modes&lt;/h2&gt;
+  &lt;!-- Explain both modes: story and ctf --&gt;
+  The game is structured in such a way that the challenges are built into a story. This means that in 
+  places the challenges are built into the story that must be overcome in order for the story to continue. 
+
+  However, it is possible to play the challenges without the story. To do this, click on &quot;CTFs&quot; in the menu.
+
+  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
+  page by pressing the &quot;Reset&quot; button.
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  &lt;h2&gt;How to play the challenges&lt;/h2&gt;
+  &lt;!-- CTF example, buttons, and flag page --&gt;
+  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
+  even using Google.
+
+  The following buttons can be found in the challenges to support you:
+
+  &lt;div class=&quot;buttons&quot;&gt;
+    &lt;div class=&quot;btn-pos6&quot;&gt;
+      &lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Returns to ctf overview or main page depending on the game mode&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-pos5&quot;&gt;
+      &lt;button class=&#39;success-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Forwarding to flag check&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-pos4&quot;&gt;
+      &lt;button class=&#39;reload-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Reloads the page&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-pos3&quot;&gt;
+      &lt;button class=&#39;code-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Shows a code snippet&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-pos2&quot;&gt;
+      &lt;button class=&#39;help-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Gives help&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;btn-pos1&quot;&gt;
+      &lt;button class=&#39;hint-btn-background&#39;&gt;&lt;/button&gt;
+      &lt;p&gt;Gives a hint&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  A little tip before you start solving the challenge:
+  It often makes sense to use the developer mode of the browser. If this 
+  doesn&#39;t mean anything to you, Google can help.
+
+  &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+  &lt;!-- Outro --&gt;
+  If you want to read the tutorial again, click on &quot;Tutorial&quot; in the menu to open it.
+
+  [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.p]]
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(&quot;src/img/general/background/background_landscape.svg&quot;);
+  }
+
+  /* -- General CSS -- */
+
+    br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+  
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
 &lt;/script&gt;
 
 You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
 
 Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;1.p]]</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
-&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
 
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 

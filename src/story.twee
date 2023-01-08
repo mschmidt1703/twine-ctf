@@ -9,17 +9,143 @@
   var notes = sidebar.childNodes;
 
   for (let i = 0; i < notes.length; i++) {
-	if (notes[i].getAttribute("title") == "Undo") {
-	  notes[i].style = "visibility: hidden;";
-	}
+    if (notes[i].getAttribute("title") == "Undo") {
+      notes[i].style = "visibility: hidden;";
+    }
   }
 </script>
 
-You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+<div class="section">
+  <h1>Tutorial</h1>
+  <!-- Introduction to the game -->
+  Welcome to the game "Memory Loss: Find Your Way Back". 
+  This game is about using capture-the-flag challenges to teach the concepts 
+  of IT security by learning attack techniques. Only when the various attack 
+  techniques used by hackers to penetrate IT systems are known can the 
+  appropriate countermeasures be taken.
 
-Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+  <tw-consecutive-br></tw-consecutive-br>
 
-[[<button id="resume-btn" class="button is-danger is-rounded">next->1.p]]
+  <h2>What is a CTF challenge?</h2>
+  In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
+  find a flag. This flag is usually a file or a string and can look like this: 
+  &lt!-- flag: hur32782ruhu -->.
+
+  In this game, the flags look like this:
+  puzzlePiece{<Some hash>}
+
+  Besides that, it is good to know that there are different categories of 
+  challenges. A few examples are XSS, Web Exploitation or Cryptography. 
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h2>Modes</h2>
+  <!-- Explain both modes: story and ctf -->
+  The game is structured in such a way that the challenges are built into a story. This means that in 
+  places the challenges are built into the story that must be overcome in order for the story to continue. 
+
+  However, it is possible to play the challenges without the story. To do this, click on "CTFs" in the menu.
+
+  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
+  page by pressing the "Reset" button.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h2>How to play the challenges</h2>
+  <!-- CTF example, buttons, and flag page -->
+  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
+  even using Google.
+
+  The following buttons can be found in the challenges to support you:
+
+  <div class="buttons">
+    <div class="btn-pos6">
+      <button class='home-btn-background'></button>
+      <p>Returns to ctf overview or main page depending on the game mode</p>
+    </div>
+    <div class="btn-pos5">
+      <button class='success-btn-background'></button>
+      <p>Forwarding to flag check</p>
+    </div>
+    <div class="btn-pos4">
+      <button class='reload-btn-background'></button>
+      <p>Reloads the page</p>
+    </div>
+    <div class="btn-pos3">
+      <button class='code-btn-background'></button>
+      <p>Shows a code snippet</p>
+    </div>
+    <div class="btn-pos2">
+      <button class='help-btn-background'></button>
+      <p>Gives help</p>
+    </div>
+    <div class="btn-pos1">
+      <button class='hint-btn-background'></button>
+      <p>Gives a hint</p>
+    </div>
+  </div>
+
+  A little tip before you start solving the challenge:
+  It often makes sense to use the developer mode of the browser. If this 
+  doesn't mean anything to you, Google can help.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <!-- Outro -->
+  If you want to read the tutorial again, click on "Tutorial" in the menu to open it.
+
+  [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.p]]
+</div>
+
+<style>
+  /* -- General CSS -- */
+
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/background/background_landscape.svg");
+  }
+
+  /* -- General CSS -- */
+
+    br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+  
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
 
 
 :: 1.p {"position":"200,600","size":"100,100"}
@@ -29,6 +155,11 @@ Some strangers hear you fussing around. They enter the room where you are lying.
 <script>
   setup.story()
 </script>
+
+You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+
+Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+
 
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
