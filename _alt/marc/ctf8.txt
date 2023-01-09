@@ -1,0 +1,12 @@
+You found this weird looking message being passed around on the servers.
+
+This must be the decryption scheme. Can you decrypt it?
+Take each number mod 42 and map it to the following character set: 
+
+0-25 is the alphabet (uppercase), 
+26-35 are the decimal digits, 
+36-40 are this special characters (#!"{})
+and 42 is an underscore
+
+Your decrypted message will be your flag
+You can use a python online compiler like this https://www.online-python.com/ or any other programming lanuage. 
