@@ -8,6 +8,10 @@ h1 {
   font-size: 3rem !important;
 }
 
+h2 {
+  font-size: 2rem !important;
+}
+
 .shelves {
   display: flex;
   flex-direction: row;

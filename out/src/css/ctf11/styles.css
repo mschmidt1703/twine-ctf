@@ -4,6 +4,10 @@ br {
   display: none;
 }
 
+h1 {
+  font-size: 3rem !important;
+}
+
 .buttons {
   display: flex;
   flex-direction: column;
@@ -14,4 +18,9 @@ br {
 
 .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
   padding: 0.25rem;
+}
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
 }

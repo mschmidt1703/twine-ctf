@@ -18,10 +18,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (if: $ctfs contains "ctf5")[]
 (else:)[(alert: _info)]
 
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
+<h1>CTF 5 - XSS</h1>
+
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser">

@@ -12,6 +12,10 @@
 (if: $ctfs contains "ctf10")[]
 (else:)[(alert: _info)]
 
+<h1>CTF 10 - Reverse Engineering</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+
 (link-repeat: "What should I do?")[(alert: _info)]
 <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js"></script>
@@ -22,8 +26,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/pipe.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js"></script>
-
-<tw-consecutive-br></tw-consecutive-br>
 
 <script>
   //https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html

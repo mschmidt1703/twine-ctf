@@ -32,12 +32,17 @@ br {
   display: none;
 }
 
+h1 {
+  font-size: 3rem !important;
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
 .webbrowser {
   float: inherit;
   width: 70%;
   height: 54%;
   margin-left: 15.5%;
-  margin-top: -4%;
   border: 2px solid black;
   background: white;
 }
@@ -51,7 +56,7 @@ br {
 
 terminal {
   margin-left: 18.5% !important;
-  margin-top: 5% !important;
+  margin-top: -2rem;
 }
 
 .buttons {

@@ -32,6 +32,12 @@ br {
   display: none;
 }
 
+h1 {
+  font-size: 3rem !important;
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
 .webbrowser {
   float: inherit;
   width: 64%;

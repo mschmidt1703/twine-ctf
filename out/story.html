@@ -429,6 +429,13 @@ setup.ctf9_showCode = function() {
     display: none;
   }
 
+  h1 {
+    top: -6rem;
+    font-size: 3rem !important;
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+
   .twine-background-login {
     position: inherit;
     background-color: white;
@@ -479,7 +486,8 @@ setup.ctf9_showCode = function() {
 (if: $ctfs contains &quot;ctf1&quot;)[]
 (else:)[(alert: _info)]
 
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;h1&gt;CTF 1 - XSS&lt;/h1&gt;
+&lt;!-- &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt; --&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
@@ -569,6 +577,10 @@ Please enter the flag here:
 (if: $ctfs contains &quot;ctf10&quot;)[]
 (else:)[(alert: _info)]
 
+&lt;h1&gt;CTF 10 - Reverse Engineering&lt;/h1&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
 (link-repeat: &quot;What should I do?&quot;)[(alert: _info)]
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js&quot;&gt;&lt;/script&gt;
@@ -579,8 +591,6 @@ Please enter the flag here:
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/pipe.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/unix_formatting.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/js/terminal.widget.js&quot;&gt;&lt;/script&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;script&gt;
   //https://jvilk.com/browserfs/1.4.1/classes/_backend_localstorage_.localstoragefilesystem.html
@@ -1013,6 +1023,10 @@ Please enter the flag here:
 
 [(alert: _whatToDo)]
 
+&lt;h1&gt;CTF 11 - Cryptography&lt;/h1&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
 Usg wlees,
 
 qi coh&#39;fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh trbdmupy.  Ng i uiwnfl kirr&#39;g gryr asfw jlnu: noeg{wvo_125}. Jsoq zcfo fbf bki nrlb flayzmqkef.
@@ -1079,7 +1093,11 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-&lt;h3&gt;Do I live alone? &lt;/h3&gt;
+&lt;h1&gt;CTF 2 - Forensics&lt;/h1&gt;
+
+&lt;h2&gt;Do I live alone?&lt;/h2&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 Great! Now you know your name, but nothing else.
 
@@ -1152,9 +1170,14 @@ Please enter the flag here:
 
 [(alert: _whatToDo)]
 
-&lt;title&gt;Challenge&lt;/title&gt;
+&lt;h1&gt;CTF 3 - Forensics&lt;/h1&gt;
 
-&lt;h1&gt;Capture the Flag&lt;/h1&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+&lt;h2&gt;Capture the Flag&lt;/h2&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
 &lt;!-- TODO: Delete citation --&gt;
 &lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
 &lt;p&gt; Source: Wikipedia &lt;/p&gt;
@@ -1241,6 +1264,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (if: $ctfs contains &quot;ctf4&quot;)[]
 (else:)[(alert: _info)]
 
+&lt;h1&gt;CTF 4 - XSS&lt;/h1&gt;
+
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -1300,10 +1325,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (if: $ctfs contains &quot;ctf5&quot;)[]
 (else:)[(alert: _info)]
 
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;h1&gt;CTF 5 - XSS&lt;/h1&gt;
+
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -1394,8 +1417,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   setup.all();
 &lt;/script&gt;
 
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;h1&gt;CTF 6 - XSS&lt;/h1&gt;
+
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -1461,6 +1484,10 @@ Congratulations you made it!
 &lt;/script&gt;
 
 &lt;h1&gt;CTF 7 - Web Exploitation&lt;/h1&gt;
+
+&lt;h2&gt;Who even am I?&lt;/h2&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;img src=&quot;src/img/ctf7/books-shelf.jpg&quot;&gt;&lt;/img&gt;
 
@@ -1543,7 +1570,9 @@ Please enter the flag here:
   }
 &lt;/style&gt;
 
-&lt;title&gt;Center align button&lt;/title&gt; &lt;!-- TODO: Title is not visible --&gt;
+&lt;h1&gt;CTF 8 - Forensics&lt;/h1&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 Download the file and check for valuable information. 
 There might be something more to it than what you first see...
@@ -1611,7 +1640,13 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-&lt;h1&gt;A random file in your home directory&lt;/h1&gt;
+&lt;h1&gt;CTF 9 - Reverse Engineering&lt;/h1&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+&lt;h2&gt;A random file in your home directory&lt;/h2&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
 
@@ -2023,7 +2058,6 @@ After wondering the streets for a while, you spot a big library at the end of th
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
 [[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -2035,7 +2069,6 @@ You’re in! Naturally the first thing you want to do is to navigate to the web 
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
 
 [[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -2045,8 +2078,7 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -2060,7 +2092,7 @@ You know something important that changed your life forever happened here, but y
 
 You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -2071,7 +2103,7 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
 (Continuation of the girlfriend tragedy here maybe?)
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -2081,7 +2113,6 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -2091,7 +2122,7 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Start Challenge-&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;

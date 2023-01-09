@@ -49,8 +49,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   setup.all();
 </script>
 
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
+<h1>CTF 6 - XSS</h1>
+
 <tw-consecutive-br></tw-consecutive-br>
 
 <div class="webbrowser">

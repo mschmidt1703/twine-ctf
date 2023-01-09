@@ -37,6 +37,13 @@
     display: none;
   }
 
+  h1 {
+    top: -6rem;
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
   .twine-background-login {
     position: inherit;
     background-color: white;
@@ -87,7 +94,8 @@
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]
 
-<tw-consecutive-br></tw-consecutive-br>
+<h1>CTF 1 - XSS</h1>
+<!-- <tw-consecutive-br></tw-consecutive-br> -->
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
