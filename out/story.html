@@ -137,7 +137,6 @@ tw-story {
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
-
 /* # Mainpage */
 
 setup.main = function() {
@@ -165,6 +164,25 @@ function eventOnClickHandlerMain(event) {
 }
 
 /* # Mainpage End */
+
+
+/* # CTFs End */
+setup.ctfs = function() {
+
+	var section = document.getElementsByTagName("section")[0];
+
+    if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
+		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
+		console.log(pos)
+        section.scrollTo(0,pos);
+    }
+	
+	section.addEventListener("scroll", (event) => {
+		console.log("scroll");
+        window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
+	});
+}
+/* # CTFs End */
 
 
 /* Global Start */
@@ -1534,8 +1552,6 @@ Please enter the flag here:
     ]
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
@@ -1551,7 +1567,7 @@ Take each number mod 42 and map it to the following character set
 &lt;ul&gt;
 &lt;li&gt;0-25 is the alphabet (uppercase),&lt;/li&gt;  
 &lt;li&gt;26-35 are the decimal digits, &lt;/li&gt;
-&lt;li&gt;36-40 are this special characters (#!&quot;{})&lt;/li&gt;
+&lt;li&gt;36-40 are this special characters (#!&quot;&amp;#123})&lt;/li&gt;
 &lt;li&gt; and 42 is an underscore&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1559,7 +1575,7 @@ Take each number mod 42 and map it to the following character set
 &lt;div&gt;
 Your decrypted message will be your flag, please wrap the flag into puzzelPiece&amp;#123;FLAG-HERE}
 
-You can use a python online compiler like this &lt;a href=&quot;https://www.online-python.com/&quot; target=&quot;_blank&quot;&gt;python-online&lt;/a&gt; or any other programming lanuage. 
+You can use a python online compiler like this &lt;a href=&quot;https://www.online-python.com/&quot; target=&quot;_blank&quot;&gt;python-online&lt;/a&gt; or any other programming language. 
 &lt;/div&gt;
 
 
@@ -1733,6 +1749,9 @@ Please enter the flag here:
     ]
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctfs/styles.css&quot;&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	setup.ctfs();
+&lt;/script&gt;
 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 (set: $playingStory to false)
 
@@ -1799,21 +1818,7 @@ Please enter the flag here:
     &lt;/div&gt; 
   ]
 
-&lt;/section&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function () {
-
-    if (localStorage.getItem(&quot;twine-ctf-quote-scroll&quot;) != null) {
-        $(window).scrollTop(localStorage.getItem(&quot;twine-ctf-quote-scroll&quot;));
-    }
-
-    $(window).on(&quot;scroll&quot;, function() {
-        localStorage.setItem(&quot;twine-ctf-quote-scroll&quot;, $(window).scrollTop());
-    });
-
-  });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+&lt;/section&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;

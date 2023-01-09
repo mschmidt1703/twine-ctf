@@ -2,7 +2,6 @@
 window.setup = window.setup || {};
 $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
-
 /* # Mainpage */
 
 setup.main = function() {
@@ -30,6 +29,25 @@ function eventOnClickHandlerMain(event) {
 }
 
 /* # Mainpage End */
+
+
+/* # CTFs End */
+setup.ctfs = function() {
+
+	var section = document.getElementsByTagName("section")[0];
+
+    if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
+		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
+		console.log(pos)
+        section.scrollTo(0,pos);
+    }
+	
+	section.addEventListener("scroll", (event) => {
+		console.log("scroll");
+        window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
+	});
+}
+/* # CTFs End */
 
 
 /* Global Start */

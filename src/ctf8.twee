@@ -1,23 +1,32 @@
 :: CTF 8 {"position":"850,300","size":"100,100"}
 <link rel="stylesheet" href="src/css/ctf8/styles.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.all();
 </script>
 
-<style>
-  body {
-    text-align: center;
-  }
-</style>
 
-<title>Center align button</title> <!-- TODO: Title is not visible -->
+You found this weird looking message being passed around on the servers.
 
-Download the file and check for valuable information. 
-There might be something more to it than what you first see...
+Message: "181, 152, 103, 335, 147, 256, 101, 192, 125, 396, 172, 170, 104, 269, 214, 377, 288, 324, 401, 142, 163"
 
-<button type="submit" onclick="window.open('src/static/ctf8/my_office.jpg')">Download</button>
+This must be the decryption scheme. Can you decrypt it?:
+
+Take each number mod 42 and map it to the following character set
+<ul>
+<li>0-25 is the alphabet (uppercase),</li>  
+<li>26-35 are the decimal digits, </li>
+<li>36-40 are this special characters (#!"&#123})</li>
+<li> and 42 is an underscore</li>
+</ul>
+
+
+<div>
+Your decrypted message will be your flag, please wrap the flag into puzzelPiece&#123;FLAG-HERE}
+
+You can use a python online compiler like this <a href="https://www.online-python.com/" target="_blank">python-online</a> or any other programming language. 
+</div>
+
+
 
 <div class="buttons">
   <div class="btn-pos4">
