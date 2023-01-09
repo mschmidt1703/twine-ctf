@@ -167,31 +167,6 @@ function eventOnClickHandlerMain(event) {
 /* # Mainpage End */
 
 
-/* # CTF 1 Start */
-
-setup.ctf1 = function() {
-	document.getElementById("login-btn").addEventListener("click", eventOnClickHandler);
-}
-
-function eventOnClickHandler(event) {
-  var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
-  var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
-  
-  if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
-    alert("Incorrect Username or Password");
-	  return
-  } else {
-  	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
-
-	  /* Redirect to Story or Ctf Overview */
-	  Harlowe.goto("CTF1end");
-    return
-  }
-}
-
-/* # CTF 1 End */
-
-
 /* Global Start */
 
 //disable back btn if playing in ctf mode
@@ -249,6 +224,31 @@ window.addEventListener("message", function(event) {
 }, false);
 
 /* Global End */
+
+
+/* # CTF 1 Start */
+
+setup.ctf1 = function() {
+	document.getElementById("login-btn").addEventListener("click", eventOnClickHandler);
+}
+
+function eventOnClickHandler(event) {
+  var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+  var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+  
+  if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
+    alert("Incorrect Username or Password");
+	  return
+  } else {
+  	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+
+	  /* Redirect to Story or Ctf Overview */
+	  Harlowe.goto("CTF1end");
+    return
+  }
+}
+
+/* # CTF 1 End */
 
 
 /* # CTF 4 Start */
