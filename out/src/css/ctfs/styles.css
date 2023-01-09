@@ -134,7 +134,7 @@ section {
   text-shadow: 4px 4px 5px #000000;
 }
 
-button {
+.startButton {
   z-index: 1;
   height: 2.5em;
   width: 8em;

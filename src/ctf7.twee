@@ -6,25 +6,23 @@
   setup.all();
 </script>
 
-<h1>Who even am I?</h1>
+<h1>CTF 7 - Web Exploitation</h1>
 
 <img src="src/img/ctf7/books-shelf.jpg"></img>
 
 Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
 
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
+A search on the surface level is not enough. Further inspection is needed. 
 
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
-
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
-
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
-
-[[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
+<div class="shelves">
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
+</div>
 
 <!--1st Part: puzzelPiece{John-->
-
-A search on the surface level is not enough. Further inspection is needed. 
 
 <div class="buttons">
   <div class="btn-pos4">

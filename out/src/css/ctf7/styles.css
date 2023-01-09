@@ -1,11 +1,17 @@
 /* -- General CSS -- */
 
-h1 {
-  color: #b200dd;
-}
-
 br {
   display: none;
+}
+
+h1 {
+  font-size: 3rem !important;
+}
+
+.shelves {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .buttons {
@@ -18,6 +24,11 @@ br {
 
 .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
   padding: 0.25rem;
+}
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
 }
 
 /*2nd Part: _Doe} */
