@@ -16,7 +16,6 @@
 
 <tw-consecutive-br></tw-consecutive-br>
 
-(link-repeat: "What should I do?")[(alert: _info)]
 <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.34.0/js/jquery.terminal.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -341,10 +340,7 @@ function ctf2(terminal)
                 terminal.read('', sellChooise(i), function(err) {})*/
                 return;
         }
-
     }
-
-
 
     function printInventory()
     {
