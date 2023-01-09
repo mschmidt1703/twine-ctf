@@ -181,7 +181,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 7]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challenge->CTF 7]]
 
 
 :: 3.p {"position":"200,1000","size":"100,100"}
@@ -196,7 +196,7 @@ After wondering the streets for a while, you spot a big library at the end of th
 
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 1]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challenge->CTF 1]]
 
 
 :: 4.p {"position":"200,1200","size":"100,100"}
@@ -212,7 +212,7 @@ Finding your name is a great start. But you need to learn more about yourself. S
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. "Maybe the bad guy’s looking for me have restricted the search.”
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange->CTF 4]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challenge->CTF 4]]
 
 
 :: 5.p {"position":"200,1400","size":"100,100"}
@@ -289,7 +289,7 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Start Challange ->CTF 9]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Start Challenge->CTF 9]]
 
 
 :: 10.p {"position":"200,2400","size":"100,100"}
