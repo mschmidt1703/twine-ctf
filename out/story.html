@@ -1785,17 +1785,12 @@ Please enter the flag here:
 &lt;script type=&quot;text/javascript&quot;&gt;
 	setup.ctfs();
 &lt;/script&gt;
-
-&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-(set: $playingStory to false)
-
-(set: $playingStory to false)
+(set: $playingStory to false) \
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
 (set: _finished to &quot;CTF finished :&gt;&quot;)\
 (set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Cryptography&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
 (set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;1&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;1&quot;, 9, &quot;1&quot;, 10, &quot;1&quot;, 11, &quot;1&quot;) )\
-
 &lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
@@ -1814,6 +1809,7 @@ Please enter the flag here:
     &lt;/ul&gt;
   &lt;/nav&gt;
 &lt;/header&gt;
+
 
 &lt;section&gt;
   Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
