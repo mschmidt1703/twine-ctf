@@ -5,12 +5,11 @@
 <script>
   setup.all();
 </script>
+
 (set: _info to "") \
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
 <h1>CTF 10 - Cryptography </h1>
-
-
 
 <img src="src/img/ctf10/flag.png"><img>
 
@@ -154,37 +153,39 @@ Please enter the flag here:
 </div>
 
 <style>
-/* -- General CSS --*/
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
-.resumeButton {
-  z-index: 1;
-  height: 2.5em;
-  width: 8em;
+  /* -- General CSS --*/
 
-  border: none;
-  border-radius: 35px;
-  background-color: #f79e00;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
 
-  font-size: 1em;
-  color: #1e1e1e;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000000;
-}
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
-.checkFlagButton {
-  z-index: 1;
-  height: 2.5em;
-  width: 8em;
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
 
-  border: none;
-  border-radius: 35px;
-  background-color: #f79e00;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
 
-  font-size: 1em;
-  color: #1e1e1e;
-  text-decoration: none;
-  text-shadow: 2px 2px 4px #000000;
-}
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
 </style>
