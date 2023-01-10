@@ -120,10 +120,10 @@ Please enter the flag here:
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-    
-        $success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
-        var success = "04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==" == hashed
-    
+		
+        $success = "RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==" == hashed
+        var success = "RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==" == hashed
+		
         if(success){
           document.getElementById("checkflag_btn").style.display = "none";
         }
