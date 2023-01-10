@@ -52,8 +52,9 @@
 
   .login-contianer {
     height: 500px;
-    margin-left: 30% !important;
-    margin-top: -1% !important;
+    margin: -1% auto 0 25%;
+    /*margin-left: 30% !important;
+    margin-top: -1% !important;*/
   }
 
   .headline {
@@ -97,11 +98,8 @@
 <h1>CTF 1 - XSS</h1>
 
 <tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
 
-<div class="container login-contianer">
+<div class="login-contianer">
   <form method="GET" action="javascript:void(0);" class="box twine-background-login">
     <div class="field">
       <label class="label">Username</label>
