@@ -227,6 +227,19 @@
     text-shadow: 4px 4px 5px #000000;
     font-size: 1.6vw;
   }
+  
+	/*Try to change scrollbar in Google Chrome*/
+	::-webkit-scrollbar {
+	  width: 9px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+	  background-color: rgba(155, 155, 155, 0.5);
+	  border-radius: 20px;
+	  border: transparent;
+	}
 
   * {
     font-family: "OCR A Extended", sans-serif;
