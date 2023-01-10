@@ -1,7 +1,6 @@
 /* -- Twine overrides -- */
 
 tw-story {
-  background-image: url("../../img/general/ctf/pc_rahmen.png");
   padding: inherit;
   float: initial;
   width: inherit;
@@ -16,6 +15,15 @@ tw-passage {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: #000;
+}
+
+* {
+  font-family: "OCR A Extended", sans-serif;
+  color: #9b9b9b;
+}
+
+img {
+	width: 80%;
 }
 
 tw-story tw-consecutive-br {
@@ -38,14 +46,6 @@ h1 {
   color: #9b9b9b;
 }
 
-.webbrowser {
-  float: inherit;
-  width: 70%;
-  height: 54%;
-  margin-left: 15.5%;
-  border: 2px solid black;
-  background: white;
-}
 
 :root {
   --color: #aaa;
@@ -69,3 +69,4 @@ terminal {
 .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
   padding: 0.25rem;
 }
+
