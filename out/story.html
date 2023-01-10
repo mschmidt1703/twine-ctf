@@ -409,13 +409,56 @@ setup.ctf9_showCode = function() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
-// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="400,1000" size="100,100">&lt;!--&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf1/styles.css&quot;&gt;--&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="400,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.ctf1();
   setup.all();
 &lt;/script&gt;
+
+(set: _info to &quot;Your forgot your password, maybe it is possible to find it, somewhere else.&quot;)
+(if: $ctfs contains &quot;ctf1&quot;)[]
+(else:)[(alert: _info)]
+
+&lt;h1&gt;CTF 1 - XSS&lt;/h1&gt;
+
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+
+&lt;div class=&quot;login-contianer&quot;&gt;
+  &lt;form method=&quot;GET&quot; action=&quot;javascript:void(0);&quot; class=&quot;box twine-background-login&quot;&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label class=&quot;label&quot;&gt;Username&lt;/label&gt;
+      &lt;div class=&quot;control&quot;&gt;
+        &lt;input class=&quot;input&quot; id=&quot;user&quot; type=&quot;text&quot; placeholder=&quot;some name&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label class=&quot;label&quot;&gt;Password&lt;/label&gt;
+      &lt;div class=&quot;control&quot;&gt;
+        &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;some password&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;login-btn&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;buttons&quot;&gt;
+  &lt;div class=&quot;btn-pos4&quot;&gt;
+  	(if: $playingStory is true)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
+        (else:)[
+      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
+  &lt;/div&gt;
+  &lt;div class=&quot;btn-pos3&quot;&gt;
+    [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
+  &lt;/div&gt;
+  &lt;div class=&quot;btn-pos2&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
+  &lt;/div&gt;
+  &lt;div class=&quot;btn-pos1&quot;&gt;
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;style&gt;
   /* -- Twine overrides -- */
@@ -462,7 +505,7 @@ setup.ctf9_showCode = function() {
 
   .login-contianer {
     height: 500px;
-    margin: -1% auto 0 25%;
+    margin: -1% auto 0 27.5%;
     /*margin-left: 30% !important;
     margin-top: -1% !important;*/
   }
@@ -499,52 +542,7 @@ setup.ctf9_showCode = function() {
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
-&lt;/style&gt;
-
-(set: _info to &quot;Your forgot your password, maybe it is possible to find it, somewhere else.&quot;)
-(if: $ctfs contains &quot;ctf1&quot;)[]
-(else:)[(alert: _info)]
-
-&lt;h1&gt;CTF 1 - XSS&lt;/h1&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-&lt;div class=&quot;login-contianer&quot;&gt;
-  &lt;form method=&quot;GET&quot; action=&quot;javascript:void(0);&quot; class=&quot;box twine-background-login&quot;&gt;
-    &lt;div class=&quot;field&quot;&gt;
-      &lt;label class=&quot;label&quot;&gt;Username&lt;/label&gt;
-      &lt;div class=&quot;control&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;user&quot; type=&quot;text&quot; placeholder=&quot;some name&quot;&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;field&quot;&gt;
-      &lt;label class=&quot;label&quot;&gt;Password&lt;/label&gt;
-      &lt;div class=&quot;control&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;some password&quot;&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button id=&quot;login-btn&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
-  &lt;/form&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;buttons&quot;&gt;
-  &lt;div class=&quot;btn-pos4&quot;&gt;
-  	(if: $playingStory is true)[
-      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;MainPage]]]
-        (else:)[
-      [[&lt;button class=&#39;home-btn-background&#39;&gt;&lt;/button&gt;-&gt;CTFs]]]
-  &lt;/div&gt;
-  &lt;div class=&quot;btn-pos3&quot;&gt;
-    [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF1end]]
-  &lt;/div&gt;
-  &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What does the JavaScript funktion atob() do?&quot;)]
-  &lt;/div&gt;
-  &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Can you find a method that will be executed when you press the button?&quot;)]
-  &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf1/styles_end.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -580,7 +578,49 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
+<<<<<<< HEAD
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles.css&quot;&gt;
+=======
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
+
+>>>>>>> refactoring
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
@@ -613,8 +653,81 @@ Can you figure out, what the his picture means?
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Mapping numbers to upper letters&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    /* -- Twine overrides -- */
+
+    tw-story {
+    background-image: url(&quot;src/img/general/ctf/pc_rahmen.png&quot;);
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+    }
+
+    tw-passage {
+    margin-left: 15%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+    }
+
+    tw-story tw-consecutive-br {
+    height: 1.7% !important;
+    }
+
+    /* -- General CSS -- */
+
+    html {
+    overflow-y: hidden !important; /* Disable scroll */
+    }
+
+    br {
+    display: none;
+    }
+
+    h1 {
+    font-size: 3rem !important;
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+    }
+
+    .webbrowser {
+    float: inherit;
+    width: 70%;
+    height: 54%;
+    margin-left: 15.5%;
+    border: 2px solid black;
+    background: white;
+    }
+
+    :root {
+    --color: #aaa;
+    --background: #000;
+    --size: 1;
+    --animation: terminal-blink;
+    }
+
+    terminal {
+    margin-left: 18.5% !important;
+    }
+
+    .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    }
+
+    .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+    }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -649,8 +762,43 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles.css&quot;&gt;
-&lt;script&gt;
+&lt;/div&gt;
+
+&lt;st&lt;le&gt;
+/* -- General CSS --*/
+
+.resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.checkFlagButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 (set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
@@ -683,8 +831,36 @@ key: NoIdea
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1300,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf11/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1300,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -720,8 +896,43 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf2/styles.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -757,8 +968,40 @@ Maybe taking a closer look at it is not a bad idea.
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets.&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="600,1600" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf2/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="600,1600" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -794,8 +1037,44 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
@@ -834,8 +1113,40 @@ Please enter the flag here:
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf3/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -871,8 +1182,43 @@ Please enter the flag here:
     ]\
   ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -894,6 +1240,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 (else:)[(alert: _info)]
 
 &lt;h1&gt;CTF 4 - XSS&lt;/h1&gt;
+
 
 &lt;div class=&quot;webbrowser&quot;&gt;
   &lt;div id=&quot;tab&quot;&gt;
@@ -925,16 +1272,154 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;You need to insert some javascript, maybe the script tag helps&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf4/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(&quot;src/img/general/ctf/pc_rahmen.png&quot;);
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+    margin-top: 4%;
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url(&quot;src/img/ctf4/webbrowser_header.PNG&quot;) 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
 Congratulations you made it!
 
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles.css&quot;&gt;&lt;/link&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+  [[Back to CTF-Overview-&gt;CTFs]]]
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -954,6 +1439,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 
 &lt;h1&gt;CTF 5 - XSS&lt;/h1&gt;
 
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
@@ -986,16 +1473,156 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Maybe there are other html tags that are vulnerable?&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf5/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(&quot;src/img/general/ctf/pc_rahmen.png&quot;);
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disabe scroll */
+  }
+
+  br {
+    max-height: 0px;
+    visibility: hidden;
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+    
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url(&quot;src/img/ctf4/webbrowser_header.PNG&quot;) 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 
 Congratulations you made it!
 
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;6.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+  [[Back to CTF-Overview-&gt;CTFs]]]
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
 (set: $ctf6_code to &quot;
@@ -1047,6 +1674,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 &lt;h1&gt;CTF 6 - XSS&lt;/h1&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
 &lt;div class=&quot;webbrowser&quot;&gt;
   &lt;div id=&quot;tab&quot;&gt;
@@ -1091,8 +1719,113 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There is no input textbox for XSS Injection, but can you use something else&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf6/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(&quot;src/img/general/ctf/pc_rahmen.png&quot;);
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+
+  br {
+    max-height: 0px;
+    visibility: hidden;
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url(&quot;src/img/ctf4/webbrowser_header.PNG&quot;) 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
 
 &lt;script&gt;
   setup.ctf6_reset()
@@ -1103,8 +1836,43 @@ Congratulations you made it!
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+  [[Back to CTF-Overview-&gt;CTFs]]]
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -1148,8 +1916,48 @@ A search on the surface level is not enough. Further inspection is needed.
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Open your inspector view and have a look at the website’s resources.&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf7/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .shelves {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+
+  /*2nd Part: _Doe} */
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -1184,9 +1992,43 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles.css&quot;&gt;
+&lt;/div&gt;
 
-&lt;script&gt;
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
@@ -1232,8 +2074,36 @@ Take each number mod 42 and map it to the following character set
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Try to write small and simple python program&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -1269,8 +2139,43 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
@@ -1347,8 +2252,40 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&amp;lbrace;enterFlagHere&amp;rbrace;.&quot;)]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf9/styles_end.css&quot;&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -1384,17 +2321,53 @@ Please enter the flag here:
     ]\
     ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctfs/styles.css&quot;&gt;
+&lt;/div&gt;
 
-&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;style&gt;
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
 	setup.ctfs();
 &lt;/script&gt;
+
 (set: $playingStory to false) \
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
 (set: _finished to &quot;CTF finished :&gt;&quot;)\
 (set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Cryptography&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
 (set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;1&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;1&quot;, 9, &quot;1&quot;, 10, &quot;1&quot;, 11, &quot;1&quot;) )\
+
 &lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
@@ -1413,7 +2386,6 @@ Please enter the flag here:
     &lt;/ul&gt;
   &lt;/nav&gt;
 &lt;/header&gt;
-
 
 &lt;section&gt;
   Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
@@ -1451,7 +2423,173 @@ Please enter the flag here:
       &lt;/div&gt; 
     &lt;/div&gt; 
   ]
-&lt;/section&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+&lt;/section&gt;
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url(&quot;src/img/header/header_element.svg&quot;),
+      url(&quot;src/img/general/background/background_landscape.svg&quot;);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  .ctf1 .ctf2 .ctf3 .ctf4 .ctf5 .ctf6 .ctf7 .ctf8 .ctf9 .ctf10 .ctf11 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ctfpos {
+    margin: 1em 2em 1em 2em;
+  }
+
+  html {
+    overflow-y: hidden !important;
+  }
+
+  br {
+    display: none;
+  }
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 65vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 2em 1em 2em;
+    overflow-y: scroll;
+  }
+
+  .rectangle {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 0;
+    height: 8em;
+    width: 80%;
+    border-radius: 45px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .box_img {
+    margin: auto;
+  }
+
+  .box_img img {
+    height: 6em;
+    border-radius: 25px;
+  }
+
+  .box_text {
+    margin: auto;
+    width: 25%;
+  }
+
+  .box_button {
+    margin: auto;
+  }
+
+  .rectangle ul {
+    margin: 0 2rem 0 -8rem;
+    list-style: none;
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  .startButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .active {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+    font-size: 1.6vw;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
@@ -1462,9 +2600,7 @@ Please enter the flag here:
 
 (set: $ctfs to (a:))
 
-(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="30" name="MainPage" tags="" position="200,200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/main/styles.css&quot;&gt;
-
-&lt;header&gt;
+(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="30" name="MainPage" tags="" position="200,200" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
@@ -1507,7 +2643,149 @@ Please enter the flag here:
  } else {
  	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
  }
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
+&lt;/script&gt;
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url(&quot;src/img/main/wires_landscape.svg&quot;),
+      url(&quot;src/img/general/background/background_landscape.svg&quot;);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  br {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 60%;
+    margin: 0 2em 0 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .usb-stick img {
+    height: 50vh;
+    padding-left: 10vw;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  .preview {
+    position: relative;
+  }
+
+  .preview_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .preview_bg img {
+    position: relative;
+    z-index: 1;
+    border-radius: 45px;
+    height: 50vh;
+  }
+
+  .rectangle {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+
+    border-radius: 0 0 45px 45px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  button {
+    height: 2em;
+    width: 8em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 2em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
 &lt;script&gt;
   var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
 
@@ -1662,8 +2940,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -1681,17 +2958,76 @@ To your surprise they respond, “we don’t know. We couldn’t find out who yo
 However, what they know for sure is that he might be in a great danger. 
 You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.p]]</tw-passagedata><tw-passagedata pid="36" name="2.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 
-&lt;script&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]</tw-passagedata><tw-passagedata pid="37" name="3.p" tags="" position="200,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -1699,9 +3035,38 @@ After wondering the streets for a while, you spot a big library at the end of th
 
 Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 1]]</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 1]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -1710,9 +3075,38 @@ Finding your name is a great start. But you need to learn more about yourself. S
 You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
 You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -1720,9 +3114,38 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 
 It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 5]]</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 5]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -1734,8 +3157,38 @@ You know something important that changed your life forever happened here, but y
 
 You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 2]]</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 2]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -1745,8 +3198,38 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
 (Continuation of the girlfriend tragedy here maybe?)
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;8.p]]</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;8.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -1754,9 +3237,38 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
 Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -1764,8 +3276,38 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
 After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 9]]</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 9]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -1773,17 +3315,44 @@ After some fiddling around you manage to connect the drive to a new computer. An
 
 Coming soon. Stay tuned!
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]
 
-&lt;script&gt;
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/tutorial/styles.css&quot;&gt;
-
-&lt;header&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
