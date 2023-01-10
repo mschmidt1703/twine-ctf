@@ -641,10 +641,10 @@ Can you figure out, what the this picture means?
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF10end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A = 1, B = 2 ...&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A = 1, B = 2 ... 0 = &amp;#123; or &amp;#125;&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Mapping numbers to upper letters&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Try to map the numbers to letters&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -695,7 +695,6 @@ Please enter the flag here:
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-		console.log(hashed)
         $success = &quot;Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==&quot; == hashed
         var success = &quot;Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==&quot; == hashed
       &lt;/script&gt;

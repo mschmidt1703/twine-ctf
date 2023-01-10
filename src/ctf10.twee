@@ -28,10 +28,10 @@ Can you figure out, what the this picture means?
     [[<button class="success-btn-background"></button>->CTF10end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A = 1, B = 2 ...")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A = 1, B = 2 ... 0 = &#123; or &#125;")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Mapping numbers to upper letters")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to map the numbers to letters")]
   </div>
 </div>
 
@@ -86,7 +86,6 @@ Please enter the flag here:
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-		console.log(hashed)
         $success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
         var success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
       </script>
