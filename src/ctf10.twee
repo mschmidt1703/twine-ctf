@@ -12,8 +12,9 @@
 
 <h1>CTF 10 - Cryptography </h1>
 
-Can you figure out, what the this picture means?
+Can you figure out, what the this picture means? 
 
+0 = &#123; or &#125;
 <img src="src/img/ctf10/flag.svg"><img>
 
 <div class="buttons">
@@ -80,33 +81,28 @@ Please enter the flag here:
 
 <div class="container">
   <div>(input-box: bind $flag, "XXX=", 5)[]</div>
-  <div>(link-repeat: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>")
-    [
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-		
-        $success = "RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==" == hashed
-        var success = "RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==" == hashed
-		
-        if(success){
-          document.getElementById("checkflag_btn").style.display = "none";
-        }
+		console.log(hashed)
+        $success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
+        var success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
       </script>
-
-      (if: $success is true)[
-        (alert: "Correct Flag!")
-      (unless: $ctfs contains "ctf10")[(set: $ctfs to it + (a: "ctf10"))]]\
-      (unless: $success is true)[
-        (alert: "Incorrect Flag, please try again!")]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[<button class="resumeButton">Resume Story</a>->x.p]]]\
-        (else:)[
-          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]\
-      ]\
-    ]
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf10")[  \
+        (set: $ctfs to it + (a: "ctf10"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
   </div>
 </div>
 

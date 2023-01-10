@@ -132,13 +132,13 @@ Please enter the flag here:
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \
-      (unless: $ctfs contains "ctf10")[  \
-        (set: $ctfs to it + (a: "ctf10"))]]  \
+      (unless: $ctfs contains "ctf9")[  \
+        (set: $ctfs to it + (a: "ctf9"))]]  \
       (unless: $success is true)[ \
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->9.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->10.p]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \
