@@ -2605,7 +2605,7 @@ Please enter the flag here:
       &lt;div class=&quot;rectangle&quot;&gt;
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/button&gt;
 		(link-repeat: &quot;&lt;button id=&#39;resetButton&#39; class=&#39;resetButton&#39;&gt;Reset Game&lt;/button&gt;&quot;)[
-		(set: $doYesNo to (confirm: &quot;Transform your best friend into a cake?&quot;))
+		(set: $doYesNo to (confirm: &quot;Do you really want to delete your game state?&quot;))
 		(if: $doYesNo)[(go-to: &quot;reloadGame&quot;)]
 		(else:)[]
 		]
