@@ -6,7 +6,7 @@
   setup.all();
 </script>
 
-(set: _info to "") \
+(set: _info to "Try to read the flag from the image") \
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
 <h1>CTF 10 - Cryptography </h1>
@@ -36,16 +36,18 @@ Can you figure out, what the his picture means?
 </div>
 
 <style>
+    @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+    
     /* -- Twine overrides -- */
 
-    tw-story {
+  tw-story {
     padding: inherit;
     float: initial;
     width: inherit;
     height: inherit;
-    }
+  }
 
-    tw-passage {
+  tw-passage {
     margin-left: 15%;
     width: 70%;
     height: 100%;
@@ -53,64 +55,51 @@ Can you figure out, what the his picture means?
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: #000;
-    }
+  }
 
-    tw-story tw-consecutive-br {
+  tw-story tw-consecutive-br {
     height: 1.7% !important;
-    }
+  }
 
-    /* -- General CSS -- */
+  /* -- General CSS -- */
 
-    html {
+  html {
     overflow-y: hidden !important; /* Disable scroll */
-    }
+  }
 
-    br {
+  br {
     display: none;
-    }
+  }
 
-    h1 {
+  h1 {
     font-size: 3rem !important;
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
-    }
+  }
 
-    .webbrowser {
-    float: inherit;
-    width: 70%;
-    height: 54%;
-    margin-left: 15.5%;
-    border: 2px solid black;
-    background: white;
-    }
-
-    :root {
+  :root {
     --color: #aaa;
     --background: #000;
     --size: 1;
     --animation: terminal-blink;
-    }
+  }
 
-    terminal {
-    margin-left: 18.5% !important;
-    }
-
-    .buttons {
+  .buttons {
     display: flex;
     flex-direction: column;
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    }
+  }
 
-    .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
-    }
+  }
 
-    * {
+  * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
-    }
+  }
 </style>
 
 
