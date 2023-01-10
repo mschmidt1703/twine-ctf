@@ -230,7 +230,7 @@
   
 	/*Try to change scrollbar in Google Chrome*/
 	::-webkit-scrollbar {
-	  width: 9px;
+	  width: 12px;
 	}
 	::-webkit-scrollbar-track {
 	  background: transparent;
