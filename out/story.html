@@ -172,12 +172,10 @@ setup.ctfs = function() {
 
     if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
 		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
-		console.log(pos)
         section.scrollTo(0,pos);
     }
 	
 	section.addEventListener("scroll", (event) => {
-		console.log("scroll");
         window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
 	});
 }
@@ -229,7 +227,6 @@ window.addEventListener("message", function(event) {
   
   if (event.data.startsWith("ctf6_url_")) {
     ctf6_updateURI(event.data);
-	  console.log("success: " + event.data)
     return;
   }
   
@@ -302,7 +299,7 @@ function ctf4_updateURI(value) {
 }
 
 function ctf4_levelSucceed() {
-	alert("XSS Success");
+  alert("XSS Success");
   Harlowe.goto("CTF4_end");
 }
 
@@ -374,7 +371,6 @@ setup.ctf6_updateFrame = function (frameNum, url) {
     var arg = url.replace("https://twine.ctf/ctf6.html#", "");
     var frame = document.querySelector('iframe');
     frame.src = "src/static/ctf6/u.html"; 
-    console.log("arg:" + arg)
     
     /* frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame */ /* TODO: When code is not used then delete it */
     frame.contentWindow.postMessage(arg,"*")
