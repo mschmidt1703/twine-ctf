@@ -99,6 +99,8 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 </div>
 
 <style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
   /* -- Twine overrides -- */
 
   tw-story {
@@ -219,6 +221,8 @@ Congratulations you made it!
   [[Back to CTF-Overview->CTFs]]]
 
 <style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
   /* -- General CSS --*/
 
   .resumeButton {
@@ -251,5 +255,10 @@ Congratulations you made it!
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>

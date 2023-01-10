@@ -98,8 +98,6 @@
 </div>
 
 <style>
-  /* -- General CSS -- */
-
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
   /* -- Twine overrides -- */

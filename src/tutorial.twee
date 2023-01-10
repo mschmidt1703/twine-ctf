@@ -97,8 +97,6 @@
 </section>
 
 <style>
-  /* -- General CSS -- */
-
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
   /* -- Twine overrides -- */
@@ -123,11 +121,11 @@
     display: none;
   }
 
+  /* -- General CSS -- */
+
   br {
     display: none;
   }
-
-  /* -- General CSS -- */
 
   html {
     overflow-y: hidden !important;

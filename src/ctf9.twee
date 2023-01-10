@@ -78,6 +78,8 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 </div>
 
 <style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
   /* -- General CSS -- */
 
   br {
@@ -151,6 +153,8 @@ Please enter the flag here:
 </div>
 
 <style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
   /* -- General CSS --*/
 
   .resumeButton {
@@ -183,5 +187,10 @@ Please enter the flag here:
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
