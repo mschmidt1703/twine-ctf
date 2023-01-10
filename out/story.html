@@ -1668,49 +1668,34 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to &quot;
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret() {
-      theSecret = new char [14];
-      theSecret [3] = &#39;n&#39;;
-      theSecret [4] = &#39;o&#39;;
-      theSecret [0] = &#39;B&#39;;
-      theSecret [7] = &#39;l&#39;;
-      theSecret [2] = &#39;u&#39;;
-      theSecret [8] = &#39;l&#39;;
-      theSecret [10] = &#39;d&#39;;
-      theSecret [12] = &#39;e&#39;;
-      theSecret [13] = &#39;r&#39;;
-      theSecret [11] = &#39;H&#39;;
-      theSecret [1] = &#39;r&#39;;
-      theSecret [9] = &#39;e&#39;;
-      theSecret [5] = &#39;K&#39;;
-      theSecret [6] = &#39;i&#39;;
+    public static void encryptSecret(){
+        theSecret = new char [10];
+        theSecret [2] = &#39;G&#39;;
+        theSecret [5] = &#39;J&#39;;
+        theSecret [0] = &#39;7&#39;;
+        theSecret [6] = &#39;5&#39;;
+        theSecret [8] = &#39;e&#39;;
+        theSecret [3] = &#39;8&#39;;
+        theSecret [9] = &#39;Y&#39;;
+        theSecret [1] = &#39;t&#39;;
+        theSecret [4] = &#39;e&#39;;
+        theSecret [7] = &#39;8&#39;;
     }
 
-    public static String conclusion() {
-      String conc = \&quot;This case is unsolvable. Give up!\&quot;;
-       return  conc;
+    public static String conclusion(){
+    String conc = \&quot;This case is unsolvable. Give up!\&quot;;
+        return  conc;
+   }
     }
 
     public static void main(String[] args) {
-      System.out.println(conclusion());
+    System.out.println(conclusion());
     }
-  }
+}
 &quot;)
 
 &lt;!-- TODO: No highlighting in code --&gt;
-&lt;!-- TODO: Button on wrong position --&gt;
-&lt;div&gt;
-  (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
-    (alert: &quot;
-      &lt;pre&gt;
-        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
 
-      &lt;script&gt;
-        setup.ctf9_showCode();
-        hljs.highlightAll();
-      &lt;/script&gt;&quot;)]
-&lt;/div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos5&quot;&gt;
@@ -1723,7 +1708,16 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF9end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
-    [[&lt;button class=&quot;code-btn-background&quot;&gt;&lt;/button&gt;-&gt;MainPage]]
+    (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
+    (alert: &quot;
+      &lt;pre&gt;
+        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
+      &lt;/pre&gt;
+
+      &lt;script&gt;
+        setup.ctf9_showCode();
+        hljs.highlightAll();
+      &lt;/script&gt;&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you tried working with char arrays in java?&quot;)]
