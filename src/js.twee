@@ -10,8 +10,7 @@ setup.main = function() {
 }
 
 function eventOnClickHandlerMainRestart(event) {
-	 Harlowe.storage.clear("last_passage");
-	 Harlowe.goto("initMain")
+	 Harlowe.goto("reloadGame")
 }
 
 function eventOnClickHandlerMain(event) {
