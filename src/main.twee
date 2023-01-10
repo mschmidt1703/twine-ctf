@@ -61,11 +61,18 @@ Memory Loss: Find Your Way Back
       <img src="src/img/main/previews/preview_default.svg" alt="preview">
       <div class="rectangle">
         <button id="startButton" class="startButton">Start</a>
-		    <button id="restartButton" class="restartButton">Restart</a>
+		<button id="restartButton" class="restartButton">Restart</a>
       </div>
   </div>
 </section>
 
+<script>
+ if(Harlowe.storage.load('last_passage') != null){
+	document.getElementById("startButton").innerHTML = "Resume";
+ } else {
+ 	document.getElementById("startButton").innerHTML = "Start";
+ }
+</script>
 
 :: setStory {"position":"200,350","size":"100,100"}
 (set: $playingStory to true)

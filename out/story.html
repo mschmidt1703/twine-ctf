@@ -1616,10 +1616,11 @@ Take each number mod 42 and map it to the following character set
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF8end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 2&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;This program should loop over a message array, containing the numbers.
+	 Each number must be calculated modulo 42. For example you have to map all numbers (if 0 &lt;= x &lt;= 25) to the letters A-Z&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Try to write small and simple python program&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf8/styles_end.css&quot;&gt;
@@ -1895,10 +1896,18 @@ Please enter the flag here:
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
-		    &lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
+		&lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
       &lt;/div&gt;
   &lt;/div&gt;
-&lt;/section&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
+&lt;/section&gt;
+
+&lt;script&gt;
+ if(Harlowe.storage.load(&#39;last_passage&#39;) != null){
+	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Resume&quot;;
+ } else {
+ 	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
+ }
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
 &lt;script&gt;
   var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
 

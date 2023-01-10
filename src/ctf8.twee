@@ -41,10 +41,11 @@ Take each number mod 42 and map it to the following character set
     [[<button class="success-btn-background"></button>->CTF8end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "This program should loop over a message array, containing the numbers.
+	 Each number must be calculated modulo 42. For example you have to map all numbers (if 0 <= x <= 25) to the letters A-Z")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to write small and simple python program")]
   </div>
 </div>
 
