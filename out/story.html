@@ -1946,34 +1946,28 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
         $success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
         var success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-    
       (if: $success is true)[  
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf7&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf7&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf7&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf7&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2102,34 +2096,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
         $success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
         var success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf8&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf8&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf8&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf8&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2292,34 +2280,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
         $success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
         var success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-    
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf9&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf9&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-      
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-    ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf10&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf10&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;9.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
