@@ -141,11 +141,6 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	document.getElementById("resetButton").addEventListener("click", eventOnClickHandlerMainRestart);
-}
-
-function eventOnClickHandlerMainRestart(event) {
-	 Harlowe.goto("reloadGame")
 }
 
 function eventOnClickHandlerMain(event) {
@@ -2608,8 +2603,12 @@ Please enter the flag here:
     &lt;div class=&quot;preview_bg&quot;&gt;
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
-        &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
-		    &lt;button id=&quot;resetButton&quot; class=&quot;resetButton&quot;&gt;Reset Game&lt;/a&gt;
+        &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/button&gt;
+		(link-repeat: &quot;&lt;button id=&#39;resetButton&#39; class=&#39;resetButton&#39;&gt;Reset Game&lt;/button&gt;&quot;)[
+		(set: $doYesNo to (confirm: &quot;Transform your best friend into a cake?&quot;))
+		(if: $doYesNo)[(go-to: &quot;reloadGame&quot;)]
+		(else:)[]
+		]
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;

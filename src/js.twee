@@ -6,11 +6,6 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	document.getElementById("resetButton").addEventListener("click", eventOnClickHandlerMainRestart);
-}
-
-function eventOnClickHandlerMainRestart(event) {
-	 Harlowe.goto("reloadGame")
 }
 
 function eventOnClickHandlerMain(event) {
