@@ -29,6 +29,9 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 <h1>CTF 4 - XSS</h1>
 
 <tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+
 
 <div class="webbrowser">
   <div id="tab">
