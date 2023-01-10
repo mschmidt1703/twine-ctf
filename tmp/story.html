@@ -620,8 +620,12 @@ Please enter the flag here:
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
-(set: _info to &quot;&quot;) \
+(set: _info to &quot;Try to read the flag from the image&quot;) \
+=======
+(set: _info to &quot;Try to read the flag from the image.&quot;) \
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 96adc8c1ddb0f88eeb8c20f243ee66da320524b7
 (if: $ctfs contains &quot;ctf10&quot;)[] \
 (else:)[(alert: _info)]
 &lt;h1&gt;CTF 10 - Cryptography &lt;/h1&gt;
@@ -651,16 +655,18 @@ Can you figure out, what the his picture means?
 &lt;/div&gt;
 
 &lt;style&gt;
+    @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+    
     /* -- Twine overrides -- */
 
-    tw-story {
+  tw-story {
     padding: inherit;
     float: initial;
     width: inherit;
     height: inherit;
-    }
+  }
 
-    tw-passage {
+  tw-passage {
     margin-left: 15%;
     width: 70%;
     height: 100%;
@@ -668,64 +674,51 @@ Can you figure out, what the his picture means?
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: #000;
-    }
+  }
 
-    tw-story tw-consecutive-br {
+  tw-story tw-consecutive-br {
     height: 1.7% !important;
-    }
+  }
 
-    /* -- General CSS -- */
+  /* -- General CSS -- */
 
-    html {
+  html {
     overflow-y: hidden !important; /* Disable scroll */
-    }
+  }
 
-    br {
+  br {
     display: none;
-    }
+  }
 
-    h1 {
+  h1 {
     font-size: 3rem !important;
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
-    }
+  }
 
-    .webbrowser {
-    float: inherit;
-    width: 70%;
-    height: 54%;
-    margin-left: 15.5%;
-    border: 2px solid black;
-    background: white;
-    }
-
-    :root {
+  :root {
     --color: #aaa;
     --background: #000;
     --size: 1;
     --animation: terminal-blink;
-    }
+  }
 
-    terminal {
-    margin-left: 18.5% !important;
-    }
-
-    .buttons {
+  .buttons {
     display: flex;
     flex-direction: column;
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    }
+  }
 
-    .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
-    }
+  }
 
-    * {
+  * {
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
-    }
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
