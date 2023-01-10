@@ -620,21 +620,16 @@ Please enter the flag here:
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
 (set: _info to &quot;Try to read the flag from the image&quot;) \
-=======
-(set: _info to &quot;Try to read the flag from the image.&quot;) \
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 96adc8c1ddb0f88eeb8c20f243ee66da320524b7
 (if: $ctfs contains &quot;ctf10&quot;)[] \
 (else:)[(alert: _info)]
+
 &lt;h1&gt;CTF 10 - Cryptography &lt;/h1&gt;
 
-&lt;img src=&quot;src/img/ctf10/flag.png&quot;&gt;&lt;img&gt;
+Can you figure out, what the this picture means?
 
-Can you figure out, what the his picture means?
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;img src=&quot;src/img/ctf10/flag.svg&quot;&gt;&lt;img&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -655,37 +650,10 @@ Can you figure out, what the his picture means?
 &lt;/div&gt;
 
 &lt;style&gt;
-    @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-    
-    /* -- Twine overrides -- */
-
-  tw-story {
-    padding: inherit;
-    float: initial;
-    width: inherit;
-    height: inherit;
-  }
-
-  tw-passage {
-    margin-left: 15%;
-    width: 70%;
-    height: 100%;
-    padding: 1.5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    color: #000;
-  }
-
-  tw-story tw-consecutive-br {
-    height: 1.7% !important;
-  }
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   /* -- General CSS -- */
-
-  html {
-    overflow-y: hidden !important; /* Disable scroll */
-  }
-
+  
   br {
     display: none;
   }
@@ -696,11 +664,8 @@ Can you figure out, what the his picture means?
     color: #9b9b9b;
   }
 
-  :root {
-    --color: #aaa;
-    --background: #000;
-    --size: 1;
-    --animation: terminal-blink;
+  img {
+    border-radius: 2.5rem;
   }
 
   .buttons {

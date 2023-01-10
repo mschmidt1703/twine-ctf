@@ -141,12 +141,12 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	document.getElementById("restartButton").addEventListener("click", eventOnClickHandlerMainRestart);
+	document.getElementById("resetButton").addEventListener("click", eventOnClickHandlerMainRestart);
 }
 
 function eventOnClickHandlerMainRestart(event) {
 	 Harlowe.storage.clear("last_passage");
-	 eventOnClickHandlerMain();
+	 Harlowe.goto("initMain")
 }
 
 function eventOnClickHandlerMain(event) {
@@ -620,21 +620,16 @@ Please enter the flag here:
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
 (set: _info to &quot;Try to read the flag from the image&quot;) \
-=======
-(set: _info to &quot;Try to read the flag from the image.&quot;) \
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 96adc8c1ddb0f88eeb8c20f243ee66da320524b7
 (if: $ctfs contains &quot;ctf10&quot;)[] \
 (else:)[(alert: _info)]
+
 &lt;h1&gt;CTF 10 - Cryptography &lt;/h1&gt;
 
-&lt;img src=&quot;src/img/ctf10/flag.png&quot;&gt;&lt;img&gt;
+Can you figure out, what the this picture means?
 
-Can you figure out, what the his picture means?
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;img src=&quot;src/img/ctf10/flag.svg&quot;&gt;&lt;img&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -655,37 +650,10 @@ Can you figure out, what the his picture means?
 &lt;/div&gt;
 
 &lt;style&gt;
-    @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-    
-    /* -- Twine overrides -- */
-
-  tw-story {
-    padding: inherit;
-    float: initial;
-    width: inherit;
-    height: inherit;
-  }
-
-  tw-passage {
-    margin-left: 15%;
-    width: 70%;
-    height: 100%;
-    padding: 1.5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    color: #000;
-  }
-
-  tw-story tw-consecutive-br {
-    height: 1.7% !important;
-  }
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   /* -- General CSS -- */
-
-  html {
-    overflow-y: hidden !important; /* Disable scroll */
-  }
-
+  
   br {
     display: none;
   }
@@ -696,11 +664,8 @@ Can you figure out, what the his picture means?
     color: #9b9b9b;
   }
 
-  :root {
-    --color: #aaa;
-    --background: #000;
-    --size: 1;
-    --animation: terminal-blink;
+  img {
+    border-radius: 2.5rem;
   }
 
   .buttons {
@@ -731,10 +696,10 @@ Please enter the flag here:
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-    
-        $success = &quot;04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==&quot; == hashed
-        var success = &quot;04TG3BFjiAp6H8ComHvBfKzf+NYbhRWSOUn49HjgmZb2BcL6ECGqARo6EyOOuRpTVhXItTb5AjTfq+Pildh6fw==&quot; == hashed
-    
+		
+        $success = &quot;RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==&quot; == hashed
+        var success = &quot;RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==&quot; == hashed
+		
         if(success){
           document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
         }
@@ -1240,7 +1205,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div id=&quot;tab&quot;&gt;
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
-      &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot;&gt;
+      &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot; readonly&gt;
       &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Surf&quot;&gt;
     &lt;/div&gt;
     &lt;iframe src=&quot;src/static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
@@ -1441,7 +1406,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;div id=&quot;tab&quot;&gt;
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
-      &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf5.html&quot;&gt;
+      &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf5.html&quot; readonly&gt;
       &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf5_updateFrame()&quot; value=&quot;Surf&quot;&gt;
     &lt;/div&gt;
     &lt;iframe src=&quot;src/static/ctf5/t.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
@@ -1892,7 +1857,7 @@ A search on the surface level is not enough. Further inspection is needed.
   [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fifth Shelf-&gt;Fifth Shelf]]
 &lt;/div&gt;
 
-&lt;!--1st Part: puzzelPiece{John--&gt;
+&lt;!--1st Part of the flag: ### puzzelPiece{og9XE ###--&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -1905,7 +1870,7 @@ A search on the surface level is not enough. Further inspection is needed.
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF7end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 2&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;The flag is consists of two parts. So you might want to look in different places.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Open your inspector view and have a look at the website’s resources.&quot;)]
@@ -2189,49 +2154,33 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to &quot;
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret() {
-      theSecret = new char [14];
-      theSecret [3] = &#39;n&#39;;
-      theSecret [4] = &#39;o&#39;;
-      theSecret [0] = &#39;B&#39;;
-      theSecret [7] = &#39;l&#39;;
-      theSecret [2] = &#39;u&#39;;
-      theSecret [8] = &#39;l&#39;;
-      theSecret [10] = &#39;d&#39;;
-      theSecret [12] = &#39;e&#39;;
-      theSecret [13] = &#39;r&#39;;
-      theSecret [11] = &#39;H&#39;;
-      theSecret [1] = &#39;r&#39;;
-      theSecret [9] = &#39;e&#39;;
-      theSecret [5] = &#39;K&#39;;
-      theSecret [6] = &#39;i&#39;;
+    public static void encryptSecret(){
+        theSecret = new char [10];
+        theSecret [2] = &#39;G&#39;;
+        theSecret [5] = &#39;J&#39;;
+        theSecret [0] = &#39;7&#39;;
+        theSecret [6] = &#39;5&#39;;
+        theSecret [8] = &#39;e&#39;;
+        theSecret [3] = &#39;8&#39;;
+        theSecret [9] = &#39;Y&#39;;
+        theSecret [1] = &#39;t&#39;;
+        theSecret [4] = &#39;e&#39;;
+        theSecret [7] = &#39;8&#39;;
     }
 
-    public static String conclusion() {
-      String conc = \&quot;This case is unsolvable. Give up!\&quot;;
-       return  conc;
+    public static String conclusion(){
+    String conc = \&quot;This case is unsolvable. Give up!\&quot;;
+        return  conc;
+   }
     }
 
     public static void main(String[] args) {
-      System.out.println(conclusion());
+    System.out.println(conclusion());
     }
-  }
+}
 &quot;)
 
 &lt;!-- TODO: No highlighting in code --&gt;
-&lt;!-- TODO: Button on wrong position --&gt;
-&lt;div&gt;
-  (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
-    (alert: &quot;
-      &lt;pre&gt;
-        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
-      &lt;script&gt;
-        setup.ctf9_showCode();
-        hljs.highlightAll();
-      &lt;/script&gt;&quot;)]
-&lt;/div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos5&quot;&gt;
@@ -2244,7 +2193,16 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF9end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
-    [[&lt;button class=&quot;code-btn-background&quot;&gt;&lt;/button&gt;-&gt;MainPage]]
+  (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
+    (alert: &quot;
+      &lt;pre&gt;
+        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
+      &lt;/pre&gt;
+
+      &lt;script&gt;
+        setup.ctf9_showCode();
+        hljs.highlightAll();
+      &lt;/script&gt;&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you tried working with char arrays in java?&quot;)]
@@ -2360,7 +2318,6 @@ Please enter the flag here:
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
 	setup.ctfs();
 &lt;/script&gt;
-
 (set: $playingStory to false) \
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
@@ -2632,7 +2589,7 @@ Please enter the flag here:
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
-		&lt;button id=&quot;restartButton&quot; class=&quot;restartButton&quot;&gt;Restart&lt;/a&gt;
+		&lt;button id=&quot;resetButton&quot; class=&quot;resetButton&quot;&gt;Reset Game&lt;/a&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;

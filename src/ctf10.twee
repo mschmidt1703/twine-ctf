@@ -9,13 +9,12 @@
 (set: _info to "Try to read the flag from the image") \
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
+
 <h1>CTF 10 - Cryptography </h1>
 
-<img src="src/img/ctf10/flag.png"><img>
+Can you figure out, what the this picture means?
 
-Can you figure out, what the his picture means?
-
-<tw-consecutive-br></tw-consecutive-br>
+<img src="src/img/ctf10/flag.svg"><img>
 
 <div class="buttons">
   <div class="btn-pos4">
@@ -36,37 +35,10 @@ Can you figure out, what the his picture means?
 </div>
 
 <style>
-    @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-    
-    /* -- Twine overrides -- */
-
-  tw-story {
-    padding: inherit;
-    float: initial;
-    width: inherit;
-    height: inherit;
-  }
-
-  tw-passage {
-    margin-left: 15%;
-    width: 70%;
-    height: 100%;
-    padding: 1.5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    color: #000;
-  }
-
-  tw-story tw-consecutive-br {
-    height: 1.7% !important;
-  }
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
 
   /* -- General CSS -- */
-
-  html {
-    overflow-y: hidden !important; /* Disable scroll */
-  }
-
+  
   br {
     display: none;
   }
@@ -77,11 +49,8 @@ Can you figure out, what the his picture means?
     color: #9b9b9b;
   }
 
-  :root {
-    --color: #aaa;
-    --background: #000;
-    --size: 1;
-    --animation: terminal-blink;
+  img {
+    border-radius: 2.5rem;
   }
 
   .buttons {
