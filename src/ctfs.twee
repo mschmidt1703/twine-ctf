@@ -4,7 +4,6 @@
 <script type="text/javascript">
 	setup.ctfs();
 </script>
-
 (set: $playingStory to false) \
 (set: _notStarted to "CTF not started yet") \
 (set: _started to "Started but not finished") \
