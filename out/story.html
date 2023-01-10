@@ -1069,23 +1069,16 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-(set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
+&lt;h1&gt;What can this text translate to?&lt;/h1&gt;
 
-[(alert: _whatToDo)]
-
-&lt;h1&gt;CTF 3 - Forensics&lt;/h1&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-&lt;h2&gt;Capture the Flag&lt;/h2&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-&lt;!-- TODO: Delete citation --&gt;
-&lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
-&lt;p&gt; Source: Wikipedia &lt;/p&gt;
-
-&lt;!--flag{12_234_ghuzt5r}--&gt;
+Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;data:image/png;base64&quot;. You decide to look further into it. 
+&lt;div&gt;
+   &lt;pre&gt;
+    &lt;code&gt;
+data:image/png;base64,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
+    &lt;/code&gt;
+  &lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -1098,16 +1091,14 @@ Please enter the flag here:
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF3end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 2&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There are plenty of online tools that can help you with this task. &quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Base64 encoding is used often in programming to convert sequences of data bits to different formats. Converting this string should lead you to a diffrent file format.&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
   /* -- General CSS -- */
 
   br {
@@ -1177,8 +1168,6 @@ Please enter the flag here:
 &lt;/div&gt;
 
 &lt;style&gt;
- @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -1211,11 +1200,6 @@ Please enter the flag here:
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
-  }
-
-  * {
-    font-family: &quot;OCR A Extended&quot;, sans-serif;
-    color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
@@ -1642,37 +1626,34 @@ Congratulations you made it!
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
-(set: $ctf6_code to &quot;
-	function showTab(input) {
-    var picID;
+(set: $ctf6_code to &quot;function showTab(input) {
+	var picID;
 
-    if (input.length == 1) {
-		  picID = input;
-	  } else {
-		  picID = input.substring(1, 0);
-	  }
-	
-    var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
-    html += \&quot;&lt; img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
-    html += \&quot;&lt; /br&gt;\&quot;
-    document.getElementById(picID).innerHTML = html;  
-    console.log(html)
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
 
-	  window.localStorage.setItem(&#39;picID&#39;, input);
-	
-    var i;
-    var x = document.getElementsByClassName(\&quot;animals\&quot;);
+	var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
+	html += \&quot;&lt; img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
+	html += \&quot;&lt; /br&gt;\&quot;
+	document.getElementById(picID).innerHTML = html;
 
-    for (i = 0; i &lt; x.length; i++) {
-      x[i].style.display = \&quot;none\&quot;;  
-    }
+	/*ignore this in the challenge*/
+	window.localStorage.setItem(&#39;picID&#39;, input);
 
-	  document.getElementById(picID).style.display = \&quot;block\&quot;;
+	var i;
+	var x = document.getElementsByClassName(\&quot;animals\&quot;);
 
-	  /* Ignore if its just for the Challenge */	
-	  parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
-	  return
-  }
+	for (i = 0; i &lt; x.length; i++) {
+	  x[i].style.display = \&quot;none\&quot;;  
+	}
+	document.getElementById(picID).style.display = \&quot;block\&quot;;
+
+	/*ignore this in the challenge*/	
+	parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
+}
 &quot;)
 
 (set: _info to &quot;Try to insert some JavaScript ino this website. This time there is no input
@@ -1718,10 +1699,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
-      &lt;pre&gt;
-      &lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
+      &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;script&gt;
         setup.ctf6_showCode();
         hljs.highlightAll();

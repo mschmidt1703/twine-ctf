@@ -2,37 +2,34 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-(set: $ctf6_code to "
-	function showTab(input) {
-    var picID;
+(set: $ctf6_code to "function showTab(input) {
+	var picID;
 
-    if (input.length == 1) {
-		  picID = input;
-	  } else {
-		  picID = input.substring(1, 0);
-	  }
-	
-    var html = \"Image \" + picID + \"<br>\";
-    html += \"< img src='../../img/ctf6/\" + input + \".jpg' />\";
-    html += \"< /br>\"
-    document.getElementById(picID).innerHTML = html;  
-    console.log(html)
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
 
-	  window.localStorage.setItem('picID', input);
-	
-    var i;
-    var x = document.getElementsByClassName(\"animals\");
+	var html = \"Image \" + picID + \"<br>\";
+	html += \"< img src='../../img/ctf6/\" + input + \".jpg' />\";
+	html += \"< /br>\"
+	document.getElementById(picID).innerHTML = html;
 
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = \"none\";  
-    }
+	/*ignore this in the challenge*/
+	window.localStorage.setItem('picID', input);
 
-	  document.getElementById(picID).style.display = \"block\";
+	var i;
+	var x = document.getElementsByClassName(\"animals\");
 
-	  /* Ignore if its just for the Challenge */	
-	  parent.postMessage(\"ctf6_url_\" + input, \"*\");
-	  return
-  }
+	for (i = 0; i < x.length; i++) {
+	  x[i].style.display = \"none\";  
+	}
+	document.getElementById(picID).style.display = \"block\";
+
+	/*ignore this in the challenge*/	
+	parent.postMessage(\"ctf6_url_\" + input, \"*\");
+}
 ")
 
 (set: _info to "Try to insert some JavaScript ino this website. This time there is no input
@@ -78,10 +75,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   </div>
   <div class="btn-pos4">
     (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
-      <pre>
-      <code id=\"code\" class=\"language-javascript\"></code>
-      </pre>
-
+      <pre><code id=\"code\" class=\"language-javascript\"></code></pre>
       <script>
         setup.ctf6_showCode();
         hljs.highlightAll();
