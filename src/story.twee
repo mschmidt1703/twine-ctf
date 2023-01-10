@@ -149,7 +149,6 @@
 
 
 :: 1.p {"position":"200,600","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -168,12 +167,42 @@ To your surprise they respond, “we don’t know. We couldn’t find out who yo
 However, what they know for sure is that he might be in a great danger. 
 You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
 
 
 :: 2.p {"position":"200,800","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -182,10 +211,39 @@ After wondering the streets for a while, you spot a big library at the end of th
 
 [[<button class="startChallenge">Start Challenge->CTF 7]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 3.p {"position":"200,1000","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -196,10 +254,39 @@ Finding your name is a great start. But you need to learn more about yourself. S
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 4.p {"position":"200,1200","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -211,10 +298,39 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 
 [[<button class="startChallenge">Start Challenge->CTF 4]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 5.p {"position":"200,1400","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -225,10 +341,39 @@ It has been a long day and this search is taking a toll on you. You just want to
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 6.p {"position":"200,1600","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -243,9 +388,39 @@ You end up finding your apartment in the first floor. The door is open! It seems
 
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 7.p {"position":"200,1800","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -258,9 +433,39 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 8.p {"position":"200,2000","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -271,10 +476,39 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 
 [[<button id="resume-btn" class="button is-danger is-rounded">next->9.p]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 9.p {"position":"200,2200","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
@@ -285,9 +519,39 @@ After some fiddling around you manage to connect the drive to a new computer. An
 
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: 10.p {"position":"200,2400","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -298,10 +562,39 @@ Coming soon. Stay tuned!
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
 
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
 
 :: x.p {"position":"400,600","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
-
 <script>
   setup.story()
 </script>
