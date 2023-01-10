@@ -19,49 +19,33 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to "
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret() {
-      theSecret = new char [14];
-      theSecret [3] = 'n';
-      theSecret [4] = 'o';
-      theSecret [0] = 'B';
-      theSecret [7] = 'l';
-      theSecret [2] = 'u';
-      theSecret [8] = 'l';
-      theSecret [10] = 'd';
-      theSecret [12] = 'e';
-      theSecret [13] = 'r';
-      theSecret [11] = 'H';
-      theSecret [1] = 'r';
-      theSecret [9] = 'e';
-      theSecret [5] = 'K';
-      theSecret [6] = 'i';
+    public static void encryptSecret(){
+        theSecret = new char [10];
+        theSecret [2] = 'G';
+        theSecret [5] = 'J';
+        theSecret [0] = '7';
+        theSecret [6] = '5';
+        theSecret [8] = 'e';
+        theSecret [3] = '8';
+        theSecret [9] = 'Y';
+        theSecret [1] = 't';
+        theSecret [4] = 'e';
+        theSecret [7] = '8';
     }
 
-    public static String conclusion() {
-      String conc = \"This case is unsolvable. Give up!\";
-       return  conc;
+    public static String conclusion(){
+    String conc = \"This case is unsolvable. Give up!\";
+        return  conc;
+   }
     }
 
     public static void main(String[] args) {
-      System.out.println(conclusion());
+    System.out.println(conclusion());
     }
-  }
+}
 ")
 
 <!-- TODO: No highlighting in code -->
-<!-- TODO: Button on wrong position -->
-<div>
-  (link-repeat: "<button class=\"code-btn-background\"></button>")[
-    (alert: "
-      <pre>
-        <code id=\"code\" class=\"language-java scrollbar\"></code>
-      </pre>
-
-      <script>
-        setup.ctf9_showCode();
-        hljs.highlightAll();
-      </script>")]
-</div>
 
 <div class="buttons">
   <div class="btn-pos5">
@@ -74,7 +58,16 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
     [[<button class="success-btn-background"></button>->CTF9end]]
   </div>
   <div class="btn-pos3">
-    [[<button class="code-btn-background"></button>->MainPage]]
+  (link-repeat: "<button class=\"code-btn-background\"></button>")[
+    (alert: "
+      <pre>
+        <code id=\"code\" class=\"language-java scrollbar\"></code>
+      </pre>
+
+      <script>
+        setup.ctf9_showCode();
+        hljs.highlightAll();
+      </script>")]
   </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
