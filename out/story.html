@@ -578,9 +578,6 @@ Please enter the flag here:
       ]\
     ]
   &lt;/div&gt;
-<<<<<<< HEAD
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/ctf10/styles.css&quot;&gt;
-=======
 &lt;/div&gt;
 
 &lt;style&gt;
@@ -620,7 +617,6 @@ Please enter the flag here:
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
 
->>>>>>> refactoring
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
@@ -659,7 +655,6 @@ Can you figure out, what the his picture means?
     /* -- Twine overrides -- */
 
     tw-story {
-    background-image: url(&quot;src/img/general/ctf/pc_rahmen.png&quot;);
     padding: inherit;
     float: initial;
     width: inherit;
@@ -727,6 +722,11 @@ Can you figure out, what the his picture means?
     .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
     }
+
+    * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+    }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
@@ -764,7 +764,7 @@ Please enter the flag here:
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;st&lt;le&gt;
+&lt;style&gt;
 /* -- General CSS --*/
 
 .resumeButton {
@@ -1956,7 +1956,7 @@ A search on the surface level is not enough. Further inspection is needed.
     color: #9b9b9b;
   }
 
-  /*2nd Part: _Doe} */
+  /* 2nd and last Part of the flag: ### hgLE2} ### */
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
@@ -2195,34 +2195,49 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to &quot;
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret(){
-        theSecret = new char [10];
-        theSecret [2] = &#39;G&#39;;
-        theSecret [5] = &#39;J&#39;;
-        theSecret [0] = &#39;7&#39;;
-        theSecret [6] = &#39;5&#39;;
-        theSecret [8] = &#39;e&#39;;
-        theSecret [3] = &#39;8&#39;;
-        theSecret [9] = &#39;Y&#39;;
-        theSecret [1] = &#39;t&#39;;
-        theSecret [4] = &#39;e&#39;;
-        theSecret [7] = &#39;8&#39;;
+    public static void encryptSecret() {
+      theSecret = new char [14];
+      theSecret [3] = &#39;n&#39;;
+      theSecret [4] = &#39;o&#39;;
+      theSecret [0] = &#39;B&#39;;
+      theSecret [7] = &#39;l&#39;;
+      theSecret [2] = &#39;u&#39;;
+      theSecret [8] = &#39;l&#39;;
+      theSecret [10] = &#39;d&#39;;
+      theSecret [12] = &#39;e&#39;;
+      theSecret [13] = &#39;r&#39;;
+      theSecret [11] = &#39;H&#39;;
+      theSecret [1] = &#39;r&#39;;
+      theSecret [9] = &#39;e&#39;;
+      theSecret [5] = &#39;K&#39;;
+      theSecret [6] = &#39;i&#39;;
     }
 
-    public static String conclusion(){
-    String conc = \&quot;This case is unsolvable. Give up!\&quot;;
-        return  conc;
-   }
+    public static String conclusion() {
+      String conc = \&quot;This case is unsolvable. Give up!\&quot;;
+       return  conc;
     }
 
     public static void main(String[] args) {
-    System.out.println(conclusion());
+      System.out.println(conclusion());
     }
-}
+  }
 &quot;)
 
 &lt;!-- TODO: No highlighting in code --&gt;
+&lt;!-- TODO: Button on wrong position --&gt;
+&lt;div&gt;
+  (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
+    (alert: &quot;
+      &lt;pre&gt;
+        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
+      &lt;/pre&gt;
 
+      &lt;script&gt;
+        setup.ctf9_showCode();
+        hljs.highlightAll();
+      &lt;/script&gt;&quot;)]
+&lt;/div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos5&quot;&gt;
@@ -2235,16 +2250,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF9end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos3&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
-    (alert: &quot;
-      &lt;pre&gt;
-        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
-      &lt;script&gt;
-        setup.ctf9_showCode();
-        hljs.highlightAll();
-      &lt;/script&gt;&quot;)]
+    [[&lt;button class=&quot;code-btn-background&quot;&gt;&lt;/button&gt;-&gt;MainPage]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you tried working with char arrays in java?&quot;)]

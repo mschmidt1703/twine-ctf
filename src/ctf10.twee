@@ -40,7 +40,6 @@ Can you figure out, what the his picture means?
     /* -- Twine overrides -- */
 
     tw-story {
-    background-image: url("src/img/general/ctf/pc_rahmen.png");
     padding: inherit;
     float: initial;
     width: inherit;
@@ -107,6 +106,11 @@ Can you figure out, what the his picture means?
 
     .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
+    }
+
+    * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
     }
 </style>
 
