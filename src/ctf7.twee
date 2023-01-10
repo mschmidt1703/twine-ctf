@@ -25,7 +25,7 @@ A search on the surface level is not enough. Further inspection is needed.
   [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
 </div>
 
-<!--1st Part: puzzelPiece{John-->
+<!--1st Part of the flag: ### puzzelPiece{og9XE ###-->
 
 <div class="buttons">
   <div class="btn-pos4">
@@ -38,7 +38,7 @@ A search on the surface level is not enough. Further inspection is needed.
     [[<button class="success-btn-background"></button>->CTF7end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The flag is consists of two parts. So you might want to look in different places.")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Open your inspector view and have a look at the website’s resources.")]
