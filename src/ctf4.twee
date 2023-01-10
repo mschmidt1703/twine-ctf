@@ -18,20 +18,10 @@ It is not necessary to look into the the code.
 Note: If you have injected XSS successfully, you will be redirected automatically.
 ")
 
-<!-- TODO: Delete comment -->
-<!--(if: $onTimeShow is false)
-(if: $onTimeShow is true)[ (alert: _info)]
-(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
-
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
 
 <h1>CTF 4 - XSS</h1>
-
-<tw-consecutive-br></tw-consecutive-br>
-<tw-consecutive-br></tw-consecutive-br>
-
-
 
 <div class="webbrowser">
   <div id="tab">
