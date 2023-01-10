@@ -95,7 +95,7 @@
 (else:)[(alert: _info)]
 
 <h1>CTF 1 - XSS</h1>
-<!-- <tw-consecutive-br></tw-consecutive-br> -->
+
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
