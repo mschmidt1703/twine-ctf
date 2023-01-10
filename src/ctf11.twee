@@ -1,5 +1,5 @@
 :: CTF 11 {"position":"1300,300","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf11/styles.css">
+
 <script>
   setup.all();
 </script>
@@ -35,10 +35,38 @@ key: NoIdea
   </div>
 </div>
 
+<style>
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
 
 :: CTF11end {"position":"1300,500","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
-<link rel="stylesheet" href="src/css/ctf11/styles_end.css">
 
 Please enter the flag here: 
 (set: $success to false)
@@ -75,3 +103,39 @@ Please enter the flag here:
     ]
   </div>
 </div>
+
+<style>
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>

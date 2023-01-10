@@ -1,5 +1,4 @@
 :: CTF 10 {"position":"1150,300","size":"100,100"}
-<link rel="stylesheet" href="src/css/ctf10/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
@@ -412,10 +411,83 @@ function ctf2(terminal)
   </div>
 </div>
 
+<style>
+    /* -- Twine overrides -- */
+
+    tw-story {
+    background-image: url("src/img/general/ctf/pc_rahmen.png");
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+    }
+
+    tw-passage {
+    margin-left: 15%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+    }
+
+    tw-story tw-consecutive-br {
+    height: 1.7% !important;
+    }
+
+    /* -- General CSS -- */
+
+    html {
+    overflow-y: hidden !important; /* Disable scroll */
+    }
+
+    br {
+    display: none;
+    }
+
+    h1 {
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+    }
+
+    .webbrowser {
+    float: inherit;
+    width: 70%;
+    height: 54%;
+    margin-left: 15.5%;
+    border: 2px solid black;
+    background: white;
+    }
+
+    :root {
+    --color: #aaa;
+    --background: #000;
+    --size: 1;
+    --animation: terminal-blink;
+    }
+
+    terminal {
+    margin-left: 18.5% !important;
+    }
+
+    .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    }
+
+    .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+    }
+</style>
+
 
 :: CTF10end {"position":"1150,500","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
-<link rel="stylesheet" href="src/css/ctf10/styles_end.css">
 
 Please enter the flag here: 
 (set: $success to false)
@@ -451,3 +523,39 @@ Please enter the flag here:
     ]
   </div>
 </div>
+
+<st<le>
+/* -- General CSS --*/
+
+.resumeButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.checkFlagButton {
+  z-index: 1;
+  height: 2.5em;
+  width: 8em;
+
+  border: none;
+  border-radius: 35px;
+  background-color: #f79e00;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  font-size: 1em;
+  color: #1e1e1e;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000000;
+}
+</style>
