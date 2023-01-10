@@ -5,8 +5,12 @@
 <script>
   setup.all();
 </script>
+<<<<<<< HEAD
 
 (set: _info to "Try to read the flag from the image") \
+=======
+(set: _info to "Try to read the flag from the image.") \
+>>>>>>> 96adc8c1ddb0f88eeb8c20f243ee66da320524b7
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
 <h1>CTF 10 - Cryptography </h1>
