@@ -141,12 +141,6 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	document.getElementById("resetButton").addEventListener("click", eventOnClickHandlerMainRestart);
-}
-
-function eventOnClickHandlerMainRestart(event) {
-	 Harlowe.storage.clear("last_passage");
-	 Harlowe.goto("initMain")
 }
 
 function eventOnClickHandlerMain(event) {
@@ -173,12 +167,10 @@ setup.ctfs = function() {
 
     if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
 		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
-		console.log(pos)
         section.scrollTo(0,pos);
     }
 	
 	section.addEventListener("scroll", (event) => {
-		console.log("scroll");
         window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
 	});
 }
@@ -230,7 +222,6 @@ window.addEventListener("message", function(event) {
   
   if (event.data.startsWith("ctf6_url_")) {
     ctf6_updateURI(event.data);
-	  console.log("success: " + event.data)
     return;
   }
   
@@ -303,7 +294,7 @@ function ctf4_updateURI(value) {
 }
 
 function ctf4_levelSucceed() {
-	alert("XSS Success");
+  alert("XSS Success");
   Harlowe.goto("CTF4_end");
 }
 
@@ -375,7 +366,6 @@ setup.ctf6_updateFrame = function (frameNum, url) {
     var arg = url.replace("https://twine.ctf/ctf6.html#", "");
     var frame = document.querySelector('iframe');
     frame.src = "src/static/ctf6/u.html"; 
-    console.log("arg:" + arg)
     
     /* frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame */ /* TODO: When code is not used then delete it */
     frame.contentWindow.postMessage(arg,"*")
@@ -551,34 +541,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
-        $success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed
-        var success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed
-
-        if(success){
-	        document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
+        $success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed;
+        var success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed;
       &lt;/script&gt;
-
       (if: $success is true)[  
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf1&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf1&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-      
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;4.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf1&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf1&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;4.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -636,8 +620,9 @@ Please enter the flag here:
 
 &lt;h1&gt;CTF 10 - Cryptography &lt;/h1&gt;
 
-Can you figure out, what the this picture means?
+Can you figure out, what the this picture means? 
 
+0 = &amp;#123; or &amp;#125;
 &lt;img src=&quot;src/img/ctf10/flag.svg&quot;&gt;&lt;img&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
@@ -651,10 +636,10 @@ Can you figure out, what the this picture means?
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF10end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A = 1, B = 2 ...&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A = 1, B = 2 ... 0 = &amp;#123; or &amp;#125;&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Mapping numbers to upper letters&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Try to map the numbers to letters&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -700,33 +685,27 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-		
-        $success = &quot;RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==&quot; == hashed
-        var success = &quot;RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==&quot; == hashed
-		
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
+        $success = &quot;Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==&quot; == hashed
+        var success = &quot;Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==&quot; == hashed
       &lt;/script&gt;
-
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)
-      (unless: $ctfs contains &quot;ctf10&quot;)[(set: $ctfs to it + (a: &quot;ctf10&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf10&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf10&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -842,34 +821,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
         $success = &quot;oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==&quot; == hashed
         var success = &quot;oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)
-      (unless: $ctfs contains &quot;ctf11&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf11&quot;))]  ] \
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-      
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf11&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf11&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -992,34 +965,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
         $success = &quot;rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==&quot; == hashed
         var success = &quot;rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-
       (if: $success is true)[  
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf2&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf2&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-      
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf2&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf2&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)] \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1070,23 +1037,15 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-(set: _whatToDo to &quot;You should be taking a closer look at things...&quot;)
+&lt;h1&gt;CTF3 - Forensics&lt;/h1&gt;
 
-[(alert: _whatToDo)]
+&lt;h2&gt;What can this text translate to?&lt;/h2&gt;
 
-&lt;h1&gt;CTF 3 - Forensics&lt;/h1&gt;
+Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;data:image/png;base64&quot;. You decide to look further into it. 
 
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
+&lt;div class=&quot;textBox&quot;&gt;
+data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&amp;sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&amp;sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&amp;sol;ND+An9fOzszO7mdnd3b3Z&amp;sol;dLpmb&amp;sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&amp;sol;f39vT2D5+7MSf&amp;sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&amp;sol;j0D4m9DGL41&amp;sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&amp;sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&amp;sol;ab145tlJUWdK7pG&amp;sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&amp;sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&amp;sol;&amp;sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&amp;sol;7pe9rn6&amp;sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&amp;sol;LtgabWnC&amp;sol;TvfvSKrHdjw4E&amp;sol;gvNNxqEc0TP8&amp;sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&amp;sol;jj8vBFFKjS6d5y4ml&amp;sol;&amp;sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&amp;sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&amp;sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&amp;sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&amp;sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&amp;sol;IP7WSvx7guJsgiDd&amp;sol;sNnb2T4CXbKCxi9O&amp;sol;SB&amp;sol;MlHa4sah68c3qyDU2LDrxMTN7&amp;sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&amp;sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&amp;sol;&amp;sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&amp;sol;3huxFNX3xE&amp;sol;Y0Fx6OvT&amp;sol;WUH9seZ2QvqklVHo&amp;sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&amp;sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&amp;sol;qY1nxwQLJRavggqHeIjsFxuRs&amp;sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&amp;sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&amp;sol;+YnVW&amp;sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&amp;sol;449h62fZr96TfXFGtxl&amp;sol;zk1tkf+WEewbEX65v+Ovbt&amp;sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&amp;sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&amp;sol;mHj&amp;sol;7z9ZciXN3H3&amp;sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&amp;sol;qPrsiqkPuPD&amp;sol;50dCK&amp;sol;J&amp;sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&amp;sol;453P&amp;sol;t4xlikTCO&amp;sol;Xpk7NVvn4qlXiiNMR8fTg3+q&amp;sol;hoqVX2aHnxKLrrsF6fO2r&amp;sol;C9LcPt8hFe&amp;sol;dMOr&amp;sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&amp;sol;XpVNZdXh&amp;sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&amp;sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&amp;sol;cU3r7qV5Z88UD7RFhxV5Ijj&amp;sol;oAUjavPBb5SRW1fYyi246Of5B&amp;sol;jEDEjplfcOd0vLe91Tgujo&amp;sol;K6nB&amp;sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&amp;sol;dU6uTmZz5MMaU&amp;sol;1UHJuUimqn&amp;sol;ekuKXoyiF73cbR&amp;sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&amp;sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&amp;sol;8vD7Yv0FvaX1oC5U&amp;sol;Y0nFocha&amp;sol;957v6F6z71zTW+xtFi8Z+1K&amp;sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&amp;sol;MWYQ+JjavaGUhv7Lsq&amp;sol;FvhKFbN9dZBo7D0cc&amp;sol;&amp;sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&amp;sol;WHv5J&amp;sol;1ty9uK&amp;sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&amp;sol;Qhft5462yrwlcrb&amp;sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&amp;sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&amp;sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&amp;sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&amp;sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&amp;sol;la5y1gP3DzrzlA6&amp;sol;LXDoVyAvUNhrCKryakVd&amp;sol;JZjI1&amp;sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&amp;sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&amp;sol;XSue1m+1aCCzk90IO&amp;sol;2Agi&amp;sol;Mt&amp;sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&amp;sol;4oD+22MQ9vHQod8fZJjX&amp;sol;MN7wdu&amp;sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&amp;sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&amp;sol;VIWbGr2B&amp;sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&amp;sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&amp;sol;eECl4N1lqtKI9QwfL40Hev&amp;sol;+XF14r1+FBv6RPdqZK&amp;sol;7kWCFeu3vnHKeONkQQvlCR7&amp;sol;EN78wWYX&amp;sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&amp;sol;+BldQM3f7yvtvbnxKnonlBFtVMc&amp;sol;yR4P9RzMOBaXwftBS&amp;sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&amp;sol;UOj55wjbIFdX0Vg1a6&amp;sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&amp;sol;tZsj8K2MW6&amp;sol;qyDt1ixH&amp;sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&amp;sol;3xUnpO&amp;sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&amp;sol;&amp;sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&amp;sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&amp;sol;sNmFP49ay4UFdTtOXp5wX1K&amp;sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&amp;sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&amp;sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&amp;sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&amp;sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&amp;sol;knHInhqjCe8HMv&amp;sol;m1NvlE5nh&amp;sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&amp;sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&amp;sol;8JZ&amp;sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&amp;sol;0WtNaegWDgw9p&amp;sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&amp;sol;oV&amp;sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&amp;sol;WTf8g&amp;sol;R&amp;sol;H1&amp;sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&amp;sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&amp;sol;p9y8d02&amp;sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&amp;sol;tBTCrPYxT5zyL3Xdsu4gTs3c&amp;sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&amp;sol;1Qe&amp;sol;1mfz4N&amp;sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&amp;sol;v6G&amp;sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&amp;sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&amp;sol;B8+l6NC7s08eS8r1RvU3xqFapK&amp;sol;3yYzONdn0xBz7fZ&amp;sol;e921Xj2xiI2WPZhrzHRvd+&amp;sol;Zul&amp;sol;92O&amp;sol;TUsO4wnSvt95xWsL&amp;sol;VfP&amp;sol;+uf&amp;sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&amp;sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&amp;sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&amp;sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&amp;sol;O31Jf2TI&amp;sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&amp;sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&amp;sol;zw3uFgmZet3TX8P&amp;sol;BjS1laQK2&amp;sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&amp;sol;zYQDDqf2v+p9&amp;sol;NFdZ8l61y7fWT0r&amp;sol;Vt&amp;sol;sGp&amp;sol;U8Zr5D34pQ8vOqfr+t7K&amp;sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&amp;sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&amp;sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&amp;sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&amp;sol;hhE2G&amp;sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&amp;sol;EV&amp;sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&amp;sol;0RZm8vvUOdXPmXdf&amp;sol;rO0io&amp;sol;41As9DFp+5VHVDqyD8Xk362o&amp;sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&amp;sol;H702d8D71EP&amp;sol;dq0F6fcSgW+pjU&amp;sol;eats&amp;sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&amp;sol;mr+H21QUpUzZZG+UsYh2Khj3kc&amp;sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&amp;sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&amp;sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&amp;sol;f&amp;sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==&lt;/div&gt;
 
-&lt;h2&gt;Capture the Flag&lt;/h2&gt;
-
-&lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-&lt;!-- TODO: Delete citation --&gt;
-&lt;p&gt;Capture the Flag (CTF) in computer security is an exercise in which &quot;flags&quot; are secretly hidden in purposefully-vulnerable programs or websites. It can either be for competitive or educational purposes. Competitors steal flags either from other competitors (attack/defense-style CTFs) or from the organizers (jeopardy-style challenges). Several variations exist. Competitions can including hiding flags in hardware devices, they can be both online or in-person, and can be advanced or entry-level. The game is based on the traditional outdoor sport of the same name.&lt;/p&gt;
-&lt;p&gt; Source: Wikipedia &lt;/p&gt;
-
-&lt;!--flag{12_234_ghuzt5r}--&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -1099,16 +1058,14 @@ Please enter the flag here:
     [[&lt;button class=&quot;success-btn-background&quot;&gt;&lt;/button&gt;-&gt;CTF3end]]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 2&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;There are plenty of online tools that can help you with this task. &quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;HINT 1&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Base64 encoding is used often in programming to convert sequences of data bits to different formats. Converting this string should lead you to a diffrent file format.&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
   /* -- General CSS -- */
 
   br {
@@ -1130,7 +1087,25 @@ Please enter the flag here:
     right: 1rem;
     bottom: 1rem;
   }
-
+  
+  .textBox {
+    width: 50rem !important;
+    height: 50rem !important;
+    margin: 0 auto;
+	  padding: 3rem;
+    border: 5px #4B0872;
+    background-color: #1E1E1E;
+	  color: #fff;
+    overflow: scroll;
+    text-align:justify;
+	  word-wrap: break-word;
+  }
+  
+  .codeFormatting {
+    background-color: #1E1E1E;
+    color: #fff;
+  }
+ 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
@@ -1146,40 +1121,31 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-  [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+  [ \
     &lt;script&gt;
       var input = $flag
       var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
       $success = &quot;kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==&quot; == hashed
       var success = &quot;kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==&quot; == hashed
-      
-      if(success){
-        document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-      }
-    &lt;/script&gt;
-    
-    (if: $success is true)[  
-      (alert: &quot;Correct Flag!&quot;)  
-    (unless: $ctfs contains &quot;ctf3&quot;)[
-      (set: $ctfs to it + (a: &quot;ctf3&quot;))]  ] \
-    (unless: $success is true)[
-      (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-    
-    (if: $success is true)[\
-      (if: $playingStory is true)[
-        [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
-      (else:)[
-        [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-    ]\
-  ]
+      &lt;/script&gt;
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf3&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf3&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;style&gt;
- @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -1212,11 +1178,6 @@ Please enter the flag here:
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
-  }
-
-  * {
-    font-family: &quot;OCR A Extended&quot;, sans-serif;
-    color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
@@ -1643,37 +1604,34 @@ Congratulations you made it!
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
-(set: $ctf6_code to &quot;
-	function showTab(input) {
-    var picID;
+(set: $ctf6_code to &quot;function showTab(input) {
+	var picID;
 
-    if (input.length == 1) {
-		  picID = input;
-	  } else {
-		  picID = input.substring(1, 0);
-	  }
-	
-    var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
-    html += \&quot;&lt; img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
-    html += \&quot;&lt; /br&gt;\&quot;
-    document.getElementById(picID).innerHTML = html;  
-    console.log(html)
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
 
-	  window.localStorage.setItem(&#39;picID&#39;, input);
-	
-    var i;
-    var x = document.getElementsByClassName(\&quot;animals\&quot;);
+	var html = \&quot;Image \&quot; + picID + \&quot;&lt;br&gt;\&quot;;
+	html += \&quot;&lt; img src=&#39;../../img/ctf6/\&quot; + input + \&quot;.jpg&#39; /&gt;\&quot;;
+	html += \&quot;&lt; /br&gt;\&quot;
+	document.getElementById(picID).innerHTML = html;
 
-    for (i = 0; i &lt; x.length; i++) {
-      x[i].style.display = \&quot;none\&quot;;  
-    }
+	/*ignore this in the challenge*/
+	window.localStorage.setItem(&#39;picID&#39;, input);
 
-	  document.getElementById(picID).style.display = \&quot;block\&quot;;
+	var i;
+	var x = document.getElementsByClassName(\&quot;animals\&quot;);
 
-	  /* Ignore if its just for the Challenge */	
-	  parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
-	  return
-  }
+	for (i = 0; i &lt; x.length; i++) {
+	  x[i].style.display = \&quot;none\&quot;;  
+	}
+	document.getElementById(picID).style.display = \&quot;block\&quot;;
+
+	/*ignore this in the challenge*/	
+	parent.postMessage(\&quot;ctf6_url_\&quot; + input, \&quot;*\&quot;);
+}
 &quot;)
 
 (set: _info to &quot;Try to insert some JavaScript ino this website. This time there is no input
@@ -1719,10 +1677,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;
-      &lt;pre&gt;
-      &lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
+      &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-javascript\&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;script&gt;
         setup.ctf6_showCode();
         hljs.highlightAll();
@@ -1992,34 +1947,28 @@ Please enter the flag here:
 (set: $success to false)
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
         $success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
         var success = &quot;CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-    
       (if: $success is true)[  
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf7&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf7&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf7&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf7&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2148,34 +2097,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
         $success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
         var success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf8&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf8&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-      ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf8&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf8&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2338,34 +2281,28 @@ Please enter the flag here:
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
-  &lt;div&gt;(link-repeat: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;)
-    [
+  &lt;div&gt;(link-rerun: &quot;&lt;button id=&#39;checkflag_btn&#39; class=&#39;color_purple checkFlagButton&#39;&gt;Check Flag&lt;/button&gt;&quot;) \
+    [ \
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
         $success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
         var success = &quot;j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==&quot; == hashed
-        
-        if(success){
-          document.getElementById(&quot;checkflag_btn&quot;).style.display = &quot;none&quot;;
-        }
       &lt;/script&gt;
-    
-      (if: $success is true)[
-        (alert: &quot;Correct Flag!&quot;)  
-      (unless: $ctfs contains &quot;ctf9&quot;)[
-        (set: $ctfs to it + (a: &quot;ctf9&quot;))]]\
-      (unless: $success is true)[
-        (alert: &quot;Incorrect Flag, please try again!&quot;)]\
-      
-      (if: $success is true)[\
-        (if: $playingStory is true)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]]\
-        (else:)[
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]\
-    ]\
-    ]
+      (if: $success is true)[  
+        (alert: &quot;Correct Flag!&quot;) \
+      (unless: $ctfs contains &quot;ctf9&quot;)[  \
+        (set: $ctfs to it + (a: &quot;ctf9&quot;))]]  \
+      (unless: $success is true)[ \
+        (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]]  \
+        (else:)[ \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
+      ] \
+    ] \
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2417,7 +2354,7 @@ Please enter the flag here:
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
 (set: _finished to &quot;CTF finished :&gt;&quot;)\
-(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Cryptography&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Reverse Engineering&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
+(set: _names to (dm: 1, &quot;CTF 1 - XSS&quot;, 2, &quot;CTF 2 - Forensics&quot;, 3, &quot;CTF 3 - Forensics&quot;, 4, &quot;CTF 4 - XSS&quot;, 5, &quot;CTF 5 - XSS&quot;, 6, &quot;CTF 6 - XSS&quot;, 7, &quot;CTF 7 - Web Exploitation&quot; , 8, &quot;CTF 8 - Cryptography&quot;, 9, &quot;CTF 9 - Reverse Engineering&quot;, 10, &quot;CTF 10 - Cryptography&quot;, 11, &quot;CTF 11 - Cryptography&quot;) )\
 (set: _difficulties to (dm: 1, &quot;1&quot;, 2, &quot;1&quot;, 3, &quot;1&quot;, 4, &quot;2&quot;, 5, &quot;3&quot;, 6, &quot;3&quot;, 7, &quot;1&quot;, 8, &quot;1&quot;, 9, &quot;1&quot;, 10, &quot;1&quot;, 11, &quot;1&quot;) )\
 
 &lt;header&gt;
@@ -2442,14 +2379,14 @@ Please enter the flag here:
 &lt;section&gt;
   Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
 
-  (if: $ctfs&#39;s length is 0)[\
+ &lt;!-- (if: $ctfs&#39;s length is 0)[\
     No ctf has been completed so far.
   ](else:)[\
     &lt;!-- we iterate over the array and print each item --&gt;\
     (for: each _item, ...$ctfs)[\
       _item (unless: $ctfs&#39;s last is _item)[, ]\
     ].
-  ]
+  ] --&gt;
 
   (for: each _i, ...(range:1,11))[
   (print: &#39;&lt;div class=&quot;ctfpos ctf&#39; + (text: _i) + &#39;&quot;&gt;&#39;)
@@ -2636,6 +2573,19 @@ Please enter the flag here:
     text-shadow: 4px 4px 5px #000000;
     font-size: 1.6vw;
   }
+  
+	/*Try to change scrollbar in Google Chrome*/
+	::-webkit-scrollbar {
+	  width: 12px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+	  background-color: rgba(155, 155, 155, 0.5);
+	  border-radius: 20px;
+	  border: transparent;
+	}
 
   * {
     font-family: &quot;OCR A Extended&quot;, sans-serif;
@@ -2683,15 +2633,19 @@ Please enter the flag here:
     &lt;div class=&quot;preview_bg&quot;&gt;
       &lt;img src=&quot;src/img/main/previews/preview_default.svg&quot; alt=&quot;preview&quot;&gt;
       &lt;div class=&quot;rectangle&quot;&gt;
-        &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/a&gt;
-		&lt;button id=&quot;resetButton&quot; class=&quot;resetButton&quot;&gt;Reset Game&lt;/a&gt;
+        &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/button&gt;
+		(link-repeat: &quot;&lt;button id=&#39;resetButton&#39; class=&#39;resetButton&#39;&gt;Reset Game&lt;/button&gt;&quot;)[
+		(set: $doYesNo to (confirm: &quot;Do you really want to delete your game state?&quot;))
+		(if: $doYesNo)[(go-to: &quot;reloadGame&quot;)]
+		(else:)[]
+		]
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
 &lt;script&gt;
  if(Harlowe.storage.load(&#39;last_passage&#39;) != null){
-	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Resume&quot;;
+	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Continue&quot;;
  } else {
  	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
  }
@@ -2846,7 +2800,14 @@ Please enter the flag here:
   }
   
   Harlowe.goto(nextPage);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="33" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
+(set: $playingStory to true)
+(reload: )
+(goto: MainPage)
+
+&lt;script&gt;
+	 Harlowe.storage.clear(&quot;last_passage&quot;);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -2990,7 +2951,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3040,7 +3001,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3077,7 +3038,7 @@ After wondering the streets for a while, you spot a big library at the end of th
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3116,7 +3077,7 @@ Finding your name is a great start. But you need to learn more about yourself. S
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3156,7 +3117,7 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3195,7 +3156,7 @@ It has been a long day and this search is taking a toll on you. You just want to
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3238,7 +3199,7 @@ You end up finding your apartment in the first floor. The door is open! It seems
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3279,7 +3240,7 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3318,7 +3279,7 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3357,7 +3318,7 @@ After some fiddling around you manage to connect the drive to a new computer. An
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3396,13 +3357,13 @@ Coming soon. Stay tuned!
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="46" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="46" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="47" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;

@@ -5,7 +5,9 @@
   setup.all();
 </script>
 
-<h1>What can this text translate to?</h1>
+<h1>CTF3 - Forensics</h1>
+
+<h2>What can this text translate to?</h2>
 
 Another random files catches your attention. Even though you can't read the text, you notice that it starts with the string: "data:image/png;base64". You decide to look further into it. 
 
@@ -54,21 +56,22 @@ data:image&sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0
     bottom: 1rem;
   }
   
-  .textBox{
+  .textBox {
+    width: 50rem !important;
+    height: 50rem !important;
+    margin: 0 auto;
+	  padding: 3rem;
     border: 5px #4B0872;
-	padding: 3rem;
     background-color: #1E1E1E;
-	color: #fff;
+	  color: #fff;
     overflow: scroll;
     text-align:justify;
-	word-wrap: break-word;
-	width: 50rem !important;
-    height: 50rem !important;
+	  word-wrap: break-word;
   }
   
   .codeFormatting {
-	background-color: #1E1E1E;
-	color: #fff;
+    background-color: #1E1E1E;
+    color: #fff;
   }
  
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
