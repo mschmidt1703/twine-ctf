@@ -153,11 +153,51 @@
   setup.story()
 </script>
 
-You just woke up from what it feels like a decade long nap. You look around to find yourself in an unrecognizable place. You start freaking out...
+<h1>Introduction</h1>
 
-Some strangers hear you fussing around. They enter the room where you are lying. “Don’t worry. You’re in a safe place.” They interduce themselves as a group of activists. A couple of months ago, they found you unconscious on the side of a street and decided to help you. They recognized you from the search warrant spread all over the city. “A sketchy group has been looking for you intensely.” 
+You woke up and felt as if you had been asleep for ages. At first you can't really see anything, \
+but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
+what appears to be a capsule. You are confused and move your hands until you notice that something \
+seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
+given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
+you get out now? 
 
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
 
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: "Quick! Hurry up, something seems to be wrong!". You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. "The capsule is open. He must have finally woken up." Came from a male voice. "At last! \
+But where is he?" you hear another voice, but this time a female one, say. "We need to find him quickly \
+and check his vitals," said the male voice "Josie, please go get Rob already. When I find him, he should \
+check him straight away". "All right, John," Josie replies and you hear footsteps coming through the \
+door and out of the room. You don't dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. "There you are!", John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. "Don't be afraid," John said in a calm \
+voice "We don't want to hurt you. It's all right. Look, I'm John and some of my colleagues, or rather \
+friends, and I found you and saved you."
+
+<!--
+Translated with www.DeepL.com/Translator (free version)
 To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
 
 “I don’t seem to remember anything. Who even am I?”
@@ -165,6 +205,7 @@ To your surprise they respond, “we don’t know. We couldn’t find out who yo
 However, what they know for sure is that he might be in a great danger. 
 You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
 “Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
+-->
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
@@ -178,6 +219,14 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
   }
 
   /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
 
   .startChallenge {
     z-index: 1;
@@ -196,6 +245,11 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
