@@ -236,7 +236,7 @@ Memory Loss: Find Your Way Back
 (set: $ctfs to (a:))
 (set: $playingStory to true)
 (reload: )
-(goto: MainPage)
+(go-to: MainPage)
 
 <script>
 	 Harlowe.storage.clear("last_passage");
