@@ -259,6 +259,14 @@ function eventOnClickHandler(event) {
 
 /* # CTF 1 End */
 
+/* # CTF 4 Start */
+setup.ctf3_copyText = function () {
+	var textbox = document.getElementById("textbox");
+	navigator.clipboard.writeText(textbox.innerHTML);
+	alert("Text copied to clipboard");
+}
+/* # CTF 1 End */
+
 
 /* # CTF 4 Start */
 
@@ -390,6 +398,7 @@ setup.ctf6_showCode = function() {
 /* # CTF 6 End */
 
 /* # CTF 9 Start */
+
 setup.ctf9_showCode = function() {
   var codeBox2 = document.getElementById('code'); 
   codeBox2.innerHTML = Harlowe.variable("$ctf9_code")
@@ -1034,18 +1043,18 @@ Please enter the flag here:
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
-  setup.all();
+	setup.all();
 &lt;/script&gt;
 
 &lt;h1&gt;CTF3 - Forensics&lt;/h1&gt;
 
 &lt;h2&gt;What can this text translate to?&lt;/h2&gt;
 
-Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;data:image/png;base64&quot;. You decide to look further into it. 
+Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;iVBORw0KGg...&quot;. You decide to look further into it. 
 
-&lt;div class=&quot;textBox&quot;&gt;
-data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&amp;sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&amp;sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&amp;sol;ND+An9fOzszO7mdnd3b3Z&amp;sol;dLpmb&amp;sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&amp;sol;f39vT2D5+7MSf&amp;sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&amp;sol;j0D4m9DGL41&amp;sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&amp;sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&amp;sol;ab145tlJUWdK7pG&amp;sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&amp;sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&amp;sol;&amp;sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&amp;sol;7pe9rn6&amp;sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&amp;sol;LtgabWnC&amp;sol;TvfvSKrHdjw4E&amp;sol;gvNNxqEc0TP8&amp;sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&amp;sol;jj8vBFFKjS6d5y4ml&amp;sol;&amp;sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&amp;sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&amp;sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&amp;sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&amp;sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&amp;sol;IP7WSvx7guJsgiDd&amp;sol;sNnb2T4CXbKCxi9O&amp;sol;SB&amp;sol;MlHa4sah68c3qyDU2LDrxMTN7&amp;sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&amp;sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&amp;sol;&amp;sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&amp;sol;3huxFNX3xE&amp;sol;Y0Fx6OvT&amp;sol;WUH9seZ2QvqklVHo&amp;sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&amp;sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&amp;sol;qY1nxwQLJRavggqHeIjsFxuRs&amp;sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&amp;sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&amp;sol;+YnVW&amp;sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&amp;sol;449h62fZr96TfXFGtxl&amp;sol;zk1tkf+WEewbEX65v+Ovbt&amp;sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&amp;sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&amp;sol;mHj&amp;sol;7z9ZciXN3H3&amp;sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&amp;sol;qPrsiqkPuPD&amp;sol;50dCK&amp;sol;J&amp;sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&amp;sol;453P&amp;sol;t4xlikTCO&amp;sol;Xpk7NVvn4qlXiiNMR8fTg3+q&amp;sol;hoqVX2aHnxKLrrsF6fO2r&amp;sol;C9LcPt8hFe&amp;sol;dMOr&amp;sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&amp;sol;XpVNZdXh&amp;sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&amp;sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&amp;sol;cU3r7qV5Z88UD7RFhxV5Ijj&amp;sol;oAUjavPBb5SRW1fYyi246Of5B&amp;sol;jEDEjplfcOd0vLe91Tgujo&amp;sol;K6nB&amp;sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&amp;sol;dU6uTmZz5MMaU&amp;sol;1UHJuUimqn&amp;sol;ekuKXoyiF73cbR&amp;sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&amp;sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&amp;sol;8vD7Yv0FvaX1oC5U&amp;sol;Y0nFocha&amp;sol;957v6F6z71zTW+xtFi8Z+1K&amp;sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&amp;sol;MWYQ+JjavaGUhv7Lsq&amp;sol;FvhKFbN9dZBo7D0cc&amp;sol;&amp;sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&amp;sol;WHv5J&amp;sol;1ty9uK&amp;sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&amp;sol;Qhft5462yrwlcrb&amp;sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&amp;sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&amp;sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&amp;sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&amp;sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&amp;sol;la5y1gP3DzrzlA6&amp;sol;LXDoVyAvUNhrCKryakVd&amp;sol;JZjI1&amp;sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&amp;sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&amp;sol;XSue1m+1aCCzk90IO&amp;sol;2Agi&amp;sol;Mt&amp;sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&amp;sol;4oD+22MQ9vHQod8fZJjX&amp;sol;MN7wdu&amp;sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&amp;sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&amp;sol;VIWbGr2B&amp;sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&amp;sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&amp;sol;eECl4N1lqtKI9QwfL40Hev&amp;sol;+XF14r1+FBv6RPdqZK&amp;sol;7kWCFeu3vnHKeONkQQvlCR7&amp;sol;EN78wWYX&amp;sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&amp;sol;+BldQM3f7yvtvbnxKnonlBFtVMc&amp;sol;yR4P9RzMOBaXwftBS&amp;sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&amp;sol;UOj55wjbIFdX0Vg1a6&amp;sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&amp;sol;tZsj8K2MW6&amp;sol;qyDt1ixH&amp;sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&amp;sol;3xUnpO&amp;sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&amp;sol;&amp;sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&amp;sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&amp;sol;sNmFP49ay4UFdTtOXp5wX1K&amp;sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&amp;sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&amp;sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&amp;sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&amp;sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&amp;sol;knHInhqjCe8HMv&amp;sol;m1NvlE5nh&amp;sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&amp;sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&amp;sol;8JZ&amp;sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&amp;sol;0WtNaegWDgw9p&amp;sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&amp;sol;oV&amp;sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&amp;sol;WTf8g&amp;sol;R&amp;sol;H1&amp;sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&amp;sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&amp;sol;p9y8d02&amp;sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&amp;sol;tBTCrPYxT5zyL3Xdsu4gTs3c&amp;sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&amp;sol;1Qe&amp;sol;1mfz4N&amp;sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&amp;sol;v6G&amp;sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&amp;sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&amp;sol;B8+l6NC7s08eS8r1RvU3xqFapK&amp;sol;3yYzONdn0xBz7fZ&amp;sol;e921Xj2xiI2WPZhrzHRvd+&amp;sol;Zul&amp;sol;92O&amp;sol;TUsO4wnSvt95xWsL&amp;sol;VfP&amp;sol;+uf&amp;sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&amp;sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&amp;sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&amp;sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&amp;sol;O31Jf2TI&amp;sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&amp;sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&amp;sol;zw3uFgmZet3TX8P&amp;sol;BjS1laQK2&amp;sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&amp;sol;zYQDDqf2v+p9&amp;sol;NFdZ8l61y7fWT0r&amp;sol;Vt&amp;sol;sGp&amp;sol;U8Zr5D34pQ8vOqfr+t7K&amp;sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&amp;sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&amp;sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&amp;sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&amp;sol;hhE2G&amp;sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&amp;sol;EV&amp;sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&amp;sol;0RZm8vvUOdXPmXdf&amp;sol;rO0io&amp;sol;41As9DFp+5VHVDqyD8Xk362o&amp;sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&amp;sol;H702d8D71EP&amp;sol;dq0F6fcSgW+pjU&amp;sol;eats&amp;sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&amp;sol;mr+H21QUpUzZZG+UsYh2Khj3kc&amp;sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&amp;sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&amp;sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&amp;sol;f&amp;sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==&lt;/div&gt;
-
+&lt;div id=&quot;textbox&quot; class=&quot;textBox&quot;&gt;
+iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&amp;sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&amp;sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&amp;sol;ND+An9fOzszO7mdnd3b3Z&amp;sol;dLpmb&amp;sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&amp;sol;f39vT2D5+7MSf&amp;sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&amp;sol;j0D4m9DGL41&amp;sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&amp;sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&amp;sol;ab145tlJUWdK7pG&amp;sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&amp;sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&amp;sol;&amp;sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&amp;sol;7pe9rn6&amp;sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&amp;sol;LtgabWnC&amp;sol;TvfvSKrHdjw4E&amp;sol;gvNNxqEc0TP8&amp;sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&amp;sol;jj8vBFFKjS6d5y4ml&amp;sol;&amp;sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&amp;sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&amp;sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&amp;sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&amp;sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&amp;sol;IP7WSvx7guJsgiDd&amp;sol;sNnb2T4CXbKCxi9O&amp;sol;SB&amp;sol;MlHa4sah68c3qyDU2LDrxMTN7&amp;sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&amp;sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&amp;sol;&amp;sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&amp;sol;3huxFNX3xE&amp;sol;Y0Fx6OvT&amp;sol;WUH9seZ2QvqklVHo&amp;sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&amp;sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&amp;sol;qY1nxwQLJRavggqHeIjsFxuRs&amp;sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&amp;sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&amp;sol;+YnVW&amp;sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&amp;sol;449h62fZr96TfXFGtxl&amp;sol;zk1tkf+WEewbEX65v+Ovbt&amp;sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&amp;sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&amp;sol;mHj&amp;sol;7z9ZciXN3H3&amp;sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&amp;sol;qPrsiqkPuPD&amp;sol;50dCK&amp;sol;J&amp;sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&amp;sol;453P&amp;sol;t4xlikTCO&amp;sol;Xpk7NVvn4qlXiiNMR8fTg3+q&amp;sol;hoqVX2aHnxKLrrsF6fO2r&amp;sol;C9LcPt8hFe&amp;sol;dMOr&amp;sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&amp;sol;XpVNZdXh&amp;sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&amp;sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&amp;sol;cU3r7qV5Z88UD7RFhxV5Ijj&amp;sol;oAUjavPBb5SRW1fYyi246Of5B&amp;sol;jEDEjplfcOd0vLe91Tgujo&amp;sol;K6nB&amp;sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&amp;sol;dU6uTmZz5MMaU&amp;sol;1UHJuUimqn&amp;sol;ekuKXoyiF73cbR&amp;sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&amp;sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&amp;sol;8vD7Yv0FvaX1oC5U&amp;sol;Y0nFocha&amp;sol;957v6F6z71zTW+xtFi8Z+1K&amp;sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&amp;sol;MWYQ+JjavaGUhv7Lsq&amp;sol;FvhKFbN9dZBo7D0cc&amp;sol;&amp;sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&amp;sol;WHv5J&amp;sol;1ty9uK&amp;sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&amp;sol;Qhft5462yrwlcrb&amp;sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&amp;sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&amp;sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&amp;sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&amp;sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&amp;sol;la5y1gP3DzrzlA6&amp;sol;LXDoVyAvUNhrCKryakVd&amp;sol;JZjI1&amp;sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&amp;sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&amp;sol;XSue1m+1aCCzk90IO&amp;sol;2Agi&amp;sol;Mt&amp;sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&amp;sol;4oD+22MQ9vHQod8fZJjX&amp;sol;MN7wdu&amp;sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&amp;sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&amp;sol;VIWbGr2B&amp;sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&amp;sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&amp;sol;eECl4N1lqtKI9QwfL40Hev&amp;sol;+XF14r1+FBv6RPdqZK&amp;sol;7kWCFeu3vnHKeONkQQvlCR7&amp;sol;EN78wWYX&amp;sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&amp;sol;+BldQM3f7yvtvbnxKnonlBFtVMc&amp;sol;yR4P9RzMOBaXwftBS&amp;sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&amp;sol;UOj55wjbIFdX0Vg1a6&amp;sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&amp;sol;tZsj8K2MW6&amp;sol;qyDt1ixH&amp;sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&amp;sol;3xUnpO&amp;sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&amp;sol;&amp;sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&amp;sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&amp;sol;sNmFP49ay4UFdTtOXp5wX1K&amp;sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&amp;sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&amp;sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&amp;sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&amp;sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&amp;sol;knHInhqjCe8HMv&amp;sol;m1NvlE5nh&amp;sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&amp;sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&amp;sol;8JZ&amp;sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&amp;sol;0WtNaegWDgw9p&amp;sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&amp;sol;oV&amp;sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&amp;sol;WTf8g&amp;sol;R&amp;sol;H1&amp;sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&amp;sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&amp;sol;p9y8d02&amp;sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&amp;sol;tBTCrPYxT5zyL3Xdsu4gTs3c&amp;sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&amp;sol;1Qe&amp;sol;1mfz4N&amp;sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&amp;sol;v6G&amp;sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&amp;sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&amp;sol;B8+l6NC7s08eS8r1RvU3xqFapK&amp;sol;3yYzONdn0xBz7fZ&amp;sol;e921Xj2xiI2WPZhrzHRvd+&amp;sol;Zul&amp;sol;92O&amp;sol;TUsO4wnSvt95xWsL&amp;sol;VfP&amp;sol;+uf&amp;sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&amp;sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&amp;sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&amp;sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&amp;sol;O31Jf2TI&amp;sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&amp;sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&amp;sol;zw3uFgmZet3TX8P&amp;sol;BjS1laQK2&amp;sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&amp;sol;zYQDDqf2v+p9&amp;sol;NFdZ8l61y7fWT0r&amp;sol;Vt&amp;sol;sGp&amp;sol;U8Zr5D34pQ8vOqfr+t7K&amp;sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&amp;sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&amp;sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&amp;sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&amp;sol;hhE2G&amp;sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&amp;sol;EV&amp;sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&amp;sol;0RZm8vvUOdXPmXdf&amp;sol;rO0io&amp;sol;41As9DFp+5VHVDqyD8Xk362o&amp;sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&amp;sol;H702d8D71EP&amp;sol;dq0F6fcSgW+pjU&amp;sol;eats&amp;sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&amp;sol;mr+H21QUpUzZZG+UsYh2Khj3kc&amp;sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&amp;sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&amp;sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&amp;sol;f&amp;sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==&lt;/div&gt;
+&lt;div style=&quot;text-align-last: center; margin-top: 4%;&quot;&gt;(link-repeat: &quot;&lt;button onclick=\&quot;setup.ctf3_copyText()\&quot;&gt;Copy Text&lt;/button&gt;&quot;)[]&lt;div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -1092,13 +1101,13 @@ data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAX
     width: 50rem !important;
     height: 50rem !important;
     margin: 0 auto;
-	  padding: 3rem;
+	padding: 3rem;
     border: 5px #4B0872;
     background-color: #1E1E1E;
-	  color: #fff;
+	color: #fff;
     overflow: scroll;
     text-align:justify;
-	  word-wrap: break-word;
+	word-wrap: break-word;
   }
   
   .codeFormatting {
@@ -1113,6 +1122,36 @@ data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAX
   * {
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
+  }
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+  
+    button {
+    height: 2em;
+    width: 8em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 2em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
@@ -2165,6 +2204,7 @@ Please enter the flag here:
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -2183,7 +2223,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to &quot;
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret(){
+    public static void encryptSecret() {
         theSecret = new char [10];
         theSecret [2] = &#39;G&#39;;
         theSecret [5] = &#39;J&#39;;
@@ -2197,14 +2237,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
         theSecret [7] = &#39;8&#39;;
     }
 
-    public static String conclusion(){
-    String conc = \&quot;This case is unsolvable. Give up!\&quot;;
-        return  conc;
-   }
+    public static String conclusion() {
+	String conc = \&quot;This case is unsolvable. Give up!\&quot;;
+        return conc;
     }
+    
 
     public static void main(String[] args) {
-    System.out.println(conclusion());
+	System.out.println(conclusion());
     }
 }
 &quot;)
@@ -2224,10 +2264,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   &lt;div class=&quot;btn-pos3&quot;&gt;
   (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
     (alert: &quot;
-      &lt;pre&gt;
-        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
+      &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-java\&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;script&gt;
         setup.ctf9_showCode();
         hljs.highlightAll();
@@ -2273,6 +2310,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   * {
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
+  }
+  
+  code {
+    overflow: hidden !important;
+  }
+  
+  pre {
+	background-color: #333 !important;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
@@ -2574,7 +2619,7 @@ Please enter the flag here:
     font-size: 1.6vw;
   }
   
-	/*Try to change scrollbar in Google Chrome*/
+	/*Scrollbar Google Chrome*/
 	::-webkit-scrollbar {
 	  width: 12px;
 	}
@@ -2801,12 +2846,11 @@ Please enter the flag here:
   
   Harlowe.goto(nextPage);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
-(set: $playingStory to true)
-(reload: )
-(go-to: &#39;initMain&#39;)
+(restart:)
 
 &lt;script&gt;
 	 Harlowe.storage.clear(&quot;last_passage&quot;);
+	 Harlowe.goto(&quot;MainPage&quot;);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 

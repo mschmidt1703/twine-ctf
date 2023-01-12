@@ -234,12 +234,11 @@ Memory Loss: Find Your Way Back
 
 :: reloadGame {"position":"200,450","size":"100,100"}
 (set: $ctfs to (a:))
-(set: $playingStory to true)
-(reload: )
-(go-to: 'initMain')
+(restart:)
 
 <script>
 	 Harlowe.storage.clear("last_passage");
+	 Harlowe.goto("MainPage");
 </script>
 
 :: Achievements {"position":"300,0","size":"100,100"}

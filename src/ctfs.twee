@@ -228,7 +228,7 @@
     font-size: 1.6vw;
   }
   
-	/*Try to change scrollbar in Google Chrome*/
+	/*Scrollbar Google Chrome*/
 	::-webkit-scrollbar {
 	  width: 12px;
 	}

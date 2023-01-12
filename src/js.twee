@@ -124,6 +124,14 @@ function eventOnClickHandler(event) {
 
 /* # CTF 1 End */
 
+/* # CTF 4 Start */
+setup.ctf3_copyText = function () {
+	var textbox = document.getElementById("textbox");
+	navigator.clipboard.writeText(textbox.innerHTML);
+	alert("Text copied to clipboard");
+}
+/* # CTF 1 End */
+
 
 /* # CTF 4 Start */
 
@@ -255,6 +263,7 @@ setup.ctf6_showCode = function() {
 /* # CTF 6 End */
 
 /* # CTF 9 Start */
+
 setup.ctf9_showCode = function() {
   var codeBox2 = document.getElementById('code'); 
   codeBox2.innerHTML = Harlowe.variable("$ctf9_code")

@@ -1,6 +1,7 @@
 :: CTF 9 {"position":"400,2200","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
 
 <script>
   setup.all();
@@ -19,7 +20,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to "
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret(){
+    public static void encryptSecret() {
         theSecret = new char [10];
         theSecret [2] = 'G';
         theSecret [5] = 'J';
@@ -33,14 +34,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
         theSecret [7] = '8';
     }
 
-    public static String conclusion(){
-    String conc = \"This case is unsolvable. Give up!\";
-        return  conc;
-   }
+    public static String conclusion() {
+	String conc = \"This case is unsolvable. Give up!\";
+        return conc;
     }
+    
 
     public static void main(String[] args) {
-    System.out.println(conclusion());
+	System.out.println(conclusion());
     }
 }
 ")
@@ -60,10 +61,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   <div class="btn-pos3">
   (link-repeat: "<button class=\"code-btn-background\"></button>")[
     (alert: "
-      <pre>
-        <code id=\"code\" class=\"language-java scrollbar\"></code>
-      </pre>
-
+      <pre><code id=\"code\" class=\"language-java\"></code></pre>
       <script>
         setup.ctf9_showCode();
         hljs.highlightAll();
@@ -109,6 +107,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
+  }
+  
+  code {
+    overflow: hidden !important;
+  }
+  
+  pre {
+	background-color: #333 !important;
   }
 </style>
 
