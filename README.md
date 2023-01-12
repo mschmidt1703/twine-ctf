@@ -1,7 +1,7 @@
 # Memory Loss: Find Your Way Back
 ![](title.png)
 
-You can play this game online in your browser [here](https://mschmidt1703.github.io/twine-ctf/){:target="_blank"}
+You can play this game online in your browser [here](https://mschmidt1703.github.io/twine-ctf/)
 
 This game was developed on the Twine engine to teach some basic knowledge about IT security and vulnerabilities using CTFs.
 
