@@ -116,6 +116,10 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   pre {
 	background-color: #333 !important;
   }
+  
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
 </style>
 
 

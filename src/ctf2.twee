@@ -70,6 +70,21 @@ Maybe taking a closer look at it is not a bad idea.
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
   }
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
 </style>
 
 
