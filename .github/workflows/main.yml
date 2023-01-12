@@ -9,6 +9,14 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        run: |
+          chmod +x tools/tweego/tweego
+          tools/tweego/tweego  src/ -o out/story.html
+          
+      - uses: actions/upload-artifact@v3
+        with:
+          name: story.html
+          path: out/story.html
