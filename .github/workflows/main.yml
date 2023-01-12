@@ -29,20 +29,17 @@ jobs:
       - name: Build the Docker image
         run: |
           chmod +x tools/tweego/tweego
-          tools/tweego/tweego  src/ -o out/story.html
-        
-      - uses: actions/upload-artifact@v3
-        with:
-          name: story.html
-          path: out/story.html
+          tools/tweego/tweego  src/ -o out/index.html
           
       - name: Setup Pages
         uses: actions/configure-pages@v2
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
           path: './out'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
