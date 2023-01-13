@@ -38,10 +38,10 @@ A search on the surface level is not enough. Further inspection is needed.
     [[<button class="success-btn-background"></button>->CTF7end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The flag is consists of two parts. So you might want to look in different places.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The flag for this challange consists of two parts. In order for you to find the flag, you'll have to look in different places.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Open your inspector view and have a look at the website’s resources.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The inspector is a very usefull tool that is available in many browsers. Open your inspector view on this page and have a look at the website’s resources.")]
   </div>
 </div>
 
