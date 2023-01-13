@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Loss: Find Your Way Back.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="29" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
+<tw-storydata name="Memory Loss: Find Your Way Back" startnode="29" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
 
 /* Redo and undo button */
 tw-icon {
@@ -259,6 +259,14 @@ function eventOnClickHandler(event) {
 
 /* # CTF 1 End */
 
+/* # CTF 4 Start */
+setup.ctf3_copyText = function () {
+	var textbox = document.getElementById("textbox");
+	navigator.clipboard.writeText(textbox.innerHTML.replace("<br>",""));
+	alert("Text copied to clipboard");
+}
+/* # CTF 1 End */
+
 
 /* # CTF 4 Start */
 
@@ -390,6 +398,7 @@ setup.ctf6_showCode = function() {
 /* # CTF 6 End */
 
 /* # CTF 9 Start */
+
 setup.ctf9_showCode = function() {
   var codeBox2 = document.getElementById('code'); 
   codeBox2.innerHTML = Harlowe.variable("$ctf9_code")
@@ -399,7 +408,7 @@ setup.ctf9_showCode = function() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
-// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="400,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF1" tags="" position="1400,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.ctf1();
@@ -534,7 +543,7 @@ setup.ctf9_showCode = function() {
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="1600,1800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -558,7 +567,7 @@ Please enter the flag here:
         (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;4.p]]]  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;Memory3]]]  \
         (else:)[ \
           [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
       ] \
@@ -607,7 +616,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="1150,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="600,3400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
 
 &lt;script&gt;
@@ -678,7 +687,7 @@ Can you figure out, what the this picture means?
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="1150,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="4" name="CTF10end" tags="" position="800,3400" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -750,7 +759,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF 11" tags="" position="1300,300" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="CTF11" tags="" position="1200,2200" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 (set: _whatToDo to &quot;Seems like some kind of encrypted text&quot;)
@@ -814,7 +823,7 @@ key: NoIdea
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1300,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1400,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -838,7 +847,7 @@ Please enter the flag here:
         (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;Memory4]]]  \
         (else:)[ \
           [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
       ] \
@@ -887,7 +896,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF 2" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="CTF2" tags="" position="600,3800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -958,7 +967,22 @@ Maybe taking a closer look at it is not a bad idea.
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="600,1600" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="CTF2end" tags="" position="800,3800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -982,7 +1006,7 @@ Please enter the flag here:
         (alert: &quot;Incorrect Flag, please try again!&quot;)] \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;7.p]]]  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;Memory8]]]  \
         (else:)[ \
           [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
       ] \
@@ -1031,21 +1055,21 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="700,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="9" name="CTF 3" tags="" position="600,2600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
-  setup.all();
+	setup.all();
 &lt;/script&gt;
 
 &lt;h1&gt;CTF3 - Forensics&lt;/h1&gt;
 
 &lt;h2&gt;What can this text translate to?&lt;/h2&gt;
 
-Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;data:image/png;base64&quot;. You decide to look further into it. 
+Another random files catches your attention. Even though you can&#39;t read the text, you notice that it starts with the string: &quot;iVBORw0KGg...&quot;. You decide to look further into it. 
 
-&lt;div class=&quot;textBox&quot;&gt;
-data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&amp;sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&amp;sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&amp;sol;ND+An9fOzszO7mdnd3b3Z&amp;sol;dLpmb&amp;sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&amp;sol;f39vT2D5+7MSf&amp;sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&amp;sol;j0D4m9DGL41&amp;sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&amp;sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&amp;sol;ab145tlJUWdK7pG&amp;sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&amp;sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&amp;sol;&amp;sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&amp;sol;7pe9rn6&amp;sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&amp;sol;LtgabWnC&amp;sol;TvfvSKrHdjw4E&amp;sol;gvNNxqEc0TP8&amp;sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&amp;sol;jj8vBFFKjS6d5y4ml&amp;sol;&amp;sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&amp;sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&amp;sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&amp;sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&amp;sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&amp;sol;IP7WSvx7guJsgiDd&amp;sol;sNnb2T4CXbKCxi9O&amp;sol;SB&amp;sol;MlHa4sah68c3qyDU2LDrxMTN7&amp;sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&amp;sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&amp;sol;&amp;sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&amp;sol;3huxFNX3xE&amp;sol;Y0Fx6OvT&amp;sol;WUH9seZ2QvqklVHo&amp;sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&amp;sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&amp;sol;qY1nxwQLJRavggqHeIjsFxuRs&amp;sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&amp;sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&amp;sol;+YnVW&amp;sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&amp;sol;449h62fZr96TfXFGtxl&amp;sol;zk1tkf+WEewbEX65v+Ovbt&amp;sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&amp;sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&amp;sol;mHj&amp;sol;7z9ZciXN3H3&amp;sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&amp;sol;qPrsiqkPuPD&amp;sol;50dCK&amp;sol;J&amp;sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&amp;sol;453P&amp;sol;t4xlikTCO&amp;sol;Xpk7NVvn4qlXiiNMR8fTg3+q&amp;sol;hoqVX2aHnxKLrrsF6fO2r&amp;sol;C9LcPt8hFe&amp;sol;dMOr&amp;sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&amp;sol;XpVNZdXh&amp;sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&amp;sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&amp;sol;cU3r7qV5Z88UD7RFhxV5Ijj&amp;sol;oAUjavPBb5SRW1fYyi246Of5B&amp;sol;jEDEjplfcOd0vLe91Tgujo&amp;sol;K6nB&amp;sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&amp;sol;dU6uTmZz5MMaU&amp;sol;1UHJuUimqn&amp;sol;ekuKXoyiF73cbR&amp;sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&amp;sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&amp;sol;8vD7Yv0FvaX1oC5U&amp;sol;Y0nFocha&amp;sol;957v6F6z71zTW+xtFi8Z+1K&amp;sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&amp;sol;MWYQ+JjavaGUhv7Lsq&amp;sol;FvhKFbN9dZBo7D0cc&amp;sol;&amp;sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&amp;sol;WHv5J&amp;sol;1ty9uK&amp;sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&amp;sol;Qhft5462yrwlcrb&amp;sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&amp;sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&amp;sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&amp;sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&amp;sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&amp;sol;la5y1gP3DzrzlA6&amp;sol;LXDoVyAvUNhrCKryakVd&amp;sol;JZjI1&amp;sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&amp;sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&amp;sol;XSue1m+1aCCzk90IO&amp;sol;2Agi&amp;sol;Mt&amp;sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&amp;sol;4oD+22MQ9vHQod8fZJjX&amp;sol;MN7wdu&amp;sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&amp;sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&amp;sol;VIWbGr2B&amp;sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&amp;sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&amp;sol;eECl4N1lqtKI9QwfL40Hev&amp;sol;+XF14r1+FBv6RPdqZK&amp;sol;7kWCFeu3vnHKeONkQQvlCR7&amp;sol;EN78wWYX&amp;sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&amp;sol;+BldQM3f7yvtvbnxKnonlBFtVMc&amp;sol;yR4P9RzMOBaXwftBS&amp;sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&amp;sol;UOj55wjbIFdX0Vg1a6&amp;sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&amp;sol;tZsj8K2MW6&amp;sol;qyDt1ixH&amp;sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&amp;sol;3xUnpO&amp;sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&amp;sol;&amp;sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&amp;sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&amp;sol;sNmFP49ay4UFdTtOXp5wX1K&amp;sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&amp;sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&amp;sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&amp;sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&amp;sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&amp;sol;knHInhqjCe8HMv&amp;sol;m1NvlE5nh&amp;sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&amp;sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&amp;sol;8JZ&amp;sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&amp;sol;0WtNaegWDgw9p&amp;sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&amp;sol;oV&amp;sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&amp;sol;WTf8g&amp;sol;R&amp;sol;H1&amp;sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&amp;sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&amp;sol;p9y8d02&amp;sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&amp;sol;tBTCrPYxT5zyL3Xdsu4gTs3c&amp;sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&amp;sol;1Qe&amp;sol;1mfz4N&amp;sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&amp;sol;v6G&amp;sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&amp;sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&amp;sol;B8+l6NC7s08eS8r1RvU3xqFapK&amp;sol;3yYzONdn0xBz7fZ&amp;sol;e921Xj2xiI2WPZhrzHRvd+&amp;sol;Zul&amp;sol;92O&amp;sol;TUsO4wnSvt95xWsL&amp;sol;VfP&amp;sol;+uf&amp;sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&amp;sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&amp;sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&amp;sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&amp;sol;O31Jf2TI&amp;sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&amp;sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&amp;sol;zw3uFgmZet3TX8P&amp;sol;BjS1laQK2&amp;sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&amp;sol;zYQDDqf2v+p9&amp;sol;NFdZ8l61y7fWT0r&amp;sol;Vt&amp;sol;sGp&amp;sol;U8Zr5D34pQ8vOqfr+t7K&amp;sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&amp;sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&amp;sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&amp;sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&amp;sol;hhE2G&amp;sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&amp;sol;EV&amp;sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&amp;sol;0RZm8vvUOdXPmXdf&amp;sol;rO0io&amp;sol;41As9DFp+5VHVDqyD8Xk362o&amp;sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&amp;sol;H702d8D71EP&amp;sol;dq0F6fcSgW+pjU&amp;sol;eats&amp;sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&amp;sol;mr+H21QUpUzZZG+UsYh2Khj3kc&amp;sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&amp;sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&amp;sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&amp;sol;f&amp;sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==&lt;/div&gt;
-
+&lt;div id=&quot;textbox&quot; class=&quot;textBox&quot;&gt;
+iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&amp;sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&amp;sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&amp;sol;ND+An9fOzszO7mdnd3b3Z&amp;sol;dLpmb&amp;sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&amp;sol;f39vT2D5+7MSf&amp;sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&amp;sol;j0D4m9DGL41&amp;sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&amp;sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&amp;sol;ab145tlJUWdK7pG&amp;sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&amp;sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&amp;sol;&amp;sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&amp;sol;7pe9rn6&amp;sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&amp;sol;LtgabWnC&amp;sol;TvfvSKrHdjw4E&amp;sol;gvNNxqEc0TP8&amp;sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&amp;sol;jj8vBFFKjS6d5y4ml&amp;sol;&amp;sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&amp;sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&amp;sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&amp;sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&amp;sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&amp;sol;IP7WSvx7guJsgiDd&amp;sol;sNnb2T4CXbKCxi9O&amp;sol;SB&amp;sol;MlHa4sah68c3qyDU2LDrxMTN7&amp;sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&amp;sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&amp;sol;&amp;sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&amp;sol;3huxFNX3xE&amp;sol;Y0Fx6OvT&amp;sol;WUH9seZ2QvqklVHo&amp;sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&amp;sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&amp;sol;qY1nxwQLJRavggqHeIjsFxuRs&amp;sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&amp;sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&amp;sol;+YnVW&amp;sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&amp;sol;449h62fZr96TfXFGtxl&amp;sol;zk1tkf+WEewbEX65v+Ovbt&amp;sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&amp;sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&amp;sol;mHj&amp;sol;7z9ZciXN3H3&amp;sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&amp;sol;qPrsiqkPuPD&amp;sol;50dCK&amp;sol;J&amp;sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&amp;sol;453P&amp;sol;t4xlikTCO&amp;sol;Xpk7NVvn4qlXiiNMR8fTg3+q&amp;sol;hoqVX2aHnxKLrrsF6fO2r&amp;sol;C9LcPt8hFe&amp;sol;dMOr&amp;sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&amp;sol;XpVNZdXh&amp;sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&amp;sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&amp;sol;cU3r7qV5Z88UD7RFhxV5Ijj&amp;sol;oAUjavPBb5SRW1fYyi246Of5B&amp;sol;jEDEjplfcOd0vLe91Tgujo&amp;sol;K6nB&amp;sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&amp;sol;dU6uTmZz5MMaU&amp;sol;1UHJuUimqn&amp;sol;ekuKXoyiF73cbR&amp;sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&amp;sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&amp;sol;8vD7Yv0FvaX1oC5U&amp;sol;Y0nFocha&amp;sol;957v6F6z71zTW+xtFi8Z+1K&amp;sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&amp;sol;MWYQ+JjavaGUhv7Lsq&amp;sol;FvhKFbN9dZBo7D0cc&amp;sol;&amp;sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&amp;sol;WHv5J&amp;sol;1ty9uK&amp;sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&amp;sol;Qhft5462yrwlcrb&amp;sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&amp;sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&amp;sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&amp;sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&amp;sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&amp;sol;la5y1gP3DzrzlA6&amp;sol;LXDoVyAvUNhrCKryakVd&amp;sol;JZjI1&amp;sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&amp;sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&amp;sol;XSue1m+1aCCzk90IO&amp;sol;2Agi&amp;sol;Mt&amp;sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&amp;sol;4oD+22MQ9vHQod8fZJjX&amp;sol;MN7wdu&amp;sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&amp;sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&amp;sol;VIWbGr2B&amp;sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&amp;sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&amp;sol;eECl4N1lqtKI9QwfL40Hev&amp;sol;+XF14r1+FBv6RPdqZK&amp;sol;7kWCFeu3vnHKeONkQQvlCR7&amp;sol;EN78wWYX&amp;sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&amp;sol;+BldQM3f7yvtvbnxKnonlBFtVMc&amp;sol;yR4P9RzMOBaXwftBS&amp;sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&amp;sol;UOj55wjbIFdX0Vg1a6&amp;sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&amp;sol;tZsj8K2MW6&amp;sol;qyDt1ixH&amp;sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&amp;sol;3xUnpO&amp;sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&amp;sol;&amp;sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&amp;sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&amp;sol;sNmFP49ay4UFdTtOXp5wX1K&amp;sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&amp;sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&amp;sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&amp;sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&amp;sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&amp;sol;knHInhqjCe8HMv&amp;sol;m1NvlE5nh&amp;sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&amp;sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&amp;sol;8JZ&amp;sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&amp;sol;0WtNaegWDgw9p&amp;sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&amp;sol;oV&amp;sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&amp;sol;WTf8g&amp;sol;R&amp;sol;H1&amp;sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&amp;sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&amp;sol;p9y8d02&amp;sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&amp;sol;tBTCrPYxT5zyL3Xdsu4gTs3c&amp;sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&amp;sol;1Qe&amp;sol;1mfz4N&amp;sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&amp;sol;v6G&amp;sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&amp;sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&amp;sol;B8+l6NC7s08eS8r1RvU3xqFapK&amp;sol;3yYzONdn0xBz7fZ&amp;sol;e921Xj2xiI2WPZhrzHRvd+&amp;sol;Zul&amp;sol;92O&amp;sol;TUsO4wnSvt95xWsL&amp;sol;VfP&amp;sol;+uf&amp;sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&amp;sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&amp;sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&amp;sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&amp;sol;O31Jf2TI&amp;sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&amp;sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&amp;sol;zw3uFgmZet3TX8P&amp;sol;BjS1laQK2&amp;sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&amp;sol;zYQDDqf2v+p9&amp;sol;NFdZ8l61y7fWT0r&amp;sol;Vt&amp;sol;sGp&amp;sol;U8Zr5D34pQ8vOqfr+t7K&amp;sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&amp;sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&amp;sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&amp;sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&amp;sol;hhE2G&amp;sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&amp;sol;EV&amp;sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&amp;sol;0RZm8vvUOdXPmXdf&amp;sol;rO0io&amp;sol;41As9DFp+5VHVDqyD8Xk362o&amp;sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&amp;sol;H702d8D71EP&amp;sol;dq0F6fcSgW+pjU&amp;sol;eats&amp;sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&amp;sol;mr+H21QUpUzZZG+UsYh2Khj3kc&amp;sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&amp;sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&amp;sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&amp;sol;f&amp;sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==&lt;/div&gt;
+&lt;div style=&quot;text-align-last: center; margin-top: 4%;&quot;&gt;(link-repeat: &quot;&lt;button onclick=\&quot;setup.ctf3_copyText()\&quot;&gt;Copy Text&lt;/button&gt;&quot;)[]&lt;div&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos4&quot;&gt;
@@ -1092,13 +1116,13 @@ data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAX
     width: 50rem !important;
     height: 50rem !important;
     margin: 0 auto;
-	  padding: 3rem;
+	padding: 3rem;
     border: 5px #4B0872;
     background-color: #1E1E1E;
-	  color: #fff;
+	color: #fff;
     overflow: scroll;
     text-align:justify;
-	  word-wrap: break-word;
+	word-wrap: break-word;
   }
   
   .codeFormatting {
@@ -1114,7 +1138,37 @@ data:image&amp;sol;png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAX
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+  
+    button {
+    height: 2em;
+    width: 8em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 2em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="800,2600" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -1179,7 +1233,7 @@ Please enter the flag here:
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF4" tags="" position="800,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -1339,12 +1393,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="1000,1400" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
 Congratulations you made it!
 
 (if: $playingStory is true)[
-  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;Memory2]]]\
 (else:)[
   [[Back to CTF-Overview-&gt;CTFs]]]
 
@@ -1389,7 +1443,7 @@ Congratulations you made it!
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="400,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="600,3000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -1551,12 +1605,12 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="800,3000" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 
 Congratulations you made it!
 
 (if: $playingStory is true)[
-  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;6.p]]]\
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
 (else:)[
   [[Back to CTF-Overview-&gt;CTFs]]]
 
@@ -1601,7 +1655,7 @@ Congratulations you made it!
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="1000,300" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="600,5000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
 
 (set: $ctf6_code to &quot;function showTab(input) {
@@ -1800,7 +1854,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="800,5000" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
 
 &lt;script&gt;
   setup.ctf6_reset()
@@ -1809,7 +1863,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
 Congratulations you made it!
 
 (if: $playingStory is true)[
-  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;e.p]]]\
 (else:)[
   [[Back to CTF-Overview-&gt;CTFs]]]
 
@@ -1854,7 +1908,7 @@ Congratulations you made it!
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="17" name="CTF 7" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="17" name="CTF7" tags="" position="1200,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -1941,7 +1995,7 @@ A search on the surface level is not enough. Further inspection is needed.
   }
 
   /* 2nd and last Part of the flag: ### hgLE2} ### */
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="1600,1000" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="1725,1000" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1850,1000" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1975,1000" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="2100,1000" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="1400,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -1964,7 +2018,7 @@ Please enter the flag here:
         (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;Memory1]]]  \
         (else:)[ \
           [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
       ] \
@@ -2013,7 +2067,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="600,4200" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
@@ -2090,7 +2144,22 @@ Take each number mod 42 and map it to the following character set
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+	width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="800,4200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -2163,8 +2232,9 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="600,4600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -2183,7 +2253,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
 (set: $ctf9_code to &quot;
   public class ctf9 {
     static char [] theSecret;
-    public static void encryptSecret(){
+    public static void encryptSecret() {
         theSecret = new char [10];
         theSecret [2] = &#39;G&#39;;
         theSecret [5] = &#39;J&#39;;
@@ -2197,14 +2267,14 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
         theSecret [7] = &#39;8&#39;;
     }
 
-    public static String conclusion(){
-    String conc = \&quot;This case is unsolvable. Give up!\&quot;;
-        return  conc;
-   }
+    public static String conclusion() {
+	String conc = \&quot;This case is unsolvable. Give up!\&quot;;
+        return conc;
     }
+    
 
     public static void main(String[] args) {
-    System.out.println(conclusion());
+	System.out.println(conclusion());
     }
 }
 &quot;)
@@ -2224,10 +2294,7 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
   &lt;div class=&quot;btn-pos3&quot;&gt;
   (link-repeat: &quot;&lt;button class=\&quot;code-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[
     (alert: &quot;
-      &lt;pre&gt;
-        &lt;code id=\&quot;code\&quot; class=\&quot;language-java scrollbar\&quot;&gt;&lt;/code&gt;
-      &lt;/pre&gt;
-
+      &lt;pre&gt;&lt;code id=\&quot;code\&quot; class=\&quot;language-java\&quot;&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;script&gt;
         setup.ctf9_showCode();
         hljs.highlightAll();
@@ -2274,7 +2341,19 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+  
+  code {
+    overflow: hidden !important;
+  }
+  
+  pre {
+	background-color: #333 !important;
+  }
+  
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="800,4600" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -2298,7 +2377,7 @@ Please enter the flag here:
         (alert: &quot;Incorrect Flag, please try again!&quot;)]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;10.p]]]  \
+          [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]  \
         (else:)[ \
           [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]] \
       ] \
@@ -2347,7 +2426,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="1600,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
 	setup.ctfs();
 &lt;/script&gt;
 (set: $playingStory to false) \
@@ -2370,7 +2449,7 @@ Please enter the flag here:
         [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
       &lt;/li&gt;
       &lt;li&gt;
-        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;TutorialPage]]
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -2574,7 +2653,7 @@ Please enter the flag here:
     font-size: 1.6vw;
   }
   
-	/*Try to change scrollbar in Google Chrome*/
+	/*Scrollbar Google Chrome*/
 	::-webkit-scrollbar {
 	  width: 12px;
 	}
@@ -2591,7 +2670,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="200,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
@@ -2615,7 +2694,7 @@ Please enter the flag here:
         [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
       &lt;/li&gt;
       &lt;li&gt;
-        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;TutorialPage]]
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -2791,7 +2870,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,400" size="100,100">(set: $playingStory to true)
 &lt;script&gt;
   var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
 
@@ -2800,14 +2879,13 @@ Please enter the flag here:
   }
   
   Harlowe.goto(nextPage);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
-(set: $playingStory to true)
-(reload: )
-(goto: MainPage)
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="400,400" size="100,100">(set: $ctfs to (a:))
+(restart:)
 
 &lt;script&gt;
 	 Harlowe.storage.clear(&quot;last_passage&quot;);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+	 Harlowe.goto(&quot;MainPage&quot;);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="400,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="600,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -2951,67 +3029,16 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="2.p" tags="" position="200,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
-&lt;h1&gt;Introduction&lt;/h1&gt;
+- Reaction to the memory
 
-You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
-but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
-what appears to be a capsule. You are confused and move your hands until you notice that something \
-seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
-given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
-you get out now? 
 
-You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
-way to open the capsule from the inside. Already you have been able to grasp a lever with your \
-right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
-difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
-looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
-and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
-calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
-have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
-sunlight shine through the blind in front of the window on the left side of the room and your eyes \
-fall on the clock. It is 11:39. Almost noon.
-
-You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
-wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
-so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
-you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
-door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
-sound that must have been going on for several minutes. 
-
-Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
-long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
-shouting: &quot;Quick! Hurry up, something seems to be wrong!&quot;. You panic. You try to hide behind the capsule \
-as best you can with your limited strength, when the door flies open. You hold your breath and realise \
-that your heart is racing. Several people have probably entered the room, but only one is running directly \
-to the capsule. &quot;The capsule is open. He must have finally woken up.&quot; Came from a male voice. &quot;At last! \
-But where is he?&quot; you hear another voice, but this time a female one, say. &quot;We need to find him quickly \
-and check his vitals,&quot; said the male voice &quot;Josie, please go get Rob already. When I find him, he should \
-check him straight away&quot;. &quot;All right, John,&quot; Josie replies and you hear footsteps coming through the \
-door and out of the room. You don&#39;t dare breathe. The remaining person seems to be searching the room. \
-First the right half and then the footsteps approach your hiding place and then John is standing in front \
-of you smiling a little away. &quot;There you are!&quot;, John laughed and wants to approach you. When he realises \
-you are scared and backs away, he backs away and crouches down. &quot;Don&#39;t be afraid,&quot; John said in a calm \
-voice &quot;We don&#39;t want to hurt you. It&#39;s all right. Look, I&#39;m John and some of my colleagues, or rather \
-friends, and I found you and saved you.&quot;
-
-&lt;!--
-Translated with www.DeepL.com/Translator (free version)
-To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
-
-“I don’t seem to remember anything. Who even am I?”
-To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
-However, what they know for sure is that he might be in a great danger. 
-You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
-“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
---&gt;
-
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.p]]
+[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;2.1.p]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3032,238 +3059,54 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     font-size: 2rem !important;
   }
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="3.p" tags="" position="200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
-    display: block;
-    margin: 0 auto;
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+- Reaction to memory 2
 
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;3.1.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
   }
 
   * {
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-&lt;h1&gt;Wait... but how can I log in to my account?&lt;/h1&gt;
-
-Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 1]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-&lt;h1&gt;Let the search begin!&lt;/h1&gt;
-
-You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. &quot;Maybe the bad guy’s looking for me have restricted the search.”
-You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-&lt;h1&gt;I just wanna go home...  &lt;/h1&gt;
-
-It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you&#39;re going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 5]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-Finally! You opened your account and found some information about yourself. You’re done for the day it&#39;s time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It&#39;s not a long distance. So, you walk your way back home. 
-
-You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
- 
-You know something important that changed your life forever happened here, but you can&#39;t remember it. 
-
-You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 2]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="4.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
-Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+- Player feels a little shocked
+- Locks pc so the secretary wont&#39;t recognise
+- Say Goodbye
 
-(Continuation of the girlfriend tragedy here maybe?)
-
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;8.p]]
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;4.1.p]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3276,72 +3119,29 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  h1 {
+    font-size: 3rem !important;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="5.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
-Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+- Reviewing the memories
+- Okay, thats an awesome algorithm
+- Keeps it a secret for now
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;next-&gt;9.p]]
-
-&lt;style&gt;
-  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
-  setup.story()
-&lt;/script&gt;
-
-“I&#39;m sure they have the tools that will help me extract some information out of it.”
-You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
-After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
-
-[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 9]]
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;5.1.p]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3354,33 +3154,27 @@ After some fiddling around you manage to connect the drive to a new computer. An
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  h1 {
+    font-size: 3rem !important;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="6.p" tags="" position="200,2800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
-Coming soon. Stay tuned!
+TEXT
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Back to the main page-&gt;MainPage]]
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;6.x.p]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3393,31 +3187,157 @@ Coming soon. Stay tuned!
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  h1 {
+    font-size: 3rem !important;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="46" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="7.p" tags="" position="200,3200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;7.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="8.p" tags="" position="200,3600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;8.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="9.p" tags="" position="200,4000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;9.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="10.p" tags="" position="200,4400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;10.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="x.p" tags="" position="2300,600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="47" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="46" name="TutorialPage" tags="" position="400,200" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
@@ -3430,7 +3350,7 @@ Please come back later!</tw-passagedata><tw-passagedata pid="47" name="Tutorial"
         [[&lt;a&gt;CTFs&lt;/a&gt;-&gt;CTFs]]
       &lt;/li&gt;
       &lt;li class=&quot;active&quot;&gt;
-        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;Tutorial]]
+        [[&lt;a&gt;Tutorial&lt;/a&gt;-&gt;TutorialPage]]
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -3611,6 +3531,1279 @@ Please come back later!</tw-passagedata><tw-passagedata pid="47" name="Tutorial"
 
   .buttons p {
     padding-left: 1rem;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="47" name="1.p" tags="" position="200,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
+but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
+what appears to be a capsule. You are confused and move your hands until you notice that something \
+seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
+given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
+you get out now? 
+
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
+
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: &quot;Quick! Hurry up, something seems to be wrong!&quot;. You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. &quot;The capsule is open. He must have finally woken up.&quot; Came from a male voice. &quot;At last! \
+But where is he?&quot; you hear another voice, but this time a female one, say. &quot;We need to find him quickly \
+and check his vitals,&quot; said the male voice &quot;Josie, please go get Rob already. When I find him, he should \
+check him straight away&quot;. &quot;All right, John,&quot; Josie replies and you hear footsteps coming through the \
+door and out of the room. You don&#39;t dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. &quot;There you are!&quot;, John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. &quot;Don&#39;t be afraid,&quot; John said in a calm \
+voice &quot;We don&#39;t want to hurt you. It&#39;s all right. Look, I&#39;m John and some of my colleagues, or rather \
+friends, and I found you and saved you.&quot;
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.1.1.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;
+
+</tw-passagedata><tw-passagedata pid="48" name="1.x.p" tags="" position="1000,800" size="100,100">- Showing player around
+	- Introduce everyone
+    - Show the headquarter
+- First night
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.y.p]]
+</tw-passagedata><tw-passagedata pid="49" name="1.y.p" tags="" position="1200,800" size="100,100">- Waking up
+- Player thoughts
+- Asking for news of the last years
+	- Library
+
+- Describe a feeling that initiates a ctf?
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;CTF7]]</tw-passagedata><tw-passagedata pid="50" name="1.1.1.p" tags="" position="400,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.1.2.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;
+
+</tw-passagedata><tw-passagedata pid="51" name="1.1.2.p" tags="" position="600,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;1.1.3.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="52" name="Template" tags="" position="400,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="53" name="1.1.3.p" tags="" position="800,800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: &quot;Quick! Hurry up, something seems to be wrong!&quot;. You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. &quot;The capsule is open. He must have finally woken up.&quot; Came from a male voice. &quot;At last! \
+But where is he?&quot; you hear another voice, but this time a female one, say. &quot;We need to find him quickly \
+and check his vitals,&quot; said the male voice &quot;Josie, please go get Rob already. When I find him, he should \
+check him straight away&quot;. &quot;All right, John,&quot; Josie replies and you hear footsteps coming through the \
+door and out of the room. You don&#39;t dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. &quot;There you are!&quot;, John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. &quot;Don&#39;t be afraid,&quot; John said in a calm \
+voice &quot;We don&#39;t want to hurt you. It&#39;s all right. Look, I&#39;m John and some of my colleagues, or rather \
+friends, and I found you and saved you.&quot;
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;1.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="54" name="2.1.p" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Telling the others of the memory
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.3.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="55" name="2.3.p" tags="" position="600,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="56" name="2.x.p" tags="" position="800,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;CTF4]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="57" name="3.1.p" tags="" position="400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Decide what to do before lunch
+- Plan to tell John about it
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.2.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="58" name="3.2.p" tags="" position="600,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Convo at lunch
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.3.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="59" name="3.3.p" tags="" position="800,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Preparation
+
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.4.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="60" name="3.4.p" tags="" position="1000,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Arrival at the university
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.5.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="61" name="3.5.p" tags="" position="1200,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Searching for hints in the faculty
+- Semester break
+- Awards with your name on it
+- Hackathons
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.6.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="62" name="3.6.p" tags="" position="1400,1600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Secretary&#39;s office is open
+- Get to the pc of the secretary to find out more about yourself
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF1]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="63" name="4.x.p" tags="" position="1200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- So you know, that you now have to encrypt the sequence
+- You search the internet for some tutorial about encrypting
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF11]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="64" name="5.x.p" tags="" position="600,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- You somehow get the gut feeling that you need to return to the website from the ip-adress
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="65" name="11.p" tags="" position="200,4800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;11.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="66" name="11.x.p" tags="" position="600,4800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 6]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="67" name="10.x.p" tags="" position="600,4400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="68" name="9.x.p" tags="" position="600,4000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="69" name="8.x.p" tags="" position="600,3600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF2]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="70" name="7.x.p" tags="" position="600,3200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="71" name="6.x.p" tags="" position="600,2800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;Template]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="72" name="e.p" tags="" position="200,5200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;e.x]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="73" name="e.x" tags="" position="600,5200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+TEXT
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Main-&gt;MainPage]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="74" name="Memory3" tags="" position="1800,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Becoming a successful cs/hacker or both after graduation
+	- Job as freelancer
+--&gt; You remember a cryptic sequence of chars
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Story-&gt;4.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="75" name="Memory1" tags="" position="2300,1000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Name
+- Birthday
+- Favorite food
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Story-&gt;2.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="76" name="Memory2" tags="" position="1200,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Parents
+- CHildhood memories
+- Degree
+- Graduation
+- Freelancer
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Story-&gt;3.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="77" name="Memory4" tags="" position="1600,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+--&gt; You get the ip-adress
+- Leads you to a website
+
+- Writing the algorithm
+- You remember working thrugh so many night shifts
+- Its a compressing and decompressing algorithm
+- It is particulary efficient and effective
+
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Story-&gt;5.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="78" name="4.1.p" tags="" position="400,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Player is thinking
+	- Especially about the sequence
+- Convo with Josie
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;4.2.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="79" name="4.2.p" tags="" position="600,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Searching about himself on the internet
+- Nothing special just some hackathons
+- Sleeping
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;4.3.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="80" name="4.3.p" tags="" position="800,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Overslept
+- Gos to cantine
+- Experiment with small chocolate-covered cream cake
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;4.4.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="81" name="4.4.p" tags="" position="1000,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Watches some series with the others
+- Something about cryptographie
+- Thinking about the sequence
+- Talking to John or Rob about it
+- First no idea, but then
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;4.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="82" name="5.1.p" tags="" position="400,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+- Searching the internet about the algorithm
+- Realization how good the algorithmn really is
+- Is this the reason for everything?
+
+[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;5.x.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="83" name="Memory8" tags="" position="1000,3800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
+  setup.story()
+&lt;/script&gt;
+
+
+
+[[&lt;button class=&quot;startChallenge&quot;&gt;Return to Story-&gt;9.p]]
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";

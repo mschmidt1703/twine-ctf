@@ -1,0 +1,5143 @@
+:: StoryTitle
+Memory Loss: Find Your Way Back
+
+
+:: StoryData
+{
+	"ifid": "DC4F9919-114F-42D0-AD6B-6D66F013AD8C",
+	"format": "Harlowe",
+	"format-version": "3.3.3",
+	"start": "initMain",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+/* -- Twine overrides -- */
+
+/* Redo and undo button */
+tw-icon {
+  color: #ad00d8;
+}
+
+/* TODO: NUR Bei nicht StoryMode  playingStory == false
+tw-sidebar {
+  display: none;
+}
+
+tw-icon.undo {
+  display: none;
+}
+
+tw-icon.redo {
+  display: none;
+}*/
+
+
+tw-link {
+  color: #4B0872;
+}
+tw-link:hover {
+  color: #B200DD;
+}
+
+tw-story {
+  background-image: url('src/img/general/background/background_landscape.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#resume-btn {
+  background-color: var(--purple) !important;
+}
+
+/* -- General CSS -- */
+
+/* Font */
+@import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+/* Font colors */
+:root {
+  --font_yellow: #F79E00;
+  --font_grey: #9B9B9B;
+}
+
+/* Background colors */
+:root {
+  --purple: #B200DD;
+  --purple_dark: #4B0872;
+  --blue: #4316A5;
+  --blue_dark: #250777;
+  --grey1: #1E1E1E;
+  --grey2: #161616;
+  --grey3: #141414;
+}
+
+.removeUndoReod {
+	display:none;
+  	visibility: hidden;
+}
+
+.color_purple {
+  background-color: var(--purple) !important;
+}
+
+.hint-btn-background {
+  background: url(src/img/general/ctf/hint.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.success-btn-background {
+  background: url(src/img/general/ctf/success.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.code-btn-background {
+  background: url(src/img/general/ctf/code.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.home-btn-background {
+  background: url(src/img/general/ctf/home.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.help-btn-background {
+  background: url(src/img/general/ctf/help.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+.reload-btn-background {
+  background: url(src/img/general/ctf/reload.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: none;
+}
+
+#home-btn{
+  background: url(src/img/general/ctf/home.svg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  border: 0px;
+  filter: grayscale(100%);
+}
+
+
+:: Story JavaScript [script]
+window.setup = window.setup || {};
+$(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
+
+/* # Mainpage */
+
+setup.main = function() {
+	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+}
+
+function eventOnClickHandlerMain(event) {
+  // Access DOM element object
+  const rotated = document.getElementById("demo");
+
+  // Rotate element by 90 degrees clockwise
+  rotated.style.WebkitTransitionDuration='1s';
+  rotated.style.webkitTransform = 'translate(250px, -100px) rotate(90deg)';
+
+  /* Redirect to Story */
+  setTimeout(() => {
+    Harlowe.goto("setStory");
+  }, 1500);
+}
+
+/* # Mainpage End */
+
+
+/* # CTFs End */
+setup.ctfs = function() {
+
+	var section = document.getElementsByTagName("section")[0];
+
+    if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
+		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
+        section.scrollTo(0,pos);
+    }
+	
+	section.addEventListener("scroll", (event) => {
+        window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
+	});
+}
+/* # CTFs End */
+
+
+/* Global Start */
+
+//disable back btn if playing in ctf mode
+setup.all = function () {
+	var mode =  Harlowe.variable("$playingStory")
+
+  if (!mode){
+    var btns = document.querySelectorAll('tw-icon'); 
+    for (let b of btns) {
+      b.classList.add("removeUndoReod");
+    }
+  }
+}
+
+setup.story = function () {
+var mode =  Harlowe.variable("$playingStory")
+	if (mode){
+		var sidebar = document.querySelector("tw-sidebar");
+		var btn = document.createElement('button');
+		btn.onclick = function(){
+			var passage = Harlowe.passage()
+			Harlowe.storage.save("last_passage", passage)
+			Harlowe.goto("MainPage")
+    };
+
+		btn.id = "home-btn"
+		sidebar.appendChild(btn);
+	}
+}
+
+window.addEventListener("message", function(event) {
+  if (event.data == "js_inserted_ctf4") {
+    ctf4_updateURI(event.data);
+    ctf4_levelSucceed();
+    return;
+  }
+  
+  if (event.data == "js_inserted_ctf5") {
+    ctf5_updateURI(event.data);
+    ctf5_levelSucceed();
+    return;
+  }
+  
+  if (event.data.startsWith("ctf6_url_")) {
+    ctf6_updateURI(event.data);
+    return;
+  }
+  
+  if (event.data == "js_inserted_ctf6") {
+    ctf6_updateURI(event.data);
+    ctf6_levelSucceed();
+    return;
+  }
+}, false);
+
+/* Global End */
+
+
+/* # CTF 1 Start */
+
+setup.ctf1 = function() {
+	document.getElementById("login-btn").addEventListener("click", eventOnClickHandler);
+}
+
+function eventOnClickHandler(event) {
+  var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
+  var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
+  
+  if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
+    alert("Incorrect Username or Password");
+	  return
+  } else {
+  	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+
+	  /* Redirect to Story or Ctf Overview */
+	  Harlowe.goto("CTF1end");
+    return
+  }
+}
+
+/* # CTF 1 End */
+
+/* # CTF 4 Start */
+setup.ctf3_copyText = function () {
+	var textbox = document.getElementById("textbox");
+	navigator.clipboard.writeText(textbox.innerHTML.replace("<br>",""));
+	alert("Text copied to clipboard");
+}
+/* # CTF 1 End */
+
+
+/* # CTF 4 Start */
+
+setup.ctf4_updateFrame = function (frameNum, url) {
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
+  // Make sure that the URL points to the frame of the current level
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf4.html') || !url.endsWith) {
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf4.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf4/s.html";
+
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf4.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf4/s.html" + arg;
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+  }
+};
+
+function ctf4_updateURI(value) {
+  var urlbar = document.getElementById('input');
+  urlbar.value = "https://twine.ctf/ctf4.html";
+}
+
+function ctf4_levelSucceed() {
+  alert("XSS Success");
+  Harlowe.goto("CTF4_end");
+}
+
+/* # CTF 4 End */
+
+
+/* # CTF 5 Start */
+
+setup.ctf5_updateFrame = function (frameNum, url) { 
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
+  // Make sure that the URL points to the frame of the current level
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf5.html') || !url.endsWith) {
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf5.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf5/s.html";
+
+   	//frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+    return
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf5.html", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf5/t.html" + arg;
+    //frame.contentWindow.postMessage(url, "*"); /* TODO: When code is not used then delete it */
+  }
+};
+
+function ctf5_updateURI(value) {
+  var urlbar = document.getElementById('input');
+  urlbar.value = "https://twine.ctf/ctf5.html";
+}
+
+function ctf5_levelSucceed() {
+  Harlowe.goto("CTF5_end");
+}
+
+/* # CTF 5 End */
+
+
+/* # CTF 6 Start */
+setup.ctf6_reset = function(){
+  window.localStorage.setItem('picID', "1");	
+}
+
+setup.ctf6_updateFrame = function (frameNum, url) { 
+  if (!url) {
+  	var urlbar = document.getElementById('input'); 
+  	var url = urlbar.value;
+  };
+    
+  // Make sure that the URL points to the frame of the current level
+  var frameLink = document.createElement('a');
+  frameLink.href = url;
+
+  if (!url.startsWith('https://twine.ctf/ctf6.html')) {
+    alert("Sorry, I can't open this URL in a frame.");
+    urlbar.value = "https://twine.ctf/ctf6.html";
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf6/u.html";
+    return
+  } else {
+    var arg = url.replace("https://twine.ctf/ctf6.html#", "");
+    var frame = document.querySelector('iframe');
+    frame.src = "src/static/ctf6/u.html"; 
+    
+    /* frame.contentWindow.location.reload(true); In google Chrome “blocked a frame with origin "null" from accessing a cross-origin frame */ /* TODO: When code is not used then delete it */
+    frame.contentWindow.postMessage(arg,"*")
+  }
+};
+
+function ctf6_updateURI(value) {
+  var urlbar = document.getElementById('input');
+  var picID = value.replaceAll("ctf6_url_","");
+  urlbar.value = "https://twine.ctf/ctf6.html#" + picID;
+}
+
+function ctf6_levelSucceed() {
+  Harlowe.goto("CTF6_end");
+}
+
+setup.ctf6_showCode = function() {
+  var codeBox = document.getElementById('code'); 
+  codeBox.innerHTML = Harlowe.variable("$ctf6_code")
+}
+
+/* # CTF 6 End */
+
+/* # CTF 9 Start */
+
+setup.ctf9_showCode = function() {
+  var codeBox2 = document.getElementById('code'); 
+  codeBox2.innerHTML = Harlowe.variable("$ctf9_code")
+}
+/* # CTF 9 End */
+
+/* Marko API */
+// Harlowe Macro Framework, by Chapel; version 1.0.2
+;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
+// end Harlowe Macro Framework
+
+
+:: CTF1 {"position":"1400,1800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.ctf1();
+  setup.all();
+</script>
+
+(set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else.")
+(if: $ctfs contains "ctf1")[]
+(else:)[(alert: _info)]
+
+<h1>CTF 1 - XSS</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+<div class="login-contianer">
+  <form method="GET" action="javascript:void(0);" class="box twine-background-login">
+    <div class="field">
+      <label class="label">Username</label>
+      <div class="control">
+        <input class="input" id="user" type="text" placeholder="some name">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" id="password" type="password" placeholder="some password">
+      </div>
+    </div>
+    <button id="login-btn" class="button is-primary">Sign in</button>
+  </form>
+</div>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF1end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What does the JavaScript funktion atob() do?")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Can you find a method that will be executed when you press the button?")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/ctf/pc_rahmen.png");
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  tw-sidebar {
+    left: -15em;
+    width: 15em;
+    text-align: left;
+  }
+
+  tw-icon {
+    left: 3.5em;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    top: -6rem;
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  .twine-background-login {
+    position: inherit;
+    background-color: white;
+    width: 500px;
+  }
+
+  .login-contianer {
+    height: 500px;
+    margin: -1% auto 0 27.5%;
+    /*margin-left: 30% !important;
+    margin-top: -1% !important;*/
+  }
+
+  .headline {
+    margin-top: -7rem;
+    margin-bottom: 7rem;
+  }
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+</style>
+
+
+:: CTF1end {"position":"1600,1800","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+
+        $success = "pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==" == hashed;
+        var success = "pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==" == hashed;
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf1")[  \
+        (set: $ctfs to it + (a: "ctf1"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->Memory3]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 10 {"position":"600,3400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+
+<script>
+  setup.all();
+</script>
+
+(set: _info to "Try to read the flag from the image") \
+(if: $ctfs contains "ctf10")[] \
+(else:)[(alert: _info)]
+
+<h1>CTF 10 - Cryptography </h1>
+
+Can you figure out, what the this picture means? 
+
+0 = &#123; or &#125;
+<img src="src/img/ctf10/flag.svg"><img>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF10end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A = 1, B = 2 ... 0 = &#123; or &#125;")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to map the numbers to letters")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  img {
+    border-radius: 2.5rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF10end {"position":"800,3400","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+        $success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
+        var success = "Kb+cWb8fXov88R01Ug9d9WhVnDMyuL4Hv1ypLtLYPl8lF7gEBNXhKx3amd7hLNGmdmoG9S3w9tB8cZIjc9+/9g==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf10")[  \
+        (set: $ctfs to it + (a: "ctf10"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF11 {"position":"1200,2200","size":"100,100"}
+<script>
+  setup.all();
+</script>
+(set: _whatToDo to "Seems like some kind of encrypted text")
+
+[(alert: _whatToDo)]
+
+<h1>CTF 11 - Cryptography</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+Usg wlees,
+
+qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh trbdmupy.  Ng i uiwnfl kirr'g gryr asfw jlnu: noeg{wvo_125}. Jsoq zcfo fbf bki nrlb flayzmqkef.
+
+key: NoIdea
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF11end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF11end {"position":"1400,2200","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+        
+        $success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+        var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf11")[  \
+        (set: $ctfs to it + (a: "ctf11"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->Memory4]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF2 {"position":"600,3800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.all();
+</script>
+
+<h1>CTF 2 - Forensics</h1>
+
+<h2>Do I live alone?</h2>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+Great! Now you know your name, but nothing else.
+
+After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on...
+
+<img src="src/img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;" alt="picture frame"></img>
+
+Maybe taking a closer look at it is not a bad idea.
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF2end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Do you know what meta data means?")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets.")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+</style>
+
+
+:: CTF2end {"position":"800,3800","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+
+        $success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
+        var success = "rcwEboA5C46HpiUrGyiDluk5wSjJrUKSrPm3fxvAUAWVZJC8G8OC6W9Q5teUOs2aI/HYomw6mReMu3rkEOP7KQ==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf2")[  \
+        (set: $ctfs to it + (a: "ctf2"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")] \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->Memory8]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 3 {"position":"600,2600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+	setup.all();
+</script>
+
+<h1>CTF3 - Forensics</h1>
+
+<h2>What can this text translate to?</h2>
+
+Another random files catches your attention. Even though you can't read the text, you notice that it starts with the string: "iVBORw0KGg...". You decide to look further into it. 
+
+<div id="textbox" class="textBox">
+iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAABs1SURBVHhe7Z3&sol;bxbHncf7n1mCJ7VQQGAhnxxCSJwghHCRYi4UyWmI8AEpwbmSWAkIyCH7SsqXhrgRFyITQlWMk&sol;jKyVxaIhAtFxKsVE6EkCIreqSKm92dnZmdL++dxzY8eHi&sol;ND+An9fOzszO7mdnd3b3Z&sol;dLpmb&sol;Kf8VB30MfQx9DH0MfczS8hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9n8mfmZiYmJiYmpX4ngoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J2+f3h5iYmJiY2pk4HoqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2+f0hJiYmJqZ2Jo6HYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOjnNG+ND&sol;f39vT2D5+7MSf&sol;lpNofSs0Z6bHjgz09azp7CjYe0H+Us&sol;j0D4m9DGL41&sol;YK3ti55qevoEjY9MzTfnL0qov41As7fVVf3OIPRQuSnnuXti7Sq63o6Pxykd35d8F7W0fl8X2mzPj+7obsuoljENBWvOvj65rsUkfr&sol;YJ+c5xodG9bzyPRUurvoxDsbTXX0AcCi7aWNUtzqGGRy9cu1eeRBl4y3NxX+VIbK57abWnC&sol;ab145tlJUWdK7pG&sol;jl4Ouvv35mWv5ecn3U0CLZOHpdLl0QlYez2dvcnmYvy09Q&sol;L7SrPIvVhxq3rt2YXSov7d7leyocpxw5fYlUP7w3mWCS1aUZ+7G5ZPZiFmtPy9BT2&sol;&sol;4JGTlyv7WbX8c7evjA27xdbDm0B9p8+IXvj66wN9aogu2HjsWjPgh2mvzzgUS3t92d8U&sol;7pe9rn6&sol;TZmJ+t8fmj8VjUYectz58x2IxBtPfG1&sol;LtgabWnC&sol;TvfvSKrHdjw4E&sol;gvNNxqEc0TP8&sol;oOMQ3NXT+xwRqyKJ559q9hwHhYjDk3+9bNRsPocc0ur8jdn&sol;jj8vBFFKjS6d5y4ml&sol;&sol;rtteYry+t6tcSpwI1Pk27fUZh2J5tHy958THoeVi&sol;GNgnkFlNDaPitMohb882U6zSZy0NVZtsiLX0m7PGl+NA9cfvCIr7fdvnt4hm9dAnxxnQ1CHHadvyqULijy6PKaxzR7tONTRdWBkxuc&sol;sDg0e8G9aurQtffCrPQrqFJlYxeJ2&sol;7Dl6TuMnd19NmfyzwAbhxqXjvep&sol;fDbJydn2ZWxjfFjhmxvZpXDsrT08a+i4u8fR0W12cciuXR8ucTh+zz7uJqwJBxLtZ1YFKFlserPbGvRig9B6&sol;IP7WSvx7guJsgiDd&sol;sNnb2T4CXbKCxi9O&sol;SB&sol;MlHa4sah68c3qyDU2LDrxMTN7&sol;NBRPPerWoPt062JL5SxbdP89qoXnt+hnby8pffqWtwzXvfffvl5T+MDg9sevF4NQ7pwCEKdvDzynCtcj9S9Juo8lw52FMucCa6&sol;AXx9S1YXJ9xKJZHywcHJBulBg6Cld2o&sol;&sol;Qd+efHqz2xrwKJ0YQt5P9YxaGtW7cW&sol;3huxFNX3xE&sol;Y0Fx6OvT&sol;WUH9seZ2QvqklVHo&sol;+0cTW5wFeq2Pap3DnsemWsOos0jMj&sol;6xOyqUIDNR1eV71xzDu+tDA6KuOQH&sol;qY1nxwQLJRavggqHeIjsFxuRs&sol;Xu2JfcahWl8fys+W99JWvjHhhATfET9jIXHo6tFyULFqcNx73S2LFnuek1LH+qNX5V9LfKWKbB8jBi73xsAQU7NfqW5RudFq0px4Q85PDYwvLZZuHBI&sol;P9T0xYjscDvPF3+5NPXJa7v7e9auXJb&sol;+YnVW&sol;oPffLBN9WlynR4Zy51dKw79JX1k0wq&sol;449h62fZr96TfXFGtxl&sol;zk1tkf+WEewbEX65v+Ovbt&sol;4zPdK5YXeufK7i1b3vzg+NUfbRMkXRhfUSvp&sol;DZpbnztC+snlf6y5xkpuYVXbe5Qu2ojLbjWl67+95tvDjzbrXLoWPZkd9emgcH&sol;mHj&sol;7z9ZciXN3H3&sol;1OEtm3pWyiv4y1es7d24e+TIZ3cnLTOUVKd6bkTs3vavtUn3SbAJopLeFuXuE0wLq3XZ2mueKJbOFu959qXDQ8dHfvVyf8&sol;qPrsiqkPuPD&sol;50dCK&sol;J&sol;LXvrwvOlUtcrfnd320tVL+3+1ZfWTxcbuXPlM&sol;453P&sol;t4xlikTCO&sol;Xpk7NVvn4qlXiiNMR8fTg3+q&sol;hoqVX2aHnxKLrrsF6fO2r&sol;C9LcPt8hFe&sol;dMOr&sol;K9NPhnbK7L9v1qfOrkxbYUduXHvp4qHJqOTsRmCnS6N53+Lonf3Bub+fvObHSv9XhOSmLj0NF2XztA6fGdHT2HZ0KnM45gBNjG9BmCs8Zuyq&sol;XpVNZdXh&sol;rDgWjdvjQ89Xx4QffjaoCgPnEPV6N51Vs21CJff6rQS5Ft4Wrceb&sol;5gs5t+TK2D5c9bO7i5JE5FVMmygqnbFM7Qo6IZVMZDzWun&sol;cU3r7qV5Z88UD7RFhxV5Ijj&sol;oAUjavPBb5SRW1fYyi246Of5B&sol;jEDEjplfcOd0vLe91Tgujo&sol;K6nB&sol;p65Z6e1RftJUTicwpXMteGHFHuarDuJvOzt&sol;dU6uTmZz5MMaU&sol;1UHJuUimqn&sol;ekuKXoyiF73cbR&sol;zKnVgakxwRo8NOCDZgDZTqANHx8BZ+WyqKv+lYVlFSWDOVqg&sol;hGpdnqdnoFrPThzYUDkmqTlngYJIRHkqd74aqzb0Z4&sol;8vD7Yv0FvaX1oC5U&sol;Y0nFocha&sol;957v6F6z71zTW+xtFi8Z+1K&sol;YNbkeqhXB2fV1nX5qqaRsehwWNGCfL5a8aOaUylkfW9eXyz&sol;MWYQ+JjavaGUhv7Lsq&sol;FvhKFbN9dZBo7D0cc&sol;&sol;GIDIOGZt8j6eXWzAO1SJ9vU9KGt07RtVMkebM5wdVL1zu3lFUG8XddE7+voOTgVV+43DpPyqi+hp7b+i4ZihiBGBPjfn8aF95vt+176LxloIQunfWVBO2WYk+rdNOsL6BVXt9UOupmW9FrctQEqq1cfm9Y3n3jqPWM7fNe999eWF06HdT8v8GU9fPl1tUjACs28dzN8Z2lWfcjc35LCa0fa8d6y1c40Qa+RYPMw7pflxT6&sol;WHv5J&sol;1ty9uK&sol;cCZxOKvJv3jtbXhd0KqJKVhRs9uwWeT2pOkqxNIWOQ5LGhn36xVGi4K+UBSvf4iHrq5+sVnc2&sol;Qhft5462yrwlcrb&sol;hZ65f2nz8X3hxxjfNbYeyFcdN15IuKQiso9B99rtTxt9dsch7q2n3YGPbPjg8GRtuowixuHfHHEJlxffwir+rNnB+QK9BMoFZrv&sol;fvThVBzfaFA71I11YRtlmNW3oj8wfoGVu3zUa1z35i46qu1Xl4cN9+ejpyJlKPbszFw1jvY0pnnJ+3h7Xv&sol;7ll5xDDHycC3eXhxyHiCpLbWTw7Z0wiM05Hsifwqef7hvqR+kQVrHtstb9tUrs3ZWkk1DnX2HbfXr8stBzNF+zTHB4u&sol;eq9hmAhfnU7YxdfNavBzMRbLXjdy7srtQMfTwyFRHe&sol;2ApjzFEIbK6OlOKQj49b9062Wp51+O+NQ8JCvL&sol;la5y1gP3DzrzlA6&sol;LXDoVyAvUNhrCKryakVd&sol;JZjI1&sol;bty0pp9+dqD3nNqqonaLHsJylF9JR6U3ySwao8Pay19PVXPrbU+Lood9XyoPF6aEzueLBZ1Z0eV6MlI2TEsVF&sol;jOXXz8apw+7g8tDikaxRT65XWkVvtdvbFtJy8POG+pH4pC6avO5lb39EkRhwKHBb0Qd+87h3ftMIPyrpZ&sol;XSue1m+1aCCzk90IO&sol;2Agi&sol;Mt&sol;cenwoY+57Mdjfpa5Kx8QhvXWXvfCOmyNgHuWX&sol;4oD+22MQ9vHQod8fZJjX&sol;MN7wdu&sol;jUH6LL8eo5+MC7meOtrXMiwQ5jp633IDqyaqdk&sol;lzdp7MvXHvSeU1NNQ62+T6Fy1V2ss3tfuPwVAqt2fVzr0le3ppxaG7u5ODAGy+Nl8kAxZQveNVDjnI7Nx29W8r9z8d3irkivugnV2HBgwmygFsoTPP4hvPmDzZ75KpJE11r+LUNvCO9lorw84f1P&sol;VIWbGr2B&sol;UyJD3WdTSJjkPBw4K17qJ94ptW+EHZvgUqUBMFSxobhietXqzzE+3t3V6AzDdOYjPU3dOs41n7pyAmDmVn1frx18aqbpmj8yJEh&sol;mUvxWw38Y4BA6gegBtSeH9oKX8M3LfHM2AsXGGp77GQCpw3UmiRssrXng57xYefjm4c7M8itQVXaAaot7VaojO54esjzgIPPUtCKza9XGt8&sol;eECl4N1lqtKI9QwfL40Hev&sol;+XF14r1+FBv6RPdqZK&sol;7kWCFeu3vnHKeONkQQvlCR7&sol;EN78wWYX&sol;jxqLRcWhMJTSV4etX6nIuqXsmDCb04esEeSjibRccipWIm17qJ9dNNGXJdraTtMzf6YDUd2G1MHK+NhgdFL5nNdLvfnrp7YXh5EME&sol;+BldQM3f7yvtvbnxKnonlBFtVMc&sol;yR4P9RzMOBaXwftBS&sol;hnCj7sgJ7HrW3dPyfRVsSOp7zU6x1o3tPLONT29&sol;UOj55wjbIFdX0Vg1a6&sol;wFpbR41geXwYR4goxBoq+TvLN1a9aE0vb6E8Vk3i8OYPNrvw51FrubBAL+zvUXl51PqdiqhfyqVz37ky62iS+cYh1CJVhB&sol;tZsj8K2MW6&sol;qyDt1ixH&sol;Rt70AZf4C+2Xb+b7ZI0Yy2Tu6&sol;3xUnpO&sol;8Fvf6YGLiGwvr9PBs6C+wkZ5olhc&sol;&sol;GNQ5OTI3EX5CTV+taHMNPXO0Ac9b2mhV0KtBkiuH0Dq3b9BdZab8m84MHy+NDLxiHW4Mt&sol;7vubV8b2lRfo5cQ6SQvlsWoShzd&sol;sNmFP49ay4UFdTtOXp5wX1K&sol;lEsX5dcvKi+uzTmaZN5xSN9Lrmlbc95277Fr8q9hjPbX67AW1D+sOjDi214AI3+EinUrfj0h&sol;wTR8zlWbz96wXjNXR2R5VEsrv9oxiG1fYMT&sol;d1O10r+WRzZtlp69UOhHKO+dUOhHLN9VLHBxYPW2lPliKuZAdoMESxPYNWuj2tdW199eym&sol;29FS++heEDHnoyCcv57Aad52aaE8ujQtbAJv&sol;mCzC7+lWtv51y2c++G+pH4pC1bmryab5FMnHE0y7zhkzFkL33vNiJ0nXWK0j24aq3TGgKjn1U+r7VmH3f5+VBxvbBuLeU5WFXX9q5+2+FxtVHk0i+s&sol;knHInhqjCe8HMv&sol;m1NvlE5nh&sol;KPnJpio+oK5CSZm++j7XWieQivtqRoCVbMAtBkiWJ7Aql0f17q+vvpsMzuXbql9wjNdgqD8VUmM&sol;thCeXSfX7Q45E5lEX5Ltbbz18dU&sol;8JZ&sol;vqVnvFxSF+by2abOJpk3nHIaNzwXNSMi6fUJ6SgV2K0T3C+txkFV+z+U+zQI8dufy9G20W951T1gAc2PlMsrv8oxiE9ldfp7eHJVXn+xtWycP4tzE0wkeWHcxNMKu2jB3iet&sol;0WtNaegWDgw9p&sol;YwmWJ7Bqjw9rXV9f42xTNPVkS+1z53TZzeybyyFQeVSnNZqwhe21aHFIZ+TOJch8fVisr7WTv36nhvcBNuO5YIFTESfA6PzVXGKxu43ZmmT+cciY3e8veI7xnlPvrHQXXX7d6u7A3nzOOvLCisRpfwfjQCXGkvW+wOiofJ+CH+nrjRrocPoqyHI3Shhv8Xh7qtqbpq5&sol;oV&sol;FkOHPv6W5CSZZ+aMuyEkq7aOn9QcXbK09l0QcgrWOqK++uSCWf&sol;WTf8g&sol;R&sol;H1&sol;rKnRG5nVB5j937wcejO5Hj24IebvzEQ9zwelPv6FK621m7+evzpnmHNTgw8Xb5fNqOVOGRem1tfxgyr2y4gDpmVDuxcc1ePbS5fchq7F8j8Z6f0UcW3qJ4TKGhsPhj9hki3&sol;U3yV6yol41kJxXYlzAO1SJ9vU9uP2U&sol;p9y8d02&sol;eMT7fjnz0cbyA80CsdVGN6819xOBp0ObcWT9ob94emyYqdl&sol;tBTCrPYxT5zyL3Xdsu4gTs3c&sol;S77XJb3JTUOSyIOwVpLP3szT7jW5vfNOrq226&sol;1Qe&sol;1mfz4N&sol;oA0dU3fO7L4tNoBtk0hIsnj7zzcTa2CNZX8FDjUGY3uncMjv2vUeC52xP6eOgdVBflqRwWYa13&sol;v6G&sol;IPCGFkYH9IRqx51phY7FYFxyHwxhsTqtguJQ+ZbOYqHEIxeUjmmBE8CPUz+&sol;W+VT+gFFzVODzI617189NyVm3qCwNz33+bfwRvq32B&sol;B8+l6NC7s08eS8r1RvU3xqFapK&sol;3yYzONdn0xBz7fZ&sol;e921Xj2xiI2WPZhrzHRvd+&sol;Zul&sol;92O&sol;TUsO4wnSvt95xWsL&sol;VfP&sol;+uf&sol;crlfj+7yzQfYFYad9KhcNc3Q25kNrnh3R&sol;dq0bivjU8Y5zteLFxaHolfd1e39cHKw1sKvqXUOaDW9uG&sol;hqdmf9FlHiS6x0dmc45rDQ49DJbKu5p7R0bn9jO&sol;qU1ke41yrxFvrdYfc98sZr9QS5Cs3ttHyzcfOHXUbogDHIXNoXGBtsgXFIU+lZcOZPSw7qIz7nlHwfMu9upxoQfhS+PzTqeV4C2G2Wl7+yqrtlYpadO9Q7z2L6m9LNw6Jnx9q0h8aCbF89baR3153FizT5OSpTeVUtwrLuze&sol;O31Jf2TI&sol;TqO+hJPPe5neM4c0oeHOgIf5pn59uh++P2CjOUvfegsWN9omm1j1uIx3x8KpwWtOk&sol;zrrVMP308fuR5+R2aAMHPxvx48t0dq+GigvWHbzgLVtMCP+ui2zBmE&sol;zw3uFgmZet3TX8P&sol;BjS1laQK2&sol;md7zgm9Je+dyKlL7CR+rI9V9f8hNNd8e+2Z6&sol;zYQDDqf2v+p9&sol;NFdZ8l61y7fWT0r&sol;Vt&sol;sGp&sol;U8Zr5D34pQ8vOqfr+t7K&sol;gZtmBaYEdtX2rjeKhzTeUEQJy0ZY9VqisvKP+5G+eG9StXsrfTD504dvXH&sol;De1AvfESp1R1eOeuLYSh7JVh8rfnJk+J8bovea5aXbC+uxLb43+4bJ7GSXDPEWuw6n2wsZDC1q1JlTr7EWSoVqbNO+9PzYyPNBnLJ+d8oL3UOr2n7tx+eQRsajR3bJle&sol;sHj5y8eKW8Uoj6m3GaqZoQ+Ra6DWM3gWiudw79m66taKq+gSNjgUeOc+zy1NU6OO+jOfP5iSH1lYhs5xrOVpznr24hORWpGQ8JjLt9AquvLHA8JBHNlj0QavQxUecN4uAwcXsuvL08XVy0VNcm0bcu1PfMkiz&sol;udtXzo1mvdRt9KyfVi7F5+WprDrbH3xmQbj8BkZH5XU5P9LXLQ+OWhkPqTzR0Mek7Bu793ziUE4SfgvnNG0tvyqn&sol;hhE2G&sol;e++5bN9y0tfweonzGoVqkzzgUgD6mnb7qtMajNSnX10fuL5U4pJ740ZO021oeDw&sol;EV&sol;VmHAohfcahAPQxbfXV8VfPaE66vh5yf6nEIePRtfJlTO0tj8uD8PUM9sHx1p63a3f5GYdioY9J2tf3NtTjAknX10PuL5k4ZD7gUXyXtvTnbk+cGDpS&sol;0RZm8vvUOdXPmXdf&sol;rO0io&sol;41As9DFp+5VHVDqyD8Xk362o&sol;6yLIon2WTpxyHmsJ39OQ80fqH8AsN3lt&sol;H702d8D71EP&sol;dq0F6fcSgW+pjU&sol;eats&sol;p5yJKaPmySRPssoTiUjRDG9SfhqpgP5gRof&sol;mr+H21QUpUzZZG+UsYh2Khj3kc&sol;GxecDYXWp18Mg4FeTTKL2dyl+OgiPnvJY9G+TV+X20Qp2ZLo&sol;wlDz0ORUMfQx9DH0MfQx+zuD7jUCz0MfQx9DH0MWn7jEOx0MfQx9DH0Mek7TMOxUIfQx9DH0Mfk7bPOBQLfQx9DH0MfUzaPuNQLPQx9DH0MfQxafuMQ7HQx9DH0MfQx6TtP&sol;TvDzExMTExMRmJ46FY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn98fYmJiYmJqZ+J4KBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdvn94eYmJiYmNqZOB6KhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GPS9hmHYqGPoY+hj6GPSdtnHIqFPoY+hj6GPiZtn3EoFvoY+hj6GPqYtH3GoVjoY+hj6GPoY9L2GYdioY+hj6GPoY9J22ccioU+hj6GPoY+Jm2fcSgW+hj6GPoY+pi0fcahWOhj6GPoY+hj0vYZh2Khj6GPoY+hj0nbZxyKhT6GPoY+hj4mbZ9xKBb6GPoY+hj6mLR9xqFY6GPoY+hj6GNS9u&sol;f&sol;39cI2SA0LvdBAAAAABJRU5ErkJggg==</div>
+<div style="text-align-last: center; margin-top: 4%;">(link-repeat: "<button onclick=\"setup.ctf3_copyText()\">Copy Text</button>")[]<div>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+     [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF3end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There are plenty of online tools that can help you with this task. ")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Base64 encoding is used often in programming to convert sequences of data bits to different formats. Converting this string should lead you to a diffrent file format.")]
+  </div>
+</div>
+
+<style>
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .textBox {
+    width: 50rem !important;
+    height: 50rem !important;
+    margin: 0 auto;
+	padding: 3rem;
+    border: 5px #4B0872;
+    background-color: #1E1E1E;
+	color: #fff;
+    overflow: scroll;
+    text-align:justify;
+	word-wrap: break-word;
+  }
+  
+  .codeFormatting {
+    background-color: #1E1E1E;
+    color: #fff;
+  }
+ 
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+  width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+  
+    button {
+    height: 2em;
+    width: 8em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 2em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
+
+:: CTF3end {"position":"800,2600","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+  [ \
+    <script>
+      var input = $flag
+      var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+
+      $success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+      var success = "kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopOOEqdba5pjr6IHfrxNcnx95ZyaJNQ4Q==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf3")[  \
+        (set: $ctfs to it + (a: "ctf3"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+<style>
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+</style>
+
+
+:: CTF4 {"position":"800,1400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.all();
+</script>
+
+(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+
+In this challenge you can try to insert a JavaScript alert() in the frame below. This JavaScript alert() should show up a pop up window.
+
+For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
+It is not necessary to look into the the code. 
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
+")
+
+(if: $ctfs contains "ctf4")[]
+(else:)[(alert: _info)]
+
+<h1>CTF 4 - XSS</h1>
+
+
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html" readonly>
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
+    </div>
+    <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
+  </div>
+</div>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You need to insert some javascript, maybe the script tag helps")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/ctf/pc_rahmen.png");
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+    margin-top: 4%;
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url("src/img/ctf4/webbrowser_header.PNG") 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+</style>
+
+
+:: CTF4_end {"position":"1000,1400","size":"100,100"}
+(unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
+
+Congratulations you made it!
+
+(if: $playingStory is true)[
+  [[<button class="resumeButton">Resume Story</a>->Memory2]]]\
+(else:)[
+  [[Back to CTF-Overview->CTFs]]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 5 {"position":"600,3000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.all();
+</script>
+
+(set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
+
+Note: If you have injected XSS successfully, you will be redirected automatically.")
+
+<!-- TODO: Delete unused code -->
+<!--(if: $onTimeShow is false)
+(if: $onTimeShow is true)[ (alert: _info)]
+(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
+
+(if: $ctfs contains "ctf5")[]
+(else:)[(alert: _info)]
+
+<h1>CTF 5 - XSS</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html" readonly>
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
+    </div>
+    <iframe src="src/static/ctf5/t.html" title="Google"></iframe>
+  </div>
+</div>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Maybe there are other html tags that are vulnerable?")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/ctf/pc_rahmen.png");
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disabe scroll */
+  }
+
+  br {
+    max-height: 0px;
+    visibility: hidden;
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+    
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url("src/img/ctf4/webbrowser_header.PNG") 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+</style>
+
+
+:: CTF5_end {"position":"800,3000","size":"100,100"}
+(unless: $ctfs contains "ctf5")[(set: $ctfs to it + (a: "ctf5"))]
+
+Congratulations you made it!
+
+(if: $playingStory is true)[
+  [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+(else:)[
+  [[Back to CTF-Overview->CTFs]]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 6 {"position":"600,5000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+(set: $ctf6_code to "function showTab(input) {
+	var picID;
+
+	if (input.length == 1) {
+		picID = input;
+	} else {
+		picID = input.substring(1, 0);
+	}
+
+	var html = \"Image \" + picID + \"<br>\";
+	html += \"< img src='../../img/ctf6/\" + input + \".jpg' />\";
+	html += \"< /br>\"
+	document.getElementById(picID).innerHTML = html;
+
+	/*ignore this in the challenge*/
+	window.localStorage.setItem('picID', input);
+
+	var i;
+	var x = document.getElementsByClassName(\"animals\");
+
+	for (i = 0; i < x.length; i++) {
+	  x[i].style.display = \"none\";  
+	}
+	document.getElementById(picID).style.display = \"block\";
+
+	/*ignore this in the challenge*/	
+	parent.postMessage(\"ctf6_url_\" + input, \"*\");
+}
+")
+
+(set: _info to "Try to insert some JavaScript ino this website. This time there is no input
+
+Note: If you have injected XSS successfully, you will be redirected automatically.
+")
+
+(if: $ctfs contains "ctf6")[]
+(else:)[(alert: _info)]
+
+<script> 
+  setup.ctf6_reset()
+  setup.all();
+</script>
+
+<h1>CTF 6 - XSS</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+<div class="webbrowser">
+  <div id="tab">
+    <div class="controls">
+      <span class="url label">URL:</span>
+      <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+    </div>
+    <iframe scrolling="yes" src="src/static/ctf6/u.html" title="Google"></iframe>
+  </div>
+</div>
+
+<tw-consecutive-br></tw-consecutive-br>
+<tw-consecutive-br></tw-consecutive-br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+<div class="buttons">
+  <div class="btn-pos5">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"code-btn-background\"></button>")[(alert: "
+      <pre><code id=\"code\" class=\"language-javascript\"></code></pre>
+      <script>
+        setup.ctf6_showCode();
+        hljs.highlightAll();
+      </script>")]
+  </div>
+  <div class="btn-pos3">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/ctf/pc_rahmen.png");
+    padding: inherit;
+    float: initial;
+    width: inherit;
+    height: inherit;
+  }
+
+  tw-passage {
+    margin-left: 17%;
+    width: 70%;
+    height: 100%;
+    padding: 1.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  tw-story tw-consecutive-br {
+    height: 1.7% !important;
+  }
+
+  /* -- General CSS -- */
+
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+
+  br {
+    max-height: 0px;
+    visibility: hidden;
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  .webbrowser {
+    float: inherit;
+    width: 64%;
+    height: 52%;
+    margin-left: 15.5%;
+
+    border: 2px solid black;
+    background: white;
+  }
+
+  #tab {
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    background: url("src/img/ctf4/webbrowser_header.PNG") 0 0 no-repeat;
+    background-repeat: repeat-x;
+    border: 1px solid #333;
+  }
+
+  .url {
+    padding: 0.1em;
+    align-self: center;
+  }
+
+  .controls {
+    background-color: #f4f4f4;
+    border: 1px solid #f0f0f0;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    border-bottom: none;
+    display: flex;
+    margin-top: 47px;
+    padding: 2px;
+  }
+
+  .urlbutton {
+    margin-left: auto;
+    align-self: center;
+    padding-right: 1em;
+  }
+
+  .input {
+    margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+</style>
+
+
+:: CTF6_end {"position":"800,5000","size":"100,100"}
+(unless: $ctfs contains "ctf6")[(set: $ctfs to it + (a: "ctf6"))]
+
+<script>
+  setup.ctf6_reset()
+</script>
+
+Congratulations you made it!
+
+(if: $playingStory is true)[
+  [[<button class="resumeButton">Resume Story</a>->e.p]]]\
+(else:)[
+  [[Back to CTF-Overview->CTFs]]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF7 {"position":"1200,1000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.all();
+</script>
+
+<h1>CTF 7 - Web Exploitation</h1>
+
+<h2>Who even am I?</h2>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+<img src="src/img/ctf7/books-shelf.jpg"></img>
+
+Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
+
+A search on the surface level is not enough. Further inspection is needed. 
+
+<div class="shelves">
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
+  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
+</div>
+
+<!--1st Part of the flag: ### puzzelPiece{og9XE ###-->
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF7end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The flag is consists of two parts. So you might want to look in different places.")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Open your inspector view and have a look at the website’s resources.")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .shelves {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  /* 2nd and last Part of the flag: ### hgLE2} ### */
+</style>
+
+
+:: First Shelf {"position":"1600,1000","size":"100,100"}
+Nothing really useful here
+
+
+:: Second Shelf {"position":"1725,1000","size":"100,100"}
+No useful information here...
+
+
+:: Third Shelf {"position":"1850,1000","size":"100,100"}
+Nothing here either...
+
+
+:: Fourth Shelf {"position":"1975,1000","size":"100,100"}
+This search has lead me nowhere so far..
+
+
+:: Fifth Shelf {"position":"2100,1000","size":"100,100"}
+Yup... I did all of that for nothing :(
+
+
+:: CTF7end {"position":"1400,1000","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+
+        $success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
+        var success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf7")[  \
+        (set: $ctfs to it + (a: "ctf7"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->Memory1]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 8 {"position":"600,4200","size":"100,100"}
+<script>
+  setup.all();
+</script>
+
+<h1>CTF 8 - Forensics</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+You found this weird looking message being passed around on the servers.
+
+Message: "181, 152, 103, 335, 147, 256, 101, 192, 125, 396, 172, 170, 104, 269, 214, 377, 288, 324, 401, 142, 163"
+
+This must be the decryption scheme. Can you decrypt it?:
+
+Take each number mod 42 and map it to the following character set
+
+<ul>
+  <li>0-25 is the alphabet (uppercase),</li>  
+  <li>26-35 are the decimal digits, </li>
+  <li>36-40 are this special characters (#!"&#123})</li>
+  <li> and 42 is an underscore</li>
+</ul>
+
+<div>
+  Your decrypted message will be your flag, please wrap the flag into puzzelPiece&#123;FLAG-HERE}
+
+  You can use a python online compiler like this <a href="https://www.online-python.com/" target="_blank">python-online</a> or any other programming language. 
+</div>
+
+<div class="buttons">
+  <div class="btn-pos4">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos3">
+    [[<button class="success-btn-background"></button>->CTF8end]]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "This program should loop over a message array, containing the numbers.
+	 Each number must be calculated modulo 42. For example you have to map all numbers (if 0 <= x <= 25) to the letters A-Z")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to write small and simple python program")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+  
+  /*Scrollbar Google Chrome*/
+  ::-webkit-scrollbar {
+	width: 12px;
+  }
+	
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+	
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+	border-radius: 20px;
+	border: transparent;
+  }
+</style>
+
+
+:: CTF8end {"position":"800,4200","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+        
+        $success = "0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==" == hashed
+        var success = "0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf8")[  \
+        (set: $ctfs to it + (a: "ctf8"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTF 9 {"position":"600,4600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+
+<script>
+  setup.all();
+</script>
+
+<h1>CTF 9 - Reverse Engineering</h1>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+<h2>A random file in your home directory</h2>
+
+<tw-consecutive-br></tw-consecutive-br>
+
+Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
+
+(set: $ctf9_code to "
+  public class ctf9 {
+    static char [] theSecret;
+    public static void encryptSecret() {
+        theSecret = new char [10];
+        theSecret [2] = 'G';
+        theSecret [5] = 'J';
+        theSecret [0] = '7';
+        theSecret [6] = '5';
+        theSecret [8] = 'e';
+        theSecret [3] = '8';
+        theSecret [9] = 'Y';
+        theSecret [1] = 't';
+        theSecret [4] = 'e';
+        theSecret [7] = '8';
+    }
+
+    public static String conclusion() {
+	String conc = \"This case is unsolvable. Give up!\";
+        return conc;
+    }
+    
+
+    public static void main(String[] args) {
+	System.out.println(conclusion());
+    }
+}
+")
+
+<!-- TODO: No highlighting in code -->
+
+<div class="buttons">
+  <div class="btn-pos5">
+  	(if: $playingStory is true)[
+      [[<button class='home-btn-background'></button>->MainPage]]]
+        (else:)[
+      [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    [[<button class="success-btn-background"></button>->CTF9end]]
+  </div>
+  <div class="btn-pos3">
+  (link-repeat: "<button class=\"code-btn-background\"></button>")[
+    (alert: "
+      <pre><code id=\"code\" class=\"language-java\"></code></pre>
+      <script>
+        setup.ctf9_showCode();
+        hljs.highlightAll();
+      </script>")]
+  </div>
+  <div class="btn-pos2">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
+  </div>
+  <div class="btn-pos1">
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+    padding: 0.25rem;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+  
+  code {
+    overflow: hidden !important;
+  }
+  
+  pre {
+	background-color: #333 !important;
+  }
+  
+  html {
+    overflow-y: hidden !important; /* Disable scroll */
+  }
+</style>
+
+
+:: CTF9end {"position":"800,4600","size":"100,100"}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+
+Please enter the flag here: 
+(set: $success to false)
+
+<div class="container">
+  <div>(input-box: bind $flag, "XXX=", 5)[]</div>
+  <div>(link-rerun: "<button id='checkflag_btn' class='color_purple checkFlagButton'>Check Flag</button>") \
+    [ \
+      <script>
+        var input = $flag
+        var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
+        
+        $success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
+        var success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
+      </script>
+      (if: $success is true)[  
+        (alert: "Correct Flag!") \
+      (unless: $ctfs contains "ctf9")[  \
+        (set: $ctfs to it + (a: "ctf9"))]]  \
+      (unless: $success is true)[ \
+        (alert: "Incorrect Flag, please try again!")]  \
+      (if: $success is true)[  \
+        (if: $playingStory is true)[  \
+          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+        (else:)[ \
+          [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
+      ] \
+    ] \
+  </div>
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- General CSS --*/
+
+  .resumeButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .checkFlagButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: CTFs {"position":"1600,200","size":"100,100"}
+<script type="text/javascript">
+	setup.ctfs();
+</script>
+(set: $playingStory to false) \
+(set: _notStarted to "CTF not started yet") \
+(set: _started to "Started but not finished") \
+(set: _finished to "CTF finished :>")\
+(set: _names to (dm: 1, "CTF 1 - XSS", 2, "CTF 2 - Forensics", 3, "CTF 3 - Forensics", 4, "CTF 4 - XSS", 5, "CTF 5 - XSS", 6, "CTF 6 - XSS", 7, "CTF 7 - Web Exploitation" , 8, "CTF 8 - Cryptography", 9, "CTF 9 - Reverse Engineering", 10, "CTF 10 - Cryptography", 11, "CTF 11 - Cryptography") )\
+(set: _difficulties to (dm: 1, "1", 2, "1", 3, "1", 4, "2", 5, "3", 6, "3", 7, "1", 8, "1", 9, "1", 10, "1", 11, "1") )\
+
+<header>
+  <div class="logo">
+    <img src="src/img/header/logo.svg" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li>
+        [[<a>Home</a>->MainPage]]
+      </li>
+      <li class="active">
+        [[<a>CTFs</a>->CTFs]]
+      </li>
+      <li>
+        [[<a>Tutorial</a>->TutorialPage]]
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  Here you can find an overview of all CTF challenges. Feel free to browse through them and jump straight to your favorite challenge without having to go through the story mode.
+
+ <!-- (if: $ctfs's length is 0)[\
+    No ctf has been completed so far.
+  ](else:)[\
+    <!-- we iterate over the array and print each item -->\
+    (for: each _item, ...$ctfs)[\
+      _item (unless: $ctfs's last is _item)[, ]\
+    ].
+  ] -->
+
+  (for: each _i, ...(range:1,11))[
+  (print: '<div class="ctfpos ctf' + (text: _i) + '">')
+    <div class='rectangle'> 
+      <div class='box_img'> 
+        <img src='src/img/main/previews/preview_default.svg' alt='preview'> 
+      </div> 
+      <div class='box_text'> 
+        <ul> 
+          <li> 
+          (print: _names's (_i))
+          </li> 
+          <li>
+            Difficulty level: (print: _difficulties's (_i))
+          </li> 
+          <li> 
+            State: (if: $ctfs contains "ctf" + (text: _i) )[(print: _finished)](else:)[(if: (history:) contains "CTF " + (text: _i))[(print: _started)] (else:)[(print: _notStarted)]] 
+          </li> 
+        </ul> 
+      </div>  
+      <div class='box_button'> 
+        (print: '[[<button class="startButton">Start->CTF ' + (text: _i) + ']]')
+      </div> 
+    </div> 
+  ]
+</section>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url("src/img/header/header_element.svg"),
+      url("src/img/general/background/background_landscape.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  .ctf1 .ctf2 .ctf3 .ctf4 .ctf5 .ctf6 .ctf7 .ctf8 .ctf9 .ctf10 .ctf11 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ctfpos {
+    margin: 1em 2em 1em 2em;
+  }
+
+  html {
+    overflow-y: hidden !important;
+  }
+
+  br {
+    display: none;
+  }
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 65vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 2em 1em 2em;
+    overflow-y: scroll;
+  }
+
+  .rectangle {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 0;
+    height: 8em;
+    width: 80%;
+    border-radius: 45px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .box_img {
+    margin: auto;
+  }
+
+  .box_img img {
+    height: 6em;
+    border-radius: 25px;
+  }
+
+  .box_text {
+    margin: auto;
+    width: 25%;
+  }
+
+  .box_button {
+    margin: auto;
+  }
+
+  .rectangle ul {
+    margin: 0 2rem 0 -8rem;
+    list-style: none;
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  .startButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  .active {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+    font-size: 1.6vw;
+  }
+  
+	/*Scrollbar Google Chrome*/
+	::-webkit-scrollbar {
+	  width: 12px;
+	}
+	::-webkit-scrollbar-track {
+	  background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+	  background-color: rgba(155, 155, 155, 0.5);
+	  border-radius: 20px;
+	  border: transparent;
+	}
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: initMain {"position":"200,0","size":"100,100"}
+<!--only for init-->
+
+<!-- :: init [startup] -->
+<!-- it is always a good idea to initialize your variables, but with arrays it is particularly important -->
+
+
+(set: $playingStory to false)
+<!--0  dann keine Story, wenn 1 dann Story-->
+
+(set: $ctfs to (a:))
+
+(go-to: "MainPage")
+
+
+:: MainPage {"position":"200,200","size":"100,100"}
+<header>
+  <div class="logo">
+    <img src="src/img/header/logo.svg" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li class="active">
+        [[<a>Home</a>->MainPage]]
+      </li>
+      <li>
+        [[<a>CTFs</a>->CTFs]]
+      </li>
+      <li>
+        [[<a>Tutorial</a>->TutorialPage]]
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  setup.main();
+</script>
+
+<section>
+  <div class="usb-stick" id="demo">
+    <img src="src/img/main/usb_stick.svg" alt="usb-stick">
+  </div>
+  <div class="preview">
+    <div class="preview_bg">
+      <img src="src/img/main/previews/preview_default.svg" alt="preview">
+      <div class="rectangle">
+        <button id="startButton" class="startButton">Start</button>
+		(link-repeat: "<button id='resetButton' class='resetButton'>Reset Game</button>")[
+		(set: $doYesNo to (confirm: "Do you really want to delete your game state?"))
+		(if: $doYesNo)[(go-to: "reloadGame")]
+		(else:)[]
+		]
+      </div>
+  </div>
+</section>
+
+<script>
+ if(Harlowe.storage.load('last_passage') != null){
+	document.getElementById("startButton").innerHTML = "Continue";
+ } else {
+ 	document.getElementById("startButton").innerHTML = "Start";
+ }
+</script>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url("src/img/main/wires_landscape.svg"),
+      url("src/img/general/background/background_landscape.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  br {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 60%;
+    margin: 0 2em 0 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .usb-stick img {
+    height: 50vh;
+    padding-left: 10vw;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  .preview {
+    position: relative;
+  }
+
+  .preview_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .preview_bg img {
+    position: relative;
+    z-index: 1;
+    border-radius: 45px;
+    height: 50vh;
+  }
+
+  .rectangle {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+
+    border-radius: 0 0 45px 45px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  button {
+    height: 2em;
+    width: 8em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 2em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: setStory {"position":"200,400","size":"100,100"}
+(set: $playingStory to true)
+<script>
+  var nextPage = Harlowe.storage.load('last_passage');
+
+  if (nextPage == null){
+    nextPage = "Story";
+  }
+  
+  Harlowe.goto(nextPage);
+</script>
+
+
+:: reloadGame {"position":"400,400","size":"100,100"}
+(set: $ctfs to (a:))
+(restart:)
+
+<script>
+	 Harlowe.storage.clear("last_passage");
+	 Harlowe.goto("MainPage");
+</script>
+
+
+:: Achievements {"position":"400,0","size":"100,100"}
+
+
+:: Settings {"position":"600,0","size":"100,100"}
+
+
+:: Story {"position":"200,600","size":"100,100"}
+<link rel="stylesheet" href="src/css/story/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+
+  var sidebar = document.querySelector("tw-sidebar");
+  var notes = sidebar.childNodes;
+
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].getAttribute("title") == "Undo") {
+      notes[i].style = "visibility: hidden;";
+    }
+  }
+</script>
+
+<div class="section">
+  <h1>Tutorial</h1>
+  <!-- Introduction to the game -->
+  Welcome to the game "Memory Loss: Find Your Way Back". 
+  This game is about using capture-the-flag challenges to teach the concepts 
+  of IT security by learning attack techniques. Only when the various attack 
+  techniques used by hackers to penetrate IT systems are known can the 
+  appropriate countermeasures be taken.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h2>What is a CTF challenge?</h2>
+  In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
+  find a flag. This flag is usually a file or a string and can look like this: 
+  &lt!-- flag: hur32782ruhu -->.
+
+  In this game, the flags look like this:
+  puzzlePiece{<Some hash>}
+
+  Besides that, it is good to know that there are different categories of 
+  challenges. A few examples are XSS, Web Exploitation or Cryptography. 
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h2>Modes</h2>
+  <!-- Explain both modes: story and ctf -->
+  The game is structured in such a way that the challenges are built into a story. This means that in 
+  places the challenges are built into the story that must be overcome in order for the story to continue. 
+
+  However, it is possible to play the challenges without the story. To do this, click on "CTFs" in the menu.
+
+  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
+  page by pressing the "Reset" button.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h2>How to play the challenges</h2>
+  <!-- CTF example, buttons, and flag page -->
+  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
+  even using Google.
+
+  The following buttons can be found in the challenges to support you:
+
+  <div class="buttons">
+    <div class="btn-pos6">
+      <button class='home-btn-background'></button>
+      <p>Returns to ctf overview or main page depending on the game mode</p>
+    </div>
+    <div class="btn-pos5">
+      <button class='success-btn-background'></button>
+      <p>Forwarding to flag check</p>
+    </div>
+    <div class="btn-pos4">
+      <button class='reload-btn-background'></button>
+      <p>Reloads the page</p>
+    </div>
+    <div class="btn-pos3">
+      <button class='code-btn-background'></button>
+      <p>Shows a code snippet</p>
+    </div>
+    <div class="btn-pos2">
+      <button class='help-btn-background'></button>
+      <p>Gives help</p>
+    </div>
+    <div class="btn-pos1">
+      <button class='hint-btn-background'></button>
+      <p>Gives a hint</p>
+    </div>
+  </div>
+
+  A little tip before you start solving the challenge:
+  It often makes sense to use the developer mode of the browser. If this 
+  doesn't mean anything to you, Google can help.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <!-- Outro -->
+  If you want to read the tutorial again, click on "Tutorial" in the menu to open it.
+
+  [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.p]]
+</div>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url("src/img/general/background/background_landscape.svg");
+  }
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+  
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.p {"position":"200,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Reaction to the memory
+
+
+[[<button class="startChallenge">Next->2.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.p {"position":"200,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Reaction to memory 2
+
+[[<button class="startChallenge">Next->3.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.p {"position":"200,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Player feels a little shocked
+- Locks pc so the secretary wont't recognise
+- Say Goodbye
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 5.p {"position":"200,2400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Reviewing the memories
+- Okay, thats an awesome algorithm
+- Keeps it a secret for now
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 6.p {"position":"200,2800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 7.p {"position":"200,3200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.p {"position":"200,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 9.p {"position":"200,4000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 10.p {"position":"200,4400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->10.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: x.p {"position":"2300,600","size":"100,100"}
+<script>
+  setup.story()
+</script>
+
+Sorry, these CTFs haven't been implemented in the story yet...
+
+Please come back later!
+
+
+:: TutorialPage {"position":"400,200","size":"100,100"}
+<header>
+  <div class="logo">
+    <img src="src/img/header/logo.svg" alt="logo">
+  </div>
+  <nav>
+    <ul>
+      <li>
+        [[<a>Home</a>->MainPage]]
+      </li>
+      <li>
+        [[<a>CTFs</a>->CTFs]]
+      </li>
+      <li class="active">
+        [[<a>Tutorial</a>->TutorialPage]]
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <h2>Tutorial</h2>
+  <!-- Introduction to the game -->
+  Welcome to the game "Memory Loss: Find Your Way Back". 
+  This game is about using capture-the-flag challenges to teach the concepts 
+  of IT security by learning attack techniques. Only when the various attack 
+  techniques used by hackers to penetrate IT systems are known can the 
+  appropriate countermeasures be taken.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>What is a CTF challenge?</h3>
+  In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
+  find a flag. This flag is usually a file or a string and can look like this: 
+  &lt!-- flag: hur32782ruhu -->.
+
+  In this game, the flags look like this:
+  puzzlePiece{<Some hash>}
+
+  Besides that, it is good to know that there are different categories of 
+  challenges. A few examples are XSS, Web Exploitation or Cryptography. 
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>Modes</h3>
+  <!-- Explain both modes: story and ctf -->
+  The game is structured in such a way that the challenges are built into a story. This means that in 
+  places the challenges are built into the story that must be overcome in order for the story to continue. 
+
+  However, it is possible to play the challenges without the story. To do this, click on "CTFs" in the menu.
+
+  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
+  page by pressing the "Reset" button.
+
+  <tw-consecutive-br></tw-consecutive-br>
+
+  <h3>How to play the challenges</h3>
+  <!-- CTF example, buttons, and flag page -->
+  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
+  even using Google.
+
+  The following buttons can be found in the challenges to support you:
+
+  <div class="buttons">
+    <div class="btn-pos6">
+      <button class='home-btn-background'></button>
+      <p>Returns to ctf overview or main page depending on the game mode</p>
+    </div>
+    <div class="btn-pos5">
+      <button class='success-btn-background'></button>
+      <p>Forwarding to flag check</p>
+    </div>
+    <div class="btn-pos4">
+      <button class='reload-btn-background'></button>
+      <p>Reloads the page</p>
+    </div>
+    <div class="btn-pos3">
+      <button class='code-btn-background'></button>
+      <p>Shows a code snippet</p>
+    </div>
+    <div class="btn-pos2">
+      <button class='help-btn-background'></button>
+      <p>Gives help</p>
+    </div>
+    <div class="btn-pos1">
+      <button class='hint-btn-background'></button>
+      <p>Gives a hint</p>
+    </div>
+  </div>
+
+  A little tip before you start solving the challenge:
+  It often makes sense to use the developer mode of the browser. If this 
+  doesn't mean anything to you, Google can help.
+
+  <tw-consecutive-br></tw-consecutive-br>
+</section>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    width: 100%;
+    padding: 0;
+    background-image: url("src/img/header/header_element.svg"),
+      url("src/img/general/background/background_landscape.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover;
+    background-attachment: local, fixed;
+    box-sizing: border-box;
+  }
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  tw-sidebar {
+    display: none;
+  }
+
+  /* -- General CSS -- */
+
+  br {
+    display: none;
+  }
+
+  html {
+    overflow-y: hidden !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
+  header {
+    height: 25vh;
+    display: flex;
+  }
+
+  header .logo img {
+    height: 4em;
+    margin: 2em;
+    filter: drop-shadow(7px 7px 5px #000000);
+  }
+
+  nav ul {
+    margin-left: 6em;
+    margin-top: 3em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  nav li {
+    padding: 0 4rem 0 1rem;
+  }
+
+  nav li a {
+    padding: 5rem;
+    font-size: 2rem;
+    color: #9b9b9b;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  nav .active a {
+    color: #f79e00;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #000000;
+  }
+
+  section {
+    height: 70vh;
+    margin: 0 2em 0 2em;
+    overflow-y: scroll; 
+  }
+
+  .buttons {
+    display: flex-inline;
+    flex-direction: column;
+  }
+
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .buttons p {
+    padding-left: 1rem;
+  }
+</style>
+
+
+:: 1.p {"position":"200,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+You woke up and felt as if you had been asleep for ages. At first you can't really see anything, \
+but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
+what appears to be a capsule. You are confused and move your hands until you notice that something \
+seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
+given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
+you get out now? 
+
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
+
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: "Quick! Hurry up, something seems to be wrong!". You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. "The capsule is open. He must have finally woken up." Came from a male voice. "At last! \
+But where is he?" you hear another voice, but this time a female one, say. "We need to find him quickly \
+and check his vitals," said the male voice "Josie, please go get Rob already. When I find him, he should \
+check him straight away". "All right, John," Josie replies and you hear footsteps coming through the \
+door and out of the room. You don't dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. "There you are!", John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. "Don't be afraid," John said in a calm \
+voice "We don't want to hurt you. It's all right. Look, I'm John and some of my colleagues, or rather \
+friends, and I found you and saved you."
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.x.p {"position":"1000,800","size":"100,100"}
+- Showing player around
+	- Introduce everyone
+    - Show the headquarter
+- First night
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.y.p]]
+
+
+:: 1.y.p {"position":"1200,800","size":"100,100"}
+- Waking up
+- Player thoughts
+- Asking for news of the last years
+	- Library
+
+- Describe a feeling that initiates a ctf?
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->CTF7]]
+
+
+:: 1.1.1.p {"position":"400,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.1.2.p {"position":"600,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+[[<button class="startChallenge">Next->1.1.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Template {"position":"400,600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->Template]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.1.3.p {"position":"800,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: "Quick! Hurry up, something seems to be wrong!". You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. "The capsule is open. He must have finally woken up." Came from a male voice. "At last! \
+But where is he?" you hear another voice, but this time a female one, say. "We need to find him quickly \
+and check his vitals," said the male voice "Josie, please go get Rob already. When I find him, he should \
+check him straight away". "All right, John," Josie replies and you hear footsteps coming through the \
+door and out of the room. You don't dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. "There you are!", John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. "Don't be afraid," John said in a calm \
+voice "We don't want to hurt you. It's all right. Look, I'm John and some of my colleagues, or rather \
+friends, and I found you and saved you."
+
+[[<button class="startChallenge">Next->1.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.1.p {"position":"400,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Telling the others of the memory
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.3.p {"position":"600,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.x.p {"position":"800,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Next->CTF4]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.1.p {"position":"400,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Decide what to do before lunch
+- Plan to tell John about it
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.2.p {"position":"600,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Convo at lunch
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.3.p {"position":"800,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Preparation
+
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.4.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.4.p {"position":"1000,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Arrival at the university
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.5.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.5.p {"position":"1200,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Searching for hints in the faculty
+- Semester break
+- Awards with your name on it
+- Hackathons
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.6.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.6.p {"position":"1400,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Secretary's office is open
+- Get to the pc of the secretary to find out more about yourself
+
+[[<button class="startChallenge">Start Challenge->CTF1]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.x.p {"position":"1200,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- So you know, that you now have to encrypt the sequence
+- You search the internet for some tutorial about encrypting
+
+[[<button class="startChallenge">Start Challenge->CTF11]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 5.x.p {"position":"600,2400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- You somehow get the gut feeling that you need to return to the website from the ip-adress
+
+[[<button class="startChallenge">Start Challenge->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 11.p {"position":"200,4800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->11.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 11.x.p {"position":"600,4800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->CTF 6]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 10.x.p {"position":"600,4400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 9.x.p {"position":"600,4000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.x.p {"position":"600,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->CTF2]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 7.x.p {"position":"600,3200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 6.x.p {"position":"600,2800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->Template]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: e.p {"position":"200,5200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->e.x]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: e.x {"position":"600,5200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Return to Main->MainPage]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory3 {"position":"1800,1800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Becoming a successful cs/hacker or both after graduation
+	- Job as freelancer
+--> You remember a cryptic sequence of chars
+
+[[<button class="startChallenge">Return to Story->4.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory1 {"position":"2300,1000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Name
+- Birthday
+- Favorite food
+
+[[<button class="startChallenge">Return to Story->2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory2 {"position":"1200,1400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Parents
+- CHildhood memories
+- Degree
+- Graduation
+- Freelancer
+
+[[<button class="startChallenge">Return to Story->3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory4 {"position":"1600,2200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+--> You get the ip-adress
+- Leads you to a website
+
+- Writing the algorithm
+- You remember working thrugh so many night shifts
+- Its a compressing and decompressing algorithm
+- It is particulary efficient and effective
+
+
+[[<button class="startChallenge">Return to Story->5.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.1.p {"position":"400,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Player is thinking
+	- Especially about the sequence
+- Convo with Josie
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.2.p {"position":"600,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Searching about himself on the internet
+- Nothing special just some hackathons
+- Sleeping
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.3.p {"position":"800,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Overslept
+- Gos to cantine
+- Experiment with small chocolate-covered cream cake
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.4.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.4.p {"position":"1000,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Watches some series with the others
+- Something about cryptographie
+- Thinking about the sequence
+- Talking to John or Rob about it
+- First no idea, but then
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 5.1.p {"position":"400,2400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Searching the internet about the algorithm
+- Realization how good the algorithmn really is
+- Is this the reason for everything?
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory8 {"position":"1000,3800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+
+
+[[<button class="startChallenge">Return to Story->9.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
