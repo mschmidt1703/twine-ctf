@@ -30,10 +30,10 @@ Maybe taking a closer look at it is not a bad idea.
     [[<button class="success-btn-background"></button>->CTF2end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Do you know what meta data means?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Do you know how to look up the mate data of a picture? For viewing basic meta data you don't need to install any extra software.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is way more that a bunch of colored pixels. The details of a picture can reveal some of its secrets.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A photo is much more that a bunch of colored pixels. The details of a picture can reveal some of its secrets.")]
   </div>
 </div>
 
