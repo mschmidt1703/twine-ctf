@@ -85,10 +85,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You can use the URL Hash-Paramter to inject some JavaScript. Remember it used for building a image")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for building an image. Maybe its something you can use for injecting your script into this site.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There is no input textbox for XSS Injection, but can you use something else")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Here you can't find a text field to execute an XSS injection. However, there are other methods to do so. Find them out.")]
   </div>
 </div>
 
