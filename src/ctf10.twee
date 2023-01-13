@@ -12,7 +12,7 @@
 
 <h1>CTF 10 - Cryptography </h1>
 
-Can you figure out, what the this picture means? 
+Can you figure out the message hidden in this image? 
 
 0 = &#123; or &#125;
 <img src="src/img/ctf10/flag.svg"><img>
@@ -28,10 +28,10 @@ Can you figure out, what the this picture means?
     [[<button class="success-btn-background"></button>->CTF10end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A = 1, B = 2 ... 0 = &#123; or &#125;")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A = 1, B = 2,... , 0 = &#123; or &#125;")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to map the numbers to letters")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The numbers can be mapped to different characters.")]
   </div>
 </div>
 
