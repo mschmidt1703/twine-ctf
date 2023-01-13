@@ -48,10 +48,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Think of an image tag, could you insert same javascript here (onerror= and src=)")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "How about trying out the image tag? Can it be used for inserting some javascript code here? (onerror= and src=)")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Maybe there are other html tags that are vulnerable?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What HTML tags can be used in XSS? You shoul look it up!")]
   </div>
 </div>
 
