@@ -15,7 +15,7 @@
 
 <tw-consecutive-br></tw-consecutive-br>
 
-Within the chaos on your personal drive you find a file that doesn’t seem very bad to start with. It seems like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
+Within the chaos on your personal drive you find a file that seem like a good starting point. It appears like it used to hold some secretive information, but someone tried to mess it up. Luckily you’re an expert on reverse engineering. This should be an easy task for you. 
 
 (set: $ctf9_code to "
   public class ctf9 {
@@ -68,10 +68,10 @@ Within the chaos on your personal drive you find a file that doesn’t seem very
       </script>")]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java? Does the sequence of the lines inserting characters in the array affect the sequence in which the characters are saved?")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The main method may be misleading. When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
   </div>
 </div>
 
