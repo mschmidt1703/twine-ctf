@@ -48,10 +48,10 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "It is possible to pop an alert with javascript \"alert()\", you should only add some script-tags")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that the function used in JavaScript to trigger an alert on a webpage is called \"alert()\".")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "You need to insert some javascript, maybe the script tag helps")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.")]
   </div>
 </div>
 
