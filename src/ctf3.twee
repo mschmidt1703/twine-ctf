@@ -26,10 +26,10 @@ iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
     [[<button class="success-btn-background"></button>->CTF3end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There are plenty of online tools that can help you with this task. ")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "There are plenty of online tools that can help you to analyse this string. Try googling Base64 and learning more about it. ")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Base64 encoding is used often in programming to convert sequences of data bits to different formats. Converting this string should lead you to a diffrent file format.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Base64 encoding is used often in programming to convert sequences of data bits to different formats. Converting this string should lead you to some sort of file format.")]
   </div>
 </div>
 
