@@ -12,21 +12,21 @@ You found this weird looking message being passed around on the servers.
 
 Message: "181, 152, 103, 335, 147, 256, 101, 192, 125, 396, 172, 170, 104, 269, 214, 377, 288, 324, 401, 142, 163"
 
-This must be the decryption scheme. Can you decrypt it?:
+This must be the decryption scheme. Here is how you can decrypt it.
 
-Take each number mod 42 and map it to the following character set
+Take each number and calculate mod 42 then map it to the following character set:
 
 <ul>
   <li>0-25 is the alphabet (uppercase),</li>  
   <li>26-35 are the decimal digits, </li>
-  <li>36-40 are this special characters (#!"&#123})</li>
+  <li>36-40 are the special characters (#!"&#123})</li>
   <li> and 42 is an underscore</li>
 </ul>
 
 <div>
-  Your decrypted message will be your flag, please wrap the flag into puzzelPiece&#123;FLAG-HERE}
+  The decrypted message will be your flag. Please insert your flag in the brackets according to this format: puzzelPiece&#123;FLAG-HERE}
 
-  You can use a python online compiler like this <a href="https://www.online-python.com/" target="_blank">python-online</a> or any other programming language. 
+  You can use a python online compiler like this one: <a href="https://www.online-python.com/" target="_blank">python-online</a>. If you prefer you can choose a different programming language. 
 </div>
 
 <div class="buttons">
@@ -40,11 +40,11 @@ Take each number mod 42 and map it to the following character set
     [[<button class="success-btn-background"></button>->CTF8end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "This program should loop over a message array, containing the numbers.
-	 Each number must be calculated modulo 42. For example you have to map all numbers (if 0 <= x <= 25) to the letters A-Z")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The programme you will write should loop over a message array containing the numbers from above.
+	 It sould calculate mod 42 from each number. You will then be able to map all numbers (if 0 <= x <= 25) to the letters A-Z.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Try to write small and simple python program")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "To complete this task you will only need to write a small and simple python programme.")]
   </div>
 </div>
 
