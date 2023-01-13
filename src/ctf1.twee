@@ -43,10 +43,10 @@
     [[<button class="success-btn-background"></button>->CTF1end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What does the JavaScript funktion atob() do?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Are you familiar with the JavaScript funktion atob()? You should look it up!")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Can you find a method that will be executed when you press the button?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you ever tried inserting code in a text field? Try it out and see what will happen.")]
   </div>
 </div>
 
