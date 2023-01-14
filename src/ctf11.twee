@@ -4,7 +4,8 @@
   setup.all();
 </script>
 
-(set: _info to "Seems like some kind of encrypted text, decrypt it to find the flag. It is not necessary to look into the the implementation code.") \
+(set: _info to "To pass this challange you need to find the hidden flag. 
+This will not require you to have a look at the source code of this page.") \
 (if: $ctfs contains "ctf11")[] \
 (else:)[(alert: _info)]
 
