@@ -100,4 +100,11 @@ https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg
 CTF8:
 https://www.pexels.com/de-de/foto/foto-eines-verlassenen-arbeitsbereichs-3359003/
 
+Icons:
+https://www.flaticon.com/de/kostenloses-icon/fragezeichen_5726470?term=fragezeichen&related_id=5726470
+https://freeicons.io/material-icons-action/home-icon-15944
+https://www.iconfinder.com/icons/2124268/document_essential_app_code_icon
+https://www.iconfinder.com/icons/1891021/approved_check_checkbox_checkmark_confirm_success_yes_icon
+https://www.iconfinder.com/icons/2303177/bulb_creative_hint_idea_lamp_light_tip_icon
+
 # Credits
