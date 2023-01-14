@@ -25,7 +25,7 @@ A search on the surface level is not enough. Further inspection is needed.
   [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
 </div>
 
-<!--1st Part of the flag: ### puzzelPiece{og9XE ###-->
+<!--puzzelPiece{og9XEhgLE2}-->
 
 (set: _info to "Try to find the flag. It is necessary to look into the the implementation code.")
 (if: $ctfs contains "ctf7")[]
@@ -45,7 +45,7 @@ A search on the surface level is not enough. Further inspection is needed.
     [[<button class="success-btn-background"></button>->CTF7end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The flag for this challange consists of two parts. In order for you to find the flag, you'll have to look in different places.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Here's a tipp: look for comments. You might find there what you're looking for.")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The inspector is a very usefull tool that is available in many browsers. Open your inspector view on this page and have a look at the website’s resources.")]
