@@ -81,7 +81,7 @@
     </div>
     <div class="btn-pos2">
       <button class='help-btn-background'></button>
-      <p>Gives help</p>
+      <p>Opens the message that explains the challenge</p>
     </div>
     <div class="btn-pos1">
       <button class='hint-btn-background'></button>
