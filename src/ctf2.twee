@@ -19,7 +19,7 @@ After the thorough search on the book shelf with little progress, you feel helpl
 
 Maybe taking a closer look at it is not a bad idea.
 
-(set: _info to "Try to find the flag in this challenge :), maybe you have to take a look closer. It is not necessary to look into the the implementation code. ")
+(set: _info to "To pass this challange you need to find the hidden flag. This will not require you to have a look into the source code of this site. ")
 (if: $ctfs contains "ctf2")[]
 (else:)[(alert: _info)]
 
