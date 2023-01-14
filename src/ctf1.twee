@@ -6,7 +6,7 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to inject JavaScript code in this page. 
+(set: _info to "To pass this challange you need to find your hidden password. 
 This will require you to have a look into the source code. ")
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]

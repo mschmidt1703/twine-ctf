@@ -428,7 +428,8 @@ setup.ctf9_showCode = function() {
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;You forgot your password! Maybe there is a way to find it somewhere here. This will require you to have a look into the source code of this site. &quot;)
+(set: _info to &quot;To pass this challange you need to inject JavaScript code in this page. 
+This will require you to have a look into the source code. &quot;)
 (if: $ctfs contains &quot;ctf1&quot;)[]
 (else:)[(alert: _info)]
 
