@@ -62,7 +62,7 @@ Memory Loss: Find Your Way Back
         <button id="startButton" class="startButton">Start</button>
 		(link-repeat: "<button id='resetButton' class='resetButton'>Reset Game</button>")[
 		(set: $doYesNo to (confirm: "Do you really want to delete your game state?"))
-		(if: $doYesNo)[(go-to: "reloadGame")]
+		(if: $doYesNo)[(restart:)+(go-to: "reloadGame")]
 		(else:)[]
 		]
       </div>
@@ -236,8 +236,11 @@ Memory Loss: Find Your Way Back
 (set: $ctfs to (a:))
 (restart:)
 
+
 <script>
 	 Harlowe.storage.clear("last_passage");
+	 sessionStorage.clear();
+	 location.reload();
 	 Harlowe.goto("MainPage");
 </script>
 
