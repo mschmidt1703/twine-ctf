@@ -6,7 +6,8 @@
   setup.all();
 </script>
 
-(set: _info to "Try to read the flag from the image. It is not necessary to look into the the implementation code.") \
+(set: _info to "To pass this challange you need to find the hidden flag. 
+This will not require you to have a look at the source code of this page.") \
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
 
