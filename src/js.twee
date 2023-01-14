@@ -6,6 +6,11 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+	if(Harlowe.storage.load('last_passage') != null){
+		document.getElementById("startButton").innerHTML = "Continue";
+	} else {
+		document.getElementById("startButton").innerHTML = "Start";
+	}
 }
 
 function eventOnClickHandlerMain(event) {
@@ -20,6 +25,13 @@ function eventOnClickHandlerMain(event) {
   setTimeout(() => {
     Harlowe.goto("setStory");
   }, 1500);
+}
+
+setup.main_clear = function() {
+	 Harlowe.storage.clear("last_passage");
+	 sessionStorage.clear();
+	 location.reload();
+	 Harlowe.goto("MainPage");
 }
 
 /* # Mainpage End */
@@ -61,9 +73,12 @@ var mode =  Harlowe.variable("$playingStory")
 	if (mode){
 		var sidebar = document.querySelector("tw-sidebar");
 		var btn = document.createElement('button');
+		
+		/*save last passage before ctf*/
+		var passage = Harlowe.passage()
+		Harlowe.storage.save("last_passage", passage)
+		
 		btn.onclick = function(){
-			var passage = Harlowe.passage()
-			Harlowe.storage.save("last_passage", passage)
 			Harlowe.goto("MainPage")
     };
 
@@ -71,6 +86,7 @@ var mode =  Harlowe.variable("$playingStory")
 		sidebar.appendChild(btn);
 	}
 }
+
 
 window.addEventListener("message", function(event) {
   if (event.data == "js_inserted_ctf4") {
