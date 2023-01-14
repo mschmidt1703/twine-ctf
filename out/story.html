@@ -245,15 +245,12 @@ function eventOnClickHandler(event) {
   var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
   var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
   
-  if ("d3d3LWFkbWlu" !== user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" !== pass) {
-    alert("Incorrect Username or Password");
-	  return
+  if ("d3d3LWFkbWlu" == user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" == pass) {
+		alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
+		/* Redirect to Story or Ctf Overview */
+		Harlowe.goto("CTF1end");
   } else {
-  	alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
-
-	  /* Redirect to Story or Ctf Overview */
-	  Harlowe.goto("CTF1end");
-    return
+      alert("Incorrect Username or Password");
   }
 }
 
@@ -2753,7 +2750,7 @@ Please enter the flag here:
         &lt;button id=&quot;startButton&quot; class=&quot;startButton&quot;&gt;Start&lt;/button&gt;
 		(link-repeat: &quot;&lt;button id=&#39;resetButton&#39; class=&#39;resetButton&#39;&gt;Reset Game&lt;/button&gt;&quot;)[
 		(set: $doYesNo to (confirm: &quot;Do you really want to delete your game state?&quot;))
-		(if: $doYesNo)[(go-to: &quot;reloadGame&quot;)]
+		(if: $doYesNo)[(restart:)+(go-to: &quot;reloadGame&quot;)]
 		(else:)[]
 		]
       &lt;/div&gt;
@@ -2920,8 +2917,11 @@ Please enter the flag here:
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
 (restart:)
 
+
 &lt;script&gt;
 	 Harlowe.storage.clear(&quot;last_passage&quot;);
+	 sessionStorage.clear();
+	 location.reload();
 	 Harlowe.goto(&quot;MainPage&quot;);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
