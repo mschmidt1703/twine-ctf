@@ -5,9 +5,9 @@
   setup.all();
 </script>
 
-(set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the implementation code.
-
-Note: If you have injected XSS successfully, you will be redirected automatically.")
+(set: _info to "To pass this challange you need to inject XSS code in this site. 
+This will not require you to have a look into the source code. 
+After you execute XSS successfully, you will be automatically redirected to the next page.")
 
 (if: $ctfs contains "ctf5")[]
 (else:)[(alert: _info)]
