@@ -12,8 +12,9 @@
 
 <tw-consecutive-br></tw-consecutive-br>
 Usg wlees,
-
-qi coh ozh venrqqk tuwa, wlea mwx trbpiepy sccqh a jog ws drqzbtt gvqv qefgiji pecxhvll. Oa d vejozg lees qv cohf vhbt szij: Emw8i4g2Ne. Gbcl oycx twu xhr bmax cuotointsa. Bsu uodh xo jfis xhr ttdk ia qcupy ofifoegg elxh gvm syzmzmsmeps iw xhr pmjmnawvj.
+qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. Kmop dbbm! 
+Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa. 
+Tcwg pupy nrv tus vhbt pviopeaumv!
 
 key: NoIdea
 
@@ -31,10 +32,10 @@ key: NoIdea
     [[<button class="success-btn-background"></button>->CTF11end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 2")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Use the internet to find a tool that will help you detect the encryption method used in this challange.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "HINT 1")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Enter the flag in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;")]
   </div>
 </div>
 
