@@ -29,7 +29,8 @@ Take each number and calculate mod 42 then map it to the following character set
   You can use a python online compiler like this one: <a href="https://www.online-python.com/" target="_blank">python-online</a>. If you prefer you can choose a different programming language. 
 </div>
 
-(set: _info to "To find the flag, use the decrypt scheme with the message. It is necessary to look into the the implementation code.")
+(set: _info to "To pass this challange you need to find the hidden flag. 
+This will not require you to have a look at the source code of this page.")
 (if: $ctfs contains "ctf8")[]
 (else:)[(alert: _info)]
 
