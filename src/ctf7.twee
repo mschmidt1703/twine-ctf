@@ -27,7 +27,8 @@ A search on the surface level is not enough. Further inspection is needed.
 
 <!--puzzelPiece{og9XEhgLE2}-->
 
-(set: _info to "Try to find the flag. It is necessary to look into the the implementation code.")
+(set: _info to "To pass this challange you need to find the hidden flag. 
+This will require you to have a look at the source code of this page. ")
 (if: $ctfs contains "ctf7")[]
 (else:)[(alert: _info)]
 
