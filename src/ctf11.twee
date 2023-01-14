@@ -3,9 +3,10 @@
 <script>
   setup.all();
 </script>
-(set: _whatToDo to "Seems like some kind of encrypted text")
 
-[(alert: _whatToDo)]
+(set: _info to "Seems like some kind of encrypted text, decrypt it to find the flag. It is not necessary to look into the the implementation code.") \
+(if: $ctfs contains "ctf11")[] \
+(else:)[(alert: _info)]
 
 <h1>CTF 11 - Cryptography</h1>
 
@@ -18,11 +19,14 @@ qi coh'fm uiaqwvj xhvg, bkin lcc svooojoc fbivg e wnm br hepfgsx tuwa pisfooh tr
 key: NoIdea
 
 <div class="buttons">
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF11end]]
@@ -56,7 +60,7 @@ key: NoIdea
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5{
     padding: 0.25rem;
   }
 

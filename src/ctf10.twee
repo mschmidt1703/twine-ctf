@@ -6,7 +6,7 @@
   setup.all();
 </script>
 
-(set: _info to "Try to read the flag from the image") \
+(set: _info to "Try to read the flag from the image. It is not necessary to look into the the implementation code.") \
 (if: $ctfs contains "ctf10")[] \
 (else:)[(alert: _info)]
 
@@ -18,11 +18,14 @@ Can you figure out the message hidden in this image?
 <img src="src/img/ctf10/flag.svg"><img>
 
 <div class="buttons">
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF10end]]
@@ -62,7 +65,7 @@ Can you figure out the message hidden in this image?
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
 

@@ -19,12 +19,19 @@ After the thorough search on the book shelf with little progress, you feel helpl
 
 Maybe taking a closer look at it is not a bad idea.
 
+(set: _info to "Try to find the flag in this challenge :), maybe you have to take a look closer. It is not necessary to look into the the implementation code. ")
+(if: $ctfs contains "ctf2")[]
+(else:)[(alert: _info)]
+
 <div class="buttons">
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF2end]]

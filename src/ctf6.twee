@@ -33,8 +33,9 @@
 ")
 
 (set: _info to "Try to insert some JavaScript ino this website. This time there is no input
+It is necessary to look into the the implementation code, to do so, please use the blue code button on the right. 
 
-Note: If you have injected XSS successfully, you will be redirected automatically.
+Note: If you have injected XSS successfully, you will be redirected automatically. 
 ")
 
 (if: $ctfs contains "ctf6")[]
@@ -195,7 +196,7 @@ Note: If you have injected XSS successfully, you will be redirected automaticall
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
 </style>

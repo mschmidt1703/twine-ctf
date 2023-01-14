@@ -5,14 +5,9 @@
   setup.all();
 </script>
 
-(set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the code.
+(set: _info to "This time, you should also insert an alert(). Use a special script tag to archive it. It is not necessary to look into the the implementation code.
 
 Note: If you have injected XSS successfully, you will be redirected automatically.")
-
-<!-- TODO: Delete unused code -->
-<!--(if: $onTimeShow is false)
-(if: $onTimeShow is true)[ (alert: _info)]
-(if: $onTimeShow is true)[ (set: $onTimeShow to false)]-->
 
 (if: $ctfs contains "ctf5")[]
 (else:)[(alert: _info)]

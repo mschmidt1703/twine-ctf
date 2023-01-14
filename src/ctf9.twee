@@ -46,14 +46,19 @@ Within the chaos on your personal drive you find a file that seem like a good st
 }
 ")
 
-<!-- TODO: No highlighting in code -->
+(set: _info to "To find the flag, try to run this code. It is not necessary to look into the the implementation code.")
+(if: $ctfs contains "ctf9")[]
+(else:)[(alert: _info)]
 
 <div class="buttons">
-  <div class="btn-pos5">
+  <div class="btn-pos6">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos5">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos4">
     [[<button class="success-btn-background"></button>->CTF9end]]
@@ -100,7 +105,7 @@ Within the chaos on your personal drive you find a file that seem like a good st
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5, .btn-pos6 {
     padding: 0.25rem;
   }
 

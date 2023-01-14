@@ -27,12 +27,19 @@ A search on the surface level is not enough. Further inspection is needed.
 
 <!--1st Part of the flag: ### puzzelPiece{og9XE ###-->
 
+(set: _info to "Try to find the flag. It is necessary to look into the the implementation code.")
+(if: $ctfs contains "ctf7")[]
+(else:)[(alert: _info)]
+
 <div class="buttons">
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF7end]]
@@ -76,7 +83,7 @@ A search on the surface level is not enough. Further inspection is needed.
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
 

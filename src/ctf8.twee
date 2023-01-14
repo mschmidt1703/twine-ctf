@@ -8,7 +8,7 @@
 
 <tw-consecutive-br></tw-consecutive-br>
 
-You found this weird looking message being passed around on the servers.
+You found this weird looking message being passed around.
 
 Message: "181, 152, 103, 335, 147, 256, 101, 192, 125, 396, 172, 170, 104, 269, 214, 377, 288, 324, 401, 142, 163"
 
@@ -29,12 +29,19 @@ Take each number and calculate mod 42 then map it to the following character set
   You can use a python online compiler like this one: <a href="https://www.online-python.com/" target="_blank">python-online</a>. If you prefer you can choose a different programming language. 
 </div>
 
+(set: _info to "To find the flag, use the decrypt scheme with the message. It is necessary to look into the the implementation code.")
+(if: $ctfs contains "ctf8")[]
+(else:)[(alert: _info)]
+
 <div class="buttons">
-  <div class="btn-pos4">
+  <div class="btn-pos5">
   	(if: $playingStory is true)[
       [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
+  </div>
+  <div class="btn-pos4">
+    (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos3">
     [[<button class="success-btn-background"></button>->CTF8end]]
@@ -69,7 +76,7 @@ Take each number and calculate mod 42 then map it to the following character set
     bottom: 1rem;
   }
 
-  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
+  .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
 
