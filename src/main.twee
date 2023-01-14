@@ -49,6 +49,13 @@ Memory Loss: Find Your Way Back
 
 <script>
   setup.main();
+  
+  /*code twice, because twine problem*/
+  if(Harlowe.storage.load('last_passage') != null){
+	document.getElementById("startButton").innerHTML = "Continue";
+  } else {
+	document.getElementById("startButton").innerHTML = "Start";
+  }
 </script>
 
 <section>
@@ -68,14 +75,6 @@ Memory Loss: Find Your Way Back
       </div>
   </div>
 </section>
-
-<script>
- if(Harlowe.storage.load('last_passage') != null){
-	document.getElementById("startButton").innerHTML = "Continue";
- } else {
- 	document.getElementById("startButton").innerHTML = "Start";
- }
-</script>
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -234,14 +233,11 @@ Memory Loss: Find Your Way Back
 
 :: reloadGame {"position":"200,450","size":"100,100"}
 (set: $ctfs to (a:))
-(restart:)
 
-
+ /*code twice, because twine problem*/
 <script>
-	 Harlowe.storage.clear("last_passage");
-	 sessionStorage.clear();
-	 location.reload();
-	 Harlowe.goto("MainPage");
+	setup.main_clear()
+	setup.main_clear()
 </script>
 
 :: Achievements {"position":"300,0","size":"100,100"}

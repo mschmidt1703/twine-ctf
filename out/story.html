@@ -141,6 +141,11 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
+	if(Harlowe.storage.load('last_passage') != null){
+		document.getElementById("startButton").innerHTML = "Continue";
+	} else {
+		document.getElementById("startButton").innerHTML = "Start";
+	}
 }
 
 function eventOnClickHandlerMain(event) {
@@ -155,6 +160,13 @@ function eventOnClickHandlerMain(event) {
   setTimeout(() => {
     Harlowe.goto("setStory");
   }, 1500);
+}
+
+setup.main_clear = function() {
+	 Harlowe.storage.clear("last_passage");
+	 sessionStorage.clear();
+	 location.reload();
+	 Harlowe.goto("MainPage");
 }
 
 /* # Mainpage End */
@@ -196,9 +208,12 @@ var mode =  Harlowe.variable("$playingStory")
 	if (mode){
 		var sidebar = document.querySelector("tw-sidebar");
 		var btn = document.createElement('button');
+		
+		/*save last passage before ctf*/
+		var passage = Harlowe.passage()
+		Harlowe.storage.save("last_passage", passage)
+		
 		btn.onclick = function(){
-			var passage = Harlowe.passage()
-			Harlowe.storage.save("last_passage", passage)
 			Harlowe.goto("MainPage")
     };
 
@@ -206,6 +221,7 @@ var mode =  Harlowe.variable("$playingStory")
 		sidebar.appendChild(btn);
 	}
 }
+
 
 window.addEventListener("message", function(event) {
   if (event.data == "js_inserted_ctf4") {
@@ -2738,6 +2754,13 @@ Please enter the flag here:
 
 &lt;script&gt;
   setup.main();
+  
+  /*code twice, because twine problem*/
+  if(Harlowe.storage.load(&#39;last_passage&#39;) != null){
+	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Continue&quot;;
+  } else {
+	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
+  }
 &lt;/script&gt;
 
 &lt;section&gt;
@@ -2757,14 +2780,6 @@ Please enter the flag here:
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
-
-&lt;script&gt;
- if(Harlowe.storage.load(&#39;last_passage&#39;) != null){
-	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Continue&quot;;
- } else {
- 	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
- }
-&lt;/script&gt;
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -2916,14 +2931,11 @@ Please enter the flag here:
   
   Harlowe.goto(nextPage);
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
-(restart:)
 
-
+ /*code twice, because twine problem*/
 &lt;script&gt;
-	 Harlowe.storage.clear(&quot;last_passage&quot;);
-	 sessionStorage.clear();
-	 location.reload();
-	 Harlowe.goto(&quot;MainPage&quot;);
+	setup.main_clear()
+	setup.main_clear()
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
