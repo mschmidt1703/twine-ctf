@@ -6,7 +6,7 @@
   setup.all();
 </script>
 
-(set: _info to "Your forgot your password, maybe it is possible to find it, somewhere else. It is necessary to look into the the implementation code. ")
+(set: _info to "You forgot your password! Maybe there is a way to find it somewhere here. This will require you to have a look into the source code of this site. ")
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]
 
