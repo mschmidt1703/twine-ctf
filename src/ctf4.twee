@@ -5,17 +5,9 @@
   setup.all();
 </script>
 
-(set: _info to "Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to send malicious code, usually in the form of a browser-side script, to another end user.
-
-Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
-
-In this challenge you can try to insert a JavaScript alert() in the frame below. This JavaScript alert() should show up a pop up window.
-
-For this CTF please imagine there is vulnerable Webseite on the Webserver (https://twine.ctf)
-It is not necessary to look into the the implementation code. 
-
-Note: If you have injected XSS successfully, you will be redirected automatically.
-")
+(set: _info to "To pass this challange you need to inject an XSS code in this site. 
+This will not require you to have a look into the source code. 
+After you execute XSS successfully, you will be automatically redirected to the next page.")
 
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
