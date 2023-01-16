@@ -18,7 +18,9 @@
 <div class="section">
   <h1>Tutorial</h1>
   <!-- Introduction to the game -->
-  Welcome to the game "Memory Loss: Find Your Way Back". 
+  Hello $username, 
+  
+  welcome to the game "Memory Loss: Find Your Way Back". 
   This game is about using capture-the-flag challenges to teach the concepts 
   of IT security by learning attack techniques. Only when the various attack 
   techniques used by hackers to penetrate IT systems are known can the 
@@ -29,10 +31,10 @@
   <h2>What is a CTF challenge?</h2>
   In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
   find a flag. This flag is usually a file or a string and can look like this: 
-  &lt!-- flag: hur32782ruhu -->.
+  &lt!-- flag&#123;hur32782ruhu&#125; -->.
 
   In this game, the flags look like this:
-  puzzlePiece{<Some hash>}
+  puzzlePiece&#123;< Some hash >&#125;
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 

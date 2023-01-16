@@ -51,10 +51,10 @@ Memory Loss: Find Your Way Back
   setup.main();
   
   /*code twice, because twine problem*/
-  if(Harlowe.storage.load('last_passage') != null){
-	document.getElementById("startButton").innerHTML = "Continue";
-  } else {
+  if(Harlowe.variable('$last_passage') == undefined ) {
 	document.getElementById("startButton").innerHTML = "Start";
+  } else {
+	document.getElementById("startButton").innerHTML = "Continue";
   }
 </script>
 
@@ -219,16 +219,14 @@ Memory Loss: Find Your Way Back
 </style>
 
 
-:: setStory {"position":"200,350","size":"100,100"}
-(set: $playingStory to true)
 <script>
-  var nextPage = Harlowe.storage.load('last_passage');
+  /*var nextPage = Harlowe.storage.load('last_passage');
 
   if (nextPage == null){
     nextPage = "Story";
   }
   
-  Harlowe.goto(nextPage);
+  Harlowe.goto(nextPage);*/
 </script>
 
 :: reloadGame {"position":"200,450","size":"100,100"}
@@ -242,7 +240,67 @@ Memory Loss: Find Your Way Back
 	sessionStorage.clear();
 </script>
 
-:: Achievements {"position":"300,0","size":"100,100"}
+:: enterName {"position":"300,0","size":"100,100"}
+(set: $playingStory to true)
+(if: $last_passage is not 0)[(goto: $last_passage)]
+
+Hello,
+
+please enter your name. Please note your name must be at longer then three charaters and should not contains any "<>/"
 
 
-:: Settings {"position":"500,0","size":"100,100"}
+(css: "margin-top: 5%;")[(input: bind $username, "===XXX===")]
+
+(css: "margin-top: 5%;")[
+[(link-repeat: "<p style='text-align:center'><button class='resetButton'>Safe username and start playing</button></p>")[
+(if: ((length of $username) > 3) and not ($username contains '<') and not ($username contains '/'))[(go-to: "Story")]
+(else: )[(alert: "Please remember your name must be at least three charaters long and should not contains any '<>/'")]
+]]]
+
+
+<script>
+  setup.name()
+
+  var sidebar = document.querySelector("tw-sidebar");
+  var notes = sidebar.childNodes;
+
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].getAttribute("title") == "Undo") {
+      notes[i].style = "visibility: hidden;";
+    }
+  }
+</script>
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  br {
+    display: none;
+  }
+
+  button {
+    height: 2em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>

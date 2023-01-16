@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Loss: Find Your Way Back.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="29" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="29" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
 
 /* Redo and undo button */
 tw-icon {
@@ -141,10 +141,12 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	if(Harlowe.storage.load('last_passage') != null){
-		document.getElementById("startButton").innerHTML = "Continue";
-	} else {
+	
+	console.log("sdfsdfd: " + (Harlowe.variable('$last_passage')  ))
+	if(Harlowe.variable('$last_passage') == undefined ) {
 		document.getElementById("startButton").innerHTML = "Start";
+	} else {
+		document.getElementById("startButton").innerHTML = "Continue";
 	}
 }
 
@@ -158,7 +160,7 @@ function eventOnClickHandlerMain(event) {
 
   /* Redirect to Story */
   setTimeout(() => {
-    Harlowe.goto("setStory");
+    Harlowe.goto("enterName");
   }, 1500);
 }
 
@@ -211,16 +213,32 @@ var mode =  Harlowe.variable("$playingStory")
 		
 		/*save last passage before ctf*/
 		var passage = Harlowe.passage()
-		Harlowe.storage.save("last_passage", passage)
+		Harlowe.variable("$last_passage", passage)
 		
 		btn.onclick = function(){
 			Harlowe.goto("MainPage")
-    };
+		};
 
 		btn.id = "home-btn"
 		sidebar.appendChild(btn);
 	}
 }
+
+setup.name = function () {
+var mode =  Harlowe.variable("$playingStory")
+	if (mode){
+		var sidebar = document.querySelector("tw-sidebar");
+		var btn = document.createElement('button');
+		
+		btn.onclick = function(){
+			Harlowe.goto("MainPage")
+		};
+
+		btn.id = "home-btn"
+		sidebar.appendChild(btn);
+	}
+}
+
 
 
 window.addEventListener("message", function(event) {
@@ -2752,10 +2770,10 @@ Please enter the flag here:
   setup.main();
   
   /*code twice, because twine problem*/
-  if(Harlowe.storage.load(&#39;last_passage&#39;) != null){
-	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Continue&quot;;
-  } else {
+  if(Harlowe.variable(&#39;$last_passage&#39;) == undefined ) {
 	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Start&quot;;
+  } else {
+	document.getElementById(&quot;startButton&quot;).innerHTML = &quot;Continue&quot;;
   }
 &lt;/script&gt;
 
@@ -2917,16 +2935,18 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="31" name="setStory" tags="" position="200,350" size="100,100">(set: $playingStory to true)
+&lt;/style&gt;
+
+
 &lt;script&gt;
-  var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
+  /*var nextPage = Harlowe.storage.load(&#39;last_passage&#39;);
 
   if (nextPage == null){
     nextPage = &quot;Story&quot;;
   }
   
-  Harlowe.goto(nextPage);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
+  Harlowe.goto(nextPage);*/
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
 
  /*code twice, because twine problem*/
 &lt;script&gt;
@@ -2934,7 +2954,69 @@ Please enter the flag here:
 	setup.main_clear();
 	setup.main_clear();
 	sessionStorage.clear();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="33" name="Achievements" tags="" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="Settings" tags="" position="500,0" size="100,100"></tw-passagedata><tw-passagedata pid="35" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="enterName" tags="" position="300,0" size="100,100">(set: $playingStory to true)
+(if: $last_passage is not 0)[(goto: $last_passage)]
+
+Hello,
+
+please enter your name. Please note your name must be at longer then three charaters and should not contains any &quot;&lt;&gt;/&quot;
+
+
+(css: &quot;margin-top: 5%;&quot;)[(input: bind $username, &quot;===XXX===&quot;)]
+
+(css: &quot;margin-top: 5%;&quot;)[
+[(link-repeat: &quot;&lt;p style=&#39;text-align:center&#39;&gt;&lt;button class=&#39;resetButton&#39;&gt;Safe username and start playing&lt;/button&gt;&lt;/p&gt;&quot;)[
+(if: ((length of $username) &gt; 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
+(else: )[(alert: &quot;Please remember your name must be at least three charaters long and should not contains any &#39;&lt;&gt;/&#39;&quot;)]
+]]]
+
+
+&lt;script&gt;
+  setup.name()
+
+  var sidebar = document.querySelector(&quot;tw-sidebar&quot;);
+  var notes = sidebar.childNodes;
+
+  for (let i = 0; i &lt; notes.length; i++) {
+    if (notes[i].getAttribute(&quot;title&quot;) == &quot;Undo&quot;) {
+      notes[i].style = &quot;visibility: hidden;&quot;;
+    }
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
+
+  /* -- Twine overrides -- */
+
+  tw-consecutive-br {
+    display: none;
+    visibility: hidden;
+  }
+
+  br {
+    display: none;
+  }
+
+  button {
+    height: 2em;
+
+    border: none;
+    border-radius: 45px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="33" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -2953,7 +3035,9 @@ Please enter the flag here:
 &lt;div class=&quot;section&quot;&gt;
   &lt;h1&gt;Tutorial&lt;/h1&gt;
   &lt;!-- Introduction to the game --&gt;
-  Welcome to the game &quot;Memory Loss: Find Your Way Back&quot;. 
+  Hello $username, 
+  
+  welcome to the game &quot;Memory Loss: Find Your Way Back&quot;. 
   This game is about using capture-the-flag challenges to teach the concepts 
   of IT security by learning attack techniques. Only when the various attack 
   techniques used by hackers to penetrate IT systems are known can the 
@@ -2964,10 +3048,10 @@ Please enter the flag here:
   &lt;h2&gt;What is a CTF challenge?&lt;/h2&gt;
   In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
   find a flag. This flag is usually a file or a string and can look like this: 
-  &amp;lt!-- flag: hur32782ruhu --&gt;.
+  &amp;lt!-- flag&amp;#123;hur32782ruhu&amp;#125; --&gt;.
 
   In this game, the flags look like this:
-  puzzlePiece{&lt;Some hash&gt;}
+  puzzlePiece&amp;#123;&lt; Some hash &gt;&amp;#125;
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 
@@ -3078,7 +3162,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="34" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3182,7 +3266,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3219,7 +3303,7 @@ After wondering the streets for a while, you spot a big library at the end of th
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3258,7 +3342,7 @@ Finding your name is a great start. But you need to learn more about yourself. S
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3298,7 +3382,7 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3337,7 +3421,7 @@ It has been a long day and this search is taking a toll on you. You just want to
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3380,7 +3464,7 @@ You end up finding your apartment in the first floor. The door is open! It seems
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3421,7 +3505,7 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3460,7 +3544,7 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3499,7 +3583,7 @@ After some fiddling around you manage to connect the drive to a new computer. An
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="45" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3538,13 +3622,13 @@ Coming soon. Stay tuned!
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="46" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="47" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="45" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
