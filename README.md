@@ -2,8 +2,8 @@
 
 <img src="/out/src/img/header/logo.svg" alt="Logo" width="75%"/>
 
-You can play this game online in your browser: [Click here to play](https://mschmidt1703.github.io/twine-ctf/)
-<a href="[http://example.com/](https://mschmidt1703.github.io/twine-ctf/)" target="_blank">Click here to play</a>
+You can play this game online in your browser: 
+<a href="https://mschmidt1703.github.io/twine-ctf/" target="_blank">Click here to play</a>
 
 This game was developed on the Twine engine to teach some basic knowledge about IT security and vulnerabilities using CTFs.
 
