@@ -71,10 +71,6 @@
       <button class='success-btn-background'></button>
       <p>Forwarding to flag check</p>
     </div>
-    <div class="btn-pos4">
-      <button class='reload-btn-background'></button>
-      <p>Reloads the page</p>
-    </div>
     <div class="btn-pos3">
       <button class='code-btn-background'></button>
       <p>Shows a code snippet</p>
