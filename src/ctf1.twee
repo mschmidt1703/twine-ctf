@@ -144,7 +144,8 @@ This will require you to have a look into the source code. ")
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
-(set: $success to false)
+(set: _postMsg to "Good job, I have done your first challenge") \
+(set: $success to false) \
 
 <div class="container">
   <div>(input-box: bind $flag, "XXX=", 5)[]</div>
@@ -158,7 +159,7 @@ Please enter the flag here:
         var success = "pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==" == hashed;
       </script>
       (if: $success is true)[  
-        (alert: "Correct Flag!") \
+        (alert: "Correct Flag! \n _postMsg") \
       (unless: $ctfs contains "ctf1")[  \
         (set: $ctfs to it + (a: "ctf1"))]]  \
       (unless: $success is true)[ \

@@ -33,10 +33,10 @@
   <h3>What is a CTF challenge?</h3>
   In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
   find a flag. This flag is usually a file or a string and can look like this: 
-  &lt!-- flag: hur32782ruhu -->.
+  &lt!-- flag&#123;hur32782ruhu&#125; -->.
 
   In this game, the flags look like this:
-  puzzlePiece{<Some hash>}
+  puzzlePiece&#123;&#60;Some hash&#62;&#125;
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 

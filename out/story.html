@@ -581,7 +581,8 @@ This will require you to have a look into the source code. &quot;)
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
-(set: $success to false)
+(set: _postMsg to &quot;Good job, I have done your first challenge&quot;) \
+(set: $success to false) \
 
 &lt;div class=&quot;container&quot;&gt;
   &lt;div&gt;(input-box: bind $flag, &quot;XXX=&quot;, 5)[]&lt;/div&gt;
@@ -595,7 +596,7 @@ Please enter the flag here:
         var success = &quot;pscKGbMnGHyRQqNb5EYiLrO+BmlyOtUEpe/z9T84MShKWW6OfWVKNLgpsZO0us+qtm9BCr6Srcg2SGvpleNveg==&quot; == hashed;
       &lt;/script&gt;
       (if: $success is true)[  
-        (alert: &quot;Correct Flag!&quot;) \
+        (alert: &quot;Correct Flag! \n _postMsg&quot;) \
       (unless: $ctfs contains &quot;ctf1&quot;)[  \
         (set: $ctfs to it + (a: &quot;ctf1&quot;))]]  \
       (unless: $success is true)[ \
@@ -2958,7 +2959,7 @@ please enter your name. Please note your name must be at longer then three chara
 
 (css: &quot;margin-top: 5%;&quot;)[
 [(link-repeat: &quot;&lt;p style=&#39;text-align:center&#39;&gt;&lt;button class=&#39;resetButton&#39;&gt;Safe username and start playing&lt;/button&gt;&lt;/p&gt;&quot;)[
-(if: ((length of $username) &gt; 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
+(if: ((length of $username) =&gt; 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
 (else: )[(alert: &quot;Please remember your name must be at least three charaters long and should not contains any &#39;&lt;&gt;/&#39;&quot;)]
 ]]]
 
@@ -3043,7 +3044,7 @@ please enter your name. Please note your name must be at longer then three chara
   &amp;lt!-- flag&amp;#123;hur32782ruhu&amp;#125; --&gt;.
 
   In this game, the flags look like this:
-  puzzlePiece&amp;#123;&lt; Some hash &gt;&amp;#125;
+  puzzlePiece&amp;#123;&amp;#60;Some hash&amp;#62;&amp;#125;
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 
@@ -3653,10 +3654,10 @@ Please come back later!</tw-passagedata><tw-passagedata pid="45" name="Tutorial"
   &lt;h3&gt;What is a CTF challenge?&lt;/h3&gt;
   In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
   find a flag. This flag is usually a file or a string and can look like this: 
-  &amp;lt!-- flag: hur32782ruhu --&gt;.
+  &amp;lt!-- flag&amp;#123;hur32782ruhu&amp;#125; --&gt;.
 
   In this game, the flags look like this:
-  puzzlePiece{&lt;Some hash&gt;}
+  puzzlePiece&amp;#123;&amp;#60;Some hash&amp;#62;&amp;#125;
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 
