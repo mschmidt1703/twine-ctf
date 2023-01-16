@@ -236,8 +236,10 @@ Memory Loss: Find Your Way Back
 
  /*code twice, because twine problem*/
 <script>
-	setup.main_clear()
-	setup.main_clear()
+	sessionStorage.clear();
+	setup.main_clear();
+	setup.main_clear();
+	sessionStorage.clear();
 </script>
 
 :: Achievements {"position":"300,0","size":"100,100"}
