@@ -1,4 +1,4 @@
-:: CTF 7 {"position":"400,800","size":"100,100"}
+:: CTF 7 {"position":"800,1000","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -97,7 +97,27 @@ This will require you to have a look at the source code of this page. ")
 </style>
 
 
-:: CTF7end {"position":"600,800","size":"100,100"}
+:: First Shelf {"position":"800,800","size":"100,100"}
+Nothing really useful here
+
+
+:: Second Shelf {"position":"1200,1000","size":"100,100"}
+No useful information here...
+
+
+:: Third Shelf {"position":"1325,1000","size":"100,100"}
+Nothing here either...
+
+
+:: Fourth Shelf {"position":"1450,1000","size":"100,100"}
+This search has lead me nowhere so far..
+
+
+:: Fifth Shelf {"position":"1575,1000","size":"100,100"}
+Yup... I did all of that for nothing :(
+
+
+:: CTF7end {"position":"1000,1000","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
@@ -121,7 +141,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->3.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->Memory1]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \

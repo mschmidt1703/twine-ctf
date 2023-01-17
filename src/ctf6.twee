@@ -1,4 +1,4 @@
-:: CTF 6 {"position":"1000,300","size":"100,100"}
+:: CTF 6 {"position":"600,5000","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
@@ -204,7 +204,8 @@ After you execute XSS successfully, you will be automatically redirected to the 
   }
 </style>
 
-:: CTF6_end {"position":"1000,500","size":"100,100"}
+
+:: CTF6_end {"position":"800,5000","size":"100,100"}
 (unless: $ctfs contains "ctf6")[(set: $ctfs to it + (a: "ctf6"))]
 
 <script>
@@ -218,7 +219,7 @@ This challenge showed that even without a direct user input field it is possible
 Please be careful with user input and always validate it!
 
 (if: $playingStory is true)[
-  [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+  [[<button class="resumeButton">Resume Story</a>->e.p]]]\
 (else:)[
   [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 

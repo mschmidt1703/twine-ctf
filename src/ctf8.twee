@@ -1,5 +1,4 @@
-:: CTF 8 {"position":"850,300","size":"100,100"}
-
+:: CTF 8 {"position":"800,4200","size":"100,100"}
 <script>
   setup.all();
 </script>
@@ -102,7 +101,8 @@ This will not require you to have a look at the source code of this page.")
   }
 </style>
 
-:: CTF8end {"position":"850,500","size":"100,100"}
+
+:: CTF8end {"position":"1000,4200","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
@@ -126,7 +126,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->10.p]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \

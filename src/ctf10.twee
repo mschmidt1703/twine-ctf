@@ -1,4 +1,4 @@
-:: CTF 10 {"position":"1150,300","size":"100,100"}
+:: CTF 10 {"position":"600,3400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
@@ -21,7 +21,7 @@ Can you figure out the message hidden in this image?
 <div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
-      [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->Memory5]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -77,7 +77,7 @@ Can you figure out the message hidden in this image?
 </style>
 
 
-:: CTF10end {"position":"1150,500","size":"100,100"}
+:: CTF10end {"position":"800,3400","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 

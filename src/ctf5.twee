@@ -1,4 +1,4 @@
-:: CTF 5 {"position":"400,1400","size":"100,100"}
+:: CTF 5 {"position":"600,2600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -164,7 +164,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 </style>
 
 
-:: CTF5_end {"position":"600,1400","size":"100,100"}
+:: CTF5_end {"position":"800,2600","size":"100,100"}
 (unless: $ctfs contains "ctf5")[(set: $ctfs to it + (a: "ctf5"))]
 
 Congratulations you made it!

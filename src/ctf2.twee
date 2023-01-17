@@ -1,4 +1,4 @@
-:: CTF 2 {"position":"400,1600","size":"100,100"}
+:: CTF 2 {"position":"800,3800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -95,7 +95,7 @@ Maybe taking a closer look at it is not a bad idea.
 </style>
 
 
-:: CTF2end {"position":"600,1600","size":"100,100"}
+:: CTF2end {"position":"1000,3800","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
@@ -120,7 +120,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")] \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->7.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->Memory6]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \
