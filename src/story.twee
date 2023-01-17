@@ -2187,25 +2187,18 @@ Back at headquarters, Josie immediately disappears, and you unload the car and g
   setup.story()
 </script>
 
-•	Frühstück 
-o	Ihr analysiert, was am Vortag passiert ist
-	Sie müssen irgendwie die Wohnung überwacht haben
-	Du vermutest, dass sie in den letzten drei Jahren mehr als genug Zeit hatten, diese super sichere Wohnung auszumachen
-	Zustimmung
-	John merkt an, dass die Gerüchte um AGT wohl alle wahr zu sein scheinen
-	Josie merkt an, dass es sich um AGT wohl um eine Firma für kriminelle Machenschaften handelt
-•	„Digital Mafia“, Hacker-for-Hire und Traditionelle Gangs
-	Du meinst dazu, dass die deinen Algorithmus brauchen, um mehr Umsatz machen zu können
-	John: „Konntest du denn irgendwas finden?“
-	Du erzählst vom Handy und vom Algorithmus
-	Du erzählst von deinen Erinnerungen
-	Nachdem die beiden bewusst ihr Leben aufs Spiel gesetzt haben, um dir zu helfen, solltest du ihnen gegenüber offen sein
-o	Du erwähnst, dass du nach dem Frühstück versuchen möchtest, auf die Festplatte zuzugreifen
-•	Zugriff auf die Festplatte
-o	In deinem Zimmer setzt du dich an deinen Pc und schließt die Festplatte an
-o	Wie du geahnt hast, ist die Festplatte verschlüsselt
-	Bis auf eine Datei
-o	Du öffnest die Datei  CTF
+The next day, at breakfast, you analyse what happened with Josie and John. \
+Josie is unusually quiet during this conversation. You suspect that your absence \
+has been used to locate and surveil the flat. John agrees with you. He also \
+notes that the rumours about AGT are probably all true. He tells you that he did \
+some more research on AGT and Aaron Grayson last night and found out that AGT \
+is most likely a criminal enterprise. He notes "hacker-for-hire" as an example \
+of possible activities. You conclude that AGT probably wants to increase its \
+turnover with the help of your algorithm.
+
+After breakfast, you go to your room to plug in the USB stick. You insert the \
+USB stick. The USB stick could be read, and a directory opens in which all files \
+are encrypted except one. So you open the only unencrypted file.
 
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
