@@ -725,9 +725,7 @@ You do a few more chores and head to lunch. John and Josie are already sitting t
   setup.story()
 </script>
 
-Ihr habt Glück, die Hochschule ist nur Stunden entfernt, dennoch müsst ihr früh morgens los, um bis zum Abend wieder im Hauptquartier zu sein. Für den Ausflug wurde Proviant besorgt und ins Auto verladen. Ein paar zusätzliche Männer begleiten euch. Um dir die Langeweile auf der Fahrt zu vertreiben, hast du dir von Josie ein Buch ausgeliehen. 
-Nach der stundenlangen Fahrt seid ihr endlich an der Hochschule angekommen. Der Campus wirkt ziemlich groß und doch ist er verhältnismäßig leer. Du schließt daraus, dass wohl Semesterferien sein müssen und der Campus deswegen so leer ist. 
-Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Informatik studiert hat, ist es wohl das Gebäude der Informatik-Fakultät. Der Campus ist gut ausgeschildert, daher habt ihr keine Probleme das Gebäude zu finden. Als ihr davorsteht, merkst du, dass es ein relativ modernes Gebäude ist. Ihr betretet es und kommt in ein Foyer. An den Wänden im Foyer hängen einige Auszeichnungen. Du gehst zu denen hin, um sie näher zu betrachten. Verwundert stellst du fest, dass einige dieser Auszeichnungen deinen Namen enthalten. Es sind lauter Auszeichnungen zu hervorragenden Leistungen bei Hackathons. Auf einer Auszeichnung steht sogar der Name deines Vaters, auch wegen eines Hackathons.
+You are lucky the college is only hours away, yet you have to leave early in the morning to be back at headquarters by evening. Food has been prepared for the trip and loaded into the car. A few extra men will accompany you. You borrowed a book from Josie to make the drive pass quickly. After the hour-long drive, you finally arrive at the university. The campus seems quite large, yet it is relatively empty. You suppose that it must be semester break. You look for the building of the faculty to which your father belonged. Since he studied computer science, it is probably the building of the computer science faculty. The campus is well-marked, so you should have no trouble finding it. As you stand in front of it, you notice that it is a relatively modern building. You enter it and come to a foyer. There are some awards hanging on the walls in the foyer. You walk over to them to take a closer look. Amazed, you notice that some of these awards have your name on them. They are all awards for outstanding achievements in hackathons. One award even has your father's name on it, also because of a hackathon.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
 
@@ -764,8 +762,7 @@ Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Info
   setup.story()
 </script>
 
-Das ändert deine Pläne. Du teilst den anderen mit, dass ihr das Prüfungsamt suchen solltet. Da du scheinbar selber an dieser Hochschule studiert hast, muss das Prüfungsamt also Informationen über dich haben und genau diese willst du einsehen. 
-Das Prüfungsamt habt ihr schnell im Obergeschoss des Gebäudes gefunden und zu deinem Glück hat, wer auch immer gerade arbeitet, seinen Arbeitsplatz verlassen und die Tür nicht abgeschlossen. Du sagst Josie und John, dass sie bitte Wache stehen sollen. Du setzt dich an den PC und siehst das Login-Fenster. Du weißt genau, dass dieser PC nicht mehr lange gesperrt sein wird.
+This changes your plans. You tell the others that they should look for the examination office. Since you seem to have studied at this university yourself, the examination office must have information about you, and that's exactly what you are looking for. You quickly find the examination office on the top floor of the building, and fortunately for you, whoever is working at the moment has left his workstation and left the door unlocked. You tell Josie and John to please stand guard. You sit down at the PC and see the login window. You know very well that this PC will not be locked for much longer.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
