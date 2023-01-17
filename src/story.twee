@@ -552,35 +552,9 @@ Die nächsten Tage unterstützt du die anderen, wo du nur kannst und erledigst d
   setup.story()
 </script>
 
-•	Die nächsten Tage
-o	Machst Hilfsaktivitäten
-o	Unterstützt die anderen bei der Arbeit 
-•	Es zieht dich wieder in die Bibliothek
-o	Am Nachmittag ist es ziemlich warm und du bist bereits mit deiner Arbeit fertig
-o	Du entscheidest, dass du wieder in die Bibliothek gehst, da es dort schön kühl ist
-o	Du wanderst durch die Gänge 
-o	Bleibst bei einem Regal stehen
-	Enthält lauter ähnlich aussehender Bücher
-	Sind Jahrbücher von derselben Universität
-•	Aber Fakultätsbezogen
-	Du blätterst die ersten durch und schaust, ob außer Bilder von den Beteiligten Personen noch irgendwelche witzigen Abschnitte enthalten sind
-•	Kommentar-Abschnitte oder so
-	Dein Blick fällt auf die Jahrbücher der Informatik-Fakultät
-	Du blätterst das Neuste durch
-	Danach greifst du zu einer älteren Version
-•	Gedankenverloren blätterst du Seite für Seite um
-•	Bis du an einem Bild hängen bleibst
-o	Das Gesicht eines jungen Mannes
-	Henry ____ 
-•	Sofort richtest du dich auf
-o	Es ist dein Vater
-•	Beim Aufrichten fiel eine CD aus dem Buch
-	Du schaust dir die CD an
-•	Sie ist unbeschriftet
-•	Mehr fällt dir erstmal nicht auf
-	Du schaust wieder das Bild deines Vaters an
-•	Er lächelt
-•	Du musst deswegen auch lächeln
+Es ist ein regnerischer Tag und für heute konnte dir keiner Aufgaben geben. Daher entschließt du dich wieder in die Bibliothek zu gehen. Dort wanderst du durch die Gänge und schmunzelst über so manche Abteilungen: „Videospiele“, „Kochen“, …
+Dann kommst du an einer Abteilung mit dem Titel „Jahrbücher“ vorbei. Aus Neugier, was du hier vorfinden könntest, betrittst du den Gang. Die verschiedenen Bücherregale enthalten jeweils viele gleich aussehende Bücher. Es handelt sich um Jahrbücher von verschiedenen Hochschulen. Du gehst zu einem Bücherregal, welches viele blau-weiße Bücher enthält. Du nimmst eines der neueren Jahrbücher heraus und durchblätterst es. Es sind nur Bilder von den Absolventen zu finden und besondere Auszeichnungen von diesen. Du klappst das Buch zu und stellst es wieder zurück. Du nimmst ein wesentlich älteres Jahrbuch heraus und durchblätterst dieses. Beim Durchblättern stößt du auf ein Gesicht, welches dir sehr bekannt vorkommt. Der Name unter diesem Bild ist: Henry Reese. Das ist also dein Vater. Auf dem Bild lächelt dein Vater und mit der Hornbrille sieht er wie ein typischer Nerd aus.
+Du setzt dich auf den Boden und beginnst zu träumen. Immer wieder schaust du auf das Bild und lächelst, während du einige Kindheitserinnerungen durchlebst.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
 
@@ -617,10 +591,7 @@ o	Es ist dein Vater
   setup.story()
 </script>
 
-•	Nachdem du mit Tagträumen fertig bist
-o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches deinen Vater enthält
-o	Die CD steckst du ein
-o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
+Nachdem du mit Tagträumen fertig bist und wieder aufstehen willst, fällt eine CD aus dem Buch. Die CD ist unbeschriftet. Du räumst du die gelesenen Jahrbücher wieder ins Bücherregal und nimmst das Jahrbuch und die CD mit zu dir auf dein Zimmer. Dort steckst du die CD in deinen PC.
 
 [[<button class="startChallenge">Start Challenge->CTF 4]]
 
