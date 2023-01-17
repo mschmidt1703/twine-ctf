@@ -1763,12 +1763,9 @@ o	Du feuerst einen Schuss auf den Pc ab und ihr rutscht ins Dunkle
   setup.story()
 </script>
 
-•	Flucht
-o	Auf einmal wird es etwas und ihr landet auf alten Kissen
-o	Durch Schlitze an der Wand kommt Sonnenlicht
-o	John zieht eine Taschenlampe aus seiner Jackentasche und leuchtet vorsichtig in die Richtung
-o	Es ist eine Tür, die von Innen verschlossen ist
-o	Über das Eingabefeld könnte man die Tür öffnen  CTF 
+Auf der hektischen Suche nach einem alternativen Weg fällt dir eines der Bücherregale auf. Auf dem Boden vor dem Bücherregal befinden sich Schleifspuren. Das deutet darauf hin, dass man das Regal verschieben kann. Du hantierst also an dem Regal herum und es lässt sich tatsächlich wie eine Tür aufziehen. Hinter dem Bücherregal befindet sich der Eingang zu einer Rutsche. Du machst John auf den Ausgang aufmerksam und er nickt.
+Dann hört ihr, dass due Eingangstür aufgetreten wird und Menschen in die Wohnung stürmen. John sendet ein weiteres Notsignal an Josie. Ihr hört Stimmen und wenig später hört ihr, dass sie an der Bürotür sind. Du feuerst einen Schuss auf deinen PC ab, ehe ihr rennt zum Ausgang. Du rutschst zuerst, nachdem John das Bücherregal wieder nach hinten verschoben hat.
+Auf einmal landet ihr auf alten Kissen. Der Raum ist dunkel, doch durch Schlitze an der Wand kommt Sonnenlicht. John zieht eine Taschenlampe aus seiner Jackentasche und leuchtet vorsichtig in die Richtung der Schlitze. Es handelt sich um eine Tür mit Lüftungsschlitzen. Neben der Tür ein Eingabefeld, über das sich die Tür sicherlich öffnen lässt.
 
 [[<button class="startChallenge">Start Challenge->CTF 8]]
 
