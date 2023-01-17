@@ -2,7 +2,7 @@
 
 <img src="/out/src/img/header/logo.svg" alt="Logo" width="75%"/>
 
-You can play this game online in your browser: 
+Please use the online version to play this game: 
 <a href="https://mschmidt1703.github.io/twine-ctf/" target="_blank">Click here to play</a>
 
 This game was developed on the Twine engine to teach some basic knowledge about IT security and vulnerabilities using CTFs.
@@ -25,6 +25,10 @@ This game was developed on the Twine engine to teach some basic knowledge about 
 - Reverse Engineering
 
 ## How to start the Game
+Please use the online version to play this game: 
+<a href="https://mschmidt1703.github.io/twine-ctf/" target="_blank">Click here to play</a>
+
+Some error may occur, when playing on a html file.
 1. Clone the repository
 2. Change into /out
 3. Double click to start the story.html
