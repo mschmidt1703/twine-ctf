@@ -1065,8 +1065,7 @@ With the help of the tutorial, you could decode the string. It is an IP address.
   setup.story()
 </script>
 
-Als du wieder zu dir kommst, wird dir klar, dass du den auf der Webseite beschriebenen Algorithmus geschrieben und programmiert hast.
-Du recherchierst also im Internet nach ähnlichen Algorithmen, doch du stellst schnell fest, dass es keinen gibt, der so effizient ist, wie deiner. Du fragst dich, ob dieser Algorithmus der Grund sein kann, weswegen du bewusstlos von den anderen gefunden wurdest. Deswegen wirst du das auch erstmal für dich behalten.
+When you come back to yourself, you realize that you wrote and programmed the algorithm described on the website. So, you search the Internet for similar algorithms, but you quickly realize that there are none as efficient as yours. You wonder if this algorithm could relate to the reason why you were found unconscious by the others. That's why you're going to keep this to yourself for now.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
@@ -1099,7 +1098,7 @@ Du recherchierst also im Internet nach ähnlichen Algorithmen, doch du stellst s
 :: 5.x.p {"position":"600,2400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-Nachdem du auch nach einer weiteren Stunde keine Suchergebnisse finden konntest, entschließt du dich zu anderen Methoden zu greifen: Das Darknet. Doch wie gelangst du in das Darknet?
+After another hour of not finding any search results, you decide to resort to other methods: The Darknet. But how do you get to the Darknet? 
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
@@ -1155,9 +1154,9 @@ Nachdem du auch nach einer weiteren Stunde keine Suchergebnisse finden konntest,
   setup.story()
 </script>
 
-Du hast es ins Darknet geschafft und es war leichter als gedacht!
-Während der fortgesetzten Recherche entdeckst du laute Sachen, von denen du nichts wissen möchtest. Leider bleibt deine Suche auch hier erstmal erfolglos.
-Du entschließt dich, die nächsten Tage immer mal wieder zu recherchieren. Vielleicht hast du nicht die richtigen Suchparameter eingegeben.
+You made it to the Darknet, and it was easier than you thought!
+During your ongoing research, you discover many things that you don't want to know about. Unfortunately, your search remains unsuccessful for the time being.
+You decide to search again and again over the next few days. Maybe you didn't enter the right search parameters.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
@@ -1194,10 +1193,10 @@ Du entschließt dich, die nächsten Tage immer mal wieder zu recherchieren. Viel
   setup.story()
 </script>
 
-Nach einigen Tagen kannst du einen Beitrag ausfindig machen. Dieser ist etwa 3 Jahre alt. In dem Beitrag sucht jemand nach effizienten Kompressionsalgorithmen und bietet eine Menge Geld dafür. Einige Kommentare unter dem Beitrag weisen darauf hin, dass wenn es einen solchen Algorithmus gibt, dieser besser nicht überall veröffentlicht werden sollte, da dieser sonst einer Firma namens AGT in die Hände fallen würde.
-Du siehst es als einen gut gemeinten Hinweis.
-Du liest dir weitere Kommentare durch und ein Kommentar enthält eine Datei. Eigentlich ist es naiv irgendwelche Dateien aus dem Darknet runterzuladen, doch dein Bauchgefühl rät dir, genau das zu tun.  
-Die heruntergeladene Datei ist verschlüsselt. Um also an den Inhalt zu gelangen, musst du sie entschlüsseln.
+After a few days, you can come across a blog post. This one is about 3 years old. In the post, someone is looking for efficient compression algorithms and offers a lot of money for it. Some comments under the post point out that if there is such an algorithm, it better not be published everywhere, otherwise it would fall into the hands of a company called AGT.
+You take it as a well-intentioned hint.
+You read through other comments, and one comment contains a file. Actually, it is naive to download any files from the Darknet, but your gut tells you to do just that.
+The downloaded file is encrypted. So, to view the content, you need to decrypt it.
 
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
