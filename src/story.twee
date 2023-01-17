@@ -1866,25 +1866,9 @@ o	John: „Sie werden bald den geheimen Ausgang finden“, er hält kurz Inne un
   setup.story()
 </script>
 
-o	John wird durch einen Knall unterbrochen
-	Die haben die Tür aufgesprengt
-	Ihr geht in Deckung, könnt aber die andere Straßenseite gut sehen
-	Die sehen sich um
-	Einer gibt einen Funkspruch ab
-	Ein anderer entdeckt die Mütze
-	„Die ist noch warm, die muss von denen sein. Hinterher“
-	Die laufen alle in die Richtung
-o	John drückt auf seinem Armband den Knopf
-	Ihr hört ein Motorengeräusch und seht den Wagen am Anfang der Gasse vorfahren
-	Ihr könnt gerade so unbemerkt verschwinden als die anderen zurückkommen
-•	Dialog im Auto
-o	Die Erinnerungen von eben kommen zurück
-	Du holst das Bild deiner Freundin aus der Tasche
-o	Josies Blick fällt auf dich und das Bild
-	„Warum hast du ein Bild von Lizzy“
-•	Zurück im Hauptquartier
-o	Schlafen
-o	Traumlose Nacht
+Im Auto wird auch klar, wie knapp die ganze Sache war. John sagt, dass die vorbereitet waren und wohl deine Wohnung observiert haben, in der Hoffnung, dass du irgendwann zurückkehren würdest. Außerdem fügt er hinzu, dass er hofft, dass es sich wenigstens gelohnt hat. Du zeigst ihm den USB-Stick, das Handy und das Bild legst du zur Seite. „Ist der Algorithmus auf dem USB-Stick?“. Du antwortest ihm, dass du dir ziemlich sicher bist, dass der Algorithmus drauf ist. „Dann haben wir wenigstens etwas erreicht.“
+Du schaust dich nach Josie um und bemerkst, dass sie wie gebannt auf dein Bild starrt. Ihr Gesicht ist kreideweiß. „Josie? Ist alles in Ordnung?“, fragst du vorsichtig. Langsam hebt sie ihren Kopf und schaut dir direkt in die Augen als sie dir die Frage stellt: „Warum hast du ein Bild von Lizzie…“. Du fragst, ob das der Name, von dem Mädchen auf dem Bild ist. Josie sagt, dass das ihre beste Freundin ist und fragt dich nochmal, warum du ein Bild von ihr hast. Du erzählst Josie alles, woran du dich erinnern kannst. Als du mit erzählen fertig bist, ist alles was sie sagt „Ich verstehe“. Danach dreht sich Josie zum Fenster und schweigt für den Rest der Fahrt. Du willst zu ihr gehen, um sie zu fragen, ob du ihr irgendwie helfen kannst, doch John hält dich zurück.
+Zurück im Hauptquartier verschwindet Josie sofort und ihr ladet das Auto aus und geht auf eure Zimmer. Das war ein anstrengender und doch aufschlussreicher Tag.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->10.x.p]]
 
