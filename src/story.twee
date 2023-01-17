@@ -436,16 +436,8 @@ Auf einmal riechst du Essen und du weißt, dass deine Mutter gerade in der Küch
   setup.story()
 </script>
 
-•	Dir wird klar, dass das eine Erinnerung von dir sein musste
-o	Als die Erinnerung aus deinem Kopf verschwindet rufst du dir in deine Gedanken, welche Informationen du deiner Erinnerung entnehmen konntest:
-	Dein Name
-	Dein Geburtstag
-	Dein Lieblingsessen ist Cabonara
-	Deine Lieblingsfarbe ist orange
-	Du erinnerst dich daran, wie du deinem Vater immer beim Zocken zugeschaut hast
-•	Du kannst dich nicht an das Gesicht von deinem Vater erinnern, da du ihn in deiner Erinnerung nur von hinten siehst
-	Du erinnerst dich, dass deine Mutter sehr gerne gekocht hat
-•	Vor allem erinnerst du dich daran, dass nirgendwo die Cabonara so gut schmecken, wie bei ihr
+Zurück in der Wirklichkeit stellst du fest, was das gerade gewesen ist: Eine Erinnerung. Du konntest dich an dein Zuhause und deine Eltern erinnern. Du erinnerst dich, dass du früher deinem Vater immer gerne dabei zugeschaut hast, wenn er Videospiele gespielt hat. Sein Gesicht und das deiner Mutter wollen dir jedoch immer noch nicht einfallen. 
+Dir fällt jedoch ein, dass Spagetti Cabonara dein Lieblingsessen ist und dass deine Mutter die besten Spagetti Cabonara überhaupt macht. Was aber noch wichtiger ist, du kannst dich wieder an deinen Namen erinnern: NAME.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
 
