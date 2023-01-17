@@ -1304,16 +1304,8 @@ Du wendest dich entschlossen an Mr. Grayson „Es tut mir leid Mr. Grayson, aber
   setup.story()
 </script>
 
-•	Review
-o	Scheiße
-o	Mehr weißt du nicht dazu zu sagen
-o	Dafür weißt du, dass der Beitrag im Darknet also dein Beitrag war
-o	Dir wird jetzt erst bewusst, dass dein Algorithmus nicht nur höchst effizient zu sein scheint, sondern auch, was der Algorithmus in den falschen Händen anrichten könnte
-o	Fragen, die du dir stellst
-	Was ist danach passiert?
-	Ist er an deinem Gedächtnisverlust schuld?
-•	Die Fragen erschöpfen dich, während du im Bett nochmal über alles nachdenkst
-o	Müde schläfst du ein
+Du schlägst die Augen auf und fragst dich in was für einer Scheiße du gelandet bist. 
+Dir ist nun klar, was dein Algorithmus in den falschen Händen anrichten könnte und du fragst dich, ob Mr. Grayson an deinem Gedächtnisverlust schuld ist und was nach dieser Abfuhr passiert ist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
 
