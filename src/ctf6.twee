@@ -33,7 +33,9 @@
 ")
 
 (set: _info to "To pass this challange you need to inject JavaScript code in this page. 
-This will require you to have a look into the source code, to do so, please use the light blue code button on the right. This time there is no direct user input, can you figure out how to inject a XSS. 
+This will require you to have a look into the source code. 
+To do so, please use the light blue code button on the right. 
+This time around there is no direct user input through a login page, so try to figure out another input possibility to inject a XSS. 
 After you execute XSS successfully, you will be automatically redirected to the next page.")
 
 (if: $ctfs contains "ctf6")[]
@@ -84,7 +86,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for choosing an image. Maybe its something you can use for injecting your script into this site.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The URL hash parameter is used for choosing one of the three images. Maybe its something you can use for injecting your script.")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Here you can't find a text field to execute an XSS injection. However, there are other methods to do so. Find them out.")]
@@ -214,7 +216,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
-This challenge showed that even without a direct user input field it is possible to inject malicious code into a web page. 
+I hope you learned that an XSS injection does not necessarily require a user input field. There are many ways in which malicious code is successfully injected into a web page. 
 
 Please be careful with user input and always validate it!
 
