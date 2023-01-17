@@ -474,19 +474,8 @@ Dir fällt jedoch ein, dass Spagetti Cabonara dein Lieblingsessen ist und dass d
   setup.story()
 </script>
 
-•	Zurück zu den anderen
-o	Du schaust auf die Uhr, die in der Bibliothek hängt
-	Mittagszeit
-	Du entscheidest dich, den anderen davon zu erzählen, dass du dich an etwas erinnern kannst
-o	Du gehst also zurück zur Kantine
-o	Holst dir Essen
-	Wiener Schnitzel und zum Nachtisch Apfelstrudel
-o	Setzt dich zu den anderen
-o	Josie fragt dich, ob du gefunden hast, wonach du suchst
-o	Du nickst, da du gerade eine Portion Essen in den Mund geschoben hast
-o	Danach fängst du an zu erzählen
-o	Die sind glücklich, dass sie jetzt deinen Namen kennen
-o	Witze
+Du fragst dich, wie viel Zeit während des Erinnerns vergangen ist. Du gehst zum Eingang der Bibliothek zurück, wo du glaubst, eine Uhr gesehen zu haben. Du hattest Recht und es ist bereits Mittagszeit. Daher entschließt du dich, dass du dich zu den anderen in die Kantine begeben solltest, um mit ihnen Mittag zu essen. 
+Heute gibt es in der Kantine Schnitzel und als Nachtisch Apfelstrudel. Du holst dir eine Portion ab und setzt dich zu John, Josie und Rob an den Tisch. Josie fragt dich, ob du in der Bibliothek gefunden hast, was du suchst. Alle Blicke richten sich auf dich. Du nickst nur, weil du dir gerade den Mund vollgestopft hast. Du kaust fertig und nachdem du runtergeschluckt hast, sagst du freudestrahlend, dass du dich wieder an deinen Namen erinnern kannst und nennst ihn: NAME Reese. Gejubel bricht am Tisch aus und es werden einige Witze über die Situation gemacht.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
 
