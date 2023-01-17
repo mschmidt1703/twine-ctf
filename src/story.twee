@@ -1465,15 +1465,15 @@ o	Flashback 6
   setup.story()
 </script>
 
-•	Reaction to Memory
-o	Du schreckst hoch
-o	Dein Körper ist schweißgebadet und du atmest schwer
-o	Dein Herz schlägt dir bis zum Hals
-o	Du springst auf der Stelle aus dem Bett, rennst ins Bad und übergibst dich
-o	Erschöpft sinkst du zusammen
-o	Du hältst inne, bis du dich ein wenig beruhigen konntest
-o	Du stehst auf und machst in der Dusche das Wasser an
-o	Du gehst erstmal duschen und versuchst, während das heiße Wasser an dir runterläuft, für einen Moment alles zu vergessen
+You wake up, and your body is covered in sweat. You are breathing heavily, and your heart is pounding in \
+your throat. You jump out of bed, run to the bathroom, and throw up. Then you exhaustily sink down. When you \
+have calmed down a little, you take a shower, and while the hot water runs down your body, you try to forget \
+everything for a moment.
+
+After showering, you go back to bed. You think about the memories and realize that Aaron Grayson murdered your \
+parents and that you are in this situation because of him. Your algorithm cannot fall into his hands. So you have \
+to find the algorithm, and the right place to do that is your second flat. After this realisation you fall asleep \
+again.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.1.p]]
 
