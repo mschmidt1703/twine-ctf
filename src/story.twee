@@ -398,16 +398,8 @@ Auf einmal wird dir schwarz vor Augen und du verschwindest in deinen Gedanken.
   setup.story()
 </script>
 
-•	Du bist in einer Wohnung und schaust dich um
-o	Du bist in einem Wohnzimmer und sitzt auf einem Sofa und schaust zu einem Fernseher, auf dem ein Videospiel gespielt wird
-o	Dein Blick fällt nach links, etwas weiter zum Fernseher hin ist ein weiteres Sofa auf dem ein Mann liegt
-o	Du lächelst als du auf dem Fernseher siehst, dass er das nächste Level geschafft hat
-o	Links neben dem Sofa ist ein kleiner Tisch mit einem Tischkalender
-o	Du entdeckst den folgenden Eintrag für in ein paar Tagen:
-	<Name> Geburtstag
-o	Als nächstes riechst du Essen,
-	Es ist Cabonara und du wusstest, dass deine Mutter diese gerade in der Küche zum Abendessen zubereitet
-o	Du hörst, wie sie deinen Namen ruft
+Du bist in einem Wohnzimmer und schaust dich um. Du sitzt auf einem Sofa. Gegenüber von dir an der Wand ist ein Fernseher, auf dem gerade ein Videospiel gespielt wird. Links und rechts von dir und ein wenig weiter in den Raum rein stehen zwei weitere Sofas. Auf dem linken Sofa liegt ein Mann mit einem Kontroller in der Hand. Dieser spielt wohl gerade das Videospiel. Du kannst sein Gesicht nicht sehen, aber sowohl der Raum als auch dieser Mann kommen dir vertraut vor. Es ist dein Vater. Du schaust wieder zum Fernseher und musst lächeln. Gerade wurde ein Level abgeschlossen. 
+Auf einmal riechst du Essen und du weißt, dass deine Mutter gerade in der Küche steht. Du erkennst den Geruch. Es ist der Geruch von Spagetti Cabonara. Du hörst, wie sie deinen Namen ruft.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
