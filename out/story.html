@@ -141,8 +141,6 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	
-	console.log("sdfsdfd: " + (Harlowe.variable('$last_passage')  ))
 	if(Harlowe.variable('$last_passage') == undefined ) {
 		document.getElementById("startButton").innerHTML = "Start";
 	} else {
@@ -2283,9 +2281,8 @@ Please enter the flag here:
       &lt;script&gt;
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-        
-        $success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
-        var success = &quot;0ADZFsuSMa/2DSyhcvnbDHkfODi69oSp84/hw4XHntCKGk+NdQyyJ8aLzOnU8qWRzIlhLtPPvX8LRaHj/FERXg==&quot; == hashed
+        $success = &quot;W+B0v4uj7svg6FwDAbeOPtLK3dw0cApwW2wvtYSnV4JFzmu/bUAQH5J7GY9I+bGKYdINzRagRavvdXuLFLYbtg==&quot; == hashed
+        var success = &quot;W+B0v4uj7svg6FwDAbeOPtLK3dw0cApwW2wvtYSnV4JFzmu/bUAQH5J7GY9I+bGKYdINzRagRavvdXuLFLYbtg==&quot; == hashed
       &lt;/script&gt;
       (if: $success is true)[  
         (alert: &quot;Correct Flag!&quot;) \

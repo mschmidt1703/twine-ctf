@@ -6,8 +6,6 @@ $(document.head).append("<link rel='icon' href='src/img/main/usb_stick.svg'>");
 
 setup.main = function() {
 	document.getElementById("startButton").addEventListener("click", eventOnClickHandlerMain);
-	
-	console.log("sdfsdfd: " + (Harlowe.variable('$last_passage')  ))
 	if(Harlowe.variable('$last_passage') == undefined ) {
 		document.getElementById("startButton").innerHTML = "Start";
 	} else {
