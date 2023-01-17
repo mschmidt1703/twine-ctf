@@ -344,7 +344,7 @@ o	Du legst dich schlafen
 o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein gut verwaltetes Archiv für sowas hat
 •	In der Bibliothek im Archiv 
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->CTF 7]]
+[[<button class="startChallenge">Start Challenge->CTF 7]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -609,7 +609,7 @@ o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches 
 o	Die CD steckst du ein
 o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
 
-[[<button class="startChallenge">Next->CTF 4]]
+[[<button class="startChallenge">Start Challenge->CTF 4]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
