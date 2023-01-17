@@ -897,19 +897,8 @@ Ihr verlasst das Gebäude und geht zum Auto.
   setup.story()
 </script>
 
-•	Auf der Rückfahrt
-o	Spieler ist nachdenklich
-	Insbesondere wegen der Zeichenfolge
-	Kannst halt erstmal nichts damit anfangen
-o	Josie und er startet einen Dialog
-•	Dialog
-o	Josies beste Freundin ist verschwunden
-	Seit drei Jahren
-	Immer viel unterwegs 
-•	Wieder zurück
-o	Recherche über sich selbst im Internet
-	Nichts, was er bisher nicht schon erfahren hatte
-o	Schlafen gehen
+Während der Rückfahrt bist du sehr nachdenklich, weil du mit dieser Zeichenfolge nichts anfangen kannst. Den anderen hast du nur erzählt, dass du definitiv an dieser Hochschule studiert hast. Nach einer Weile hast du keine Lust mehr über die Zeichenfolge nachzudenken und schaust aus dem Fenster, bis du mit Josie ins Gespräch kommst.
+Während des Gesprächs erzählt dir Josie, dass sie eine beste Freundin hat und dass diese auch seit etwa 3 Jahren verschwunden ist. Du fragst Josie, warum sie dann immer noch über ihre Freundin redet, als wäre sie noch hier. Anhand von Josies Blick erkennst du, dass diese Frage unsensible war und entschuldigst dich. Josie gesteht dir, dass sie einfach weiß, dass ihre beste Freundin noch am Leben und irgendwo da draußen ist. Während Josie das sagte, begann sie aus dem Fenster des Autos zu schauen. Sie lächelt ein wenig. Dann schaut Josie wieder zu dir und sagt, dass sie sich sicher ist, dass du sie gemocht hättest. Dabei fügt Josie hinzu, dass ihre Freundin ein wenig älter als sie ist und somit wohl auch in meinem Alter wäre. Du lächelst, und fragst, ob die Freundin denn auch im Hauptquartier gearbeitet hat. Josie lacht und verneint dies. Ihre Freundin hätte mit ihrem Job nichts anfangen können. Sie ist als Beraterin für IT-Unternehmen tätig gewesen und deswegen andauernd umhergereist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
 
