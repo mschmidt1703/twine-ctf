@@ -1199,14 +1199,10 @@ Du entschließt dich, die nächsten Tage immer mal wieder zu recherchieren. Viel
   setup.story()
 </script>
 
-•	Nach ein paar Tagen stößt du auf einen Hinweis
-o	Die Erwähnung von jemanden, der sich für effiziente Kompressionsalgorithmen interessiert hat
-o	Dieser Beitrag ist etwa 3 Jahre alt
-o	Dieser Beitrag enthält
-	Eine Datei
-	Einige gut gemeinte Hinweise, sich von AGT fernzuhalten, sollten die auf einen zukommen
-•	Was auch  
-o	Du lädst die Datei runter, in der Hoffnung, dass du an irgendwelche Informationen kommst, doch die Datei enthält einen verschlüsselten Text  CTF
+Nach einigen Tagen kannst du einen Beitrag ausfindig machen. Dieser ist etwa 3 Jahre alt. In dem Beitrag sucht jemand nach effizienten Kompressionsalgorithmen und bietet eine Menge Geld dafür. Einige Kommentare unter dem Beitrag weisen darauf hin, dass wenn es einen solchen Algorithmus gibt, dieser besser nicht überall veröffentlicht werden sollte, da dieser sonst einer Firma namens AGT in die Hände fallen würde.
+Du siehst es als einen gut gemeinten Hinweis.
+Du liest dir weitere Kommentare durch und ein Kommentar enthält eine Datei. Eigentlich ist es naiv irgendwelche Dateien aus dem Darknet runterzuladen, doch dein Bauchgefühl rät dir, genau das zu tun.  
+Die heruntergeladene Datei ist verschlüsselt. Um also an den Inhalt zu gelangen, musst du sie entschlüsseln.
 
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
