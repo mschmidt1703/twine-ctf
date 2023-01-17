@@ -18,11 +18,11 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 A search on the surface level is not enough. Further inspection is needed. 
 
 <div class="shelves">
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>First Shelf</button>")[(alert: "Nothing really useful here")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Second Shelf</button>")[(alert: "No useful information here...")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Third Shelf</button>")[(alert: "Nothing here either...")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fourth Shelf</button>")[(alert: "This search has lead me nowhere so far..")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fifth Shelf</button>")[(alert: "Yup... I did all of that for nothing :(")]
 </div>
 
 <div style="visibility: hidden;"> puzzelPiece&#123;og9XEhgLE2&#125; </div> 
@@ -95,26 +95,6 @@ This will require you to have a look at the source code of this page. ")
 
   /* 2nd and last Part of the flag: ### hgLE2} ### */
 </style>
-
-
-:: First Shelf {"position":"800,800","size":"100,100"}
-Nothing really useful here
-
-
-:: Second Shelf {"position":"925,800","size":"100,100"}
-No useful information here...
-
-
-:: Third Shelf {"position":"1050,800","size":"100,100"}
-Nothing here either...
-
-
-:: Fourth Shelf {"position":"1175,800","size":"100,100"}
-This search has lead me nowhere so far..
-
-
-:: Fifth Shelf {"position":"1300,800","size":"100,100"}
-Yup... I did all of that for nothing :(
 
 
 :: CTF7end {"position":"600,800","size":"100,100"}

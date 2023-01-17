@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Loss: Find Your Way Back.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="29" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="24" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
 
 /* Redo and undo button */
 tw-icon {
@@ -294,7 +294,7 @@ function eventOnClickHandler(event) {
 setup.ctf3_copyText = function () {
 	var textbox = document.getElementById("textbox");
 	navigator.clipboard.writeText(textbox.innerHTML.replace("<br>",""));
-	alert("Text copied to clipboard");
+	alert("Text will be copied to clipboard...");
 }
 /* # CTF 1 End */
 
@@ -817,9 +817,10 @@ This will not require you to have a look at the source code of this page.&quot;)
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 Usg wlees,
-qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. Kmop dbbm! 
-Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa. 
-Tcwg pupy nrv tus vhbt pviopeaumv!
+
+qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
+Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
+ Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
 
@@ -840,7 +841,7 @@ key: NoIdea
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Use the internet to find a tool that will help you detect the encryption method used in this challange.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Enter the flag in the following format: puzzelPiece&amp;lbrace;enterFlagHere&amp;rbrace;&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Remember to enter the flag in the following format: puzzelPiece&amp;lbrace;enterFlagHere&amp;rbrace;&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2022,11 +2023,11 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 A search on the surface level is not enough. Further inspection is needed. 
 
 &lt;div class=&quot;shelves&quot;&gt;
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;First Shelf-&gt;First Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Second Shelf-&gt;Second Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Third Shelf-&gt;Third Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fourth Shelf-&gt;Fourth Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fifth Shelf-&gt;Fifth Shelf]]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;First Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing really useful here&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Second Shelf&lt;/button&gt;&quot;)[(alert: &quot;No useful information here...&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Third Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing here either...&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Fourth Shelf&lt;/button&gt;&quot;)[(alert: &quot;This search has lead me nowhere so far..&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Fifth Shelf&lt;/button&gt;&quot;)[(alert: &quot;Yup... I did all of that for nothing :(&quot;)]
 &lt;/div&gt;
 
 &lt;div style=&quot;visibility: hidden;&quot;&gt; puzzelPiece&amp;#123;og9XEhgLE2&amp;#125; &lt;/div&gt; 
@@ -2098,7 +2099,7 @@ This will require you to have a look at the source code of this page. &quot;)
   }
 
   /* 2nd and last Part of the flag: ### hgLE2} ### */
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="First Shelf" tags="" position="800,800" size="100,100">Nothing really useful here</tw-passagedata><tw-passagedata pid="19" name="Second Shelf" tags="" position="925,800" size="100,100">No useful information here...</tw-passagedata><tw-passagedata pid="20" name="Third Shelf" tags="" position="1050,800" size="100,100">Nothing here either...</tw-passagedata><tw-passagedata pid="21" name="Fourth Shelf" tags="" position="1175,800" size="100,100">This search has lead me nowhere so far..</tw-passagedata><tw-passagedata pid="22" name="Fifth Shelf" tags="" position="1300,800" size="100,100">Yup... I did all of that for nothing :(</tw-passagedata><tw-passagedata pid="23" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="18" name="CTF7end" tags="" position="600,800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -2170,7 +2171,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="24" name="CTF 8" tags="" position="850,300" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="19" name="CTF 8" tags="" position="850,300" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
@@ -2270,7 +2271,7 @@ This will not require you to have a look at the source code of this page.&quot;)
 	border-radius: 20px;
 	border: transparent;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="25" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="20" name="CTF8end" tags="" position="850,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -2343,7 +2344,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="21" name="CTF 9" tags="" position="400,2200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css&quot;&gt;
 
@@ -2470,7 +2471,7 @@ This will not require you to have a look at the source code of this page.&quot;)
   html {
     overflow-y: hidden !important; /* Disable scroll */
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="22" name="CTF9end" tags="" position="600,2200" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
 (set: $success to false)
@@ -2543,7 +2544,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="CTFs" tags="" position="500,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="500,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
 	setup.ctfs();
 &lt;/script&gt;
 (set: $playingStory to false) \
@@ -2779,7 +2780,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="24" name="initMain" tags="" position="100,0" size="100,100">&lt;!--only for init--&gt;
 
 &lt;!-- :: init [startup] --&gt;
 &lt;!-- it is always a good idea to initialize your variables, but with arrays it is particularly important --&gt;
@@ -2790,7 +2791,7 @@ Please enter the flag here:
 
 (set: $ctfs to (a:))
 
-(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="30" name="MainPage" tags="" position="200,200" size="100,100">&lt;header&gt;
+(go-to: &quot;MainPage&quot;)</tw-passagedata><tw-passagedata pid="25" name="MainPage" tags="" position="200,200" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
@@ -2989,7 +2990,7 @@ Please enter the flag here:
   }
   
   Harlowe.goto(nextPage);*/
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="26" name="reloadGame" tags="" position="200,450" size="100,100">(set: $ctfs to (a:))
 
  /*code twice, because twine problem*/
 &lt;script&gt;
@@ -2997,7 +2998,7 @@ Please enter the flag here:
 	setup.main_clear();
 	setup.main_clear();
 	sessionStorage.clear();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="32" name="enterName" tags="" position="300,0" size="100,100">(set: $playingStory to true)
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="27" name="enterName" tags="" position="300,0" size="100,100">(set: $playingStory to true)
 (if: $last_passage is not 0)[(goto: $last_passage)]
 
 Hello,
@@ -3059,7 +3060,7 @@ please enter your name. Please note your name must be at longer then three chara
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="33" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="28" name="Story" tags="" position="200,400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/story/styles.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
@@ -3205,7 +3206,7 @@ please enter your name. Please note your name must be at longer then three chara
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="34" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="1.p" tags="" position="200,600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3309,7 +3310,7 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="30" name="2.p" tags="" position="200,800" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3346,7 +3347,7 @@ After wondering the streets for a while, you spot a big library at the end of th
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="31" name="3.p" tags="" position="200,1000" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3385,7 +3386,7 @@ Finding your name is a great start. But you need to learn more about yourself. S
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="32" name="4.p" tags="" position="200,1200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3425,7 +3426,7 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="33" name="5.p" tags="" position="200,1400" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3464,7 +3465,7 @@ It has been a long day and this search is taking a toll on you. You just want to
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="34" name="6.p" tags="" position="200,1600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3507,7 +3508,7 @@ You end up finding your apartment in the first floor. The door is open! It seems
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="40" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="35" name="7.p" tags="" position="200,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3548,7 +3549,7 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="41" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="36" name="8.p" tags="" position="200,2000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3587,7 +3588,7 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="42" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="37" name="9.p" tags="" position="200,2200" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
@@ -3626,7 +3627,7 @@ After some fiddling around you manage to connect the drive to a new computer. An
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="43" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="38" name="10.p" tags="" position="200,2400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.story()
@@ -3665,13 +3666,13 @@ Coming soon. Stay tuned!
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="44" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="39" name="x.p" tags="" position="400,600" size="100,100">&lt;script&gt;
   setup.story()
 &lt;/script&gt;
 
 Sorry, these CTFs haven&#39;t been implemented in the story yet...
 
-Please come back later!</tw-passagedata><tw-passagedata pid="45" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
+Please come back later!</tw-passagedata><tw-passagedata pid="40" name="Tutorial" tags="" position="0,300" size="100,100">&lt;header&gt;
   &lt;div class=&quot;logo&quot;&gt;
     &lt;img src=&quot;src/img/header/logo.svg&quot; alt=&quot;logo&quot;&gt;
   &lt;/div&gt;
