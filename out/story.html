@@ -1319,7 +1319,7 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. In this case you should insert an &#39;alert&#39;. 
+(set: _info to &quot;To pass this challange you need to execute an XSS code injection. Try to trigger this site to show an alert. 
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.&quot;)
 
@@ -1354,7 +1354,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert(\&quot;XSS\&quot;)\&quot;.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert()\&quot;.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.&quot;)]
@@ -1472,14 +1472,16 @@ After you execute XSS successfully, you will be automatically redirected to the 
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="1000,1400" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
-Congratulations you made it!
+Congratulations you made it! 
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
-send malicious code, usually in the form of a browser-side script, to another end user.
+Here is why learning about XSS is important: 
 
-Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+Cross-Site Scripting (XSS) is a type of client-side attack where a script is injected and executed on a legitimate website.
+One of the many ways XSS can be used to cause harm is by altering the initial website&#39;s code to contain the attacker&#39;s malicious code.
+By doing that, the attacker can reach other users when they browse the infected site and therefore spread the harm on a wide scale.
 
-In this challenge you successfully inject a XSS.
+This is why it is very important to for web developers to secure their websites against XSS and make sure the user&#39;s input is always validated and encoded. 
+
 
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
@@ -3211,55 +3213,9 @@ please enter your name. Please note your name must be at longer then three chara
 
 &lt;h1&gt;Story&lt;/h1&gt;
 
-<<<<<<< HEAD
 Du bist aufgewacht und fühlst dich als hättest du eine Ewigkeit geschlafen. Erst kannst du nicht wirklich was erkennen, doch nachdem sich deine Augen an das Licht gewöhnt hatten, erkennst du langsam wieder was. Du befindest dich in etwas, was eine Kapsel zu sein scheint. Du bist verwirrt und bewegst deine Hände bis du merkst, dass irgendwas Druck auf deinen linken Unterarm auszuüben scheint. Du hebst den Arm und siehst, dass dir Zugänge gelegt wurden. Ohne nachzudenken ziehst du sie raus. Der Druck auf deinen Unterarm lässt nach. Aber wie kommst du jetzt raus? 
 Du untersuchst mit deinen Händen die Innenseite der Kapsel. Ein Gefühl versichert dich, dass es eine Möglichkeit geben muss, die Kapsel von innen zu öffnen. Schon hast du mit der rechten Hand einen Hebel greifen können. Du ziehst ihn zu dir und die Kapsel öffnet sich. Du versuchst dich aufzurichten, doch das fällt dir ziemlich schwer. Nach einigen Versuchen sitzt du in der Kapsel und kannst den Raum sehen, indem du dich befindest. Es sieht aus, wie ein Krankenzimmer. Der Zugang, der in deinem Arm war, geht durch die linke Wand der Kapsel und führt zu einem durchsichtigen Beutel, der eine Flüssigkeit enthält. Daneben steht ein kleiner Nachtschrank mit einem Kalender und einer Vase mit frischen Blumen. Es sind rote Tulpen. Erschreckend stellst du fest, dass wohl drei Jahre vergangen sind. Dein Magen zieht sich ein wenig zusammen, doch deine Aufmerksamkeit wird wieder in den Raum gelenkt. Sonnenstrahlen scheinen durch die Jalousie vor dem Fenster an der linken Seite des Raums.
 Du versuchst nun aufzustehen, um aus der Kapsel zu klettern, doch deine Beine wirken als würden sie schlafen. Du versuchst mit den Zehen zu wackeln. Glück gehabt, sie reagieren, wenn auch nur leicht. Dein Oberkörper und deine Arme sind soweit normal. Daher versuchst du dich vorsichtig mit deinen Armen aus der Kapsel zu ziehen. Nach wenigen Versuchen konntest du dich tatsächlich aus der Kapsel ziehen. Du betrachtest die rechte Seite des Raums. Eine Tür und einige Maschinen, die scheinbar deine Vitalwerte überwachen. Erst jetzt bemerkst du den Dauerton, der wohl schon seit einigen Minuten läuft. 
-=======
-You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
-but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
-what appears to be a capsule. You are confused and move your hands until you notice that something \
-seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
-given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
-you get out now? 
-
-You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
-way to open the capsule from the inside. Already you have been able to grasp a lever with your \
-right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
-difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
-looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
-and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
-calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
-have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
-sunlight shine through the blind in front of the window on the left side of the room and your eyes \
-fall on the clock. It is 11:39. Almost noon.
-
-You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
-wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
-so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
-you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
-door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
-sound that must have been going on for several minutes. 
-
-Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
-long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
-shouting: &quot;Quick! Hurry up, something seems to be wrong!&quot;. You panic. You try to hide behind the capsule \
-as best you can with your limited strength, when the door flies open. You hold your breath and realise \
-that your heart is racing. Several people have probably entered the room, but only one is running directly \
-to the capsule. &quot;The capsule is open. He must have finally woken up.&quot; Came from a male voice. &quot;At last! \
-But where is he?&quot; you hear another voice, but this time a female one, say. &quot;We need to find him quickly \
-and check his vitals,&quot; said the male voice &quot;Josie, please go get Rob already. When I find him, he should \
-check him straight away&quot;. &quot;All right, John,&quot; Josie replies and you hear footsteps coming through the \
-door and out of the room. You don&#39;t dare breathe. The remaining person seems to be searching the room. \
-First the right half and then the footsteps approach your hiding place and then John is standing in front \
-of you smiling a little away. &quot;There you are!&quot;, John laughed and wants to approach you. When he realises \
-you are scared and backs away, he backs away and crouches down. &quot;Don&#39;t be afraid,&quot; John said in a calm \
-voice &quot;We don&#39;t want to hurt you. It&#39;s all right. Look, I&#39;m John and some of my colleagues, or rather \
-friends, and I found you and saved you.&quot;
-
-- Explaination Memory Loss
-- Name Thing
->>>>>>> main
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.1.p]]
 
@@ -3460,7 +3416,6 @@ o	Du legst dich schlafen
 
 Am nächsten Tag beim Frühstück fragst du Josie, ob es in dem Hauptquartier eine Möglichkeit gibt, sich die Nachrichten der letzten 3 Jahre anzusehen und dass du die Hoffnung hast, damit deine Erinnerungen aufzufrischen. Sie erzählt dir, dass es eine Bibliothek im Hauptquartier gibt, die ein gut geführtes Archiv von Nachrichten hat. Dann sagt sie dir, wo du es finden kannst.
 Nach dem Frühstück machst du dich dahin auf den Weg. Die Bibliothek ist groß und gut ausgeschildert. Daher war es für dich kein Problem, das Archiv zu finden. Vor dem Archiv ist eine Abteilung für Bücher, in denen es um Videospiele geht. Du greifst nach einem Buch und siehst einen Kontroller drauf.
-Auf einmal wird dir schwarz vor Augen und du verschwindest in deinen Gedanken.
 
 [[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
 
@@ -3511,6 +3466,8 @@ Auf einmal wird dir schwarz vor Augen und du verschwindest in deinen Gedanken.
 &lt;script&gt;
   setup.story()
 &lt;/script&gt;
+
+Auf einmal wird dir schwarz vor Augen und du verschwindest in deinen Gedanken.
 
 Du bist in einem Wohnzimmer und schaust dich um. Du sitzt auf einem Sofa. Gegenüber von dir an der Wand ist ein Fernseher, auf dem gerade ein Videospiel gespielt wird. Links und rechts von dir und ein wenig weiter in den Raum rein stehen zwei weitere Sofas. Auf dem linken Sofa liegt ein Mann mit einem Kontroller in der Hand. Dieser spielt wohl gerade das Videospiel. Du kannst sein Gesicht nicht sehen, aber sowohl der Raum als auch dieser Mann kommen dir vertraut vor. Es ist dein Vater. Du schaust wieder zum Fernseher und musst lächeln. Gerade wurde ein Level abgeschlossen. 
 Auf einmal riechst du Essen und du weißt, dass deine Mutter gerade in der Küche steht. Du erkennst den Geruch. Es ist der Geruch von Spagetti Cabonara. Du hörst, wie sie deinen Namen ruft.
@@ -3582,6 +3539,7 @@ Dir fällt jedoch ein, dass Spagetti Cabonara dein Lieblingsessen ist und dass d
 
 Du fragst dich, wie viel Zeit während des Erinnerns vergangen ist. Du gehst zum Eingang der Bibliothek zurück, wo du glaubst, eine Uhr gesehen zu haben. Du hattest Recht und es ist bereits Mittagszeit. Daher entschließt du dich, dass du dich zu den anderen in die Kantine begeben solltest, um mit ihnen Mittag zu essen. 
 Heute gibt es in der Kantine Schnitzel und als Nachtisch Apfelstrudel. Du holst dir eine Portion ab und setzt dich zu John, Josie und Rob an den Tisch. Josie fragt dich, ob du in der Bibliothek gefunden hast, was du suchst. Alle Blicke richten sich auf dich. Du nickst nur, weil du dir gerade den Mund vollgestopft hast. Du kaust fertig und nachdem du runtergeschluckt hast, sagst du freudestrahlend, dass du dich wieder an deinen Namen erinnern kannst und nennst ihn: NAME Reese. Gejubel bricht am Tisch aus und es werden einige Witze über die Situation gemacht.
+Die nächsten Tage unterstützt du die anderen, wo du nur kannst und erledigst die Aufgaben, die du zugeteilt bekommst. Außerdem lernst du währenddessen dein neues Zuhause und seine Leute kennen. Du fühlst dich dort sehr wohl.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.2.p]]
 
@@ -3614,35 +3572,9 @@ Heute gibt es in der Kantine Schnitzel und als Nachtisch Apfelstrudel. Du holst 
   setup.story()
 &lt;/script&gt;
 
-•	Die nächsten Tage
-o	Machst Hilfsaktivitäten
-o	Unterstützt die anderen bei der Arbeit 
-•	Es zieht dich wieder in die Bibliothek
-o	Am Nachmittag ist es ziemlich warm und du bist bereits mit deiner Arbeit fertig
-o	Du entscheidest, dass du wieder in die Bibliothek gehst, da es dort schön kühl ist
-o	Du wanderst durch die Gänge 
-o	Bleibst bei einem Regal stehen
-	Enthält lauter ähnlich aussehender Bücher
-	Sind Jahrbücher von derselben Universität
-•	Aber Fakultätsbezogen
-	Du blätterst die ersten durch und schaust, ob außer Bilder von den Beteiligten Personen noch irgendwelche witzigen Abschnitte enthalten sind
-•	Kommentar-Abschnitte oder so
-	Dein Blick fällt auf die Jahrbücher der Informatik-Fakultät
-	Du blätterst das Neuste durch
-	Danach greifst du zu einer älteren Version
-•	Gedankenverloren blätterst du Seite für Seite um
-•	Bis du an einem Bild hängen bleibst
-o	Das Gesicht eines jungen Mannes
-	Henry ____ 
-•	Sofort richtest du dich auf
-o	Es ist dein Vater
-•	Beim Aufrichten fiel eine CD aus dem Buch
-	Du schaust dir die CD an
-•	Sie ist unbeschriftet
-•	Mehr fällt dir erstmal nicht auf
-	Du schaust wieder das Bild deines Vaters an
-•	Er lächelt
-•	Du musst deswegen auch lächeln
+Es ist ein regnerischer Tag und für heute konnte dir keiner Aufgaben geben. Daher entschließt du dich wieder in die Bibliothek zu gehen. Dort wanderst du durch die Gänge und schmunzelst über so manche Abteilungen: „Videospiele“, „Kochen“, …
+Dann kommst du an einer Abteilung mit dem Titel „Jahrbücher“ vorbei. Aus Neugier, was du hier vorfinden könntest, betrittst du den Gang. Die verschiedenen Bücherregale enthalten jeweils viele gleich aussehende Bücher. Es handelt sich um Jahrbücher von verschiedenen Hochschulen. Du gehst zu einem Bücherregal, welches viele blau-weiße Bücher enthält. Du nimmst eines der neueren Jahrbücher heraus und durchblätterst es. Es sind nur Bilder von den Absolventen zu finden und besondere Auszeichnungen von diesen. Du klappst das Buch zu und stellst es wieder zurück. Du nimmst ein wesentlich älteres Jahrbuch heraus und durchblätterst dieses. Beim Durchblättern stößt du auf ein Gesicht, welches dir sehr bekannt vorkommt. Der Name unter diesem Bild ist: Henry Reese. Das ist also dein Vater. Auf dem Bild lächelt dein Vater und mit der Hornbrille sieht er wie ein typischer Nerd aus.
+Du setzt dich auf den Boden und beginnst zu träumen. Immer wieder schaust du auf das Bild und lächelst, während du einige Kindheitserinnerungen durchlebst.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;2.x.p]]
 
@@ -3675,10 +3607,7 @@ o	Es ist dein Vater
   setup.story()
 &lt;/script&gt;
 
-•	Nachdem du mit Tagträumen fertig bist
-o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches deinen Vater enthält
-o	Die CD steckst du ein
-o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
+Nachdem du mit Tagträumen fertig bist und wieder aufstehen willst, fällt eine CD aus dem Buch. Die CD ist unbeschriftet. Du räumst du die gelesenen Jahrbücher wieder ins Bücherregal und nimmst das Jahrbuch und die CD mit zu dir auf dein Zimmer. Dort steckst du die CD in deinen PC.
 
 [[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]
 
@@ -3730,8 +3659,7 @@ o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
   setup.story()
 &lt;/script&gt;
 
-•	Review
-o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber du bist dir sicher, dass der Mann auf dem Bild dein Vater ist, alleine schon wegen des Nachnamens
+Schade, die CD enthält nichts weiter als eine digitale Version des Jahrbuchs. Wenigstens kennst du jetzt den Namen deines Vaters und weißt, wie er aussieht. Dich überkommt das Gefühl, dass du zu der Hochschule fahren solltest, an der dein Vater studiert hat. Du könntest dort weitere Hinweise zu deiner Vergangenheit finden. Das wirst du mit John bereden müssen.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.1.p]]
 
@@ -3764,8 +3692,7 @@ o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber d
   setup.story()
 &lt;/script&gt;
 
-- Decide what to do before lunch
-- Plan to tell John about it
+Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitzen bereits John und Josie. Josie ist in ein Buch vertieft, schaut aber kurz auf um dich mit einem Lächeln zu begrüßen, ehe sie sich wieder ihrem Buch zuwendet. Du erzählst John von deinem Wunsch, die Hochschule zu besuchen, doch entgegen deinen Erwartungen ist John damit nicht wirklich einverstanden. Er meint, dass es zu gefährlich ist, da niemand weiß, ob du gesucht wirst oder was dir überhaupt zugestoßen ist, auch wenn er versteht, warum du das möchtest. Dann als John sich bereit macht, um dir wohl einen Vortrag über die Konsequenzen zu halten, fällt Josie ihm mit „John, jetzt komm bitte mal etwas runter“, ins Wort. Sie hat ihr Buch zugeklappt. John schaut sie an und nickt ihr zu, um ihr zu verdeutlichen, dass er zuhört. Josie atmet durch und beginnt: „Ich verstehe warum du das für eine schlechte Idee hältst, John. Das Problem ist, dass wir nicht darauf hoffen können, dass NAME seine Erinnerungen zurückerlangt, wenn er sich nur bei uns im Hauptquartier aufhält. Wir haben ihn gefunden und in Sicherheit gebracht und nun sind wir sein Zuhause und seine Familie“. Ihr Blick richtet sich zu dir. „Tut mir leid NAME, wir sind natürlich nicht deine echte Familie oder wollen sie ersetzen. Wir wissen nicht, was mit deiner…“, meint Josie verlegen als du sie unterbrichst um ihr zu versichern, dass alles in Ordnung ist und dass sie für dich eine Familie sind. Sie lächelt und wendet sich wieder zu John. „Was ich sagen wollte ist, dass wir mitkommen sollten um für Sicherheit zu sorgen. Das ist alles“. John verschränkt die Arme und meint leicht amüsiert, dass er jetzt sowieso nicht mehr gegen euch beide ankommt und er alles in die Wege leiten wird, damit wir in wenigen Tagen abreisen können.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;3.2.p]]
 
