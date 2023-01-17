@@ -1032,17 +1032,8 @@ Nachdem Serienabend verabschiedest du dich und schaust in deinem Zimmer auf dem 
   setup.story()
 </script>
 
-•	Mithilfe des Hands-On Tutorials konntest du den Algorithmus lösen
-o	Webseite
-•	Flashback
-o	Du sitzt vorm Pc und schreibst einen Algorithmus
-o	Grund für den Algorithmus
-	Du hast eine Menge Daten auf dem Pc, die du auf deinen neuen Pc übertragen möchtest, aber kein USB-Stick oder so ist groß genug
-•	Komprimieren der Daten und Dekomprimieren
-o	Die Nächte, die du vorm Pc gesessen hast
-o	Der fertige Algorithmus
-	Die ersten Performanz-Tests
-•	Zeigen wie unglaublich dieser Algorithmus ist
+Mithilfe des Tutorials konntest du die Zeichenfolge entschlüsseln. Es handelt sich um eine IP-Adresse. Die IP-Adresse führt zu einer Webseite, die einen Kompressions- und Dekompressionsalgorithmus beschreibt.
+Dir wird schwarz vor Augen und du siehst dich selber, wie du vorm PC sitzt. Die Nächte ziehen wie ein Zeitraffer vorbei, bis du selber verkündest, dass du es endlich geschafft hast. Du führst noch Performanz-Tests durch, die zeigen, dass der Algorithmus ungewöhnlich effizient ist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
