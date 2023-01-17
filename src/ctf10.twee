@@ -16,6 +16,7 @@ This will not require you to have a look at the source code of this page.") \
 Can you figure out the message hidden in this image? 
 
 0 = &#123; or &#125;
+
 <img src="src/img/ctf10/flag.svg"><img>
 
 <div class="buttons">
@@ -56,6 +57,7 @@ Can you figure out the message hidden in this image?
 
   img {
     border-radius: 2.5rem;
+    height: 50vh;
   }
 
   .buttons {
