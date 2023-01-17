@@ -1518,25 +1518,8 @@ Anhand der Details aus deinen Erinnerungen, war es möglich den Standort deiner 
   setup.story()
 </script>
 
-•	Am nächsten Tag 
-o	Nach dem Aufstehen rennst du sofort zu John und Josie
-	Du erzählst ihnen alles was passiert ist
-•	Auch vom Algorithmus
-	Beide sind geschockt
-	Du weißt, dass es viel verlangt ist, aber du bittest die beiden dir zu helfen, die Wohnung ausfindig zu machen und dich dorthin zu begleiten
-	Es werden Bedenken bezüglich der Gesamtsituation angebracht
-	Beide erkennen die Wichtigkeit und die Gefahren, sie haben bereits von A. G. gehört 
-	Sie stimmen unter der Bedingung zu, dass alle entsprechend vorbereitet sind
-•	Schießtraining und entsprechende Ausrüstung
-•	Vorbereitung 
-o	Die Ausrüstung anzuschaffen benötigte einige Tage
-o	Währenddessen gehst du mehrmals mit jeweils Josie und John zum Schießen
-	Keiner kann riskieren, dass irgendwer schutzlos in eine gefährliche Situation gerät
-	Tatsächlich rechnet ihr damit, dass ihr in eine Falle geraten könntet
-o	Zwischen den Schießtrainings hilft Josie dir dabei, die Adresse der Wohnung ausfindig zu machen, indem ihr jedes Detail, welches dir noch aus der Erinnerung einfällt, analysiert
-o	Am Mittag nach der Auslieferung der Ausrüstung habt ihr einen Volltreffer
-	Deine Wohnung ist in der Nähe der Universität
-o	Am nächsten Tag soll es losgehen
+Als ihr angekommen seid, parkt ihr etwas abseits von der Wohnung, um kein Aufsehen zu erregen. Josie bleibt mit dem Team erstmal beim Auto. So kann sie im Falle eines Falles die Flucht besser koordinieren.
+Die Wohnung befindet sich in einem leerstehenden, alten Fabrikgebäude im ersten Obergeschoss. Ihr betretet das Gebäude und geht hoch zur Wohnung. Das Aufbrechen der Haustür war erstaunlich einfach, daher geht ihr davon aus, dass die Wohnung schonmal durchsucht wurde. Ihr betretet die Wohnung, die vergleichsweise zu dem alten Fabrikgebäude sehr modern eingerichtet ist. Vorsichtig überprüft ihr alle Räume, um sicherzugehen, dass ihr alleine in der Wohnung seid.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
 
