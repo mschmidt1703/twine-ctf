@@ -324,7 +324,7 @@ o	Du stellst fest, dass du trotzdem herausfinden musst, was die letzten Jahre au
 •	Berichterstattungen usw.
 o	Du legst dich schlafen
 
-[[<button class="startChallenge">Next->1.x.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.x.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");

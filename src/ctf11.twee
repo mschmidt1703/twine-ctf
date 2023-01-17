@@ -15,14 +15,14 @@ Usg wlees,
 
 qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
 Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
- Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
+Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
 
 <div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
-      [[<button class='home-btn-background'></button>->Memory3]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -97,7 +97,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->Memory3]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \

@@ -97,26 +97,6 @@ This will require you to have a look at the source code of this page. ")
 </style>
 
 
-:: First Shelf {"position":"800,800","size":"100,100"}
-Nothing really useful here
-
-
-:: Second Shelf {"position":"1200,1000","size":"100,100"}
-No useful information here...
-
-
-:: Third Shelf {"position":"1325,1000","size":"100,100"}
-Nothing here either...
-
-
-:: Fourth Shelf {"position":"1450,1000","size":"100,100"}
-This search has lead me nowhere so far..
-
-
-:: Fifth Shelf {"position":"1575,1000","size":"100,100"}
-Yup... I did all of that for nothing :(
-
-
 :: CTF7end {"position":"1000,1000","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
