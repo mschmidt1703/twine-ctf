@@ -54,7 +54,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Reload">
     </div>
     <iframe scrolling="yes" src="src/static/ctf6/u.html" title="Google"></iframe>
   </div>
@@ -84,7 +84,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for building an image. Maybe its something you can use for injecting your script into this site.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for choosing an image. Maybe its something you can use for injecting your script into this site.")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Here you can't find a text field to execute an XSS injection. However, there are other methods to do so. Find them out.")]

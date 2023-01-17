@@ -5,7 +5,7 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to inject XSS code in this site. Maybe you need to use some other html tag.
+(set: _info to "To pass this challange you need to inject XSS code in this site. Maybe you need to use a other html tag. 
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page.")
 
@@ -23,7 +23,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf5.html" readonly>
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Surf">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf5_updateFrame()" value="Reload">
     </div>
     <iframe src="src/static/ctf5/t.html" title="Google"></iframe>
   </div>
@@ -46,7 +46,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "How about trying out the image tag? Can it be used for inserting some javascript code here? (onerror= and src=)")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "What HTML tags can be used in XSS? You should look it up!")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Which HTML tags can be used for XSS attacks? You should look it up!")]
   </div>
 </div>
 
@@ -170,7 +170,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 Congratulations you made it!
 
 This challenge showed that malicious code not only be added to a web page through a script tag,
-but also that there are other html tags that can add javascript to a web page. Like a image tag.
+but also that there are other html tags that can add javascript to a web page. Like a image tags.
 
 (if: $playingStory is true)[
   [[<button class="resumeButton">Resume Story</a>->6.p]]]\

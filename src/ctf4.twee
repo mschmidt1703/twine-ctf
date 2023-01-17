@@ -5,7 +5,7 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to inject XSS code in this site. In this case you should insert an 'alert(\"XSS\")' 
+(set: _info to "To pass this challange you need to inject XSS code in this site. In this case you should insert an 'alert'. 
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.")
 
@@ -20,7 +20,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html" readonly>
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Reload">
     </div>
     <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
   </div>
@@ -40,7 +40,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that the function used in JavaScript to trigger an alert on a webpage is called \"alert()\".")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that the function used in JavaScript to trigger an alert on a webpage is called \"alert(\"XSS\")\".")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.")]
@@ -164,8 +164,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected 
-into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
 send malicious code, usually in the form of a browser-side script, to another end user.
 
 Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''

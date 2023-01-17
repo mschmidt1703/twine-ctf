@@ -6,12 +6,12 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to find your hidden password. 
+(set: _info to "To pass this challange you need to find your hidden login data. 
 This will require you to have a look into the source code. ")
 (if: $ctfs contains "ctf1")[]
 (else:)[(alert: _info)]
 
-<h1>CTF 1 - XSS</h1>
+<h1>CTF 1 - Web Exploitation</h1>
 
 <tw-consecutive-br></tw-consecutive-br>
 
@@ -20,13 +20,13 @@ This will require you to have a look into the source code. ")
     <div class="field">
       <label class="label">Username</label>
       <div class="control">
-        <input class="input" id="user" type="text" placeholder="some name">
+        <input class="input" id="user" type="text" placeholder="enter username">
       </div>
     </div>
     <div class="field">
       <label class="label">Password</label>
       <div class="control">
-        <input class="input" id="password" type="password" placeholder="some password">
+        <input class="input" id="password" type="password" placeholder="enter password">
       </div>
     </div>
     <button id="login-btn" class="button is-primary">Sign in</button>
@@ -101,7 +101,7 @@ This will require you to have a look into the source code. ")
 
   .login-contianer {
     height: 500px;
-    margin: -1% auto 0 27.5%;
+    margin: -1% auto 0 30%;
     /*margin-left: 30% !important;
     margin-top: -1% !important;*/
   }
