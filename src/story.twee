@@ -651,7 +651,11 @@ After you are done daydreaming, you decide to put the book back in its place. As
   setup.story()
 </script>
 
-Too bad, the CD contains nothing more than a digital version of the yearbook. On the bright side, now you know your father's name and what he looks like. You get the feeling that you should go to the university where your father studied. You might find more clues about your past there. You will have to discuss this with John.
+Too bad, the CD contains nothing more than a digital version of the yearbook. \
+On the bright side, now you know your father's name and what he looks like. You \
+get the feeling that you should go to the university where your father studied. \
+You might find more clues about your past there. You will have to discuss this \
+with John.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
@@ -688,7 +692,28 @@ Too bad, the CD contains nothing more than a digital version of the yearbook. On
   setup.story()
 </script>
 
-You do a few more chores and head to lunch. John and Josie are already sitting there. Josie is sucked into a book, but looks up briefly to greet you with a smile on her face before turning back to her book. You tell John about your desire to visit your dad's college, but to your surprise, John doesn't really agree. He thinks it's too dangerous, since no one knows what even happened to you. You might even be wanted. He understands your intentions, but wants to keep you safe. Then, as John goes on with his lecture about being safe, Josie cuts him off with, "John, now please calm down a bit." She has closed her book. John looks at her and nods to let her know he's listening. Josie takes a breath and begins, "I understand why you think this is a bad idea, John. The problem is that we can't hope to get $username's memories back if he's just staying with us at headquarters. We found him and brought him to safety, and now we are his home and his family. "Her eyes turn to you. "I'm sorry $username of course we are not your real family or trying to replace them. We don't know what happened to you...", Josie says sheepishly as you interrupt her to assure her that everything is fine and that they are family to you. She smiles and turns back to John. "What I was going to say is that we should come with you to make sure everything is safe. That's all." John crosses his arms and says, slightly amused, that he can't beat the two of you now anyway. He will get everything is in place, so we can leave in a few days.
+You do a few more chores and head to lunch. John and Josie are already sitting \
+there. Josie is sucked into a book, but looks up briefly to greet you with a \
+smile on her face before turning back to her book. You tell John about your \
+desire to visit your dad's college, but to your surprise, John doesn't really \
+agree. He thinks it's too dangerous, since no one knows what even happened to \
+you. You might even be wanted. He understands your intentions, but wants to \
+keep you safe. 
+
+Then, as John goes on with his lecture about being safe, Josie cuts him off \
+with, "John, now please calm down a bit." She has closed her book. John looks \
+at her and nods to let her know he's listening. Josie takes a breath and \
+begins, "I understand why you think this is a bad idea, John. The problem is \
+that we can't hope to get $username's memories back if he's just staying with us \
+at headquarters. We found him and brought him to safety, and now we are his home \
+and his family. "Her eyes turn to you. "I'm sorry $username of course we are \
+not your real family or trying to replace them. We don't know what happened to \
+you...", Josie says sheepishly as you interrupt her to assure her that \
+everything is fine and that they are family to you. She smiles and turns back \
+to John. "What I was going to say is that we should come with you to make sure \
+everything is safe. That's all." John crosses his arms and says, slightly \
+amused, that he can't beat the two of you now anyway. He will get everything is \
+in place, so we can leave in a few days.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
 
@@ -725,7 +750,24 @@ You do a few more chores and head to lunch. John and Josie are already sitting t
   setup.story()
 </script>
 
-You are lucky the college is only hours away, yet you have to leave early in the morning to be back at headquarters by evening. Food has been prepared for the trip and loaded into the car. A few extra men will accompany you. You borrowed a book from Josie to make the drive pass quickly. After the hour-long drive, you finally arrive at the university. The campus seems quite large, yet it is relatively empty. You suppose that it must be semester break. You look for the building of the faculty to which your father belonged. Since he studied computer science, it is probably the building of the computer science faculty. The campus is well-marked, so you should have no trouble finding it. As you stand in front of it, you notice that it is a relatively modern building. You enter it and come to a foyer. There are some awards hanging on the walls in the foyer. You walk over to them to take a closer look. Amazed, you notice that some of these awards have your name on them. They are all awards for outstanding achievements in hackathons. One award even has your father's name on it, also because of a hackathon.
+You are lucky the college is only hours away, yet you have to leave early in the \
+morning to be back at headquarters by evening. Food has been prepared for the \
+trip and loaded into the car. A few extra men will accompany you. You borrowed \
+a book from Josie to make the drive pass quickly. 
+
+After the hour-long drive, you finally arrive at the university. The campus \
+seems quite large, yet it is relatively empty. You suppose that it must be \
+semester break. 
+
+You look for the building of the faculty to which your father belonged. Since \
+he studied computer science, it is probably the building of the computer \
+science faculty. The campus is well-marked, so you should have no trouble \
+finding it. As you stand in front of it, you notice that it is a relatively \
+modern building. You enter it and come to a foyer. There are some awards \
+hanging on the walls in the foyer. You walk over to them to take a closer look. \
+Amazed, you notice that some of these awards have your name on them. They are \
+all awards for outstanding achievements in hackathons. One award even has your \
+father's name on it, also because of a hackathon.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
 
@@ -762,7 +804,16 @@ You are lucky the college is only hours away, yet you have to leave early in the
   setup.story()
 </script>
 
-This changes your plans. You tell the others that they should look for the examination office. Since you seem to have studied at this university yourself, the examination office must have information about you, and that's exactly what you are looking for. You quickly find the examination office on the top floor of the building, and fortunately for you, whoever is working at the moment has left his workstation and left the door unlocked. You tell Josie and John to please stand guard. You sit down at the PC and see the login window. You know very well that this PC will not be locked for much longer.
+This changes your plans. You tell the others that they should look for the \
+examination office. Since you seem to have studied at this university yourself, \
+the examination office must have information about you, and that's exactly what \
+you are looking for. 
+
+You quickly find the examination office on the top floor of the building, and \
+fortunately for you, whoever is working at the moment has left his workstation \
+and left the door unlocked. You tell Josie and John to please stand guard. You \
+sit down at the PC and see the login window. You know very well that this PC \
+will not be locked for much longer.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
@@ -818,7 +869,25 @@ This changes your plans. You tell the others that they should look for the exami
   setup.story()
 </script>
 
-Great, you were able to unlock the PC. Fortunately, the person even left open the window that allows you to access the student database. So you search for your name and read your respective entry. You had mostly good grades, and your transcript includes notes about your performance at hackathons. Then you black out again, and many brief moments now play out like a movie before your eyes. Your matriculation, insights into everyday student life, the submission of your thesis, your graduation, and the presentation of your Bachelor's certificate. After that, you see another matriculation and more everyday student life. You are confused. Next, you see that you are dropping an envelope into a box. This envelope says: Master's thesis submission for an IT security degree program. Then you stand on a stage and are handed your Master's certificate and look into the crowd, where your parents have risen from their seats and are cheering loudly for you. Then you're sitting in an office, talking on the phone: "Don't worry, Mom; being self-sufficient is really no problem with my qualifications." You'll see." Then everything goes black, and a cryptic string appears.
+Great, you were able to unlock the PC. Fortunately, the person even left open \
+the window that allows you to access the student database. So you search for \
+your name and read your respective entry. You had mostly good grades, and your \
+transcript includes notes about your performance at hackathons. 
+
+Then you black out again, and many brief moments now play out like a movie \
+before your eyes. Your matriculation, insights into everyday student life, the \
+submission of your thesis, your graduation, and the presentation of your \
+Bachelor's certificate. After that, you see another matriculation and more \
+everyday student life. You are confused. 
+
+Next, you see that you are dropping an envelope into a box. This envelope says: \
+Master's thesis submission for an IT security degree program. Then you stand \
+on a stage and are handed your Master's certificate and look into the crowd, \
+where your parents have risen from their seats and are cheering loudly for you. 
+
+Then you're sitting in an office, talking on the phone: "Don't worry, Mom, \
+being self-sufficient is really no problem with my qualifications." \
+You'll see." Then everything goes black, and a cryptic string appears.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
@@ -855,7 +924,17 @@ Great, you were able to unlock the PC. Fortunately, the person even left open th
   setup.story()
 </script>
 
-You are back in reality. Only a short moment has passed. You take a piece of paper and a pen that you found on your desk and write down the sequence of characters. Then you put the piece of paper in your pocket. Now you have to cover your tracks. You delete the search entry from the search history of the database, move all windows on the PC as they were before, lock the PC and leave the office with John and Josie. Just as you disappeared around the next corner, you could hear footsteps, probably moving from the other end of the hallway toward the exam office. If you had taken a little longer, you would have been caught. 
+You are back in reality. Only a short moment has passed. You take a piece of \
+paper and a pen that you found on your desk and write down the sequence of \
+characters. Then you put the piece of paper in your pocket. 
+
+Now you have to cover your tracks. You delete the search entry from the search \
+history of the database, move all windows on the PC as they were before, lock \
+the PC and leave the office with John and Josie. Just as you disappeared around \
+the next corner, you could hear footsteps, probably moving from the other end \
+of the hallway toward the exam office. If you had taken a little longer, you \
+would have been caught. 
+
 You leave the building and towards the car.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
@@ -893,8 +972,23 @@ You leave the building and towards the car.
   setup.story()
 </script>
 
-During the return trip, you are very thoughtful because you can't do anything with this string. You only told the others that you definitely studied at this university. After a while, you don't feel like thinking about the cryptic line anymore and look out the window until you get into a conversation with Josie.
-During the conversation, Josie tells you that she has a best friend who has been missing for about 3 years. You ask Josie why she still talks about her friend as if she were still here. From Josie's look, you realize that this question was insensitive, so you apologize immediately. Josie confesses to you that she just knows that her best friend is still alive and out there somewhere. While Josie was saying this, she started looking out the window of the car. She smiles a little bit. Then Josie looks back at you and says that she is sure you would have liked her. Furthermore, Josie adds that her friend is a little older than her, so she would probably be my age, too. You smile and ask if the friend also worked at headquarters. Josie laughs and denies. Your friend would never have been able to do this job. She worked as a consultant for IT companies and therefore traveled around all the time.
+During the return trip, you are very thoughtful because you can't do anything \
+with this string. You only told the others that you definitely studied at this \
+university. After a while, you don't feel like thinking about the cryptic line \
+anymore and look out the window until you get into a conversation with Josie.
+
+During the conversation, Josie tells you that she has a best friend who has \
+been missing for about 3 years. You ask Josie why she still talks about her \
+friend as if she were still here. From Josie's look, you realize that this \
+question was insensitive, so you apologize immediately. Josie confesses to you \
+that she just knows that her best friend is still alive and out there somewhere. \
+While Josie was saying this, she started looking out the window of the car. She \
+smiles a little bit. Then Josie looks back at you and says that she is sure you \
+would have liked her. Furthermore, Josie adds that her friend is a little older \
+than her, so she would probably be my age, too. You smile and ask if the friend \
+also worked at headquarters. Josie laughs and denies. Your friend would never \
+have been able to do this job. She worked as a consultant for IT companies and \
+therefore traveled around all the time.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
 
@@ -931,10 +1025,28 @@ During the conversation, Josie tells you that she has a best friend who has been
   setup.story()
 </script>
 
-In the middle of the night, you reach the headquarters. After unloading the car and having something to eat, everyone goes to sleep. 
-The next day, you wake up late in the afternoon. Since you don't have any assignments, you spend the whole afternoon researching a little about yourself on the Internet. However, you can't find anything you didn't already know, and the research took so long that it is now already time for dinner.
-When you get to the cafeteria, Josie, John, and Rob are standing around a table. Rob is presenting his latest school physics experiment: a chocolate marshmallow in a vacuum. You join them just as Rob is about to show everyone his experiment. The chocolate marshmallow is in a glass container, and there is a hose connected to it. Rob closes the valve on the hose and tells everyone to pay close attention. 
-A vacuum is created in the glass container, which causes the chocolate marshmallow to inflate. Everyone is now staring at Rob. Now Rob opens the valve on the hose again, and the chocolate marshmallow contracts again because air is now getting into the glass container. You think to yourself that this is not very exciting, but in order not to seem rude, you smile. During dinner, the others explain to Rob that they had this experiment in school and that it is therefore no longer exciting. Rob doesn't let this take away his joy.
+In the middle of the night, you reach the headquarters. After unloading the car \
+and having something to eat, everyone goes to sleep. 
+
+The next day, you wake up late in the afternoon. Since you don't have any \
+assignments, you spend the whole afternoon researching a little about yourself \
+on the Internet. However, you can't find anything you didn't already know, and \
+the research took so long that it is now already time for dinner.
+
+When you get to the cafeteria, Josie, John, and Rob are standing around a table. \
+Rob is presenting his latest school physics experiment: a chocolate marshmallow \
+in a vacuum. You join them just as Rob is about to show everyone his experiment. \
+The chocolate marshmallow is in a glass container, and there is a hose \
+connected to it. Rob closes the valve on the hose and tells everyone to pay \
+close attention. 
+
+A vacuum is created in the glass container, which causes the chocolate \
+marshmallow to inflate. Everyone is now staring at Rob. Now Rob opens the valve \
+on the hose again, and the chocolate marshmallow contracts again because air is \
+now getting into the glass container. You think to yourself that this is not \
+very exciting, but in order not to seem rude, you smile. During dinner, the \
+others explain to Rob that they had this experiment in school and that it is \
+therefore no longer exciting. Rob doesn't let this take away his joy.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
 
@@ -971,8 +1083,13 @@ A vacuum is created in the glass container, which causes the chocolate marshmall
   setup.story()
 </script>
 
-After dinner, you watch a series with the others. The series is about cryptography and various ciphers. While you are watching the series, you take the note you wrote earlier out of your pocket and realize that one of the encryption algorithms mentioned could decrypt the string.
-After the Netflix evening, you say goodbye and watch some tutorials on decrypting a string on your PC.
+After dinner, you watch a series with the others. The series is about \
+cryptography and various ciphers. While you are watching the series, you take \
+the note you wrote earlier out of your pocket and realize that one of the \
+encryption algorithms mentioned could decrypt the string.
+
+After the Netflix evening, you say goodbye and watch some tutorials on \
+decrypting a string on your PC.
 
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
