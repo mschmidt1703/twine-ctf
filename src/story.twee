@@ -383,8 +383,8 @@ o	Du legst dich schlafen
   setup.story()
 </script>
 
-The next day at breakfast, you ask Josie if there is a way at headquarter to look at the news for the last 3 years. Your really hope that looking at the past news will help you to refresh your memory. She tells you that there is a library at the headquarters that has a well kept archive of news and explains to you where to find it. 
-After breakfast, you head over there. The library is large and easy to find. Therefore, it was not a problem for you to find the archive. In front of the archive is a section for books about video games. You reach for a book and see a controller on it.
+The next day, at breakfast, you ask Josie if there is a way at headquarter to look at the news for the last 3 years. You really hope that looking at the past news will help you to refresh your memory. She tells you that there is a library at the headquarters that has a well-kept archive of news and explains to you where to find it. 
+After breakfast, you head over there. The library is large and easy to find. Therefore, it was not a problem for you to find the archive. In front of the archive is a section for books about video games. When you reach for a book, you notice a controller on it.
 
 [[<button class="startChallenge">Start Challenge->CTF 7]]
 
@@ -442,7 +442,7 @@ After breakfast, you head over there. The library is large and easy to find. The
 
 Suddenly, you black out and disappear in your thoughts.
 
-You are in a living room. You start looking around. You are sitting on a sofa. Across from you on the wall is a television on which a video game is being played. To your left and right you see two sofas. On the left sofa lies a man with a controller in his hands. You can't see his face. He is probably playing the video game. Everything in this room looks familiar to you. And then your realize that is your father! You look at the TV again and a starts smiling. A level has just been completed. All of a sudden you smell food and you know that your mother is in the kitchen right now. You recognize the smell. It's the smell of spaghetti cabonara. You hear her calling your name.
+You are in a living room. You start looking around. You are sitting on a sofa. Across from you, on the wall, is a television on which a video game is being played. To your left and right, you see two sofas. On the left sofa lies a man with a controller in his hands. You can't see his face. He is probably playing the video game. Everything in this room looks familiar to you. And then you realize that's your father! You watch at the TV again and a starts smiling. A level has just been completed. All of a sudden, you smell food, and you know that your mother is in the kitchen right now. You recognize the smell. It's the smell of spaghetti carbonara. You hear her calling your name.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
@@ -481,8 +481,8 @@ You are in a living room. You start looking around. You are sitting on a sofa. A
 
 Back in reality...
 
-You realize what just happened: a memory. You now remember your home and your parents. You remember that you used to enjoy watching your father play video games. However, for some reason you have no recollection of how there faces look like.
-You do remember that spaghetti cabonara is your favorite food and that your mom is one how can cook it the best. More importantly, you remember your name: $username.
+You realize what has just occurred: a memory.You now remember your home and your parents. You remember that you used to enjoy watching your father play video games. However, for some reason, you have no recollection of what their faces look like.
+You do remember that spaghetti carbonara is your favorite food and that your mom is one who can cook it the best. More importantly, you remember your name: $username.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
 
@@ -519,8 +519,8 @@ You do remember that spaghetti cabonara is your favorite food and that your mom 
   setup.story()
 </script>
 
-You wonder how much time has passed while remembering. You go back to the entrance of the library, where you think you saw a clock. You check out the time and it is already lunchtime. Therefore, you decide that you should join the others in the canteen to have lunch.
-Today, the canteen is serving schnitzel and apple strudel for dessert. You pick up a portion and sit down at the table with John, Josie, and Rob. Josie asks you if you found what you were looking for in the library. All eyes on you. You just nod, having just stuffed your mouth. You finish chewing and after swallowing, you cheerfully say that you can remember your name again. Your name is: $username Reese. Cheers erupt around the table and a few jokes are made about the situation. For the next few days, you assist the others in any way you can and complete the tasks you are assigned. You also get to know your new home and your roommates. You feel very comfortable there.
+You wonder how much time has passed while remembering. You go back to the entrance of the library, where you think you saw a clock. You check the time, and it is already lunchtime. Therefore, you decide that you should join the others in the canteen to have lunch.
+Today, the canteen is serving schnitzel and apple strudel for dessert. You pick up a portion and sit down at the table with John, Josie, and Rob. Josie asks you if you found what you were looking for in the library. Everyone is looking at you. You just nod, having just stuffed your mouth. You finish chewing, and after swallowing, you cheerfully say that you can remember your name again. Your name is: $username Reese. Cheers erupt around the table, and a few jokes are made about the situation. For the next few days, you assist the others in any way you can and complete the tasks you are assigned. You also get to know your new home and your roommates. You feel very comfortable there.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
 
@@ -557,9 +557,8 @@ Today, the canteen is serving schnitzel and apple strudel for dessert. You pick 
   setup.story()
 </script>
 
-Es ist ein regnerischer Tag und für heute konnte dir keiner Aufgaben geben. Daher entschließt du dich wieder in die Bibliothek zu gehen. Dort wanderst du durch die Gänge und schmunzelst über so manche Abteilungen: „Videospiele“, „Kochen“, …
-Dann kommst du an einer Abteilung mit dem Titel „Jahrbücher“ vorbei. Aus Neugier, was du hier vorfinden könntest, betrittst du den Gang. Die verschiedenen Bücherregale enthalten jeweils viele gleich aussehende Bücher. Es handelt sich um Jahrbücher von verschiedenen Hochschulen. Du gehst zu einem Bücherregal, welches viele blau-weiße Bücher enthält. Du nimmst eines der neueren Jahrbücher heraus und durchblätterst es. Es sind nur Bilder von den Absolventen zu finden und besondere Auszeichnungen von diesen. Du klappst das Buch zu und stellst es wieder zurück. Du nimmst ein wesentlich älteres Jahrbuch heraus und durchblätterst dieses. Beim Durchblättern stößt du auf ein Gesicht, welches dir sehr bekannt vorkommt. Der Name unter diesem Bild ist: Henry Reese. Das ist also dein Vater. Auf dem Bild lächelt dein Vater und mit der Hornbrille sieht er wie ein typischer Nerd aus.
-Du setzt dich auf den Boden und beginnst zu träumen. Immer wieder schaust du auf das Bild und lächelst, während du einige Kindheitserinnerungen durchlebst.
+It is a rainy and calm day. You also happen to not have any open tasks for work. So, you decide to go back to the library. There, you wander through the aisles and smile at some of the sections: video games, cooking, etc. Then you pass a section called Yearbooks. Curious about what you might find there, you enter the aisle. The various bookshelves contain many books that look alike. These are yearbooks from various universities. A bookshelf that contains blue and white yearbooks catches your attention.
+You take out one of the newer yearbooks and flip through it. There are only pictures of graduates and special awards for them. You close the book and put it back. You take out a much older yearbook and flip through it. As you flip through it, you come across a face that looks very familiar. The name under this picture is Henry Reese. So this is your father. In the picture, your father is smiling, and with his horn-rimmed glasses, he looks like a typical nerd. You sit down on the floor and start dreaming. You keep looking at the pictures and smiling as you relive some childhood memories.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
 
@@ -596,7 +595,7 @@ Du setzt dich auf den Boden und beginnst zu träumen. Immer wieder schaust du au
   setup.story()
 </script>
 
-Nachdem du mit Tagträumen fertig bist und wieder aufstehen willst, fällt eine CD aus dem Buch. Die CD ist unbeschriftet. Du räumst du die gelesenen Jahrbücher wieder ins Bücherregal und nimmst das Jahrbuch und die CD mit zu dir auf dein Zimmer. Dort steckst du die CD in deinen PC.
+After you are done daydreaming, you decide to put the book back in its place. As you're doing so, a CD falls out of the book. The CD is unlabeled. You put the yearbooks back and decide to take the CD home to look further into it. Immediately after arriving home, you put the CD into your PC.
 
 [[<button class="startChallenge">Start Challenge->CTF 4]]
 
@@ -652,7 +651,7 @@ Nachdem du mit Tagträumen fertig bist und wieder aufstehen willst, fällt eine 
   setup.story()
 </script>
 
-Schade, die CD enthält nichts weiter als eine digitale Version des Jahrbuchs. Wenigstens kennst du jetzt den Namen deines Vaters und weißt, wie er aussieht. Dich überkommt das Gefühl, dass du zu der Hochschule fahren solltest, an der dein Vater studiert hat. Du könntest dort weitere Hinweise zu deiner Vergangenheit finden. Das wirst du mit John bereden müssen.
+Too bad, the CD contains nothing more than a digital version of the yearbook. On the bright side, now you know your father's name and what he looks like. You get the feeling that you should go to the university where your father studied. You might find more clues about your past there. You will have to discuss this with John.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
@@ -689,7 +688,7 @@ Schade, die CD enthält nichts weiter als eine digitale Version des Jahrbuchs. W
   setup.story()
 </script>
 
-Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitzen bereits John und Josie. Josie ist in ein Buch vertieft, schaut aber kurz auf um dich mit einem Lächeln zu begrüßen, ehe sie sich wieder ihrem Buch zuwendet. Du erzählst John von deinem Wunsch, die Hochschule zu besuchen, doch entgegen deinen Erwartungen ist John damit nicht wirklich einverstanden. Er meint, dass es zu gefährlich ist, da niemand weiß, ob du gesucht wirst oder was dir überhaupt zugestoßen ist, auch wenn er versteht, warum du das möchtest. Dann als John sich bereit macht, um dir wohl einen Vortrag über die Konsequenzen zu halten, fällt Josie ihm mit „John, jetzt komm bitte mal etwas runter“, ins Wort. Sie hat ihr Buch zugeklappt. John schaut sie an und nickt ihr zu, um ihr zu verdeutlichen, dass er zuhört. Josie atmet durch und beginnt: „Ich verstehe warum du das für eine schlechte Idee hältst, John. Das Problem ist, dass wir nicht darauf hoffen können, dass NAME seine Erinnerungen zurückerlangt, wenn er sich nur bei uns im Hauptquartier aufhält. Wir haben ihn gefunden und in Sicherheit gebracht und nun sind wir sein Zuhause und seine Familie“. Ihr Blick richtet sich zu dir. „Tut mir leid NAME, wir sind natürlich nicht deine echte Familie oder wollen sie ersetzen. Wir wissen nicht, was mit deiner…“, meint Josie verlegen als du sie unterbrichst um ihr zu versichern, dass alles in Ordnung ist und dass sie für dich eine Familie sind. Sie lächelt und wendet sich wieder zu John. „Was ich sagen wollte ist, dass wir mitkommen sollten um für Sicherheit zu sorgen. Das ist alles“. John verschränkt die Arme und meint leicht amüsiert, dass er jetzt sowieso nicht mehr gegen euch beide ankommt und er alles in die Wege leiten wird, damit wir in wenigen Tagen abreisen können.
+You do a few more chores and head to lunch. John and Josie are already sitting there. Josie is sucked into a book, but looks up briefly to greet you with a smile on her face before turning back to her book. You tell John about your desire to visit your dad's college, but to your surprise, John doesn't really agree. He thinks it's too dangerous, since no one knows what even happened to you. You might even be wanted. He understands your intentions, but wants to keep you safe. Then, as John goes on with his lecture about being safe, Josie cuts him off with, "John, now please calm down a bit." She has closed her book. John looks at her and nods to let her know he's listening. Josie takes a breath and begins, "I understand why you think this is a bad idea, John. The problem is that we can't hope to get $username's memories back if he's just staying with us at headquarters. We found him and brought him to safety, and now we are his home and his family. "Her eyes turn to you. "I'm sorry $username of course we are not your real family or trying to replace them. We don't know what happened to you...", Josie says sheepishly as you interrupt her to assure her that everything is fine and that they are family to you. She smiles and turns back to John. "What I was going to say is that we should come with you to make sure everything is safe. That's all." John crosses his arms and says, slightly amused, that he can't beat the two of you now anyway. He will get everything is in place, so we can leave in a few days.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
 
@@ -726,9 +725,7 @@ Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitze
   setup.story()
 </script>
 
-Ihr habt Glück, die Hochschule ist nur Stunden entfernt, dennoch müsst ihr früh morgens los, um bis zum Abend wieder im Hauptquartier zu sein. Für den Ausflug wurde Proviant besorgt und ins Auto verladen. Ein paar zusätzliche Männer begleiten euch. Um dir die Langeweile auf der Fahrt zu vertreiben, hast du dir von Josie ein Buch ausgeliehen. 
-Nach der stundenlangen Fahrt seid ihr endlich an der Hochschule angekommen. Der Campus wirkt ziemlich groß und doch ist er verhältnismäßig leer. Du schließt daraus, dass wohl Semesterferien sein müssen und der Campus deswegen so leer ist. 
-Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Informatik studiert hat, ist es wohl das Gebäude der Informatik-Fakultät. Der Campus ist gut ausgeschildert, daher habt ihr keine Probleme das Gebäude zu finden. Als ihr davorsteht, merkst du, dass es ein relativ modernes Gebäude ist. Ihr betretet es und kommt in ein Foyer. An den Wänden im Foyer hängen einige Auszeichnungen. Du gehst zu denen hin, um sie näher zu betrachten. Verwundert stellst du fest, dass einige dieser Auszeichnungen deinen Namen enthalten. Es sind lauter Auszeichnungen zu hervorragenden Leistungen bei Hackathons. Auf einer Auszeichnung steht sogar der Name deines Vaters, auch wegen eines Hackathons.
+You are lucky the college is only hours away, yet you have to leave early in the morning to be back at headquarters by evening. Food has been prepared for the trip and loaded into the car. A few extra men will accompany you. You borrowed a book from Josie to make the drive pass quickly. After the hour-long drive, you finally arrive at the university. The campus seems quite large, yet it is relatively empty. You suppose that it must be semester break. You look for the building of the faculty to which your father belonged. Since he studied computer science, it is probably the building of the computer science faculty. The campus is well-marked, so you should have no trouble finding it. As you stand in front of it, you notice that it is a relatively modern building. You enter it and come to a foyer. There are some awards hanging on the walls in the foyer. You walk over to them to take a closer look. Amazed, you notice that some of these awards have your name on them. They are all awards for outstanding achievements in hackathons. One award even has your father's name on it, also because of a hackathon.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
 
@@ -765,8 +762,7 @@ Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Info
   setup.story()
 </script>
 
-Das ändert deine Pläne. Du teilst den anderen mit, dass ihr das Prüfungsamt suchen solltet. Da du scheinbar selber an dieser Hochschule studiert hast, muss das Prüfungsamt also Informationen über dich haben und genau diese willst du einsehen. 
-Das Prüfungsamt habt ihr schnell im Obergeschoss des Gebäudes gefunden und zu deinem Glück hat, wer auch immer gerade arbeitet, seinen Arbeitsplatz verlassen und die Tür nicht abgeschlossen. Du sagst Josie und John, dass sie bitte Wache stehen sollen. Du setzt dich an den PC und siehst das Login-Fenster. Du weißt genau, dass dieser PC nicht mehr lange gesperrt sein wird.
+This changes your plans. You tell the others that they should look for the examination office. Since you seem to have studied at this university yourself, the examination office must have information about you, and that's exactly what you are looking for. You quickly find the examination office on the top floor of the building, and fortunately for you, whoever is working at the moment has left his workstation and left the door unlocked. You tell Josie and John to please stand guard. You sit down at the PC and see the login window. You know very well that this PC will not be locked for much longer.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
