@@ -23,7 +23,7 @@ Take each number and calculate mod 42 then map it to the following character set
 </ul>
 
 <div>
-  The decrypted message will be your flag. Please insert your flag in the brackets according to this format: puzzelPiece&#123;FLAG-HERE}
+  The decrypted message will be your flag. Please insert your flag in the brackets according to this format: puzzlePiece&#123;FLAG-HERE}
 
   You can use a python online compiler like this one: <a href="https://www.online-python.com/" target="_blank">python-online</a>. If you prefer you can choose a different programming language. 
 </div>
@@ -115,8 +115,8 @@ Please enter the flag here:
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-        $success = "W+B0v4uj7svg6FwDAbeOPtLK3dw0cApwW2wvtYSnV4JFzmu/bUAQH5J7GY9I+bGKYdINzRagRavvdXuLFLYbtg==" == hashed
-        var success = "W+B0v4uj7svg6FwDAbeOPtLK3dw0cApwW2wvtYSnV4JFzmu/bUAQH5J7GY9I+bGKYdINzRagRavvdXuLFLYbtg==" == hashed
+        $success = "j0fB68fmORo8Ij+LN7xLVpXhDRkypxtwndMKWyWg8w1i2Lbyc6G+xxmYF+HLeoC3M282Zgeu1yacOblVBbCYTQ==" == hashed
+        var success = "j0fB68fmORo8Ij+LN7xLVpXhDRkypxtwndMKWyWg8w1i2Lbyc6G+xxmYF+HLeoC3M282Zgeu1yacOblVBbCYTQ==" == hashed
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \

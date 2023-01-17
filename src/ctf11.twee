@@ -15,7 +15,7 @@ Usg wlees,
 
 qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
 Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
-Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
+Czmdwe jfis xhr ttdk iahw syzmzmSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
 
@@ -36,7 +36,7 @@ key: NoIdea
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Use the internet to find a tool that will help you detect the encryption method used in this challange.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Remember to enter the flag in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Remember to enter the flag in the following format: puzzlePiece&lbrace;enterFlagHere&rbrace;")]
   </div>
 </div>
 
@@ -86,8 +86,8 @@ Please enter the flag here:
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
-        $success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
-        var success = "oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==" == hashed
+        $success = "nlntdgJzFCnZID6EUCqRzVdK1CmYJpCZ+AvOLyMf5tLn5byhu+EwmFWLyiWDGlWjKlJZ6qEAFYxa6Ux8RH+dmA==" == hashed
+        var success = "nlntdgJzFCnZID6EUCqRzVdK1CmYJpCZ+AvOLyMf5tLn5byhu+EwmFWLyiWDGlWjKlJZ6qEAFYxa6Ux8RH+dmA==" == hashed
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \

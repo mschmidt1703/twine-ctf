@@ -77,7 +77,7 @@ This will not require you to have a look at the source code of this page.")
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you tried working with char arrays in java? Does the sequence of the lines inserting characters in the array affect the sequence in which the characters are saved?")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "When you find the flag, enter it in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "When you find the flag, enter it in the following format: puzzlePiece&lbrace;enterFlagHere&rbrace;.")]
   </div>
 </div>
 
@@ -143,8 +143,8 @@ Please enter the flag here:
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
         
-        $success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
-        var success = "j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==" == hashed
+        $success = "HGuUGlzqByVl3/GEK6c9lcV4NrMhr9j0ga5P7KOQW1ifbDNRgLRz3hja7DUZ+UIXILBa9fxYqc6TOlLnD/bhrg==" == hashed
+        var success = "HGuUGlzqByVl3/GEK6c9lcV4NrMhr9j0ga5P7KOQW1ifbDNRgLRz3hja7DUZ+UIXILBa9fxYqc6TOlLnD/bhrg==" == hashed
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \

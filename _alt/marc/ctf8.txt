@@ -8,7 +8,7 @@ Take each number mod 42 and map it to the following character set:
 36-40 are this special characters (#!"{})
 and 42 is an underscore
 
-Your decrypted message will be your flag, please wrap the flag into puzzelPiece{FLAG_HERE}
+Your decrypted message will be your flag, please wrap the flag into puzzlePiece{FLAG_HERE}
 You can use a python online compiler like this https://www.online-python.com/ or any other programming language. 
 
 

@@ -24,7 +24,7 @@ If you can't find what you're looking for on a surface level, then you probably 
   (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fifth Shelf</button>")[(alert: "Yup... I did all of that for nothing :(")]
 </div>
 
-<div style="visibility: hidden;"> puzzelPiece&#123;og9XEhgLE2&#125; </div> 
+<div style="visibility: hidden;"> puzzlePiece&#123;og9XEhgLE2&#125; </div> 
 
 (set: _info to "To pass this challange you need to find the hidden flag. 
 This will require you to have a look at the source code of this page. ")
@@ -107,8 +107,8 @@ Please enter the flag here:
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
 
-        $success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
-        var success = "CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==" == hashed
+        $success = "6jEgVXCIuImNK+/b5SSzlJy56t7zh5lDZCUXfU2p3qXWo+bcLhw3g97CSlF9MciiOFB/BlRY6aPpogb4Q1Etug==" == hashed
+        var success = "6jEgVXCIuImNK+/b5SSzlJy56t7zh5lDZCUXfU2p3qXWo+bcLhw3g97CSlF9MciiOFB/BlRY6aPpogb4Q1Etug==" == hashed
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \
