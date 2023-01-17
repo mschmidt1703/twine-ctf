@@ -160,9 +160,7 @@ Please enter the flag here:
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-		console.log(hashed)
         $success = "w7Isdm4u0IElu2bOoYpPeGNauVgeva2AaUnx7zlf9uUZ/H6VRE4u7tOxwF1rGzlIuQ2ApSoy1FUErwiCT+ElTw==" == hashed;
-        var success = "w7Isdm4u0IElu2bOoYpPeGNauVgeva2AaUnx7zlf9uUZ/H6VRE4u7tOxwF1rGzlIuQ2ApSoy1FUErwiCT+ElTw==" == hashed;
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag! \n _postMsg") \
