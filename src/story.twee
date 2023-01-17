@@ -1028,7 +1028,13 @@ After the Netflix evening, you say goodbye and watch some tutorials on decryptin
   setup.story()
 </script>
 
-With the help of the tutorial, you could decode the string. It is an IP address. The IP address leads to a web page that describes a compression and decompression algorithm. You black out again, and you see yourself sitting in front of your PC. The nights pass by like a time lapse until you realize that you finally did it. You run performance tests that show that the algorithm is abnormally efficient.
+With the help of the tutorial, you could decode the string. It is an IP address. \
+The IP address leads to a web page that describes a compression and \
+decompression algorithm. 
+
+You black out again, and you see yourself sitting in front of your PC. The \
+nights pass by like a time lapse until you realize that you finally did it. You \
+run performance tests that show that the algorithm is abnormally efficient.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
@@ -1065,7 +1071,13 @@ With the help of the tutorial, you could decode the string. It is an IP address.
   setup.story()
 </script>
 
-When you come back to yourself, you realize that you wrote and programmed the algorithm described on the website. So, you search the Internet for similar algorithms, but you quickly realize that there are none as efficient as yours. You wonder if this algorithm could relate to the reason why you were found unconscious by the others. That's why you're going to keep this to yourself for now.
+When you come back to yourself, you realize that you wrote and programmed the \
+algorithm described on the website. 
+
+So, you search the Internet for similar algorithms, but you quickly realize \
+that there are none as efficient as yours. You wonder if this algorithm could \
+relate to the reason why you were found unconscious by the others. That's why \
+you're going to keep this to yourself for now.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
@@ -1098,7 +1110,8 @@ When you come back to yourself, you realize that you wrote and programmed the al
 :: 5.x.p {"position":"600,2400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-After another hour of not finding any search results, you decide to resort to other methods: The Darknet. But how do you get to the Darknet? 
+After another hour of not finding any search results, you decide to resort to \
+other methods: The Darknet. But how do you get to the Darknet? 
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
@@ -1155,8 +1168,12 @@ After another hour of not finding any search results, you decide to resort to ot
 </script>
 
 You made it to the Darknet, and it was easier than you thought!
-During your ongoing research, you discover many things that you don't want to know about. Unfortunately, your search remains unsuccessful for the time being.
-You decide to search again and again over the next few days. Maybe you didn't enter the right search parameters.
+
+During your ongoing research, you discover many things that you don't want to \
+know about. Unfortunately, your search remains unsuccessful for the time being.
+
+You decide to search again and again over the next few days. Maybe you didn't \
+enter the right search parameters.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
@@ -1193,10 +1210,20 @@ You decide to search again and again over the next few days. Maybe you didn't en
   setup.story()
 </script>
 
-After a few days, you can come across a blog post. This one is about 3 years old. In the post, someone is looking for efficient compression algorithms and offers a lot of money for it. Some comments under the post point out that if there is such an algorithm, it better not be published everywhere, otherwise it would fall into the hands of a company called AGT.
+After a few days, you can come across a blog post. This one is about 3 years \
+old. In the post, someone is looking for efficient compression algorithms and \
+offers a lot of money for it. Some comments under the post point out that if \
+there is such an algorithm, it better not be published everywhere, otherwise \
+it would fall into the hands of a company called AGT.
+
 You take it as a well-intentioned hint.
-You read through other comments, and one comment contains a file. Actually, it is naive to download any files from the Darknet, but your gut tells you to do just that.
-The downloaded file is encrypted. So, to view the content, you need to decrypt it.
+
+You read through other comments, and one comment contains a file. Actually, it \
+is naive to download any files from the Darknet, but your gut tells you to do \
+just that.
+
+The downloaded file is encrypted. So, to view the content, you need to decrypt \
+it.
 
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
@@ -1252,15 +1279,55 @@ The downloaded file is encrypted. So, to view the content, you need to decrypt i
   setup.story()
 </script>
 
-When you decrypt the file, a directory opens that contains a lot of files. So you scroll through the directory and discover a tall, powerfully built man on a thumbnail of a png file. You open the image and you black out.
-You are sitting in a café when a man approaches you. He skates your hand and introduces himself as Mr. Aaron Grayson. He asks you if he can sit down for a moment and you politely gesture to the chair across from you. He tells you that he owns a software company and that he heard about your algorithm.
-After the small conversation with Mr. Grayson he hands you his business card and you assure him that you will listen to his offer.
-Now you are sitting in a rented office in a high-rise building. You are suspicious of the situation. After a friendly greeting, he leads you into a conference room where his lawyer is already sitting. After you sit down across from the lawyer and Mr. Grayson, the lawyer slides you the contract with the offer. You open the contract and read it over. The offer states that you will receive 5.5 million euros and that you must sign a non-disclosure agreement and assign all patent rights. When you have finished reading the contract, you close it. On the first page of the contract, is the name of the company: Aaron Grayson Technologies...AGT.
-You feel uneasy, so you ask Mr. Grayson to tell you what your algorithm will be used for and that you will need a proof of that. Mr. Grayson tells you that this is not possible because it is a company secret. You notice how his facial expressions and gestures change, which confirms that something suspicious is going on.  Suddenly, he doesn't seem so friendly. You tell him that you are also willing to sign a confidentiality agreement, especially since you would know a company secret anyway because it is your algorithm. You make it clear that this is non-negotiable. 
-He starts nervously grinding his teeth, and tells you that he plans on using your algorithm to send software components more easily, since your compression algorithm would make the size of the files much smaller. You realize that he is trying to disguise his true intention, since it would theoretically also be possible to compress and send malicious malware, and you fear that this is exactly his plan.
+When you decrypt the file, a directory opens that contains a lot of files. So \
+you scroll through the directory and discover a tall, powerfully built man on a \
+thumbnail of a png file. You open the image and you black out.
 
-You think about of the blog posts you wrote on the Darknet to see if anyone has information about the company. You had made a comment under a different account, containing a file with all the information you could find about AGT and Mr. Grayson. This is your insurance in case something should happen to you.
-You come across very determined to Mr. Grayson "I am sorry Mr. Grayson, but we will never be able to come to any agreement. I have seen through your intentions and cannot ethically represent them." You get up and go to the door. As you are at the door you hear something bang, and he yells, "You will regret this, I will make sure of it myself if you leave now." You stare into his eyes and say, "The main thing is that my algorithm will never get in your hands" and leave.
+You are sitting in a café when a man approaches you. He skates your hand and \
+introduces himself as Mr. Aaron Grayson. He asks you if he can sit down for a \
+moment and you politely gesture to the chair across from you. He tells you that \
+he owns a software company and that he heard about your algorithm.
+
+After the small conversation with Mr. Grayson he hands you his business card \
+and you assure him that you will listen to his offer.
+
+Now you are sitting in a rented office in a high-rise building. You are \
+suspicious of the situation. After a friendly greeting, he leads you into a \
+conference room where his lawyer is already sitting. After you sit down across \
+from the lawyer and Mr. Grayson, the lawyer slides you the contract with the \
+offer. You open the contract and read it over. The offer states that you will \
+receive 5.5 million euros and that you must sign a non-disclosure agreement and \
+assign all patent rights. When you have finished reading the contract, you \
+close it. On the first page of the contract, is the name of the company: Aaron \
+Grayson Technologies...AGT.
+
+You feel uneasy, so you ask Mr. Grayson to tell you what your algorithm will be \
+used for and that you will need a proof of that. Mr. Grayson tells you that \
+this is not possible because it is a company secret. You notice how his facial \
+expressions and gestures change, which confirms that something suspicious is \
+going on. Suddenly, he doesn't seem so friendly. You tell him that you are also \
+willing to sign a confidentiality agreement, especially since you would know a \
+company secret anyway because it is your algorithm. You make it clear that this \
+is non-negotiable. 
+
+He starts nervously grinding his teeth, and tells you that he plans on using \
+your algorithm to send software components more easily, since your compression \
+algorithm would make the size of the files much smaller. You realize that he is \
+trying to disguise his true intention, since it would theoretically also be \
+possible to compress and send malicious malware, and you fear that this is \
+exactly his plan.
+
+You think about of the blog posts you wrote on the Darknet to see if anyone has \
+information about the company. You had made a comment under a different \
+account, containing a file with all the information you could find about AGT \
+and Mr. Grayson. This is your insurance in case something should happen to you.
+
+You come across very determined to Mr. Grayson "I am sorry Mr. Grayson, but we \
+will never be able to come to any agreement. I have seen through your intentions \
+and cannot ethically represent them." You get up and go to the door. As you are \
+at the door you hear something bang, and he yells, "You will regret this, I \
+will make sure of it myself if you leave now." You stare into his eyes and say, \
+"The main thing is that my algorithm will never get in your hands" and leave.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
@@ -1298,7 +1365,10 @@ You come across very determined to Mr. Grayson "I am sorry Mr. Grayson, but we w
 </script>
 
 You open your eyes and wonder what kind of messy situation you ended up in. 
-Now you realize what your algorithm could do in the wrong hands and wonder if Mr. Grayson is to blame for your memory loss and what happened after that encounter.
+
+Now you realize what your algorithm could do in the wrong hands and wonder if \
+Mr. Grayson is to blame for your memory loss and what happened after that \
+encounter.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
 
@@ -1335,8 +1405,12 @@ Now you realize what your algorithm could do in the wrong hands and wonder if Mr
   setup.story()
 </script>
 
-So you shut down your PC and go to bed. You think about everything again, but then fall asleep from exhaustion.
-While you sleep, your brain works at full speed to process the information overload that you experience today. You have a weird dream lead to a safe, and on this safe is a manual that tells you how to break it open.
+So you shut down your PC and go to bed. You think about everything again, but \
+then fall asleep from exhaustion.
+
+While you sleep, your brain works at full speed to process the information \
+overload that you experience today. You have a weird dream lead to a safe, and \
+on this safe is a manual that tells you how to break it open.
 
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
