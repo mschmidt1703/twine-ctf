@@ -726,11 +726,9 @@ Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitze
   setup.story()
 </script>
 
-•	Danach
-o	Du überlegst, was du vor dem Mittagessen tun sollst
-o	Du planst John von der Erinnerung zu erzählen
-o	Und dass du dahin möchtest
-•	Konversation beim Mittag
+Ihr habt Glück, die Hochschule ist nur Stunden entfernt, dennoch müsst ihr früh morgens los, um bis zum Abend wieder im Hauptquartier zu sein. Für den Ausflug wurde Proviant besorgt und ins Auto verladen. Ein paar zusätzliche Männer begleiten euch. Um dir die Langeweile auf der Fahrt zu vertreiben, hast du dir von Josie ein Buch ausgeliehen. 
+Nach der stundenlangen Fahrt seid ihr endlich an der Hochschule angekommen. Der Campus wirkt ziemlich groß und doch ist er verhältnismäßig leer. Du schließt daraus, dass wohl Semesterferien sein müssen und der Campus deswegen so leer ist. 
+Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Informatik studiert hat, ist es wohl das Gebäude der Informatik-Fakultät. Der Campus ist gut ausgeschildert, daher habt ihr keine Probleme das Gebäude zu finden. Als ihr davorsteht, merkst du, dass es ein relativ modernes Gebäude ist. Ihr betretet es und kommt in ein Foyer. An den Wänden im Foyer hängen einige Auszeichnungen. Du gehst zu denen hin, um sie näher zu betrachten. Verwundert stellst du fest, dass einige dieser Auszeichnungen deinen Namen enthalten. Es sind lauter Auszeichnungen zu hervorragenden Leistungen bei Hackathons. Auf einer Auszeichnung steht sogar der Name deines Vaters, auch wegen eines Hackathons.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
 
@@ -760,67 +758,15 @@ o	Und dass du dahin möchtest
 </style>
 
 
-:: 3.3.p {"position":"600,1600","size":"100,100"}
+:: 3.x.p {"position":"600,1600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.story()
 </script>
 
-•	Vorbereitung auf die Fahrt
-•	Während der Fahrt
-•	Ankunft an der Universität 
-o	Alles ist relativ leer
-	Scheint eine große Universität zu sein
-	Sind wohl Semesterferien
-o	Suche nach dem Gebäude der Fakultät, der dein Vater angehörte
-o	Im Gebäude
-	An den Wänden findest du Auszeichnungen
-•	Sowohl von deinem Vater als auch von dir
-•	Du hast lauter Aufzeichnungen für das Belegen von Hackathons
-
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
-
-<style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-  }
-
-  * {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
-  }
-</style>
-
-
-:: 3.x.p {"position":"800,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<script>
-  setup.story()
-</script>
-
-o	Geht zum Prüfungsamt
-	Du hast ja scheinbar selber an dieser Hochschule studiert
-•	Daher muss es hier Informationen über dich geben
-	Das Büro des Prüfungsamtes ist offen und es ist keiner drin
-•	Scheinbar ist die Person wohl Kaffee holen gegangen
-	Eine Intuition sorgt dafür, dass du dich an den PC setzt
-•	Gesperrt, aber du weißt, dass der das nicht mehr lange sein wird  CTF
+Das ändert deine Pläne. Du teilst den anderen mit, dass ihr das Prüfungsamt suchen solltet. Da du scheinbar selber an dieser Hochschule studiert hast, muss das Prüfungsamt also Informationen über dich haben und genau diese willst du einsehen. 
+Das Prüfungsamt habt ihr schnell im Obergeschoss des Gebäudes gefunden und zu deinem Glück hat, wer auch immer gerade arbeitet, seinen Arbeitsplatz verlassen und die Tür nicht abgeschlossen. Du sagst Josie und John, dass sie bitte Wache stehen sollen. Du setzt dich an den PC und siehst das Login-Fenster. Du weißt genau, dass dieser PC nicht mehr lange gesperrt sein wird.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
@@ -876,22 +822,11 @@ o	Geht zum Prüfungsamt
   setup.story()
 </script>
 
-•	Du bist eingeloggt
-o	Glücklicherweise ist die Datenbank mit allen wichtigen Informationen für Studierende geöffnet
-o	Du suchst nach deinen Namen und liest die Einträge
-	Gute Noten, einige überdurchschnittlich, manche nicht so gut
-	Zeugnis und Ergebnisse der Hackathons
-•	Flashbacks
-o	Viele kleine Flashbacks die nacheinander direkt ablaufen
-	Inhalte
-•	Was du studiert hast?
-o	Informatik
-•	Was hat dich in diesem Sinne zu den Auszeichnungen gebracht?
-o	Besonders gute Leistungen in den Hackathons
-•	Was du nach dem Studium gemacht hast?
-o	Als Freelancer gearbeitet
-•	Resultat
-o	Du erinnerst dich an eine kryptische Zeichenfolge
+Klasse, du konntest den PC entsperren. Glücklicherweise hat die Person sogar das Fenster offengelassen, mit dem auf die Datenbank der Studierenden zugegriffen werden kann. Du suchst also nach deinem Namen und liest den entsprechenden Eintrag. Du hattest überwiegend gute Noten und dein Zeugnis enthält Anmerkungen zu deinen Leistungen bei den Hackathons.
+Dann wird dir wieder schwarz vor Augen und viele kurze Momente laufen nun wie ein Film vor deinen Augen ab. Deine Immatrikulation, Einblicke in den Studierendenalltag, die Abgabe deiner Thesis, dein Abschluss und die Überreichung deiner Bachelor-Urkunde. Danach siehst du noch eine Immatrikulation und mehr Studierendenalltag. Du bist verwirrt. 
+Als nächstes siehst du, dass du einen Briefumschlag in einen Kasten wirfst. Auf diesem Briefumschlag steht: Abgabe Master-Thesis für den Studiengang IT-Sicherheit. Dann stehst du auf einer Bühne und bekommst die Master-Urkunde überreicht und schaut in die Zuschauermenge, wo sich deine Eltern von ihren Plätzen erhoben haben und dir laut zujubeln.
+Dann sitzt du in einem Arbeitszimmer und telefonierst: „Keine Sorge, Mama, mit meinen Qualifikationen ist es wirklich kein Problem selbstständig zu sein. Du wirst es schon sehen.“
+Danach wird alles schwarz und eine kryptische Zeichenfolge erscheint.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
@@ -928,13 +863,9 @@ o	Du erinnerst dich an eine kryptische Zeichenfolge
   setup.story()
 </script>
 
-•	Notieren der Notiz und Spuren verwischen
-o	Nimmst dir heimlich, sodass die anderen es nicht merken einen Stift und notierst die Nummer
-o	Dann löscht du die eben getätigte Suche 
-o	Öffnest die Fenster, die vorher offen waren
-o	Sperrst den Pc wieder, damit niemand etwas merkt
-o	Du hast dieses Gefühl, dass irgendwas nicht in Ordnung ist
-o	Ihr verlasst das Büro ohne, dass es irgendwer mitbekommen hat
+Du bist zurück in der Realität. Es ist nur ein kurzer Moment vergangen. Du nimmst dir einen Zettel und einen Stift, die du auf dem Schreibtisch gefunden hast und notierst dir die Zeichenfolge. Danach steckst du den Zettel in deine Tasche. 
+Nun musst du deine Spuren verwischen. Du löscht den Sucheintrag aus dem Suchverlauf der Datenbank, verschiebst alle Fenster auf dem PC so wie sie zuvor waren, sperrst den PC und verlässt das Büro des Prüfungsamts mit John und Josie. Als ihr gerade um die nächste Ecke verschwunden seid, konntest du Schritte hören, die sich wohl vom anderen Ende des Ganges Richtung Prüfungsamt bewegen. Hättest du ein wenig länger gebraucht, wärt ihr erwischt worden.
+Ihr verlasst das Gebäude und geht zum Auto.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
 
@@ -971,19 +902,8 @@ o	Ihr verlasst das Büro ohne, dass es irgendwer mitbekommen hat
   setup.story()
 </script>
 
-•	Auf der Rückfahrt
-o	Spieler ist nachdenklich
-	Insbesondere wegen der Zeichenfolge
-	Kannst halt erstmal nichts damit anfangen
-o	Josie und er startet einen Dialog
-•	Dialog
-o	Josies beste Freundin ist verschwunden
-	Seit drei Jahren
-	Immer viel unterwegs 
-•	Wieder zurück
-o	Recherche über sich selbst im Internet
-	Nichts, was er bisher nicht schon erfahren hatte
-o	Schlafen gehen
+Während der Rückfahrt bist du sehr nachdenklich, weil du mit dieser Zeichenfolge nichts anfangen kannst. Den anderen hast du nur erzählt, dass du definitiv an dieser Hochschule studiert hast. Nach einer Weile hast du keine Lust mehr über die Zeichenfolge nachzudenken und schaust aus dem Fenster, bis du mit Josie ins Gespräch kommst.
+Während des Gesprächs erzählt dir Josie, dass sie eine beste Freundin hat und dass diese auch seit etwa 3 Jahren verschwunden ist. Du fragst Josie, warum sie dann immer noch über ihre Freundin redet, als wäre sie noch hier. Anhand von Josies Blick erkennst du, dass diese Frage unsensible war und entschuldigst dich. Josie gesteht dir, dass sie einfach weiß, dass ihre beste Freundin noch am Leben und irgendwo da draußen ist. Während Josie das sagte, begann sie aus dem Fenster des Autos zu schauen. Sie lächelt ein wenig. Dann schaut Josie wieder zu dir und sagt, dass sie sich sicher ist, dass du sie gemocht hättest. Dabei fügt Josie hinzu, dass ihre Freundin ein wenig älter als sie ist und somit wohl auch in meinem Alter wäre. Du lächelst, und fragst, ob die Freundin denn auch im Hauptquartier gearbeitet hat. Josie lacht und verneint dies. Ihre Freundin hätte mit ihrem Job nichts anfangen können. Sie ist als Beraterin für IT-Unternehmen tätig gewesen und deswegen andauernd umhergereist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
 
@@ -1020,15 +940,10 @@ o	Schlafen gehen
   setup.story()
 </script>
 
-•	Wieder zurück
-o	Recherche über sich selbst im Internet
-	Nichts, was er bisher nicht schon erfahren hatte
-o	Schlafen gehen
-•	Am nächsten Tag
-o	Verschlafen
-o	Aufgaben erledigen
-•	Abendessen
-o	Experiment mit Schokoküssen
+Mitten in der Nacht erreicht ihr das Hauptquartier. Nachdem ihr das Auto ausgeladen und noch eine Kleinigkeit gegessen habt, verschwindet jeder zum Schlafen auf sein Zimmer. 
+Am nächsten Tag wachst du erst am späten Nachmittag auf.  Da du keine Aufgaben hast, recherchierst du den ganzen Nachmittag im Internet ein wenig über dich. Jedoch kannst du nichts finden, was du nicht schon wusstest und da es bereits Zeit zum Abendessen war.
+Als du in die Kantine kommst, stehen Josie, John und Rob um einen Tisch. Rob präsentiert sein neustes Schul-Physik-Experiment: Ein Schokokuss im Vakuum. Du stößt gerade dazu als Rob allen sein Experiment vorführen möchte. Der Schokokuss steht in einem Glasbehälter und an dem Glasbehälter ist ein Schlauch angeschlossen. Rob schließt das Ventil am Schlauch und weist alle darauf hin, jetzt ganz genau aufzupassen. 
+Im Glasbehälter wird ein Vakuum erzeugt, weswegen sich der Schokokuss aufbläht. Alle starren nun auf Rob. Nun öffnet Rob das Ventil am Schlauch wieder und der Schokokuss zieht sich wieder zusammen, da nun wieder Luft in den Glasbehälter gelangt. Du denkst dir, dass das nicht gerade spannend ist, aber um nicht unhöflich zu wirken, lächelst du. Die anderen erklären Rob dann während des Abendessens, dass sie dieses Experiment bereits in der Schule hatten und es daher nichts Spannendes mehr ist. Rob lässt sich seine Freude davon nicht nehmen.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
 
@@ -1065,15 +980,8 @@ o	Experiment mit Schokoküssen
   setup.story()
 </script>
 
-•	Nach dem Abendessen
-o	Watches some series with the others
-	Something about cryptographie
-o	Thinking about the sequence
-o	(Talking to John or Rob about it)
-o	First no idea, but then
-•	Danach
-o	So you know, that you now have to encrypt the sequence
-o	You search the internet for some tutorial about encrypting  CTF
+Nach dem Abendessen schaust du mit den anderen eine Serie. In der Serie geht es Kryptographie und verschiedene Verschlüsselungen. Während ihr die Serie schaut, holst du den Zettel aus deiner Tasche und stellst fest, dass einer der genannten Verschlüsselungsalgorithmen die Zeichenfolge entschlüsseln könnte.
+Nachdem Serienabend verabschiedest du dich und schaust in deinem Zimmer auf dem PC ein paar Tutorials zum Entschlüsseln einer Zeichenfolge.
 
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
