@@ -25,7 +25,7 @@ A search on the surface level is not enough. Further inspection is needed.
   [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
 </div>
 
-<!--puzzelPiece{og9XEhgLE2}-->
+<div style="visibility: hidden;"> puzzelPiece&#123;og9XEhgLE2&#125; </div> 
 
 (set: _info to "To pass this challange you need to find the hidden flag. 
 This will require you to have a look at the source code of this page. ")
