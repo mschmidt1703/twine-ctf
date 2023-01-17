@@ -440,10 +440,9 @@ After breakfast, you head over there. The library is large and easy to find. The
   setup.story()
 </script>
 
-Auf einmal wird dir schwarz vor Augen und du verschwindest in deinen Gedanken.
+Suddenly, you black out and disappear in your thoughts.
 
-Du bist in einem Wohnzimmer und schaust dich um. Du sitzt auf einem Sofa. Gegenüber von dir an der Wand ist ein Fernseher, auf dem gerade ein Videospiel gespielt wird. Links und rechts von dir und ein wenig weiter in den Raum rein stehen zwei weitere Sofas. Auf dem linken Sofa liegt ein Mann mit einem Kontroller in der Hand. Dieser spielt wohl gerade das Videospiel. Du kannst sein Gesicht nicht sehen, aber sowohl der Raum als auch dieser Mann kommen dir vertraut vor. Es ist dein Vater. Du schaust wieder zum Fernseher und musst lächeln. Gerade wurde ein Level abgeschlossen. 
-Auf einmal riechst du Essen und du weißt, dass deine Mutter gerade in der Küche steht. Du erkennst den Geruch. Es ist der Geruch von Spagetti Cabonara. Du hörst, wie sie deinen Namen ruft.
+You are in a living room. You start looking around. You are sitting on a sofa. Across from you on the wall is a television on which a video game is being played. To your left and right you see two sofas. On the left sofa lies a man with a controller in his hands. You can't see his face. He is probably playing the video game. Everything in this room looks familiar to you. And then your realize that is your father! You look at the TV again and a starts smiling. A level has just been completed. All of a sudden you smell food and you know that your mother is in the kitchen right now. You recognize the smell. It's the smell of spaghetti cabonara. You hear her calling your name.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
@@ -480,8 +479,10 @@ Auf einmal riechst du Essen und du weißt, dass deine Mutter gerade in der Küch
   setup.story()
 </script>
 
-Zurück in der Wirklichkeit stellst du fest, was das gerade gewesen ist: Eine Erinnerung. Du konntest dich an dein Zuhause und deine Eltern erinnern. Du erinnerst dich, dass du früher deinem Vater immer gerne dabei zugeschaut hast, wenn er Videospiele gespielt hat. Sein Gesicht und das deiner Mutter wollen dir jedoch immer noch nicht einfallen. 
-Dir fällt jedoch ein, dass Spagetti Cabonara dein Lieblingsessen ist und dass deine Mutter die besten Spagetti Cabonara überhaupt macht. Was aber noch wichtiger ist, du kannst dich wieder an deinen Namen erinnern: NAME.
+Back in reality...
+
+You realize what just happened: a memory. You now remember your home and your parents. You remember that you used to enjoy watching your father play video games. However, for some reason you have no recollection of how there faces look like.
+You do remember that spaghetti cabonara is your favorite food and that your mom is one how can cook it the best. More importantly, you remember your name: $username.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
 
@@ -518,9 +519,8 @@ Dir fällt jedoch ein, dass Spagetti Cabonara dein Lieblingsessen ist und dass d
   setup.story()
 </script>
 
-Du fragst dich, wie viel Zeit während des Erinnerns vergangen ist. Du gehst zum Eingang der Bibliothek zurück, wo du glaubst, eine Uhr gesehen zu haben. Du hattest Recht und es ist bereits Mittagszeit. Daher entschließt du dich, dass du dich zu den anderen in die Kantine begeben solltest, um mit ihnen Mittag zu essen. 
-Heute gibt es in der Kantine Schnitzel und als Nachtisch Apfelstrudel. Du holst dir eine Portion ab und setzt dich zu John, Josie und Rob an den Tisch. Josie fragt dich, ob du in der Bibliothek gefunden hast, was du suchst. Alle Blicke richten sich auf dich. Du nickst nur, weil du dir gerade den Mund vollgestopft hast. Du kaust fertig und nachdem du runtergeschluckt hast, sagst du freudestrahlend, dass du dich wieder an deinen Namen erinnern kannst und nennst ihn: NAME Reese. Gejubel bricht am Tisch aus und es werden einige Witze über die Situation gemacht.
-Die nächsten Tage unterstützt du die anderen, wo du nur kannst und erledigst die Aufgaben, die du zugeteilt bekommst. Außerdem lernst du währenddessen dein neues Zuhause und seine Leute kennen. Du fühlst dich dort sehr wohl.
+You wonder how much time has passed while remembering. You go back to the entrance of the library, where you think you saw a clock. You check out the time and it is already lunchtime. Therefore, you decide that you should join the others in the canteen to have lunch.
+Today, the canteen is serving schnitzel and apple strudel for dessert. You pick up a portion and sit down at the table with John, Josie, and Rob. Josie asks you if you found what you were looking for in the library. All eyes on you. You just nod, having just stuffed your mouth. You finish chewing and after swallowing, you cheerfully say that you can remember your name again. Your name is: $username Reese. Cheers erupt around the table and a few jokes are made about the situation. For the next few days, you assist the others in any way you can and complete the tasks you are assigned. You also get to know your new home and your roommates. You feel very comfortable there.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
 
