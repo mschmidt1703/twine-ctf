@@ -581,7 +581,7 @@ This will require you to have a look into the source code. &quot;)
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
-(set: _postMsg to &quot;Good job, I have done your first challenge&quot;) \
+(set: _postMsg to &quot;&quot;) \
 (set: $success to false) \
 
 &lt;div class=&quot;container&quot;&gt;
@@ -1298,9 +1298,9 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. 
+(set: _info to &quot;To pass this challange you need to inject XSS code in this site. In this case you should insert an &#39;alert(\&quot;XSS\&quot;)&#39; 
 This will not require you to have a look into the source code. 
-After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
+After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.&quot;)
 
 (if: $ctfs contains &quot;ctf4&quot;)[]
 (else:)[(alert: _info)]
@@ -1444,14 +1444,27 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="600,1200" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
 Congratulations you made it!
 
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected 
+into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
+send malicious code, usually in the form of a browser-side script, to another end user.
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+
+In this challenge you successfully inject a XSS.
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -1500,7 +1513,7 @@ Congratulations you made it!
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. 
+(set: _info to &quot;To pass this challange you need to inject XSS code in this site. Maybe you need to use some other html tag.
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
 
@@ -1651,14 +1664,22 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="600,1400" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 
 Congratulations you made it!
 
+This challenge showed that malicious code not only be added to a web page through a script tag,
+but also that there are other html tags that can add javascript to a web page. Like a image tag.
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;6.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -1735,7 +1756,7 @@ Congratulations you made it!
 &quot;)
 
 (set: _info to &quot;To pass this challange you need to inject JavaScript code in this page. 
-This will require you to have a look into the source code. Please check the blue icon in the lower right corner.
+This will require you to have a look into the source code, to do so, please use the light blue code button on the right. This time there is no direct user input, can you figure out how to inject a XSS. 
 After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
 
 (if: $ctfs contains &quot;ctf6&quot;)[]
@@ -1899,6 +1920,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="1000,500" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
 
 &lt;script&gt;
@@ -1907,10 +1933,14 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
+This challenge showed that even without a direct user input field it is possible to inject malicious code into a web page. 
+
+Please be careful with user input and always validate it!
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;x.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -2959,7 +2989,7 @@ please enter your name. Please note your name must be at longer then three chara
 
 (css: &quot;margin-top: 5%;&quot;)[
 [(link-repeat: &quot;&lt;p style=&#39;text-align:center&#39;&gt;&lt;button class=&#39;resetButton&#39;&gt;Safe username and start playing&lt;/button&gt;&lt;/p&gt;&quot;)[
-(if: ((length of $username) =&gt; 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
+(if: ((length of $username) &gt;= 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
 (else: )[(alert: &quot;Please remember your name must be at least three charaters long and should not contains any &#39;&lt;&gt;/&#39;&quot;)]
 ]]]
 

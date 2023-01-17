@@ -5,9 +5,9 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to inject XSS code in this site. 
+(set: _info to "To pass this challange you need to inject XSS code in this site. In this case you should insert an 'alert(\"XSS\")' 
 This will not require you to have a look into the source code. 
-After you execute XSS successfully, you will be automatically redirected to the next page.")
+After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.")
 
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
@@ -151,6 +151,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
 </style>
 
 
@@ -159,10 +164,18 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected 
+into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
+send malicious code, usually in the form of a browser-side script, to another end user.
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+
+In this challenge you successfully inject a XSS.
+
 (if: $playingStory is true)[
   [[<button class="resumeButton">Resume Story</a>->x.p]]]\
 (else:)[
-  [[Back to CTF-Overview->CTFs]]]
+  [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");

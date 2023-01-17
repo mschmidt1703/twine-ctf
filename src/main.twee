@@ -253,7 +253,7 @@ please enter your name. Please note your name must be at longer then three chara
 
 (css: "margin-top: 5%;")[
 [(link-repeat: "<p style='text-align:center'><button class='resetButton'>Safe username and start playing</button></p>")[
-(if: ((length of $username) => 3) and not ($username contains '<') and not ($username contains '/'))[(go-to: "Story")]
+(if: ((length of $username) >= 3) and not ($username contains '<') and not ($username contains '/'))[(go-to: "Story")]
 (else: )[(alert: "Please remember your name must be at least three charaters long and should not contains any '<>/'")]
 ]]]
 

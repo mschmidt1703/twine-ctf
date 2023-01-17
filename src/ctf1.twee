@@ -144,7 +144,7 @@ This will require you to have a look into the source code. ")
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
-(set: _postMsg to "Good job, I have done your first challenge") \
+(set: _postMsg to "") \
 (set: $success to false) \
 
 <div class="container">
