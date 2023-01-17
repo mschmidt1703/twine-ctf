@@ -1,4 +1,4 @@
-:: CTF 9 {"position":"400,2200","size":"100,100"}
+:: CTF 9 {"position":"800,4600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
@@ -129,7 +129,7 @@ This will not require you to have a look at the source code of this page.")
 </style>
 
 
-:: CTF9end {"position":"600,2200","size":"100,100"}
+:: CTF9end {"position":"1000,4600","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
@@ -154,7 +154,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->10.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->Memory7]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \

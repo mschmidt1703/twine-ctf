@@ -12,7 +12,7 @@ Memory Loss: Find Your Way Back
 }
 
 
-:: initMain {"position":"100,0","size":"100,100"}
+:: initMain {"position":"200,0","size":"100,100"}
 <!--only for init-->
 
 <!-- :: init [startup] -->
@@ -229,7 +229,8 @@ Memory Loss: Find Your Way Back
   Harlowe.goto(nextPage);*/
 </script>
 
-:: reloadGame {"position":"200,450","size":"100,100"}
+
+:: reloadGame {"position":"400,400","size":"100,100"}
 (set: $ctfs to (a:))
 
  /*code twice, because twine problem*/
@@ -240,7 +241,8 @@ Memory Loss: Find Your Way Back
 	sessionStorage.clear();
 </script>
 
-:: enterName {"position":"300,0","size":"100,100"}
+
+:: enterName {"position":"400,0","size":"100,100"}
 (set: $playingStory to true)
 (if: $last_passage is not 0)[(goto: $last_passage)]
 

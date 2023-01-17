@@ -1,4 +1,4 @@
-:: Story {"position":"200,400","size":"100,100"}
+:: Story {"position":"200,600","size":"100,100"}
 <link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -148,7 +148,7 @@
 </style>
 
 
-:: 1.p {"position":"200,600","size":"100,100"}
+:: 1.p {"position":"200,800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -198,18 +198,10 @@ you are scared and backs away, he backs away and crouches down. "Don't be afraid
 voice "We don't want to hurt you. It's all right. Look, I'm John and some of my colleagues, or rather \
 friends, and I found you and saved you."
 
-<!--
-Translated with www.DeepL.com/Translator (free version)
-To protect you, they took you to their headquarters, took care of you and kept you a secret to ensure your safety. 
+- Explaination Memory Loss
+- Name Thing
 
-“I don’t seem to remember anything. Who even am I?”
-To your surprise they respond, “we don’t know. We couldn’t find out who you are.”
-However, what they know for sure is that he might be in a great danger. 
-You’re tiered. You feel helpless and lost. But you can’t just sit there a do nothing about it. There is a fire burning inside of you. A strong feeling telling you to hurry up. So, you muster every single ounce of energy left inside of you and get up. 
-“Thank you for your kindness. But I need to go.” is what you tell the activists before starting your journey to uncover your past and save your future
--->
-
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -256,14 +248,34 @@ You’re tiered. You feel helpless and lost. But you can’t just sit there a do
 </style>
 
 
-:: 2.p {"position":"200,800","size":"100,100"}
+:: 1.1.p {"position":"400,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-After wondering the streets for a while, you spot a big library at the end of the street. A library seems like a good place to start you search. Over there, you can have access to many resources that will help you with your search. So, to the library you head. 
+•	Erklärungen
+o	Was die machen
+	Dürfen sie dir nicht sagen
+	Versichern dir, dass es nichts Illegales ist
+o	Beschreibung von deren Hauptquartier
+	Unterkünfte
+	Kantine
+	Krankenzimmer
+	Büros
+	OP-Zimmer
+	Dein Zimmer
+•	Mit einem eigenen PC und Internet-Anschluss
+•	Dialog
+o	Dir, John, Josie und Rob
+o	Du fragst, wie sie dich gefunden haben oder so
+o	Angebot, dass du erstmal bei denen bleiben kannst
+o	Sie wollen dich einmal komplett untersuchen um weitere Verletzungen auszuschließen
+	Ebenso eine Untersuchung deines Hirns aufgrund der Amnesie
+o	Du wirst zu deinem neuen Zimmer geführt
 
-[[<button class="startChallenge">Start Challenge->CTF 7]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.2.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -276,35 +288,534 @@ After wondering the streets for a while, you spot a big library at the end of th
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 3.p {"position":"200,1000","size":"100,100"}
+:: 1.2.p {"position":"600,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-<h1>Wait... but how can I log in to my account?</h1>
+•	Du liegst wach im Bett und sortierst deine Gedanken 
+o	Du weißt, dass du deine Erinnerungen nicht einfach so wiederbekommst, sondern dass Erinnerungen irgendwie getriggert werden müssen
+	Eine Stimme im Inneren deines Kopfes sagt dir das
+o	Ebenso weißt du, dass es auch passieren kann, dass du dich niemals an das was vorher war, erinnern kannst
+o	Du kommst zu dem Entschluss, dass du erstmal alles hinnimmst und dass das jetzt dein neues Leben ist, denn schließlich hast du keine andere Möglichkeit
+	Du weißt nicht wohin du sonst gehen sollst
+	Die Welt ist dir gerade einfach nur fremd
+	Fürs erste nimmst du Johns Angebot an, dass du bei denen bleibst und dich nützlich machst
+•	Findest das sogar Recht cool
+o	Du stellst fest, dass du trotzdem herausfinden musst, was die letzten Jahre auf der Welt passiert ist
+	Es wäre eine gute Idee alte Nachrichten zu lesen
+•	Berichterstattungen usw.
+o	Du legst dich schlafen
 
-Finding your name is a great start. But you need to learn more about yourself. So, you decide to log on to a computer and research more on the internet. It appears you already have an account at the library. You just need to find a way to enter it.
+[[<button class="startChallenge">Next->1.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.x.p {"position":"800,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Am nächsten Tag beim Frühstück
+o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein gut verwaltetes Archiv für sowas hat
+•	In der Bibliothek im Archiv 
+
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->CTF 7]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory1 {"position":"1800,1000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Du bist in einer Wohnung und schaust dich um
+o	Du bist in einem Wohnzimmer und sitzt auf einem Sofa und schaust zu einem Fernseher, auf dem ein Videospiel gespielt wird
+o	Dein Blick fällt nach links, etwas weiter zum Fernseher hin ist ein weiteres Sofa auf dem ein Mann liegt
+o	Du lächelst als du auf dem Fernseher siehst, dass er das nächste Level geschafft hat
+o	Links neben dem Sofa ist ein kleiner Tisch mit einem Tischkalender
+o	Du entdeckst den folgenden Eintrag für in ein paar Tagen:
+	<Name> Geburtstag
+o	Als nächstes riechst du Essen,
+	Es ist Cabonara und du wusstest, dass deine Mutter diese gerade in der Küche zum Abendessen zubereitet
+o	Du hörst, wie sie deinen Namen ruft
+
+[[<button class="startChallenge">Return to Story->2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.p {"position":"200,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Dir wird klar, dass das eine Erinnerung von dir sein musste
+o	Als die Erinnerung aus deinem Kopf verschwindet rufst du dir in deine Gedanken, welche Informationen du deiner Erinnerung entnehmen konntest:
+	Dein Name
+	Dein Geburtstag
+	Dein Lieblingsessen ist Cabonara
+	Deine Lieblingsfarbe ist orange
+	Du erinnerst dich daran, wie du deinem Vater immer beim Zocken zugeschaut hast
+•	Du kannst dich nicht an das Gesicht von deinem Vater erinnern, da du ihn in deiner Erinnerung nur von hinten siehst
+	Du erinnerst dich, dass deine Mutter sehr gerne gekocht hat
+•	Vor allem erinnerst du dich daran, dass nirgendwo die Cabonara so gut schmecken, wie bei ihr
+
+[[<button class="startChallenge">Next->2.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.1.p {"position":"400,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Zurück zu den anderen
+o	Du schaust auf die Uhr, die in der Bibliothek hängt
+	Mittagszeit
+	Du entscheidest dich, den anderen davon zu erzählen, dass du dich an etwas erinnern kannst
+o	Du gehst also zurück zur Kantine
+o	Holst dir Essen
+	Wiener Schnitzel und zum Nachtisch Apfelstrudel
+o	Setzt dich zu den anderen
+o	Josie fragt dich, ob du gefunden hast, wonach du suchst
+o	Du nickst, da du gerade eine Portion Essen in den Mund geschoben hast
+o	Danach fängst du an zu erzählen
+o	Die sind glücklich, dass sie jetzt deinen Namen kennen
+o	Witze
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.2.p {"position":"600,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Die nächsten Tage
+o	Machst Hilfsaktivitäten
+o	Unterstützt die anderen bei der Arbeit 
+•	Es zieht dich wieder in die Bibliothek
+o	Am Nachmittag ist es ziemlich warm und du bist bereits mit deiner Arbeit fertig
+o	Du entscheidest, dass du wieder in die Bibliothek gehst, da es dort schön kühl ist
+o	Du wanderst durch die Gänge 
+o	Bleibst bei einem Regal stehen
+	Enthält lauter ähnlich aussehender Bücher
+	Sind Jahrbücher von derselben Universität
+•	Aber Fakultätsbezogen
+	Du blätterst die ersten durch und schaust, ob außer Bilder von den Beteiligten Personen noch irgendwelche witzigen Abschnitte enthalten sind
+•	Kommentar-Abschnitte oder so
+	Dein Blick fällt auf die Jahrbücher der Informatik-Fakultät
+	Du blätterst das Neuste durch
+	Danach greifst du zu einer älteren Version
+•	Gedankenverloren blätterst du Seite für Seite um
+•	Bis du an einem Bild hängen bleibst
+o	Das Gesicht eines jungen Mannes
+	Henry ____ 
+•	Sofort richtest du dich auf
+o	Es ist dein Vater
+•	Beim Aufrichten fiel eine CD aus dem Buch
+	Du schaust dir die CD an
+•	Sie ist unbeschriftet
+•	Mehr fällt dir erstmal nicht auf
+	Du schaust wieder das Bild deines Vaters an
+•	Er lächelt
+•	Du musst deswegen auch lächeln
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 2.x.p {"position":"800,1200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Nachdem du mit Tagträumen fertig bist
+o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches deinen Vater enthält
+o	Die CD steckst du ein
+o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
+
+[[<button class="startChallenge">Next->CTF 4]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.p {"position":"200,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Review
+o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber du bist dir sicher, dass der Mann auf dem Bild dein Vater ist, alleine schon wegen des Nachnamens
+
+[[<button class="startChallenge">Next->3.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.1.p {"position":"400,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+- Decide what to do before lunch
+- Plan to tell John about it
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.2.p {"position":"400,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Danach
+o	Du überlegst, was du vor dem Mittagessen tun sollst
+o	Du planst John von der Erinnerung zu erzählen
+o	Und dass du dahin möchtest
+•	Konversation beim Mittag
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.3.p {"position":"600,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Vorbereitung auf die Fahrt
+•	Während der Fahrt
+•	Ankunft an der Universität 
+o	Alles ist relativ leer
+	Scheint eine große Universität zu sein
+	Sind wohl Semesterferien
+o	Suche nach dem Gebäude der Fakultät, der dein Vater angehörte
+o	Im Gebäude
+	An den Wänden findest du Auszeichnungen
+•	Sowohl von deinem Vater als auch von dir
+•	Du hast lauter Aufzeichnungen für das Belegen von Hackathons
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 3.x.p {"position":"800,1600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+o	Geht zum Prüfungsamt
+	Du hast ja scheinbar selber an dieser Hochschule studiert
+•	Daher muss es hier Informationen über dich geben
+	Das Büro des Prüfungsamtes ist offen und es ist keiner drin
+•	Scheinbar ist die Person wohl Kaffee holen gegangen
+	Eine Intuition sorgt dafür, dass du dich an den PC setzt
+•	Gesperrt, aber du weißt, dass der das nicht mehr lange sein wird  CTF
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
@@ -319,38 +830,46 @@ Finding your name is a great start. But you need to learn more about yourself. S
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 4.p {"position":"200,1200","size":"100,100"}
+:: Memory2 {"position":"1200,1800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-<h1>Let the search begin!</h1>
+•	Du bist eingeloggt
+o	Glücklicherweise ist die Datenbank mit allen wichtigen Informationen für Studierende geöffnet
+o	Du suchst nach deinen Namen und liest die Einträge
+	Gute Noten, einige überdurchschnittlich, manche nicht so gut
+	Zeugnis und Ergebnisse der Hackathons
+•	Flashbacks
+o	Viele kleine Flashbacks die nacheinander direkt ablaufen
+	Inhalte
+•	Was du studiert hast?
+o	Informatik
+•	Was hat dich in diesem Sinne zu den Auszeichnungen gebracht?
+o	Besonders gute Leistungen in den Hackathons
+•	Was du nach dem Studium gemacht hast?
+o	Als Freelancer gearbeitet
+•	Resultat
+o	Du erinnerst dich an eine kryptische Zeichenfolge
 
-You’re in! Naturally the first thing you want to do is to navigate to the web browser and start your search. However, this web browser is behaving weirdly. Whenever you type in your name it doesn’t give you any useful results. "Maybe the bad guy’s looking for me have restricted the search.”
-You may have forgot a lot, but you haven’t lost your computer skills. But you know how to crack it.
-
-[[<button class="startChallenge">Start Challenge->CTF 4]]
+[[<button class="startChallenge">Return to Story->4.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -363,35 +882,300 @@ You may have forgot a lot, but you haven’t lost your computer skills. But you 
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 5.p {"position":"200,1400","size":"100,100"}
+:: 4.p {"position":"200,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-<h1>I just wanna go home...  </h1>
+•	Notieren der Notiz und Spuren verwischen
+o	Nimmst dir heimlich, sodass die anderen es nicht merken einen Stift und notierst die Nummer
+o	Dann löscht du die eben getätigte Suche 
+o	Öffnest die Fenster, die vorher offen waren
+o	Sperrst den Pc wieder, damit niemand etwas merkt
+o	Du hast dieses Gefühl, dass irgendwas nicht in Ordnung ist
+o	Ihr verlasst das Büro ohne, dass es irgendwer mitbekommen hat
 
-It has been a long day and this search is taking a toll on you. You just want to go home. Now that you hacked the browser and you know you log-in data, you decide to log into your account and find out more personal information about yourself. Especially your home address. Unfortunately, it seems like the bad guys knew that you're going to do that at some point. So, they somehow gained access to your account and ruined the search function. You have no other choice but to use you XSS skills and and see what information you can retrieve. 
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.1.p {"position":"400,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Auf der Rückfahrt
+o	Spieler ist nachdenklich
+	Insbesondere wegen der Zeichenfolge
+	Kannst halt erstmal nichts damit anfangen
+o	Josie und er startet einen Dialog
+•	Dialog
+o	Josies beste Freundin ist verschwunden
+	Seit drei Jahren
+	Immer viel unterwegs 
+•	Wieder zurück
+o	Recherche über sich selbst im Internet
+	Nichts, was er bisher nicht schon erfahren hatte
+o	Schlafen gehen
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.2.p {"position":"600,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Wieder zurück
+o	Recherche über sich selbst im Internet
+	Nichts, was er bisher nicht schon erfahren hatte
+o	Schlafen gehen
+•	Am nächsten Tag
+o	Verschlafen
+o	Aufgaben erledigen
+•	Abendessen
+o	Experiment mit Schokoküssen
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 4.x.p {"position":"800,2000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Nach dem Abendessen
+o	Watches some series with the others
+	Something about cryptographie
+o	Thinking about the sequence
+o	(Talking to John or Rob about it)
+o	First no idea, but then
+•	Danach
+o	So you know, that you now have to encrypt the sequence
+o	You search the internet for some tutorial about encrypting  CTF
+
+[[<button class="startChallenge">Start Challenge->CTF 11]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory3 {"position":"1200,2200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Mithilfe des Hands-On Tutorials konntest du den Algorithmus lösen
+o	Webseite
+•	Flashback
+o	Du sitzt vorm Pc und schreibst einen Algorithmus
+o	Grund für den Algorithmus
+	Du hast eine Menge Daten auf dem Pc, die du auf deinen neuen Pc übertragen möchtest, aber kein USB-Stick oder so ist groß genug
+•	Komprimieren der Daten und Dekomprimieren
+o	Die Nächte, die du vorm Pc gesessen hast
+o	Der fertige Algorithmus
+	Die ersten Performanz-Tests
+•	Zeigen wie unglaublich dieser Algorithmus ist
+
+[[<button class="startChallenge">Return to Story->5.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 5.p {"position":"200,2400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Review der Erinnerung
+o	Okay, that’s an awesome algorithm
+•	Danach
+o	Recherchierst nach vergleichbaren Algorithmen
+	Stellst fest, dass es keinen so wie deinen gibt
+	Keeps it also a secret for now
+	Du fragst dich, ob das der Grund ist, wie du dazu kamst dort bewusstlos zu liegen und deinem Gedächtnisschwund
+o	Du recherchierst also überall weiter, um an neue Informationen zu kommen
+	Wirst nicht fündig
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 5.x.p {"position":"600,2400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+•	Die nächste Idee: Darknet
+o	Doch erstmal musst du darein kommen  CTF
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
@@ -406,39 +1190,505 @@ It has been a long day and this search is taking a toll on you. You just want to
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 6.p {"position":"200,1600","size":"100,100"}
+:: 6.p {"position":"200,2800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-Finally! You opened your account and found some information about yourself. You’re done for the day it's time to go home. Before leaving the library, you take a map of your city. You mark your route home. Lucky you! It's not a long distance. So, you walk your way back home. 
+•	Du hast es ins Darknet geschafft
+o	Leichter als gedacht, aber du scheinst es wohl drauf zu haben
+o	Während der Recherche 
+o	Entdeckst lauter Dinge von denen du nichts wissen möchtest
+o	Bleibst erstmal erfolglos
+•	Die nächsten Tage hilfst du den anderen bei den Arbeiten und recherchierst immer mal wieder
 
-You stand in front of the building where you live and you at once recognize it. You inter the building looking for your apartment feeling extremely uneasy. Since you arrived your heart is beating extremely fast. 
- 
-You know something important that changed your life forever happened here, but you can't remember it. 
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
-You end up finding your apartment in the first floor. The door is open! It seems like a tornado just went by and completely messed up the place. “It must be the bad guys who are looking for me” you say to yourself. However, its already late at night. No time to explore around now. You need to rest. Tomorrow you can start exploring around the place.
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 6.x.p {"position":"600,2800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Nach ein paar Tagen stößt du auf einen Hinweis
+o	Die Erwähnung von jemanden, der sich für effiziente Kompressionsalgorithmen interessiert hat
+o	Dieser Beitrag ist etwa 3 Jahre alt
+o	Dieser Beitrag enthält
+	Eine Datei
+	Einige gut gemeinte Hinweise, sich von AGT fernzuhalten, sollten die auf einen zukommen
+•	Was auch  
+o	Du lädst die Datei runter, in der Hoffnung, dass du an irgendwelche Informationen kommst, doch die Datei enthält einen verschlüsselten Text  CTF
+
+[[<button class="startChallenge">Start Challenge->CTF 3]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory4 {"position":"1000,3000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Was passiert?
+o	Als du den Text entschlüsselt hast, öffneten sich ein Verzeichnis
+o	Dieses Verzeichnis enthält lauter Dateien
+o	Auf dem Vorschaubild einer Bild-Datei ist ein großer, kräftig gebauter Mann zu sehen mit schwarzen Haaren und einem grau-weißen Streifen im Haar auf der rechten Seite
+•	Flashbacks werden ausgelöst
+o	Flashback 1
+	Du sitzt in einem Café als sich der Mann nährt
+	Er kommt direkt auf dich zu und stellt sich dir als Mr. Aaron Grayson vor
+	Ihm gehört eine geheime Firma, die sich mit spezieller Software auseinandersetzt
+	Er hat von deinem Algorithmus gehört
+o	Flashback 2
+	Du wählst eine Nummer von einer Visitenkarte
+	Mr. Graysons Stimme ertönt 
+	Du sagst ihm, dass du bereit bist, dir sein Angebot anzuhören
+o	Flashback 3
+	Du sitzt in einem angemieteten Büro
+•	Überhaupt nicht merkwürdig
+	Nach einer höflich freundlichen Begrüßung führt er dich in einen Konferenzraum in dem bereits sein Anwalt sitzt und nachdem du dich gegenüber von dem Anwalt und Mr. Grayson hingesetzt hast, schiebt dir der Anwalt den Vertrag mit dem Angebot zu
+•	5,5 Millionen
+•	Verschwiegenheitserklärung
+•	Und anderer Kram, der dazu gehört
+•	Du blätterst wieder auf die erste Seite und dir fällt der Name auf
+•	Aaron Grayson Technologies…AGT
+	Dich überkommt ein mulmiges Gefühl
+	Du bittest ihm, dir seine Pläne zu verraten, was er mit dem Algorithmus vorhat und dafür auch beweise brauchst
+	Er verneint dies aufgrund dessen, dass es sich um Firmengeheimnisse handelt	
+•	Dabei verändert sich schlagartig seine Mimik und Gestik
+•	Du fühlst dich in deinem Gefühl bestätigt
+	Du sagst, dass du mit der Übergabe deines Algorithmus sowieso ein Firmengeheimnis kennen würdest und du auch bereit wärst, eine Verschwiegenheitserklärung zu unterschreiben
+	Zähneknirschend verrät er dir, was er damit vorhat
+•	Die Algorithmen nutzen, um Software-Komponenten einfach übers Internet verschicken zu können, da die Datengröße dann kein Problem mehr ist
+•	Du denkst an die Antworten aus dem Beitrag aus dem Darknet
+•	Du weißt, dass das nur seine wahren Vorhaben verschleiert
+o	Viren, Angriffe
+	Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunft finden können. Ich habe ihre Absichten durchschaut und kann diese ethisch nicht vertreten und noch weniger könnte ich mein Mitwirken an ihren Vorhaben vertreten.
+	Du stehst auf und gehst zur Tür
+	Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“
+	Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst
+
+[[<button class="startChallenge">Return to Story->7.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 7.p {"position":"200,3200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Review
+o	Scheiße
+o	Mehr weißt du nicht dazu zu sagen
+o	Dafür weißt du, dass der Beitrag im Darknet also dein Beitrag war
+o	Dir wird jetzt erst bewusst, dass dein Algorithmus nicht nur höchst effizient zu sein scheint, sondern auch, was der Algorithmus in den falschen Händen anrichten könnte
+o	Fragen, die du dir stellst
+	Was ist danach passiert?
+	Ist er an deinem Gedächtnisverlust schuld?
+•	Die Fragen erschöpfen dich, während du im Bett nochmal über alles nachdenkst
+o	Müde schläfst du ein
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 7.x.p {"position":"600,3200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Traum
+o	Dein Körper mag zwar schlafen, doch dein Gehirn arbeitet auf Hochtouren die quälenden Fragen beiseite zu schieben
+o	Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitung, die dir verrät, wie du an seinen Inhalt kommst  CTF
+
+[[<button class="startChallenge">Start Challenge->CTF 10]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: Memory5 {"position":"1000,3400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Der Traum geht in Erinnerungen über
+o	Flashback 1
+	Du gehst deinem Alltag nach und fühlst dich andauernd verfolgt
+o	Flashback 2
+	Du bist abends auf dem Weg nach Hause und wirst in eine dunkle Nebengasse gezogen
+	Man schlägt auf dich 
+	Wirft dich in den Haufen Müllsäcke
+	Einer der Männer beim Gehen „Du hättest sein Angebot annehmen sollen“
+	Du wirst bewusstlos
+	Als du erwachst, tut dir alles weh
+	Du schleifst dich nach Hause
+o	Flashback 3
+	Du schaust in den Spiegel
+•	Blaues Auge
+•	Gesicht geschwollen
+•	Kratzer
+o	Flashback 4
+	Totes Tier in deinem Briefkasten
+	Du besorgst dir im geheimen eine neue Wohnung, sicherer, auf fremden Namen, damit er sie nicht finden kann
+o	Flashback 5
+	Anonymer Chat mit der Nachricht, dass als nächstes deine Liebsten dran sind
+	Du versuchst deine Eltern anzurufen, der Anruf geht nicht durch
+	Deine Eltern haben keine Handys, daher bringt SMS nichts
+o	Flashback 6
+	Du fährst zu deinen Eltern
+	Parkst etwas entfernt
+	Schleichst dich vorsichtig zum Haus
+	Es fallen zwei Schüsse und zwei in schwarz gekleidete Männer verlassen das Haus und fahren weg
+	Du rennst rein und im Wohnzimmer siehst du an der Wand zwei Einschusslöcher
+	Dir laufen tränen übers Gesicht und du rennst schnell zu deinem Wagen bevor dich jemand sieht
+
+[[<button class="startChallenge">Return to Story->8.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.p {"position":"200,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Reaction to Memory
+o	Du schreckst hoch
+o	Dein Körper ist schweißgebadet und du atmest schwer
+o	Dein Herz schlägt dir bis zum Hals
+o	Du springst auf der Stelle aus dem Bett, rennst ins Bad und übergibst dich
+o	Erschöpft sinkst du zusammen
+o	Du hältst inne, bis du dich ein wenig beruhigen konntest
+o	Du stehst auf und machst in der Dusche das Wasser an
+o	Du gehst erstmal duschen und versuchst, während das heiße Wasser an dir runterläuft, für einen Moment alles zu vergessen
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.1.p {"position":"400,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Nachdem Duschen
+o	Legst du dich wieder ins Bett
+o	Denkst über die Flashbacks nach und was dir dadurch bewusst wird
+	Du hast keine Eltern mehr
+	A. G. ist der Grund für alles
+•	Der Algorithmus darf niemals in seine Hände fallen
+o	Du musst den Algorithmus finden
+	Deine supersichere Wohnung ist das Ziel
+o	Nach dieser Erkenntnis schläfst du einfach wieder ein
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.2.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.2.p {"position":"600,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Am nächsten Tag 
+o	Nach dem Aufstehen rennst du sofort zu John und Josie
+	Du erzählst ihnen alles was passiert ist
+•	Auch vom Algorithmus
+	Beide sind geschockt
+	Du weißt, dass es viel verlangt ist, aber du bittest die beiden dir zu helfen, die Wohnung ausfindig zu machen und dich dorthin zu begleiten
+	Es werden Bedenken bezüglich der Gesamtsituation angebracht
+	Beide erkennen die Wichtigkeit und die Gefahren, sie haben bereits von A. G. gehört 
+	Sie stimmen unter der Bedingung zu, dass alle entsprechend vorbereitet sind
+•	Schießtraining und entsprechende Ausrüstung
+•	Vorbereitung 
+o	Die Ausrüstung anzuschaffen benötigte einige Tage
+o	Währenddessen gehst du mehrmals mit jeweils Josie und John zum Schießen
+	Keiner kann riskieren, dass irgendwer schutzlos in eine gefährliche Situation gerät
+	Tatsächlich rechnet ihr damit, dass ihr in eine Falle geraten könntet
+o	Zwischen den Schießtrainings hilft Josie dir dabei, die Adresse der Wohnung ausfindig zu machen, indem ihr jedes Detail, welches dir noch aus der Erinnerung einfällt, analysiert
+o	Am Mittag nach der Auslieferung der Ausrüstung habt ihr einen Volltreffer
+	Deine Wohnung ist in der Nähe der Universität
+o	Am nächsten Tag soll es losgehen
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 8.x.p {"position":"800,3600","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Wohnung
+o	Ihr parkt etwas abseits 
+o	Josie bleibt beim Wagen, um im Falle eines Falles alles für eine schnelle Flucht vorbereiten zu können 
+o	Du und John geht in die Wohnung
+o	Deine Wohnung liegt in einem alten Fabrikgebäude
+	Von außen eher unscheinbar
+	Keine Nachbarn, da die anderen Wohnungen in dem Gebäude leer stehen
+o	Das Aufbrechen der Tür war relativ leicht
+o	Ihr betretet die Wohnung
+o	Für eine Wohnung in einem Fabrikgebäude ist die Einrichtung ziemlich modern und bequem
+o	Vorsichtig geht ihr durch alle Räume 
+	Sicherstellen, dass ihr alleine in der Wohnung seid
+o	Du durchsuchst dein Arbeitszimmer während John durch die Fenster die Straße im Blick behält und den Eingang bewacht
+	Du gehst zu deinem Schreibtisch
+	Intuitiv greifst du zur ersten Schublade des sich rechts befindlichen Schubladenschranks und ziehst sie raus
+•	Du greifst unter die Schublade und ziehst einen USB-Stick hervor
+•	Du weißt genau, worum es sich bei dem USB-Stick handelt
+	In der Schublade befindet sich ein Handy
+•	Du steckst es ein
+	Du willst aufstehen als dein Blick auf ein Bild auf deinem Schreibtisch fällt
+	Auf dem Bild sind die Umrisse einer hübschen jungen Frau auf einem Aquarellhintergrund zu sehen  CTF
 
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
@@ -453,39 +1703,38 @@ You end up finding your apartment in the first floor. The door is open! It seems
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 7.p {"position":"200,1800","size":"100,100"}
+:: Memory6 {"position":"1200,3800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.story()
 </script>
 
-Now, it all coming back to you. It was a gift from your girlfriend. She drew it for you herself. The moment this memory awakens in your brain, deep grieve starts filling your heart. What happened to her. Where is she??
+•	Flashback 1
+o	Freundin
+•	Flashback 2
+o	Das Bild
+•	Flashback 3
+o	Kidnapping
+•	Flashback 4
+o	Übergabe
 
-(Continuation of the girlfriend tragedy here maybe?)
-
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
+[[<button class="startChallenge">Return to Story->9.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -498,37 +1747,33 @@ Now, it all coming back to you. It was a gift from your girlfriend. She drew it 
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 8.p {"position":"200,2000","size":"100,100"}
+:: 9.p {"position":"200,4000","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.story()
 </script>
 
-Under the ruins in your office, you find your PC. It seems like someone smashed it with a hammer. Not much of it can be salvaged. But this is not going to make you give up. You’re desperate for finding any thing that will help you remember. Your personal computer is definitely a very important piece of evidence for your search. Your pry the case of your PC open and start looking for the hard disk hoping that you can still save it. To your surprise it doesn’t look in a bad shape. You dismantle it from the ruined parts and decide to go to your activist friends for help. 
+•	Reaktion
+o	Dein Herz wird schwer als diese Erinnerungen hochkommen
+o	Doch wo ist sie jetzt?
 
-[[<button id="resume-btn" class="button is-danger is-rounded">next->9.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.1.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -541,35 +1786,250 @@ Under the ruins in your office, you find your PC. It seems like someone smashed 
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 9.p {"position":"200,2200","size":"100,100"}
+:: 9.1.p {"position":"600,4000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-“I'm sure they have the tools that will help me extract some information out of it.”
-You arrive at the headquarters hectic and stressed out. Your mood immediately changes after seeing everybody there so happy to see you again. They were worried something bad might have happened to you. You assure them that your find, but your search is far away from being done. You pull out the hard disk from your pocket and ask them if they can provide you with some equipment. And they did not disappoint. 
-After some fiddling around you manage to connect the drive to a new computer. And voila! You’re in. However, from now on, things start going south. Your disk has been tampered with. Some files are incomplete. Others are encrypted or corrupted.  Extracting information form it is not going to be an easy task. 
+•	Entdeckt
+o	John platzt ins Büro
+o	Bewaffnetes Team ist aufgetaucht
+o	Kommt zum Eingang hoch
+	Ihr müsst fliehen
+	Ihr müsst einen alternativen Weg finden
+o	Ihr verriegelt die Tür zum Büro
+o	Du schaust dich suchend in deinem Büro um
+	Irgendwie müsst ihr hier doch rauskönnen
+	John sendet währenddessen an Josie ein Notsignal
+	Am Fenster ist eine Feuerleiter
+	Aber dort wartet unten bereits ein zweites Team auch euch
+o	Dir fällt eines der Bücherregale auf
+	Auf dem Boden sind Schleifspuren zu sehen
+	Das Bücherregal lässt sich nach vorne ziehen
+	Dahinter befindet sich ein Tunnel
+o	Du machst John auf den Tunnel aufmerksam und er nickt
+o	Ihr hört, dass die Eingangstür aufgebrochen wird
+	John schaltet für Josie einen Peilsender an, damit sie euch schneller finden kann
+o	Ihr hört Stimmen
+o	Sie schwärmen in alle Räume aus
+o	Sie versuchen ins Büro zu kommen
+o	Du feuerst einen Schuss auf den Pc ab und ihr rutscht ins Dunkle
+	Du rutschst zuerst
+	John zieht das Bücherregal wieder zu
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 9.x.p {"position":"800,4000","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Flucht
+o	Auf einmal wird es etwas und ihr landet auf alten Kissen
+o	Durch Schlitze an der Wand kommt Sonnenlicht
+o	John zieht eine Taschenlampe aus seiner Jackentasche und leuchtet vorsichtig in die Richtung
+o	Es ist eine Tür, die von Innen verschlossen ist
+o	Über das Eingabefeld könnte man die Tür öffnen  CTF 
+
+[[<button class="startChallenge">Start Challenge->CTF 8]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 10.p {"position":"200,4400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Erfolgreiche Eingabe des Codes
+o	Das Türschloss entriegelt sich und John öffnet vorsichtig die Tür und überprüft die Lage
+o	Er winkt dir um dir zu signalisieren, dass du ihm folgen sollst
+	Josie ist noch nicht in der Nähe
+	Ihr rennt über die Straße und versteckt euch am Anfang der Gasse
+o	John: „Sie werden bald den geheimen Ausgang finden“, er hält kurz Inne und zieht eine Mütze aus der Tasche
+	John läuft aus der Gasse raus und biegt rechts ab, wo eine Querstraße abgeht
+	Er wirft die Mütze dahin und kommt zurück
+	„Falsche Fährten können nicht schaden.“
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->10.1.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 10.1.p {"position":"600,4400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+o	John wird durch einen Knall unterbrochen
+	Die haben die Tür aufgesprengt
+	Ihr geht in Deckung, könnt aber die andere Straßenseite gut sehen
+	Die sehen sich um
+	Einer gibt einen Funkspruch ab
+	Ein anderer entdeckt die Mütze
+	„Die ist noch warm, die muss von denen sein. Hinterher“
+	Die laufen alle in die Richtung
+o	John drückt auf seinem Armband den Knopf
+	Ihr hört ein Motorengeräusch und seht den Wagen am Anfang der Gasse vorfahren
+	Ihr könnt gerade so unbemerkt verschwinden als die anderen zurückkommen
+•	Dialog im Auto
+o	Die Erinnerungen von eben kommen zurück
+	Du holst das Bild deiner Freundin aus der Tasche
+o	Josies Blick fällt auf dich und das Bild
+	„Warum hast du ein Bild von Lizzy“
+•	Zurück im Hauptquartier
+o	Schlafen
+o	Traumlose Nacht
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->10.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 10.x.p {"position":"800,4400","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Frühstück 
+o	Ihr analysiert, was am Vortag passiert ist
+	Sie müssen irgendwie die Wohnung überwacht haben
+	Du vermutest, dass sie in den letzten drei Jahren mehr als genug Zeit hatten, diese super sichere Wohnung auszumachen
+	Zustimmung
+	John merkt an, dass die Gerüchte um AGT wohl alle wahr zu sein scheinen
+	Josie merkt an, dass es sich um AGT wohl um eine Firma für kriminelle Machenschaften handelt
+•	„Digital Mafia“, Hacker-for-Hire und Traditionelle Gangs
+	Du meinst dazu, dass die deinen Algorithmus brauchen, um mehr Umsatz machen zu können
+	John: „Konntest du denn irgendwas finden?“
+	Du erzählst vom Handy und vom Algorithmus
+	Du erzählst von deinen Erinnerungen
+	Nachdem die beiden bewusst ihr Leben aufs Spiel gesetzt haben, um dir zu helfen, solltest du ihnen gegenüber offen sein
+o	Du erwähnst, dass du nach dem Frühstück versuchen möchtest, auf die Festplatte zuzugreifen
+•	Zugriff auf die Festplatte
+o	In deinem Zimmer setzt du dich an deinen Pc und schließt die Festplatte an
+o	Wie du geahnt hast, ist die Festplatte verschlüsselt
+	Bis auf eine Datei
+o	Du öffnest die Datei  CTF
 
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
@@ -584,37 +2044,31 @@ After some fiddling around you manage to connect the drive to a new computer. An
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: 10.p {"position":"200,2400","size":"100,100"}
+:: Memory7 {"position":"1200,4600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.story()
 </script>
 
-Coming soon. Stay tuned!
+•	Flucht
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Back to the main page->MainPage]]
+[[<button class="startChallenge">Return to Story->11.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -627,32 +2081,96 @@ Coming soon. Stay tuned!
 
   /* -- General CSS -- */
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
+  h1 {
+    font-size: 3rem !important;
+  }
 
-    display: block;
-    margin: 0 auto;
+  h2 {
+    font-size: 2rem !important;
+  }
 
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
   }
 </style>
 
 
-:: x.p {"position":"400,600","size":"100,100"}
+:: 11.p {"position":"200,4800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 <script>
   setup.story()
 </script>
 
-Sorry, these CTFs haven't been implemented in the story yet...
+•	Review
+o	Du hättest es nicht gedacht, aber du hast dein Gedächtnis vollständig zurückerlangt
+o	Dir ist nun alles klar
+•	Festplatteninhalte
+o	Wie du es dir gedacht hattest, befinden sich auf der Festplatte deine Algorithmen
+o	Besser: Sogar eine komplette Kopie deines PCs
 
-Please come back later!
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->11.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 11.x.p {"position":"600,4800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Start Challenge->CTF 6]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+

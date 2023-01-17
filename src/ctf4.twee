@@ -1,4 +1,4 @@
-:: CTF 4 {"position":"400,1200","size":"100,100"}
+:: CTF 4 {"position":"800,1400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -154,13 +154,13 @@ After you execute XSS successfully, you will be automatically redirected to the 
 </style>
 
 
-:: CTF4_end {"position":"600,1200","size":"100,100"}
+:: CTF4_end {"position":"1000,1400","size":"100,100"}
 (unless: $ctfs contains "ctf4")[(set: $ctfs to it + (a: "ctf4"))]
 
 Congratulations you made it!
 
 (if: $playingStory is true)[
-  [[<button class="resumeButton">Resume Story</a>->x.p]]]\
+  [[<button class="resumeButton">Resume Story</a>->3.p]]]\
 (else:)[
   [[Back to CTF-Overview->CTFs]]]
 

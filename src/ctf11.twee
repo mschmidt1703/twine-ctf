@@ -1,4 +1,4 @@
-:: CTF 11 {"position":"1300,300","size":"100,100"}
+:: CTF 11 {"position":"800,2200","size":"100,100"}
 
 <script>
   setup.all();
@@ -22,7 +22,7 @@ key: NoIdea
 <div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
-      [[<button class='home-btn-background'></button>->MainPage]]]
+      [[<button class='home-btn-background'></button>->Memory3]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -72,7 +72,7 @@ key: NoIdea
 </style>
 
 
-:: CTF11end {"position":"1300,500","size":"100,100"}
+:: CTF11end {"position":"1000,2200","size":"100,100"}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
