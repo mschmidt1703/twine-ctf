@@ -13,9 +13,8 @@
 
 <img src="src/img/ctf7/books-shelf.jpg"></img>
 
-Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
-
-A search on the surface level is not enough. Further inspection is needed. 
+To pass this challange you have to find the hidden flag. Oh look, there is a bookshelf. Maybe it's a good idea to start your search here. 
+If you can't find what you're looking for on a surface level, then you probably have to do some further inspection.  
 
 <div class="shelves">
   (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>First Shelf</button>")[(alert: "Nothing really useful here")]

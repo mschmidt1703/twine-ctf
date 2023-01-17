@@ -165,6 +165,7 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
+	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
@@ -1782,7 +1783,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 (else:)[(alert: _info)]
 
 &lt;script&gt; 
-  setup.ctf6_reset()
+  setup.ctf6_reset();
   setup.all();
 &lt;/script&gt;
 
@@ -2016,9 +2017,8 @@ Please be careful with user input and always validate it!
 
 &lt;img src=&quot;src/img/ctf7/books-shelf.jpg&quot;&gt;&lt;/img&gt;
 
-Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
-
-A search on the surface level is not enough. Further inspection is needed. 
+To pass this challange you have to find the hidden flag. Oh look, there is a bookshelf. Maybe it&#39;s a good idea to start your search here. 
+If you can&#39;t find what you&#39;re looking for on a surface level, then you probably have to do some further inspection.  
 
 &lt;div class=&quot;shelves&quot;&gt;
   (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;First Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing really useful here&quot;)]
@@ -3211,9 +3211,55 @@ please enter your name. Please note your name must be at longer then three chara
 
 &lt;h1&gt;Story&lt;/h1&gt;
 
+<<<<<<< HEAD
 Du bist aufgewacht und fühlst dich als hättest du eine Ewigkeit geschlafen. Erst kannst du nicht wirklich was erkennen, doch nachdem sich deine Augen an das Licht gewöhnt hatten, erkennst du langsam wieder was. Du befindest dich in etwas, was eine Kapsel zu sein scheint. Du bist verwirrt und bewegst deine Hände bis du merkst, dass irgendwas Druck auf deinen linken Unterarm auszuüben scheint. Du hebst den Arm und siehst, dass dir Zugänge gelegt wurden. Ohne nachzudenken ziehst du sie raus. Der Druck auf deinen Unterarm lässt nach. Aber wie kommst du jetzt raus? 
 Du untersuchst mit deinen Händen die Innenseite der Kapsel. Ein Gefühl versichert dich, dass es eine Möglichkeit geben muss, die Kapsel von innen zu öffnen. Schon hast du mit der rechten Hand einen Hebel greifen können. Du ziehst ihn zu dir und die Kapsel öffnet sich. Du versuchst dich aufzurichten, doch das fällt dir ziemlich schwer. Nach einigen Versuchen sitzt du in der Kapsel und kannst den Raum sehen, indem du dich befindest. Es sieht aus, wie ein Krankenzimmer. Der Zugang, der in deinem Arm war, geht durch die linke Wand der Kapsel und führt zu einem durchsichtigen Beutel, der eine Flüssigkeit enthält. Daneben steht ein kleiner Nachtschrank mit einem Kalender und einer Vase mit frischen Blumen. Es sind rote Tulpen. Erschreckend stellst du fest, dass wohl drei Jahre vergangen sind. Dein Magen zieht sich ein wenig zusammen, doch deine Aufmerksamkeit wird wieder in den Raum gelenkt. Sonnenstrahlen scheinen durch die Jalousie vor dem Fenster an der linken Seite des Raums.
 Du versuchst nun aufzustehen, um aus der Kapsel zu klettern, doch deine Beine wirken als würden sie schlafen. Du versuchst mit den Zehen zu wackeln. Glück gehabt, sie reagieren, wenn auch nur leicht. Dein Oberkörper und deine Arme sind soweit normal. Daher versuchst du dich vorsichtig mit deinen Armen aus der Kapsel zu ziehen. Nach wenigen Versuchen konntest du dich tatsächlich aus der Kapsel ziehen. Du betrachtest die rechte Seite des Raums. Eine Tür und einige Maschinen, die scheinbar deine Vitalwerte überwachen. Erst jetzt bemerkst du den Dauerton, der wohl schon seit einigen Minuten läuft. 
+=======
+You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
+but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
+what appears to be a capsule. You are confused and move your hands until you notice that something \
+seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
+given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
+you get out now? 
+
+You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
+way to open the capsule from the inside. Already you have been able to grasp a lever with your \
+right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
+difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
+looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
+and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
+calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
+have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
+sunlight shine through the blind in front of the window on the left side of the room and your eyes \
+fall on the clock. It is 11:39. Almost noon.
+
+You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
+wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
+so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
+you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
+door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
+sound that must have been going on for several minutes. 
+
+Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
+long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
+shouting: &quot;Quick! Hurry up, something seems to be wrong!&quot;. You panic. You try to hide behind the capsule \
+as best you can with your limited strength, when the door flies open. You hold your breath and realise \
+that your heart is racing. Several people have probably entered the room, but only one is running directly \
+to the capsule. &quot;The capsule is open. He must have finally woken up.&quot; Came from a male voice. &quot;At last! \
+But where is he?&quot; you hear another voice, but this time a female one, say. &quot;We need to find him quickly \
+and check his vitals,&quot; said the male voice &quot;Josie, please go get Rob already. When I find him, he should \
+check him straight away&quot;. &quot;All right, John,&quot; Josie replies and you hear footsteps coming through the \
+door and out of the room. You don&#39;t dare breathe. The remaining person seems to be searching the room. \
+First the right half and then the footsteps approach your hiding place and then John is standing in front \
+of you smiling a little away. &quot;There you are!&quot;, John laughed and wants to approach you. When he realises \
+you are scared and backs away, he backs away and crouches down. &quot;Don&#39;t be afraid,&quot; John said in a calm \
+voice &quot;We don&#39;t want to hurt you. It&#39;s all right. Look, I&#39;m John and some of my colleagues, or rather \
+friends, and I found you and saved you.&quot;
+
+- Explaination Memory Loss
+- Name Thing
+>>>>>>> main
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;1.1.p]]
 

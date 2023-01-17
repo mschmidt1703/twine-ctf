@@ -40,7 +40,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 (else:)[(alert: _info)]
 
 <script> 
-  setup.ctf6_reset()
+  setup.ctf6_reset();
   setup.all();
 </script>
 
