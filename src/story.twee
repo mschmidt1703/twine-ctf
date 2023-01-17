@@ -222,25 +222,6 @@ friends, and I found you and saved you."
     font-size: 2rem !important;
   }
 
-  .startChallenge {
-    z-index: 1;
-    height: 2.5em;
-    width: 8em;
-
-    display: block;
-    margin: 0 auto;
-
-    border: none;
-    border-radius: 35px;
-    background-color: #f79e00;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    font-size: 1em;
-    color: #1e1e1e;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px #000000;
-  }
-
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -363,7 +344,6 @@ o	Du legst dich schlafen
 o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein gut verwaltetes Archiv für sowas hat
 •	In der Bibliothek im Archiv 
 
-
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->CTF 7]]
 
 <style>
@@ -383,6 +363,25 @@ o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein
 
   h2 {
     font-size: 2rem !important;
+  }
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   * {
@@ -410,7 +409,7 @@ o	Als nächstes riechst du Essen,
 	Es ist Cabonara und du wusstest, dass deine Mutter diese gerade in der Küche zum Abendessen zubereitet
 o	Du hörst, wie sie deinen Namen ruft
 
-[[<button class="startChallenge">Return to Story->2.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -456,7 +455,7 @@ o	Als die Erinnerung aus deinem Kopf verschwindet rufst du dir in deine Gedanken
 	Du erinnerst dich, dass deine Mutter sehr gerne gekocht hat
 •	Vor allem erinnerst du dich daran, dass nirgendwo die Cabonara so gut schmecken, wie bei ihr
 
-[[<button class="startChallenge">Next->2.1.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -631,6 +630,25 @@ o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -648,7 +666,7 @@ o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
 •	Review
 o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber du bist dir sicher, dass der Mann auf dem Bild dein Vater ist, alleine schon wegen des Nachnamens
 
-[[<button class="startChallenge">Next->3.1.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -838,6 +856,25 @@ o	Geht zum Prüfungsamt
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -869,7 +906,7 @@ o	Als Freelancer gearbeitet
 •	Resultat
 o	Du erinnerst dich an eine kryptische Zeichenfolge
 
-[[<button class="startChallenge">Return to Story->4.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -1072,6 +1109,25 @@ o	You search the internet for some tutorial about encrypting  CTF
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1098,7 +1154,7 @@ o	Der fertige Algorithmus
 	Die ersten Performanz-Tests
 •	Zeigen wie unglaublich dieser Algorithmus ist
 
-[[<button class="startChallenge">Return to Story->5.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -1198,6 +1254,25 @@ o	Doch erstmal musst du darein kommen  CTF
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1284,6 +1359,25 @@ o	Du lädst die Datei runter, in der Hoffnung, dass du an irgendwelche Informati
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1337,7 +1431,7 @@ o	Viren, Angriffe
 	Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“
 	Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst
 
-[[<button class="startChallenge">Return to Story->7.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -1443,6 +1537,25 @@ o	Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitun
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1488,7 +1601,7 @@ o	Flashback 6
 	Du rennst rein und im Wohnzimmer siehst du an der Wand zwei Einschusslöcher
 	Dir laufen tränen übers Gesicht und du rennst schnell zu deinem Wagen bevor dich jemand sieht
 
-[[<button class="startChallenge">Return to Story->8.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -1711,6 +1824,25 @@ o	Du durchsuchst dein Arbeitszimmer während John durch die Fenster die Straße 
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1734,7 +1866,7 @@ o	Kidnapping
 •	Flashback 4
 o	Übergabe
 
-[[<button class="startChallenge">Return to Story->9.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -1897,6 +2029,25 @@ o	Über das Eingabefeld könnte man die Tür öffnen  CTF
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2052,6 +2203,25 @@ o	Du öffnest die Datei  CTF
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2068,7 +2238,7 @@ o	Du öffnest die Datei  CTF
 
 •	Flucht
 
-[[<button class="startChallenge">Return to Story->11.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->11.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -2168,6 +2338,25 @@ TEXT
     font-size: 2rem !important;
   }
 
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2240,6 +2429,25 @@ TEXT
 
   h2 {
     font-size: 2rem !important;
+  }
+
+  .startChallenge {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #f79e00;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    color: #1e1e1e;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   * {
