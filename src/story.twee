@@ -975,15 +975,8 @@ Im Glasbehälter wird ein Vakuum erzeugt, weswegen sich der Schokokuss aufbläht
   setup.story()
 </script>
 
-•	Nach dem Abendessen
-o	Watches some series with the others
-	Something about cryptographie
-o	Thinking about the sequence
-o	(Talking to John or Rob about it)
-o	First no idea, but then
-•	Danach
-o	So you know, that you now have to encrypt the sequence
-o	You search the internet for some tutorial about encrypting  CTF
+Nach dem Abendessen schaust du mit den anderen eine Serie. In der Serie geht es Kryptographie und verschiedene Verschlüsselungen. Während ihr die Serie schaut, holst du den Zettel aus deiner Tasche und stellst fest, dass einer der genannten Verschlüsselungsalgorithmen die Zeichenfolge entschlüsseln könnte.
+Nachdem Serienabend verabschiedest du dich und schaust in deinem Zimmer auf dem PC ein paar Tutorials zum Entschlüsseln einer Zeichenfolge.
 
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
