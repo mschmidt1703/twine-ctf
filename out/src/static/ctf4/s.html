@@ -40,14 +40,9 @@ function search() {
 	if ((input.startsWith("\<script ")) && (input.endsWith("/\>")))  {
 		innerScript = input.replaceAll('\<script',"").replaceAll('/\>',"")
 		var myScript = document.createElement('script');
-		console.log(innerScript)
 		myScript.textContent = innerScript;
 		document.head.appendChild(myScript);
 	}
-	
-
-	
-	
 }
 
 </script>
