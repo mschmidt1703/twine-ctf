@@ -157,49 +157,9 @@
 
 <h1>Story</h1>
 
-You woke up and felt as if you had been asleep for ages. At first you can't really see anything, \
-but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
-what appears to be a capsule. You are confused and move your hands until you notice that something \
-seems to be putting pressure on your left forearm. You lift your arm and see that you have been \
-given access. Without thinking you pull them out. The pressure on your forearm eases. But how do \
-you get out now? 
-
-You examine the inside of the capsule with your hands. A feeling assures you that there must be a \
-way to open the capsule from the inside. Already you have been able to grasp a lever with your \
-right hand. You pull it towards you and the capsule opens. You try to stand up, but it is quite \
-difficult. After a few attempts you are sitting in the capsule and can see the room you are in. It \
-looks like a hospital room. The access that was in your arm goes through the left wall of the capsule \
-and leads to a transparent bag containing a liquid. Next to it is a small bedside cabinet with a \
-calendar and a vase of fresh flowers. They are red tulips. Shocked, you realise that three years must \
-have passed. Your stomach tightens a little, but your attention is drawn back to the room. Rays of \
-sunlight shine through the blind in front of the window on the left side of the room and your eyes \
-fall on the clock. It is 11:39. Almost noon.
-
-You try to stand up to climb out of the capsule, but your legs look as if they are asleep. You try to \
-wiggle your toes. You are lucky, they react, even if only slightly. Your upper body and arms are normal \
-so far. So you carefully try to pull yourself out of the capsule with your arms. After a few attempts \
-you are actually able to pull yourself out of the capsule. You look at the right side of the room. A \
-door and some machines that seem to monitor your vital signs. Only now do you notice the continuous \
-sound that must have been going on for several minutes. 
-
-Suddenly you hear people shouting outside the door. From the sound of the shouts, there seems to be a \
-long corridor in front of the door. The shouts are followed by hurried footsteps. You hear someone \
-shouting: "Quick! Hurry up, something seems to be wrong!". You panic. You try to hide behind the capsule \
-as best you can with your limited strength, when the door flies open. You hold your breath and realise \
-that your heart is racing. Several people have probably entered the room, but only one is running directly \
-to the capsule. "The capsule is open. He must have finally woken up." Came from a male voice. "At last! \
-But where is he?" you hear another voice, but this time a female one, say. "We need to find him quickly \
-and check his vitals," said the male voice "Josie, please go get Rob already. When I find him, he should \
-check him straight away". "All right, John," Josie replies and you hear footsteps coming through the \
-door and out of the room. You don't dare breathe. The remaining person seems to be searching the room. \
-First the right half and then the footsteps approach your hiding place and then John is standing in front \
-of you smiling a little away. "There you are!", John laughed and wants to approach you. When he realises \
-you are scared and backs away, he backs away and crouches down. "Don't be afraid," John said in a calm \
-voice "We don't want to hurt you. It's all right. Look, I'm John and some of my colleagues, or rather \
-friends, and I found you and saved you."
-
-- Explaination Memory Loss
-- Name Thing
+Du bist aufgewacht und fühlst dich als hättest du eine Ewigkeit geschlafen. Erst kannst du nicht wirklich was erkennen, doch nachdem sich deine Augen an das Licht gewöhnt hatten, erkennst du langsam wieder was. Du befindest dich in etwas, was eine Kapsel zu sein scheint. Du bist verwirrt und bewegst deine Hände bis du merkst, dass irgendwas Druck auf deinen linken Unterarm auszuüben scheint. Du hebst den Arm und siehst, dass dir Zugänge gelegt wurden. Ohne nachzudenken ziehst du sie raus. Der Druck auf deinen Unterarm lässt nach. Aber wie kommst du jetzt raus? 
+Du untersuchst mit deinen Händen die Innenseite der Kapsel. Ein Gefühl versichert dich, dass es eine Möglichkeit geben muss, die Kapsel von innen zu öffnen. Schon hast du mit der rechten Hand einen Hebel greifen können. Du ziehst ihn zu dir und die Kapsel öffnet sich. Du versuchst dich aufzurichten, doch das fällt dir ziemlich schwer. Nach einigen Versuchen sitzt du in der Kapsel und kannst den Raum sehen, indem du dich befindest. Es sieht aus, wie ein Krankenzimmer. Der Zugang, der in deinem Arm war, geht durch die linke Wand der Kapsel und führt zu einem durchsichtigen Beutel, der eine Flüssigkeit enthält. Daneben steht ein kleiner Nachtschrank mit einem Kalender und einer Vase mit frischen Blumen. Es sind rote Tulpen. Erschreckend stellst du fest, dass wohl drei Jahre vergangen sind. Dein Magen zieht sich ein wenig zusammen, doch deine Aufmerksamkeit wird wieder in den Raum gelenkt. Sonnenstrahlen scheinen durch die Jalousie vor dem Fenster an der linken Seite des Raums.
+Du versuchst nun aufzustehen, um aus der Kapsel zu klettern, doch deine Beine wirken als würden sie schlafen. Du versuchst mit den Zehen zu wackeln. Glück gehabt, sie reagieren, wenn auch nur leicht. Dein Oberkörper und deine Arme sind soweit normal. Daher versuchst du dich vorsichtig mit deinen Armen aus der Kapsel zu ziehen. Nach wenigen Versuchen konntest du dich tatsächlich aus der Kapsel ziehen. Du betrachtest die rechte Seite des Raums. Eine Tür und einige Maschinen, die scheinbar deine Vitalwerte überwachen. Erst jetzt bemerkst du den Dauerton, der wohl schon seit einigen Minuten läuft. 
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.p]]
 
@@ -236,25 +196,9 @@ friends, and I found you and saved you."
   setup.story()
 </script>
 
-•	Erklärungen
-o	Was die machen
-	Dürfen sie dir nicht sagen
-	Versichern dir, dass es nichts Illegales ist
-o	Beschreibung von deren Hauptquartier
-	Unterkünfte
-	Kantine
-	Krankenzimmer
-	Büros
-	OP-Zimmer
-	Dein Zimmer
-•	Mit einem eigenen PC und Internet-Anschluss
-•	Dialog
-o	Dir, John, Josie und Rob
-o	Du fragst, wie sie dich gefunden haben oder so
-o	Angebot, dass du erstmal bei denen bleiben kannst
-o	Sie wollen dich einmal komplett untersuchen um weitere Verletzungen auszuschließen
-	Ebenso eine Untersuchung deines Hirns aufgrund der Amnesie
-o	Du wirst zu deinem neuen Zimmer geführt
+Plötzlich hörst du Menschen vor der Tür rufen. So wie die Rufe schallen, scheint wohl vor der Tür ein längerer Flur zu sein. Den Rufen folgen hastige Schritte. Du hörst jemanden brüllen: „Schnell! Beeilt euch, irgendwas scheint nicht in Ordnung zu sein!“. Du bekommst Panik. Du versuchst dich mit deiner beschränkten Kraft so gut es geht hinter der Kapsel zu verstecken, als auch schon die Tür auffliegt. Du hältst den Atem an und merkst, dass dein Herz rast. Mehrere Personen haben wohl den Raum betreten, doch nur einer rennt direkt zur Kapsel. „Die Kapsel ist offen. Er muss wohl endlich aufgewacht sein.“ Kam von einer männlichen Stimme. „Endlich! Aber wo ist er?“, hörst du eine weitere, aber dieses Mal eine weibliche Stimme sagen. „Wir müssen ihn schleunigst finden und seine Werte überprüfen“, sagte die männliche Stimme „Josie, bitte hol schonmal Rob. Wenn ich ihn gefunden habe, sollte er ihn direkt untersuchen“. „Alles klar, John“, antwortet Josie und du hörst, wie sich Schritte durch die Tür und aus dem Raum entfernen. Du traust dich nicht zu atmen. Die verbleibende Person scheint den Raum zu durchsuchen. Erst die rechte Hälfte und dann nähern sich die Schritte zu deinem Versteck und dann steht John lächelnd etwas entfernt vor dir. „Da bist du ja!“, lachte John und will sich dir nähern. Als er merkt, dass du Angst hast und zurückweichst, geht er wieder zurück und hockt sich hin. „Hab keine Angst“, sagte John mit ruhiger Stimme „Wir wollen dir nichts tun. Es ist alles in Ordnung. Schau mal, ich bin John und einige meiner Kollegen, oder besser gesagt Freunde, und ich haben dich gefunden und gerettet.“  
+•	Übergang zur erzählenden Perspektive
+o	John schafft es dich zu beruhigen. Du findest ihn nett und hast bei ihm ein gutes Gefühl. 
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.2.p]]
 
@@ -291,7 +235,101 @@ o	Du wirst zu deinem neuen Zimmer geführt
   setup.story()
 </script>
 
-•	Du liegst wach im Bett und sortierst deine Gedanken 
+•	Erklärungen
+o	Was die machen
+	Dürfen sie dir nicht sagen
+	Versichern dir, dass es nichts Illegales ist
+o	Beschreibung von deren Hauptquartier
+	Unterkünfte
+	Kantine
+	Krankenzimmer
+	Büros
+	OP-Zimmer
+	Dein Zimmer
+•	Mit einem eigenen PC und Internet-Anschluss
+
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.3.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.3.p {"position":"800,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Dialog beim Abendessen
+o	Dir, John, Josie und Rob
+o	Du fragst, wie sie dich gefunden haben oder so
+o	Angebot, dass du erstmal bei denen bleiben kannst
+o	Sie wollen dich einmal komplett untersuchen um weitere Verletzungen auszuschließen
+	Ebenso eine Untersuchung deines Hirns aufgrund der Amnesie
+o	Du wirst zu deinem neuen Zimmer geführt
+o	Da es mittlerweile abends ist, schlagen sie vor, dass du dich erstmal mit deinem Zimmer vertraut machst und dich ausruhst
+o	Am nächsten Tag wollt ihr weiterreden
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.4.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: 1.4.p {"position":"1000,800","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+•	Du liegst wach im Bett und sortierst deine Gedanken
 o	Du weißt, dass du deine Erinnerungen nicht einfach so wiederbekommst, sondern dass Erinnerungen irgendwie getriggert werden müssen
 	Eine Stimme im Inneren deines Kopfes sagt dir das
 o	Ebenso weißt du, dass es auch passieren kann, dass du dich niemals an das was vorher war, erinnern kannst
@@ -333,7 +371,7 @@ o	Du legst dich schlafen
 </style>
 
 
-:: 1.x.p {"position":"800,800","size":"100,100"}
+:: 1.x.p {"position":"1200,800","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
