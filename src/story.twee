@@ -1257,19 +1257,10 @@ Du öffnest das Bild und dir wird schwarz vor Augen.
 Du sitzt in einem Café als sich dir ein Mann nähert. Er kommt auf dich zu, hält dir die Hand hin und stellt sich als Mr. Aaron Grayson vor. Er fragt dich, ob er sich kurz setzen dürfte und du verweist höflich mit einer Handbewegung auf den Stuhl gegenüber von dir. Er erzählt dir, dass ihm eine Software-Firma gehört und er von deinem Algorithmus gehört hat.
 Nach der kleinen Unterhaltung mit Mr. Grayson überreicht er dir seine Visitenkarte und du versicherst ihm, dass du dir sein Angebot anhören wirst.
 Nun sitzt du in einem angemieteten Büro in einem Hochhaus. Dir ist die Situation suspekt. Nach einer höflich freundlichen Begrüßung führt er dich in einen Konferenzraum in dem bereits sein Anwalt sitzt und nachdem du dich gegenüber von dem Anwalt und Mr. Grayson hingesetzt hast, schiebt dir der Anwalt den Vertrag mit dem Angebot zu. Du schlägst den Vertrag auf und liest ihn dir durch. Das Angebot beinhaltet, dass du 5,5 Millionen Euro erhältst und eine Verschwiegenheitserklärung unterschreiben, sowie alle Patentrechte abtreten musst. Als du damit fertig bist, dir den Vertrag durchzulesen, klappst du ihn wieder zu. Auf der ersten Seite des Vertrags steht der Name des Unternehmens: Aaron Grayson Technologies…AGT.
-Dich überkommt ein ungutes Gefühl, weswegen du Mr. Grayson bittest, dir zu verraten, wofür dein Algorithmus genutzt werden soll und dass du dafür auch Nachweise benötigen würdest.
-
-	Du bittest ihm, dir seine Pläne zu verraten, was er mit dem Algorithmus vorhat und dafür auch beweise brauchst
-	Er verneint dies aufgrund dessen, dass es sich um Firmengeheimnisse handelt	
-•	Dabei verändert sich schlagartig seine Mimik und Gestik
-•	Du fühlst dich in deinem Gefühl bestätigt
-	Du sagst, dass du mit der Übergabe deines Algorithmus sowieso ein Firmengeheimnis kennen würdest und du auch bereit wärst, eine Verschwiegenheitserklärung zu unterschreiben
-	Zähneknirschend verrät er dir, was er damit vorhat
-•	Die Algorithmen nutzen, um Software-Komponenten einfach übers Internet verschicken zu können, da die Datengröße dann kein Problem mehr ist
-•	Du denkst an die Antworten aus dem Beitrag aus dem Darknet
-•	Du weißt, dass das nur seine wahren Vorhaben verschleiert
-o	Viren, Angriffe
-Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunft finden können. Ich habe ihre Absichten durchschaut und kann diese ethisch nicht vertreten und noch weniger könnte ich mein Mitwirken an ihren Vorhaben vertreten. Du stehst auf und gehst zur Tür. Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“. Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst.
+Dich überkommt ein ungutes Gefühl, weswegen du Mr. Grayson bittest, dir zu verraten, wofür dein Algorithmus genutzt werden soll und dass du dafür auch Nachweise benötigen würdest. Mr. Grayson sagt dir, dass das nicht möglich sei, da es sich um Firmengeheimnisse handelt. Du merkst, wie sich seine Mimik und Gestik verändert, wodurch du dich bestätigt fühlst, dass nicht alles mit rechten Dingen zugeht. Auf einmal wirkt er nicht mehr so freundlich. Du sagst ihm, dass du auch bereit bist, eine Verschwiegenheitserklärung zu unterschreiben, zumal du dadurch, dass es dein Algorithmus ist, sowieso ein Firmengeheimnis kennen würdest. Du machst dadurch deutlich, dass das nicht verhandelbar ist. 
+Zähneknirschend verrät er dir, dass er vorhat mit deinem Algorithmus Software-Komponenten einfacher zu verschicken, da durch deinen Kompressionsalgorithmus die Größe der Dateien sehr viel kleiner werden würde. Du erkennst, dass er versucht, sein wahres Vorhaben zu verschleiern, da es theoretisch auch möglich wäre, bösartige Schadsoftware zu komprimieren und zu verschicken und du befürchtest, dass genau das seine Absicht ist.
+Du denkst an die Beiträge aus dem Darknet, die du verfasst hast, um zu schauen, ob irgendwas über die Firma bekannt ist. Ebenso hattest du selber unter einem anderen Namen als der Verfasser ein Kommentar getätigt, der eine Datei enthält, mit allen Informationen über AGT und Mr. Grayson, die du finden konntest. Das ist deine Versicherung, falls dir etwas zustoßen sollte.
+Du wendest dich entschlossen an Mr. Grayson „Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunft finden können. Ich habe ihre Absichten durchschaut und kann diese ethisch nicht vertreten und noch weniger könnte ich mein Mitwirken an ihren Vorhaben vertreten.“ Du stehst auf und gehst zur Tür. Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“. Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
@@ -1306,16 +1297,8 @@ Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunf
   setup.story()
 </script>
 
-•	Review
-o	Scheiße
-o	Mehr weißt du nicht dazu zu sagen
-o	Dafür weißt du, dass der Beitrag im Darknet also dein Beitrag war
-o	Dir wird jetzt erst bewusst, dass dein Algorithmus nicht nur höchst effizient zu sein scheint, sondern auch, was der Algorithmus in den falschen Händen anrichten könnte
-o	Fragen, die du dir stellst
-	Was ist danach passiert?
-	Ist er an deinem Gedächtnisverlust schuld?
-•	Die Fragen erschöpfen dich, während du im Bett nochmal über alles nachdenkst
-o	Müde schläfst du ein
+Du schlägst die Augen auf und fragst dich in was für einer Scheiße du gelandet bist. 
+Dir ist nun klar, was dein Algorithmus in den falschen Händen anrichten könnte und du fragst dich, ob Mr. Grayson an deinem Gedächtnisverlust schuld ist und was nach dieser Abfuhr passiert ist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
 
@@ -1352,9 +1335,8 @@ o	Müde schläfst du ein
   setup.story()
 </script>
 
-•	Traum
-o	Dein Körper mag zwar schlafen, doch dein Gehirn arbeitet auf Hochtouren die quälenden Fragen beiseite zu schieben
-o	Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitung, die dir verrät, wie du an seinen Inhalt kommst  CTF
+Du fährst also deinen PC herunter und legst dich ins Bett. Du denkst nochmal über alles nach, doch schläfst dann aus Erschöpfung ein.
+Während du schläfst arbeitet dein Gehirn auf Hochtouren und die quälenden Fragen zu verarbeiten. Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitung, die dir verrät, wie du an seinen Inhalt kommst.
 
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
@@ -1476,15 +1458,15 @@ o	Flashback 6
   setup.story()
 </script>
 
-•	Reaction to Memory
-o	Du schreckst hoch
-o	Dein Körper ist schweißgebadet und du atmest schwer
-o	Dein Herz schlägt dir bis zum Hals
-o	Du springst auf der Stelle aus dem Bett, rennst ins Bad und übergibst dich
-o	Erschöpft sinkst du zusammen
-o	Du hältst inne, bis du dich ein wenig beruhigen konntest
-o	Du stehst auf und machst in der Dusche das Wasser an
-o	Du gehst erstmal duschen und versuchst, während das heiße Wasser an dir runterläuft, für einen Moment alles zu vergessen
+You wake up, and your body is covered in sweat. You are breathing heavily, and your heart is pounding in \
+your throat. You jump out of bed, run to the bathroom, and throw up. Then you exhaustily sink down. When you \
+have calmed down a little, you take a shower, and while the hot water runs down your body, you try to forget \
+everything for a moment.
+
+After showering, you go back to bed. You think about the memories and realize that Aaron Grayson murdered your \
+parents and that you are in this situation because of him. Your algorithm cannot fall into his hands. So you have \
+to find the algorithm, and the right place to do that is your second flat. After this realisation you fall asleep \
+again.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.1.p]]
 
@@ -1521,15 +1503,8 @@ o	Du gehst erstmal duschen und versuchst, während das heiße Wasser an dir runt
   setup.story()
 </script>
 
-•	Nachdem Duschen
-o	Legst du dich wieder ins Bett
-o	Denkst über die Flashbacks nach und was dir dadurch bewusst wird
-	Du hast keine Eltern mehr
-	A. G. ist der Grund für alles
-•	Der Algorithmus darf niemals in seine Hände fallen
-o	Du musst den Algorithmus finden
-	Deine supersichere Wohnung ist das Ziel
-o	Nach dieser Erkenntnis schläfst du einfach wieder ein
+Als du am nächsten Tag erwachst, machst du dich auf dem schnellsten Weg zu Josie und John und erzählst ihnen, was passiert ist. Du erzählst ihnen alles über den Algorithmus, Aaron Grayson, AGT und den Mord an deinen Eltern. Beide sind geschockt. Du erzählst ihnen von deiner Wohnung und dass du vermutest, dass dort der Algorithmus ist und ihr den unbedingt holen müsst. John erkennt den ernst der Lage, zumal AGT ihm bereits bekannt ist. Der ernst der Lage ist allen bewusst, doch ihr könnt nicht unvorbereitet zu deiner Wohnung. Deswegen wird Ausrüstung bestellt und bis diese angekommen ist, wird Josie dir Schießtraining geben.
+Anhand der Details aus deinen Erinnerungen, war es möglich den Standort deiner Wohnung auszumachen und sobald die Ausrüstung angekommen ist, geht es mit einem kleinen Team an Männern los.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.2.p]]
 
@@ -1621,27 +1596,13 @@ o	Am nächsten Tag soll es losgehen
   setup.story()
 </script>
 
-•	Wohnung
-o	Ihr parkt etwas abseits 
-o	Josie bleibt beim Wagen, um im Falle eines Falles alles für eine schnelle Flucht vorbereiten zu können 
-o	Du und John geht in die Wohnung
-o	Deine Wohnung liegt in einem alten Fabrikgebäude
-	Von außen eher unscheinbar
-	Keine Nachbarn, da die anderen Wohnungen in dem Gebäude leer stehen
-o	Das Aufbrechen der Tür war relativ leicht
-o	Ihr betretet die Wohnung
-o	Für eine Wohnung in einem Fabrikgebäude ist die Einrichtung ziemlich modern und bequem
-o	Vorsichtig geht ihr durch alle Räume 
-	Sicherstellen, dass ihr alleine in der Wohnung seid
-o	Du durchsuchst dein Arbeitszimmer während John durch die Fenster die Straße im Blick behält und den Eingang bewacht
-	Du gehst zu deinem Schreibtisch
-	Intuitiv greifst du zur ersten Schublade des sich rechts befindlichen Schubladenschranks und ziehst sie raus
-•	Du greifst unter die Schublade und ziehst einen USB-Stick hervor
-•	Du weißt genau, worum es sich bei dem USB-Stick handelt
-	In der Schublade befindet sich ein Handy
-•	Du steckst es ein
-	Du willst aufstehen als dein Blick auf ein Bild auf deinem Schreibtisch fällt
-	Auf dem Bild sind die Umrisse einer hübschen jungen Frau auf einem Aquarellhintergrund zu sehen  CTF
+You search your office while John keeps an eye on the street through the windows and also guards the entrance. \
+You go to your desk. Intuitively, you reach for the first drawer of the drawer cabinet on the right and pull it out. \
+You reach under the drawer and pull out a USB stick, and you know exactly what the USB stick is. There is a mobile phone \
+in the drawer, which you also put in.
+
+You want to get up when your eyes fall on a picture on your desk. The picture shows the outline of a pretty young woman \
+on a watercolor background.
 
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
@@ -1741,9 +1702,10 @@ o	Übergabe
   setup.story()
 </script>
 
-•	Reaktion
-o	Dein Herz wird schwer als diese Erinnerungen hochkommen
-o	Doch wo ist sie jetzt?
+Your heart grows heavy as you think of her and wonder where she is. But you don't get a chance to think \
+about it any more because John bursts into the office because an armed team has turned up and is on its way \
+up to your flat. You have to escape. You lock the door to the office. You look around your office, searching, \
+because somehow you have to get out of here. Meanwhile, John sends an emergency signal to Josie.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->9.1.p]]
 
