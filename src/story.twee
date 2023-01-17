@@ -1037,17 +1037,8 @@ Nachdem Serienabend verabschiedest du dich und schaust in deinem Zimmer auf dem 
   setup.story()
 </script>
 
-•	Mithilfe des Hands-On Tutorials konntest du den Algorithmus lösen
-o	Webseite
-•	Flashback
-o	Du sitzt vorm Pc und schreibst einen Algorithmus
-o	Grund für den Algorithmus
-	Du hast eine Menge Daten auf dem Pc, die du auf deinen neuen Pc übertragen möchtest, aber kein USB-Stick oder so ist groß genug
-•	Komprimieren der Daten und Dekomprimieren
-o	Die Nächte, die du vorm Pc gesessen hast
-o	Der fertige Algorithmus
-	Die ersten Performanz-Tests
-•	Zeigen wie unglaublich dieser Algorithmus ist
+Mithilfe des Tutorials konntest du die Zeichenfolge entschlüsseln. Es handelt sich um eine IP-Adresse. Die IP-Adresse führt zu einer Webseite, die einen Kompressions- und Dekompressionsalgorithmus beschreibt.
+Dir wird schwarz vor Augen und du siehst dich selber, wie du vorm PC sitzt. Die Nächte ziehen wie ein Zeitraffer vorbei, bis du selber verkündest, dass du es endlich geschafft hast. Du führst noch Performanz-Tests durch, die zeigen, dass der Algorithmus ungewöhnlich effizient ist.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
@@ -1084,15 +1075,8 @@ o	Der fertige Algorithmus
   setup.story()
 </script>
 
-•	Review der Erinnerung
-o	Okay, that’s an awesome algorithm
-•	Danach
-o	Recherchierst nach vergleichbaren Algorithmen
-	Stellst fest, dass es keinen so wie deinen gibt
-	Keeps it also a secret for now
-	Du fragst dich, ob das der Grund ist, wie du dazu kamst dort bewusstlos zu liegen und deinem Gedächtnisschwund
-o	Du recherchierst also überall weiter, um an neue Informationen zu kommen
-	Wirst nicht fündig
+Als du wieder zu dir kommst, wird dir klar, dass du den auf der Webseite beschriebenen Algorithmus geschrieben und programmiert hast.
+Du recherchierst also im Internet nach ähnlichen Algorithmen, doch du stellst schnell fest, dass es keinen gibt, der so effizient ist, wie deiner. Du fragst dich, ob dieser Algorithmus der Grund sein kann, weswegen du bewusstlos von den anderen gefunden wurdest. Deswegen wirst du das auch erstmal für dich behalten.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
@@ -1125,8 +1109,7 @@ o	Du recherchierst also überall weiter, um an neue Informationen zu kommen
 :: 5.x.p {"position":"600,2400","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-•	Die nächste Idee: Darknet
-o	Doch erstmal musst du darein kommen  CTF
+Nachdem du auch nach einer weiteren Stunde keine Suchergebnisse finden konntest, entschließt du dich zu anderen Methoden zu greifen: Das Darknet. Doch wie gelangst du in das Darknet?
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
@@ -1182,12 +1165,9 @@ o	Doch erstmal musst du darein kommen  CTF
   setup.story()
 </script>
 
-•	Du hast es ins Darknet geschafft
-o	Leichter als gedacht, aber du scheinst es wohl drauf zu haben
-o	Während der Recherche 
-o	Entdeckst lauter Dinge von denen du nichts wissen möchtest
-o	Bleibst erstmal erfolglos
-•	Die nächsten Tage hilfst du den anderen bei den Arbeiten und recherchierst immer mal wieder
+Du hast es ins Darknet geschafft und es war leichter als gedacht!
+Während der fortgesetzten Recherche entdeckst du laute Sachen, von denen du nichts wissen möchtest. Leider bleibt deine Suche auch hier erstmal erfolglos.
+Du entschließt dich, die nächsten Tage immer mal wieder zu recherchieren. Vielleicht hast du nicht die richtigen Suchparameter eingegeben.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
@@ -1224,14 +1204,10 @@ o	Bleibst erstmal erfolglos
   setup.story()
 </script>
 
-•	Nach ein paar Tagen stößt du auf einen Hinweis
-o	Die Erwähnung von jemanden, der sich für effiziente Kompressionsalgorithmen interessiert hat
-o	Dieser Beitrag ist etwa 3 Jahre alt
-o	Dieser Beitrag enthält
-	Eine Datei
-	Einige gut gemeinte Hinweise, sich von AGT fernzuhalten, sollten die auf einen zukommen
-•	Was auch  
-o	Du lädst die Datei runter, in der Hoffnung, dass du an irgendwelche Informationen kommst, doch die Datei enthält einen verschlüsselten Text  CTF
+Nach einigen Tagen kannst du einen Beitrag ausfindig machen. Dieser ist etwa 3 Jahre alt. In dem Beitrag sucht jemand nach effizienten Kompressionsalgorithmen und bietet eine Menge Geld dafür. Einige Kommentare unter dem Beitrag weisen darauf hin, dass wenn es einen solchen Algorithmus gibt, dieser besser nicht überall veröffentlicht werden sollte, da dieser sonst einer Firma namens AGT in die Hände fallen würde.
+Du siehst es als einen gut gemeinten Hinweis.
+Du liest dir weitere Kommentare durch und ein Kommentar enthält eine Datei. Eigentlich ist es naiv irgendwelche Dateien aus dem Darknet runterzuladen, doch dein Bauchgefühl rät dir, genau das zu tun.  
+Die heruntergeladene Datei ist verschlüsselt. Um also an den Inhalt zu gelangen, musst du sie entschlüsseln.
 
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
@@ -1287,30 +1263,13 @@ o	Du lädst die Datei runter, in der Hoffnung, dass du an irgendwelche Informati
   setup.story()
 </script>
 
-•	Was passiert?
-o	Als du den Text entschlüsselt hast, öffneten sich ein Verzeichnis
-o	Dieses Verzeichnis enthält lauter Dateien
-o	Auf dem Vorschaubild einer Bild-Datei ist ein großer, kräftig gebauter Mann zu sehen mit schwarzen Haaren und einem grau-weißen Streifen im Haar auf der rechten Seite
-•	Flashbacks werden ausgelöst
-o	Flashback 1
-	Du sitzt in einem Café als sich der Mann nährt
-	Er kommt direkt auf dich zu und stellt sich dir als Mr. Aaron Grayson vor
-	Ihm gehört eine geheime Firma, die sich mit spezieller Software auseinandersetzt
-	Er hat von deinem Algorithmus gehört
-o	Flashback 2
-	Du wählst eine Nummer von einer Visitenkarte
-	Mr. Graysons Stimme ertönt 
-	Du sagst ihm, dass du bereit bist, dir sein Angebot anzuhören
-o	Flashback 3
-	Du sitzt in einem angemieteten Büro
-•	Überhaupt nicht merkwürdig
-	Nach einer höflich freundlichen Begrüßung führt er dich in einen Konferenzraum in dem bereits sein Anwalt sitzt und nachdem du dich gegenüber von dem Anwalt und Mr. Grayson hingesetzt hast, schiebt dir der Anwalt den Vertrag mit dem Angebot zu
-•	5,5 Millionen
-•	Verschwiegenheitserklärung
-•	Und anderer Kram, der dazu gehört
-•	Du blätterst wieder auf die erste Seite und dir fällt der Name auf
-•	Aaron Grayson Technologies…AGT
-	Dich überkommt ein mulmiges Gefühl
+Als du die Datei entschlüsselst, öffnet sich ein Verzeichnis, welches lauter Dateien enthält. Du scrollst also durch das Verzeichnis und entdeckst einen großen, kräftig gebauten Mann auf einem Vorschaubild einer png-Datei. 
+Du öffnest das Bild und dir wird schwarz vor Augen.
+Du sitzt in einem Café als sich dir ein Mann nähert. Er kommt auf dich zu, hält dir die Hand hin und stellt sich als Mr. Aaron Grayson vor. Er fragt dich, ob er sich kurz setzen dürfte und du verweist höflich mit einer Handbewegung auf den Stuhl gegenüber von dir. Er erzählt dir, dass ihm eine Software-Firma gehört und er von deinem Algorithmus gehört hat.
+Nach der kleinen Unterhaltung mit Mr. Grayson überreicht er dir seine Visitenkarte und du versicherst ihm, dass du dir sein Angebot anhören wirst.
+Nun sitzt du in einem angemieteten Büro in einem Hochhaus. Dir ist die Situation suspekt. Nach einer höflich freundlichen Begrüßung führt er dich in einen Konferenzraum in dem bereits sein Anwalt sitzt und nachdem du dich gegenüber von dem Anwalt und Mr. Grayson hingesetzt hast, schiebt dir der Anwalt den Vertrag mit dem Angebot zu. Du schlägst den Vertrag auf und liest ihn dir durch. Das Angebot beinhaltet, dass du 5,5 Millionen Euro erhältst und eine Verschwiegenheitserklärung unterschreiben, sowie alle Patentrechte abtreten musst. Als du damit fertig bist, dir den Vertrag durchzulesen, klappst du ihn wieder zu. Auf der ersten Seite des Vertrags steht der Name des Unternehmens: Aaron Grayson Technologies…AGT.
+Dich überkommt ein ungutes Gefühl, weswegen du Mr. Grayson bittest, dir zu verraten, wofür dein Algorithmus genutzt werden soll und dass du dafür auch Nachweise benötigen würdest.
+
 	Du bittest ihm, dir seine Pläne zu verraten, was er mit dem Algorithmus vorhat und dafür auch beweise brauchst
 	Er verneint dies aufgrund dessen, dass es sich um Firmengeheimnisse handelt	
 •	Dabei verändert sich schlagartig seine Mimik und Gestik
@@ -1321,10 +1280,7 @@ o	Flashback 3
 •	Du denkst an die Antworten aus dem Beitrag aus dem Darknet
 •	Du weißt, dass das nur seine wahren Vorhaben verschleiert
 o	Viren, Angriffe
-	Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunft finden können. Ich habe ihre Absichten durchschaut und kann diese ethisch nicht vertreten und noch weniger könnte ich mein Mitwirken an ihren Vorhaben vertreten.
-	Du stehst auf und gehst zur Tür
-	Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“
-	Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst
+Es tut mir leid Mr. Grayson, aber wir werden niemals zu irgendeiner Übereinkunft finden können. Ich habe ihre Absichten durchschaut und kann diese ethisch nicht vertreten und noch weniger könnte ich mein Mitwirken an ihren Vorhaben vertreten. Du stehst auf und gehst zur Tür. Als du an der Tür bist hörst du, wie etwas knallt und er brüllt „Das wirst du bereuen, dafür sorge ich höchstpersönlich, wenn Sie jetzt gehen“. Du starrst ihm in die Augen und sagst „Hauptsache mein gelangt nicht in Ihre Hände“ und gehst.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
