@@ -1342,9 +1342,8 @@ Dir ist nun klar, was dein Algorithmus in den falschen Händen anrichten könnte
   setup.story()
 </script>
 
-•	Traum
-o	Dein Körper mag zwar schlafen, doch dein Gehirn arbeitet auf Hochtouren die quälenden Fragen beiseite zu schieben
-o	Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitung, die dir verrät, wie du an seinen Inhalt kommst  CTF
+Du fährst also deinen PC herunter und legst dich ins Bett. Du denkst nochmal über alles nach, doch schläfst dann aus Erschöpfung ein.
+Während du schläfst arbeitet dein Gehirn auf Hochtouren und die quälenden Fragen zu verarbeiten. Deine Gedanken führen zu einem Tresor und auf diesem Tresor ist eine Anleitung, die dir verrät, wie du an seinen Inhalt kommst.
 
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
