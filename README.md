@@ -36,6 +36,14 @@ Everything you need to work with this project.
 - Twine with Harlowe 3.3.1
 - Tweego
 
+## Tests
+Tested on Windows with Chrome Version 108.0.5359.126 and Firefox 108.0.2 (64-Bit),
+Tested on Ubuntu 18.04.2 with Firefox 108.0.2 (64-bit)
+Resolution: 1920x1080
+
+## Missing (due to time constraints)
+Responsive Design -> Resolution: 1920x1080
+
 ## Workflow 
 1.) Pull the current data from repository:
 ```sh
