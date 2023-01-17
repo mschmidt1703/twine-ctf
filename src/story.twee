@@ -730,7 +730,7 @@ Ihr habt Glück, die Hochschule ist nur Stunden entfernt, dennoch müsst ihr fr�
 Nach der stundenlangen Fahrt seid ihr endlich an der Hochschule angekommen. Der Campus wirkt ziemlich groß und doch ist er verhältnismäßig leer. Du schließt daraus, dass wohl Semesterferien sein müssen und der Campus deswegen so leer ist. 
 Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Informatik studiert hat, ist es wohl das Gebäude der Informatik-Fakultät. Der Campus ist gut ausgeschildert, daher habt ihr keine Probleme das Gebäude zu finden. Als ihr davorsteht, merkst du, dass es ein relativ modernes Gebäude ist. Ihr betretet es und kommt in ein Foyer. An den Wänden im Foyer hängen einige Auszeichnungen. Du gehst zu denen hin, um sie näher zu betrachten. Verwundert stellst du fest, dass einige dieser Auszeichnungen deinen Namen enthalten. Es sind lauter Auszeichnungen zu hervorragenden Leistungen bei Hackathons. Auf einer Auszeichnung steht sogar der Name deines Vaters, auch wegen eines Hackathons.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
