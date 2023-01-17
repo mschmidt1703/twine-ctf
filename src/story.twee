@@ -721,11 +721,9 @@ Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitze
   setup.story()
 </script>
 
-•	Danach
-o	Du überlegst, was du vor dem Mittagessen tun sollst
-o	Du planst John von der Erinnerung zu erzählen
-o	Und dass du dahin möchtest
-•	Konversation beim Mittag
+Ihr habt Glück, die Hochschule ist nur Stunden entfernt, dennoch müsst ihr früh morgens los, um bis zum Abend wieder im Hauptquartier zu sein. Für den Ausflug wurde Proviant besorgt und ins Auto verladen. Ein paar zusätzliche Männer begleiten euch. Um dir die Langeweile auf der Fahrt zu vertreiben, hast du dir von Josie ein Buch ausgeliehen. 
+Nach der stundenlangen Fahrt seid ihr endlich an der Hochschule angekommen. Der Campus wirkt ziemlich groß und doch ist er verhältnismäßig leer. Du schließt daraus, dass wohl Semesterferien sein müssen und der Campus deswegen so leer ist. 
+Ihr sucht nach dem Gebäude der Fakultät, der dein Vater angehörte. Da er Informatik studiert hat, ist es wohl das Gebäude der Informatik-Fakultät. Der Campus ist gut ausgeschildert, daher habt ihr keine Probleme das Gebäude zu finden. Als ihr davorsteht, merkst du, dass es ein relativ modernes Gebäude ist. Ihr betretet es und kommt in ein Foyer. An den Wänden im Foyer hängen einige Auszeichnungen. Du gehst zu denen hin, um sie näher zu betrachten. Verwundert stellst du fest, dass einige dieser Auszeichnungen deinen Namen enthalten. Es sind lauter Auszeichnungen zu hervorragenden Leistungen bei Hackathons. Auf einer Auszeichnung steht sogar der Name deines Vaters, auch wegen eines Hackathons.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.3.p]]
 
@@ -755,67 +753,15 @@ o	Und dass du dahin möchtest
 </style>
 
 
-:: 3.3.p {"position":"600,1600","size":"100,100"}
+:: 3.x.p {"position":"600,1600","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
   setup.story()
 </script>
 
-•	Vorbereitung auf die Fahrt
-•	Während der Fahrt
-•	Ankunft an der Universität 
-o	Alles ist relativ leer
-	Scheint eine große Universität zu sein
-	Sind wohl Semesterferien
-o	Suche nach dem Gebäude der Fakultät, der dein Vater angehörte
-o	Im Gebäude
-	An den Wänden findest du Auszeichnungen
-•	Sowohl von deinem Vater als auch von dir
-•	Du hast lauter Aufzeichnungen für das Belegen von Hackathons
-
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
-
-<style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-  }
-
-  * {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
-  }
-</style>
-
-
-:: 3.x.p {"position":"800,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<script>
-  setup.story()
-</script>
-
-o	Geht zum Prüfungsamt
-	Du hast ja scheinbar selber an dieser Hochschule studiert
-•	Daher muss es hier Informationen über dich geben
-	Das Büro des Prüfungsamtes ist offen und es ist keiner drin
-•	Scheinbar ist die Person wohl Kaffee holen gegangen
-	Eine Intuition sorgt dafür, dass du dich an den PC setzt
-•	Gesperrt, aber du weißt, dass der das nicht mehr lange sein wird  CTF
+Das ändert deine Pläne. Du teilst den anderen mit, dass ihr das Prüfungsamt suchen solltet. Da du scheinbar selber an dieser Hochschule studiert hast, muss das Prüfungsamt also Informationen über dich haben und genau diese willst du einsehen. 
+Das Prüfungsamt habt ihr schnell gefunden und zu deinem Glück hat, wer auch immer gerade arbeitet, seinen Arbeitsplatz verlassen und die Tür nicht abgeschlossen. Du sagst Josie und John, dass sie bitte Wache stehen sollen. Du setzt dich an den PC und siehst das Login-Fenster. Du weißt genau, dass dieser PC nicht mehr lange gesperrt sein wird.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
