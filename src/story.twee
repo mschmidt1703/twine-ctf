@@ -647,8 +647,7 @@ Nachdem du mit Tagträumen fertig bist und wieder aufstehen willst, fällt eine 
   setup.story()
 </script>
 
-•	Review
-o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber du bist dir sicher, dass der Mann auf dem Bild dein Vater ist, alleine schon wegen des Nachnamens
+Schade, die CD enthält nichts weiter als eine digitale Version des Jahrbuchs. Wenigstens kennst du jetzt den Namen deines Vaters und weißt, wie er aussieht. Dich überkommt das Gefühl, dass du zu der Hochschule fahren solltest, an der dein Vater studiert hat. Du könntest dort weitere Hinweise zu deiner Vergangenheit finden. Das wirst du mit John bereden müssen.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
@@ -685,8 +684,7 @@ o	Schade, die CD enthält leider nur eine digitale Version des Jahrbuchs, aber d
   setup.story()
 </script>
 
-- Decide what to do before lunch
-- Plan to tell John about it
+Du erledigst noch ein paar Aufgaben und begibst dich zum Mittagessen. Dort sitzen bereits John und Josie. Josie ist in ein Buch vertieft, schaut aber kurz auf um dich mit einem Lächeln zu begrüßen, ehe sie sich wieder ihrem Buch zuwendet. Du erzählst John von deinem Wunsch, die Hochschule zu besuchen, doch entgegen deinen Erwartungen ist John damit nicht wirklich einverstanden. Er meint, dass es zu gefährlich ist, da niemand weiß, ob du gesucht wirst oder was dir überhaupt zugestoßen ist, auch wenn er versteht, warum du das möchtest. Dann als John sich bereit macht, um dir wohl einen Vortrag über die Konsequenzen zu halten, fällt Josie ihm mit „John, jetzt komm bitte mal etwas runter“, ins Wort. Sie hat ihr Buch zugeklappt. John schaut sie an und nickt ihr zu, um ihr zu verdeutlichen, dass er zuhört. Josie atmet durch und beginnt: „Ich verstehe warum du das für eine schlechte Idee hältst, John. Das Problem ist, dass wir nicht darauf hoffen können, dass NAME seine Erinnerungen zurückerlangt, wenn er sich nur bei uns im Hauptquartier aufhält. Wir haben ihn gefunden und in Sicherheit gebracht und nun sind wir sein Zuhause und seine Familie“. Ihr Blick richtet sich zu dir. „Tut mir leid NAME, wir sind natürlich nicht deine echte Familie oder wollen sie ersetzen. Wir wissen nicht, was mit deiner…“, meint Josie verlegen als du sie unterbrichst um ihr zu versichern, dass alles in Ordnung ist und dass sie für dich eine Familie sind. Sie lächelt und wendet sich wieder zu John. „Was ich sagen wollte ist, dass wir mitkommen sollten um für Sicherheit zu sorgen. Das ist alles“. John verschränkt die Arme und meint leicht amüsiert, dass er jetzt sowieso nicht mehr gegen euch beide ankommt und er alles in die Wege leiten wird, damit wir in wenigen Tagen abreisen können.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
 
