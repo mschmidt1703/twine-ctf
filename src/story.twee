@@ -817,22 +817,11 @@ Das Prüfungsamt habt ihr schnell gefunden und zu deinem Glück hat, wer auch im
   setup.story()
 </script>
 
-•	Du bist eingeloggt
-o	Glücklicherweise ist die Datenbank mit allen wichtigen Informationen für Studierende geöffnet
-o	Du suchst nach deinen Namen und liest die Einträge
-	Gute Noten, einige überdurchschnittlich, manche nicht so gut
-	Zeugnis und Ergebnisse der Hackathons
-•	Flashbacks
-o	Viele kleine Flashbacks die nacheinander direkt ablaufen
-	Inhalte
-•	Was du studiert hast?
-o	Informatik
-•	Was hat dich in diesem Sinne zu den Auszeichnungen gebracht?
-o	Besonders gute Leistungen in den Hackathons
-•	Was du nach dem Studium gemacht hast?
-o	Als Freelancer gearbeitet
-•	Resultat
-o	Du erinnerst dich an eine kryptische Zeichenfolge
+Klasse, du konntest den PC entsperren. Glücklicherweise hat die Person sogar das Fenster offengelassen, mit dem auf die Datenbank der Studierenden zugegriffen werden kann. Du suchst also nach deinem Namen und liest den entsprechenden Eintrag. Du hattest überwiegend gute Noten und dein Zeugnis enthält Anmerkungen zu deinen Leistungen bei den Hackathons.
+Dann wird dir wieder schwarz vor Augen und viele kurze Momente laufen nun wie ein Film vor deinen Augen ab. Deine Immatrikulation, Einblicke in den Studierendenalltag, die Abgabe deiner Thesis, dein Abschluss und die Überreichung deiner Bachelor-Urkunde. Danach siehst du noch eine Immatrikulation und mehr Studierendenalltag. Du bist verwirrt. 
+Als nächstes siehst du, dass du einen Briefumschlag in einen Kasten wirfst. Auf diesem Briefumschlag steht: Abgabe Master-Thesis für den Studiengang IT-Sicherheit. Dann stehst du auf einer Bühne und bekommst die Master-Urkunde überreicht und schaut in die Zuschauermenge, wo sich deine Eltern von ihren Plätzen erhoben haben und dir laut zujubeln.
+Dann sitzt du in einem Arbeitszimmer und telefonierst: „Keine Sorge, Mama, mit meinen Qualifikationen ist es wirklich kein Problem selbstständig zu sein. Du wirst es schon sehen.“
+Danach wird alles schwarz und eine kryptische Zeichenfolge erscheint.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
