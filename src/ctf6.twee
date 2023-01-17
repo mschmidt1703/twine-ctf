@@ -211,7 +211,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 <script>
   setup.ctf6_reset()
   /*Firefox on Ubuntu*/
-  localStorage.setItem(picID, "1");
+  window.localStorage.setItem("picID", "1");
 </script>
 
 Congratulations you made it!
