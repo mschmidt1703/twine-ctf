@@ -5,7 +5,7 @@ puzzelPiece{TJeqNhQ5C9} kl4L9GzyfPccA7tMeEf+vidocY6v7TXtJGpeNaWAYmXko3QoDAVREopO
 <img src='#' onerror=alert(1) />
 https://twine.ctf/ctf6.html#3' onerror='alert();//
 puzzelPiece{og9XEhgLE2} CyqsWI62MyCkM/G/gq8DL/UlABLfRz+EujUfmutb0fjn1xILAIGIKd+fvQSHQbrV/JtTucxz9dvvynNvuZoz5w==
-puzzelPiece{N0T_VERY_SECURE_#4XQ!}  
+puzzelPiece{N0T_VERY_SECURE_#4XQ!}  W+B0v4uj7svg6FwDAbeOPtLK3dw0cApwW2wvtYSnV4JFzmu/bUAQH5J7GY9I+bGKYdINzRagRavvdXuLFLYbtg==
 puzzelPiece{7tG8eJ58eY} j4EpWA5Ylg2qTpLwOV0eLVynMPc7Fz7YnywKDW2rTB+/i6mz7aHC+NErVJzjV2t6DBcrne3DnakwM+1Hru2+pA==
 puzzelPiece{FHZJDFGETR} RDSDM51v8LDB/C5QYLy8JlpdTj69+FaOaCCYONYceP41WVb2htoLJAG71gUeNTsk0zbNDgPzpcV0NSOhXRpUbQ==
 puzzelPiece{Amj8u4y2Ka} oGfjoeX7LZskg8IY/OYqMA+lO3j0eXsHWXZ00FuH7dIoWJ4AZgaqBtgnd/dGDLGkOwGEeZLuXCcy8vcODpUrWQ==
