@@ -14,7 +14,7 @@ This will not require you to have a look at the source code of this page.") \
 Usg wlees,
 
 qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
-Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
+Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa 
 Czmdwe jfis xhr ttdk iahw syzmzmSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
@@ -85,9 +85,7 @@ Please enter the flag here:
       <script>
         var input = $flag
         var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-        
         $success = "nlntdgJzFCnZID6EUCqRzVdK1CmYJpCZ+AvOLyMf5tLn5byhu+EwmFWLyiWDGlWjKlJZ6qEAFYxa6Ux8RH+dmA==" == hashed
-        var success = "nlntdgJzFCnZID6EUCqRzVdK1CmYJpCZ+AvOLyMf5tLn5byhu+EwmFWLyiWDGlWjKlJZ6qEAFYxa6Ux8RH+dmA==" == hashed
       </script>
       (if: $success is true)[  
         (alert: "Correct Flag!") \

@@ -145,8 +145,6 @@ Please enter the flag here:
     <script>
       var input = $flag
       var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-
-      $success = "h5juJOvHLTRfg4hhCfcR2YQPRrf3eYQuhiZrkiwKMIXtX+6GXDlk4lpBMre1tOfpYTlRU1xqpsQhmgI+O/ruMA==" == hashed
       var success = "h5juJOvHLTRfg4hhCfcR2YQPRrf3eYQuhiZrkiwKMIXtX+6GXDlk4lpBMre1tOfpYTlRU1xqpsQhmgI+O/ruMA==" == hashed
       </script>
       (if: $success is true)[  
