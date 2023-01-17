@@ -21,7 +21,7 @@ Can you figure out the message hidden in this image?
 <div class="buttons">
   <div class="btn-pos5">
   	(if: $playingStory is true)[
-      [[<button class='home-btn-background'></button>->Memory5]]]
+      [[<button class='home-btn-background'></button>->MainPage]]]
         (else:)[
       [[<button class='home-btn-background'></button>->CTFs]]]
   </div>
@@ -101,7 +101,7 @@ Please enter the flag here:
         (alert: "Incorrect Flag, please try again!")]  \
       (if: $success is true)[  \
         (if: $playingStory is true)[  \
-          [[<button class="resumeButton">Resume Story</a>->x.p]]]  \
+          [[<button class="resumeButton">Resume Story</a>->Memory5]]]  \
         (else:)[ \
           [[<button class="resumeButton">Back to CTF-Overview->CTFs]]] \
       ] \
