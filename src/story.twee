@@ -2174,3 +2174,76 @@ TEXT
   }
 </style>
 
+
+:: e.p {"position":"200,5200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button id="resume-btn" class="button is-danger is-rounded">Next->e.x.p]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>
+
+
+:: e.x.p {"position":"600,5200","size":"100,100"}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+<script>
+  setup.story()
+</script>
+
+TEXT
+
+[[<button class="startChallenge">Return to Main->MainPage]]
+
+<style>
+  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+
+  /* -- Twine overrides -- */
+
+  tw-story {
+    background-image: url(src/img/general/background/background_landscape_dark.svg);
+  }
+
+  /* -- General CSS -- */
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  * {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+</style>

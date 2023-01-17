@@ -33,7 +33,7 @@
 ")
 
 (set: _info to "To pass this challange you need to inject JavaScript code in this page. 
-This will require you to have a look into the source code. Please check the blue icon in the lower right corner.
+This will require you to have a look into the source code, to do so, please use the light blue code button on the right. This time there is no direct user input, can you figure out how to inject a XSS. 
 After you execute XSS successfully, you will be automatically redirected to the next page.")
 
 (if: $ctfs contains "ctf6")[]
@@ -54,7 +54,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf6.html">
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Surf">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf6_updateFrame()" value="Reload">
     </div>
     <iframe scrolling="yes" src="src/static/ctf6/u.html" title="Google"></iframe>
   </div>
@@ -84,7 +84,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for building an image. Maybe its something you can use for injecting your script into this site.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "A URL hash parameter is used for choosing an image. Maybe its something you can use for injecting your script into this site.")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Here you can't find a text field to execute an XSS injection. However, there are other methods to do so. Find them out.")]
@@ -197,7 +197,13 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
 </style>
+
 
 :: CTF6_end {"position":"800,5000","size":"100,100"}
 (unless: $ctfs contains "ctf6")[(set: $ctfs to it + (a: "ctf6"))]
@@ -208,10 +214,14 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
+This challenge showed that even without a direct user input field it is possible to inject malicious code into a web page. 
+
+Please be careful with user input and always validate it!
+
 (if: $playingStory is true)[
   [[<button class="resumeButton">Resume Story</a>->e.p]]]\
 (else:)[
-  [[Back to CTF-Overview->CTFs]]]
+  [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
@@ -248,80 +258,6 @@ Congratulations you made it!
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
-  }
-
-  * {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
-  }
-</style>
-
-
-:: e.p {"position":"200,5200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<script>
-  setup.story()
-</script>
-
-TEXT
-
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->e.x.p]]
-
-<style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-  }
-
-  * {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
-  }
-</style>
-
-
-:: e.x.p {"position":"600,5200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<script>
-  setup.story()
-</script>
-
-TEXT
-
-[[<button class="startChallenge">Return to Main->MainPage]]
-
-<style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
   }
 
   * {

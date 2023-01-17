@@ -294,7 +294,7 @@ function eventOnClickHandler(event) {
 setup.ctf3_copyText = function () {
 	var textbox = document.getElementById("textbox");
 	navigator.clipboard.writeText(textbox.innerHTML.replace("<br>",""));
-	alert("Text copied to clipboard");
+	alert("Text will be copied to clipboard...");
 }
 /* # CTF 1 End */
 
@@ -446,12 +446,12 @@ setup.ctf9_showCode = function() {
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to find your hidden password. 
+(set: _info to &quot;To pass this challange you need to find your hidden login data. 
 This will require you to have a look into the source code. &quot;)
 (if: $ctfs contains &quot;ctf1&quot;)[]
 (else:)[(alert: _info)]
 
-&lt;h1&gt;CTF 1 - XSS&lt;/h1&gt;
+&lt;h1&gt;CTF 1 - Web Exploitation&lt;/h1&gt;
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 
@@ -460,13 +460,13 @@ This will require you to have a look into the source code. &quot;)
     &lt;div class=&quot;field&quot;&gt;
       &lt;label class=&quot;label&quot;&gt;Username&lt;/label&gt;
       &lt;div class=&quot;control&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;user&quot; type=&quot;text&quot; placeholder=&quot;some name&quot;&gt;
+        &lt;input class=&quot;input&quot; id=&quot;user&quot; type=&quot;text&quot; placeholder=&quot;enter username&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;field&quot;&gt;
       &lt;label class=&quot;label&quot;&gt;Password&lt;/label&gt;
       &lt;div class=&quot;control&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;some password&quot;&gt;
+        &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;enter password&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;button id=&quot;login-btn&quot; class=&quot;button is-primary&quot;&gt;Sign in&lt;/button&gt;
@@ -490,7 +490,7 @@ This will require you to have a look into the source code. &quot;)
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Are you familiar with the JavaScript funktion atob()? You should look it up!&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you ever tried inserting code in a text field? Try it out and see what will happen.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you ever tried inserting some random code in a text field? Try it out and see what will happen. Can you find the code, where this message came from?&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -541,7 +541,7 @@ This will require you to have a look into the source code. &quot;)
 
   .login-contianer {
     height: 500px;
-    margin: -1% auto 0 27.5%;
+    margin: -1% auto 0 30%;
     /*margin-left: 30% !important;
     margin-top: -1% !important;*/
   }
@@ -578,10 +578,15 @@ This will require you to have a look into the source code. &quot;)
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="1000,1800" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
-(set: _postMsg to &quot;Good job, I have done your first challenge&quot;) \
+(set: _postMsg to &quot;The Challenge shows you that you must never hard-code credentials and not use a encoding schema that can easily be decoded.&quot;) \
 (set: $success to false) \
 
 &lt;div class=&quot;container&quot;&gt;
@@ -812,9 +817,10 @@ This will not require you to have a look at the source code of this page.&quot;)
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 Usg wlees,
-qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. Kmop dbbm! 
-Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa. 
-Tcwg pupy nrv tus vhbt pviopeaumv!
+
+qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
+Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
+ Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
 
@@ -835,7 +841,7 @@ key: NoIdea
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Use the internet to find a tool that will help you detect the encryption method used in this challange.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Enter the flag in the following format: puzzelPiece&amp;lbrace;enterFlagHere&amp;rbrace;&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Remember to enter the flag in the following format: puzzelPiece&amp;lbrace;enterFlagHere&amp;rbrace;&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1150,6 +1156,7 @@ iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
 
 &lt;style&gt;
   /* -- General CSS -- */
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   br {
     display: none;
@@ -1227,6 +1234,15 @@ iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
+  
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+  
+  #textbox {
+	margin-top: 5%
+  }    
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="800,3000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
@@ -1260,6 +1276,7 @@ Please enter the flag here:
 &lt;/div&gt;
 &lt;style&gt;
   /* -- General CSS --*/
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   .resumeButton {
     z-index: 1;
@@ -1292,15 +1309,20 @@ Please enter the flag here:
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
+  
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="800,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. 
+(set: _info to &quot;To pass this challange you need to inject XSS code in this site. In this case you should insert an &#39;alert&#39;. 
 This will not require you to have a look into the source code. 
-After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
+After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.&quot;)
 
 (if: $ctfs contains &quot;ctf4&quot;)[]
 (else:)[(alert: _info)]
@@ -1313,7 +1335,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
       &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot; readonly&gt;
-      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Surf&quot;&gt;
+      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Reload&quot;&gt;
     &lt;/div&gt;
     &lt;iframe src=&quot;src/static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
   &lt;/div&gt;
@@ -1333,7 +1355,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert()\&quot;.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert(\&quot;XSS\&quot;)\&quot;.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.&quot;)]
@@ -1444,14 +1466,26 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="1000,1400" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
 Congratulations you made it!
 
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
+send malicious code, usually in the form of a browser-side script, to another end user.
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+
+In this challenge you successfully inject a XSS.
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -1500,7 +1534,7 @@ Congratulations you made it!
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. 
+(set: _info to &quot;To pass this challange you need to inject XSS code in this site. Maybe you need to use a other html tag. 
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
 
@@ -1518,7 +1552,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
       &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf5.html&quot; readonly&gt;
-      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf5_updateFrame()&quot; value=&quot;Surf&quot;&gt;
+      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf5_updateFrame()&quot; value=&quot;Reload&quot;&gt;
     &lt;/div&gt;
     &lt;iframe src=&quot;src/static/ctf5/t.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
   &lt;/div&gt;
@@ -1541,7 +1575,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;How about trying out the image tag? Can it be used for inserting some javascript code here? (onerror= and src=)&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;What HTML tags can be used in XSS? You should look it up!&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Which HTML tags can be used for XSS attacks? You should look it up!&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1651,14 +1685,22 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="CTF5_end" tags="" position="800,2600" size="100,100">(unless: $ctfs contains &quot;ctf5&quot;)[(set: $ctfs to it + (a: &quot;ctf5&quot;))]
 
 Congratulations you made it!
 
+This challenge showed that malicious code not only be added to a web page through a script tag,
+but also that there are other html tags that can add javascript to a web page. Like a image tags.
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;6.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -1735,7 +1777,7 @@ Congratulations you made it!
 &quot;)
 
 (set: _info to &quot;To pass this challange you need to inject JavaScript code in this page. 
-This will require you to have a look into the source code. Please check the blue icon in the lower right corner.
+This will require you to have a look into the source code, to do so, please use the light blue code button on the right. This time there is no direct user input, can you figure out how to inject a XSS. 
 After you execute XSS successfully, you will be automatically redirected to the next page.&quot;)
 
 (if: $ctfs contains &quot;ctf6&quot;)[]
@@ -1756,7 +1798,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
       &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf6.html&quot;&gt;
-      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf6_updateFrame()&quot; value=&quot;Surf&quot;&gt;
+      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf6_updateFrame()&quot; value=&quot;Reload&quot;&gt;
     &lt;/div&gt;
     &lt;iframe scrolling=&quot;yes&quot; src=&quot;src/static/ctf6/u.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
   &lt;/div&gt;
@@ -1786,7 +1828,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A URL hash parameter is used for building an image. Maybe its something you can use for injecting your script into this site.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;A URL hash parameter is used for choosing an image. Maybe its something you can use for injecting your script into this site.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Here you can&#39;t find a text field to execute an XSS injection. However, there are other methods to do so. Find them out.&quot;)]
@@ -1899,6 +1941,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4, .btn-pos5 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="16" name="CTF6_end" tags="" position="800,5000" size="100,100">(unless: $ctfs contains &quot;ctf6&quot;)[(set: $ctfs to it + (a: &quot;ctf6&quot;))]
 
 &lt;script&gt;
@@ -1907,10 +1954,14 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
+This challenge showed that even without a direct user input field it is possible to inject malicious code into a web page. 
+
+Please be careful with user input and always validate it!
+
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;e.p]]]\
 (else:)[
-  [[Back to CTF-Overview-&gt;CTFs]]]
+  [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -2038,14 +2089,14 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 A search on the surface level is not enough. Further inspection is needed. 
 
 &lt;div class=&quot;shelves&quot;&gt;
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;First Shelf-&gt;First Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Second Shelf-&gt;Second Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Third Shelf-&gt;Third Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fourth Shelf-&gt;Fourth Shelf]]
-  [[&lt;button class=&quot;button is-danger is-rounded&quot; style=&quot;background-color: var(--purple);&quot;&gt;Fifth Shelf-&gt;Fifth Shelf]]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;First Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing really useful here&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Second Shelf&lt;/button&gt;&quot;)[(alert: &quot;No useful information here...&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Third Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing here either...&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Fourth Shelf&lt;/button&gt;&quot;)[(alert: &quot;This search has lead me nowhere so far..&quot;)]
+  (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;Fifth Shelf&lt;/button&gt;&quot;)[(alert: &quot;Yup... I did all of that for nothing :(&quot;)]
 &lt;/div&gt;
 
-&lt;!--puzzelPiece{og9XEhgLE2}--&gt;
+&lt;div style=&quot;visibility: hidden;&quot;&gt; puzzelPiece&amp;#123;og9XEhgLE2&amp;#125; &lt;/div&gt; 
 
 (set: _info to &quot;To pass this challange you need to find the hidden flag. 
 This will require you to have a look at the source code of this page. &quot;)
@@ -3025,7 +3076,7 @@ please enter your name. Please note your name must be at longer then three chara
 
 (css: &quot;margin-top: 5%;&quot;)[
 [(link-repeat: &quot;&lt;p style=&#39;text-align:center&#39;&gt;&lt;button class=&#39;resetButton&#39;&gt;Safe username and start playing&lt;/button&gt;&lt;/p&gt;&quot;)[
-(if: ((length of $username) =&gt; 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
+(if: ((length of $username) &gt;= 3) and not ($username contains &#39;&lt;&#39;) and not ($username contains &#39;/&#39;))[(go-to: &quot;Story&quot;)]
 (else: )[(alert: &quot;Please remember your name must be at least three charaters long and should not contains any &#39;&lt;&gt;/&#39;&quot;)]
 ]]]
 

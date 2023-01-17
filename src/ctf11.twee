@@ -1,5 +1,4 @@
 :: CTF 11 {"position":"800,2200","size":"100,100"}
-
 <script>
   setup.all();
 </script>
@@ -13,9 +12,10 @@ This will not require you to have a look at the source code of this page.") \
 
 <tw-consecutive-br></tw-consecutive-br>
 Usg wlees,
-qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. Kmop dbbm! 
-Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa. 
-Tcwg pupy nrv tus vhbt pviopeaumv!
+
+qi coh ozh venrqqk tuwa wixg, hphr ybi axgcrgaiylym nrynq o edc tb rmfvych bkms zsavegr. 
+Kmop dbbm! Dw a esedvd uszh ms gvm ipat twu xhvg kkelyovji: Azx8c4b2Oa.
+ Czmdwe jfis xhr ttdk iahw syzmstSmeps elxh pizoc beoknitf. Uwrh lhqs isr gvm qixg qpdplrbohw!
 
 key: NoIdea
 
@@ -36,7 +36,7 @@ key: NoIdea
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Use the internet to find a tool that will help you detect the encryption method used in this challange.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Enter the flag in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Remember to enter the flag in the following format: puzzelPiece&lbrace;enterFlagHere&rbrace;")]
   </div>
 </div>
 

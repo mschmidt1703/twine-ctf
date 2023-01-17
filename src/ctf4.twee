@@ -5,9 +5,9 @@
   setup.all();
 </script>
 
-(set: _info to "To pass this challange you need to inject XSS code in this site. 
+(set: _info to "To pass this challange you need to inject XSS code in this site. In this case you should insert an 'alert'. 
 This will not require you to have a look into the source code. 
-After you execute XSS successfully, you will be automatically redirected to the next page.")
+After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.")
 
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
@@ -20,7 +20,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html" readonly>
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Surf">
+      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Reload">
     </div>
     <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
   </div>
@@ -40,7 +40,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: "<button class=\"help-btn-background\"></button>")[(alert: _info)]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that the function used in JavaScript to trigger an alert on a webpage is called \"alert()\".")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that the function used in JavaScript to trigger an alert on a webpage is called \"alert(\"XSS\")\".")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.")]
@@ -151,6 +151,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
 </style>
 
 
@@ -159,10 +164,17 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 Congratulations you made it!
 
+Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
+send malicious code, usually in the form of a browser-side script, to another end user.
+
+Vulnerabilities that enable these attacks are widespread and occur wherever a web application ''uses input from a user within the output it generates without validating or encoding it.''
+
+In this challenge you successfully inject a XSS.
+
 (if: $playingStory is true)[
   [[<button class="resumeButton">Resume Story</a>->3.p]]]\
 (else:)[
-  [[Back to CTF-Overview->CTFs]]]
+  [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
   @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");

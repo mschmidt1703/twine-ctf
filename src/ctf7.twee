@@ -18,14 +18,14 @@ Right behind the entrance you find you find big shelfs full of leaflets and loca
 A search on the surface level is not enough. Further inspection is needed. 
 
 <div class="shelves">
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">First Shelf->First Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Second Shelf->Second Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Third Shelf->Third Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fourth Shelf->Fourth Shelf]]
-  [[<button class="button is-danger is-rounded" style="background-color: var(--purple);">Fifth Shelf->Fifth Shelf]]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>First Shelf</button>")[(alert: "Nothing really useful here")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Second Shelf</button>")[(alert: "No useful information here...")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Third Shelf</button>")[(alert: "Nothing here either...")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fourth Shelf</button>")[(alert: "This search has lead me nowhere so far..")]
+  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fifth Shelf</button>")[(alert: "Yup... I did all of that for nothing :(")]
 </div>
 
-<!--puzzelPiece{og9XEhgLE2}-->
+<div style="visibility: hidden;"> puzzelPiece&#123;og9XEhgLE2&#125; </div> 
 
 (set: _info to "To pass this challange you need to find the hidden flag. 
 This will require you to have a look at the source code of this page. ")
