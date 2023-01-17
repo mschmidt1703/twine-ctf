@@ -165,6 +165,7 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
+	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
@@ -1318,7 +1319,7 @@ Please enter the flag here:
   setup.all();
 &lt;/script&gt;
 
-(set: _info to &quot;To pass this challange you need to inject XSS code in this site. In this case you should insert an &#39;alert&#39;. 
+(set: _info to &quot;To pass this challange you need to execute an XSS code injection. Try to trigger this site to show an alert. 
 This will not require you to have a look into the source code. 
 After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.&quot;)
 
@@ -1353,7 +1354,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
     (link-repeat: &quot;&lt;button class=\&quot;help-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: _info)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos2&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert(\&quot;XSS\&quot;)\&quot;.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that the function used in JavaScript to trigger an alert on a webpage is called \&quot;alert()\&quot;.&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Did you know that you can run a script from a text field? Some sites that are prone to XSS injections can be manipulated by using the script tag in HTML.&quot;)]
@@ -1471,14 +1472,16 @@ After you execute XSS successfully, you will be automatically redirected to the 
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="1000,1400" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
-Congratulations you made it!
+Congratulations you made it! 
 
-Cross-Site Scripting (XSS) is a type of client-side injection attack where a malicious script is injected into a legitimate website and executed. XSS attacks can occur when an attacker try to uses a web application to 
-send malicious code, usually in the form of a browser-side script, to another end user.
+Here is why learning about XSS is important: 
 
-Vulnerabilities that enable these attacks are widespread and occur wherever a web application &#39;&#39;uses input from a user within the output it generates without validating or encoding it.&#39;&#39;
+Cross-Site Scripting (XSS) is a type of client-side attack where a script is injected and executed on a legitimate website.
+One of the many ways XSS can be used to cause harm is by altering the initial website&#39;s code to contain the attacker&#39;s malicious code.
+By doing that, the attacker can reach other users when they browse the infected site and therefore spread the harm on a wide scale.
 
-In this challenge you successfully inject a XSS.
+This is why it is very important to for web developers to secure their websites against XSS and make sure the user&#39;s input is always validated and encoded. 
+
 
 (if: $playingStory is true)[
   [[&lt;button class=&quot;resumeButton&quot;&gt;Resume Story&lt;/a&gt;-&gt;3.p]]]\
@@ -1782,7 +1785,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 (else:)[(alert: _info)]
 
 &lt;script&gt; 
-  setup.ctf6_reset()
+  setup.ctf6_reset();
   setup.all();
 &lt;/script&gt;
 
@@ -2016,9 +2019,8 @@ Please be careful with user input and always validate it!
 
 &lt;img src=&quot;src/img/ctf7/books-shelf.jpg&quot;&gt;&lt;/img&gt;
 
-Right behind the entrance you find you find big shelfs full of leaflets and local advertisements. According to activist friends the search warrants for you are spread everywhere. So, you’re bound to find some of them here. You start looking around those shelfs desperate for information. 
-
-A search on the surface level is not enough. Further inspection is needed. 
+To pass this challange you have to find the hidden flag. Oh look, there is a bookshelf. Maybe it&#39;s a good idea to start your search here. 
+If you can&#39;t find what you&#39;re looking for on a surface level, then you probably have to do some further inspection.  
 
 &lt;div class=&quot;shelves&quot;&gt;
   (link-repeat: &quot;&lt;button class=&#39;button is-danger is-rounded&#39; style=&#39;background-color: var(--purple);&#39;&gt;First Shelf&lt;/button&gt;&quot;)[(alert: &quot;Nothing really useful here&quot;)]
@@ -3209,7 +3211,7 @@ please enter your name. Please note your name must be at longer then three chara
   setup.story()
 &lt;/script&gt;
 
-&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;h1&gt;Story&lt;/h1&gt;
 
 You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
 but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
@@ -3386,7 +3388,7 @@ o	Du legst dich schlafen
 o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein gut verwaltetes Archiv für sowas hat
 •	In der Bibliothek im Archiv 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;CTF 7]]
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3631,7 +3633,7 @@ o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches 
 o	Die CD steckst du ein
 o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;CTF 4]]
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
