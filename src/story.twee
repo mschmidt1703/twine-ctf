@@ -1610,27 +1610,13 @@ o	Am nächsten Tag soll es losgehen
   setup.story()
 </script>
 
-•	Wohnung
-o	Ihr parkt etwas abseits 
-o	Josie bleibt beim Wagen, um im Falle eines Falles alles für eine schnelle Flucht vorbereiten zu können 
-o	Du und John geht in die Wohnung
-o	Deine Wohnung liegt in einem alten Fabrikgebäude
-	Von außen eher unscheinbar
-	Keine Nachbarn, da die anderen Wohnungen in dem Gebäude leer stehen
-o	Das Aufbrechen der Tür war relativ leicht
-o	Ihr betretet die Wohnung
-o	Für eine Wohnung in einem Fabrikgebäude ist die Einrichtung ziemlich modern und bequem
-o	Vorsichtig geht ihr durch alle Räume 
-	Sicherstellen, dass ihr alleine in der Wohnung seid
-o	Du durchsuchst dein Arbeitszimmer während John durch die Fenster die Straße im Blick behält und den Eingang bewacht
-	Du gehst zu deinem Schreibtisch
-	Intuitiv greifst du zur ersten Schublade des sich rechts befindlichen Schubladenschranks und ziehst sie raus
-•	Du greifst unter die Schublade und ziehst einen USB-Stick hervor
-•	Du weißt genau, worum es sich bei dem USB-Stick handelt
-	In der Schublade befindet sich ein Handy
-•	Du steckst es ein
-	Du willst aufstehen als dein Blick auf ein Bild auf deinem Schreibtisch fällt
-	Auf dem Bild sind die Umrisse einer hübschen jungen Frau auf einem Aquarellhintergrund zu sehen  CTF
+You search your office while John keeps an eye on the street through the windows and also guards the entrance. \
+You go to your desk. Intuitively, you reach for the first drawer of the drawer cabinet on the right and pull it out. \
+You reach under the drawer and pull out a USB stick, and you know exactly what the USB stick is. There is a mobile phone \
+in the drawer, which you also put in.
+
+You want to get up when your eyes fall on a picture on your desk. The picture shows the outline of a pretty young woman \
+on a watercolor background.
 
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
