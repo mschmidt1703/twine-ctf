@@ -651,7 +651,7 @@ After you are done daydreaming, you decide to put the book back in its place. As
   setup.story()
 </script>
 
-Schade, die CD enthält nichts weiter als eine digitale Version des Jahrbuchs. Wenigstens kennst du jetzt den Namen deines Vaters und weißt, wie er aussieht. Dich überkommt das Gefühl, dass du zu der Hochschule fahren solltest, an der dein Vater studiert hat. Du könntest dort weitere Hinweise zu deiner Vergangenheit finden. Das wirst du mit John bereden müssen.
+Too bad, the CD contains nothing more than a digital version of the yearbook. On the bright side, now you know your father's name and what he looks like. You get the feeling that you should go to the university where your father studied. You might find more clues about your past there. You will have to discuss this with John.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
