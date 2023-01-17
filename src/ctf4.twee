@@ -7,7 +7,7 @@
 
 (set: _info to "To pass this challange you need to execute an XSS code injection. Try to trigger this site to show an alert. 
 This will not require you to have a look into the source code. 
-After you execute XSS successfully, you will be automatically redirected to the next page and pass this challenge.")
+After you execute XSS successfully, you will pass the challenge and will be automatically redirected to the next page.") 
 
 (if: $ctfs contains "ctf4")[]
 (else:)[(alert: _info)]
