@@ -1667,67 +1667,6 @@ about it any more because John bursts into the office because an armed team has 
 up to your flat. You have to escape. You lock the door to the office. You look around your office, searching, \
 because somehow you have to get out of here. Meanwhile, John sends an emergency signal to Josie.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.1.p]]
-
-<style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
-  /* -- Twine overrides -- */
-
-  tw-story {
-    background-image: url(src/img/general/background/background_landscape_dark.svg);
-  }
-
-  /* -- General CSS -- */
-
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-  }
-
-  * {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
-  }
-</style>
-
-
-:: 9.1.p {"position":"600,4000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-<script>
-  setup.story()
-</script>
-
-•	Entdeckt
-o	John platzt ins Büro
-o	Bewaffnetes Team ist aufgetaucht
-o	Kommt zum Eingang hoch
-	Ihr müsst fliehen
-	Ihr müsst einen alternativen Weg finden
-o	Ihr verriegelt die Tür zum Büro
-o	Du schaust dich suchend in deinem Büro um
-	Irgendwie müsst ihr hier doch rauskönnen
-	John sendet währenddessen an Josie ein Notsignal
-	Am Fenster ist eine Feuerleiter
-	Aber dort wartet unten bereits ein zweites Team auch euch
-o	Dir fällt eines der Bücherregale auf
-	Auf dem Boden sind Schleifspuren zu sehen
-	Das Bücherregal lässt sich nach vorne ziehen
-	Dahinter befindet sich ein Tunnel
-o	Du machst John auf den Tunnel aufmerksam und er nickt
-o	Ihr hört, dass die Eingangstür aufgebrochen wird
-	John schaltet für Josie einen Peilsender an, damit sie euch schneller finden kann
-o	Ihr hört Stimmen
-o	Sie schwärmen in alle Räume aus
-o	Sie versuchen ins Büro zu kommen
-o	Du feuerst einen Schuss auf den Pc ab und ihr rutscht ins Dunkle
-	Du rutschst zuerst
-	John zieht das Bücherregal wieder zu
-
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->9.x.p]]
 
 <style>
@@ -1756,7 +1695,7 @@ o	Du feuerst einen Schuss auf den Pc ab und ihr rutscht ins Dunkle
 </style>
 
 
-:: 9.x.p {"position":"800,4000","size":"100,100"}
+:: 9.x.p {"position":"600,4000","size":"100,100"}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
