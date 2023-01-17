@@ -858,13 +858,8 @@ Danach wird alles schwarz und eine kryptische Zeichenfolge erscheint.
   setup.story()
 </script>
 
-•	Notieren der Notiz und Spuren verwischen
-o	Nimmst dir heimlich, sodass die anderen es nicht merken einen Stift und notierst die Nummer
-o	Dann löscht du die eben getätigte Suche 
-o	Öffnest die Fenster, die vorher offen waren
-o	Sperrst den Pc wieder, damit niemand etwas merkt
-o	Du hast dieses Gefühl, dass irgendwas nicht in Ordnung ist
-o	Ihr verlasst das Büro ohne, dass es irgendwer mitbekommen hat
+Du bist zurück in der Realität. Es ist nur ein kurzer Moment vergangen. Du nimmst dir einen Zettel und einen Stift, die du auf dem Schreibtisch gefunden hast und notierst dir die Zeichenfolge. Danach steckst du den Zettel in deine Tasche. 
+Nun musst du deine Spuren verwischen. Du löscht den Sucheintrag aus dem Suchverlauf der Datenbank, verschiebst alle Fenster auf dem PC so wie sie zuvor waren, sperrst den PC und verlässt das Büro des Prüfungsamts mit John und Josie. Als ihr gerade um die nächste Ecke verschwunden seid, konntest du Schritte hören, die sich wohl vom anderen Ende des Ganges Richtung Prüfungsamt bewegen.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
 
