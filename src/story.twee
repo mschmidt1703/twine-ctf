@@ -2090,15 +2090,28 @@ Next to the door, a keypad that can certainly be used to open the door.
   setup.story()
 </script>
 
-•	Erfolgreiche Eingabe des Codes
-o	Das Türschloss entriegelt sich und John öffnet vorsichtig die Tür und überprüft die Lage
-o	Er winkt dir um dir zu signalisieren, dass du ihm folgen sollst
-	Josie ist noch nicht in der Nähe
-	Ihr rennt über die Straße und versteckt euch am Anfang der Gasse
-o	John: „Sie werden bald den geheimen Ausgang finden“, er hält kurz Inne und zieht eine Mütze aus der Tasche
-	John läuft aus der Gasse raus und biegt rechts ab, wo eine Querstraße abgeht
-	Er wirft die Mütze dahin und kommt zurück
-	„Falsche Fährten können nicht schaden.“
+The door lock unlocks after successfully entering the code. John opens the door \
+carefully to check the situation. He signals for you to follow him quietly. You \
+follow him to the alley entrance on the opposite side of the street. You hide \
+there. John whispers to you that Josie is not yet around and that you should \
+stay where you are. He also tells you that they're probably about to find the \
+secret exit and they need to stay calm. Next, John pulls a hat out of his \
+pocket. He walks out of the alley and turns right. There is a cross street off \
+to the right. When John returns, he winks at you as he tells you that false \
+tracks can never be a bad thing.
+
+Now a light flashes on John's wristband. He is about to explain to you what it \
+means when you hear a bang. Your pursuers have blown open the door through \
+which you had just escaped. You take cover, but in such a way that you can \
+still see your pursuers. You are looking around when one of them disappears in \
+the direction John had just gone. The pursuer, who has disappeared from sight, \
+calls out to the others that he has found a cap and that it is still warm, which \
+means that the fugitives have fled in that direction. Thereupon, the other \
+pursuers also run in that direction.
+
+John presses the button on his wristband, and an engine noise is heard. Then \
+you see the car pull up at the beginning of the alley. You can now simply \
+vanish unnoticed.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->10.1.p]]
 
