@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Memory Loss: Find Your Way Back.</tw-noscript></noscript></tw-story>
-<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="24" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
+<!-- UUID://DC4F9919-114F-42D0-AD6B-6D66F013AD8C// --><tw-storydata name="Memory Loss: Find Your Way Back" startnode="24" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="DC4F9919-114F-42D0-AD6B-6D66F013AD8C" zoom="1" format="Harlowe" format-version="3.3.3" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* -- Twine overrides -- */
 
 /* Redo and undo button */
 tw-icon {
@@ -165,6 +165,7 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
+	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
@@ -1782,7 +1783,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 (else:)[(alert: _info)]
 
 &lt;script&gt; 
-  setup.ctf6_reset()
+  setup.ctf6_reset();
   setup.all();
 &lt;/script&gt;
 
@@ -1948,6 +1949,8 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 &lt;script&gt;
   setup.ctf6_reset()
+  /*Firefox on Ubuntu*/
+  localStorage.setItem(picID, &quot;1&quot;);
 &lt;/script&gt;
 
 Congratulations you made it!
@@ -3209,7 +3212,7 @@ please enter your name. Please note your name must be at longer then three chara
   setup.story()
 &lt;/script&gt;
 
-&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;h1&gt;Story&lt;/h1&gt;
 
 You woke up and felt as if you had been asleep for ages. At first you can&#39;t really see anything, \
 but after your eyes have adjusted to the light, you slowly recognise something again. You are in \
@@ -3386,7 +3389,7 @@ o	Du legst dich schlafen
 o	Josie erzählt dir auf Nachfrage, dass das Hauptquartier in der Bibliothek ein gut verwaltetes Archiv für sowas hat
 •	In der Bibliothek im Archiv 
 
-[[&lt;button id=&quot;resume-btn&quot; class=&quot;button is-danger is-rounded&quot;&gt;Next-&gt;CTF 7]]
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
@@ -3631,7 +3634,7 @@ o	Du räumst die gelesenen Jahrbücher wieder weg, einschließlich das, welches 
 o	Die CD steckst du ein
 o	Du gehst auf dein Zimmer und steckst die CD in deinen PC  CTF
 
-[[&lt;button class=&quot;startChallenge&quot;&gt;Next-&gt;CTF 4]]
+[[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 4]]
 
 &lt;style&gt;
   @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);

@@ -30,6 +30,7 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
+	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
