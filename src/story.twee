@@ -935,15 +935,10 @@ Während des Gesprächs erzählt dir Josie, dass sie eine beste Freundin hat und
   setup.story()
 </script>
 
-•	Wieder zurück
-o	Recherche über sich selbst im Internet
-	Nichts, was er bisher nicht schon erfahren hatte
-o	Schlafen gehen
-•	Am nächsten Tag
-o	Verschlafen
-o	Aufgaben erledigen
-•	Abendessen
-o	Experiment mit Schokoküssen
+Mitten in der Nacht erreicht ihr das Hauptquartier. Nachdem ihr das Auto ausgeladen und noch eine Kleinigkeit gegessen habt, verschwindet jeder zum Schlafen auf sein Zimmer. 
+Am nächsten Tag wachst du erst am späten Nachmittag auf.  Da du keine Aufgaben hast, recherchierst du den ganzen Nachmittag im Internet ein wenig über dich. Jedoch kannst du nichts finden, was du nicht schon wusstest und da es bereits Zeit zum Abendessen war.
+Als du in die Kantine kommst, stehen Josie, John und Rob um einen Tisch. Rob präsentiert sein neustes Schul-Physik-Experiment: Ein Schokokuss im Vakuum. Du stößt gerade dazu als Rob allen sein Experiment vorführen möchte. Der Schokokuss steht in einem Glasbehälter und an dem Glasbehälter ist ein Schlauch angeschlossen. Rob schließt das Ventil am Schlauch und weist alle darauf hin, jetzt ganz genau aufzupassen. 
+Im Glasbehälter wird ein Vakuum erzeugt, weswegen sich der Schokokuss aufbläht. Alle starren nun auf Rob. Nun öffnet Rob das Ventil am Schlauch wieder und der Schokokuss zieht sich wieder zusammen, da nun wieder Luft in den Glasbehälter gelangt. Du denkst dir, dass das nicht gerade spannend ist, aber um nicht unhöflich zu wirken, lächelst du. Die anderen erklären Rob dann während des Abendessens, dass sie dieses Experiment bereits in der Schule hatten und es daher nichts Spannendes mehr ist. Rob lässt sich seine Freude davon nicht nehmen.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
 
