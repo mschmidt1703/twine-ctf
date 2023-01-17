@@ -1392,36 +1392,13 @@ While you sleep, your brain works at full speed to process the information overl
   setup.story()
 </script>
 
-•	Der Traum geht in Erinnerungen über
-o	Flashback 1
-	Du gehst deinem Alltag nach und fühlst dich andauernd verfolgt
-o	Flashback 2
-	Du bist abends auf dem Weg nach Hause und wirst in eine dunkle Nebengasse gezogen
-	Man schlägt auf dich 
-	Wirft dich in den Haufen Müllsäcke
-	Einer der Männer beim Gehen „Du hättest sein Angebot annehmen sollen“
-	Du wirst bewusstlos
-	Als du erwachst, tut dir alles weh
-	Du schleifst dich nach Hause
-o	Flashback 3
-	Du schaust in den Spiegel
-•	Blaues Auge
-•	Gesicht geschwollen
-•	Kratzer
-o	Flashback 4
-	Totes Tier in deinem Briefkasten
-	Du besorgst dir im geheimen eine neue Wohnung, sicherer, auf fremden Namen, damit er sie nicht finden kann
-o	Flashback 5
-	Anonymer Chat mit der Nachricht, dass als nächstes deine Liebsten dran sind
-	Du versuchst deine Eltern anzurufen, der Anruf geht nicht durch
-	Deine Eltern haben keine Handys, daher bringt SMS nichts
-o	Flashback 6
-	Du fährst zu deinen Eltern
-	Parkst etwas entfernt
-	Schleichst dich vorsichtig zum Haus
-	Es fallen zwei Schüsse und zwei in schwarz gekleidete Männer verlassen das Haus und fahren weg
-	Du rennst rein und im Wohnzimmer siehst du an der Wand zwei Einschusslöcher
-	Dir laufen tränen übers Gesicht und du rennst schnell zu deinem Wagen bevor dich jemand sieht
+Deine Gedanken gehen in Erinnerungen über.
+Du siehst viele Momente aus deinem Alltag, in denen du dich verfolgt gefühlt hast.
+Als nächstes siehst du, wie du abends auf den Weg nach Hause bist. Du wirst in eine dunkle Nebengasse gezogen und mehrere Männer prügeln auf dich ein und werfen dich dann in einen Haufen Müllsäcke. Als sie sich entfernen ruft dir einer der Männer zu, dass du sein Angebot hättest annehmen sollen und du verlierst das Bewusstsein. 
+Danach siehst du, wie du deinen Briefkasten öffnest und darin ein totes Tier findest. Damit wird dir klar, du brauchst eine neue, sichere Wohnung, die du auf einem falschen Namen kaufen musst.
+Nun siehst du, wie sich auf deinem Monitor ein Chat öffnet. Dieser Chat enthält als einzige Nachricht: „Hat dir die Überraschung in deinem Briefkasten gefallen? Deine Liebsten sind die nächsten.“ Nachdem du das gelesen hast, versuchst du deine Eltern anzurufen, doch es ist, als ob die Verbindung tot ist. Du schnappst dir deine Sachen und rennst zum Auto, um zu ihnen zu fahren.
+Bei deinen Eltern angekommen, parkst du etwas entfernt. Du steigst aus und schleichst dich vorsichtig zum Haus deiner Eltern. Ein fremdes Auto parkt vor dem Haus und die Haustür ist offen. Du willst hinlaufen, doch dann hörst du zwei Schüsse. Du kannst dich nicht rühren. Zwei Männer laufen aus dem Haus und steigen in das Auto ein. Erst als sie mit quietschenden Reifen losfahren, kannst du dich rühren und zur Haustür rennen. Du rennst ins Haus und direkt ins Wohnzimmer. Was du siehst, kannst du nicht in Worte fassen. Überall ist Blut. Du fühlst den Puls von deinem Vater und deiner Mutter, doch es ist zu spät…
+Du verschwindest aus dem Haus und fährst verstört zurück.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
 
@@ -1541,25 +1518,8 @@ Anhand der Details aus deinen Erinnerungen, war es möglich den Standort deiner 
   setup.story()
 </script>
 
-•	Am nächsten Tag 
-o	Nach dem Aufstehen rennst du sofort zu John und Josie
-	Du erzählst ihnen alles was passiert ist
-•	Auch vom Algorithmus
-	Beide sind geschockt
-	Du weißt, dass es viel verlangt ist, aber du bittest die beiden dir zu helfen, die Wohnung ausfindig zu machen und dich dorthin zu begleiten
-	Es werden Bedenken bezüglich der Gesamtsituation angebracht
-	Beide erkennen die Wichtigkeit und die Gefahren, sie haben bereits von A. G. gehört 
-	Sie stimmen unter der Bedingung zu, dass alle entsprechend vorbereitet sind
-•	Schießtraining und entsprechende Ausrüstung
-•	Vorbereitung 
-o	Die Ausrüstung anzuschaffen benötigte einige Tage
-o	Währenddessen gehst du mehrmals mit jeweils Josie und John zum Schießen
-	Keiner kann riskieren, dass irgendwer schutzlos in eine gefährliche Situation gerät
-	Tatsächlich rechnet ihr damit, dass ihr in eine Falle geraten könntet
-o	Zwischen den Schießtrainings hilft Josie dir dabei, die Adresse der Wohnung ausfindig zu machen, indem ihr jedes Detail, welches dir noch aus der Erinnerung einfällt, analysiert
-o	Am Mittag nach der Auslieferung der Ausrüstung habt ihr einen Volltreffer
-	Deine Wohnung ist in der Nähe der Universität
-o	Am nächsten Tag soll es losgehen
+Als ihr angekommen seid, parkt ihr etwas abseits von der Wohnung, um kein Aufsehen zu erregen. Josie bleibt mit dem Team erstmal beim Auto. So kann sie im Falle eines Falles die Flucht besser koordinieren.
+Die Wohnung befindet sich in einem leerstehenden, alten Fabrikgebäude im ersten Obergeschoss. Ihr betretet das Gebäude und geht hoch zur Wohnung. Das Aufbrechen der Haustür war erstaunlich einfach, daher geht ihr davon aus, dass die Wohnung schonmal durchsucht wurde. Ihr betretet die Wohnung, die vergleichsweise zu dem alten Fabrikgebäude sehr modern eingerichtet ist. Vorsichtig überprüft ihr alle Räume, um sicherzugehen, dass ihr alleine in der Wohnung seid.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
 
@@ -1803,12 +1763,9 @@ o	Du feuerst einen Schuss auf den Pc ab und ihr rutscht ins Dunkle
   setup.story()
 </script>
 
-•	Flucht
-o	Auf einmal wird es etwas und ihr landet auf alten Kissen
-o	Durch Schlitze an der Wand kommt Sonnenlicht
-o	John zieht eine Taschenlampe aus seiner Jackentasche und leuchtet vorsichtig in die Richtung
-o	Es ist eine Tür, die von Innen verschlossen ist
-o	Über das Eingabefeld könnte man die Tür öffnen  CTF 
+Auf der hektischen Suche nach einem alternativen Weg fällt dir eines der Bücherregale auf. Auf dem Boden vor dem Bücherregal befinden sich Schleifspuren. Das deutet darauf hin, dass man das Regal verschieben kann. Du hantierst also an dem Regal herum und es lässt sich tatsächlich wie eine Tür aufziehen. Hinter dem Bücherregal befindet sich der Eingang zu einer Rutsche. Du machst John auf den Ausgang aufmerksam und er nickt.
+Dann hört ihr, dass due Eingangstür aufgetreten wird und Menschen in die Wohnung stürmen. John sendet ein weiteres Notsignal an Josie. Ihr hört Stimmen und wenig später hört ihr, dass sie an der Bürotür sind. Du feuerst einen Schuss auf deinen PC ab, ehe ihr rennt zum Ausgang. Du rutschst zuerst, nachdem John das Bücherregal wieder nach hinten verschoben hat.
+Auf einmal landet ihr auf alten Kissen. Der Raum ist dunkel, doch durch Schlitze an der Wand kommt Sonnenlicht. John zieht eine Taschenlampe aus seiner Jackentasche und leuchtet vorsichtig in die Richtung der Schlitze. Es handelt sich um eine Tür mit Lüftungsschlitzen. Neben der Tür ein Eingabefeld, über das sich die Tür sicherlich öffnen lässt.
 
 [[<button class="startChallenge">Start Challenge->CTF 8]]
 
