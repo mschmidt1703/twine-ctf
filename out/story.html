@@ -490,7 +490,7 @@ This will require you to have a look into the source code. &quot;)
     (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Are you familiar with the JavaScript funktion atob()? You should look it up!&quot;)]
   &lt;/div&gt;
   &lt;div class=&quot;btn-pos1&quot;&gt;
-    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you ever tried inserting code in a text field? Try it out and see what will happen.&quot;)]
+    (link-repeat: &quot;&lt;button class=\&quot;hint-btn-background\&quot;&gt;&lt;/button&gt;&quot;)[(alert: &quot;Have you ever tried inserting some random code in a text field? Try it out and see what will happen. Can you find the code, where this message came from?&quot;)]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -578,10 +578,15 @@ This will require you to have a look into the source code. &quot;)
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
   }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="2" name="CTF1end" tags="" position="600,1000" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
-(set: _postMsg to &quot;&quot;) \
+(set: _postMsg to &quot;The Challenge shows you that you must never hard-code credentials and not use a encoding schema that can easily be decoded.&quot;) \
 (set: $success to false) \
 
 &lt;div class=&quot;container&quot;&gt;
@@ -1150,6 +1155,7 @@ iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
 
 &lt;style&gt;
   /* -- General CSS -- */
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   br {
     display: none;
@@ -1227,6 +1233,15 @@ iVBORw0KGgoAAAANSUhEUgAAAi0AAACNCAIAAAD0CN3iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
   }
+  
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
+  }
+  
+  #textbox {
+	margin-top: 5%
+  }    
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="10" name="CTF3end" tags="" position="700,500" size="100,100">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js&quot;&gt;&lt;/script&gt;
 
 Please enter the flag here: 
@@ -1260,6 +1275,7 @@ Please enter the flag here:
 &lt;/div&gt;
 &lt;style&gt;
   /* -- General CSS --*/
+  @import url(&quot;https://fonts.cdnfonts.com/css/ocr-a-extended&quot;);
 
   .resumeButton {
     z-index: 1;
@@ -1291,6 +1307,11 @@ Please enter the flag here:
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
+  }
+  
+  * {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="400,1200" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
 
