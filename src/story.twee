@@ -1160,12 +1160,9 @@ Nachdem du auch nach einer weiteren Stunde keine Suchergebnisse finden konntest,
   setup.story()
 </script>
 
-•	Du hast es ins Darknet geschafft
-o	Leichter als gedacht, aber du scheinst es wohl drauf zu haben
-o	Während der Recherche 
-o	Entdeckst lauter Dinge von denen du nichts wissen möchtest
-o	Bleibst erstmal erfolglos
-•	Die nächsten Tage hilfst du den anderen bei den Arbeiten und recherchierst immer mal wieder
+Du hast es ins Darknet geschafft und es war leichter als gedacht!
+Während der fortgesetzten Recherche entdeckst du laute Sachen, von denen du nichts wissen möchtest. Leider bleibt deine Suche auch hier erstmal erfolglos.
+Du entschließt dich, die nächsten Tage immer mal wieder zu recherchieren. Vielleicht hast du nicht die richtigen Suchparameter eingegeben.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
