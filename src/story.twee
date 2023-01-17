@@ -1070,15 +1070,8 @@ Dir wird schwarz vor Augen und du siehst dich selber, wie du vorm PC sitzt. Die 
   setup.story()
 </script>
 
-•	Review der Erinnerung
-o	Okay, that’s an awesome algorithm
-•	Danach
-o	Recherchierst nach vergleichbaren Algorithmen
-	Stellst fest, dass es keinen so wie deinen gibt
-	Keeps it also a secret for now
-	Du fragst dich, ob das der Grund ist, wie du dazu kamst dort bewusstlos zu liegen und deinem Gedächtnisschwund
-o	Du recherchierst also überall weiter, um an neue Informationen zu kommen
-	Wirst nicht fündig
+Als du wieder zu dir kommst, wird dir klar, dass du den auf der Webseite beschriebenen Algorithmus geschrieben und programmiert hast.
+Du recherchierst also im Internet nach ähnlichen Algorithmen, doch du stellst schnell fest, dass es keinen gibt, der so effizient ist, wie deiner. Du fragst dich, ob dieser Algorithmus der Grund sein kann, weswegen du bewusstlos von den anderen gefunden wurdest. Deswegen wirst du das auch erstmal für dich behalten.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
