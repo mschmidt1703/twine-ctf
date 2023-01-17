@@ -143,7 +143,7 @@ function eventOnClickHandler(event) {
   var user = btoa(document.getElementById("user").value.replace(/=/g, ""));
   var pass = btoa(document.getElementById("password").value.replace(/=/g, ""));
   
-  if ("d3d3LWFkbWlu" == user && "cHV6emVsUGllY2V7RGhGcE1YSHlYNX0=" == pass) {
+  if ("d3d3LWFkbWlu" == user && "cHV6emxlUGllY2V7RGhGcE1YSHlYNX0=" == pass) {
 		alert(`Correct Username and Password! \nYour flag is ${atob(pass)}.`)
 		/* Redirect to Story or Ctf Overview */
 		Harlowe.goto("CTF1end");
