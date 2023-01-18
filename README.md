@@ -13,7 +13,8 @@ This game was developed on the Twine engine to teach some basic knowledge about 
     2. [How to start the Game](#how-to-start-the-game)
 2. [Development](#development)
     1. [Requirements](#requirements)
-    2. [Workflow](#workflow)
+    2. [Tests](#tests)
+    3. [Workflow](#workflow)
 3. [Image Sources](#image-sources)
 4. [Credits](#credits)
 
@@ -45,8 +46,7 @@ Tested on Windows with Chrome Version 108.0.5359.126 and Firefox 108.0.2 (64-Bit
 Tested on Ubuntu 18.04.2 with Firefox 108.0.2 (64-bit)
 Resolution: 1920x1080
 
-## Missing (due to time constraints)
-Responsive Design -> Resolution: 1920x1080
+Missing: Responsive Design -> Resolution: 1920x1080
 
 ## Workflow 
 1.) Pull the current data from repository:
