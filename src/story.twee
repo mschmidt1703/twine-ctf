@@ -358,19 +358,18 @@ o	Am nächsten Tag wollt ihr weiterreden
   setup.story()
 </script>
 
-•	Du liegst wach im Bett und sortierst deine Gedanken
-o	Du weißt, dass du deine Erinnerungen nicht einfach so wiederbekommst, sondern dass Erinnerungen irgendwie getriggert werden müssen
-	Eine Stimme im Inneren deines Kopfes sagt dir das
-o	Ebenso weißt du, dass es auch passieren kann, dass du dich niemals an das was vorher war, erinnern kannst
-o	Du kommst zu dem Entschluss, dass du erstmal alles hinnimmst und dass das jetzt dein neues Leben ist, denn schließlich hast du keine andere Möglichkeit
-	Du weißt nicht wohin du sonst gehen sollst
-	Die Welt ist dir gerade einfach nur fremd
-	Fürs erste nimmst du Johns Angebot an, dass du bei denen bleibst und dich nützlich machst
-•	Findest das sogar Recht cool
-o	Du stellst fest, dass du trotzdem herausfinden musst, was die letzten Jahre auf der Welt passiert ist
-	Es wäre eine gute Idee alte Nachrichten zu lesen
-•	Berichterstattungen usw.
-o	Du legst dich schlafen
+You lie awake in bed and sort out your thoughts. You probably won't get your \
+memories back that easily, because they have to be triggered. You also know \
+that it may happen that you will never remember anything again. But no matter \
+what, your options now are limited. You have nowhere else to go, and everything \
+just seems strange to you.
+
+So you are willing to accept John's offer and stay here for now. You feel \
+comfortable with and like the people you have met today. Your gut feeling tells \
+you that they are good people who mean you no harm. In fact, you are already \
+curious to see how you can make yourself useful here and what there will be to \
+discover because now you have to get to know the world anew, and with this \
+thought, you go to sleep.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.x.p]]
 
