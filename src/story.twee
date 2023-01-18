@@ -313,15 +313,24 @@ o	Beschreibung von deren Hauptquartier
   setup.story()
 </script>
 
-•	Dialog beim Abendessen
-o	Dir, John, Josie und Rob
-o	Du fragst, wie sie dich gefunden haben oder so
-o	Angebot, dass du erstmal bei denen bleiben kannst
-o	Sie wollen dich einmal komplett untersuchen um weitere Verletzungen auszuschließen
-	Ebenso eine Untersuchung deines Hirns aufgrund der Amnesie
-o	Du wirst zu deinem neuen Zimmer geführt
-o	Da es mittlerweile abends ist, schlagen sie vor, dass du dich erstmal mit deinem Zimmer vertraut machst und dich ausruhst
-o	Am nächsten Tag wollt ihr weiterreden
+At dinner, you sit with Josie, John, and Rob. You ask them how they found you \
+and if they know what happened to you. John tells you that they found you by a \
+river when they were out, and they have no idea how you got there or what \
+happened to you. Rob takes over and tells you that your health was critical \
+when John arrived with you at headquarters. Rob did everything he could to \
+operate on you and treat your internal bleeding, which almost killed you and \
+caused you to fall into a coma during the operation.
+
+You didn't expect that. Josie turns to you and says that they are all glad that \
+you have finally woken up. John then asks you if you would like to stay with \
+them for a while, because then you would have a place to stay and you could \
+certainly make yourself useful. You don't disagree, but you still say that you \
+would like to think about it.
+
+After dinner, Josie shows you your room. Your room consists of a bed, a desk \
+with a PC on it, a wardrobe, and a small bathroom with a shower. Josie tells \
+you to make yourself at home and that if you have any questions, you are \
+welcome to ask her. You smile. She wishes you a good night and leaves.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.4.p]]
 
