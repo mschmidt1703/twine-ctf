@@ -477,6 +477,7 @@ you notice a controller on it.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -738,6 +739,7 @@ Immediately after arriving home, you put the CD into your PC.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -956,6 +958,7 @@ will not be locked for much longer.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -1232,6 +1235,7 @@ decrypting a string on your PC.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -1371,6 +1375,7 @@ other methods: The Darknet. But how do you get to the Darknet? 
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -1483,6 +1488,7 @@ it.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -1670,6 +1676,7 @@ on this safe is a manual that tells you how to break it open.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -1938,6 +1945,7 @@ shows the outline of a pretty young woman on a watercolor background.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -2111,6 +2119,7 @@ Next to the door, a keypad that can certainly be used to open the door.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -2276,6 +2285,7 @@ are encrypted except one. So you open the only unencrypted file.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -2448,6 +2458,7 @@ this link in your web browser on your PC.
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
@@ -2570,7 +2581,13 @@ You and Lizzie have decided to start at the agency and thus be together with \
 your family in the future, and with this happy ending, this story also ends, \
 so does this game.
 
+
+
 Thank you for playing, and we hope you enjoyed it :)
+
+Please click on the button to return to the main page.
+
+If you want to play the game again, you have to reset it by clicking on the reset button.
 
 [[<button class="startChallenge">Return to Main->MainPage]]
 
@@ -2607,6 +2624,7 @@ Thank you for playing, and we hope you enjoyed it :)
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
     color: #1e1e1e;
     text-decoration: none;
     text-shadow: 2px 2px 4px #000000;
