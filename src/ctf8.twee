@@ -47,7 +47,7 @@ This will not require you to have a look at the source code of this page.")
     [[<button class="success-btn-background"></button>->CTF8end]]
   </div>
   <div class="btn-pos2">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The programme you will write should loop over a message array containing the numbers from above.
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The program you will write should loop over a message array containing the numbers from above.
 	 It sould calculate mod 42 from each number. You will then be able to map all numbers (if 0 <= x <= 25) to the letters A-Z.")]
   </div>
   <div class="btn-pos1">

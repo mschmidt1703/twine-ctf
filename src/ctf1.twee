@@ -50,7 +50,7 @@ This will require you to have a look into the source code. ")
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Are you familiar with the JavaScript funktion atob()? You should look it up!")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you ever tried inserting some random code in a text field? Try it out and see what will happen. Can you find the code, where this message came from?")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "Have you ever tried inserting some random code in a text field? Try it out and see what will happen. Can you find in the code, where this message came from?")]
   </div>
 </div>
 
@@ -150,7 +150,7 @@ This will require you to have a look into the source code. ")
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
 
 Please enter the flag here: 
-(set: _postMsg to "The Challenge shows you that you must never hard-code credentials and not use a encoding schema that can easily be decoded.") \
+(set: _postMsg to "I hope this challenge showed you the importance of securing log-in credentials by using strong encrpytion methods and avoiding hard-coded user data the source code.") \
 (set: $success to false) \
 
 <div class="container">

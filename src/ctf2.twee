@@ -7,13 +7,9 @@
 
 <h1>CTF 2 - Forensics</h1>
 
-<h2>Do I live alone?</h2>
-
 <tw-consecutive-br></tw-consecutive-br>
 
-Great! Now you know your name, but nothing else.
-
-After the thorough search on the book shelf with little progress, you feel helpless. You take a seat and try to calm your nervs a bit. However, a painting hanging on the wall infront of you keeps garnering your attention. There is something about it you can't put your finger on...
+Here is an interesting image. I wonder what message did the artist want the viewer to receive while observing this masterpiece. 
 
 <img src="src/img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;" alt="picture frame"></img>
 
