@@ -68,16 +68,16 @@
       <p>Returns to ctf overview or main page depending on the game mode</p>
     </div>
     <div class="btn-pos5">
+      <button class='help-btn-background'></button>
+      <p>Opens the message that explains the challenge</p>
+    </div>
+    <div class="btn-pos3">
       <button class='success-btn-background'></button>
       <p>Forwarding to flag check</p>
     </div>
-    <div class="btn-pos3">
+    <div class="btn-pos2">
       <button class='code-btn-background'></button>
       <p>Shows a code snippet</p>
-    </div>
-    <div class="btn-pos2">
-      <button class='help-btn-background'></button>
-      <p>Opens the message that explains the challenge</p>
     </div>
     <div class="btn-pos1">
       <button class='hint-btn-background'></button>
