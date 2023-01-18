@@ -282,19 +282,17 @@ be concerned.
   setup.story()
 </script>
 
-•	Erklärungen
-o	Was die machen
-	Dürfen sie dir nicht sagen
-	Versichern dir, dass es nichts Illegales ist
-o	Beschreibung von deren Hauptquartier
-	Unterkünfte
-	Kantine
-	Krankenzimmer
-	Büros
-	OP-Zimmer
-	Dein Zimmer
-•	Mit einem eigenen PC und Internet-Anschluss
+Now Rob comes into the room and introduces himself to you. He is a doctor and \
+wants to examine you. You let him. John waits outside the door during the \
+examination. When you have finished the examination, John shows you around.
 
+You find yourself in a headquarters, but John is not allowed to tell you what \
+she is doing there. He assures you, however, that it is not criminal activity. \
+Since he has saved you and seems nice, you don't question it further. During \
+your tour, you see a small part of the headquarters: the offices, the infirmaries, \
+the canteen, the shelters, and the courtyard. In the courtyard, you meet Josie. \
+John introduces the two of you. She is a little younger than you but makes a \
+warm impression. The two of you hit it off right away.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.3.p]]
 
