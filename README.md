@@ -94,7 +94,7 @@ tweego.exe src/ -o out/story.html
 Background Images: \
 /out/src/* by Lara Laskowsky \
 /out/src/img/main/wires_landscape.svg by Lara Laskowsky \
-/out/src/img/header/* by Lara Laskowsky \
+/out/src/img/header/* by Lara Laskowsky 
 
 Images Mainpage: \
 /out/src/img/general/ctf/previews/preview_default.svg by Lara Laskowsky \
@@ -105,33 +105,33 @@ https://www.flaticon.com/de/kostenloses-icon/fragezeichen_5726470?term=fragezeic
 https://freeicons.io/material-icons-action/home-icon-15944 \
 https://www.iconfinder.com/icons/2124268/document_essential_app_code_icon \
 https://www.iconfinder.com/icons/1891021/approved_check_checkbox_checkmark_confirm_success_yes_icon \
-https://www.iconfinder.com/icons/2303177/bulb_creative_hint_idea_lamp_light_tip_icon \
+https://www.iconfinder.com/icons/2303177/bulb_creative_hint_idea_lamp_light_tip_icon 
 
 Icon Adaptions: \
-/out/src/img/general/ctf/* by Lara Laskowsky \
+/out/src/img/general/ctf/* by Lara Laskowsky 
 
 Computer: \
-https://www.pexels.com/de-de/foto/grauer-lenovo-flachbildschirm-zeigt-an-was-sie-lieben-neon-signage-1772120/ \
+https://www.pexels.com/de-de/foto/grauer-lenovo-flachbildschirm-zeigt-an-was-sie-lieben-neon-signage-1772120/ 
 
 Adaption Background with computer: \
-/out/src/img/general/ctf/pc_rahmen.png by Marc Schmidt \
+/out/src/img/general/ctf/pc_rahmen.png by Marc Schmidt 
 
 CTF1: \
-https://www.hippopx.com/en/assorted-books-shelf-school-library-study-knowledge-51883 \
+https://www.hippopx.com/en/assorted-books-shelf-school-library-study-knowledge-51883 
 
 CTF2: \
-https://pixabay.com/de/illustrations/frau-malen-aquarell-papier-kunst-4178302/ \
+https://pixabay.com/de/illustrations/frau-malen-aquarell-papier-kunst-4178302/ 
 
 CTF4: \
-/out/img/ctf4/www.png by Marc Schmidt \
+/out/img/ctf4/www.png by Marc Schmidt 
 
 CTF5: \
-https://www.pexels.com/de-de/foto/verschiedene-gemalde-383568/ \
+https://www.pexels.com/de-de/foto/verschiedene-gemalde-383568/ 
 
 CTF6: \
 https://pixabay.com/de/photos/wolf-winter-schnee-raubtier-frost-2043464/ \
 https://pixabay.com/de/photos/jay-vogel-zweig-sitzend-schneefall-548381/ \
-https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/ \
+https://pixabay.com/de/photos/w%c3%b6lfe-wald-winterlich-einsamkeit-1341881/ 
 
 CTF7: \
-https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg \
+https://i0.hippopx.com/photos/440/457/108/books-shelf-school-library-preview.jpg 
