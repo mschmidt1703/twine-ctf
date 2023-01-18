@@ -2365,12 +2365,14 @@ the depths.
   setup.story()
 </script>
 
-•	Review
-o	Du hättest es nicht gedacht, aber du hast dein Gedächtnis vollständig zurückerlangt
-o	Dir ist nun alles klar
-•	Festplatteninhalte
-o	Wie du es dir gedacht hattest, befinden sich auf der Festplatte deine Algorithmen
-o	Besser: Sogar eine komplette Kopie deines PCs
+You didn't expect it, but you have just regained your memory completely. \
+Furthermore, your assumption has been confirmed, and the USB stick contains \
+the complete algorithm as well as a copy of your PC.
+
+You think about the events of the last few weeks and get the feeling that it \
+will be inevitable to confront Mr. Grayson. You fear that if you don't, he may \
+track down your new family and kill them too. Your thoughts drift to your \
+parents and Lizzie, and you wonder if you could have saved them all.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->11.x.p]]
 
