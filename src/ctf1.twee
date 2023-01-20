@@ -147,8 +147,11 @@ This will require you to have a look into the source code. ")
 
 
 :: CTF1end {"position":"1000,1800","size":"100,100"}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
-
+<script>
+    var script = document.createElement('script');
+    script.src = "src/js/crypto-js.js";
+    document.head.appendChild(script);
+</script>
 Please enter the flag here: 
 (set: _postMsg to "I hope this challenge showed you the importance of securing log-in credentials by using strong encrpytion methods and avoiding hard-coded user data the source code.") \
 (set: $success to false) \

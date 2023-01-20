@@ -130,8 +130,11 @@ This will not require you to have a look at the source code of this page.")
 
 
 :: CTF9end {"position":"1000,4600","size":"100,100"}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
-
+<script>
+    var script = document.createElement('script');
+    script.src = "src/js/crypto-js.js";
+    document.head.appendChild(script);
+</script>
 Please enter the flag here: 
 (set: $success to false)
 

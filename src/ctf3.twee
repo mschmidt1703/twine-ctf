@@ -133,8 +133,11 @@ iVBORw0KGgoAAAANSUhEUgAAAVkAAAA4CAIAAADYTxzHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
 
 
 :: CTF3end {"position":"800,3000","size":"100,100"}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
-
+<script>
+    var script = document.createElement('script');
+    script.src = "src/js/crypto-js.js";
+    document.head.appendChild(script);
+</script>
 Please enter the flag here: 
 (set: $success to false)
 
@@ -145,7 +148,6 @@ Please enter the flag here:
     <script>
       var input = $flag
       var hashed = CryptoJS.SHA512(input).toString(CryptoJS.enc.Base64);
-	  console.log(hashed)
       $success = "h5juJOvHLTRfg4hhCfcR2YQPRrf3eYQuhiZrkiwKMIXtX+6GXDlk4lpBMre1tOfpYTlRU1xqpsQhmgI+O/ruMA==" == hashed
       </script>
       (if: $success is true)[  
