@@ -15,8 +15,9 @@ This game was developed on the Twine engine to teach some basic knowledge about 
     1. [Requirements](#requirements)
     2. [Tests](#tests)
     3. [Workflow](#workflow)
-3. [Image Sources](#image-sources)
-4. [Credits](#credits)
+3. [Dependencies](#Dependencies)
+4. [Image Sources](#image-sources)
+5. [Credits](#credits)
 
 ## Overview of CTF Categories
 - XSS
@@ -47,6 +48,12 @@ Tested on Ubuntu 18.04.2 with Firefox 108.0.2 (64-bit)
 Resolution: 1920x1080
 
 Missing: Responsive Design -> Resolution: 1920x1080
+
+## Dependencies
+All dependencies will be loaded from local source. But here is an overview of all used dependencies.
+
+- <a href="https://fonts.cdnfonts.com/css/ocr-a-extended" target="_blank">Font</a> 
+- <a href="https://www.npmjs.com/package/crypto-js" target="_blank">Crypto-JS</a>
 
 ## Workflow 
 1.) Pull the current data from repository:
