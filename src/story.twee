@@ -1,5 +1,4 @@
 :: Story {"position":"200,600","size":"100,100"}
-<link rel="stylesheet" href="src/css/story/styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <script>
@@ -96,7 +95,7 @@
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -187,7 +186,7 @@ been going on for several minutes.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -250,7 +249,7 @@ be concerned.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -297,7 +296,7 @@ warm impression. The two of you hit it off right away.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.3.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -351,7 +350,7 @@ welcome to ask her. You smile. She wishes you a good night and leaves.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.4.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -399,7 +398,7 @@ thought, you go to sleep.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -445,7 +444,7 @@ you notice a controller on it.
 [[<button class="startChallenge">Start Challenge->CTF 7]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -514,7 +513,7 @@ hear her calling your name.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -560,7 +559,7 @@ $username.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -612,7 +611,7 @@ You feel very comfortable there.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -667,7 +666,7 @@ and smiling as you relive some childhood memories.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -707,7 +706,7 @@ Immediately after arriving home, you put the CD into your PC.
 [[<button class="startChallenge">Start Challenge->CTF 4]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -768,7 +767,7 @@ with John.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -826,7 +825,7 @@ in place, so we can leave in a few days.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -880,7 +879,7 @@ father's name on it, also because of a hackathon.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -926,7 +925,7 @@ will not be locked for much longer.
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1001,7 +1000,7 @@ You'll see." Then everything goes black, and a cryptic string appears.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1049,7 +1048,7 @@ You leave the building and towards the car.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1102,7 +1101,7 @@ therefore traveled around all the time.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1160,7 +1159,7 @@ therefore no longer exciting. Rob doesn't let this take away his joy.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1203,7 +1202,7 @@ decrypting a string on your PC.
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1266,7 +1265,7 @@ run performance tests that show that the algorithm is abnormally efficient.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1309,7 +1308,7 @@ you're going to keep this to yourself for now.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1343,7 +1342,7 @@ other methods: The Darknet. But how do you get to the Darknet? 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1406,7 +1405,7 @@ enter the right search parameters.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1456,7 +1455,7 @@ it.
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1561,7 +1560,7 @@ will make sure of it myself if you leave now." You stare into his eyes and say, 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1602,7 +1601,7 @@ encounter.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1644,7 +1643,7 @@ on this safe is a manual that tells you how to break it open.
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1728,7 +1727,7 @@ You disappear from the house and drive back distraught.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1774,8 +1773,8 @@ realisation you fall asleep again.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
-
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
+  
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1823,7 +1822,7 @@ over there with a small team of men.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.2.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1869,7 +1868,7 @@ make sure that you are alone in the apartment.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1913,7 +1912,7 @@ shows the outline of a pretty young woman on a watercolor background.
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -1993,7 +1992,7 @@ to get you both to safety.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->9.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2035,7 +2034,7 @@ sends an emergency signal to Josie.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->9.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2087,7 +2086,7 @@ Next to the door, a keypad that can certainly be used to open the door.
 [[<button class="startChallenge">Start Challenge->CTF 8]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2165,7 +2164,7 @@ vanish unnoticed.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->10.1.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2204,7 +2203,7 @@ Back at headquarters, Josie immediately disappears, and you unload the car and g
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->10.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2253,7 +2252,7 @@ are encrypted except one. So you open the only unencrypted file.
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2343,7 +2342,7 @@ the depths.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->11.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2387,7 +2386,7 @@ parents and Lizzie, and you wonder if you could have saved them all.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->11.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2426,7 +2425,7 @@ this link in your web browser on your PC.
 [[<button class="startChallenge">Start Challenge->CTF 6]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2499,7 +2498,7 @@ time, there is no defeat.
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->e.x.p]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -2592,7 +2591,7 @@ If you want to play the game again, you have to reset it by clicking on the rese
 [[<button class="startChallenge">Return to Main->MainPage]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 

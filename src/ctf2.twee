@@ -41,7 +41,7 @@ Maybe taking a closer look at it is not a bad idea.
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- General CSS -- */
 
@@ -126,7 +126,7 @@ Please enter the flag here:
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- General CSS --*/
 

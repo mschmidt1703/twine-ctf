@@ -94,7 +94,7 @@ After you execute XSS successfully, you will be automatically redirected to the 
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -226,7 +226,7 @@ Please be careful with user input and always validate it!
   [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- General CSS --*/
 

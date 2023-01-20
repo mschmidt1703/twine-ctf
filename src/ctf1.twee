@@ -55,7 +55,7 @@ This will require you to have a look into the source code. ")
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- Twine overrides -- */
 
@@ -182,7 +182,7 @@ Please enter the flag here:
 </div>
 
 <style>
-  @import url("https://fonts.cdnfonts.com/css/ocr-a-extended");
+  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
 
   /* -- General CSS --*/
 
