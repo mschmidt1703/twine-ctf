@@ -46,7 +46,7 @@ tw-story {
     font-style:normal;
     font-weight:400;
     src:local('OCR A Extended'),
-    url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff');
+    url(src/fonts/OCRAEXT_2.woff) format('woff');
   }
 
 
