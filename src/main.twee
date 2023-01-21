@@ -77,7 +77,7 @@ Memory Loss: Find Your Way Back
 </section>
 
 <style>
-  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
+  
 
   /* -- Twine overrides -- */
 
@@ -274,7 +274,7 @@ please enter your name. Please note your name must be at longer then three chara
 </script>
 
 <style>
-  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
+  
 
   /* -- Twine overrides -- */
 

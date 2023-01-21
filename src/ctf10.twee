@@ -41,7 +41,7 @@ Can you figure out the message hidden in this image?
 </div>
 
 <style>
-  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
+  
 
   /* -- General CSS -- */
 
@@ -114,7 +114,7 @@ Please enter the flag here:
 </div>
 
 <style>
-  @font-face { font-family:ocr a extended; font-style:normal; font-weight:400; src:local('OCR A Extended'); url(src/js/crypto-js.js/OCRAEXT_2.woff) format('woff'); }
+  
 
   /* -- General CSS --*/
 
