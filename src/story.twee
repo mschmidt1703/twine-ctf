@@ -146,16 +146,18 @@
 
 <h1>Story</h1>
 
-You woke up and felt as if you had been asleep for an eternity. At first you \
-can't really recognize anything, but after your eyes got used to the light, you \
-slowly recognize something again. You are in what appears to be a capsule. You \
-feel very confused. You try moving your hands but quickly realize that there is \
+You woke up and felt as if you had been asleep for an eternity. At first, your \
+eyes were really blurry and you couldn't  \
+really recognize anything. But after your eyes got used to the light, you \
+slowly start recognize your surrounding. You are in what appears to be a capsule. You \
+feel very confused. You try moving your hands but quickly notice that there is \
 a lot of pressure on your left forearm. 
 
 You lift your arm and see that your are attached to an intravenous access. \
-Without thinking, you pull it out. The pressure on your forearm eases. But how \
-do you get out now? You examine the inside of the capsule with your hands. A \
-feeling assures you that there must be a way to open the capsule from the \
+Without thinking, you pull it out. The pressure on your forearm eases.\
+Now you start wondering about how can you get out?\
+You start feeling around inside of the capsule with your hands. You're \
+certain that there must be a way to open the capsule from the \
 inside. Already you have been able to grab a lever with your right hand. You \
 pull it toward you and the capsule opens. You try to stand up, but it's quite \
 difficult. 
@@ -164,17 +166,18 @@ After a few tries, you are sitting in the capsule and can see the room you are \
 in. It looks like a hospital room. The intravenous access that was in your arm \
 goes through the left wall of the capsule and leads to a transparent bag \
 containing a liquid. Next to it is a small bedside cabinet with a calendar and \
-a vase of fresh flowers. They are red tulips. Shocked, you realize that three \
-years must have passed. Your stomach tightens a little, but your attention is \
-drawn back to the room. Rays of sunlight shine through the blinds in front of \
+a vase of fresh flowers. They are red tulips. You take a closer look at the calander \
+and almost loose your mind. Somehow, three years have passed!\
+You turn your attention back to the room trying to figure out whats happening. \
+Rays of sunlight shine through the blinds in front of \
 the window on the left side of the room.
 
-You now try to stand up to climb out of the capsule, but your legs seem as if \
-they are asleep. You try to wiggle your toes. You are lucky, your are able to \
-move your toes sightly. Your upper body and arms are normal so far. So, you \
+You try again to climb out of the capsule, but your legs are still asleep. \
+You try to wiggle your toes. Luckily, they start to \
+move sightly. Your upper body and arms feel much better. So, you \
 carefully try to pull yourself out of the capsule with your arms. You look at \
 the right side of the room. You see a door and some machines that seem  to \
-monitor your vital signs. Only now do you notice the continuous sound´that has \
+monitor your vital signs. Only now you notice the continuous machines' sound that has \
 been going on for several minutes. 
  
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.p]]
@@ -212,8 +215,7 @@ been going on for several minutes.
   setup.story()
 </script>
 
-Suddenly, you hear people calling outside the door. The way they shouts resound, \
-there seems to be a long corridor in front of the door. The shouts are followed \
+Suddenly, you hear people calling outside the door. The shouts are followed \
 by fast footsteps.  You hear someone yelling, "Hurry! Hurry up, something seems \
 to be wrong!".  You panic. You try to hide behind the capsule as best you can \
 with your  limited strength. You hold your breath and  realize that your heart \
@@ -221,22 +223,22 @@ is racing. Probably several people have entered the room, but only one is \
 running in the capsule's direction. "The capsule is open. He must have finally \
 woken up." A male voice said. "Finally! But where is he?" you hear another \
 voice, but this time a female one. "We need to find him asap and check his \
-vitals," said the male voice "Josie, please go get Rob now. Once I find him, \
-he should examine him right away". "All right, John," Josie replies and you \
-hear footsteps coming through the door and out of the room. 
+vitals," said the male voice. "Josie, please go get Rob now. Once I find him, \
+he should examine him right away". "All right, John," Josie replies. You \
+hear footsteps going out of the room. 
 
-You don't dare to breathe. The remaining person seems to be searching the room. \
-He starts searching the right half of the room and then you hear his foodsteps \
-coming closer, until they reach your hiding place. You see John standing in \
-front of with a smile on his face. "There you are!", John laughed. He starts \
-approaching you and realizes how scared you are. He backs away and crouches \
+You don't dare to breathe. A remaining person seems to be searching the room. \
+He starts with the right half of the room and then starts coming closer, \
+until he reaches your hiding place. Suddenly, he is standing in \
+front of you with a smile on his face. "There you are!", John laughed. He starts \
+approaching you but quickly realizes how scared you are. He backs away and crouches \
 down. "Don't be afraid," John said in a calm voice "We don't want to hurt you. \
 It's going to be all right. My name is John and with the help of my colleagues, \
-or better said friends, have found you and saved you."  
+or better said friends, we have found and saved you."  
 
 After a little talking, John manages to calm you down and asks you about your \
-name. You are shocked to realise that you can't remember your name. Or rather, \
-you can hardly remember anything at all, and you tell John this. He continues \
+name. You are shocked to realise that you can't remember your name. \
+You can hardly remember anything at all! John continues \
 to reassure you, telling you that everything is fine and that you should not \
 be concerned.
 
@@ -275,14 +277,15 @@ be concerned.
   setup.story()
 </script>
 
-Now Rob comes into the room and introduces himself to you. He is a doctor and \
-wants to examine you. You let him. John waits outside the door during the \
-examination. When you have finished the examination, John shows you around.
+Now Rob comes into the room and introduces himself. He is a doctor and \
+wants to examine you. You let him to that. John waits outside the door during the \
+examination. When Rob is done, John offers to show you around. You gladly accept. \
 
-You find yourself in a headquarters, but John is not allowed to tell you what \
-she is doing there. He assures you, however, that it is not criminal activity. \
-Since he has saved you and seems nice, you don't question it further. During \
-your tour, you see a small part of the headquarters: the offices, the infirmaries, \
+Apparently you are an a headquarters of a secret organization. \
+For some reason, John is not allowed to tell you what \
+his job entails. He assures you, however, that it is not criminal activity. \
+You don't wanna seem intrusive, so, you don't question him further. During \
+the tour, you only see a small part of the headquarters: the offices, the infirmaries, \
 the canteen, the shelters, and the courtyard. In the courtyard, you meet Josie. \
 John introduces the two of you. She is a little younger than you but makes a \
 warm impression. The two of you hit it off right away.
@@ -326,14 +329,13 @@ At dinner, you sit with Josie, John, and Rob. You ask them how they found you \
 and if they know what happened to you. John tells you that they found you by a \
 river when they were out, and they have no idea how you got there or what \
 happened to you. Rob takes over and tells you that your health was critical \
-when John arrived with you at headquarters. Rob did everything he could to \
+when John brought you over at the headquarters. Rob did everything he could to \
 operate on you and treat your internal bleeding, which almost killed you and \
 caused you to fall into a coma during the operation.
 
 You didn't expect that. Josie turns to you and says that they are all glad that \
-you have finally woken up. John then asks you if you would like to stay with \
-them for a while, because then you would have a place to stay and you could \
-certainly make yourself useful. You don't disagree, but you still say that you \
+you have finally woken up. John then offers you to stay with \
+them for a while. They can use some help around. You don't refuse, but you say that you \
 would like to think about it.
 
 After dinner, Josie shows you your room. Your room consists of a bed, a desk \
@@ -376,15 +378,16 @@ welcome to ask her. You smile. She wishes you a good night and leaves.
   setup.story()
 </script>
 
-You lie awake in bed and sort out your thoughts. You probably won't get your \
-memories back that easily, because they have to be triggered. You also know \
-that it may happen that you will never remember anything again. But no matter \
-what, your options now are limited. You have nowhere else to go, and everything \
-just seems strange to you.
+You lie awake in bed and try to sort out your thoughts. You probably won't get your \
+memories back that easily. Maybe you need to trigger them in some way. 
+The mere thought that you might not be able to remember anything terrifies you. \
+But no matter \
+what, you're not gonna give up. You have no home to go back to and everything \
+seems strange to you. You have to keep going...
 
-So you are willing to accept John's offer and stay here for now. You feel \
-comfortable with and like the people you have met today. Your gut feeling tells \
-you that they are good people who mean you no harm. In fact, you are already \
+So, you decide to accept John's offer and stay here for while. You feel \
+comfortable with the people you have met today. Your gut feeling tells \
+you that they are good people who mean no harm. In fact, you are already \
 curious to see how you can make yourself useful here and what there will be to \
 discover because now you have to get to know the world anew, and with this \
 thought, you go to sleep.
