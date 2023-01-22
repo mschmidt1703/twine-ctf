@@ -15,62 +15,56 @@
 </script>
 
 <div class="section">
-  <h1>Tutorial</h1>
+  <h2>Tutorial</h2>
   <!-- Introduction to the game -->
-  Hello $username, 
-  
-  welcome to the game "Memory Loss: Find Your Way Back". 
-  This game is about using capture-the-flag challenges to teach the concepts 
-  of IT security by learning attack techniques. Only when the various attack 
-  techniques used by hackers to penetrate IT systems are known can the 
-  appropriate countermeasures be taken.
+  Welcome to the game "Memory Loss: Find Your Way Back". 
+  In this game we want to help you to learn more about IT security by playing fun Capture-The-Flag challenges.
+  Learning about the various attack techniques used by hackers nowadays will help to protect your self against them. 
 
   <tw-consecutive-br></tw-consecutive-br>
 
-  <h2>What is a CTF challenge?</h2>
+  <h3>What is a CTF challenge?</h3>
   In IT security, a capture-the-flag (ctf) challenge means hacking into a system to 
   find a flag. This flag is usually a file or a string and can look like this: 
-  &lt!-- flag&#123;hur32782ruhu&#125; -->.
-
-  In this game, the flags look like this:
-  puzzlePiece&#123;&#60;Some hash&#62;&#125;
+  &lt!-- puzzlePiece&lbrace;randomString&rbrace; -->.
 
   Besides that, it is good to know that there are different categories of 
   challenges. A few examples are XSS, Web Exploitation or Cryptography. 
 
   <tw-consecutive-br></tw-consecutive-br>
 
-  <h2>Modes</h2>
+  <h3>Modes</h3>
   <!-- Explain both modes: story and ctf -->
-  The game is structured in such a way that the challenges are built into a story. This means that in 
-  places the challenges are built into the story that must be overcome in order for the story to continue. 
+  Because we want to make learning fun we created an exciting stroy you can read through in between the challenges.
+  The story will progress when you pass challenges.  
 
-  However, it is possible to play the challenges without the story. To do this, click on "CTFs" in the menu.
+  If you're just intrested in solving the challenges, go the tab "CTFs" and jump straight to the challenge of your choice.
 
-  When exiting the story mode, the game state is temporarily saved. The score can be reset on the main 
-  page by pressing the "Reset" button.
+  If you decide to take a break while playing in the story mode, the game will temporarily save your progress. 
+  Just click on the button "continue" in the main page to resume playing where you previously stopped. 
+  To delete your progress click on the "Reset" button.
 
   <tw-consecutive-br></tw-consecutive-br>
 
-  <h2>How to play the challenges</h2>
+  <h3>How to play the challenges</h3>
   <!-- CTF example, buttons, and flag page -->
-  To solve the challenges, a few common approaches are examining source code, tricking inputs or 
-  even using Google.
-
+  There are mutiple approaches you can use to solve the challenges. Examples are: examining source code, combining script in user inputs or 
+  even just by using Google. If you feel stuck, have a look at our hints. The will defenetly help guide you to the solution.
+  
   The following buttons can be found in the challenges to support you:
 
   <div class="buttons">
     <div class="btn-pos6">
       <button class='home-btn-background'></button>
-      <p>Returns to ctf overview or main page depending on the game mode</p>
+      <p>Returns to the ctf overview or the main page depending on the game mode</p>
     </div>
     <div class="btn-pos5">
       <button class='help-btn-background'></button>
-      <p>Opens the message that explains the challenge</p>
+      <p>Views the oppening message that explains the challenge</p>
     </div>
     <div class="btn-pos3">
       <button class='success-btn-background'></button>
-      <p>Forwarding to flag check</p>
+      <p>Opens the page for checking your flag</p>
     </div>
     <div class="btn-pos2">
       <button class='code-btn-background'></button>
@@ -82,7 +76,7 @@
     </div>
   </div>
 
-  A little tip before you start solving the challenge:
+  A little tip before you start solving the challenges:
   It often makes sense to use the developer mode of the browser. If this 
   doesn't mean anything to you, Google can help.
 
