@@ -41,8 +41,6 @@ key: NoIdea
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -74,9 +72,9 @@ key: NoIdea
 
 :: CTF11end {"position":"1000,2200","size":"100,100"}
 <script>
-    var script = document.createElement('script');
-    script.src = "src/js/crypto-js.js";
-    document.head.appendChild(script);
+  var script = document.createElement('script');
+  script.src = "src/js/crypto-js.js";
+  document.head.appendChild(script);
 </script>
 Please enter the flag here: 
 (set: $success to false)
@@ -107,8 +105,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

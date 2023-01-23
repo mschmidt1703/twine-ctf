@@ -274,8 +274,6 @@ please enter your name. Please note your name must be at longer then three chara
 </script>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-consecutive-br {

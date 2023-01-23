@@ -180,7 +180,7 @@ After a few tries, you are sitting in the capsule and can see the room you are \
 in. It looks like a hospital room. The intravenous access that was in your arm \
 goes through the left wall of the capsule and leads to a transparent bag \
 containing a liquid. Next to it is a small bedside cabinet with a calendar and \
-a vase of fresh flowers. They are red tulips. You take a closer look at the calander \
+a vase of fresh flowers. They are red tulips. You take a closer look at the calender \
 and almost loose your mind. Somehow, three years have passed!\
 You turn your attention back to the room trying to figure out whats happening. \
 Rays of sunlight shine through the blinds in front of \
@@ -327,7 +327,7 @@ Now Rob comes into the room and introduces himself. He is a doctor and \
 wants to examine you. You let him to that. John waits outside the door during the \
 examination. When Rob is done, John offers to show you around. You gladly accept. \
 
-Apparently you are an a headquarters of a secret organization. \
+Apparently you are in the headquarters of a secret organization. \
 For some reason, John is not allowed to tell you what \
 his job entails. He assures you, however, that it is not criminal activity. \
 You don't wanna seem intrusive, so, you don't question him further. During \
@@ -463,7 +463,7 @@ But no matter \
 what, you're not gonna give up. You have no home to go back to and everything \
 seems strange to you. You have to keep going...
 
-So, you decide to accept John's offer and stay here for while. You feel \
+So, you decide to accept John's offer and stay here for a while. You feel \
 comfortable with the people you have met today. Your gut feeling tells \
 you that they are good people who mean no harm. In fact, you are already \
 curious to see how you can make yourself useful here. There is so much to \
@@ -524,12 +524,12 @@ thoughts, you fall asleep.
 The next day, at breakfast, you ask Josie if there is a way at headquarter to \
 look at the news of the last 3 years. You hope that looking at past \
 news will help to refresh your memory. She tells you that there is a library \
-at the headquarters that has a well-kept archive of news. She explains to you \
+at the headquarters that has a well-kept archive of news. She also explains to you \
 where to find it. 
 
 After breakfast, you head over there. The library is large and easy to find. \
 The achive inside of it was easy to spot as well. In front of the \
-archive is a section of books about video games. You pull out a radom book and \
+archive is a section of books about video games. You pull out a random book and \
 notice a game controller depicted on its cover.
 
 [[<button class="startChallenge">Start Challenge->CTF 7]]
@@ -791,7 +791,7 @@ You take out one of the newer yearbooks and flip through it. There are only \
 pictures of graduates and special awards assigned for them. You close the book and put \
 it back. You pull out a much older yearbook and and check it out. As you flip \
 through it, you come across a face that looks very familiar. The name under \
-this picture is Henry Reese. This is probably your father. In the picture, your \
+this picture is Henry Reese. This is your father! In the picture, your \
 father is wearing horn-rimmed glasses with a big smile on his face. He looks like a typical \
 nerd. 
 
@@ -984,7 +984,7 @@ you...", Josie says sheepishly as you interrupt her to assure her that \
 everything is fine and that they are family to you. She smiles and turns back \
 to John. "What I was going to say is that we should come with you to make sure \
 everything is safe. That's all." John crosses his arms and says, slightly \
-amused, that he can't beat the two of them now anyway. He will get everything \
+amused, that he can't beat the two of you now anyway. He will get everything \
 in place, so that they can leave in a few days.
 
 [[<button id="resume-btn" class="nextButton">Next->3.2.p]]
@@ -1179,8 +1179,8 @@ You suddenly black out again, and you feel as if you're in a movie. \
 You see your self during some of your milestones as a young student.
 Your matriculation, insights into everyday student life, the \
 submission of your thesis, your graduation, and the presentation of your \
-Bachelor's certificate. After that, you see your master matriculation and some of your \
-everyday student life as a master student. You are confused. 
+Bachelor's certificate. After that, you see another matriculation and more \
+everyday student life. You are confused about that. 
 
 Next, you see that you are dropping an envelope into a box. This envelope says: \
 Master's thesis submission for an IT security degree program. Then you stand \
@@ -1319,7 +1319,7 @@ While Josie was saying this, she started looking out the window of the car. She 
 smiles a little bit. Then Josie looks back at you and says that she is sure you \
 would have liked her. Josie adds that her friend is a little older \
 than her, so she would probably be around your age. You smile and ask if the friend \
-also worked at headquarters. Josie laughs and denies. Her friend would never \
+also worked at the headquarters. Josie laughs and denies. Her friend would never \
 have been able to do this job. She worked as a consultant for IT companies and \
 traveled around all the time.
 
@@ -1848,7 +1848,7 @@ will never be able to come to any agreement. I have seen through your intentions
 and cannot ethically represent them." You get up and go to the door. As you are \
 leaving you hear a bang. Then mr. Grayson yells, "You will regret it if you leave now, I \
 will make sure of it myself." You turn back and look him in the eye and say \
-"my algorithm will never get in your hands" and leave.
+"My algorithm will never get in your hands" and leave.
 
 [[<button id="resume-btn" class="nextButton">Next->7.p]]
 

@@ -51,8 +51,6 @@ After you execute XSS successfully, you will be automatically redirected to the 
 </div>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -178,8 +176,6 @@ There are many other options, for instance the script tag you just used.
   [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

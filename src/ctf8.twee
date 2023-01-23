@@ -56,8 +56,6 @@ This will not require you to have a look at the source code of this page.")
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -137,8 +135,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

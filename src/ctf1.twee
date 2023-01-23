@@ -55,8 +55,6 @@ This will require you to have a look into the source code. ")
 </div>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -182,8 +180,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

@@ -94,8 +94,6 @@ After you execute XSS successfully, you will be automatically redirected to the 
 </div>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -226,8 +224,6 @@ Please be careful with user input and always validate it!
   [[<button class="resumeButton">Back to CTF-Overview->CTFs]]]
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
