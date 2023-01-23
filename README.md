@@ -52,13 +52,13 @@ Missing: Responsive Design -> Resolution: 1920x1080
 ## Dependencies
 All dependencies will be loaded from local source. But here is an overview of all used dependencies.
 
-- <a href="https://fonts.cdnfonts.com/css/ocr-a-extended" target="_blank">Font</a> 
-- <a href="https://www.npmjs.com/package/crypto-js" target="_blank">Crypto-JS</a>
-- <a href="https://highlightjs.org/download/" target="_blank">highlight.min.js</a> 
-- <a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css" target="_blank">CSS for highlight.min.js</a>
-- <a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" target="_blank">CSS for highlight.min.js</a>
+- <a href="https://fonts.cdnfonts.com/css/ocr-a-extended" target="_blank">Font</a>
 - <a href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" target="_blank">Bulma</a>
 - <a href="https://www.w3schools.com/w3css/4/w3.css" target="_blank">w3.css</a>
+- <a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css" target="_blank">CSS for highlight.min.js</a>
+- <a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" target="_blank">CSS for highlight.min.js</a>
+- <a href="https://www.npmjs.com/package/crypto-js" target="_blank">Crypto-JS</a>
+- <a href="https://highlightjs.org/download/" target="_blank">highlight.min.js</a> 
 
 ## Workflow 
 1.) Pull the current data from repository:
