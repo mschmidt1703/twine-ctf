@@ -17,7 +17,7 @@
 	document.getElementById(picID).innerHTML = html;
 
 	/*ignore this in the challenge*/
-	window.localStorage.setItem('picID', input);
+	window.sessionStorage.setItem('picID', input);
 
 	var i;
 	var x = document.getElementsByClassName(\"animals\");

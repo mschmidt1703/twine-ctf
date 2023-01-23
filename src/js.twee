@@ -30,29 +30,11 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
-	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
 
 /* # Mainpage End */
-
-
-/* # CTFs End */
-setup.ctfs = function() {
-
-	var section = document.getElementsByTagName("section")[0];
-
-    if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
-		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
-        section.scrollTo(0,pos);
-    }
-	
-	section.addEventListener("scroll", (event) => {
-        window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
-	});
-}
-/* # CTFs End */
 
 
 /* Global Start */
@@ -246,7 +228,7 @@ function ctf5_levelSucceed() {
 
 /* # CTF 6 Start */
 setup.ctf6_reset = function(){
-  window.localStorage.setItem('picID', "1");	
+  window.sessionStorage.setItem('picID', "1");	
 }
 
 setup.ctf6_updateFrame = function (frameNum, url) { 

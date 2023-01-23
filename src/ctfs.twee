@@ -1,9 +1,7 @@
 :: CTFs {"position":"2100,200","size":"100,100"}
 
 
-<script type="text/javascript">
-	setup.ctfs();
-</script>
+
 (set: $playingStory to false) \
 (set: _notStarted to "CTF not started yet") \
 (set: _started to "Started but not finished") \

@@ -172,29 +172,11 @@ function eventOnClickHandlerMain(event) {
 setup.main_clear = function() {
 	 Harlowe.storage.clear("last_passage");
 	 sessionStorage.clear();
-	 localStorage.clear();
 	 location.reload();
 	 Harlowe.goto("MainPage");
 }
 
 /* # Mainpage End */
-
-
-/* # CTFs End */
-setup.ctfs = function() {
-
-	var section = document.getElementsByTagName("section")[0];
-
-    if (localStorage.getItem("twine-ctf-quote-scroll") != null) {
-		var pos = window.localStorage.getItem("twine-ctf-quote-scroll")
-        section.scrollTo(0,pos);
-    }
-	
-	section.addEventListener("scroll", (event) => {
-        window.localStorage.setItem("twine-ctf-quote-scroll", section.scrollTop);
-	});
-}
-/* # CTFs End */
 
 
 /* Global Start */
@@ -388,7 +370,7 @@ function ctf5_levelSucceed() {
 
 /* # CTF 6 Start */
 setup.ctf6_reset = function(){
-  window.localStorage.setItem('picID', "1");	
+  window.sessionStorage.setItem('picID', "1");	
 }
 
 setup.ctf6_updateFrame = function (frameNum, url) { 
@@ -1745,7 +1727,7 @@ There are many other options, for instance the script tag you just used.
 	document.getElementById(picID).innerHTML = html;
 
 	/*ignore this in the challenge*/
-	window.localStorage.setItem(&#39;picID&#39;, input);
+	window.sessionStorage.setItem(&#39;picID&#39;, input);
 
 	var i;
 	var x = document.getElementsByClassName(\&quot;animals\&quot;);
@@ -2536,10 +2518,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="2100,200" size="100,100">&lt;script type=&quot;text/javascript&quot;&gt;
-	setup.ctfs();
-&lt;/script&gt;
-(set: $playingStory to false) \
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="23" name="CTFs" tags="" position="2100,200" size="100,100">(set: $playingStory to false) \
 (set: _notStarted to &quot;CTF not started yet&quot;) \
 (set: _started to &quot;Started but not finished&quot;) \
 (set: _finished to &quot;CTF finished :&gt;&quot;)\

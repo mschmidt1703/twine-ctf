@@ -28,7 +28,7 @@ function showTab(input) {
 
 	/*window.location.hash = picID
 	history.pushState(null, null, '#'+parseInt(picID)); Does not work in twine*/
-	window.localStorage.setItem('picID', input);
+	window.sessionStorage.setItem('picID', input);
 	
 	var i;
 	var x = document.getElementsByClassName("animals");
@@ -43,8 +43,8 @@ function showTab(input) {
 }
 
  window.onload = function() { 
-	/*get hash from localStorage back or 1, can trigger js*/
-	var input = window.localStorage.getItem('picID');
+	/*get hash from sessionStorage back or 1, can trigger js*/
+	var input = window.sessionStorage.getItem('picID');
 	if (input == null){
 		input = '1'
 	}
