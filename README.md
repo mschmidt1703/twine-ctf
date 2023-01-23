@@ -15,7 +15,7 @@ This game was developed on the Twine engine to teach some basic knowledge about 
     1. [Requirements](#requirements)
     2. [Tests](#tests)
     3. [Workflow](#workflow)
-3. [Dependencies](#Dependencies)
+    4. [Dependencies](#Dependencies)
 4. [Image Sources](#image-sources)
 5. [Credits](#credits)
 
