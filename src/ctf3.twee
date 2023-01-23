@@ -1,6 +1,4 @@
 :: CTF 3 {"position":"600,3000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
 	setup.all();
 </script>
@@ -43,7 +41,6 @@ iVBORw0KGgoAAAANSUhEUgAAAVkAAAA4CAIAAADYTxzHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
 <style>
   /* -- General CSS -- */
   
-
   br {
     display: none;
   }
@@ -68,13 +65,13 @@ iVBORw0KGgoAAAANSUhEUgAAAVkAAAA4CAIAAADYTxzHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
     width: 50rem !important;
     height: 50rem !important;
     margin: 0 auto;
-	padding: 3rem;
+	  padding: 3rem;
     border: 5px #4B0872;
     background-color: #1E1E1E;
-	color: #fff;
+	  color: #fff;
     overflow: scroll;
     text-align:justify;
-	word-wrap: break-word;
+	  word-wrap: break-word;
   }
   
   .codeFormatting {
@@ -91,22 +88,22 @@ iVBORw0KGgoAAAANSUhEUgAAAVkAAAA4CAIAAADYTxzHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
     color: #9b9b9b;
   }
   
-  /*Scrollbar Google Chrome*/
+  /* Scrollbar Google Chrome */
   ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
   }
-	
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
-	
+
   ::-webkit-scrollbar-thumb {
     background-color: rgba(155, 155, 155, 0.5);
-	border-radius: 20px;
-	border: transparent;
+    border-radius: 20px;
+    border: transparent;
   }
   
-    button {
+  button {
     height: 2em;
     width: 8em;
 
@@ -127,7 +124,7 @@ iVBORw0KGgoAAAANSUhEUgAAAVkAAAA4CAIAAADYTxzHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
   }
   
   #textbox {
-	margin-top: 5%
+	  margin-top: 5%
   }    
 </style>
 
@@ -168,7 +165,6 @@ Please enter the flag here:
 <style>
   /* -- General CSS --*/
   
-
   .resumeButton {
     z-index: 1;
     height: 2.5em;

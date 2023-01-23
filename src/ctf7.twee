@@ -1,6 +1,4 @@
 :: CTF 7 {"position":"800,1000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.all();
 </script>
@@ -15,11 +13,11 @@ To pass this challange you have to find the hidden flag. Oh look, there is a boo
 If you can't find what you're looking for on a surface level, then you probably have to do some further inspection.  
 
 <div class="shelves">
-  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>First Shelf</button>")[(alert: "Nothing really useful here")]
-  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Second Shelf</button>")[(alert: "No useful information here...")]
-  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Third Shelf</button>")[(alert: "Nothing here either...")]
-  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fourth Shelf</button>")[(alert: "This search has lead me nowhere so far..")]
-  (link-repeat: "<button class='button is-danger is-rounded' style='background-color: var(--purple);'>Fifth Shelf</button>")[(alert: "Yup... I did all of that for nothing :(")]
+  (link-repeat: "<button class='nextButton' style='background-color: var(--purple);'>First Shelf</button>")[(alert: "Nothing really useful here")]
+  (link-repeat: "<button class='nextButton' style='background-color: var(--purple);'>Second Shelf</button>")[(alert: "No useful information here...")]
+  (link-repeat: "<button class='nextButton' style='background-color: var(--purple);'>Third Shelf</button>")[(alert: "Nothing here either...")]
+  (link-repeat: "<button class='nextButton' style='background-color: var(--purple);'>Fourth Shelf</button>")[(alert: "This search has lead me nowhere so far..")]
+  (link-repeat: "<button class='nextButton' style='background-color: var(--purple);'>Fifth Shelf</button>")[(alert: "Yup... I did all of that for nothing :(")]
 </div>
 
 <div style="visibility: hidden;"> puzzlePiece&#123;og9XEhgLE2&#125; </div> 
@@ -51,8 +49,6 @@ This will require you to have a look at the source code of this page. ")
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -71,6 +67,26 @@ This will require you to have a look at the source code of this page. ")
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   .buttons {

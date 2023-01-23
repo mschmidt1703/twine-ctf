@@ -1,5 +1,4 @@
 :: CTF 10 {"position":"600,3400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
 <script>
@@ -41,8 +40,6 @@ Can you figure out the message hidden in this image?
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -114,8 +111,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

@@ -1,5 +1,4 @@
 :: CTF 9 {"position":"800,4600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
 
@@ -82,8 +81,6 @@ This will not require you to have a look at the source code of this page.")
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -164,8 +161,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {

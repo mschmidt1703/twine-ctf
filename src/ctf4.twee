@@ -1,6 +1,4 @@
 :: CTF 4 {"position":"800,1400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.all();
 </script>
@@ -14,13 +12,12 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 
 <h1>CTF 4 - XSS</h1>
 
-
 <div class="webbrowser">
   <div id="tab">
     <div class="controls">
       <span class="url label">URL:</span>
       <input id="input" class="urlbar input" type="text" value="https://twine.ctf/ctf4.html" readonly>
-      <input id="surfbutton" class="button is-success urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Reload">
+      <input id="surfbutton" class="urlbutton" type="Submit" onclick="setup.ctf4_updateFrame()" value="Reload">
     </div>
     <iframe src="src/static/ctf4/s.html" title="Google"></iframe>
   </div>
@@ -48,8 +45,6 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 </div>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -74,6 +69,11 @@ After you execute XSS successfully, you will pass the challenge and will be auto
     height: 1.7% !important;
   }
 
+  tw-dialog {
+    font-family: "OCR A Extended", sans-serif;
+    color: #9b9b9b;
+  }
+
   /* -- General CSS -- */
 
   html {
@@ -95,7 +95,7 @@ After you execute XSS successfully, you will pass the challenge and will be auto
     width: 64%;
     height: 52%;
     margin-left: 15.5%;
-    margin-top: 4%;
+    margin-top: 2.5%;
     border: 2px solid black;
     background: white;
   }
@@ -110,8 +110,24 @@ After you execute XSS successfully, you will pass the challenge and will be auto
   }
 
   .url {
-    padding: 0.1em;
+    padding-bottom: calc(.5em - 1px);
     align-self: center;
+
+    padding-left: calc(.75em - 1px);
+    padding-right: calc(.75em - 1px);
+    padding-top: calc(.5em - 1px);
+    position: relative;
+
+    height: 2.5em;
+    justify-content: flex-start;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
   }
 
   .controls {
@@ -128,16 +144,37 @@ After you execute XSS successfully, you will pass the challenge and will be auto
   .urlbutton {
     margin-left: auto;
     align-self: center;
+    justify-content: center;
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+
+    align-items: center;
+
+    height: 2.5em;
+    padding-bottom: calc(.5em - 1px);
+    padding-top: calc(.5em - 1px);
     padding-right: 1em;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: #3ec487;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.37);
+
+    color: #FFFFFFFF;
+    text-decoration: none;
+
+    border-radius: 4px;
+    box-shadow: none;
+    white-space: nowrap;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
   .input {
     margin-right: auto;
-  }
-
-  iframe {
-    width: inherit;
-    height: inherit;
   }
 
   .buttons {
@@ -150,11 +187,6 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
-  }
-  
-  tw-dialog, h1 {
-    font-family: "OCR A Extended", sans-serif;
-    color: #9b9b9b;
   }
 </style>
 

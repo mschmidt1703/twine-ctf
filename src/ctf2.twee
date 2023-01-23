@@ -1,6 +1,4 @@
 :: CTF 2 {"position":"800,3800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.all();
 </script>
@@ -11,9 +9,9 @@
 
 Here is an interesting image. I wonder what message did the artist want the viewer to receive while observing this masterpiece. 
 
-<img src="src/img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;" alt="picture frame"></img>
-
 Maybe taking a closer look at it is not a bad idea.
+
+<img src="src/img/ctf2/ctf2.jpg" style="max-width:100%;height:auto;" alt="picture frame"></img>
 
 (set: _info to "To pass this challange you need to find the hidden flag. This will not require you to have a look into the source code of this site. ")
 (if: $ctfs contains "ctf2")[]
@@ -41,8 +39,6 @@ Maybe taking a closer look at it is not a bad idea.
 </div>
 
 <style>
-  
-
   /* -- General CSS -- */
 
   br {
@@ -126,8 +122,6 @@ Please enter the flag here:
 </div>
 
 <style>
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
