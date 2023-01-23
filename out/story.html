@@ -445,7 +445,7 @@ setup.ctf9_showCode = function() {
 /* Marko API */
 // Harlowe Macro Framework, by Chapel; version 1.0.2
 ;!function(){"use strict";var r={major:1,minor:0,patch:2},e=[r.major,r.minor,r.patch].join(".");r.semantic=e,r=Object.freeze(r);var t=$("tw-storydata"),a=Object.freeze({name:t.attr("name"),ifid:t.attr("ifid")}),n=t.attr("format-version"),o=n.split("."),i=Object.freeze({major:o[0],minor:o[1],patch:o[2],semantic:n});window.Harlowe=window.Harlowe||{},window.Harlowe=Object.assign(window.Harlowe,{framework:r,API_ACCESS:Object.freeze({MACROS:require("macros"),STATE:require("state"),CHANGER:require("datatypes/changercommand"),ENGINE:require("engine")}),engine:i,story:a})}(),function(){"use strict";function e(r){return"number"==typeof r||"boolean"==typeof r||"string"==typeof r||null===r||Array.isArray(r)&&r.every(e)||r instanceof Set&&Array.from(r).every(e)||r instanceof Map&&Array.from(r.values()).every(e)||_changer.isPrototypeOf(r)}window.Harlowe=Object.assign(window.Harlowe,{helpers:{isSerialisable:e,isSerializable:e,arrayify:function(r,e){if(r){var t=[].slice.call(r);return void 0!==e&&(t=t.slice(e)),t}},getPassageData:function(r){var e=$('tw-passagedata[name="'+r+'"]');if(e[0])return e}}})}(),function(){"use strict";var n=window.localStorage||!1,o=Harlowe.story.ifid+"-tw-storage";function r(){try{if(!n)throw new Error("storage is inaccessible");n.setItem(o,JSON.stringify({ifid:Harlowe.story.ifid}))}catch(r){console.warn(r)}}function i(r){try{var e;if(n)return e=JSON.parse(n.getItem(o)),r&&r&&"string"==typeof r?e[r]:e;throw new Error("storage is inaccessible")}catch(r){console.warn(r)}}null==i()&&r(),Harlowe.storage={clear:r,save:function(r,e){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(void 0===e)throw new TypeError("cannot store undefined values");var t={};if(t[r]=e,!n)throw new Error("storage is inaccessible");var a=i();Object.assign(a,t),n.setItem(o,JSON.stringify(a))}catch(r){console.warn(r)}},load:i,remove:function(r){try{if(!r||"string"!=typeof r)throw new TypeError("cannot store values without a valid storage key");if(!n)throw new Error("storage is inaccessible");var e=i();e.hasOwnProperty(r)&&(delete e[r],n.setItem(o,JSON.stringify(e)))}catch(r){console.warn(r)}}}}(),function(){"use strict";function a(r,e,t){if(!(this instanceof a))return new a(r,e,t);this.name=r||"unknown",this.args=e||[],this.data=t||{},this.type=t&&t.type||"basic",this.fn=t&&t.fn||"handler","changer"===this.type&&("handler"===this.fn?this.instance=t&&t.instance||null:this.descriptor=t&&t.descriptor||null)}a.create=function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");return e&&e instanceof Array||(e=[]),t&&"object"==typeof t||(t={type:"basic",fn:"handler"}),new a(r,e,t)},Object.assign(a.prototype,{clone:function(){return a.create(this.name,this.args,this.data)},syntax:function(){return"("+this.name+":)"},error:function(r,e){var t="Error in the "+this.syntax()+" macro: "+r;return e&&alert(t),console.warn("HARLOWE CUSTOM MACRO ERROR -> ",t),new Error(r)},typeCheck:function(r){r&&r instanceof Array||(r=Harlowe.helpers.arrayify(arguments));var n=this,o=[];if(r.forEach(function(r,e){var t=e+1,a=[];"string"==typeof r&&("any"===(a=r.includes("|")?r.split("|").map(function(r){return r.trim().toLowerCase()}):[r.trim().toLowerCase()])[0]||a.some(function(r){return typeof n.args[e]===r})||o.push("argument "+t+" should be a(n) "+a.join(" or ")))}),o.length)return n.error(o.join("; "))}}),window.Harlowe=Object.assign(window.Harlowe,{MacroContext:a})}(),function(){"use strict";var c=Harlowe.API_ACCESS.MACROS,l=Harlowe.API_ACCESS.CHANGER;window.Harlowe=Object.assign(window.Harlowe||{},{macro:function(r,e,t){if(!r||"string"!=typeof r||!r.trim())throw new TypeError("Invalid macro name.");if(!e||"function"!=typeof e)throw new TypeError("Invalid macro handler.");var a,n,o,i,s;t&&"function"==typeof t?(o=r,i=e,s=t,c.addChanger(o,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=l.create(o,r),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"handler",instance:e});return i.apply(t,r),e},function(){var r=Harlowe.helpers.arrayify(arguments),e=r.shift(),t=Harlowe.MacroContext.create(o,r,{type:"changer",fn:"changer",descriptor:e});s.apply(t,r)},c.TypeSignature.zeroOrMore(c.TypeSignature.Any))):(a=r,n=e,c.add(a,function(){var r=Harlowe.helpers.arrayify(arguments,1),e=Harlowe.MacroContext.create(a,r,{type:"basic",fn:"handler"}),t=n.apply(e,r);return null==t?"":t},c.TypeSignature.zeroOrMore(c.TypeSignature.Any)))}})}(),function(){"use strict";var t=Harlowe.API_ACCESS.STATE,e=Harlowe.API_ACCESS.ENGINE;function a(){return t.passage}window.Harlowe=Object.assign(window.Harlowe||{},{passage:a,tags:function(r){r=r||a();try{var e=Harlowe.helpers.getPassageData(r).attr("tags");return e?e.split(" "):[]}catch(r){return console.warn(r.message),[]}},goto:function(r){return e.goToPassage(r)},variable:function(r,e){if("$"!==r[0])throw new Error('cannot access variable "'+r+'"');if(r=r.substr(1),void 0!==e){if(!Harlowe.helpers.isSerialisable(e))throw new Error('The value passed to variable "'+r+'" cannot be serialized.');t.variables[r]=e}return t.variables[r]},visited:function(r){return t.passageNameVisited(r||a())},hasVisited:function(r){return 0<t.passageNameVisited(r||a())},turns:function(){return t.pastLength}})}();
-// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+// end Harlowe Macro Framework</script><tw-passagedata pid="1" name="CTF 1" tags="" position="800,1800" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.ctf1();
@@ -501,8 +501,6 @@ This will require you to have a look into the source code. &quot;)
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -624,8 +622,6 @@ Please enter the flag here:
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -664,9 +660,7 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="600,3400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css&quot;/&gt;
-
-&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="3" name="CTF 10" tags="" position="600,3400" size="100,100">&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
@@ -852,8 +846,6 @@ key: NoIdea
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS -- */
 
   br {
@@ -881,9 +873,9 @@ key: NoIdea
     color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="6" name="CTF11end" tags="" position="1000,2200" size="100,100">&lt;script&gt;
-    var script = document.createElement(&#39;script&#39;);
-    script.src = &quot;src/js/crypto-js.js&quot;;
-    document.head.appendChild(script);
+  var script = document.createElement(&#39;script&#39;);
+  script.src = &quot;src/js/crypto-js.js&quot;;
+  document.head.appendChild(script);
 &lt;/script&gt;
 Please enter the flag here: 
 (set: $success to false)
@@ -914,8 +906,6 @@ Please enter the flag here:
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -1270,6 +1260,7 @@ Please enter the flag here:
     ] \
   &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;style&gt;
   /* -- General CSS --*/
   
@@ -1309,7 +1300,9 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="800,1400" size="100,100">&lt;script&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="11" name="CTF 4" tags="" position="800,1400" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/bulma.min.css&quot;&gt;
+
+&lt;script&gt;
   setup.all();
 &lt;/script&gt;
 
@@ -1322,12 +1315,13 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 
 &lt;h1&gt;CTF 4 - XSS&lt;/h1&gt;
 
+
 &lt;div class=&quot;webbrowser&quot;&gt;
   &lt;div id=&quot;tab&quot;&gt;
     &lt;div class=&quot;controls&quot;&gt;
       &lt;span class=&quot;url label&quot;&gt;URL:&lt;/span&gt;
       &lt;input id=&quot;input&quot; class=&quot;urlbar input&quot; type=&quot;text&quot; value=&quot;https://twine.ctf/ctf4.html&quot; readonly&gt;
-      &lt;input id=&quot;surfbutton&quot; class=&quot;urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Reload&quot;&gt;
+      &lt;input id=&quot;surfbutton&quot; class=&quot;button is-success urlbutton&quot; type=&quot;Submit&quot; onclick=&quot;setup.ctf4_updateFrame()&quot; value=&quot;Reload&quot;&gt;
     &lt;/div&gt;
     &lt;iframe src=&quot;src/static/ctf4/s.html&quot; title=&quot;Google&quot;&gt;&lt;/iframe&gt;
   &lt;/div&gt;
@@ -1355,6 +1349,8 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 &lt;/div&gt;
 
 &lt;style&gt;
+  
+
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1379,11 +1375,6 @@ After you execute XSS successfully, you will pass the challenge and will be auto
     height: 1.7% !important;
   }
 
-  tw-dialog {
-    font-family: &quot;OCR A Extended&quot;, sans-serif;
-    color: #9b9b9b;
-  }
-
   /* -- General CSS -- */
 
   html {
@@ -1405,7 +1396,7 @@ After you execute XSS successfully, you will pass the challenge and will be auto
     width: 64%;
     height: 52%;
     margin-left: 15.5%;
-    margin-top: 2.5%;
+    margin-top: 4%;
     border: 2px solid black;
     background: white;
   }
@@ -1420,24 +1411,8 @@ After you execute XSS successfully, you will pass the challenge and will be auto
   }
 
   .url {
-    padding-bottom: calc(.5em - 1px);
+    padding: 0.1em;
     align-self: center;
-
-    padding-left: calc(.75em - 1px);
-    padding-right: calc(.75em - 1px);
-    padding-top: calc(.5em - 1px);
-    position: relative;
-
-    height: 2.5em;
-    justify-content: flex-start;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
-  }
-
-  iframe {
-    width: inherit;
-    height: inherit;
   }
 
   .controls {
@@ -1454,37 +1429,16 @@ After you execute XSS successfully, you will pass the challenge and will be auto
   .urlbutton {
     margin-left: auto;
     align-self: center;
-    justify-content: center;
-    position: relative;
-    display: inline-flex;
-    text-align: center;
-
-    align-items: center;
-
-    height: 2.5em;
-    padding-bottom: calc(.5em - 1px);
-    padding-top: calc(.5em - 1px);
     padding-right: 1em;
-
-    border: 1px solid transparent;
-    border-radius: 5px;
-    border-width: 1px;
-    background-color: #3ec487;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.37);
-
-    color: #FFFFFFFF;
-    text-decoration: none;
-
-    border-radius: 4px;
-    box-shadow: none;
-    white-space: nowrap;
-    line-height: 1.5;
-    font-size: 1rem;
-    font-family: BlinkMacSystemFont,-apple-system,&quot;Segoe UI&quot;,Roboto,Oxygen,Ubuntu,Cantarell,&quot;Fira Sans&quot;,&quot;Droid Sans&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
   }
 
   .input {
     margin-right: auto;
+  }
+
+  iframe {
+    width: inherit;
+    height: inherit;
   }
 
   .buttons {
@@ -1497,6 +1451,11 @@ After you execute XSS successfully, you will pass the challenge and will be auto
 
   .btn-pos1, .btn-pos2, .btn-pos3, .btn-pos4 {
     padding: 0.25rem;
+  }
+  
+  tw-dialog, h1 {
+    font-family: &quot;OCR A Extended&quot;, sans-serif;
+    color: #9b9b9b;
   }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="12" name="CTF4_end" tags="" position="1000,1400" size="100,100">(unless: $ctfs contains &quot;ctf4&quot;)[(set: $ctfs to it + (a: &quot;ctf4&quot;))]
 
@@ -1557,7 +1516,7 @@ This is why it is very important to for web developers to secure their websites 
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="600,2600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="CTF 5" tags="" position="600,2600" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/bulma.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -1609,8 +1568,6 @@ After you execute XSS successfully, you will be automatically redirected to the 
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1732,8 +1689,6 @@ There are many other options, for instance the script tag you just used.
   [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -1772,8 +1727,8 @@ There are many other options, for instance the script tag you just used.
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="600,5000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="15" name="CTF 6" tags="" position="600,5000" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/bulma.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/highlight.default.min.css&quot;&gt;
 
 (set: $ctf6_code to &quot;function showTab(input) {
 	var picID;
@@ -1837,8 +1792,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
 &lt;tw-consecutive-br&gt;&lt;/tw-consecutive-br&gt;
-
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var script = document.createElement(&#39;script&#39;);
+    script.src = &quot;src/js/highlight.min.js&quot;;
+    document.head.appendChild(script);
+&lt;/script&gt;
 
 &lt;div class=&quot;buttons&quot;&gt;
   &lt;div class=&quot;btn-pos5&quot;&gt;
@@ -1867,8 +1825,6 @@ After you execute XSS successfully, you will be automatically redirected to the 
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1995,8 +1951,6 @@ Please be careful with user input and always validate it!
   [[&lt;button class=&quot;resumeButton&quot;&gt;Back to CTF-Overview-&gt;CTFs]]]
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -2174,8 +2128,6 @@ Please enter the flag here:
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -2271,8 +2223,6 @@ This will not require you to have a look at the source code of this page.&quot;)
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS -- */
 
   br {
@@ -2348,8 +2298,6 @@ Please enter the flag here:
 &lt;/div&gt;
 
 &lt;style&gt;
-  
-
   /* -- General CSS --*/
 
   .resumeButton {
@@ -2388,8 +2336,12 @@ Please enter the flag here:
     font-family: &quot;OCR A Extended&quot;, sans-serif;
     color: #9b9b9b;
   }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="21" name="CTF 9" tags="" position="800,4600" size="100,100">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css&quot;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="21" name="CTF 9" tags="" position="800,4600" size="100,100">&lt;script&gt;
+    var script = document.createElement(&#39;script&#39;);
+    script.src = &quot;src/js/highlight.min.js&quot;;
+    document.head.appendChild(script);
+&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/highlight.agate.min.css&quot;&gt;
 
 &lt;script&gt;
   setup.all();
@@ -3069,8 +3021,6 @@ please enter your name. Please note your name must be at longer then three chara
 &lt;/script&gt;
 
 &lt;style&gt;
-  
-
   /* -- Twine overrides -- */
 
   tw-consecutive-br {
@@ -3277,7 +3227,7 @@ After a few tries, you are sitting in the capsule and can see the room you are \
 in. It looks like a hospital room. The intravenous access that was in your arm \
 goes through the left wall of the capsule and leads to a transparent bag \
 containing a liquid. Next to it is a small bedside cabinet with a calendar and \
-a vase of fresh flowers. They are red tulips. You take a closer look at the calander \
+a vase of fresh flowers. They are red tulips. You take a closer look at the calender \
 and almost loose your mind. Somehow, three years have passed!\
 You turn your attention back to the room trying to figure out whats happening. \
 Rays of sunlight shine through the blinds in front of \
@@ -3416,7 +3366,7 @@ Now Rob comes into the room and introduces himself. He is a doctor and \
 wants to examine you. You let him to that. John waits outside the door during the \
 examination. When Rob is done, John offers to show you around. You gladly accept. \
 
-Apparently you are an a headquarters of a secret organization. \
+Apparently you are in the headquarters of a secret organization. \
 For some reason, John is not allowed to tell you what \
 his job entails. He assures you, however, that it is not criminal activity. \
 You don&#39;t wanna seem intrusive, so, you don&#39;t question him further. During \
@@ -3544,7 +3494,7 @@ But no matter \
 what, you&#39;re not gonna give up. You have no home to go back to and everything \
 seems strange to you. You have to keep going...
 
-So, you decide to accept John&#39;s offer and stay here for while. You feel \
+So, you decide to accept John&#39;s offer and stay here for a while. You feel \
 comfortable with the people you have met today. Your gut feeling tells \
 you that they are good people who mean no harm. In fact, you are already \
 curious to see how you can make yourself useful here. There is so much to \
@@ -3601,12 +3551,12 @@ thoughts, you fall asleep.
 The next day, at breakfast, you ask Josie if there is a way at headquarter to \
 look at the news of the last 3 years. You hope that looking at past \
 news will help to refresh your memory. She tells you that there is a library \
-at the headquarters that has a well-kept archive of news. She explains to you \
+at the headquarters that has a well-kept archive of news. She also explains to you \
 where to find it. 
 
 After breakfast, you head over there. The library is large and easy to find. \
 The achive inside of it was easy to spot as well. In front of the \
-archive is a section of books about video games. You pull out a radom book and \
+archive is a section of books about video games. You pull out a random book and \
 notice a game controller depicted on its cover.
 
 [[&lt;button class=&quot;startChallenge&quot;&gt;Start Challenge-&gt;CTF 7]]
@@ -3852,7 +3802,7 @@ You take out one of the newer yearbooks and flip through it. There are only \
 pictures of graduates and special awards assigned for them. You close the book and put \
 it back. You pull out a much older yearbook and and check it out. As you flip \
 through it, you come across a face that looks very familiar. The name under \
-this picture is Henry Reese. This is probably your father. In the picture, your \
+this picture is Henry Reese. This is your father! In the picture, your \
 father is wearing horn-rimmed glasses with a big smile on his face. He looks like a typical \
 nerd. 
 
@@ -4033,7 +3983,7 @@ you...&quot;, Josie says sheepishly as you interrupt her to assure her that \
 everything is fine and that they are family to you. She smiles and turns back \
 to John. &quot;What I was going to say is that we should come with you to make sure \
 everything is safe. That&#39;s all.&quot; John crosses his arms and says, slightly \
-amused, that he can&#39;t beat the two of them now anyway. He will get everything \
+amused, that he can&#39;t beat the two of you now anyway. He will get everything \
 in place, so that they can leave in a few days.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;nextButton&quot;&gt;Next-&gt;3.2.p]]
@@ -4216,8 +4166,8 @@ You suddenly black out again, and you feel as if you&#39;re in a movie. \
 You see your self during some of your milestones as a young student.
 Your matriculation, insights into everyday student life, the \
 submission of your thesis, your graduation, and the presentation of your \
-Bachelor&#39;s certificate. After that, you see your master matriculation and some of your \
-everyday student life as a master student. You are confused. 
+Bachelor&#39;s certificate. After that, you see another matriculation and more \
+everyday student life. You are confused about that. 
 
 Next, you see that you are dropping an envelope into a box. This envelope says: \
 Master&#39;s thesis submission for an IT security degree program. Then you stand \
@@ -4348,7 +4298,7 @@ While Josie was saying this, she started looking out the window of the car. She 
 smiles a little bit. Then Josie looks back at you and says that she is sure you \
 would have liked her. Josie adds that her friend is a little older \
 than her, so she would probably be around your age. You smile and ask if the friend \
-also worked at headquarters. Josie laughs and denies. Her friend would never \
+also worked at the headquarters. Josie laughs and denies. Her friend would never \
 have been able to do this job. She worked as a consultant for IT companies and \
 traveled around all the time.
 
@@ -4845,7 +4795,7 @@ will never be able to come to any agreement. I have seen through your intentions
 and cannot ethically represent them.&quot; You get up and go to the door. As you are \
 leaving you hear a bang. Then mr. Grayson yells, &quot;You will regret it if you leave now, I \
 will make sure of it myself.&quot; You turn back and look him in the eye and say \
-&quot;my algorithm will never get in your hands&quot; and leave.
+&quot;My algorithm will never get in your hands&quot; and leave.
 
 [[&lt;button id=&quot;resume-btn&quot; class=&quot;nextButton&quot;&gt;Next-&gt;7.p]]
 
@@ -6132,7 +6082,6 @@ If you want to play the game again, you have to reset it by clicking on the rese
     src:local(&#39;OCR A Extended&#39;),
     url(src/js/crypto-js.js/OCRAEXT_2.woff) format(&#39;woff&#39;);
   }
-
 
   /* -- Twine overrides -- */
 

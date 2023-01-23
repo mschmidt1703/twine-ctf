@@ -1,6 +1,6 @@
 :: CTF 6 {"position":"600,5000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<link rel="stylesheet" href="src/css/bulma.min.css">
+<link rel="stylesheet" href="src/css/highlight.default.min.css">
 
 (set: $ctf6_code to "function showTab(input) {
 	var picID;
@@ -64,8 +64,11 @@ After you execute XSS successfully, you will be automatically redirected to the 
 
 <tw-consecutive-br></tw-consecutive-br>
 <tw-consecutive-br></tw-consecutive-br>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+    var script = document.createElement('script');
+    script.src = "src/js/highlight.min.js";
+    document.head.appendChild(script);
+</script>
 
 <div class="buttons">
   <div class="btn-pos5">

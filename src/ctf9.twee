@@ -1,6 +1,10 @@
 :: CTF 9 {"position":"800,4600","size":"100,100"}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+<script>
+    var script = document.createElement('script');
+    script.src = "src/js/highlight.min.js";
+    document.head.appendChild(script);
+</script>
+<link rel="stylesheet" href="src/css/highlight.agate.min.css">
 
 <script>
   setup.all();

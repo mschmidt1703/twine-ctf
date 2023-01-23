@@ -1,5 +1,4 @@
 :: CTF 10 {"position":"600,3400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 
 <script>
   setup.all();
