@@ -2164,7 +2164,7 @@ Aaron Grayson, AGT and the murder of your parents. They are both shocked. You \
 tell them about your apartment and that you suspect that the algorithm is over \
 there. You absolutely need to get it. John recognizes the seriousness of the \
 situation, especially since AGT is already known to him. All of your friends \
-show their supports and tell you that you cannot go to your apartment unprepared. \
+show their support and tell you that you cannot go to your apartment unprepared. \
 Therefore, equipment is ordered, and until it arrives, Josie will give you \
 shooting training.
 
@@ -2286,9 +2286,9 @@ make sure that you are alone in the apartment.
 </script>
 
 You search your office while John keeps an eye on the street through the windows \
-and also guards the entrance. You go to your desk. Intuitively, you reach for \
-the first drawer of the drawer cabinet on the right and pull it out. You reach \
-under the drawer and pull out a USB stick, and you know exactly what the USB \
+and also guards the entrance. You go to your desk. Intuitively, you open \
+the first drawer of the cabinet on the right. You reach \
+under it and pull out a USB stick, and you know exactly what the USB \
 stick is. There is a mobile phone in the drawer, which you also put in.
 
 You want to get up when your eyes fall on a picture on your desk. The picture \
@@ -2363,11 +2363,11 @@ The chat message contains a picture of her and says that they have kidnapped \
 your girlfriend and that she will only be released in exchange for the \
 algorithm. You have 24 hours to decide.
 
-Of course you have decided to exchange her, because she is all you have left \
+Of course you have decided to accept the offer, because she is all you have left \
 and there is no one you love more than her. But you can't just hand over the \
-algorithm, so you prepare a fake algorithm. It's supposed to look like you've \
-handed over the real algorithm, but it's really just the console output and an \
-unnecessarily complicated sorting algorithm. These are to buy you enough time \
+algorithm, so you prepare a fake algorithm. It's supposed to look like \
+the real algorithm, but it's really just the console output and an \
+unnecessarily complicated sorting algorithm. You hope that this will buy you enough time \
 to get you both to safety.
 
 [[<button id="resume-btn" class="nextButton">Next->9.p]]
@@ -2424,8 +2424,8 @@ to get you both to safety.
 Your heart grows heavy as you think of her and wonder where she is. But you \
 don't get a chance to think about it any more because John bursts into the \
 office because an armed team has turned up and is on its way up to your flat. \
-You have to escape. You lock the door to the office. You look around your \
-office, searching, because somehow you have to get out of here. Meanwhile, John \
+You have to escape. You lock the door to the office and start looking around. \
+You start searching for a way to get out of here. Meanwhile, John \
 sends an emergency signal to Josie.
 
 [[<button id="resume-btn" class="nextButton">Next->9.x.p]]
@@ -2486,15 +2486,15 @@ actually pulls open like a door. Behind the bookshelf is the entrance to a slide
 You draw John's attention to the exit and he nods.
 
 Then you hear the front door being kicked open and people rushing into the \
-apartment. John sends another distress signal to Josie. You hear voices and a \
-little later you hear that they are at the office door. You fire a shot at your \
+apartment. John sends another distress signal to Josie. You hear voices that keep coming closer to you until \
+they reach the office door. You fire a shot at your \
 PC before running for the exit. You slide first after John moves the bookshelf \
 back again.
 
-All of a sudden, you land on old pillows. The room is dark, but sunlight comes \
+All of a sudden, you land on a pile of old pillows. The room is dark, but sunlight comes \
 through slits in the wall. John pulls a flashlight from his jacket pocket and \
 carefully shines it in the direction of the slits. It is a door with vents. \
-Next to the door, a keypad that can certainly be used to open the door.
+Next to the door, you see a keypad that can certainly be used to open the door.
 
 [[<button class="startChallenge">Start Challenge->CTF 8]]
 
@@ -2547,7 +2547,7 @@ Next to the door, a keypad that can certainly be used to open the door.
   setup.story()
 </script>
 
-The door lock unlocks after successfully entering the code. John opens the door \
+The door unlocks after successfully entering the code. John opens the door \
 carefully to check the situation. He signals for you to follow him quietly. You \
 follow him to the alley entrance on the opposite side of the street. You hide \
 there. John whispers to you that Josie is not yet around and that you should \
@@ -2557,7 +2557,7 @@ pocket. He walks out of the alley and turns right. There is a cross street off \
 to the right. When John returns, he winks at you as he tells you that false \
 tracks can never be a bad thing.
 
-Now a light flashes on John's wristband. He is about to explain to you what it \
+Now, John's wristband starts flashing light. He is about to explain to you what it \
 means when you hear a bang. Your pursuers have blown open the door through \
 which you had just escaped. You take cover, but in such a way that you can \
 still see your pursuers. You are looking around when one of them disappears in \
@@ -2623,7 +2623,7 @@ vanish unnoticed.
 
 In the car, it also becomes clear how close the whole thing was. John says that they were prepared and probably staked out your apartment in hopes that you would eventually return. He also adds that he hopes it was at least worth it. You show him the USB stick and the cellphone, and you put the picture aside. "Is the algorithm on the USB stick?". You tell him that you're pretty sure the algorithm is on it. "Then at least we've accomplished something."
 You look around at Josie and notice that she is staring at your picture. Her face is white like chalk. "Josie? Is everything okay?" you ask cautiously. Slowly, she lifts her head and looks you straight in the eye as she asks, "Why do you have a picture of Lizzie...". You ask if that's the name of the girl in the picture. Josie says that's her best friend and asks you again why you have a picture of her. You tell Josie everything you can remember. When you are done telling, all she says is "I see". After that, Josie turns to the window and is silent for the rest of the ride. You want to go to her to ask if there is anything you can do to help, but John holds you back.
-Back at headquarters, Josie immediately disappears, and you unload the car and go to your rooms. This has been an exhausting yet enlightening day.
+Back at headquarters, Josie immediately disappears. You unload the car and go to your room. This has been an exhausting yet enlightening day.
 
 [[<button id="resume-btn" class="nextButton">Next->10.x.p]]
 
@@ -2685,9 +2685,9 @@ is most likely a criminal enterprise. He notes "hacker-for-hire" as an example \
 of possible activities. You conclude that AGT probably wants to increase its \
 turnover with the help of your algorithm.
 
-After breakfast, you go to your room to plug in the USB stick. You insert the \
-USB stick. The USB stick could be read, and a directory opens in which all files \
-are encrypted except one. So you open the only unencrypted file.
+After breakfast, you go to your room to check out the USB stick you found earilier. You insert \
+it into your computer and fortunately, it still works! A directory opens in which all files \
+are encrypted except one. So you go ahead and open the only unencrypted file.
 
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
@@ -2751,7 +2751,7 @@ In exchange, you and your friend may leave, and our business will be concluded."
 Having no choice, you walk up to him and hand him the prepared USB stick, then \
 walk over to Lizzie. You lift her up and make your way to the exit. The guards \
 stop you from leaving the room. "Not so fast, Mr. Reese, you'll have to wait \
-until we've tested the algorithm," laughs Mr. Grayson. This messes up your \
+until we've tested the algorithm," says Mr. Grayson laughingly. This messes up your \
 plans. The expert to whom Mr. Grayson has given the USB stick for testing \
 indicates that this is not the algorithm. At that moment, you set off a smoke \
 bomb and disappear through the door.
@@ -2759,7 +2759,7 @@ bomb and disappear through the door.
 Shortly afterwards, men come from everywhere and shoot at you, blocking your \
 way to the exit. You change directions. Before you arrived, you could see that \
 the building stands by a river. You run into the next corridor and through one \
-of the doors. In the room, there is a window facing the river. You have to \
+of the doors. In this room, there is a window facing the river. You have to \
 break the window so you can jump down with Lizzie in your arms. You have a \
 small hand grenade with you. You knew your connections on the Darknet would \
 pay off eventually. You ignite the hand grenade and place it as close as you \
@@ -2828,7 +2828,7 @@ the depths.
 
 You didn't expect it, but you have just regained your memory completely. \
 Furthermore, your assumption has been confirmed, and the USB stick contains \
-the complete algorithm as well as a copy of your PC.
+the complete algorithm as well as a copy of your PCs content.
 
 You think about the events of the last few weeks and get the feeling that it \
 will be inevitable to confront Mr. Grayson. You fear that if you don't, he may \
@@ -2955,7 +2955,7 @@ told them both what happened back then, Josie needs a moment to pull herself \
 together again. Then you tell them about your plan, that you want to use the \
 same trick as back then. Josie and John look at you as if you've gone mad. You \
 explain that no one would expect it, but that you are also taking precautions \
-so that your plan cannot fail so easily, and you explain all the details to \
+so that your plan cannot fail so easily this time around. You explain all the details to \
 them. When they agree to the plan, everyone sets out to make arrangements. This \
 time, there is no defeat.
 
@@ -3011,14 +3011,14 @@ time, there is no defeat.
 </script>
 
 You make your way to the agreed-upon meeting place. The guards are waiting for \
-you, and that's just as well. While you draw everyone's attention, Josie and \
-John sneak into the headquarters to prepare everything for your plan and then \
+your arrival. While you enter everyone's attention is focused on you. Josie and \
+John sneak into the headquarters. They will prepare everything for your plan and then \
 escape with you and Lizzie.
 
-So you are led back to the center, and just like before, Lizzie is lying in \
+So, you are led back to the center, and just like before, Lizzie is lying in \
 the middle of the room. This time, however, she is lying in bed. Mr. Grayson \
-has had her put into an artificial coma to make it easier to hide her. Mr. 
-Grayson is already waiting for you. He makes a few ridiculous jokes about your 
+has had her put into an artificial coma to make it easier to hide her. He 
+is already waiting for you. He makes a few ridiculous jokes about your 
 situation when you hand him the USB stick. This time, however, you make no move \
 towards Lizzie or the door. The expert checks your algorithm. Minutes pass, and \
 you can see from the expert's expression that everything is going according to \
@@ -3032,16 +3032,16 @@ After all the people in the room have been placed, another man comes in, \
 followed by Josie and John. The man turns to you and asks if you are $username Reese. \
 You confirm this and put your hands down. Josie, meanwhile, runs to Lizzie with \
 some paramedics. Angrily, Mr. Grayson asks you what's going on. You smile and \
-fold your arms behind your back. "What can I say Mr. Grayson, they have grossly \
-underestimated us. They plugged the USB stick into their central system without \
+fold your arms behind your back. "What can I say Mr. Grayson, you have grossly \
+underestimated us. You plugged the USB stick into your central system without \
 taking any further precautions to check whether it contains the algorithm. \
 However, the USB stick once again contains a forgery. A fake that distracted \
-them long enough while it loaded my virus into their system. My virus uploaded \
+You long enough while it loaded a virus into your system. The virus uploaded \
 all AGT's internal company documents to the darknet and forwarded them in the \
-form of anonymous tips to all the relevant authorities. This was to ensure that \
-the court had all the evidence necessary to put them in prison for life. They \
+form of anonymous tips to all the relevant authorities. This ensures that \
+the court had all the evidence necessary to put you in prison for life. You \
 murdered my parents and kidnapped my girlfriend for the sole purpose of \
-increasing their sales. That's what you're paying for." Confused, Mr. Grayson \
+increasing your sales. That's what you're paying for." Confused, Mr. Grayson \
 asks how you managed to get past the security on his IT system. You laugh and \
 explain, "That's an excellent question, Mr. Grayson. You see, my friends here \
 work for a government agency that specialises in fighting cybercrime. So they \
@@ -3053,11 +3053,11 @@ server room."
 After these words, Mr. Grayson and his associates are taken away. Thanks to \
 the data leak, Mr. Grayson was fast-tracked to prison.
 
-Rob was able to bring Lizzie out of the induced coma, and there was a joyous \
-reunion with you and Josie.
+Rob was able to bring Lizzie out of the induced coma, and you and Josie had a joyous \
+reunion with her.
 
-You and Lizzie have decided to start at the agency and thus be together with \
-your family in the future, and with this happy ending, this story also ends, \
+You and Lizzie have decided to start at the agency and so that you can stay together with \
+your new family in the future. And with this happy ending, this story also ends, \
 so does this game.
 
 
