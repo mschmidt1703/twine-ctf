@@ -388,9 +388,9 @@ seems strange to you. You have to keep going...
 So, you decide to accept John's offer and stay here for while. You feel \
 comfortable with the people you have met today. Your gut feeling tells \
 you that they are good people who mean no harm. In fact, you are already \
-curious to see how you can make yourself useful here and what there will be to \
-discover because now you have to get to know the world anew, and with this \
-thought, you go to sleep.
+curious to see how you can make yourself useful here. There is so much to \
+discover because now you have to get to know the world anew. And with these \
+thoughts, you fall asleep.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.x.p]]
 
@@ -428,15 +428,15 @@ thought, you go to sleep.
 </script>
 
 The next day, at breakfast, you ask Josie if there is a way at headquarter to \
-look at the news for the last 3 years. You really hope that looking at the past \
-news will help you to refresh your memory. She tells you that there is a library \
-at the headquarters that has a well-kept archive of news and explains to you \
+look at the news of the last 3 years. You hope that looking at past \
+news will help to refresh your memory. She tells you that there is a library \
+at the headquarters that has a well-kept archive of news. She explains to you \
 where to find it. 
 
 After breakfast, you head over there. The library is large and easy to find. \
-Therefore, it was not a problem for you to find the archive. In front of the \
-archive is a section for books about video games. When you reach for a book, \
-you notice a controller on it.
+The achive inside of it was easy to spot as well. In front of the \
+archive is a section of books about video games. You pull out a radom book and \
+notice a game controller depicted on its cover.
 
 [[<button class="startChallenge">Start Challenge->CTF 7]]
 
@@ -495,13 +495,13 @@ you notice a controller on it.
 
 Suddenly, you black out and disappear in your thoughts.
 
-You are in a living room. You start looking around. You are sitting on a sofa. \
-Across from you, on the wall, is a television on which a video game is being \
+Suddenly, you are in a living room. You start looking around and notice that you're sitting on a sofa. \
+Across from you on the wall, is a television on which a video game is being \
 played. To your left and right, you see two sofas. On the left sofa lies a man \
 with a controller in his hands. You can't see his face. He is probably playing \
-the video game. Everything in this room looks familiar to you. And then you \
-realize that's your father! You watch at the TV again and a starts smiling. \
-A level has just been completed. 
+the video game on the TV. Everything in this room looks familiar to you. And then you \
+realize that the man on your left is your father! You watch the TV and a start smiling. \
+A level has just been completed in the game. 
 
 All of a sudden, you smell food, and you know that your mother is in the kitchen \
 right now. You recognize the smell. It's the smell of spaghetti carbonara. You \
@@ -544,7 +544,7 @@ hear her calling your name.
 
 Back in reality...
 
-You realize what has just occurred: a memory.You now remember your home and your \
+You realize what has just occurred: a memory. You now remember your childhood home and your \
 parents. You remember that you used to enjoy watching your father play video \
 games. However, for some reason, you have no recollection of what their faces \
 look like.
@@ -588,22 +588,22 @@ $username.
   setup.story()
 </script>
 
-You wonder how much time has passed while remembering. You go back to the \
+You wonder how much time has passed while being lost in your thoughts. You go back to the \
 entrance of the library, where you think you saw a clock. You check the time, \
 and it is already lunchtime. Therefore, you decide that you should join the \
-others in the canteen to have lunch.
+others in the canteen for lunch.
 
 Today, the canteen is serving schnitzel and apple strudel for dessert. You pick \
 up a portion and sit down at the table with John, Josie, and Rob. Josie asks \
 you if you found what you were looking for in the library. Everyone is looking \
-at you. You just nod, having just stuffed your mouth. You finish chewing, and \
-after swallowing, you cheerfully say that you can remember your name again. \
+at you. You just nod, having just stuffed your mouth with food. You finish chewing, \
+you cheerfully say that you can remember your name again. \
 Your name is: $username Reese. Cheers erupt around the table, and a few jokes \
 are made about the situation. 
 
 For the next few days, you assist the others in any way you can and complete the \
-tasks you are assigned. You also get to know your new home and your roommates. \
-You feel very comfortable there.
+tasks you are assigned. You also get to know your new home and your roommates closer. \
+You feel very comfortable here.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
 
@@ -645,16 +645,16 @@ So, you decide to go back to the library. There, you wander through the aisles \
 and smile at some of the sections: video games, cooking, etc. 
 
 Then you pass a section called Yearbooks. Curious about what you might find \
-there, you enter the aisle. The various bookshelves contain many books that \
+there, you enter the aisle. The various bookshelves contain many books that all \
 look alike. These are yearbooks from various universities. A bookshelf that \
 contains blue and white yearbooks catches your attention.
 
 You take out one of the newer yearbooks and flip through it. There are only \
-pictures of graduates and special awards for them. You close the book and put \
-it back. You take out a much older yearbook and flip through it. As you flip \
+pictures of graduates and special awards assigned for them. You close the book and put \
+it back. You pull out a much older yearbook and and check it out. As you flip \
 through it, you come across a face that looks very familiar. The name under \
-this picture is Henry Reese. So this is your father. In the picture, your \
-father is smiling, and with his horn-rimmed glasses, he looks like a typical \
+this picture is Henry Reese. This is probably your father. In the picture, your \
+father is wearing horn-rimmed glasses with a big smile on his face. He looks like a typical \
 nerd. 
 
 You sit down on the floor and start dreaming. You keep looking at the pictures \
@@ -697,7 +697,7 @@ and smiling as you relive some childhood memories.
 
 After you are done daydreaming, you decide to put the book back in its place. \
 As you're doing so, a CD falls out of the book. The CD is unlabeled. You put \
-the yearbooks back and decide to take the CD home to look further into it. \
+the yearbook back and decide to take the CD home to look further into it. \
 Immediately after arriving home, you put the CD into your PC.
 
 [[<button class="startChallenge">Start Challenge->CTF 4]]
@@ -758,7 +758,7 @@ Immediately after arriving home, you put the CD into your PC.
 Too bad, the CD contains nothing more than a digital version of the yearbook. \
 On the bright side, now you know your father's name and what he looks like. You \
 get the feeling that you should go to the university where your father studied. \
-You might find more clues about your past there. You will have to discuss this \
+You might find more clues about your past over there. But first you will have to discuss this \
 with John.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
@@ -797,27 +797,27 @@ with John.
 </script>
 
 You do a few more chores and head to lunch. John and Josie are already sitting \
-there. Josie is sucked into a book, but looks up briefly to greet you with a \
+there. Josie is sucked into a book. She looks up briefly to greet you with a \
 smile on her face before turning back to her book. You tell John about your \
 desire to visit your dad's college, but to your surprise, John doesn't really \
 agree. He thinks it's too dangerous, since no one knows what even happened to \
-you. You might even be wanted. He understands your intentions, but wants to \
+you before you where found. You might be wanted. He understands your desire to know more, but wants to \
 keep you safe. 
 
-Then, as John goes on with his lecture about being safe, Josie cuts him off \
-with, "John, now please calm down a bit." She has closed her book. John looks \
+Then, as John is going on with his lecture about keeping you safe, Josie cuts him off \
+with, "John, now please calm down a bit." She closes her book. John looks \
 at her and nods to let her know he's listening. Josie takes a breath and \
 begins, "I understand why you think this is a bad idea, John. The problem is \
 that we can't hope to get $username's memories back if he's just staying with us \
 at headquarters. We found him and brought him to safety, and now we are his home \
-and his family. "Her eyes turn to you. "I'm sorry $username of course we are \
+and family. "Her eyes turn to you. "I'm sorry $username, of course we are \
 not your real family or trying to replace them. We don't know what happened to \
 you...", Josie says sheepishly as you interrupt her to assure her that \
 everything is fine and that they are family to you. She smiles and turns back \
 to John. "What I was going to say is that we should come with you to make sure \
 everything is safe. That's all." John crosses his arms and says, slightly \
-amused, that he can't beat the two of you now anyway. He will get everything is \
-in place, so we can leave in a few days.
+amused, that he can't beat the two of them now anyway. He will get everything \
+in place, so that they can leave in a few days.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
 
@@ -863,15 +863,15 @@ After the hour-long drive, you finally arrive at the university. The campus \
 seems quite large, yet it is relatively empty. You suppose that it must be \
 semester break. 
 
-You look for the building of the faculty to which your father belonged. Since \
-he studied computer science, it is probably the building of the computer \
-science faculty. The campus is well-marked, so you should have no trouble \
-finding it. As you stand in front of it, you notice that it is a relatively \
-modern building. You enter it and come to a foyer. There are some awards \
+You look for the building of the faculty in which your father studied.
+It is probably the faculty of computer \
+sciences. The campus is well structured, so you should have no trouble \
+finding it. As you stand in front of the building, you notice that it looks relatively \
+modern. You enter it and arrive at a foyer. There are some awards \
 hanging on the walls in the foyer. You walk over to them to take a closer look. \
 Amazed, you notice that some of these awards have your name on them. They are \
 all awards for outstanding achievements in hackathons. One award even has your \
-father's name on it, also because of a hackathon.
+father's name on it, also from hackathon.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
 
@@ -913,10 +913,10 @@ examination office. Since you seem to have studied at this university yourself, 
 the examination office must have information about you, and that's exactly what \
 you are looking for. 
 
-You quickly find the examination office on the top floor of the building, and \
-fortunately for you, whoever is working at the moment has left his workstation \
-and left the door unlocked. You tell Josie and John to please stand guard. You \
-sit down at the PC and see the login window. You know very well that this PC \
+You quickly find the examination office on the top floor of the building. \
+Fortunately for you, whoever is working at the moment has left their workstation \
+and left the door unlocked. You tell Josie and John to stand guard. You \
+sit down at the PC and see a login window. You know very well that this PC \
 will not be locked for much longer.
 
 [[<button class="startChallenge">Start Challenge->CTF 1]]
@@ -975,24 +975,25 @@ will not be locked for much longer.
 </script>
 
 Great, you were able to unlock the PC. Fortunately, the person even left open \
-the window that allows you to access the student database. So you search for \
+the student database program. So you search for \
 your name and read your respective entry. You had mostly good grades, and your \
 transcript includes notes about your performance at hackathons. 
 
-Then you black out again, and many brief moments now play out like a movie \
-before your eyes. Your matriculation, insights into everyday student life, the \
+You suddenly black out again, and you feel as if you're in a movie. \
+You see your self during some of your milestones as a young student.
+Your matriculation, insights into everyday student life, the \
 submission of your thesis, your graduation, and the presentation of your \
-Bachelor's certificate. After that, you see another matriculation and more \
-everyday student life. You are confused. 
+Bachelor's certificate. After that, you see your master matriculation and some of your \
+everyday student life as a master student. You are confused. 
 
 Next, you see that you are dropping an envelope into a box. This envelope says: \
 Master's thesis submission for an IT security degree program. Then you stand \
-on a stage and are handed your Master's certificate and look into the crowd, \
-where your parents have risen from their seats and are cheering loudly for you. 
+on a stage and are handed your Master's certificate. You look into the crowd and see that \
+your parents have risen from their seats and are cheering loudly for you. 
 
 Then you're sitting in an office, talking on the phone: "Don't worry, Mom, \
 being self-sufficient is really no problem with my qualifications." \
-You'll see." Then everything goes black, and a cryptic string appears.
+You'll see." Then everything goes black, and a cryptic string appears right before your eyes.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
 
@@ -1029,18 +1030,18 @@ You'll see." Then everything goes black, and a cryptic string appears.
   setup.story()
 </script>
 
-You are back in reality. Only a short moment has passed. You take a piece of \
-paper and a pen that you found on your desk and write down the sequence of \
+You are back in reality. Only a short moment has passed. You take a pen and paper\
+ that you found on your desk and write down the sequence of \
 characters. Then you put the piece of paper in your pocket. 
 
-Now you have to cover your tracks. You delete the search entry from the search \
-history of the database, move all windows on the PC as they were before, lock \
+Now you have to cover your tracks. You delete your actions from the search \
+history of the database, rearrange windows on the PC as they were before, lock \
 the PC and leave the office with John and Josie. Just as you disappeared around \
-the next corner, you could hear footsteps, probably moving from the other end \
-of the hallway toward the exam office. If you had taken a little longer, you \
-would have been caught. 
+the next corner, you hear footsteps coming from the other end \
+of the hallway towards the office. If you had taken a little longer, you \
+would've gotten in trouble. 
 
-You leave the building and towards the car.
+You leave the building and head to the car.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
 
@@ -1077,10 +1078,9 @@ You leave the building and towards the car.
   setup.story()
 </script>
 
-During the return trip, you are very thoughtful because you can't do anything \
-with this string. You only told the others that you definitely studied at this \
-university. After a while, you don't feel like thinking about the cryptic line \
-anymore and look out the window until you get into a conversation with Josie.
+On your way back home, your mind is very busy trying to figure out the meaning of the character sequence. \
+After a while, you don't feel like thinking about the cryptic line \
+anymore. You look out the window until a conversation starts with Josie.
 
 During the conversation, Josie tells you that she has a best friend who has \
 been missing for about 3 years. You ask Josie why she still talks about her \
@@ -1089,11 +1089,11 @@ question was insensitive, so you apologize immediately. Josie confesses to you \
 that she just knows that her best friend is still alive and out there somewhere. \
 While Josie was saying this, she started looking out the window of the car. She \
 smiles a little bit. Then Josie looks back at you and says that she is sure you \
-would have liked her. Furthermore, Josie adds that her friend is a little older \
-than her, so she would probably be my age, too. You smile and ask if the friend \
-also worked at headquarters. Josie laughs and denies. Your friend would never \
+would have liked her. Josie adds that her friend is a little older \
+than her, so she would probably be around your age. You smile and ask if the friend \
+also worked at headquarters. Josie laughs and denies. Her friend would never \
 have been able to do this job. She worked as a consultant for IT companies and \
-therefore traveled around all the time.
+traveled around all the time.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
 
@@ -1134,11 +1134,11 @@ In the middle of the night, you reach the headquarters. After unloading the car 
 and having something to eat, everyone goes to sleep. 
 
 The next day, you wake up late in the afternoon. Since you don't have any \
-assignments, you spend the whole afternoon researching a little about yourself \
-on the Internet. However, you can't find anything you didn't already know, and \
-the research took so long that it is now already time for dinner.
+assignments, you spend the whole afternoon researching about yourself \
+on the Internet. However, you can't find anything you didn't already know. \
+The research took so long that it is now already time for dinner.
 
-When you get to the cafeteria, Josie, John, and Rob are standing around a table. \
+When you get to the cafeteria, Josie, John, and Rob are standing around the table. \
 Rob is presenting his latest school physics experiment: a chocolate marshmallow \
 in a vacuum. You join them just as Rob is about to show everyone his experiment. \
 The chocolate marshmallow is in a glass container, and there is a hose \
@@ -1147,7 +1147,7 @@ close attention. 
 
 A vacuum is created in the glass container, which causes the chocolate \
 marshmallow to inflate. Everyone is now staring at Rob. Now Rob opens the valve \
-on the hose again, and the chocolate marshmallow contracts again because air is \
+on the hose again, and the chocolate marshmallow contracts back because air is \
 now getting into the glass container. You think to yourself that this is not \
 very exciting, but in order not to seem rude, you smile. During dinner, the \
 others explain to Rob that they had this experiment in school and that it is \
@@ -1188,13 +1188,13 @@ therefore no longer exciting. Rob doesn't let this take away his joy.
   setup.story()
 </script>
 
-After dinner, you watch a series with the others. The series is about \
+After dinner, you watch a series with the others. Its is about \
 cryptography and various ciphers. While you are watching the series, you take \
 the note you wrote earlier out of your pocket and realize that one of the \
 encryption algorithms mentioned could decrypt the string.
 
-After the Netflix evening, you say goodbye and watch some tutorials on \
-decrypting a string on your PC.
+After the Netflix evening, you say goodbye and watch some tutorials on how to \
+decrypt a string on your PC.
 
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
@@ -1251,13 +1251,13 @@ decrypting a string on your PC.
   setup.story()
 </script>
 
-With the help of the tutorial, you could decode the string. It is an IP address. \
+With the help of some tutorial, you were able to decode the string. It is an IP address. \
 The IP address leads to a web page that describes a compression and \
 decompression algorithm. 
 
 You black out again, and you see yourself sitting in front of your PC. The \
-nights pass by like a time lapse until you realize that you finally did it. You \
-run performance tests that show that the algorithm is abnormally efficient.
+time is passing by like a time lapse until you realize that you finally completed a program. You \
+run performance tests and confirm that the algorithm is abnormally efficient.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
 
@@ -1299,8 +1299,8 @@ algorithm described on the website.
 
 So, you search the Internet for similar algorithms, but you quickly realize \
 that there are none as efficient as yours. You wonder if this algorithm could \
-relate to the reason why you were found unconscious by the others. That's why \
-you're going to keep this to yourself for now.
+relate to the reason why you were found unconscious. So, you decide to keep these \
+new findings to yourself for now.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
 
@@ -1394,7 +1394,7 @@ other methods: The Darknet. But how do you get to the Darknet? 
 You made it to the Darknet, and it was easier than you thought!
 
 During your ongoing research, you discover many things that you don't want to \
-know about. Unfortunately, your search remains unsuccessful for the time being.
+know about, but nothing relevant to your quest. Unfortunately, your search remains unsuccessful for the time being.
 
 You decide to search again and again over the next few days. Maybe you didn't \
 enter the right search parameters.
@@ -1434,17 +1434,16 @@ enter the right search parameters.
   setup.story()
 </script>
 
-After a few days, you can come across a blog post. This one is about 3 years \
+After a few days, you come across a blog post. This one is about 3 years \
 old. In the post, someone is looking for efficient compression algorithms and \
 offers a lot of money for it. Some comments under the post point out that if \
-there is such an algorithm, it better not be published everywhere, otherwise \
-it would fall into the hands of a company called AGT.
+there is such an algorithm, it better not be published anywhere, or it might fall \
+into the hands of a company called AGT.
 
 You take it as a well-intentioned hint.
 
-You read through other comments, and one comment contains a file. Actually, it \
-is naive to download any files from the Darknet, but your gut tells you to do \
-just that.
+You read through other comments, and one comment contains a file. You know that it \
+is naive to download any files from the Darknet, but your gut tells you to go for it.\
 
 The downloaded file is encrypted. So, to view the content, you need to decrypt \
 it.
@@ -1505,54 +1504,55 @@ it.
 </script>
 
 When you decrypt the file, a directory opens that contains a lot of files. So \
-you scroll through the directory and discover a tall, powerfully built man on a \
-thumbnail of a png file. You open the image and you black out.
+you scroll through the directory and discover a png image with an iteresting\
+preview. On the thumbnail you see a man that seems tall and strong. 
+You open the image and you black out.
 
-You are sitting in a café when a man approaches you. He skates your hand and \
+You are sitting in a café when a man approaches you. He shakes your hand and \
 introduces himself as Mr. Aaron Grayson. He asks you if he can sit down for a \
 moment and you politely gesture to the chair across from you. He tells you that \
-he owns a software company and that he heard about your algorithm.
+he owns a software company and that he had heard about your impressive program.
 
-After the small conversation with Mr. Grayson he hands you his business card \
+After the short conversation with Mr. Grayson, he hands you his business card \
 and you assure him that you will listen to his offer.
 
-Now you are sitting in a rented office in a high-rise building. You are \
-suspicious of the situation. After a friendly greeting, he leads you into a \
-conference room where his lawyer is already sitting. After you sit down across \
-from the lawyer and Mr. Grayson, the lawyer slides you the contract with the \
-offer. You open the contract and read it over. The offer states that you will \
-receive 5.5 million euros and that you must sign a non-disclosure agreement and \
-assign all patent rights. When you have finished reading the contract, you \
+Now you are sitting in a rented office in a high-rise building with Mr. Grayson. You feel \
+suspicious of the current situation. After a friendly greeting, he leads you into a \
+conference room where his lawyer is already sitting. After you sit down the lawyer \
+slides the contract with the \
+offer over to you. You open the contract and read it over. The offer states that you will \
+receive 5.5 million euros. In return you will have to sign a non-disclosure agreement and \
+assign all patent rights to the buyer. When you have finished reading the contract, you \
 close it. On the first page of the contract, is the name of the company: Aaron \
 Grayson Technologies...AGT.
 
 You feel uneasy, so you ask Mr. Grayson to tell you what your algorithm will be \
-used for and that you will need a proof of that. Mr. Grayson tells you that \
+used for and and tell hem that you will need a proof of that. Mr. Grayson tells you that \
 this is not possible because it is a company secret. You notice how his facial \
 expressions and gestures change, which confirms that something suspicious is \
-going on. Suddenly, he doesn't seem so friendly. You tell him that you are also \
-willing to sign a confidentiality agreement, especially since you would know a \
-company secret anyway because it is your algorithm. You make it clear that this \
+going on. Suddenly, he doesn't seem so friendly anymore. You tell him that you are \
+willing to sign an NDA, especially since you would know a \
+company secret. You make it clear that you need to know what his plans for your program are and that this \
 is non-negotiable. 
 
 He starts nervously grinding his teeth, and tells you that he plans on using \
 your algorithm to send software components more easily, since your compression \
 algorithm would make the size of the files much smaller. You realize that he is \
 trying to disguise his true intention, since it would theoretically also be \
-possible to compress and send malicious malware, and you fear that this is \
+possible to compress and send malicious malware. You fear that this is \
 exactly his plan.
 
-You think about of the blog posts you wrote on the Darknet to see if anyone has \
+You think about of the posts you wrote on the Darknet to see if anyone has \
 information about the company. You had made a comment under a different \
 account, containing a file with all the information you could find about AGT \
 and Mr. Grayson. This is your insurance in case something should happen to you.
 
-You come across very determined to Mr. Grayson "I am sorry Mr. Grayson, but we \
+"I am sorry Mr. Grayson, but we \
 will never be able to come to any agreement. I have seen through your intentions \
 and cannot ethically represent them." You get up and go to the door. As you are \
-at the door you hear something bang, and he yells, "You will regret this, I \
-will make sure of it myself if you leave now." You stare into his eyes and say, \
-"The main thing is that my algorithm will never get in your hands" and leave.
+leaving you hear a bang. Then mr. Grayson yells, "You will regret it if you leave now, I \
+will make sure of it myself." You turn back and look him in the eye and say \
+"my algorithm will never get in your hands" and leave.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
 
@@ -1591,8 +1591,8 @@ will make sure of it myself if you leave now." You stare into his eyes and say, 
 
 You open your eyes and wonder what kind of messy situation you ended up in. 
 
-Now you realize what your algorithm could do in the wrong hands and wonder if \
-Mr. Grayson is to blame for your memory loss and what happened after that \
+Now you realize what your algorithm could do in the wrong hands. You wonder if \
+Mr. Grayson is to blame for your memory loss. You would like to figure out what happened after this \
 encounter.
 
 [[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
@@ -1634,8 +1634,8 @@ So you shut down your PC and go to bed. You think about everything again, but \
 then fall asleep from exhaustion.
 
 While you sleep, your brain works at full speed to process the information \
-overload that you experience today. You have a weird dream lead to a safe, and \
-on this safe is a manual that tells you how to break it open.
+overload that you experienced today. You start dreaming about a safe, and \
+on this safe is a manual that tells you how to open it.
 
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
@@ -1699,20 +1699,20 @@ You see many moments from your everyday life when you felt hunted.
 Next, you see yourself walking home in the evening. You are pulled into a dark \
 side alley, and several men beat you down and then throw you into a pile of \
 trash bags. As they walk away, one of the men shouts to you that you should \
-have accepted his offer and you lose consciousness. 
+have accepted the offer. You end up losing consciousness. 
 
-Afterwards, you see yourself open your mailbox and find a dead animal inside. \
-With this, you realize you need a new, safe apartment, which you have to buy in \
+Afterwards, you see yourself opening your mailbox and finding a dead animal inside. \
+With this, you realize that you're no longer safe in your own home. You need a new place to stay, which you will probably have to buy with \
 a fake name.
 
-Now you see a chat open on your monitor. This chat contains only one message: \
+You sit on your computer and see a chat open on your monitor. This chat contains only one message: \
 "Did you like the surprise in your mailbox? Your loved ones are next." After \
 reading this, you try to call your parents, but there is no connection. You \
 grab your things and run to the car.
 
-Arriving at your parents' house, you park a little further away. You get out \
-and cautiously sneak up to your parents' house. A strange car is parked in \
-front of the house and the front door is open. You want to run to it, but then \
+When you arrive at your parents' house, you decide to park a little further away. You get out \
+and cautiously sneak up to the house. A strange car is parked in \
+front of it and the front door is open. You want to run to it, but then \
 you hear two shots. You cannot move. Two men run out of the house and get into \
 the car. Only when they drive off with squealing tires, you can move. You run \
 into the house and straight into the living room. What you see, you can't put \
