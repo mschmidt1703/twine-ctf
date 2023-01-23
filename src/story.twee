@@ -1,6 +1,4 @@
 :: Story {"position":"200,600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 
@@ -85,12 +83,10 @@
   <!-- Outro -->
   If you want to read the tutorial again, click on "Tutorial" in the menu to open it.
 
-  [[<button id="resume-btn" class="button is-danger is-rounded">Next->1.p]]
+  [[<button id="resume-btn" class="nextButton">Next->1.p]]
 </div>
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -129,6 +125,26 @@
   .buttons p {
     padding-left: 1rem;
   }
+
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
   
   * {
     font-family: "OCR A Extended", sans-serif;
@@ -138,8 +154,6 @@
 
 
 :: 1.p {"position":"200,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -180,11 +194,9 @@ the right side of the room. You see a door and some machines that seem  to \
 monitor your vital signs. Only now you notice the continuous machines' sound that has \
 been going on for several minutes. 
  
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->1.1.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -201,6 +213,26 @@ been going on for several minutes.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -209,8 +241,6 @@ been going on for several minutes.
 
 
 :: 1.1.p {"position":"400,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -242,11 +272,9 @@ You can hardly remember anything at all! John continues \
 to reassure you, telling you that everything is fine and that you should not \
 be concerned.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.2.p]]
+[[<button id="resume-btn" class="nextButton">Next->1.2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -263,6 +291,26 @@ be concerned.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -271,8 +319,6 @@ be concerned.
 
 
 :: 1.2.p {"position":"600,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -290,11 +336,9 @@ the canteen, the shelters, and the courtyard. In the courtyard, you meet Josie. 
 John introduces the two of you. She is a little younger than you but makes a \
 warm impression. The two of you hit it off right away.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.3.p]]
+[[<button id="resume-btn" class="nextButton">Next->1.3.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -311,6 +355,26 @@ warm impression. The two of you hit it off right away.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -319,8 +383,6 @@ warm impression. The two of you hit it off right away.
 
 
 :: 1.3.p {"position":"800,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -343,11 +405,9 @@ with a PC on it, a wardrobe, and a small bathroom with a shower. Josie tells \
 you to make yourself at home and that if you have any questions, you are \
 welcome to ask her. You smile. She wishes you a good night and leaves.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.4.p]]
+[[<button id="resume-btn" class="nextButton">Next->1.4.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -364,6 +424,26 @@ welcome to ask her. You smile. She wishes you a good night and leaves.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -372,8 +452,6 @@ welcome to ask her. You smile. She wishes you a good night and leaves.
 
 
 :: 1.4.p {"position":"1000,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -392,11 +470,9 @@ curious to see how you can make yourself useful here. There is so much to \
 discover because now you have to get to know the world anew. And with these \
 thoughts, you fall asleep.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->1.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->1.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -413,6 +489,26 @@ thoughts, you fall asleep.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -421,8 +517,6 @@ thoughts, you fall asleep.
 
 
 :: 1.x.p {"position":"1200,800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -441,8 +535,6 @@ notice a game controller depicted on its cover.
 [[<button class="startChallenge">Start Challenge->CTF 7]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -487,8 +579,6 @@ notice a game controller depicted on its cover.
 
 
 :: Memory1 {"position":"1200,1000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -507,11 +597,9 @@ All of a sudden, you smell food, and you know that your mother is in the kitchen
 right now. You recognize the smell. It's the smell of spaghetti carbonara. You \
 hear her calling your name.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.p]]
+[[<button id="resume-btn" class="nextButton">Next->2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -528,6 +616,26 @@ hear her calling your name.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -536,8 +644,6 @@ hear her calling your name.
 
 
 :: 2.p {"position":"200,1200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -553,11 +659,9 @@ You do remember that spaghetti carbonara is your favorite food and that your \
 mom is one who can cook it the best. More importantly, you remember your name: \
 $username.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->2.1.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -574,6 +678,26 @@ $username.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -582,8 +706,6 @@ $username.
 
 
 :: 2.1.p {"position":"400,1200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -605,11 +727,9 @@ For the next few days, you assist the others in any way you can and complete the
 tasks you are assigned. You also get to know your new home and your roommates closer. \
 You feel very comfortable here.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.2.p]]
+[[<button id="resume-btn" class="nextButton">Next->2.2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -626,6 +746,26 @@ You feel very comfortable here.
     font-size: 2rem !important;
   }
 
+    .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -634,8 +774,6 @@ You feel very comfortable here.
 
 
 :: 2.2.p {"position":"600,1200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -660,11 +798,9 @@ nerd.
 You sit down on the floor and start dreaming. You keep looking at the pictures \
 and smiling as you relive some childhood memories.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->2.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->2.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -681,6 +817,26 @@ and smiling as you relive some childhood memories.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -689,8 +845,6 @@ and smiling as you relive some childhood memories.
 
 
 :: 2.x.p {"position":"800,1200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -749,8 +903,6 @@ Immediately after arriving home, you put the CD into your PC.
 
 
 :: 3.p {"position":"200,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -761,11 +913,9 @@ get the feeling that you should go to the university where your father studied. 
 You might find more clues about your past over there. But first you will have to discuss this \
 with John.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->3.1.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -782,6 +932,26 @@ with John.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -790,8 +960,6 @@ with John.
 
 
 :: 3.1.p {"position":"400,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -819,11 +987,9 @@ everything is safe. That's all." John crosses his arms and says, slightly \
 amused, that he can't beat the two of them now anyway. He will get everything \
 in place, so that they can leave in a few days.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.2.p]]
+[[<button id="resume-btn" class="nextButton">Next->3.2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -840,6 +1006,26 @@ in place, so that they can leave in a few days.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -848,8 +1034,6 @@ in place, so that they can leave in a few days.
 
 
 :: 3.2.p {"position":"400,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -873,11 +1057,9 @@ Amazed, you notice that some of these awards have your name on them. They are \
 all awards for outstanding achievements in hackathons. One award even has your \
 father's name on it, also from hackathon.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->3.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->3.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -894,6 +1076,26 @@ father's name on it, also from hackathon.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -902,8 +1104,6 @@ father's name on it, also from hackathon.
 
 
 :: 3.x.p {"position":"600,1600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -922,8 +1122,6 @@ will not be locked for much longer.
 [[<button class="startChallenge">Start Challenge->CTF 1]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -968,8 +1166,6 @@ will not be locked for much longer.
 
 
 :: Memory2 {"position":"1200,1800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -995,11 +1191,9 @@ Then you're sitting in an office, talking on the phone: "Don't worry, Mom, \
 being self-sufficient is really no problem with my qualifications." \
 You'll see." Then everything goes black, and a cryptic string appears right before your eyes.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.p]]
+[[<button id="resume-btn" class="nextButton">Next->4.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1016,6 +1210,26 @@ You'll see." Then everything goes black, and a cryptic string appears right befo
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1024,8 +1238,6 @@ You'll see." Then everything goes black, and a cryptic string appears right befo
 
 
 :: 4.p {"position":"200,2000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1043,11 +1255,9 @@ would've gotten in trouble.
 
 You leave the building and head to the car.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->4.1.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1064,6 +1274,26 @@ You leave the building and head to the car.
     font-size: 2rem !important;
   }
 
+    .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1072,8 +1302,6 @@ You leave the building and head to the car.
 
 
 :: 4.1.p {"position":"400,2000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1095,11 +1323,9 @@ also worked at headquarters. Josie laughs and denies. Her friend would never \
 have been able to do this job. She worked as a consultant for IT companies and \
 traveled around all the time.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.2.p]]
+[[<button id="resume-btn" class="nextButton">Next->4.2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1116,6 +1342,26 @@ traveled around all the time.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1124,8 +1370,6 @@ traveled around all the time.
 
 
 :: 4.2.p {"position":"600,2000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1153,11 +1397,9 @@ very exciting, but in order not to seem rude, you smile. During dinner, the \
 others explain to Rob that they had this experiment in school and that it is \
 therefore no longer exciting. Rob doesn't let this take away his joy.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->4.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->4.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1174,6 +1416,26 @@ therefore no longer exciting. Rob doesn't let this take away his joy.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1182,8 +1444,6 @@ therefore no longer exciting. Rob doesn't let this take away his joy.
 
 
 :: 4.x.p {"position":"800,2000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1199,8 +1459,6 @@ decrypt a string on your PC.
 [[<button class="startChallenge">Start Challenge->CTF 11]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1245,8 +1503,6 @@ decrypt a string on your PC.
 
 
 :: Memory3 {"position":"1200,2200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1259,11 +1515,9 @@ You black out again, and you see yourself sitting in front of your PC. The \
 time is passing by like a time lapse until you realize that you finally completed a program. You \
 run performance tests and confirm that the algorithm is abnormally efficient.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.p]]
+[[<button id="resume-btn" class="nextButton">Next->5.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1280,6 +1534,26 @@ run performance tests and confirm that the algorithm is abnormally efficient.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1288,8 +1562,6 @@ run performance tests and confirm that the algorithm is abnormally efficient.
 
 
 :: 5.p {"position":"200,2400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1302,11 +1574,9 @@ that there are none as efficient as yours. You wonder if this algorithm could \
 relate to the reason why you were found unconscious. So, you decide to keep these \
 new findings to yourself for now.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->5.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->5.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1323,6 +1593,26 @@ new findings to yourself for now.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1331,16 +1621,12 @@ new findings to yourself for now.
 
 
 :: 5.x.p {"position":"600,2400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 After another hour of not finding any search results, you decide to resort to \
 other methods: The Darknet. But how do you get to the Darknet? 
 
 [[<button class="startChallenge">Start Challenge->CTF 5]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1385,8 +1671,6 @@ other methods: The Darknet. But how do you get to the Darknet? 
 
 
 :: 6.p {"position":"200,2800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1399,11 +1683,9 @@ know about, but nothing relevant to your quest. Unfortunately, your search remai
 You decide to search again and again over the next few days. Maybe you didn't \
 enter the right search parameters.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->6.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->6.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1420,6 +1702,26 @@ enter the right search parameters.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1428,8 +1730,6 @@ enter the right search parameters.
 
 
 :: 6.x.p {"position":"600,2800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1451,8 +1751,6 @@ it.
 [[<button class="startChallenge">Start Challenge->CTF 3]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1497,8 +1795,6 @@ it.
 
 
 :: Memory4 {"position":"1000,3000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1554,11 +1850,9 @@ leaving you hear a bang. Then mr. Grayson yells, "You will regret it if you leav
 will make sure of it myself." You turn back and look him in the eye and say \
 "my algorithm will never get in your hands" and leave.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->7.p]]
+[[<button id="resume-btn" class="nextButton">Next->7.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1573,6 +1867,26 @@ will make sure of it myself." You turn back and look him in the eye and say \
 
   h2 {
     font-size: 2rem !important;
+  }
+
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   * {
@@ -1583,8 +1897,6 @@ will make sure of it myself." You turn back and look him in the eye and say \
 
 
 :: 7.p {"position":"200,3200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1595,11 +1907,9 @@ Now you realize what your algorithm could do in the wrong hands. You wonder if \
 Mr. Grayson is to blame for your memory loss. You would like to figure out what happened after this \
 encounter.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->7.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->7.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1616,6 +1926,26 @@ encounter.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1624,8 +1954,6 @@ encounter.
 
 
 :: 7.x.p {"position":"600,3200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1640,8 +1968,6 @@ on this safe is a manual that tells you how to open it.
 [[<button class="startChallenge">Start Challenge->CTF 10]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1686,8 +2012,6 @@ on this safe is a manual that tells you how to open it.
 
 
 :: Memory5 {"position":"1000,3400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1721,11 +2045,9 @@ but it's too late....
 
 You disappear from the house and drive back distraught.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.p]]
+[[<button id="resume-btn" class="nextButton">Next->8.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1742,6 +2064,26 @@ You disappear from the house and drive back distraught.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1750,8 +2092,6 @@ You disappear from the house and drive back distraught.
 
 
 :: 8.p {"position":"200,3600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1767,11 +2107,9 @@ because of him. Your algorithm cannot fall into his hands. So you have to find \
 the algorithm, and the right place to do that is your second flat. After this \
 realisation you fall asleep again.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->8.1.p]]
 
 <style>
-  
-  
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1788,6 +2126,26 @@ realisation you fall asleep again.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1796,8 +2154,6 @@ realisation you fall asleep again.
 
 
 :: 8.1.p {"position":"400,3600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1816,11 +2172,9 @@ Based on the details from your memories, it was possible to determine the \
 location of your apartment and as soon as the equipment arrives, you will go \
 over there with a small team of men.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.2.p]]
+[[<button id="resume-btn" class="nextButton">Next->8.2.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1837,6 +2191,26 @@ over there with a small team of men.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1845,8 +2219,6 @@ over there with a small team of men.
 
 
 :: 8.2.p {"position":"600,3600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1862,11 +2234,9 @@ before. You enter the apartment, which is furnished in a very modern way \
 compared to the old factory building. Carefully, you check all the rooms to \
 make sure that you are alone in the apartment.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->8.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->8.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1883,6 +2253,26 @@ make sure that you are alone in the apartment.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -1891,8 +2281,6 @@ make sure that you are alone in the apartment.
 
 
 :: 8.x.p {"position":"800,3600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1909,8 +2297,6 @@ shows the outline of a pretty young woman on a watercolor background.
 [[<button class="startChallenge">Start Challenge->CTF 2]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -1955,8 +2341,6 @@ shows the outline of a pretty young woman on a watercolor background.
 
 
 :: Memory6 {"position":"1200,3800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -1986,11 +2370,9 @@ handed over the real algorithm, but it's really just the console output and an \
 unnecessarily complicated sorting algorithm. These are to buy you enough time \
 to get you both to safety.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.p]]
+[[<button id="resume-btn" class="nextButton">Next->9.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2007,6 +2389,26 @@ to get you both to safety.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2015,8 +2417,6 @@ to get you both to safety.
 
 
 :: 9.p {"position":"200,4000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2028,11 +2428,9 @@ You have to escape. You lock the door to the office. You look around your \
 office, searching, because somehow you have to get out of here. Meanwhile, John \
 sends an emergency signal to Josie.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->9.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->9.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2049,6 +2447,26 @@ sends an emergency signal to Josie.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2057,8 +2475,6 @@ sends an emergency signal to Josie.
 
 
 :: 9.x.p {"position":"600,4000","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2083,8 +2499,6 @@ Next to the door, a keypad that can certainly be used to open the door.
 [[<button class="startChallenge">Start Challenge->CTF 8]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2129,8 +2543,6 @@ Next to the door, a keypad that can certainly be used to open the door.
 
 
 :: 10.p {"position":"200,4400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2158,11 +2570,9 @@ John presses the button on his wristband, and an engine noise is heard. Then \
 you see the car pull up at the beginning of the alley. You can now simply \
 vanish unnoticed.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->10.1.p]]
+[[<button id="resume-btn" class="nextButton">Next->10.1.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2177,6 +2587,26 @@ vanish unnoticed.
 
   h2 {
     font-size: 2rem !important;
+  }
+
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
   }
 
   * {
@@ -2187,8 +2617,6 @@ vanish unnoticed.
 
 
 :: 10.1.p {"position":"600,4400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2197,11 +2625,9 @@ In the car, it also becomes clear how close the whole thing was. John says that 
 You look around at Josie and notice that she is staring at your picture. Her face is white like chalk. "Josie? Is everything okay?" you ask cautiously. Slowly, she lifts her head and looks you straight in the eye as she asks, "Why do you have a picture of Lizzie...". You ask if that's the name of the girl in the picture. Josie says that's her best friend and asks you again why you have a picture of her. You tell Josie everything you can remember. When you are done telling, all she says is "I see". After that, Josie turns to the window and is silent for the rest of the ride. You want to go to her to ask if there is anything you can do to help, but John holds you back.
 Back at headquarters, Josie immediately disappears, and you unload the car and go to your rooms. This has been an exhausting yet enlightening day.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->10.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->10.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2218,6 +2644,26 @@ Back at headquarters, Josie immediately disappears, and you unload the car and g
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2226,8 +2672,6 @@ Back at headquarters, Josie immediately disappears, and you unload the car and g
 
 
 :: 10.x.p {"position":"800,4400","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2241,7 +2685,6 @@ is most likely a criminal enterprise. He notes "hacker-for-hire" as an example \
 of possible activities. You conclude that AGT probably wants to increase its \
 turnover with the help of your algorithm.
 
-
 After breakfast, you go to your room to plug in the USB stick. You insert the \
 USB stick. The USB stick could be read, and a directory opens in which all files \
 are encrypted except one. So you open the only unencrypted file.
@@ -2249,8 +2692,6 @@ are encrypted except one. So you open the only unencrypted file.
 [[<button class="startChallenge">Start Challenge->CTF 9]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2295,8 +2736,6 @@ are encrypted except one. So you open the only unencrypted file.
 
 
 :: Memory7 {"position":"1200,4600","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2336,11 +2775,9 @@ closer to the broken window. Once again, a pair of hands tries to grab you, \
 and as you fight them off, you take a step backward, slump down, and fall into \
 the depths.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->11.p]]
+[[<button id="resume-btn" class="nextButton">Next->11.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2357,6 +2794,26 @@ the depths.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2365,8 +2822,6 @@ the depths.
 
 
 :: 11.p {"position":"200,4800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2380,11 +2835,9 @@ will be inevitable to confront Mr. Grayson. You fear that if you don't, he may \
 track down your new family and kill them too. Your thoughts drift to your \
 parents and Lizzie, and you wonder if you could have saved them all.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->11.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->11.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2401,6 +2854,26 @@ parents and Lizzie, and you wonder if you could have saved them all.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2409,8 +2882,6 @@ parents and Lizzie, and you wonder if you could have saved them all.
 
 
 :: 11.x.p {"position":"600,4800","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2422,8 +2893,6 @@ this link in your web browser on your PC.
 [[<button class="startChallenge">Start Challenge->CTF 6]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2468,8 +2937,6 @@ this link in your web browser on your PC.
 
 
 :: e.p {"position":"200,5200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2492,11 +2959,9 @@ so that your plan cannot fail so easily, and you explain all the details to \
 them. When they agree to the plan, everyone sets out to make arrangements. This \
 time, there is no defeat.
 
-[[<button id="resume-btn" class="button is-danger is-rounded">Next->e.x.p]]
+[[<button id="resume-btn" class="nextButton">Next->e.x.p]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
@@ -2513,6 +2978,26 @@ time, there is no defeat.
     font-size: 2rem !important;
   }
 
+  .nextButton {
+    z-index: 1;
+    height: 2.5em;
+    width: 8em;
+
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 35px;
+    background-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    font-size: 1em;
+    font-family: "OCR A Extended", sans-serif;
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
   * {
     font-family: "OCR A Extended", sans-serif;
     color: #9b9b9b;
@@ -2521,8 +3006,6 @@ time, there is no defeat.
 
 
 :: e.x.p {"position":"600,5200","size":"100,100"}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
 <script>
   setup.story()
 </script>
@@ -2546,7 +3029,7 @@ men run into the room and shout for everyone to put their hands up. You do as \
 you are told.
 
 After all the people in the room have been placed, another man comes in, \
-followed by Josie and John. The man turns to you and asks if you are NAME Reese. \
+followed by Josie and John. The man turns to you and asks if you are $username Reese. \
 You confirm this and put your hands down. Josie, meanwhile, runs to Lizzie with \
 some paramedics. Angrily, Mr. Grayson asks you what's going on. You smile and \
 fold your arms behind your back. "What can I say Mr. Grayson, they have grossly \
@@ -2588,8 +3071,6 @@ If you want to play the game again, you have to reset it by clicking on the rese
 [[<button class="startChallenge">Return to Main->MainPage]]
 
 <style>
-  
-
   /* -- Twine overrides -- */
 
   tw-story {
