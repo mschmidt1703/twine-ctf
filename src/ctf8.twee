@@ -51,7 +51,7 @@ This will not require you to have a look at the source code of this page.")
 	 It sould calculate mod 42 from each number. You will then be able to map all numbers (if 0 <= x <= 25) to the letters A-Z.")]
   </div>
   <div class="btn-pos1">
-    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "To complete this task you will only need to write a small and simple python programme.")]
+    (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "To complete this task you will only need to write a small and simple python program.")]
   </div>
 </div>
 
