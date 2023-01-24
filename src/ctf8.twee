@@ -17,8 +17,8 @@ Take each number and calculate mod 42 then map it to the following character set
 
 <ul>
   <li>0-25 is the alphabet (uppercase),</li>  
-  <li>26-35 are the decimal digits, </li>
-  <li>36-40 are the special characters (#!"&#123})</li>
+  <li>26-35 are the decimal digits (in ascii order), </li>
+  <li>36-40 are the special characters, (#!"&#123})</li>
   <li> and 42 is an underscore</li>
 </ul>
 
