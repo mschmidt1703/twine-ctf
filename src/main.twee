@@ -248,7 +248,7 @@ Memory Loss: Find Your Way Back
 
 Hello,
 
-please enter your name. Please note your name must be at longer then three charaters and should not contains any "<>/"
+please enter your name. Please note your name must be at least longer than three charaters and should not contain any "<>/"
 
 
 (css: "margin-top: 5%;")[(input: bind $username, "===XXX===")]

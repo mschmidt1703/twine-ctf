@@ -48,7 +48,7 @@ This will not require you to have a look at the source code of this page.")
   </div>
   <div class="btn-pos2">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "The program you will write should loop over a message array containing the numbers from above.
-	 It sould calculate mod 42 from each number. You will then be able to map all numbers (if 0 <= x <= 25) to the letters A-Z.")]
+	 It sould calculate mod 42 from each number. You will then be able to map all numbers (if 0 <= x <= 25) to the letters A-Z ... if 26 <= x <= 35 ... ")]
   </div>
   <div class="btn-pos1">
     (link-repeat: "<button class=\"hint-btn-background\"></button>")[(alert: "To complete this task you will only need to write a small and simple python program.")]
