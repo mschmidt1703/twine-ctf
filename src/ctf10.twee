@@ -11,7 +11,7 @@ This will not require you to have a look at the source code of this page.") \
 
 <h1>CTF 10 - Cryptography </h1>
 
-Can you figure out the message hidden in this image? Please write puzzlePiece in lower case letters.
+Can you figure out the message hidden in this image? Please write "puzzlePiece" in lower case letters.
 
 0 = &#123; or &#125;
 
